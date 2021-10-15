@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Anywhere UI</title>
+
+  <link rel="stylesheet" class="flags-style" href="/assets/css/flags.css">
+  <link rel="stylesheet" href="/build/anywhere-ui.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/app/css/app.css">
+
+  <script type="module" src="/build/anywhere-ui.esm.js"></script>
+  <script nomodule src="/build/anywhere-ui.js"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+  <div class="layout-wrapper">
+    <div class="layout-topbar">
+      <ul class="topbar-menu ">
+        <li class=""><a class="" href="/#/setup">Get Started</a></li>
+        <li class="topbar-submenu"><a tabindex="0" class="">Themes</a>
+        </li>
+        <li class="topbar-submenu"><a tabindex="0" class="">Templates</a>
+        </li>
+        <li class="topbar-submenu"><a tabindex="0" class="">Resources</a>
+        </li>
+      </ul>
+    </div>
+    <div class="layout-sidebar">
+      <a href="/" class="logo">
+        <div><span>ANY</span>WHERE<span>UI</span></div>
+      </a>
+      <div class="layout-menu">
+        <div class="menu-category">General</div>
+        <div class="menu-items">
+          <a href="/#/setup" class="nav__link active" data-link>Get Started</a>
+        </div>
+        <div class="menu-category">Form</div>
+        <div class="menu-items">
+          <a href="/checkbox" class="nav__link" data-link>Checkbox</a>
+          <a href="/dropdown" class="nav__link" data-link>Dropdown</a>
+          <a href="/input-text" class="nav__link" data-link>InputText</a>
+          <a href="/listbox" class="nav__link" data-link>Listbox</a>
+        </div>
+        <div class="menu-category">Data</div>
+        <div class="menu-items">
+          <a href="/virtual-scroller" class="nav__link" data-link>Virtual Scroller</a>
+        </div>
+      </div>
+    </div>
+    <div class="layout-content">
+      <div id="app"></div>
+      <script type="module" src="/app/App.js"></script>
+    </div>
+    <div class="layout-footer">
+      <div class="layout-footer-left">AnywhereUI v1.0.0 by <b>AnywhereTech</b></div>
+      <div class="layout-footer-right"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"> -->
+  </script>
+</body>
+
+</html>

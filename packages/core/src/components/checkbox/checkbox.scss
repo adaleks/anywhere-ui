@@ -1,0 +1,73 @@
+@import "../../themes/anywhere.globals.scss";
+
+
+:host {
+  display: block;
+  display: flex;
+  align-items: center;
+
+  .any-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: bottom;
+    width: var(--checkboxWidth);
+    height: var(--checkboxHeight);
+
+    .any-checkbox-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: var(--checkboxBorder);
+      background: var(--inputBgColor);
+      width: var(--checkboxWidth);
+      height: var(--checkboxHeight);
+      color: var(--textColor);
+      border-radius: var(--borderRadius);
+      transition: var(--inputTransition);
+
+      &.any-highlight {
+        border-color: var(--checkboxActiveBorderColor);
+        background: var(--checkboxActiveBg);
+      }
+
+      .any-checkbox-icon {
+        transition-duration: var(--transitionDuration);
+        color: var(--checkboxIconActiveColor);
+        font-size: var(--fontSize);
+      }
+    }
+
+    &:not(.any-checkbox-disabled) {
+      .any-checkbox-box {
+        &:hover {
+          border-color: var(--inputHoverBorderColor);
+        }
+
+
+        &.any-focus {
+          outline: var(--focusOutline);
+          outline-offset: var(--focusOutlineOffset);
+          box-shadow: var(--focusShadow);
+          border-color: var(--checkboxActiveBorderColor);
+        }
+
+        &.any-highlight {
+          &:hover {
+            border-color: var(--checkboxActiveHoverBorderColor);
+            background: var(--checkboxActiveHoverBg);
+            color: var(--checkboxIconActiveHoverColor);
+          }
+        }
+      }
+    }
+  }
+
+  .any-checkbox-label {
+    margin-left: 0.5rem;
+  }
+
+}

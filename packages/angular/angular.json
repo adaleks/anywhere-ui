@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "anywhere-ui": {
+      "projectType": "library",
+      "root": "projects/anywhere-ui",
+      "sourceRoot": "projects/anywhere-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/anywhere-ui/tsconfig.lib.json",
+            "project": "projects/anywhere-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/anywhere-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/anywhere-ui/src/test.ts",
+            "tsConfig": "projects/anywhere-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/anywhere-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/anywhere-ui/tsconfig.lib.json",
+              "projects/anywhere-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "anywhere-ui"
+}

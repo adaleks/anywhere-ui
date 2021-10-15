@@ -1,0 +1,98 @@
+@import "../../themes/anywhere.globals.scss";
+
+:host {
+  display: block;
+
+  .any-inputtext {
+    font-size: var(--fontSize);
+    color: var(--textColor);
+    background: var(--inputBgColor);
+    padding: var(--inputPadding);
+    border: var(--inputBorder);
+    -moz-transition: var(--inputTransition);
+    -o-transition: var(--inputTransition);
+    -webkit-transition: var(--inputTransition);
+    transition: var(--inputTransition);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin: 0;
+    outline: medium none;
+
+    &:not([disabled]) {
+      &:hover {
+        border-color: var(--inputHoverBorderColor);
+      }
+
+      &:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        -webkit-box-shadow: var(--focusShadow);
+        -moz-box-shadow: var(--focusShadow);
+        box-shadow: var(--focusShadow);
+        border-color: var(--focusOutlineColor);
+      }
+    }
+  }
+
+  /* Floating Label */
+  .any-float-label {
+    display: block;
+    position: relative;
+
+    label {
+      position: absolute;
+      pointer-events: none;
+      top: 50%;
+      margin-top: -.5rem;
+      transition-property: all;
+      transition-timing-function: ease;
+      line-height: 1;
+    }
+
+    textarea~label {
+      top: 1rem;
+    }
+
+    input:focus~label,
+    input.any-filled~label,
+    textarea:focus~label,
+    textarea.any-filled~label,
+    .any-inputwrapper-focus~label,
+    .any-inputwrapper-filled~label {
+      top: -.75rem;
+      font-size: 12px;
+    }
+
+    .input:-webkit-autofill~label {
+      top: -20px;
+      font-size: 12px;
+    }
+
+    >label {
+      left: 0.75rem;
+      color: var(--inputPlaceholderTextColor);
+      transition-duration: var(--transitionDuration);
+    }
+  }
+
+  .any-input-icon-left,
+  .any-input-icon-right {
+    position: relative;
+    display: inline-block;
+  }
+
+  .any-input-icon-left>i,
+  .any-input-icon-right>i {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5rem;
+  }
+
+  .any-fluid .any-input-icon-left,
+  .any-fluid .any-input-icon-right {
+    display: block;
+    width: 100%;
+  }
+}

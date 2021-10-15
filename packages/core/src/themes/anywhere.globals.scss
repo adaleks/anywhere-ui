@@ -1,0 +1,141 @@
+@import "./anywhere.functions";
+@import "./anywhere.mixins";
+@import "./anywhere.keyframes";
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// body {
+
+/*GLOBAL*/
+.any-component,
+.any-component * {
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.any-corner-all {
+    -moz-border-radius: var(--borderRadius);
+    -webkit-border-radius: var(--borderRadius);
+    border-radius: var(--borderRadius);
+}
+
+.any-corner-right {
+    -moz-border-radius-topright: var(--borderRadius);
+    -webkit-border-top-right-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+    -moz-border-radius-bottomright: var(--borderRadius);
+    -webkit-border-bottom-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+.any-shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.any-disabled,
+.any-disabled * {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.any-checkbox-disabled {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.any-disabled,
+.any-component:disabled {
+    opacity: var(--disabledOpacity);
+}
+
+.iconify {
+    font-size: var(--anyIconFontSize);
+    display: flex;
+    align-items: center;
+}
+
+.growDown-animation {
+    animation: growDown 125ms ease-in-out forwards;
+}
+
+.growUp-animation {
+    animation: growUp 125ms ease-in-out forwards;
+}
+
+.rotateYDown-animation {
+    animation: rotateYDown 125ms ease-in-out forwards;
+}
+
+.rotateYUp-animation {
+    animation: rotateYUp 125ms ease-in-out forwards;
+}
+
+.spin-animation {
+    animation: spin 2s linear infinite;
+}
+
+.direction-down {
+    transform-origin: top center;
+}
+
+.direction-up {
+    transform-origin: bottom center;
+}
+
+.any-field>label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+.any-input-icon-left {
+    >i {
+        &:first-of-type {
+            left: 0.75rem;
+            color: var(--inputIconColor);
+        }
+    }
+
+    >.any-inputtext {
+        padding-left: 2rem !important;
+
+    }
+
+}
+
+.any-input-icon-right {
+    >i {
+        &:last-of-type {
+            right: 0.75rem;
+            color: var(--inputIconColor);
+        }
+    }
+
+    >.any-inputtext {
+        padding-right: 2rem !important;
+
+    }
+
+}
+
+.any-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
