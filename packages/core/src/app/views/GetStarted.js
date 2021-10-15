@@ -25,7 +25,7 @@ export default class extends AbstractView {
                 <h5>Download</h5>
                 <p>AnywhereUI is available at npm, if you have an existing application run the following command to download it to your project.</p>
 <pre class="language-markup"><code class="language-markup">
-npm install @anywhere-ui/core --save\n
+npm install @anywhere-ui/core\n
 </code></pre>
             </div>
         `;
