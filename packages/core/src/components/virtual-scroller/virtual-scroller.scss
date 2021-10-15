@@ -1,0 +1,22 @@
+@import "~clusterize.js/clusterize.css";
+
+:host {
+
+  /* max-height - the only parameter in this file that needs to be edited.
+ * Change it to suit your needs. The rest is recommended to leave as is.
+ */
+  .clusterize-scroll {
+    max-height: 100%;
+  }
+
+  .any-virtualscroller {
+    .any-virtualscroller-header {
+      background: var(--surface-b);
+      color: var(--text-color);
+      border: solid var(--surface-d);
+      border-width: 1px 0 0 0;
+      padding: 1rem 1rem;
+      font-weight: 600;
+    }
+  }
+}
