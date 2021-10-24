@@ -1,0 +1,89 @@
+<div class="content-section introduction">
+  <div class="feature-intro">
+    <h1>Virtual Scroller</h1>
+    <p>Virtual Scroller is an efficient way of rendering lists by displaying a small subset of data in the viewport at
+      any time.</p>
+  </div>
+  <app-demoactions>
+    <div class="app-demoactions any-d-flex any-ai-end any-jc-end any-mt-3">
+      <a target="_blank"
+        href="https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/virtual-scroller"
+        class="any-button-icon-only">
+        <span class="iconify" data-icon="logos:github-icon" data-width="19" data-height="19"></span>
+      </a>
+    </div>
+  </app-demoactions>
+</div>
+<div class="content-section">
+  <div class="full-card">
+    <h5>Lazy Loading (10000 Items)</h5>
+    <div class="fetch-container">
+      <any-virtual-scroller id="vs2">
+        <div slot="header">
+          <div class="any-d-flex any-ai-center any-jc-between">
+            List of Products
+          </div>
+        </div>
+        <div slot="item">
+          <div class="product-item">
+            <div class="image-container">
+              <img src="assets/images/product/#=item.image#" [alt]="#=item.name#" class="product-image" />
+            </div>
+            <div class="product-list-detail">
+              <h5>#=item.name#</h5>
+              <i class="iconify" data-icon="fa-solid:tags"></i>
+              <span class="product-category">#=item.category#</span>
+            </div>
+            <div class="product-list-action">
+              <h6>$#=item.price#</h6>
+              <span class="product-badge status-#=item.inventoryStatusLowerCase#">#=item.inventoryStatus#</span>
+            </div>
+          </div>
+        </div>
+        <div slot="loadingItem">
+          <div class="product-item loading-item">
+            <div class="image-container"></div>
+            <div class="product-list-detail">
+              <h5></h5>
+              <i class="product-category-icon"></i>
+              <span class="product-category"></span>
+            </div>
+            <div class="product-list-action">
+              <h6></h6>
+              <span class="product-badge"></span>
+            </div>
+          </div>
+        </div>
+      </any-virtual-scroller>
+    </div>
+  </div>
+  <div class="full-card">
+    <h5>Prepopulated List (10000 Items)</h5>
+    <div class='fetch-container'>
+      <any-virtual-scroller id="vs1">
+        <div slot="header">
+          <div class="any-d-flex any-ai-center any-jc-between">
+            List of Products
+            <any-dropdown id="sortDD1"></any-dropdown>
+          </div>
+        </div>
+        <div slot="item">
+          <div class="product-item">
+            <div class="image-container">
+              <img src="assets/images/product/#=item.image#" [alt]="#=item.name#" class="product-image" />
+            </div>
+            <div class="product-list-detail">
+              <h5>#=item.name#</h5>
+              <i class="iconify" data-icon="fa-solid:tags"></i>
+              <span class="product-category">#=item.category#</span>
+            </div>
+            <div class="product-list-action">
+              <h6>$#=item.price#</h6>
+              <span class="product-badge status-#=item.inventoryStatusLowerCase#">#=item.inventoryStatus#</span>
+            </div>
+          </div>
+        </div>
+      </any-virtual-scroller>
+    </div>
+  </div>
+</div>

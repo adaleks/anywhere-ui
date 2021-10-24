@@ -1,4 +1,4 @@
-import AbstractView from "./AbstractView.js";
+import AbstractView from "../AbstractView.js";
 
 export default class extends AbstractView {
   constructor(params) {
@@ -50,39 +50,9 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    return `
-            <div class="content-section introduction">
-              <div class="feature-intro">
-                <h1>InputText</h1>
-                <p>InputText renders a text field to enter data.</p>
-              </div>
-            </div>
-            <div class="content-section">
-              <div class="full-card">
-                <h5>Basic</h5>
-                <any-input-text id="it1"></any-input-text>
-                
-                <h5>Float Label</h5>
-                <any-input-text id="it2"></any-input-text>
-
-                <h5>Disabled</h5>
-                <any-input-text id="it3"></any-input-text>
-
-                <h5>Left Icon</h5>
-                <any-input-text id="it4">
-                  <div slot="iconLeft">
-                   <i class="iconify" data-icon="fa-solid:search"></i> 
-                  </div>
-                </any-input-text>
-
-                <h5>Right Icon</h5>
-                <any-input-text id="it5">
-                  <div slot="iconRight">
-                   <i class="iconify" data-icon="fa-solid:spinner"></i> 
-                  </div>
-                </any-input-text>
-              </div>
-            </div>
-        `;
+    return fetch('app/views/InputText/InputText.html')
+      .then(data => {
+        return data.text();
+      });
   }
 }

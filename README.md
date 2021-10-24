@@ -1,21 +1,35 @@
-# AnywhereUI Web Components
+# AnywhereUI
 
-Library of web components, includes framework bindings.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dm/@anywhere-ui/core.svg)](https://www.npmjs.com/package/@anywhere-ui/core)
+
+Rich web components, includes framework bindings.
+
+AnywhereUI is based on [Web Components](https://www.webcomponents.org/introduction) and comes with many significant performance, usability, and feature improvements over the past versions.
+
+Visit the [AnywhereUI Website](https://adaleks.github.io/anywhere-ui-showcase/) for general information, demos and documentation.
+
+### Packages
+
+| Project | Package | Version | Links |
+| ------- | ------- | ------- |:-----:|
+| **Core** | [`@anywhere-ui/core`](https://www.npmjs.com/package/@anywhere-ui/core) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fcore.svg)](https://badge.fury.io/js/@anywhere-ui%2Fcore) | [`README.md`](packages/core/README.md) |
 
 ## Getting Started
 
-To start building a new AnywhereUI web component using Stencil, clone this repo to a new directory:
+To start building a new AnywhereUI web component using Stencil, fork this repo and clone to a new directory:
 
 ```bash
-git clone https://github.com/gjovanovicst/anywhere-ui.git
+git clone https://github.com/{github_username}/anywhere-ui.git
+
 cd anywhere-ui
 ```
 
-and run:
+Install dependencies and start project:
 
 ```bash
-cd packages/core
-npm install
+npm run install-all
+
 npm start
 ```
 

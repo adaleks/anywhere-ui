@@ -1,57 +1,64 @@
 {
-    "name": "@anywhere-ui/core",
-    "version": "0.1.1",
-    "description": "AnywhereUI",
-    "main": "dist/index.cjs.js",
-    "module": "dist/index.js",
-    "es2015": "dist/esm/index.mjs",
-    "es2017": "dist/esm/index.mjs",
-    "types": "dist/types/index.d.ts",
-    "collection": "dist/collection/collection-manifest.json",
-    "collection:main": "dist/collection/index.js",
-    "unpkg": "dist/anywhere-ui/anywhere-ui.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gjovanovicst/anywhere-ui.git"
-    },
-    "files": [
-        "dist/",
-        "loader/"
-    ],
-    "scripts": {
-        "build": "stencil build --docs",
-        "build.watch": "stencil build --watch --serve",
-        "build-prerender": "stencil build --prerender",
-        "start": "stencil build --dev --watch --serve & npm run watch-scss",
-        "test": "stencil test --spec",
-        "test.watch": "stencil test --spec --watch",
-        "test.e2e": "stencil test --e2e",
-        "generate": "stencil generate",
-        "watch-scss": "dart-sass --watch src/app/scss/app.scss:src/app/css/app.css"
-    },
-    "devDependencies": {
-        "@iconify/iconify": "^2.0.3",
-        "@stencil/angular-output-target": "^0.0.7",
-        "@stencil/core": "^2.6.0",
-        "@stencil/react-output-target": "^0.0.9",
-        "@stencil/sass": "^1.4.1",
-        "@stencil/vue-output-target": "^0.5.1",
-        "@types/clusterize.js": "^0.18.1",
-        "@types/lodash": "^4.14.172",
-        "@types/puppeteer": "^5.4.4",
-        "clusterize.js": "^0.18.1",
-        "clusterize.js-paging": "^1.0.3",
-        "dart-sass": "^1.25.0",
-        "faker": "^5.5.3",
-        "jest": "26.6.3",
-        "jest-cli": "26.6.3",
-        "lodash": "^4.17.21",
-        "prismjs": "^1.24.1",
-        "puppeteer": "^9.0.0",
-        "rollup-plugin-node-polyfills": "^0.2.1"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "@types/jest": "^26.0.24"
-    }
+  "name": "@anywhere-ui/core",
+  "version": "0.1.1",
+  "description": "AnywhereUI",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/anywhere-ui/anywhere-ui.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gjovanovicst/anywhere-ui.git"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "build.watch": "stencil build --watch --serve",
+    "build-prerender": "stencil build --prerender",
+    "start": "stencil build --dev --watch --serve & npm run watch-scss",
+    "test": "stencil test --spec",
+    "test.watch": "stencil test --spec --watch",
+    "test.e2e": "stencil test --e2e",
+    "generate": "stencil generate",
+    "watch-scss": "dart-sass --watch src/app/scss/app.scss:src/app/css/app.css",
+    "deploy-docs": "bash scripts/clear-www.sh && npm run build && node scripts/docs.js && cd www && git add --all && git commit -m \"deployed site to master\" && git push --set-upstream origin master && cd ..",
+    "initialize-ghpages": "bash scripts/initialize-stencil-ghpages-repo.sh",
+    "deploy-site-to-master": "bash scripts/deploy-site-to-master.sh"
+  },
+  "devDependencies": {
+    "@iconify/iconify": "^2.0.4",
+    "@stencil/angular-output-target": "^0.0.7",
+    "@stencil/core": "^2.9.0",
+    "@stencil/react-output-target": "^0.0.9",
+    "@stencil/sass": "^1.5.2",
+    "@stencil/vue-output-target": "^0.5.1",
+    "@types/clusterize.js": "^0.18.1",
+    "@types/lodash": "^4.14.175",
+    "@types/puppeteer": "^5.4.4",
+    "clusterize.js": "^0.18.1",
+    "clusterize.js-paging": "^1.0.3",
+    "dart-sass": "^1.25.0",
+    "faker": "^5.5.3",
+    "fs-extra": "^10.0.0",
+    "jest": "26.6.3",
+    "jest-cli": "26.6.3",
+    "lodash": "^4.17.21",
+    "prismjs": "^1.25.0",
+    "puppeteer": "^9.0.0",
+    "rebase": "^0.3.0",
+    "rollup-plugin-node-polyfills": "^0.2.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "^26.0.24",
+    "build": "^0.1.4",
+    "run": "^1.4.0"
+  }
 }

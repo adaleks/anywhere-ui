@@ -1,7 +1,16 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "install-all": "lerna exec npm install",
+    "start": "lerna run start --scope=@anywhere-ui/core --stream",
+    "build": "lerna run build --scope=@anywhere-ui/{core,angular,vue,react} --stream",
+    "deploy-docs": "lerna run deploy-docs --scope=@anywhere-ui/core --stream",
+    "initialize-ghpages": "lerna run initialize-ghpages --scope=@anywhere-ui/core --stream",
+    "deploy-site-to-master": "lerna run deploy-site-to-master --scope=@anywhere-ui/core --stream"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
-  }
+  },
+  "homepage": "https://adaleks.github.io/anywhere-ui-showcase"
 }
