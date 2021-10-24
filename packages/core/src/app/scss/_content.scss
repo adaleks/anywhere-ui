@@ -1,0 +1,144 @@
+.layout-wrapper {
+    width: 100%;
+    float: none;
+    position: absolute;
+    box-shadow: none;
+    overflow: visible;
+    min-height: 100%;
+    background-color: var(--surface-b);
+}
+
+.layout-content {
+    margin-left: 250px;
+    height: 100%;
+    padding-bottom: 80px;
+
+    .content-section {
+        // color: var(--text-color);
+        padding: 2rem;
+
+        &.introduction {
+            background-color: var(--surface-b);
+            color: var(--text-color);
+            padding-bottom: 0;
+            display: flex;
+            align-items: top;
+            justify-content: space-between;
+
+            .feature-intro {
+                h1 {
+                    span {
+                        font-weight: 400;
+                        color: var(--text-color-secondary);
+                    }
+                }
+
+                p {
+                    margin: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    // color: $linkColor?;
+                    font-weight: 600;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            app-demoActions {
+                display: flex;
+                justify-content: flex-end;
+
+                .any-button-icon-only {
+                    padding: .5rem 0;
+                }
+
+                a {
+                    &:hover {
+                        border-radius: 50%;
+                        height: 2.357 rem;
+
+                        svg * {
+                            fill: var(--primary-color)
+                        }
+                    }
+                }
+            }
+
+            .app-inputstyleswitch {
+                margin-left: 2rem;
+            }
+        }
+
+        &.implementation {
+            background-color: var(--surface-b);
+            color: var(--text-color);
+
+            +.documentation {
+                padding-top: 0;
+            }
+        }
+
+        &.documentation {
+            background-color: var(--surface-b);
+            color: var(--text-color);
+
+            li {
+                line-height: 1.5;
+            }
+
+            a {
+                text-decoration: none;
+                // color: $linkColor;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .doc-tablewrapper {
+                margin: 1rem 0;
+                overflow: auto;
+            }
+        }
+
+        .doc-table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: var(--surface-a);
+
+            th {
+                border-bottom: 1px solid var(--surface-d);
+                padding: 1rem;
+                text-align: left;
+            }
+
+            tbody {
+                td {
+                    padding: 1rem;
+                    border-bottom: 1px solid var(--surface-d);
+
+                    &:first-child {
+                        font-family: "Courier New", monospace;
+                        font-weight: bold;
+                        color: var(--text-color-secondary);
+                    }
+                }
+            }
+
+            &.browsers {
+                td {
+                    &:first-child {
+                        font-family: var(--font-family);
+                        font-weight: normal;
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.layout-footer {
+    padding: 2rem;
+    font-size: 1rem;
+    background-color: var(--surface-a);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 306px);
+    left: 250px;
+}

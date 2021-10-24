@@ -1,0 +1,160 @@
+$linkColor: #2196f3;
+$focusBorderColor:#BBDEFB;
+
+html {
+    visibility: hidden;
+    height: 100%;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:active {
+        color: var(--text-color);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1.5rem 0 1rem 0;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    color: inherit;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+
+    50% {
+        background-color: rgba(165, 165, 165, 0.3)
+    }
+
+    100% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+}
+
+pre[class*="language-"] {
+
+    &:before,
+    &:after {
+        display: none !important;
+    }
+
+    code {
+        border-left: 10px solid var(--surface-d) !important;
+        box-shadow: none !important;
+        background: var(--surface-e) !important;
+        margin: 1em 0;
+        color: var(--text-color);
+        font-size: 14px;
+
+        .token {
+
+            &.tag,
+            &.keyword {
+                color: #2196F3 !important;
+            }
+
+            &.attr-name,
+            &.attr-string {
+                color: #2196F3 !important;
+            }
+
+            &.attr-value {
+                color: #4CAF50 !important;
+            }
+
+            &.punctuation {
+                color: var(--text-color);
+            }
+
+            &.operator,
+            &.string {
+                background: transparent;
+            }
+        }
+    }
+}
+
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+pre[class*=language-] {
+    position: relative;
+    margin: .5em 0;
+    overflow: visible;
+    padding: 0;
+
+    >code {
+        position: relative;
+        border-left: 10px solid #358ccb;
+        box-shadow: -1px 0 0 0 #358ccb, 0 0 0 1px #dfdfdf;
+        background-color: #fdfdfd;
+        background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, .04) 0);
+        background-size: 3em 3em;
+        background-origin: content-box;
+        background-attachment: local;
+    }
+}
+
+code[class*=language] {
+    max-height: inherit;
+    height: inherit;
+    padding: 0 1em;
+    display: block;
+    overflow: auto;
+}

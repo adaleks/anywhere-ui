@@ -1,4 +1,9 @@
-@import './layout';
+@import './core';
+@import './content';
+@import './sidebar';
+@import './topbar';
+@import './footer';
+@import './demo';
+@import './responsive';
 @import './virtual-scroller';
 @import './inputtext';
-@import './demo';

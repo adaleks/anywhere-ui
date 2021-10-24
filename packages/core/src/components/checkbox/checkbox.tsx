@@ -54,7 +54,7 @@ export class AnyCheckbox {
    * The value of a checkbox is analogous to the value of an `<input type="checkbox">`,
    * it's only used when the checkbox participates in a native `<form>`.
    */
-  @Prop() value: any = "on";
+  @Prop({ mutable: true }) value: any = "on";
 
   /**
    * Label of the checkbox.
@@ -111,6 +111,7 @@ export class AnyCheckbox {
     let value = this.value;
     if (this.binary) {
       value = isChecked;
+      this.value = isChecked;
     }
     this.valueChange.emit({
       checked: isChecked,

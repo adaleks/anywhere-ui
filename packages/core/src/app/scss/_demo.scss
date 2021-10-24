@@ -28,3 +28,36 @@
     display: flex;
     align-items: center;
 }
+
+.full-card {
+    background: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0/20%), 0 1px 1px 0 rgb(0 0 0/14%),
+        0 1px 3px 0 rgb(0 0 0/12%);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.any-ai-center {
+    align-items: center;
+}
+
+.any-jc-between {
+    justify-content: space-between;
+}
+
+.any-d-flex {
+    display: flex !important;
+}
+
+.any-mr-2 {
+    margin-right: 0.5rem !important;
+}
+
+.any-ai-end {
+    align-items: flex-end;
+}
+
+.any-jc-end {
+    justify-content: flex-end;
+}

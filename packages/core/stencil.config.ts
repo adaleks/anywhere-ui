@@ -86,8 +86,13 @@ export const config: Config = {
     {
       type: "www",
       serviceWorker: null, // disable service workers
-      baseUrl: "http://localhost:3333",
-      copy: [{ src: "assets" }, { src: "app" }],
+      empty: false,
+      copy: [
+        { src: "assets" },
+        { src: "app" },
+        { src: "docs/SHOWCASE_README.md", dest: "README.md" },
+        { src: "docs/SHOWCASE_LICENSE", dest: "LICENSE" },
+      ],
     },
     angularOutputTarget({
       componentCorePackage: "@anywhere-ui/core",

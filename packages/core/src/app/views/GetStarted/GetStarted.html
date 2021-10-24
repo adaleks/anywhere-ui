@@ -1,0 +1,85 @@
+<div class="content-section introduction">
+  <div class="feature-intro">
+    <h1>Get Started</h1>
+    <p>AnywhereUI is a rich set of open source Web Components.</p>
+  </div>
+</div>
+<div class="content-section documentation">
+  <h5>Installing</h5>
+  <p>Integrating a components to a project without a JavaScript framework is straight forward. If you're using a simple
+    HTML page, you can add AnywhereUI via a script tag.</p>
+  <h5>Simple cdn script and style link import</h5>
+  <p>For example, we could load the components through unpkg like this:</p>
+  <pre class="language-markup"><code class="language-markup">
+&lt;script src=&quot;https://unpkg.com/@anywhere-ui/core@latest/dist/anywhere-ui/anywhere-ui.js&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;https://unpkg.com/@anywhere-ui/core@latest/dist/anywhere-ui/anywhere-ui.css&quot; rel=&quot;stylesheet&quot;/&gt;
+    </code></pre>
+  <h5>ES cdn module import</h5>
+  <p>Alternatively, if you wanted to take advantage of ES Modules, you could include the components using an import
+    statement. Note that in this scenario <code>applyPolyfills</code> is needed if you are targeting Edge or IE11.</p>
+  <pre class="language-markup"><code class="language-markup">
+&lt;script type=&quot;module&quot;&gt; 
+  import { applyPolyfills, defineCustomElements } from &quot;https://unpkg.com/@anywhere-ui/core@latest/loader&quot;;  
+  defineCustomElements();   
+&lt;/script&gt;
+    </code></pre>
+  <h5>Usage with Webpack, Browserify, & Other Bundlers</h5>
+  <p>AnywhereUI is available at npm, if you have an existing application run the following command to download it to
+    your project.</p>
+  <pre class="language-markup"><code class="language-markup">
+npm install @anywhere-ui/core
+  </code></pre>
+  <p>And import it as ES Module or from local node_modules directory:</p>
+  <pre class="language-javascript"><code class="language-javascript">
+import { applyPolyfills, defineCustomElements } from &quot;@anywhere-ui/core/loader&quot;;  
+defineCustomElements();   
+    </code></pre>
+  <h6>Browser Support</h6>
+  <div class="doc-tablewrapper">
+    <table class="doc-table browsers">
+      <thead>
+        <tr>
+          <th>
+            <div class="any-d-flex any-ai-center">
+              <img src="assets/images/browsers/edge.png" alt="edge" style="width: 1.5rem;" class="any-mr-2">
+              IE / Edge
+            </div>
+          </th>
+          <th>
+            <div class="any-d-flex any-ai-center">
+              <img src="assets/images/browsers/firefox.png" alt="firefox" style="width: 1.5rem;" class="any-mr-2">
+              Firefox
+            </div>
+          </th>
+          <th>
+            <div class="any-d-flex any-ai-center">
+              <img src="assets/images/browsers/chrome.png" alt="chrome" style="width: 1.5rem;" class="any-mr-2">
+              Chrome
+            </div>
+          </th>
+          <th>
+            <div class="any-d-flex any-ai-center">
+              <img src="assets/images/browsers/safari.png" alt="safari" style="width: 1.5rem;" class="any-mr-2">
+              Safari
+            </div>
+          </th>
+          <th>
+            <div class="any-d-flex any-ai-center">
+              <img src="assets/images/browsers/opera.png" alt="opera" style="width: 1.5rem;" class="any-mr-2">
+              Opera
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IE11, Edge</td>
+          <td>Last 2 versions</td>
+          <td>Last 2 versions</td>
+          <td>Last 2 versions</td>
+          <td>Last 2 versions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

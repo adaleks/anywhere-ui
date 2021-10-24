@@ -4,7 +4,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="AnywhereUI is a rich set of open source Web Components.">
   <title>Anywhere UI</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/favicon//ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" class="flags-style" href="/assets/css/flags.css">
   <link rel="stylesheet" href="/build/anywhere-ui.css">
@@ -19,6 +38,9 @@
 <body>
   <div class="layout-wrapper">
     <div class="layout-topbar">
+      <a class="menu-button">
+        <i class="iconify" data-icon="fa-solid:bars"></i>
+      </a>
       <ul class="topbar-menu ">
         <li class=""><a class="" href="/#/setup">Get Started</a></li>
         <li class="topbar-submenu"><a tabindex="0" class="">Themes</a>
@@ -40,28 +62,33 @@
         </div>
         <div class="menu-category">Form</div>
         <div class="menu-items">
-          <a href="/checkbox" class="nav__link" data-link>Checkbox</a>
-          <a href="/dropdown" class="nav__link" data-link>Dropdown</a>
-          <a href="/input-text" class="nav__link" data-link>InputText</a>
-          <a href="/listbox" class="nav__link" data-link>Listbox</a>
+          <a href="/#/checkbox" class="nav__link" data-link>Checkbox</a>
+          <a href="/#/dropdown" class="nav__link" data-link>Dropdown</a>
+          <a href="/#/input-text" class="nav__link" data-link>InputText</a>
+          <a href="/#/listbox" class="nav__link" data-link>Listbox</a>
         </div>
         <div class="menu-category">Data</div>
         <div class="menu-items">
-          <a href="/virtual-scroller" class="nav__link" data-link>Virtual Scroller</a>
+          <a href="/#/virtual-scroller" class="nav__link" data-link>Virtual Scroller</a>
         </div>
       </div>
     </div>
+    <div class="layout-mask"></div>
     <div class="layout-content">
       <div id="app"></div>
       <script type="module" src="/app/App.js"></script>
     </div>
     <div class="layout-footer">
       <div class="layout-footer-left">AnywhereUI v0.1.1 by <b>AdaleksTech</b></div>
-      <div class="layout-footer-right"></div>
+      <div class="layout-footer-right">
+        <a href="https://github.com/adaleks/anywhere-ui">
+          <span class="iconify" data-icon="logos:github-icon" data-width="21" data-height="21"></span>
+        </a>
+      </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js">
   </script>
 </body>
 

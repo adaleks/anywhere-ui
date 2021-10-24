@@ -3,14 +3,14 @@
   <a href="https://www.npmjs.com/package/@anywhere-ui/core" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/@anywhere-ui/core.svg">
   </a>
-  <a href="https://github.com/gjovanovicst/anywhere-ui#readme" target="_blank">
+  <a href="https://github.com/adaleks/anywhere-ui#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/gjovanovicst/anywhere-ui/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/adaleks/anywhere-ui/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/gjovanovicst/anywhere-ui/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/gjovanovicst/@anywhere-ui/core" />
+  <a href="https://github.com/adaleks/anywhere-ui/blob/main/LICENSE" target="_blank">
+    <img alt="NPM" src="https://img.shields.io/npm/l/@anywhere-ui/core">
   </a>
 </p>
 
@@ -40,9 +40,9 @@ Integrating a anywhere-ui component to a project without a JavaScript framework 
 ```html
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/@anywhere-ui/core/dist/anywhere-ui.js"></script>
+    <script src="https://unpkg.com/@anywhere-ui/core@latest/dist/anywhere-ui/anywhere-ui.js"></script>
     <link
-      href="https://cdn.jsdelivr.net/npm/@anywhere-ui/core/dist/anywhere-ui/anywhere-ui.css"
+      href="https://unpkg.com/@anywhere-ui/core@latest/dist/anywhere-ui/anywhere-ui.css"
       rel="stylesheet"
     />
   </head>
@@ -58,11 +58,11 @@ Alternatively, if you wanted to take advantage of ES Modules, you could include 
 <html>
   <head>
     <script type="module">
-      import { defineCustomElements } from "https://cdn.jsdelivr.net/npm/@anywhere-ui/core/loader/index.es2017.mjs";
+      import { defineCustomElements } from "https://unpkg.com/@anywhere-ui/core@latest/loader";
       defineCustomElements();
     </script>
     <link
-      href="https://cdn.jsdelivr.net/npm/@anywhere-ui/core/dist/anywhere-ui/anywhere-ui.css"
+      href="https://unpkg.com/@anywhere-ui/core@latest/dist/anywhere-ui/anywhere-ui.css"
       rel="stylesheet"
     />
   </head>
@@ -97,5 +97,5 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [Goran Jovanovic](https://github.com/gjovanovicst).<br />
-This project is [MIT](https://github.com/gjovanovicst/anywhere-ui/blob/master/LICENSE) licensed.
+Copyright © 2021 [Adaleks Technology](https://github.com/adaleks).<br />
+This project is [MIT](https://github.com/adaleks/anywhere-ui/blob/main/LICENSE) licensed.
