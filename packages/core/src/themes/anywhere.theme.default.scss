@@ -170,7 +170,7 @@
     --focusOutlineColor: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 35%));
     --focusOutline: 0 none;
     --focusOutlineOffset: 0;
-    --focusShadow: 0 0 0 0.2em var(--focusOutlineColor);
+    --focusShadow: 0 0 0 0.2rem var(--focusOutlineColor);
 
 
     //input field (e.g. inputtext, spinner, inputmask)
@@ -246,4 +246,48 @@
     --checkboxActiveHoverBg: var(--primaryDarkColor);
     --checkboxIconActiveHoverColor: var(--primaryTextColor);
     --checkboxActiveHoverBorderColor: var(--primaryDarkColor);
+
+    //panels: tabview
+    --panelHeaderBorderColor: #dee2e6;
+    --panelHeaderBorder: 1px solid #dee2e6;
+    --panelHeaderBg: #f8f9fa;
+    --panelHeaderTextColor: var(--textColor);
+    --panelHeaderFontWeight: 600;
+    --panelHeaderPadding: 1rem;
+    --panelToggleableHeaderPadding: .5rem 1rem;
+    --panelHeaderHoverBg: #e9ecef;
+    --panelHeaderHoverBorderColor: #dee2e6;
+    --panelHeaderTextHoverColor: #495057;
+    --panelContentBorderColor: #dee2;
+    --panelContentBorder: 1px solid #dee2e6;
+    --panelContentBg: #ffffff;
+    --panelContentTextColor: var(--textColor);
+    --panelContentPadding: 1rem;
+    --panelFooterBorder: 1px solid #dee2e6;
+    --panelFooterBg: #ffffff;
+    --panelFooterTextColor: var(--textColor);
+    --panelFooterPadding: 0.5rem 1rem;
+
+    --tabviewNavBorder: 1px solid #dee2e6;
+    --tabviewNavBorderWidth: 0 0 2px 0;
+    --tabviewNavBg: #ffffff;
+    --tabviewHeaderSpacing: 0;
+    --tabviewHeaderBorder: solid #dee2e6;
+    --tabviewHeaderBorderWidth: 0 0 2px 0;
+    --tabviewHeaderBorderColor: transparent transparent #dee2e6 transparent;
+    --tabviewHeaderBg: #ffffff;
+    --tabviewHeaderTextColor: var(--textSecondaryColor);
+    --tabviewHeaderFontWeight: var(--panelHeaderFontWeight);
+    --tabviewHeaderPadding: var(--panelHeaderPadding);
+    --tabviewHeaderMargin: 0 0 -2px 0;
+    --tabviewHeaderHoverBg: #ffffff;
+    --tabviewHeaderHoverBorderColor: #9ba2aa;
+    --tabviewHeaderTextHoverColor: var(--textSecondaryColor);
+    --tabviewHeaderActiveBg: #ffffff;
+    --tabviewHeaderActiveBorderColor: var(--primaryColor);
+    --tabviewHeaderTextActiveColor: var(--primaryColor);
+    --tabviewContentBorder: 0 none;
+    --tabviewContentBg: var(--panelContentBg);
+    --tabviewContentTextColor: var(--panelContentTextColor);
+    --tabviewContentPadding: var(--panelContentPadding);
 }

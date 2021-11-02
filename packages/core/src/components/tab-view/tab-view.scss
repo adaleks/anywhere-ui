@@ -1,0 +1,166 @@
+@import "../../themes/anywhere.globals.scss";
+
+:host {
+  display: block;
+
+  .any-tabview-nav-container {
+    position: relative;
+  }
+
+  .any-tabview-scrollable .any-tabview-nav-container {
+    overflow: hidden;
+  }
+
+  .any-tabview-nav-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior: contain auto;
+  }
+
+  .any-tabview-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    flex: 1 1 auto;
+  }
+
+  .any-tabview-nav-link {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .any-tabview-ink-bar {
+    display: none;
+    z-index: 1;
+  }
+
+  .any-tabview-nav-link:focus {
+    z-index: 1;
+  }
+
+  .any-tabview-title {
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .any-tabview-nav-btn {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .any-tabview-nav-prev {
+    left: 0;
+  }
+
+  .any-tabview-nav-next {
+    right: 0;
+  }
+
+  .any-tabview-nav-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .any-tabview-close {
+    z-index: 1;
+  }
+
+  .any-tabview {
+    .any-tabview-nav {
+      background: var(--tabviewNavBg);
+      border: var(--tabviewNavBorder);
+      border-width: var(--tabviewNavBorderWidth);
+
+      li {
+        margin-right: var(--tabviewHeaderSpacing);
+
+        .any-tabview-nav-link {
+          border: var(--tabviewHeaderBorder);
+          border-width: var(--tabviewHeaderBorderWidth);
+          border-color: var(--tabviewHeaderBorderColor);
+          background: var(--tabviewHeaderBg);
+          color: var(--tabviewHeaderTextColor);
+          padding: var(--tabviewHeaderPadding);
+          font-weight: var(--tabviewHeaderFontWeight);
+          border-top-right-radius: var(--borderRadius);
+          border-top-left-radius: var(--borderRadius);
+          transition: box-shadow var(--transitionDuration);
+          margin: var(--tabviewHeaderMargin);
+
+          &:not(.any-disabled) {
+            &:focus {
+              outline: var(--focusOutline);
+              outline-offset: var(--focusOutlineOffset);
+              box-shadow: inset var(--focusShadow);
+            }
+          }
+        }
+
+        &:not(.any-highlight):not(.any-disabled):hover {
+          .any-tabview-nav-link {
+            background: var(--tabviewHeaderHoverBg);
+            border-color: var(--tabviewHeaderHoverBorderColor);
+            color: var(--tabviewHeaderTextHoverColor);
+          }
+        }
+
+        &.any-highlight {
+          .any-tabview-nav-link {
+            background: var(--tabviewHeaderActiveBg);
+            border-color: var(--tabviewHeaderActiveBorderColor);
+            color: var(--tabviewHeaderTextActiveColor);
+          }
+        }
+      }
+    }
+
+    .any-tabview-left-icon {
+      margin-right: 0.5rem;
+    }
+
+    .any-tabview-right-icon {
+      margin-left: 0.5rem;
+    }
+
+    .any-tabview-close {
+      margin-left: 0.5rem;
+    }
+
+    .any-tabview-nav-btn {
+      &.any-link {
+        background: #ffffff;
+        color: #2196F3;
+        width: 2.357rem;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        border-radius: 0;
+
+        &:focus {
+          outline: var(--focusOutline);
+          outline-offset: var(--focusOutlineOffset);
+          box-shadow: inset var(--focusShadow);
+        }
+      }
+    }
+
+    .any-tabview-panels {
+      background: var(--tabviewContentBg);
+      padding: var(--tabviewContentPadding);
+      border: var(--tabviewContentBorder);
+      color: var(--tabviewContentTextColor);
+      border-bottom-right-radius: var(--borderRadius);
+      border-bottom-left-radius: var(--borderRadius);
+    }
+  }
+}

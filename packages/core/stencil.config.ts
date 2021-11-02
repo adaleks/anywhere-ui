@@ -69,6 +69,7 @@ export const config: Config = {
     { components: ["any-dropdown", "any-listbox", "any-input-text"] },
     { components: ["any-virtual-scroller"] },
     { components: ["any-checkbox"] },
+    { components: ["any-tab-view", "any-tab-panel"] },
   ],
   plugins: [
     sass({

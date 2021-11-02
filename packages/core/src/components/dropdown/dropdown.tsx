@@ -502,22 +502,6 @@ export class AnyDropdown {
           >
             <span class="any-dropdown-trigger-icon"></span>
           </div>
-          {/* <div
-            class="any-widget-content any-widget any-corner-all any-dropdown-panel any-dropdown-panel-clone"
-            style={{ visibility: "hidden" }}
-          >
-            <any-listbox
-              options={this.options}
-              value={this.value}
-              optionLabel={this.optionLabel}
-              optionValue={this.optionValue}
-              virtualScroll={this.virtualScroll}
-            >
-              {this.hasItemSlot && (
-                <div slot="item" innerHTML={this.getContent("item")}></div>
-              )}
-            </any-listbox>
-          </div> */}
           {this.isOpened && (
             <div
               class="any-widget-content any-widget any-corner-all any-dropdown-panel any-shadow"

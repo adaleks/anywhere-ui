@@ -237,6 +237,34 @@ export namespace Components {
          */
         "virtualScroll": boolean;
     }
+    interface AnyTabPanel {
+        /**
+          * When true, tab cannot be activated.
+         */
+        "disabled": boolean;
+        /**
+          * Title of the tabPanel.
+         */
+        "header": string;
+        /**
+          * Defines if tab is active.
+         */
+        "selected": boolean;
+    }
+    interface AnyTabView {
+        /**
+          * Index of the active tab to change selected tab programmatically.
+         */
+        "activeIndex": number;
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle": any;
+        /**
+          * Style class of the component.
+         */
+        "styleClass": string;
+    }
     interface AnyVirtualScroller {
         /**
           * Inline style of the component
@@ -321,6 +349,18 @@ declare global {
         prototype: HTMLAnyListboxElement;
         new (): HTMLAnyListboxElement;
     };
+    interface HTMLAnyTabPanelElement extends Components.AnyTabPanel, HTMLStencilElement {
+    }
+    var HTMLAnyTabPanelElement: {
+        prototype: HTMLAnyTabPanelElement;
+        new (): HTMLAnyTabPanelElement;
+    };
+    interface HTMLAnyTabViewElement extends Components.AnyTabView, HTMLStencilElement {
+    }
+    var HTMLAnyTabViewElement: {
+        prototype: HTMLAnyTabViewElement;
+        new (): HTMLAnyTabViewElement;
+    };
     interface HTMLAnyVirtualScrollerElement extends Components.AnyVirtualScroller, HTMLStencilElement {
     }
     var HTMLAnyVirtualScrollerElement: {
@@ -332,6 +372,8 @@ declare global {
         "any-dropdown": HTMLAnyDropdownElement;
         "any-input-text": HTMLAnyInputTextElement;
         "any-listbox": HTMLAnyListboxElement;
+        "any-tab-panel": HTMLAnyTabPanelElement;
+        "any-tab-view": HTMLAnyTabViewElement;
         "any-virtual-scroller": HTMLAnyVirtualScrollerElement;
     }
 }
@@ -616,6 +658,34 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    interface AnyTabPanel {
+        /**
+          * When true, tab cannot be activated.
+         */
+        "disabled"?: boolean;
+        /**
+          * Title of the tabPanel.
+         */
+        "header"?: string;
+        /**
+          * Defines if tab is active.
+         */
+        "selected"?: boolean;
+    }
+    interface AnyTabView {
+        /**
+          * Index of the active tab to change selected tab programmatically.
+         */
+        "activeIndex"?: number;
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle"?: any;
+        /**
+          * Style class of the component.
+         */
+        "styleClass"?: string;
+    }
     interface AnyVirtualScroller {
         /**
           * Inline style of the component
@@ -699,6 +769,8 @@ declare namespace LocalJSX {
         "any-dropdown": AnyDropdown;
         "any-input-text": AnyInputText;
         "any-listbox": AnyListbox;
+        "any-tab-panel": AnyTabPanel;
+        "any-tab-view": AnyTabView;
         "any-virtual-scroller": AnyVirtualScroller;
     }
 }
@@ -710,6 +782,8 @@ declare module "@stencil/core" {
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
+            "any-tab-panel": LocalJSX.AnyTabPanel & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
+            "any-tab-view": LocalJSX.AnyTabView & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;
             "any-virtual-scroller": LocalJSX.AnyVirtualScroller & JSXBase.HTMLAttributes<HTMLAnyVirtualScrollerElement>;
         }
     }
