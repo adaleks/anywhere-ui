@@ -67,7 +67,8 @@ remove_prefix() {
             mv src/components/$real_name/$name.tsx src/components/$real_name/$real_name.tsx
             mv src/components/$real_name/test/$name.e2e.ts src/components/$real_name/test/$real_name.e2e.ts
             mv src/components/$real_name/test/$name.spec.tsx src/components/$real_name/test/$real_name.spec.tsx
-            sed -i "s/tag: any-'$name'/tag: '$name'/" src/components/$real_name/$real_name.tsx
+            sed -i "s/tag: 'any-$real_name'/tag: '$real_name'/" src/components/$real_name/$real_name.tsx
+            sed -i "s/styleUrl: 'any-$real_name/styleUrl: '$real_name/" src/components/$real_name/$real_name.tsx
             sed -i "s/any-$real_name/$real_name/" src/components/$real_name/test/$real_name.spec.tsx
             name=$real_name
         fi
