@@ -705,4 +705,46 @@ any-button::part(any-button) {
   border-bottom-left-radius: 0;
 }
 
+@media screen and (max-width: 960px) {
+  any-button::part(any-button) {
+    margin-bottom: 0.5rem;
+  }
+
+  .responsive any-button {
+    width: 100%;
+  }
+  .responsive any-button::part(any-button) {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .responsive any-button::part(any-button) .any-button-content {
+    flex: 1 1 auto;
+  }
+  .responsive:not(.any-button-icon-only)::part(any-button) {
+    display: flex;
+    width: 100%;
+  }
+  .responsive .any-buttonset {
+    display: block;
+  }
+  .responsive .any-buttonset any-button::part(any-button) {
+    margin-bottom: 0;
+  }
+  .responsive .any-buttonset any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
+    border-radius: 0;
+  }
+  .responsive .any-buttonset any-button:first-of-type::part(any-button) {
+    border-top-right-radius: var(--borderRadius);
+    border-top-left-radius: var(--borderRadius);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .responsive .any-buttonset any-button:last-of-type::part(any-button) {
+    border-bottom-right-radius: var(--borderRadius);
+    border-bottom-left-radius: var(--borderRadius);
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
 /*# sourceMappingURL=app.css.map */

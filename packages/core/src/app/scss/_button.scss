@@ -37,3 +37,61 @@ any-button::part(any-button) {
 
     }
 }
+
+@media screen and (max-width: 960px) {
+    any-button {
+        &::part(any-button) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    .responsive {
+        any-button {
+            width: 100%;
+
+            &::part(any-button) {
+                width: 100%;
+                margin-bottom: .5rem;
+
+                .any-button-content {
+                    flex: 1 1 auto;
+                }
+            }
+
+        }
+
+        &:not(.any-button-icon-only)::part(any-button) {
+            display: flex;
+            width: 100%;
+        }
+
+        .any-buttonset {
+            display: block;
+
+            any-button {
+                &::part(any-button) {
+                    margin-bottom: 0;
+                }
+
+                &:not(:first-of-type):not(:last-of-type)::part(any-button) {
+                    border-radius: 0;
+                }
+
+                &:first-of-type::part(any-button) {
+                    border-top-right-radius: var(--borderRadius);
+                    border-top-left-radius: var(--borderRadius);
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+
+                &:last-of-type::part(any-button) {
+                    border-bottom-right-radius: var(--borderRadius);
+                    border-bottom-left-radius: var(--borderRadius);
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0;
+                }
+            }
+        }
+    }
+
+}

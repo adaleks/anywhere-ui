@@ -190,7 +190,10 @@ export class AnyButton {
             onFocus={(e) => this.aOnFocus.emit(e)}
           >
             {this.hasContentSlot && (
-              <span innerHTML={this.getContent("content")}></span>
+              <span
+                class="any-button-content"
+                innerHTML={this.getContent("content")}
+              ></span>
             )}
             {(this.icon || (this.loading && !this.hasContentSlot)) && (
               <span

@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/angular",
-  "version": "0.2.0+1",
+  "version": "0.2.0+2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -42,5 +42,5 @@
     "tslint": "~6.1.0",
     "typescript": "~4.2.4"
   },
-  "buildnum": "1"
+  "buildnum": "2"
 }
