@@ -95,4 +95,21 @@
     display: block;
     width: 100%;
   }
+
+  .any-input-icon-left>.any-inputtext {
+    padding-left: 2rem;
+  }
+
+  .any-input-icon-right>.any-inputtext {
+    padding-right: 2rem;
+  }
+
+  .any-input-icon-left>i:first-of-type {
+    left: 0.5rem;
+  }
+
+  .any-input-icon-right>i:last-of-type {
+    right: 0.5rem;
+  }
+
 }

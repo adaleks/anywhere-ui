@@ -1,10 +1,10 @@
 @import "../../themes/anywhere.globals.scss";
 
-
 :host {
   display: block;
   display: flex;
   align-items: center;
+  // font-family: var(--fontFamily);
 
   .any-checkbox {
     display: inline-flex;

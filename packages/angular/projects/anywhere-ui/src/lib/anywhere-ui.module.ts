@@ -13,6 +13,9 @@ import {
   AnyVirtualScroller,
   AnyCheckbox,
   AnyInputText,
+  AnyButton,
+  AnyTabView,
+  AnyTabPanel,
 } from './directives/proxies';
 
 defineCustomElements(window);
@@ -24,6 +27,9 @@ const DECLARATIONS = [
   AnyVirtualScroller,
   AnyCheckbox,
   AnyInputText,
+  AnyButton,
+  AnyTabView,
+  AnyTabPanel,
 
   // Value Accessors
   BooleanValueAccessor,

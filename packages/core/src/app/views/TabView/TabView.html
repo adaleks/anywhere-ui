@@ -5,10 +5,8 @@
   </div>
   <app-demoactions>
     <div class="app-demoactions any-d-flex any-ai-end any-jc-end any-mt-3">
-      <a target="_blank" href="https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/tab-view"
-        class="any-button-icon-only">
-        <span class="iconify" data-icon="logos:github-icon" data-width="19" data-height="19"></span>
-      </a>
+      <any-button id="view_on_github" icon="logos:github-icon"
+        style-class="any-button-rounded any-button-text any-button-lg"></any-button>
     </div>
   </app-demoactions>
 </div>
@@ -43,9 +41,9 @@
   <div class="full-card">
     <h5>Programmatic</h5>
     <div style="padding: .5em 0 1em 0">
-      <button data-tab-index="0" class="button-text">Activate 1rd</button>
-      <button data-tab-index="1" class="button-text">Activate 2rd</button>
-      <button data-tab-index="2" class="button-text">Activate 3rd</button>
+      <any-button id="activate_button_1" label="Activate 1rd" style-class="any-button-text"></any-button>
+      <any-button id="activate_button_2" label="Activate 2rd" style-class="any-button-text"></any-button>
+      <any-button id="activate_button_3" label="Activate 3rd" style-class="any-button-text"></any-button>
     </div>
     <any-tab-view id="tv2">
       <any-tab-panel header="Header 1">

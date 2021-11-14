@@ -116,42 +116,46 @@ export class TabView {
   render() {
     return (
       <Host>
-        <div
-          class={
-            "any-tabview any-component" +
-            (this.styleClass ? " " + this.styleClass : "")
-          }
-          style={this.anyStyle}
-        >
-          <div class="any-tabview-nav-container">
-            <div class="any-tabview-nav-content">
-              <ul class="any-tabview-nav" role="tablist">
-                {this.tabs.map((tab: HTMLAnyTabPanelElement, index: number) => (
-                  <li
-                    role="presentation"
-                    class={
-                      (tab.selected ? "any-highlight" : "") +
-                      (tab.disabled ? " any-disabled" : "")
-                    }
-                  >
-                    <a
-                      role="tab"
-                      class="any-tabview-nav-link"
-                      onClick={(e: Event) => this.open(e, tab, index)}
-                      onKeyDown={(e: KeyboardEvent) => {
-                        if (e.key === "Enter") this.open(e, tab, index);
-                      }}
-                      tabindex={tab.disabled ? null : 0}
-                    >
-                      <span class="any-tabview-title">{tab.header}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+        <div class="any-element">
+          <div
+            class={
+              "any-tabview any-component" +
+              (this.styleClass ? " " + this.styleClass : "")
+            }
+            style={this.anyStyle}
+          >
+            <div class="any-tabview-nav-container">
+              <div class="any-tabview-nav-content">
+                <ul class="any-tabview-nav" role="tablist">
+                  {this.tabs.map(
+                    (tab: HTMLAnyTabPanelElement, index: number) => (
+                      <li
+                        role="presentation"
+                        class={
+                          (tab.selected ? "any-highlight" : "") +
+                          (tab.disabled ? " any-disabled" : "")
+                        }
+                      >
+                        <a
+                          role="tab"
+                          class="any-tabview-nav-link"
+                          onClick={(e: Event) => this.open(e, tab, index)}
+                          onKeyDown={(e: KeyboardEvent) => {
+                            if (e.key === "Enter") this.open(e, tab, index);
+                          }}
+                          tabindex={tab.disabled ? null : 0}
+                        >
+                          <span class="any-tabview-title">{tab.header}</span>
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="any-tabview-panels">
-            <slot></slot>
+            <div class="any-tabview-panels">
+              <slot></slot>
+            </div>
           </div>
         </div>
       </Host>

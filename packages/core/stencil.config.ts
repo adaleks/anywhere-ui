@@ -33,12 +33,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
-    elements: [
-      "any-dropdown",
-      "any-listbox",
-      "any-virtual-scroller",
-      "any-input-text",
-    ],
+    elements: ["any-dropdown", "any-listbox", "any-input-text"],
     event: "v-valueChange",
     externalEvent: "valueChange",
     targetAttr: "value",
@@ -70,6 +65,7 @@ export const config: Config = {
     { components: ["any-virtual-scroller"] },
     { components: ["any-checkbox"] },
     { components: ["any-tab-view", "any-tab-panel"] },
+    { components: ["any-button"] },
   ],
   plugins: [
     sass({

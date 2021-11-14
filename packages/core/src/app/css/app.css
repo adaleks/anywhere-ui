@@ -674,5 +674,35 @@ code[class*=language] {
     display: none;
   }
 }
+any-button::part(any-button) {
+  margin-right: 0.5rem;
+}
+
+.any-buttonset {
+  justify-content: space-between;
+  display: inline-flex;
+}
+.any-buttonset any-button::part(any-button) {
+  margin: 0;
+  margin-right: 0;
+}
+.any-buttonset any-button::part(any-button):focus {
+  position: relative;
+  z-index: 1;
+}
+.any-buttonset any-button:not(:last-child)::part(any-button) {
+  border-right: 0 none;
+}
+.any-buttonset any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
+  border-radius: 0;
+}
+.any-buttonset any-button:first-of-type::part(any-button) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.any-buttonset any-button:last-of-type::part(any-button) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -153,3 +153,21 @@ export const getRows = async (
   }
   return rows;
 };
+
+const rafAsync = () => {
+  return new Promise((resolve) => {
+    requestAnimationFrame(resolve); //faster than set time out
+  });
+};
+
+export const waitForElm = async (
+  element: ShadowRoot | HTMLElement,
+  selector: string
+) => {
+  let querySelector = null;
+  while (querySelector === null) {
+    await rafAsync();
+    querySelector = element.querySelector(selector);
+  }
+  return querySelector;
+};

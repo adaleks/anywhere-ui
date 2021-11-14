@@ -12,6 +12,8 @@
 
 /*GLOBAL*/
 .any-component,
+.any-element,
+.any-element *,
 .any-component * {
     font-family: var(--fontFamily);
     font-size: var(--fontSize);
@@ -22,6 +24,11 @@
     * {
         box-sizing: border-box;
     }
+}
+
+.any-element.any-element-flex {
+    display: inline-flex;
+    align-items: center;
 }
 
 .any-corner-all {
@@ -63,6 +70,11 @@
     font-size: var(--anyIconFontSize);
     display: flex;
     align-items: center;
+
+    // &:not(:empty) {
+    //     width: var(--anyIconFontSize);
+    //     height: var(--anyIconFontSize);
+    // }
 }
 
 .growDown-animation {
@@ -81,9 +93,9 @@
     animation: rotateYUp 125ms ease-in-out forwards;
 }
 
-.spin-animation {
-    animation: spin 2s linear infinite;
-}
+// .spin-animation {
+//     animation: spin 2s linear infinite;
+// }
 
 .direction-down {
     transform-origin: top center;
@@ -99,36 +111,6 @@
     margin-right: .5rem;
 }
 
-.any-input-icon-left {
-    >i {
-        &:first-of-type {
-            left: 0.75rem;
-            color: var(--inputIconColor);
-        }
-    }
-
-    >.any-inputtext {
-        padding-left: 2rem !important;
-
-    }
-
-}
-
-.any-input-icon-right {
-    >i {
-        &:last-of-type {
-            right: 0.75rem;
-            color: var(--inputIconColor);
-        }
-    }
-
-    >.any-inputtext {
-        padding-right: 2rem !important;
-
-    }
-
-}
-
 .any-hidden-accessible {
     border: 0;
     clip: rect(0 0 0 0);
@@ -138,4 +120,16 @@
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.any-spin {
+    animation: fa-spin 2s infinite linear;
+}
+
+.any-ml-2 {
+    margin-left: 0.5rem !important;
+}
+
+.any-text-bold {
+    font-weight: 700 !important;
 }

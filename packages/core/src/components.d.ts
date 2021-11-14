@@ -7,6 +7,56 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { SelectChangeEventDetail } from "./components/listbox/listbox-interface";
 export namespace Components {
+    interface AnyButton {
+        /**
+          * Inline style of the element.
+         */
+        "anyStyle"?: any;
+        /**
+          * When present, it specifies that the component should be disabled.
+         */
+        "disabled": boolean;
+        /**
+          * Name of the icon.
+         */
+        "icon": string;
+        /**
+          * Height of the icon
+         */
+        "iconHeight": number;
+        /**
+          * Position of the icon, valid values are "left" and "right".
+         */
+        "iconPos": "left" | "right" | "top" | "bottom";
+        /**
+          * Width of the icon
+         */
+        "iconWidth": number;
+        /**
+          * Text of the button.
+         */
+        "label": string;
+        /**
+          * Whether the button is in loading state.
+         */
+        "loading": boolean;
+        /**
+          * Icon to display in loading state.
+         */
+        "loadingIcon": string;
+        /**
+          * Style class of the icon element
+         */
+        "loadingIconStyleClass": string;
+        /**
+          * Style class of the element.
+         */
+        "styleClass": string;
+        /**
+          * Type of the button.
+         */
+        "type": "button" | "submit" | "reset";
+    }
     interface AnyCheckbox {
         /**
           * Inline style of the component.
@@ -325,6 +375,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAnyButtonElement extends Components.AnyButton, HTMLStencilElement {
+    }
+    var HTMLAnyButtonElement: {
+        prototype: HTMLAnyButtonElement;
+        new (): HTMLAnyButtonElement;
+    };
     interface HTMLAnyCheckboxElement extends Components.AnyCheckbox, HTMLStencilElement {
     }
     var HTMLAnyCheckboxElement: {
@@ -368,6 +424,7 @@ declare global {
         new (): HTMLAnyVirtualScrollerElement;
     };
     interface HTMLElementTagNameMap {
+        "any-button": HTMLAnyButtonElement;
         "any-checkbox": HTMLAnyCheckboxElement;
         "any-dropdown": HTMLAnyDropdownElement;
         "any-input-text": HTMLAnyInputTextElement;
@@ -378,6 +435,68 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AnyButton {
+        /**
+          * Inline style of the element.
+         */
+        "anyStyle"?: any;
+        /**
+          * When present, it specifies that the component should be disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Name of the icon.
+         */
+        "icon"?: string;
+        /**
+          * Height of the icon
+         */
+        "iconHeight"?: number;
+        /**
+          * Position of the icon, valid values are "left" and "right".
+         */
+        "iconPos"?: "left" | "right" | "top" | "bottom";
+        /**
+          * Width of the icon
+         */
+        "iconWidth"?: number;
+        /**
+          * Text of the button.
+         */
+        "label"?: string;
+        /**
+          * Whether the button is in loading state.
+         */
+        "loading"?: boolean;
+        /**
+          * Icon to display in loading state.
+         */
+        "loadingIcon"?: string;
+        /**
+          * Style class of the icon element
+         */
+        "loadingIconStyleClass"?: string;
+        /**
+          * Callback to execute when button loses focus.
+         */
+        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to execute when button is clicked.
+         */
+        "onAOnClick"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to execute when button is focused.
+         */
+        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        /**
+          * Style class of the element.
+         */
+        "styleClass"?: string;
+        /**
+          * Type of the button.
+         */
+        "type"?: "button" | "submit" | "reset";
+    }
     interface AnyCheckbox {
         /**
           * Inline style of the component.
@@ -765,6 +884,7 @@ declare namespace LocalJSX {
         "styleClass"?: string;
     }
     interface IntrinsicElements {
+        "any-button": AnyButton;
         "any-checkbox": AnyCheckbox;
         "any-dropdown": AnyDropdown;
         "any-input-text": AnyInputText;
@@ -778,6 +898,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;

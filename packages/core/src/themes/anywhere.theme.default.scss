@@ -133,6 +133,7 @@
 :root {
     //main color scheme
     --primaryColor: #8f00ff;
+    --primaryColorRGBValue: 143, 0, 255;
     --primaryDarkColor: #7200cc;
     --primaryDarkerColor: #550099;
     --primaryTextColor: #ffffff;
@@ -144,10 +145,8 @@
 
 
     //Global
-    --fontFamily: "Open Sans",
-        "Helvetica Neue",
-        sans-serif;
-    --fontSize: 14px;
+    --fontFamily: "Open Sans", "Helvetica Neue", sans-serif;
+    --fontSize: 1rem;
     --fontWeight: normal;
     --textColor: #495057;
     --textSecondaryColor: #848484;
@@ -156,6 +155,7 @@
     --anyIconFontSize: 1rem;
     --disabledOpacity: .6;
     --errorColor: #e4677e;
+    --formElementTransition: background-color var(--transitionDuration), color var(--transitionDuration), border-color var(--transitionDuration), box-shadow var(--transitionDuration);
 
     //anchors
     --linkColor: var(--primaryColor);
@@ -167,7 +167,7 @@
     --highlightColorText: var(--primaryTextColor);
 
     //focus
-    --focusOutlineColor: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 35%));
+    --focusOutlineColor: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 30%));
     --focusOutline: 0 none;
     --focusOutlineOffset: 0;
     --focusShadow: 0 0 0 0.2rem var(--focusOutlineColor);
@@ -200,7 +200,7 @@
     --inputListItemHighlightTextColor: var(--highlightColorText);
     --inputListItemBorder: 0 none;
     --inputListItemMargin: 0;
-    --inputListItemFocusShadow: inset 0 0 0 0.2em hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 35%));
+    --inputListItemFocusShadow: inset var(--focusShadow);
     --inputListItemTransition: background-color var(--transitionDuration),
         box-shadow var(--transitionDuration);
     --inputListItemDividerColor: #d8dae2;
@@ -290,4 +290,90 @@
     --tabviewContentBg: var(--panelContentBg);
     --tabviewContentTextColor: var(--panelContentTextColor);
     --tabviewContentPadding: var(--panelContentPadding);
+
+    // buttons
+    --outlinedButtonBorder: 1px solid;
+    --roundedButtonBorderRadius: 2rem;
+    --raisedButtonShadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    --textButtonHoverBgOpacity: .04;
+    --textButtonActiveBgOpacity: .16;
+    --plainButtonTextColor: #6c757d;
+    --plainButtonHoverBgColor: #e9ecef;
+    --plainButtonActiveBgColor: #dee2e6;
+    --buttonPadding: .5rem 1rem;
+    --buttonTextColor: var(--primaryTextColor);
+    --buttonBg: var(--primaryColor);
+    --buttonBorder: 1px solid var(--primaryColor);
+    --buttonHoverBg: var(--primaryDarkColor);
+    --buttonTextHoverColor: var(--primaryTextColor);
+    --buttonHoverBorderColor: var(--primaryDarkColor);
+    --buttonActiveBg: var(--primaryDarkerColor);
+    --buttonTextActiveColor: var(--primaryTextColor);
+    --buttonActiveBorderColor: var(--primaryDarkerColor);
+    --buttonIconOnlyWidth: 2.357rem;
+    --buttonIconOnlyPadding: .5rem 0;
+    --linkButtonColor: var(--primaryDarkerColor);
+    --linkButtonHoverColor: var(--primaryDarkerColor);
+    --linkButtonFocusShadow: 0 0 0 0.2rem var(--focusOutlineColor);
+    --linkButtonTextHoverDecoration: underline;
+    --secondaryButtonBg: #607D8B;
+    --secondaryButtonTextColor: #ffffff;
+    --secondaryButtonBorder: 1px solid #607D8B;
+    --secondaryButtonHoverBg: #546E7A;
+    --secondaryButtonTextHoverColor: #ffffff;
+    --secondaryButtonHoverBorderColor: #546E7A;
+    --secondaryButtonActiveBg: #455A64;
+    --secondaryButtonTextActiveColor: #ffffff;
+    --secondaryButtonActiveBorderColor: #455A64;
+    --secondaryButtonFocusShadow: 0 0 0 0.2rem hsl(200, 18%, calc(46% + 30%));
+    --successButtonBg: #4CAF50;
+    --successButtonTextColor: #ffffff;
+    --successButtonBorder: 1px solid #4CAF50;
+    --successButtonHoverBg: #43A047;
+    --successButtonTextHoverColor: #ffffff;
+    --successButtonHoverBorderColor: #43A047;
+    --successButtonActiveBg: #388E3C;
+    --successButtonTextActiveColor: #ffffff;
+    --successButtonActiveBorderColor: #388E3C;
+    --successButtonFocusShadow: 0 0 0 0.2rem hsl(122, 39%, calc(49% + 30%));
+    --infoButtonBg: #03A9F4;
+    --infoButtonTextColor: #ffffff;
+    --infoButtonBorder: 1px solid #03A9F4;
+    --infoButtonHoverBg: #039BE5;
+    --infoButtonTextHoverColor: #ffffff;
+    --infoButtonHoverBorderColor: #039BE5;
+    --infoButtonActiveBg: #0288D1;
+    --infoButtonTextActiveColor: #ffffff;
+    --infoButtonActiveBorderColor: #0288D1;
+    --infoButtonFocusShadow: 0 0 0 0.2rem hsl(199, 98%, calc(48% + 30%));
+    --warningButtonBg: #FFC107;
+    --warningButtonTextColor: var(--textColor);
+    --warningButtonBorder: 1px solid #FFC107;
+    --warningButtonHoverBg: #FFB300;
+    --warningButtonTextHoverColor: var(--textColor);
+    --warningButtonHoverBorderColor: #FFB300;
+    --warningButtonActiveBg: #FFA000;
+    --warningButtonTextActiveColor: var(--textColor);
+    --warningButtonActiveBorderColor: #FFA000;
+    --warningButtonFocusShadow: 0 0 0 0.2rem hsl(45, 100%, calc(51% + 30%));
+    --helpButtonBg: #9C27B0;
+    --helpButtonTextColor: #ffffff;
+    --helpButtonBorder: 1px solid #9C27B0;
+    --helpButtonHoverBg: #8E24AA;
+    --helpButtonTextHoverColor: #ffffff;
+    --helpButtonHoverBorderColor: #8E24AA;
+    --helpButtonActiveBg: #7B1FA2;
+    --helpButtonTextActiveColor: #ffffff;
+    --helpButtonActiveBorderColor: #7B1FA2;
+    --helpButtonFocusShadow: 0 0 0 0.2rem hsl(291, 64%, calc(42% + 30%));
+    --dangerButtonBg: #f44336;
+    --dangerButtonTextColor: #ffffff;
+    --dangerButtonBorder: 1px solid #f44336;
+    --dangerButtonHoverBg: #e53935;
+    --dangerButtonTextHoverColor: #ffffff;
+    --dangerButtonHoverBorderColor: #e53935;
+    --dangerButtonActiveBg: #d32f2f;
+    --dangerButtonTextActiveColor: #ffffff;
+    --dangerButtonActiveBorderColor: #d32f2f;
+    --dangerButtonFocusShadow: 0 0 0 0.2rem hsl(4, 90%, calc(58% + 30%));
 }

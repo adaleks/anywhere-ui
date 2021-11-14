@@ -182,69 +182,71 @@ export class AnyCheckbox {
 
     return (
       <Host>
-        <div
-          class={
-            "any-component any-checkbox" +
-            (checked ? " any-checkbox-checked" : "") +
-            (this.focused ? " any-checkbox-focused" : "") +
-            (disabled ? " any-checkbox-disabled" : "")
-          }
-          style={this.anyStyle}
-        >
-          <div class="any-hidden-accessible">
-            <input
-              type="checkbox"
-              id={this.inputId}
-              name={this.name}
-              checked={checked}
-              value={this.value}
-              aria-checked={`${checked}`}
-              onFocus={() => {
-                this.onFocus();
-              }}
-              onBlur={() => {
-                this.onBlur();
-              }}
-              onChange={(e) => {
-                this.handleChange(e);
-              }}
-            />
-            <slot name="label" />
-          </div>
+        <div class="any-element any-element-flex">
           <div
             class={
-              "any-checkbox-box" +
-              (checked ? " any-highlight" : "") +
-              (this.focused ? " any-focus" : "") +
-              (disabled ? " any-disabled" : "")
+              "any-checkbox any-component" +
+              (checked ? " any-checkbox-checked" : "") +
+              (this.focused ? " any-checkbox-focused" : "") +
+              (disabled ? " any-checkbox-disabled" : "")
             }
-            onClick={(e) => {
-              this.onClick(e, true);
-            }}
+            style={this.anyStyle}
           >
-            <span
-              class="any-checkbox-icon"
-              style={{ visibility: checked ? "visible" : "hidden" }}
-            ></span>
+            <div class="any-hidden-accessible">
+              <input
+                type="checkbox"
+                id={this.inputId}
+                name={this.name}
+                checked={checked}
+                value={this.value}
+                aria-checked={`${checked}`}
+                onFocus={() => {
+                  this.onFocus();
+                }}
+                onBlur={() => {
+                  this.onBlur();
+                }}
+                onChange={(e) => {
+                  this.handleChange(e);
+                }}
+              />
+              <slot name="label" />
+            </div>
+            <div
+              class={
+                "any-checkbox-box" +
+                (checked ? " any-highlight" : "") +
+                (this.focused ? " any-focus" : "") +
+                (disabled ? " any-disabled" : "")
+              }
+              onClick={(e) => {
+                this.onClick(e, true);
+              }}
+            >
+              <span
+                class="any-checkbox-icon iconify"
+                style={{ visibility: checked ? "visible" : "hidden" }}
+              ></span>
+            </div>
           </div>
+          {this.label && (
+            <label
+              onClick={(e) => {
+                this.onClick(e, true);
+              }}
+              htmlFor={this.inputId}
+              class={
+                "any-checkbox-label" +
+                (this.labelStyleClass ? " " + this.labelStyleClass : "") +
+                (checked ? " any-checkbox-label-active" : "") +
+                (this.focused ? " any-checkbox-label-focus" : "") +
+                (disabled ? " any-disabled" : "")
+              }
+            >
+              {this.label}
+            </label>
+          )}
         </div>
-        {this.label && (
-          <label
-            onClick={(e) => {
-              this.onClick(e, true);
-            }}
-            htmlFor={this.inputId}
-            class={
-              "any-checkbox-label" +
-              (this.labelStyleClass ? " " + this.labelStyleClass : "") +
-              (checked ? " any-checkbox-label-active" : "") +
-              (this.focused ? " any-checkbox-label-focus" : "") +
-              (disabled ? " any-disabled" : "")
-            }
-          >
-            {this.label}
-          </label>
-        )}
       </Host>
     );
   }
