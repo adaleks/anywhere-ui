@@ -18,10 +18,8 @@
         user-select: none;
     }
 
-    // .any-widget {
     .any-listbox {
         display: block;
-        // min-width: 100%;
         padding: 0;
         border: var(--inputListBorder);
         background-color: var(--inputListBg);
@@ -62,6 +60,4 @@
 
 
     }
-
-    // }
 }

@@ -7,6 +7,10 @@ export default class extends AbstractView {
   }
 
   executeScript() {
+    this.viewOnGithubBtn = document.querySelector("#view_on_github");
+    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
+      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/input-text', '_blank');
+    });
     this.it1 = document.querySelector("#it1");
     this.it2 = document.querySelector("#it2");
     this.it3 = document.querySelector("#it3");
@@ -46,7 +50,7 @@ export default class extends AbstractView {
     this.it4.placeholder = "Search";
 
     this.it5.inputWrapperClass = "any-input-icon-right";
-    this.it5.rightIconClass = "spin-animation";
+    this.it5.rightIconClass = "any-spin";
   }
 
   async getHtml() {

@@ -260,78 +260,80 @@ export class AnyListbox {
 
     return (
       <Host>
-        <div style={{ display: "none" }}>
-          <slot name="item" />
-        </div>
-        <div
-          class={
-            "any-component any-listbox any-corner-all" +
-            (this.disabled ? " any-disabled" : "")
-          }
-          style={this.anyStyle}
-        >
+        <div class="any-element">
+          <div style={{ display: "none" }}>
+            <slot name="item" />
+          </div>
           <div
-            id="scrollArea"
-            class="any-listbox-list-wrapper"
-            style={{
-              ...{
-                "max-height": this.scrollerHeight
-                  ? this.scrollerHeight
-                  : "auto",
-              },
-              ...this.listStyle,
-            }}
+            class={
+              "any-component any-listbox any-corner-all" +
+              (this.disabled ? " any-disabled" : "")
+            }
+            style={this.anyStyle}
           >
-            {!this.virtualScroll ? (
-              <ul class="any-listbox-list" part="items">
-                {this.options.map((option) => (
-                  <li
-                    class="any-listbox-item"
-                    tabindex={this.hasTabIndex ? "0" : null}
-                    aria-selected="false"
-                    aria-label={
-                      get(this.optionLabel.split("."), option)
-                        ? get(this.optionLabel.split("."), option)
-                        : option.label
-                    }
-                    onClick={(e) => this.itemClick(e, option)}
-                  >
-                    {!this.hasItemSlot ? (
-                      <div>
-                        {get(this.optionLabel.split("."), option)
+            <div
+              id="scrollArea"
+              class="any-listbox-list-wrapper"
+              style={{
+                ...{
+                  "max-height": this.scrollerHeight
+                    ? this.scrollerHeight
+                    : "auto",
+                },
+                ...this.listStyle,
+              }}
+            >
+              {!this.virtualScroll ? (
+                <ul class="any-listbox-list" part="items">
+                  {this.options.map((option) => (
+                    <li
+                      class="any-listbox-item"
+                      tabindex={this.hasTabIndex ? "0" : null}
+                      aria-selected="false"
+                      aria-label={
+                        get(this.optionLabel.split("."), option)
                           ? get(this.optionLabel.split("."), option)
-                          : option.label}
-                      </div>
-                    ) : (
-                      <div innerHTML={this.getContent("item", option)}></div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <any-virtual-scroller
-                items={this.options}
-                scrollerHeight={this.scrollerHeight}
-                contentElemClass="any-listbox-list"
-                itemElemClass="any-listbox-item"
-                contentElemTag="ul"
-                itemTag="li"
-                onClusterChanged={() => this.onClusterChanged()}
-                onAOnItemClick={(e) =>
-                  this.itemClick(
-                    e.detail.originalEvent,
-                    this.options[e.detail.index]
-                  )
-                }
-              >
-                {this.hasItemSlot ? (
-                  <div slot="item" innerHTML={this.getContent("item")}></div>
-                ) : (
-                  <div slot="item">#=item.{this.optionLabel}#</div>
-                )}
-                {/* <div slot="item">#=item.{this.optionLabel}#</div> */}
-              </any-virtual-scroller>
-            )}
+                          : option.label
+                      }
+                      onClick={(e) => this.itemClick(e, option)}
+                    >
+                      {!this.hasItemSlot ? (
+                        <div>
+                          {get(this.optionLabel.split("."), option)
+                            ? get(this.optionLabel.split("."), option)
+                            : option.label}
+                        </div>
+                      ) : (
+                        <div innerHTML={this.getContent("item", option)}></div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <any-virtual-scroller
+                  items={this.options}
+                  scrollerHeight={this.scrollerHeight}
+                  contentElemClass="any-listbox-list"
+                  itemElemClass="any-listbox-item"
+                  contentElemTag="ul"
+                  itemTag="li"
+                  onClusterChanged={() => this.onClusterChanged()}
+                  onAOnItemClick={(e) =>
+                    this.itemClick(
+                      e.detail.originalEvent,
+                      this.options[e.detail.index]
+                    )
+                  }
+                >
+                  {this.hasItemSlot ? (
+                    <div slot="item" innerHTML={this.getContent("item")}></div>
+                  ) : (
+                    <div slot="item">#=item.{this.optionLabel}#</div>
+                  )}
+                  {/* <div slot="item">#=item.{this.optionLabel}#</div> */}
+                </any-virtual-scroller>
+              )}
+            </div>
           </div>
         </div>
       </Host>

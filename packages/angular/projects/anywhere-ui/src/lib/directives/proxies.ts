@@ -5,6 +5,33 @@ import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from '@anywhere-ui/core';
 
+import { AnyButton as IAnyButton } from '@anywhere-ui/core/dist/types/components/button/button';
+export declare interface AnyButton extends Components.AnyButton {}
+@ProxyCmp({
+  inputs: ['anyStyle', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type']
+})
+@Component({
+  selector: 'any-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['anyStyle', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type'],
+  outputs: ['aOnClick', 'aOnFocus', 'aOnBlur']
+})
+export class AnyButton {
+  /** Callback to execute when button is clicked. */
+  aOnClick!: IAnyButton['aOnClick'];
+  /** Callback to execute when button is focused. */
+  aOnFocus!: IAnyButton['aOnFocus'];
+  /** Callback to execute when button loses focus. */
+  aOnBlur!: IAnyButton['aOnBlur'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['aOnClick', 'aOnFocus', 'aOnBlur']);
+  }
+}
+
 import { AnyCheckbox as IAnyCheckbox } from '@anywhere-ui/core/dist/types/components/checkbox/checkbox';
 export declare interface AnyCheckbox extends Components.AnyCheckbox {}
 @ProxyCmp({
@@ -114,6 +141,44 @@ export class AnyListbox {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
+export declare interface AnyTabPanel extends Components.AnyTabPanel {}
+@ProxyCmp({
+  inputs: ['disabled', 'header', 'selected']
+})
+@Component({
+  selector: 'any-tab-panel',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'header', 'selected']
+})
+export class AnyTabPanel {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AnyTabView extends Components.AnyTabView {}
+@ProxyCmp({
+  inputs: ['activeIndex', 'anyStyle', 'styleClass']
+})
+@Component({
+  selector: 'any-tab-view',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['activeIndex', 'anyStyle', 'styleClass']
+})
+export class AnyTabView {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
   }
 }
 

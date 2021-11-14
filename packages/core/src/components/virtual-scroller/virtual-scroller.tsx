@@ -302,41 +302,43 @@ export class AnyVirtualScroller {
   render() {
     return (
       <Host>
-        <div style={{ display: "none" }}>
-          <slot name="item" />
-          <slot name="loadingItem" />
-        </div>
-        <div
-          class={
-            "any-component any-virtualscroller" +
-            (this.styleClass ? " " + this.styleClass : "")
-          }
-          style={this.anyStyle}
-        >
-          {this.hasHeaderSlot && (
-            <div class="any-virtualscroller-header">
-              <slot name="header" />
-            </div>
-          )}
-          <div
-            id={"any-virtualscroller-scroll-" + this.instanceUuid}
-            class="any-virtualscroller-scroll clusterize-scroll"
-            style={{ height: this.scrollerHeight }}
-          >
-            <this.contentElemTag
-              id={"any-virtualscroller-content-" + this.instanceUuid}
-              class={
-                "any-virtualscroller-content clusterize-content" +
-                this.contentElemClass
-                  ? " " + this.contentElemClass
-                  : ""
-              }
-            >
-              <this.itemTag class="clusterize-no-data"></this.itemTag>
-            </this.contentElemTag>
+        <div class="any-element">
+          <div style={{ display: "none" }}>
+            <slot name="item" />
+            <slot name="loadingItem" />
           </div>
-          <div class="any-virtualscroller-footer">
-            <slot name="footer" />
+          <div
+            class={
+              "any-component any-virtualscroller" +
+              (this.styleClass ? " " + this.styleClass : "")
+            }
+            style={this.anyStyle}
+          >
+            {this.hasHeaderSlot && (
+              <div class="any-virtualscroller-header">
+                <slot name="header" />
+              </div>
+            )}
+            <div
+              id={"any-virtualscroller-scroll-" + this.instanceUuid}
+              class="any-virtualscroller-scroll clusterize-scroll"
+              style={{ height: this.scrollerHeight }}
+            >
+              <this.contentElemTag
+                id={"any-virtualscroller-content-" + this.instanceUuid}
+                class={
+                  "any-virtualscroller-content clusterize-content" +
+                  this.contentElemClass
+                    ? " " + this.contentElemClass
+                    : ""
+                }
+              >
+                <this.itemTag class="clusterize-no-data"></this.itemTag>
+              </this.contentElemTag>
+            </div>
+            <div class="any-virtualscroller-footer">
+              <slot name="footer" />
+            </div>
           </div>
         </div>
       </Host>

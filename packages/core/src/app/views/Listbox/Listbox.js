@@ -11,6 +11,10 @@ export default class extends AbstractView {
   }
 
   executeScript() {
+    this.viewOnGithubBtn = document.querySelector("#view_on_github");
+    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
+      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/listbox', '_blank');
+    });
     let citiesFormated = this.cities.map((obj) => {
       if (obj.value.countryCode) {
         obj.value.countryCode = obj.value.countryCode.toLowerCase();

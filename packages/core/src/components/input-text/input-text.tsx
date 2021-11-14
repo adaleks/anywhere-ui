@@ -101,49 +101,53 @@ export class AnyInputText {
   render() {
     return (
       <Host>
-        <div
-          class={
-            this.floatLabel
-              ? " any-float-label " +
-                (this.inputWrapperClass ? this.inputWrapperClass : "")
-              : this.inputWrapperClass
-          }
-        >
-          {this.label && !this.floatLabel && (
-            <label htmlFor={this.inputId}>{this.label}</label>
-          )}
-          <i
+        <div class="any-element">
+          <div
             class={
-              this.leftIconClass ? this.leftIconClass + " iconify" : "iconify"
+              this.floatLabel
+                ? " any-float-label " +
+                  (this.inputWrapperClass ? this.inputWrapperClass : "")
+                : this.inputWrapperClass
             }
           >
-            <slot name="iconLeft" />
-          </i>
-          <input
-            id={this.inputId}
-            name={this.name}
-            disabled={this.disabled}
-            readonly={this.readonly}
-            placeholder={this.placeholder}
-            type="text"
-            class={
-              this.value
-                ? "any-component any-inputtext any-corner-all any-filled"
-                : "any-component any-inputtext any-corner-all"
-            }
-            value={this.value}
-            onInput={this.inputChanged.bind(this)}
-          />
-          <i
-            class={
-              this.rightIconClass ? this.rightIconClass + " iconify" : "iconify"
-            }
-          >
-            <slot name="iconRight" />
-          </i>
-          {this.label && this.floatLabel && (
-            <label htmlFor={this.inputId}>{this.label}</label>
-          )}
+            {this.label && !this.floatLabel && (
+              <label htmlFor={this.inputId}>{this.label}</label>
+            )}
+            <i
+              class={
+                this.leftIconClass ? this.leftIconClass + " iconify" : "iconify"
+              }
+            >
+              <slot name="iconLeft" />
+            </i>
+            <input
+              id={this.inputId}
+              name={this.name}
+              disabled={this.disabled}
+              readonly={this.readonly}
+              placeholder={this.placeholder}
+              type="text"
+              class={
+                this.value
+                  ? "any-component any-inputtext any-corner-all any-filled"
+                  : "any-component any-inputtext any-corner-all"
+              }
+              value={this.value}
+              onInput={this.inputChanged.bind(this)}
+            />
+            <i
+              class={
+                this.rightIconClass
+                  ? this.rightIconClass + " iconify"
+                  : "iconify"
+              }
+            >
+              <slot name="iconRight" />
+            </i>
+            {this.label && this.floatLabel && (
+              <label htmlFor={this.inputId}>{this.label}</label>
+            )}
+          </div>
         </div>
       </Host>
     );

@@ -34,6 +34,47 @@ change_css_into_scss() {
 
 }
 
+add_prefix() {
+    if [[ "$name" != *-* ]]; then
+        echo "Component has no '-' so add prefix 'any-'"
+        if [[ "$name" == *\/* ]] || [[ "$name" == *\\* ]]; then
+            comp_name="${name##*/}"
+            comp_prefix="${name%%/*}"
+            comp_name="any-"$comp_name
+            name=$comp_prefix"/"$comp_name
+            echo "$name"
+            echo "$comp_name"
+            echo "$comp_prefix"
+            echo "Deep level component without dash '-' is not supported right now"
+            exit
+        else
+            name="any-"$name
+            echo "$name"
+        fi
+    fi
+}
+
+remove_prefix() {
+    if [[ "$name" == *any-* ]]; then
+        WORDTOREMOVE="any-"
+        if [[ "$name" == *\/* ]] || [[ "$name" == *\\* ]]; then
+            echo "Deep level component without dash '-' is not supported right now"
+            exit
+        else
+            real_name=${name//$WORDTOREMOVE/}
+            mv src/components/$name src/components/$real_name
+            mv src/components/$real_name/$name.css src/components/$real_name/$real_name.css
+            mv src/components/$real_name/$name.tsx src/components/$real_name/$real_name.tsx
+            mv src/components/$real_name/test/$name.e2e.ts src/components/$real_name/test/$real_name.e2e.ts
+            mv src/components/$real_name/test/$name.spec.tsx src/components/$real_name/test/$real_name.spec.tsx
+            sed -i "s/tag: 'any-$real_name'/tag: '$real_name'/" src/components/$real_name/$real_name.tsx
+            sed -i "s/styleUrl: 'any-$real_name/styleUrl: '$real_name/" src/components/$real_name/$real_name.tsx
+            sed -i "s/any-$real_name/$real_name/" src/components/$real_name/test/$real_name.spec.tsx
+            name=$real_name
+        fi
+    fi
+}
+
 if [ -z "$1" ]; then
     echo Please type component name:
     read name
@@ -42,12 +83,16 @@ if [ -z "$1" ]; then
         echo Component name is required!
         exit 0
     else
+        add_prefix
         npx stencil generate $name
+        remove_prefix
         change_css_into_scss
     fi
 else
     name=$1
+    add_prefix
     npx stencil generate $name
+    remove_prefix
     change_css_into_scss
 fi
 

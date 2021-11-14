@@ -1,0 +1,39 @@
+any-button::part(any-button) {
+    margin-right: 0.5rem;
+}
+
+.any-buttonset {
+    justify-content: space-between;
+    display: inline-flex;
+
+    any-button {
+        &::part(any-button) {
+            margin: 0;
+            margin-right: 0;
+
+            &:focus {
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        &:not(:last-child)::part(any-button) {
+            border-right: 0 none;
+        }
+
+        &:not(:first-of-type):not(:last-of-type)::part(any-button) {
+            border-radius: 0;
+        }
+
+        &:first-of-type::part(any-button) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-of-type::part(any-button) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+    }
+}

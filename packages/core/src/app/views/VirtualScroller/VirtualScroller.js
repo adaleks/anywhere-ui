@@ -23,6 +23,10 @@ export default class extends AbstractView {
   }
 
   executeScript() {
+    this.viewOnGithubBtn = document.querySelector("#view_on_github");
+    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
+      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/virtual-scroller', '_blank');
+    });
     this.vs1 = document.querySelector("#vs1");
     this.sortDD1 = document.querySelector("#sortDD1");
     this.sortDD1.options = this.sortOptions;

@@ -4,7 +4,8 @@ import Dropdown from "./views/Dropdown/Dropdown.js";
 import VirtualScroller from "./views/VirtualScroller/VirtualScroller.js";
 import InputText from "./views/InputText/InputText.js";
 import Checkbox from "./views/Checkbox/Checkbox.js";
-// import { Prism } from "prismjs/prism.js";
+import TabView from "./views/TabView/TabView.js";
+import Button from "./views/Button/Button.js";
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -77,6 +78,14 @@ const router = () => {
     {
       path: "/checkbox",
       view: Checkbox,
+    },
+    {
+      path: "/tab-view",
+      view: TabView,
+    },
+    {
+      path: "/button",
+      view: Button,
     },
   ];
 

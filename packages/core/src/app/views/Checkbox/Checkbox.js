@@ -14,6 +14,10 @@ export default class extends AbstractView {
       console.log("Checkbox Value changed:", event);
       this.cb1.label = event.detail.value;
     });
+    this.viewOnGithubBtn = document.querySelector("#view_on_github");
+    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
+      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/checkbox', '_blank');
+    });
   }
 
   async getHtml() {

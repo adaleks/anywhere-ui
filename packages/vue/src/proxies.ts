@@ -8,6 +8,25 @@ import type { JSX } from '@anywhere-ui/core';
 
 
 
+export const AnyButton = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-button', undefined, [
+  'type',
+  'label',
+  'disabled',
+  'styleClass',
+  'icon',
+  'iconPos',
+  'iconWidth',
+  'iconHeight',
+  'loadingIcon',
+  'loadingIconStyleClass',
+  'loading',
+  'anyStyle',
+  'aOnClick',
+  'aOnFocus',
+  'aOnBlur'
+]);
+
+
 export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox>('any-checkbox', undefined, [
   'checked',
   'binary',
@@ -96,6 +115,20 @@ export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox>('any-lis
 'value', 'v-valueChange', 'valueChange');
 
 
+export const AnyTabPanel = /*@__PURE__*/ defineContainer<JSX.AnyTabPanel>('any-tab-panel', undefined, [
+  'header',
+  'disabled',
+  'selected'
+]);
+
+
+export const AnyTabView = /*@__PURE__*/ defineContainer<JSX.AnyTabView>('any-tab-view', undefined, [
+  'activeIndex',
+  'anyStyle',
+  'styleClass'
+]);
+
+
 export const AnyVirtualScroller = /*@__PURE__*/ defineContainer<JSX.AnyVirtualScroller>('any-virtual-scroller', undefined, [
   'items',
   'scrollerHeight',
@@ -116,6 +149,5 @@ export const AnyVirtualScroller = /*@__PURE__*/ defineContainer<JSX.AnyVirtualSc
   'clusterWillChange',
   'aOnLazyLoad',
   'aOnItemClick'
-],
-'value', 'v-valueChange', 'valueChange');
+]);
 
