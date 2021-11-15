@@ -7,11 +7,47 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { SelectChangeEventDetail } from "./components/listbox/listbox-interface";
 export namespace Components {
+    interface AnyBadge {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle": any;
+        /**
+          * Severity type of the badge.
+         */
+        "severity": string;
+        /**
+          * Size of the badge, valid options are "large" and "xlarge".
+         */
+        "size": string;
+        /**
+          * Style class of the component.
+         */
+        "styleClass": string;
+        /**
+          * Value to display inside the badge.
+         */
+        "value": string;
+    }
+    interface AnyBadgeOverlay {
+        /**
+          * Style class of the component.
+         */
+        "styleClass": string;
+    }
     interface AnyButton {
         /**
           * Inline style of the element.
          */
         "anyStyle"?: any;
+        /**
+          * Value of the badge.
+         */
+        "badge": string;
+        /**
+          * Style class of the badge.
+         */
+        "badgeClass": string;
         /**
           * When present, it specifies that the component should be disabled.
          */
@@ -375,6 +411,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAnyBadgeElement extends Components.AnyBadge, HTMLStencilElement {
+    }
+    var HTMLAnyBadgeElement: {
+        prototype: HTMLAnyBadgeElement;
+        new (): HTMLAnyBadgeElement;
+    };
+    interface HTMLAnyBadgeOverlayElement extends Components.AnyBadgeOverlay, HTMLStencilElement {
+    }
+    var HTMLAnyBadgeOverlayElement: {
+        prototype: HTMLAnyBadgeOverlayElement;
+        new (): HTMLAnyBadgeOverlayElement;
+    };
     interface HTMLAnyButtonElement extends Components.AnyButton, HTMLStencilElement {
     }
     var HTMLAnyButtonElement: {
@@ -424,6 +472,8 @@ declare global {
         new (): HTMLAnyVirtualScrollerElement;
     };
     interface HTMLElementTagNameMap {
+        "any-badge": HTMLAnyBadgeElement;
+        "any-badge-overlay": HTMLAnyBadgeOverlayElement;
         "any-button": HTMLAnyButtonElement;
         "any-checkbox": HTMLAnyCheckboxElement;
         "any-dropdown": HTMLAnyDropdownElement;
@@ -435,11 +485,47 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AnyBadge {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle"?: any;
+        /**
+          * Severity type of the badge.
+         */
+        "severity"?: string;
+        /**
+          * Size of the badge, valid options are "large" and "xlarge".
+         */
+        "size"?: string;
+        /**
+          * Style class of the component.
+         */
+        "styleClass"?: string;
+        /**
+          * Value to display inside the badge.
+         */
+        "value"?: string;
+    }
+    interface AnyBadgeOverlay {
+        /**
+          * Style class of the component.
+         */
+        "styleClass"?: string;
+    }
     interface AnyButton {
         /**
           * Inline style of the element.
          */
         "anyStyle"?: any;
+        /**
+          * Value of the badge.
+         */
+        "badge"?: string;
+        /**
+          * Style class of the badge.
+         */
+        "badgeClass"?: string;
         /**
           * When present, it specifies that the component should be disabled.
          */
@@ -884,6 +970,8 @@ declare namespace LocalJSX {
         "styleClass"?: string;
     }
     interface IntrinsicElements {
+        "any-badge": AnyBadge;
+        "any-badge-overlay": AnyBadgeOverlay;
         "any-button": AnyButton;
         "any-checkbox": AnyCheckbox;
         "any-dropdown": AnyDropdown;
@@ -898,6 +986,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "any-badge": LocalJSX.AnyBadge & JSXBase.HTMLAttributes<HTMLAnyBadgeElement>;
+            "any-badge-overlay": LocalJSX.AnyBadgeOverlay & JSXBase.HTMLAttributes<HTMLAnyBadgeOverlayElement>;
             "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;

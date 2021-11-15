@@ -376,4 +376,12 @@
     --dangerButtonTextActiveColor: #ffffff;
     --dangerButtonActiveBorderColor: #d32f2f;
     --dangerButtonFocusShadow: 0 0 0 0.2rem hsl(4, 90%, calc(58% + 30%));
+
+    // Misc
+    --badgeBg: var(--primaryColor);
+    --badgeTextColor: var(--primaryTextColor);
+    --badgeMinWidth: 1.5rem;
+    --badgeHeight: 1.5rem;
+    --badgeFontWeight: 700;
+    --badgeFontSize: .75rem;
 }

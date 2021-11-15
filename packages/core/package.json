@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/core",
-  "version": "0.2.0+2",
+  "version": "0.2.0+3",
   "description": "AnywhereUI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -61,5 +61,5 @@
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
-  "buildnum": "2"
+  "buildnum": "3"
 }

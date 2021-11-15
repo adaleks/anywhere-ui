@@ -19,7 +19,7 @@ export class TabView {
   /**
    * Index of the active tab to change selected tab programmatically.
    */
-  @Prop({ mutable: true }) activeIndex: number;
+  @Prop({ mutable: true }) activeIndex: number = 0;
 
   /**
    * Inline style of the component.

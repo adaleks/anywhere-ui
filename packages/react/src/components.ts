@@ -8,6 +8,8 @@ import type { JSX } from '@anywhere-ui/core';
 import { applyPolyfills, defineCustomElements } from '@anywhere-ui/core/loader';
 
 applyPolyfills().then(() => defineCustomElements());
+export const AnyBadge = /*@__PURE__*/createReactComponent<JSX.AnyBadge, HTMLAnyBadgeElement>('any-badge');
+export const AnyBadgeOverlay = /*@__PURE__*/createReactComponent<JSX.AnyBadgeOverlay, HTMLAnyBadgeOverlayElement>('any-badge-overlay');
 export const AnyButton = /*@__PURE__*/createReactComponent<JSX.AnyButton, HTMLAnyButtonElement>('any-button');
 export const AnyCheckbox = /*@__PURE__*/createReactComponent<JSX.AnyCheckbox, HTMLAnyCheckboxElement>('any-checkbox');
 export const AnyDropdown = /*@__PURE__*/createReactComponent<JSX.AnyDropdown, HTMLAnyDropdownElement>('any-dropdown');

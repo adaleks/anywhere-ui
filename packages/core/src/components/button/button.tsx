@@ -64,6 +64,16 @@ export class AnyButton {
   @Prop() iconHeight: number = null;
 
   /**
+   * Value of the badge.
+   */
+  @Prop() badge: string = null;
+
+  /**
+   * Style class of the badge.
+   */
+  @Prop() badgeClass: string = null;
+
+  /**
    * Icon to display in loading state.
    */
   @Prop() loadingIcon: string = "fa-solid:spinner";
@@ -182,7 +192,9 @@ export class AnyButton {
               this.label
                 ? " any-button-vertical"
                 : "") +
-              (this.icon && !this.label ? " any-button-icon-only" : "")
+              (this.icon && !this.label && !this.badge
+                ? " any-button-icon-only"
+                : "")
             }
             disabled={this.disabled || this.loading}
             onClick={(e) => this.handleClick(e)}
@@ -224,6 +236,12 @@ export class AnyButton {
               ) : (
                 <span class="any-button-label">&nbsp;</span>
               ))}
+            {!this.hasContentSlot && this.badge && (
+              <any-badge
+                value={this.badge}
+                styleClass={this.badgeClass}
+              ></any-badge>
+            )}
           </button>
         </div>
       </Host>

@@ -8,6 +8,20 @@ import type { JSX } from '@anywhere-ui/core';
 
 
 
+export const AnyBadge = /*@__PURE__*/ defineContainer<JSX.AnyBadge>('any-badge', undefined, [
+  'styleClass',
+  'anyStyle',
+  'size',
+  'severity',
+  'value'
+]);
+
+
+export const AnyBadgeOverlay = /*@__PURE__*/ defineContainer<JSX.AnyBadgeOverlay>('any-badge-overlay', undefined, [
+  'styleClass'
+]);
+
+
 export const AnyButton = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-button', undefined, [
   'type',
   'label',
@@ -17,6 +31,8 @@ export const AnyButton = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-butto
   'iconPos',
   'iconWidth',
   'iconHeight',
+  'badge',
+  'badgeClass',
   'loadingIcon',
   'loadingIconStyleClass',
   'loading',
