@@ -47,4 +47,4 @@ Type: `Promise<void>`
 
 ----------------------------------------------
 
-*Built with [StencilJS](https://stenciljs.com/)*
+*Built with love by **AdaleksTech!***

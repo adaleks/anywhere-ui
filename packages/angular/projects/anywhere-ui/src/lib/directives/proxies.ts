@@ -5,16 +5,54 @@ import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from '@anywhere-ui/core';
 
+
+export declare interface AnyBadge extends Components.AnyBadge {}
+@ProxyCmp({
+  inputs: ['anyStyle', 'severity', 'size', 'styleClass', 'value']
+})
+@Component({
+  selector: 'any-badge',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['anyStyle', 'severity', 'size', 'styleClass', 'value']
+})
+export class AnyBadge {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AnyBadgeOverlay extends Components.AnyBadgeOverlay {}
+@ProxyCmp({
+  inputs: ['styleClass']
+})
+@Component({
+  selector: 'any-badge-overlay',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['styleClass']
+})
+export class AnyBadgeOverlay {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
 import { AnyButton as IAnyButton } from '@anywhere-ui/core/dist/types/components/button/button';
 export declare interface AnyButton extends Components.AnyButton {}
 @ProxyCmp({
-  inputs: ['anyStyle', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type']
+  inputs: ['anyStyle', 'badge', 'badgeClass', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type']
 })
 @Component({
   selector: 'any-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['anyStyle', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type'],
+  inputs: ['anyStyle', 'badge', 'badgeClass', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type'],
   outputs: ['aOnClick', 'aOnFocus', 'aOnBlur']
 })
 export class AnyButton {

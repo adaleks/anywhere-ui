@@ -66,6 +66,7 @@ export const config: Config = {
     { components: ["any-checkbox"] },
     { components: ["any-tab-view", "any-tab-panel"] },
     { components: ["any-button"] },
+    { components: ["any-badge", "any-badge-overlay"] },
   ],
   plugins: [
     sass({
@@ -79,6 +80,7 @@ export const config: Config = {
     },
     {
       type: "docs-readme",
+      footer: "*Built with love by **AdaleksTech!***",
     },
     {
       type: "www",

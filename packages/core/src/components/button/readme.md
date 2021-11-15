@@ -10,6 +10,8 @@
 | Property                | Attribute                  | Description                                                       | Type                                     | Default              |
 | ----------------------- | -------------------------- | ----------------------------------------------------------------- | ---------------------------------------- | -------------------- |
 | `anyStyle`              | `any-style`                | Inline style of the element.                                      | `any`                                    | `null`               |
+| `badge`                 | `badge`                    | Value of the badge.                                               | `string`                                 | `null`               |
+| `badgeClass`            | `badge-class`              | Style class of the badge.                                         | `string`                                 | `null`               |
 | `disabled`              | `disabled`                 | When present, it specifies that the component should be disabled. | `boolean`                                | `false`              |
 | `icon`                  | `icon`                     | Name of the icon.                                                 | `string`                                 | `null`               |
 | `iconHeight`            | `icon-height`              | Height of the icon                                                | `number`                                 | `null`               |
@@ -39,6 +41,19 @@
 | `"any-button"` |             |
 
 
+## Dependencies
+
+### Depends on
+
+- [any-badge](../badge)
+
+### Graph
+```mermaid
+graph TD;
+  any-button --> any-badge
+  style any-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
-*Built with [StencilJS](https://stenciljs.com/)*
+*Built with love by **AdaleksTech!***

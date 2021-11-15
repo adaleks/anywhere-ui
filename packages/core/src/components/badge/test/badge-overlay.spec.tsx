@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { TabPanel } from '../tab-panel';
+import { BadgeOverlay } from '../badge-overlay';
 
-describe('any-tab-panel', () => {
+describe('any-badge-overlay', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [TabPanel],
-      html: `<any-tab-panel></any-tab-panel>`,
+      components: [BadgeOverlay],
+      html: `<any-badge-overlay></any-badge-overlay>`,
     });
     expect(page.root).toEqualHtml(`
-      <any-tab-panel>
+      <any-badge-overlay>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </any-tab-panel>
+      </any-badge-overlay>
     `);
   });
 });

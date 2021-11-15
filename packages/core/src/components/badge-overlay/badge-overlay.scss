@@ -1,0 +1,20 @@
+@import "../../themes/anywhere.globals.scss";
+
+:host {
+  display: inline-block;
+
+  .any-overlay-badge {
+    position: relative;
+  }
+
+  .any-overlay-badge {
+    ::slotted(any-badge) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      transform-origin: 100% 0;
+      margin: 0;
+    }
+  }
+}

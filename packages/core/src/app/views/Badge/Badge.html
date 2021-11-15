@@ -1,0 +1,47 @@
+<div class="content-section introduction">
+  <div class="feature-intro">
+    <h1>Badge</h1>
+    <p>Badge is a small status indicator for another element.</p>
+  </div>
+  <app-demoactions>
+    <div class="app-demoactions any-d-flex any-ai-end any-jc-end any-mt-3">
+      <any-button id="view_on_github" icon="logos:github-icon"
+        style-class="any-button-rounded any-button-text any-button-lg"></any-button>
+    </div>
+  </app-demoactions>
+</div>
+<div class="content-section">
+  <div class="full-card">
+    <h5>Numbers</h5>
+    <any-badge value="2" style-class="any-mr-2"></any-badge>
+    <any-badge value="15" severity="secondary" style-class="any-mr-2"></any-badge>
+    <any-badge value="8" severity="success" style-class="any-mr-2"></any-badge>
+    <any-badge value="4" severity="info" style-class="any-mr-2"></any-badge>
+    <any-badge value="12" severity="warning" style-class="any-mr-2"></any-badge>
+    <any-badge value="3" severity="danger" style-class="any-mr-2"></any-badge>
+
+    <h5>Positioned Badge</h5>
+    <any-badge-overlay style-class="any-mr-4">
+      <i class="iconify" data-width="2rem" data-icon="fa-solid:bell"></i>
+      <any-badge value="2"></any-badge>
+    </any-badge-overlay>
+    <any-badge-overlay style-class="any-mr-4">
+      <i class="iconify" data-width="2rem" data-icon="fa-solid:calendar"></i>
+      <any-badge value="10+" severity="danger"></any-badge>
+    </any-badge-overlay>
+    <any-badge-overlay>
+      <i class="iconify" data-width="2rem" data-height="2rem" data-icon="fa-solid:envelope"></i>
+      <any-badge severity="danger"></any-badge>
+    </any-badge-overlay>
+    <h5>Inline Button Badge</h5>
+    <any-button badge="8" label="Emails"></any-button>
+    <any-button badge="8" label="Messages" icon="fa-solid:user-friends" style-class="any-button-warning" badge="8"
+      badge-class="any-badge-danger">
+    </any-button>
+    <h5>Sizes</h5>
+    <any-badge value="2" style-class="any-mr-2"></any-badge>
+    <any-badge value="4" severity="warning" size="large" style-class="any-mr-2"></any-badge>
+    <any-badge value="6" severity="success" size="xlarge"></any-badge>
+  </div>
+</div>
+</div>

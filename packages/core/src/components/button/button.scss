@@ -192,13 +192,15 @@
     margin-bottom: 0.5rem;
   }
 
-  .any-button .any-badge {
-    margin-left: 0.5rem;
-    min-width: 1rem;
-    height: 1rem;
-    line-height: 1rem;
-    color: #2196F3;
-    background-color: #ffffff;
+  .any-button any-badge {
+    &::part(any-badge) {
+      margin-left: 0.5rem;
+      min-width: 1rem;
+      height: 1rem;
+      line-height: 1rem;
+      color: var(--badgeBg);
+      background-color: var(--badgeTextColor);
+    }
   }
 
   .any-button.any-button-raised:not(:focus) {

@@ -12,12 +12,12 @@ export class TabPanel {
   /**
    * Title of the tabPanel.
    */
-  @Prop() header: string;
+  @Prop() header: string = null;
 
   /**
    * When true, tab cannot be activated.
    */
-  @Prop({ reflect: true }) disabled: boolean;
+  @Prop({ reflect: true }) disabled: boolean = false;
 
   /**
    * Defines if tab is active.
