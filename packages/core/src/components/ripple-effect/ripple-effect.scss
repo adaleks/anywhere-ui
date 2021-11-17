@@ -1,0 +1,33 @@
+@import "../../themes/anywhere.globals.scss";
+
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // width: 100%;// height: 100%;
+
+  .any-ripple {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .any-ink {
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    transform: scale(0);
+  }
+
+  .any-ink-active {
+    animation: ripple 0.4s linear;
+  }
+
+  @keyframes ripple {
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
+    }
+  }
+}

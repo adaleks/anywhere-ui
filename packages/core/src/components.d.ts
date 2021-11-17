@@ -323,6 +323,12 @@ export namespace Components {
          */
         "virtualScroll": boolean;
     }
+    interface AnyRippleEffect {
+        /**
+          * Sets the type of ripple-effect:
+         */
+        "type": "bounded" | "unbounded";
+    }
     interface AnyTabPanel {
         /**
           * When true, tab cannot be activated.
@@ -453,6 +459,12 @@ declare global {
         prototype: HTMLAnyListboxElement;
         new (): HTMLAnyListboxElement;
     };
+    interface HTMLAnyRippleEffectElement extends Components.AnyRippleEffect, HTMLStencilElement {
+    }
+    var HTMLAnyRippleEffectElement: {
+        prototype: HTMLAnyRippleEffectElement;
+        new (): HTMLAnyRippleEffectElement;
+    };
     interface HTMLAnyTabPanelElement extends Components.AnyTabPanel, HTMLStencilElement {
     }
     var HTMLAnyTabPanelElement: {
@@ -479,6 +491,7 @@ declare global {
         "any-dropdown": HTMLAnyDropdownElement;
         "any-input-text": HTMLAnyInputTextElement;
         "any-listbox": HTMLAnyListboxElement;
+        "any-ripple-effect": HTMLAnyRippleEffectElement;
         "any-tab-panel": HTMLAnyTabPanelElement;
         "any-tab-view": HTMLAnyTabViewElement;
         "any-virtual-scroller": HTMLAnyVirtualScrollerElement;
@@ -863,6 +876,12 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    interface AnyRippleEffect {
+        /**
+          * Sets the type of ripple-effect:
+         */
+        "type"?: "bounded" | "unbounded";
+    }
     interface AnyTabPanel {
         /**
           * When true, tab cannot be activated.
@@ -977,6 +996,7 @@ declare namespace LocalJSX {
         "any-dropdown": AnyDropdown;
         "any-input-text": AnyInputText;
         "any-listbox": AnyListbox;
+        "any-ripple-effect": AnyRippleEffect;
         "any-tab-panel": AnyTabPanel;
         "any-tab-view": AnyTabView;
         "any-virtual-scroller": AnyVirtualScroller;
@@ -993,6 +1013,7 @@ declare module "@stencil/core" {
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
+            "any-ripple-effect": LocalJSX.AnyRippleEffect & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;
             "any-tab-panel": LocalJSX.AnyTabPanel & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
             "any-tab-view": LocalJSX.AnyTabView & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;
             "any-virtual-scroller": LocalJSX.AnyVirtualScroller & JSXBase.HTMLAttributes<HTMLAnyVirtualScrollerElement>;

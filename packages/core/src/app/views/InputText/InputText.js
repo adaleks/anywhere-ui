@@ -25,21 +25,7 @@ export default class extends AbstractView {
     this.it1.addEventListener("valueChange", (event) => {
       console.log("Input Value changed:", event);
     });
-    // const linkElem = document.createElement("link");
-    // linkElem.setAttribute("rel", "stylesheet");
-    // linkElem.setAttribute("href", "/assets/css/inputtext.css");
 
-    // this.it1.shadowRoot.appendChild(linkElem);
-    // (async () => {
-    //   await customElements.whenDefined("any-input-text");
-    //   const anyInput1 = document.querySelector("any-input-text#it1");
-    //   const anyInput2 = document.querySelector("any-input-text#it2");
-    //   let input1 = await anyInput1.getInputRef();
-    //   let input2 = await anyInput2.getInputRef();
-    //   console.log(input1, input2);
-    //   input1.setAttribute("required", true);
-    // })();
-    // it2 options
     this.it2.floatLabel = true;
     this.it2.label = "Username";
 

@@ -1,0 +1,7 @@
+@import "./anywhere.theme.default.scss";
+
+.any-ripple-disabled {
+    ::part(any-ink) {
+        display: none !important;
+    }
+}

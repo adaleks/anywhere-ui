@@ -146,6 +146,7 @@ export class TabView {
                           tabindex={tab.disabled ? null : 0}
                         >
                           <span class="any-tabview-title">{tab.header}</span>
+                          <any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>
                         </a>
                       </li>
                     )

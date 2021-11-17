@@ -746,5 +746,32 @@ any-button::part(any-button) {
     border-top-left-radius: 0;
   }
 }
+.card-container .full-card {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  user-select: none;
+  padding: 0;
+}
+.card-container .full-card.primary-box {
+  background-color: var(--primary-color);
+  padding: 0;
+  color: var(--primary-color-text);
+}
+.card-container .full-card.styled-box-green ::part(any-ink) {
+  background: rgba(75, 175, 80, 0.3);
+}
+.card-container .full-card.styled-box-orange ::part(any-ink) {
+  background: rgba(255, 193, 6, 0.3);
+}
+.card-container .full-card.styled-box-purple ::part(any-ink) {
+  background: rgba(156, 39, 176, 0.3);
+}
+.card-container .full-card:last-child {
+  margin-right: 0;
+}
 
 /*# sourceMappingURL=app.css.map */

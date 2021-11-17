@@ -306,6 +306,7 @@ export class AnyListbox {
                       ) : (
                         <div innerHTML={this.getContent("item", option)}></div>
                       )}
+                      <any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>
                     </li>
                   ))}
                 </ul>
