@@ -15,6 +15,7 @@ export const AnyCheckbox = /*@__PURE__*/createReactComponent<JSX.AnyCheckbox, HT
 export const AnyDropdown = /*@__PURE__*/createReactComponent<JSX.AnyDropdown, HTMLAnyDropdownElement>('any-dropdown');
 export const AnyInputText = /*@__PURE__*/createReactComponent<JSX.AnyInputText, HTMLAnyInputTextElement>('any-input-text');
 export const AnyListbox = /*@__PURE__*/createReactComponent<JSX.AnyListbox, HTMLAnyListboxElement>('any-listbox');
+export const AnyRippleEffect = /*@__PURE__*/createReactComponent<JSX.AnyRippleEffect, HTMLAnyRippleEffectElement>('any-ripple-effect');
 export const AnyTabPanel = /*@__PURE__*/createReactComponent<JSX.AnyTabPanel, HTMLAnyTabPanelElement>('any-tab-panel');
 export const AnyTabView = /*@__PURE__*/createReactComponent<JSX.AnyTabView, HTMLAnyTabViewElement>('any-tab-view');
 export const AnyVirtualScroller = /*@__PURE__*/createReactComponent<JSX.AnyVirtualScroller, HTMLAnyVirtualScrollerElement>('any-virtual-scroller');
