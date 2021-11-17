@@ -55,6 +55,7 @@
 ```mermaid
 graph TD;
   any-dropdown --> any-listbox
+  any-listbox --> any-ripple-effect
   any-listbox --> any-virtual-scroller
   style any-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -46,11 +46,13 @@
 ### Depends on
 
 - [any-badge](../badge)
+- [any-ripple-effect](../ripple-effect)
 
 ### Graph
 ```mermaid
 graph TD;
   any-button --> any-badge
+  any-button --> any-ripple-effect
   style any-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -7,6 +7,7 @@ import Checkbox from "./views/Checkbox/Checkbox.js";
 import TabView from "./views/TabView/TabView.js";
 import Button from "./views/Button/Button.js";
 import Badge from "./views/Badge/Badge.js";
+import RippleEffect from "./views/RippleEffect/RippleEffect.js";
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -91,6 +92,10 @@ const router = () => {
     {
       path: "/badge",
       view: Badge,
+    },
+    {
+      path: "/ripple-effect",
+      view: RippleEffect,
     },
   ];
 

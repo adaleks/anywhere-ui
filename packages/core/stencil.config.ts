@@ -49,8 +49,8 @@ const vueComponentModels: ComponentModelConfig[] = [
 export const config: Config = {
   namespace: "anywhere-ui",
   taskQueue: "async",
-  globalStyle: "src/themes/anywhere.theme.default.scss",
-  globalScript: "src/globals/scripts/index.ts",
+  globalStyle: "src/themes/anywhere.global.scss",
+  globalScript: "src/global/anywhere-global.ts",
   buildEs5: "prod",
   extras: {
     cssVarsShim: true,
@@ -67,6 +67,7 @@ export const config: Config = {
     { components: ["any-tab-view", "any-tab-panel"] },
     { components: ["any-button"] },
     { components: ["any-badge", "any-badge-overlay"] },
+    { components: ["any-ripple-effect"] },
   ],
   plugins: [
     sass({

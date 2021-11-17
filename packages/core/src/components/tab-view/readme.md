@@ -14,6 +14,19 @@
 | `styleClass`  | `style-class`  | Style class of the component.                                    | `string` | `null`  |
 
 
+## Dependencies
+
+### Depends on
+
+- [any-ripple-effect](../ripple-effect)
+
+### Graph
+```mermaid
+graph TD;
+  any-tab-view --> any-ripple-effect
+  style any-tab-view fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

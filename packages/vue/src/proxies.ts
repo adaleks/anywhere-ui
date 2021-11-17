@@ -131,6 +131,11 @@ export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox>('any-lis
 'value', 'v-valueChange', 'valueChange');
 
 
+export const AnyRippleEffect = /*@__PURE__*/ defineContainer<JSX.AnyRippleEffect>('any-ripple-effect', undefined, [
+  'type'
+]);
+
+
 export const AnyTabPanel = /*@__PURE__*/ defineContainer<JSX.AnyTabPanel>('any-tab-panel', undefined, [
   'header',
   'disabled',

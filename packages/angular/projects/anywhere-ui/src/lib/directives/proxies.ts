@@ -183,6 +183,25 @@ export class AnyListbox {
 }
 
 
+export declare interface AnyRippleEffect extends Components.AnyRippleEffect {}
+@ProxyCmp({
+  inputs: ['type']
+})
+@Component({
+  selector: 'any-ripple-effect',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['type']
+})
+export class AnyRippleEffect {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface AnyTabPanel extends Components.AnyTabPanel {}
 @ProxyCmp({
   inputs: ['disabled', 'header', 'selected']

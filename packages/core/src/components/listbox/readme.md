@@ -45,11 +45,13 @@
 
 ### Depends on
 
+- [any-ripple-effect](../ripple-effect)
 - [any-virtual-scroller](../virtual-scroller)
 
 ### Graph
 ```mermaid
 graph TD;
+  any-listbox --> any-ripple-effect
   any-listbox --> any-virtual-scroller
   any-dropdown --> any-listbox
   style any-listbox fill:#f9f,stroke:#333,stroke-width:4px

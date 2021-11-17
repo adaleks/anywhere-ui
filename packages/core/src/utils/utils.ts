@@ -116,8 +116,9 @@ const getItem = (
     itemHTML += `style="height: ${itemSize + "px"} "`;
   }
   itemHTML += `>`;
-  itemHTML += `${newNode}</${itemTag}>`;
-  // itemHTML = itemHTML.
+  itemHTML += `${newNode}`;
+  itemHTML += `<any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>`;
+  itemHTML += `</${itemTag}>`;
 
   return itemHTML;
 };

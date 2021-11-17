@@ -242,6 +242,7 @@ export class AnyButton {
                 styleClass={this.badgeClass}
               ></any-badge>
             )}
+            <any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>
           </button>
         </div>
       </Host>
