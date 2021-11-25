@@ -39,7 +39,7 @@
 
                 a {
                     text-decoration: none;
-                    // color: $linkColor?;
+                    color: var(--linkColor);
                     font-weight: 600;
 
                     &:hover {

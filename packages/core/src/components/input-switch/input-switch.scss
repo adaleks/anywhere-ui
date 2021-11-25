@@ -1,0 +1,77 @@
+@import "../../themes/anywhere.globals.scss";
+
+:host {
+  display: inline-block;
+
+  .any-inputswitch {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .any-inputswitch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .any-inputswitch-slider:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+  }
+
+  .any-inputswitch {
+    width: var(--inputSwitchWidth);
+    height: var(--inputSwitchHeight);
+  }
+
+  .any-inputswitch .any-inputswitch-slider {
+    background: var(--inputSwitchSliderOffBg);
+    transition: var(--formElementTransition);
+    border-radius: var(--inputSwitchBorderRadius);
+  }
+
+  .any-inputswitch .any-inputswitch-slider:before {
+    background: var(--inputSwitchHandleOffBg);
+    width: var(--inputSwitchHandleWidth);
+    height: var(--inputSwitchHandleHeight);
+    left: var(--inputSwitchSliderPadding);
+    margin-top: -0.625rem;
+    border-radius: var(--inputSwitchHandleBorderRadius);
+    transition-duration: var(--transitionDuration);
+  }
+
+  .any-inputswitch.any-inputswitch-checked .any-inputswitch-slider:before {
+    transform: translateX(1.25rem);
+  }
+
+  .any-inputswitch.any-focus .any-inputswitch-slider {
+    outline: var(--focusOutline);
+    outline-offset: var(--focusOutlineOffset);
+    box-shadow: var(--focusShadow);
+  }
+
+  .any-inputswitch:not(.any-disabled):hover .any-inputswitch-slider {
+    background: var(--inputSwitchSliderOffHoverBg);
+  }
+
+  .any-inputswitch.any-inputswitch-checked .any-inputswitch-slider {
+    background: var(--inputSwitchSliderOnBg);
+  }
+
+  .any-inputswitch.any-inputswitch-checked .any-inputswitch-slider:before {
+    background: var(--inputSwitchHandleOnBg);
+  }
+
+  .any-inputswitch.any-inputswitch-checked:not(.any-disabled):hover .any-inputswitch-slider {
+    background: var(--inputSwitchSliderOnHoverBg);
+  }
+
+  // any-inputswitch.ng-dirty.ng-invalid>.any-inputswitch {
+  //   border-color: #f44336;
+  // }
+}

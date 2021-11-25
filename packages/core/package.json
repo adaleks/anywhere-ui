@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/core",
-  "version": "0.2.0+4",
+  "version": "0.2.0+5",
   "description": "AnywhereUI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -34,13 +34,13 @@
   },
   "devDependencies": {
     "@iconify/iconify": "^2.1.0",
-    "@stencil/angular-output-target": "0.0.7",
+    "@stencil/angular-output-target": "0.3.0",
     "@stencil/core": "^2.10.0",
     "@stencil/react-output-target": "^0.1.0",
     "@stencil/sass": "^1.5.2",
     "@stencil/vue-output-target": "^0.5.1",
     "@types/clusterize.js": "^0.18.1",
-    "@types/lodash": "^4.14.176",
+    "@types/lodash": "^4.14.177",
     "@types/puppeteer": "^5.4.4",
     "clusterize.js": "^0.18.1",
     "clusterize.js-paging": "^1.0.3",
@@ -61,5 +61,5 @@
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
-  "buildnum": "4"
+  "buildnum": "5"
 }

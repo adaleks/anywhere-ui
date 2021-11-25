@@ -25,13 +25,13 @@
             font-weight: 700;
 
             span {
-                color: var(--primaryDarkColor);
+                color: var(--primaryColor);
                 font-size: 38px;
             }
 
 
             &:hover {
-                color: var(--primaryDarkColor);
+                color: var(--primaryColor);
 
                 span {
                     color: var(--text-color);
@@ -85,6 +85,14 @@
                 &.active {
                     font-weight: 700;
                 }
+
+                &:focus {
+                    z-index: 1;
+                    outline: 0 none;
+                    transition: box-shadow .2s;
+                    box-shadow: var(--focusShadow);
+                }
+
             }
         }
     }

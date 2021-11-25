@@ -96,6 +96,25 @@ export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown>('any-d
 'value', 'v-valueChange', 'valueChange');
 
 
+export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch>('any-input-switch', undefined, [
+  'inputId',
+  'name',
+  'checked',
+  'anyStyle',
+  'styleClass',
+  'disabled',
+  'readonly',
+  'trueValue',
+  'falseValue',
+  'anyTabIndex',
+  'ariaLabeledBy',
+  'valueChange',
+  'aOnFocus',
+  'aOnBlur'
+],
+'checked', 'v-valueChange', 'valueChange');
+
+
 export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText>('any-input-text', undefined, [
   'value',
   'inputId',

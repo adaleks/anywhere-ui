@@ -27,7 +27,7 @@
       height: var(--checkboxHeight);
       color: var(--textColor);
       border-radius: var(--borderRadius);
-      transition: var(--inputTransition);
+      transition: var(--formElementTransition);
 
       &.any-highlight {
         border-color: var(--checkboxActiveBorderColor);

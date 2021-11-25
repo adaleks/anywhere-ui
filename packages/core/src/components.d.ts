@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SelectChangeEventDetail } from "./components/listbox/listbox-interface";
+import { SelectChangeEventDetail } from "./interfaces";
 export namespace Components {
     interface AnyBadge {
         /**
@@ -225,6 +225,52 @@ export namespace Components {
           * When present, list virtual scroller is enabled
          */
         "virtualScroll": boolean;
+    }
+    interface AnyInputSwitch {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle": any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
+        /**
+          * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
+         */
+        "ariaLabeledBy"?: string;
+        /**
+          * If `true`, the input-switch is selected.
+         */
+        "checked": boolean;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled": boolean;
+        /**
+          * Value in unchecked state.
+         */
+        "falseValue": any;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId": string;
+        /**
+          * Name of the checkbox group.
+         */
+        "name": string;
+        /**
+          * When present, it specifies that the component cannot be edited.
+         */
+        "readonly": boolean;
+        /**
+          * Style class of the component.
+         */
+        "styleClass": any;
+        /**
+          * Value in checked state.
+         */
+        "trueValue": any;
     }
     interface AnyInputText {
         /**
@@ -447,6 +493,12 @@ declare global {
         prototype: HTMLAnyDropdownElement;
         new (): HTMLAnyDropdownElement;
     };
+    interface HTMLAnyInputSwitchElement extends Components.AnyInputSwitch, HTMLStencilElement {
+    }
+    var HTMLAnyInputSwitchElement: {
+        prototype: HTMLAnyInputSwitchElement;
+        new (): HTMLAnyInputSwitchElement;
+    };
     interface HTMLAnyInputTextElement extends Components.AnyInputText, HTMLStencilElement {
     }
     var HTMLAnyInputTextElement: {
@@ -489,6 +541,7 @@ declare global {
         "any-button": HTMLAnyButtonElement;
         "any-checkbox": HTMLAnyCheckboxElement;
         "any-dropdown": HTMLAnyDropdownElement;
+        "any-input-switch": HTMLAnyInputSwitchElement;
         "any-input-text": HTMLAnyInputTextElement;
         "any-listbox": HTMLAnyListboxElement;
         "any-ripple-effect": HTMLAnyRippleEffectElement;
@@ -772,6 +825,64 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    interface AnyInputSwitch {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle"?: any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
+        /**
+          * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
+         */
+        "ariaLabeledBy"?: string;
+        /**
+          * If `true`, the input-switch is selected.
+         */
+        "checked"?: boolean;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Value in unchecked state.
+         */
+        "falseValue"?: any;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId"?: string;
+        /**
+          * Name of the checkbox group.
+         */
+        "name"?: string;
+        /**
+          * Emitted when the toggle loses focus.
+         */
+        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the toggle has focus.
+         */
+        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke when value of dropdown changes.
+         */
+        "onValueChange"?: (event: CustomEvent<any>) => void;
+        /**
+          * When present, it specifies that the component cannot be edited.
+         */
+        "readonly"?: boolean;
+        /**
+          * Style class of the component.
+         */
+        "styleClass"?: any;
+        /**
+          * Value in checked state.
+         */
+        "trueValue"?: any;
+    }
     interface AnyInputText {
         /**
           * When present, it specifies that the element should be disabled
@@ -994,6 +1105,7 @@ declare namespace LocalJSX {
         "any-button": AnyButton;
         "any-checkbox": AnyCheckbox;
         "any-dropdown": AnyDropdown;
+        "any-input-switch": AnyInputSwitch;
         "any-input-text": AnyInputText;
         "any-listbox": AnyListbox;
         "any-ripple-effect": AnyRippleEffect;
@@ -1011,6 +1123,7 @@ declare module "@stencil/core" {
             "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
+            "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
             "any-ripple-effect": LocalJSX.AnyRippleEffect & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;

@@ -3,6 +3,7 @@ import Listbox from "./views/Listbox/Listbox.js";
 import Dropdown from "./views/Dropdown/Dropdown.js";
 import VirtualScroller from "./views/VirtualScroller/VirtualScroller.js";
 import InputText from "./views/InputText/InputText.js";
+import InputSwitch from "./views/InputSwitch/InputSwitch.js";
 import Checkbox from "./views/Checkbox/Checkbox.js";
 import TabView from "./views/TabView/TabView.js";
 import Button from "./views/Button/Button.js";
@@ -76,6 +77,10 @@ const router = () => {
     {
       path: "/input-text",
       view: InputText,
+    },
+    {
+      path: "/input-switch",
+      view: InputSwitch,
     },
     {
       path: "/checkbox",

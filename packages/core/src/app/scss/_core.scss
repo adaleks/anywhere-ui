@@ -1,5 +1,7 @@
-$linkColor: #2196f3;
-$focusBorderColor:#BBDEFB;
+:root {
+    --linkColor: #2196f3;
+    --focusBorderColor: var(--primaryColor);
+}
 
 html {
     visibility: hidden;
@@ -97,6 +99,7 @@ pre[class*="language-"] {
         margin: 1em 0;
         color: var(--text-color);
         font-size: 14px;
+        text-shadow: none;
 
         .token {
 
