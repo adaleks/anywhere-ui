@@ -320,6 +320,7 @@ export class AnyDropdown {
       if (this.readonly) return;
 
       this.dropdownWrapper.classList.add("any-state-focus");
+      this.dropdownWrapper.setAttribute("part", "any-dropdown-focused");
       this.aOnFocus.emit(e);
     }
 
@@ -331,8 +332,10 @@ export class AnyDropdown {
   }
 
   private handleClickOutside(e) {
-    if (e.srcElement !== this.element && this.dropdownWrapper)
+    if (e.srcElement !== this.element && this.dropdownWrapper) {
       this.dropdownWrapper.classList.remove("any-state-focus");
+      this.dropdownWrapper.setAttribute("part", "any-dropdown");
+    }
     this.open = false;
     this.animatePanelAppearance("close");
   }
@@ -435,6 +438,8 @@ export class AnyDropdown {
     if (this.readonly) return;
     // console.log("event focus", e.composedPath());
     this.dropdownWrapper.classList.add("any-state-focus");
+    this.dropdownWrapper.setAttribute("part", "any-dropdown-focused");
+
     this.aOnFocus.emit(e);
   }
 
@@ -442,6 +447,8 @@ export class AnyDropdown {
     if (this.readonly) return;
     // console.log("event focus out", e);
     this.dropdownWrapper.classList.remove("any-state-focus");
+    this.dropdownWrapper.setAttribute("part", "any-dropdown");
+
     this.aOnBlur.emit(e);
   }
 
@@ -460,6 +467,7 @@ export class AnyDropdown {
       <Host>
         <div>
           <div
+            part="any-dropdown"
             style={this.anyStyle}
             class={
               "any-component any-dropdown any-corner-all" +
@@ -518,6 +526,7 @@ export class AnyDropdown {
                   }
                 >
                   <any-listbox
+                    exportparts="any-ink: any-ink"
                     options={this.options}
                     value={this.value}
                     optionLabel={this.optionLabel}

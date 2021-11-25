@@ -24,7 +24,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     type: "text",
   },
   {
-    elementSelectors: ["any-checkbox"],
+    elementSelectors: ["any-checkbox", "any-input-switch"],
     event: "valueChange",
     targetAttr: "checked",
     type: "boolean",
@@ -39,7 +39,7 @@ const vueComponentModels: ComponentModelConfig[] = [
     targetAttr: "value",
   },
   {
-    elements: ["any-checkbox"],
+    elements: ["any-checkbox", "any-input-switch"],
     event: "v-valueChange",
     targetAttr: "checked",
     externalEvent: "valueChange",
@@ -64,6 +64,7 @@ export const config: Config = {
     { components: ["any-dropdown", "any-listbox", "any-input-text"] },
     { components: ["any-virtual-scroller"] },
     { components: ["any-checkbox"] },
+    { components: ["any-input-switch"] },
     { components: ["any-tab-view", "any-tab-panel"] },
     { components: ["any-button"] },
     { components: ["any-badge", "any-badge-overlay"] },

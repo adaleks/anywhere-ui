@@ -16,6 +16,10 @@ import {
   AnyButton,
   AnyTabView,
   AnyTabPanel,
+  AnyBadge,
+  AnyBadgeOverlay,
+  AnyRippleEffect,
+  AnyInputSwitch,
 } from './directives/proxies';
 
 defineCustomElements(window);
@@ -30,6 +34,10 @@ const DECLARATIONS = [
   AnyButton,
   AnyTabView,
   AnyTabPanel,
+  AnyBadge,
+  AnyBadgeOverlay,
+  AnyRippleEffect,
+  AnyInputSwitch,
 
   // Value Accessors
   BooleanValueAccessor,

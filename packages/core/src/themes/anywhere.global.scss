@@ -1,7 +1,77 @@
 @import "./anywhere.theme.default.scss";
+@import "./anywhere.theme.bootstrap4-light-blue.scss";
+@import "./anywhere.theme.bootstrap4-dark-blue.scss";
 
 .any-ripple-disabled {
+    any-button::part(any-ink) {
+        display: none !important;
+    }
+
+    any-tab-view::part(any-ink) {
+        display: none !important;
+    }
+
+    any-listbox::part(any-ink) {
+        display: none !important;
+    }
+
+    any-dropdown::part(any-ink) {
+        display: none !important;
+    }
+
     ::part(any-ink) {
         display: none !important;
+    }
+}
+
+.any-input-filled {
+    .any-inputtext {
+        background-color: var(--inputFilledBg) !important;
+    }
+
+    .any-inputtext:enabled:hover {
+        background-color: var(--inputFilledHoverBg) !important;
+    }
+
+    .any-inputtext:enabled:focus {
+        background-color: var(--inputFilledFocusBg) !important;
+    }
+
+    any-checkbox {
+        &::part(any-checkbox-box) {
+            background-color: var(--inputFilledBg) !important;
+        }
+
+        &::part(any-checkbox-box-highlight) {
+            background: var(--checkboxActiveBg) !important;
+        }
+
+        &:not(.any-checkbox-disabled) {
+            &::part(any-checkbox-box) {
+                &:hover {
+                    background-color: var(--inputFilledBg) !important;
+                }
+            }
+
+            &::part(any-checkbox-box-highlight) {
+                &:hover {
+                    background: var(--checkboxActiveBg) !important;
+                }
+            }
+        }
+    }
+
+    any-dropdown {
+        &::part(any-dropdown) {
+            background: var(--inputFilledBg);
+
+            &:hover {
+                background: var(--inputFilledHoverBg);
+            }
+        }
+
+        &::part(any-dropdown-focused) {
+            background-color: var(--inputFilledFocusBg);
+        }
     }
 }

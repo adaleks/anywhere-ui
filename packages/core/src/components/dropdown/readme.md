@@ -45,6 +45,13 @@
 | `valueChange`  | Callback to invoke when value of dropdown changes            | `CustomEvent<any>` |
 
 
+## Shadow Parts
+
+| Part             | Description |
+| ---------------- | ----------- |
+| `"any-dropdown"` |             |
+
+
 ## Dependencies
 
 ### Depends on

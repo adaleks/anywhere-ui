@@ -110,13 +110,13 @@
       border: var(--outlinedButtonBorder);
 
       &:enabled:hover {
-        background: rgba(114, 0, 204, var(--textButtonHoverBgOpacity));
+        background: rgba(var(--primaryDarkColorRGBValue), var(--textButtonHoverBgOpacity));
         color: var(--buttonBg);
         border: var(--outlinedButtonBorder);
       }
 
       &:enabled:active {
-        background: rgba(85, 0, 153, var(--textButtonActiveBgOpacity));
+        background: rgba(var(--primaryDarkerColorRGBValue), var(--textButtonActiveBgOpacity));
         color: var(--buttonBg);
         border: var(--outlinedButtonBorder);
       }
@@ -143,13 +143,13 @@
       border-color: transparent;
 
       &:enabled:hover {
-        background: rgba(114, 0, 204, var(--textButtonHoverBgOpacity));
+        background: rgba(var(--primaryDarkColorRGBValue), var(--textButtonHoverBgOpacity));
         color: var(--buttonBg);
         border-color: transparent;
       }
 
       &:enabled:active {
-        background: rgba(85, 0, 153, var(--textButtonActiveBgOpacity));
+        background: rgba(var(--primaryDarkerColorRGBValue), var(--textButtonActiveBgOpacity));
         color: var(--buttonBg);
         border-color: transparent;
       }

@@ -213,6 +213,7 @@ export class AnyCheckbox {
               <slot name="label" />
             </div>
             <div
+              part={checked ? "any-checkbox-box-highlight" : "any-checkbox-box"}
               class={
                 "any-checkbox-box" +
                 (checked ? " any-highlight" : "") +

@@ -9,7 +9,7 @@ import {
   Host,
 } from "@stencil/core";
 import _ from "lodash";
-import { SelectChangeEventDetail } from "./listbox-interface";
+import { SelectChangeEventDetail } from "../../interfaces";
 import { watchForOptions } from "../../utils/watch-options";
 import { findAndReplaceInnerHtml } from "../../utils/utils";
 // import Clusterize from "clusterize.js";

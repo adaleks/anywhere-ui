@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'any-checkbox',
+  selector: 'any-checkbox, any-input-switch',
   host: {
     '(valueChange)': 'handleChangeEvent($event.target.checked)'
   },

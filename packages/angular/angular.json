@@ -28,18 +28,6 @@
             "tsConfig": "projects/anywhere-ui/tsconfig.spec.json",
             "karmaConfig": "projects/anywhere-ui/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/anywhere-ui/tsconfig.lib.json",
-              "projects/anywhere-ui/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }

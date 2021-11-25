@@ -25,8 +25,6 @@ export class RippleEffect {
       "mousedown",
       this.mouseDownListener
     );
-
-    console.log(this.element.parentNode);
   }
 
   onMouseDown(event: MouseEvent) {
