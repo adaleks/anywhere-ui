@@ -53,6 +53,7 @@
     "prismjs": "^1.25.0",
     "puppeteer": "^9.0.0",
     "rebase": "^0.3.0",
+    "replace": "^1.2.1",
     "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "license": "MIT",

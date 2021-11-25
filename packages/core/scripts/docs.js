@@ -1,6 +1,7 @@
 const rebase = require('rebase');
 const fs = require('fs-extra');
 const path = require('path');
+const replace = require('replace');
 
 
 let subdir = 'anywhere-ui-showcase';
@@ -9,7 +10,7 @@ console.log(process.cwd() + '/' + subdir)
 // fs.removeSync(process.cwd() + '/' + subdir);
 // fs.copySync(process.cwd() + '/www', subdir);
 
-let files = ['index.html'];
+let files = ['index.html', 'app/components/app-config.js'];
 files.forEach((filename) => {
   let path_to_file = process.cwd() + '/www/' + filename;
   let file = fs.readFileSync(path_to_file, 'utf8');
@@ -25,4 +26,14 @@ files.forEach((filename) => {
     script: replacements
   });
   fs.writeFileSync(path_to_file, rebased);
+
+
+});
+
+replace({
+  regex: "@import \"",
+  replacement: "@import \"\/" + subdir + "",
+  paths: [process.cwd() + '/www/' + 'app/components/app-config.js'],
+  recursive: true,
+  silent: true,
 });
