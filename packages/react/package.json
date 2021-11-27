@@ -1,7 +1,7 @@
 {
   "name": "@anywhere-ui/react",
   "sideEffects": false,
-  "version": "0.2.0+5",
+  "version": "0.2.0+6",
   "description": "React specific wrapper AnywhereUI Web Components library",
   "license": "MIT",
   "repository": {
@@ -48,5 +48,5 @@
       "dist"
     ]
   },
-  "buildnum": "5"
+  "buildnum": "6"
 }
