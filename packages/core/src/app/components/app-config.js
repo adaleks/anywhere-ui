@@ -185,10 +185,22 @@ template.innerHTML = `
                         <span>Blue</span>
                     </div>
                     <div class="any-col-3">
+                        <button class="any-link" data-select-theme="bootstrap4-light-purple">
+                            <img src="assets/images/themes/bootstrap4-light-purple.svg" alt="Bootstrap Light Purple" />
+                        </button>
+                        <span>Purple</span>
+                    </div>
+                    <div class="any-col-3">
                         <button class="any-link" data-select-theme="bootstrap4-dark-blue">
                             <img src="assets/images/themes/bootstrap4-dark-blue.svg" alt="Bootstrap Dark Blue" />
                         </button>
                         <span>Blue</span>
+                    </div>
+                    <div class="any-col-3">
+                        <button class="any-link" data-select-theme="bootstrap4-dark-purple">
+                            <img src="assets/images/themes/bootstrap4-dark-purple.svg" alt="Bootstrap Dark Purple" />
+                        </button>
+                        <span>Purple</span>
                     </div>
                 </div>
             </div
@@ -202,7 +214,9 @@ class AppConfig extends HTMLElement {
     this.logoMap = {
       'anywhere-default': 'anywhere-default-violet.png',
       'bootstrap4-light-blue': 'bootstrap4-light-blue.svg',
+      'bootstrap4-light-purple': 'bootstrap4-light-purple.svg',
       'bootstrap4-dark-blue': 'bootstrap4-dark-blue.svg',
+      'bootstrap4-dark-purple': 'bootstrap4-dark-purple.svg',
     };
     this.attachShadow({
       mode: 'open'

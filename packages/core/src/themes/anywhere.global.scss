@@ -1,6 +1,8 @@
 @import "./anywhere.theme.default.scss";
 @import "./anywhere.theme.bootstrap4-light-blue.scss";
+@import "./anywhere.theme.bootstrap4-light-purple.scss";
 @import "./anywhere.theme.bootstrap4-dark-blue.scss";
+@import "./anywhere.theme.bootstrap4-dark-purple.scss";
 
 .any-ripple-disabled {
     any-button::part(any-ink) {
