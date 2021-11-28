@@ -175,6 +175,24 @@ template.innerHTML = `
                         </button>
                         <span>Violet</span>
                     </div>
+                    <div class="any-col-3">
+                        <button class="any-link" data-select-theme="anywhere-default-light-purple">
+                            <img src="assets/images/themes/anywhere-light-purple.png" alt="Adaleks Light Purple" />
+                        </button>
+                        <span>Purple</span>
+                    </div>
+                    <div class="any-col-3">
+                        <button class="any-link" data-select-theme="anywhere-default-dark-violet">
+                            <img src="assets/images/themes/anywhere-dark-violet.png" alt="Adaleks Dark Violet" />
+                        </button>
+                        <span>Violet</span>
+                    </div>
+                    <div class="any-col-3">
+                        <button class="any-link" data-select-theme="anywhere-default-dark-purple">
+                            <img src="assets/images/themes/anywhere-dark-purple.png" alt="Adaleks Dark Purple" />
+                        </button>
+                        <span>Purple</span>
+                    </div>
                 </div>
                 <h5>Bootstrap</h5>
                 <div class="any-grid free-themes">
@@ -213,6 +231,9 @@ class AppConfig extends HTMLElement {
     super();
     this.logoMap = {
       'anywhere-default': 'anywhere-default-violet.png',
+      'anywhere-default-dark-violet': 'anywhere-dark-violet.png',
+      'anywhere-default-dark-purple': 'anywhere-dark-purple.png',
+      'anywhere-default-light-purple': 'anywhere-light-purple.png',
       'bootstrap4-light-blue': 'bootstrap4-light-blue.svg',
       'bootstrap4-light-purple': 'bootstrap4-light-purple.svg',
       'bootstrap4-dark-blue': 'bootstrap4-dark-blue.svg',
