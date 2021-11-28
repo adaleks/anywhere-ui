@@ -48,27 +48,27 @@
 
   .any-badge.any-badge-secondary {
     background-color: var(--secondaryButtonBg) !important;
-    color: var(--badgeTextColor) !important;
+    color: var(--secondaryButtonTextColor) !important;
   }
 
   .any-badge.any-badge-success {
     background-color: var(--successButtonBg) !important;
-    color: var(--badgeTextColor) !important;
+    color: var(--successButtonTextColor) !important;
   }
 
   .any-badge.any-badge-info {
     background-color: var(--infoButtonBg) !important;
-    color: var(--badgeTextColor) !important;
+    color: var(--infoButtonTextColor) !important;
   }
 
   .any-badge.any-badge-warning {
     background-color: var(--warningButtonBg) !important;
-    color: var(--textColor) !important;
+    color: var(--warningButtonTextColor) !important;
   }
 
   .any-badge.any-badge-danger {
     background-color: var(--dangerButtonBg) !important;
-    color: var(--badgeTextColor) !important;
+    color: var(--dangerButtonTextColor) !important;
   }
 
   .any-badge.any-badge-lg {

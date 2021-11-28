@@ -20,6 +20,10 @@
     margin: 0;
     outline: medium none;
 
+    &::placeholder {
+      color: var(--inputPlaceholderTextColor);
+    }
+
     &:not([disabled]) {
       &:hover {
         border-color: var(--inputHoverBorderColor);
