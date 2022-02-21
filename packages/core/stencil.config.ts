@@ -12,13 +12,18 @@ import { reactOutputTarget } from "@stencil/react-output-target";
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
-    elementSelectors: ["any-dropdown", "any-listbox", "any-virtual-scroller"],
+    elementSelectors: [
+      "any-dropdown",
+      "any-listbox",
+      "any-virtual-scroller",
+      "any-radio-group",
+    ],
     event: "valueChange",
     targetAttr: "value",
     type: "select",
   },
   {
-    elementSelectors: ["any-input-text[type=text]"],
+    elementSelectors: ["any-input-text:not([type=number])"],
     event: "valueChange",
     targetAttr: "value",
     type: "text",
@@ -29,21 +34,39 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     targetAttr: "checked",
     type: "boolean",
   },
+  {
+    elementSelectors: ["any-radio-button"],
+    event: "aOnSelect",
+    targetAttr: "checked",
+    type: "radio",
+  },
 ];
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
-    elements: ["any-dropdown", "any-listbox", "any-input-text"],
-    event: "v-valueChange",
+    elements: [
+      "any-dropdown",
+      "any-listbox",
+      "any-input-text",
+      "any-radio-button",
+      "any-radio-group",
+    ],
+    event: "v-value-change",
     externalEvent: "valueChange",
     targetAttr: "value",
   },
   {
     elements: ["any-checkbox", "any-input-switch"],
-    event: "v-valueChange",
+    event: "v-value-change",
     targetAttr: "checked",
     externalEvent: "valueChange",
   },
+  // {
+  //   elements: ["any-radio-button"],
+  //   event: "v-a-on-select",
+  //   targetAttr: "checked",
+  //   externalEvent: "aOnSelect",
+  // },
 ];
 
 export const config: Config = {
@@ -69,6 +92,7 @@ export const config: Config = {
     { components: ["any-button"] },
     { components: ["any-badge", "any-badge-overlay"] },
     { components: ["any-ripple-effect"] },
+    { components: ["any-radio-button", "any-radio-group"] },
   ],
   plugins: [
     sass({

@@ -1,5 +1,6 @@
 import { Component, Host, h, Element, Prop } from "@stencil/core";
 import { DomHandler } from "../../utils/dom";
+import { config } from "../../global/config";
 
 @Component({
   tag: "any-ripple-effect",
@@ -11,6 +12,8 @@ export class RippleEffect {
 
   private mouseDownListener: any;
 
+  private useRippleEffect: boolean = true;
+
   @Element() element: HTMLElement;
 
   /**
@@ -18,13 +21,19 @@ export class RippleEffect {
    */
   @Prop() type: "bounded" | "unbounded" = "bounded";
 
+  connectedCallback() {
+    this.useRippleEffect = config.getBoolean("rippleEffect", true);
+  }
+
   componentDidLoad() {
-    this.create();
-    this.mouseDownListener = this.onMouseDown.bind(this);
-    this.element.parentNode.addEventListener(
-      "mousedown",
-      this.mouseDownListener
-    );
+    if (this.useRippleEffect) {
+      this.create();
+      this.mouseDownListener = this.onMouseDown.bind(this);
+      this.element.parentNode.addEventListener(
+        "mousedown",
+        this.mouseDownListener
+      );
+    }
   }
 
   onMouseDown(event: MouseEvent) {

@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'any-input-text[type=text]',
+  selector: 'any-input-text:not([type=number])',
   host: {
     '(valueChange)': 'handleChangeEvent($event.target.value)'
   },

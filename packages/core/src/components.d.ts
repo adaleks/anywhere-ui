@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SelectChangeEventDetail } from "./interfaces";
+import { RadioGroupChangeEventDetail, SelectChangeEventDetail } from "./interfaces";
 export namespace Components {
     interface AnyBadge {
         /**
@@ -98,6 +98,10 @@ export namespace Components {
           * Inline style of the component.
          */
         "anyStyle": any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
         /**
           * Allows to select a boolean value instead of multiple values.
          */
@@ -369,6 +373,62 @@ export namespace Components {
          */
         "virtualScroll": boolean;
     }
+    interface AnyRadioButton {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle": any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled": boolean;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId": string;
+        /**
+          * Label of the radiobutton.
+         */
+        "label": string;
+        /**
+          * Style class of the label.
+         */
+        "labelStyleClass": string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * Applies focus.
+         */
+        "setFocus": (ev: any) => Promise<void>;
+        /**
+          * Style class of the component.
+         */
+        "styleClass": any;
+        /**
+          * the value of the radio.
+         */
+        "value"?: any | null;
+    }
+    interface AnyRadioGroup {
+        /**
+          * If `true`, the radios can be deselected.
+         */
+        "allowEmptySelection": boolean;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * the value of the radio group.
+         */
+        "value"?: any | null;
+    }
     interface AnyRippleEffect {
         /**
           * Sets the type of ripple-effect:
@@ -511,6 +571,18 @@ declare global {
         prototype: HTMLAnyListboxElement;
         new (): HTMLAnyListboxElement;
     };
+    interface HTMLAnyRadioButtonElement extends Components.AnyRadioButton, HTMLStencilElement {
+    }
+    var HTMLAnyRadioButtonElement: {
+        prototype: HTMLAnyRadioButtonElement;
+        new (): HTMLAnyRadioButtonElement;
+    };
+    interface HTMLAnyRadioGroupElement extends Components.AnyRadioGroup, HTMLStencilElement {
+    }
+    var HTMLAnyRadioGroupElement: {
+        prototype: HTMLAnyRadioGroupElement;
+        new (): HTMLAnyRadioGroupElement;
+    };
     interface HTMLAnyRippleEffectElement extends Components.AnyRippleEffect, HTMLStencilElement {
     }
     var HTMLAnyRippleEffectElement: {
@@ -544,6 +616,8 @@ declare global {
         "any-input-switch": HTMLAnyInputSwitchElement;
         "any-input-text": HTMLAnyInputTextElement;
         "any-listbox": HTMLAnyListboxElement;
+        "any-radio-button": HTMLAnyRadioButtonElement;
+        "any-radio-group": HTMLAnyRadioGroupElement;
         "any-ripple-effect": HTMLAnyRippleEffectElement;
         "any-tab-panel": HTMLAnyTabPanelElement;
         "any-tab-view": HTMLAnyTabViewElement;
@@ -654,6 +728,10 @@ declare namespace LocalJSX {
           * Inline style of the component.
          */
         "anyStyle"?: any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
         /**
           * Allows to select a boolean value instead of multiple values.
          */
@@ -987,6 +1065,74 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    interface AnyRadioButton {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle"?: any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId"?: string;
+        /**
+          * Label of the radiobutton.
+         */
+        "label"?: string;
+        /**
+          * Style class of the label.
+         */
+        "labelStyleClass"?: string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
+          * Callback to invoke when the radio button loses focus.
+         */
+        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke when the radio button receives focus.
+         */
+        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke on radio button select.
+         */
+        "onAOnSelect"?: (event: CustomEvent<any>) => void;
+        /**
+          * Style class of the component.
+         */
+        "styleClass"?: any;
+        /**
+          * the value of the radio.
+         */
+        "value"?: any | null;
+    }
+    interface AnyRadioGroup {
+        /**
+          * If `true`, the radios can be deselected.
+         */
+        "allowEmptySelection"?: boolean;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onValueChange"?: (event: CustomEvent<RadioGroupChangeEventDetail>) => void;
+        /**
+          * the value of the radio group.
+         */
+        "value"?: any | null;
+    }
     interface AnyRippleEffect {
         /**
           * Sets the type of ripple-effect:
@@ -1108,6 +1254,8 @@ declare namespace LocalJSX {
         "any-input-switch": AnyInputSwitch;
         "any-input-text": AnyInputText;
         "any-listbox": AnyListbox;
+        "any-radio-button": AnyRadioButton;
+        "any-radio-group": AnyRadioGroup;
         "any-ripple-effect": AnyRippleEffect;
         "any-tab-panel": AnyTabPanel;
         "any-tab-view": AnyTabView;
@@ -1126,6 +1274,8 @@ declare module "@stencil/core" {
             "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
+            "any-radio-button": LocalJSX.AnyRadioButton & JSXBase.HTMLAttributes<HTMLAnyRadioButtonElement>;
+            "any-radio-group": LocalJSX.AnyRadioGroup & JSXBase.HTMLAttributes<HTMLAnyRadioGroupElement>;
             "any-ripple-effect": LocalJSX.AnyRippleEffect & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;
             "any-tab-panel": LocalJSX.AnyTabPanel & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
             "any-tab-view": LocalJSX.AnyTabView & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;

@@ -48,6 +48,11 @@ export class AnyCheckbox {
   @Prop() name: string = this.inputId;
 
   /**
+   * Index of the element in tabbing order
+   */
+  @Prop() anyTabIndex?: number = 0;
+
+  /**
    * The value of the checkbox does not mean if it's checked or not, use the `checked`
    * property for that.
    *
@@ -186,6 +191,7 @@ export class AnyCheckbox {
           <div
             class={
               "any-checkbox any-component" +
+              (this.styleClass ? " " + this.styleClass : "") +
               (checked ? " any-checkbox-checked" : "") +
               (this.focused ? " any-checkbox-focused" : "") +
               (disabled ? " any-checkbox-disabled" : "")
@@ -200,6 +206,7 @@ export class AnyCheckbox {
                 checked={checked}
                 value={this.value}
                 aria-checked={`${checked}`}
+                tabindex={this.anyTabIndex}
                 onFocus={() => {
                   this.onFocus();
                 }}
