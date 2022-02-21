@@ -1,5 +1,18 @@
 # Changelog
 
+## [v0.2.0](https://github.com/adaleks/anywhere-ui/tree/v0.2.0) (2022-02-21)
+
+[Full Changelog](https://github.com/adaleks/anywhere-ui/compare/v0.2.0...HEAD)
+
+**Implemented New Features and Enhancements:**
+
+- RadioButton Component [\#24](https://github.com/adaleks/anywhere-ui/issues/24)
+- TabView Component [\#13](https://github.com/adaleks/anywhere-ui/issues/13)
+- InputSwitch Component [\#23](https://github.com/adaleks/anywhere-ui/issues/23)
+- RippleEffect Component [\#20](https://github.com/adaleks/anywhere-ui/issues/20)
+- Badge Component [\#16](https://github.com/adaleks/anywhere-ui/issues/16)
+- Button Component [\#15](https://github.com/adaleks/anywhere-ui/issues/15)
+
 ## [v0.1.1](https://github.com/adaleks/anywhere-ui/tree/v0.1.1) (2021-10-15)
 
 [Full Changelog](https://github.com/adaleks/anywhere-ui/compare/v0.1.0...v0.1.1)
