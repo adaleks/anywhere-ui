@@ -11,8 +11,7 @@ import { Components } from '@anywhere-ui/core';
 export declare interface AnyBadge extends Components.AnyBadge {}
 
 @ProxyCmp({
-  tagName: 'any-badge',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['anyStyle', 'severity', 'size', 'styleClass', 'value']
 })
 @Component({
@@ -33,8 +32,7 @@ export class AnyBadge {
 export declare interface AnyBadgeOverlay extends Components.AnyBadgeOverlay {}
 
 @ProxyCmp({
-  tagName: 'any-badge-overlay',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['styleClass']
 })
 @Component({
@@ -69,8 +67,7 @@ export declare interface AnyButton extends Components.AnyButton {
 }
 
 @ProxyCmp({
-  tagName: 'any-button',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['anyStyle', 'badge', 'badgeClass', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type']
 })
 @Component({
@@ -106,16 +103,15 @@ export declare interface AnyCheckbox extends Components.AnyCheckbox {
 }
 
 @ProxyCmp({
-  tagName: 'any-checkbox',
-  customElement: undefined,
-  inputs: ['anyStyle', 'binary', 'checkboxIcon', 'checked', 'disabled', 'inputId', 'label', 'labelStyleClass', 'name', 'readonly', 'styleClass', 'value'],
+  defineCustomElementFn: undefined,
+  inputs: ['anyStyle', 'anyTabIndex', 'binary', 'checkboxIcon', 'checked', 'disabled', 'inputId', 'label', 'labelStyleClass', 'name', 'readonly', 'styleClass', 'value'],
   methods: ['inputFocus']
 })
 @Component({
   selector: 'any-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['anyStyle', 'binary', 'checkboxIcon', 'checked', 'disabled', 'inputId', 'label', 'labelStyleClass', 'name', 'readonly', 'styleClass', 'value']
+  inputs: ['anyStyle', 'anyTabIndex', 'binary', 'checkboxIcon', 'checked', 'disabled', 'inputId', 'label', 'labelStyleClass', 'name', 'readonly', 'styleClass', 'value']
 })
 export class AnyCheckbox {
   protected el: HTMLElement;
@@ -164,8 +160,7 @@ export declare interface AnyDropdown extends Components.AnyDropdown {
 }
 
 @ProxyCmp({
-  tagName: 'any-dropdown',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['anyStyle', 'anyTabIndex', 'autoZIndex', 'baseZIndex', 'clearIcon', 'disabled', 'dropdownIcon', 'hideAnimation', 'inputId', 'name', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll']
 })
 @Component({
@@ -201,8 +196,7 @@ export declare interface AnyInputSwitch extends Components.AnyInputSwitch {
 }
 
 @ProxyCmp({
-  tagName: 'any-input-switch',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['anyStyle', 'anyTabIndex', 'ariaLabeledBy', 'checked', 'disabled', 'falseValue', 'inputId', 'name', 'readonly', 'styleClass', 'trueValue']
 })
 @Component({
@@ -230,8 +224,7 @@ export declare interface AnyInputText extends Components.AnyInputText {
 }
 
 @ProxyCmp({
-  tagName: 'any-input-text',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'floatLabel', 'inputId', 'inputWrapperClass', 'label', 'leftIconClass', 'name', 'placeholder', 'readonly', 'rightIconClass', 'value'],
   methods: ['getInputRef']
 })
@@ -260,8 +253,7 @@ export declare interface AnyListbox extends Components.AnyListbox {
 }
 
 @ProxyCmp({
-  tagName: 'any-listbox',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['anyStyle', 'disabled', 'inputId', 'listStyle', 'name', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'value', 'virtualScroll']
 })
 @Component({
@@ -280,11 +272,75 @@ export class AnyListbox {
 }
 
 
+export declare interface AnyRadioButton extends Components.AnyRadioButton {
+  /**
+   * Callback to invoke on radio button select. 
+   */
+  aOnSelect: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when the radio button receives focus. 
+   */
+  aOnFocus: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when the radio button loses focus. 
+   */
+  aOnBlur: EventEmitter<CustomEvent<any>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['anyStyle', 'anyTabIndex', 'disabled', 'inputId', 'label', 'labelStyleClass', 'name', 'styleClass', 'value'],
+  methods: ['setFocus']
+})
+@Component({
+  selector: 'any-radio-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['anyStyle', 'anyTabIndex', 'disabled', 'inputId', 'label', 'labelStyleClass', 'name', 'styleClass', 'value']
+})
+export class AnyRadioButton {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['aOnSelect', 'aOnFocus', 'aOnBlur']);
+  }
+}
+
+import type { RadioGroupChangeEventDetail as IRadioGroupRadioGroupChangeEventDetail } from '@anywhere-ui/core';
+export declare interface AnyRadioGroup extends Components.AnyRadioGroup {
+  /**
+   * Emitted when the value has changed. 
+   */
+  valueChange: EventEmitter<CustomEvent<IRadioGroupRadioGroupChangeEventDetail>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['allowEmptySelection', 'name', 'value']
+})
+@Component({
+  selector: 'any-radio-group',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['allowEmptySelection', 'name', 'value']
+})
+export class AnyRadioGroup {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange']);
+  }
+}
+
+
 export declare interface AnyRippleEffect extends Components.AnyRippleEffect {}
 
 @ProxyCmp({
-  tagName: 'any-ripple-effect',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['type']
 })
 @Component({
@@ -305,8 +361,7 @@ export class AnyRippleEffect {
 export declare interface AnyTabPanel extends Components.AnyTabPanel {}
 
 @ProxyCmp({
-  tagName: 'any-tab-panel',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'header', 'selected']
 })
 @Component({
@@ -327,8 +382,7 @@ export class AnyTabPanel {
 export declare interface AnyTabView extends Components.AnyTabView {}
 
 @ProxyCmp({
-  tagName: 'any-tab-view',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['activeIndex', 'anyStyle', 'styleClass']
 })
 @Component({
@@ -371,8 +425,7 @@ export declare interface AnyVirtualScroller extends Components.AnyVirtualScrolle
 }
 
 @ProxyCmp({
-  tagName: 'any-virtual-scroller',
-  customElement: undefined,
+  defineCustomElementFn: undefined,
   inputs: ['anyStyle', 'contentElemClass', 'contentElemTag', 'delay', 'itemElemClass', 'itemSize', 'itemTag', 'items', 'lazy', 'noDataText', 'rowsPerPage', 'scrollElemClass', 'scrollerHeight', 'styleClass']
 })
 @Component({

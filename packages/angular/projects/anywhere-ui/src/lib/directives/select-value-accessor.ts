@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'any-dropdown, any-listbox, any-virtual-scroller',
+  selector: 'any-dropdown, any-listbox, any-virtual-scroller, any-radio-group',
   host: {
     '(valueChange)': 'handleChangeEvent($event.target.value)'
   },

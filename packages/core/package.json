@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/core",
-  "version": "0.2.0+7",
+  "version": "0.2.0",
   "description": "AnywhereUI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -33,14 +33,14 @@
     "deploy-site-to-master": "bash scripts/deploy-site-to-master.sh"
   },
   "devDependencies": {
-    "@iconify/iconify": "^2.1.0",
-    "@stencil/angular-output-target": "0.3.0",
-    "@stencil/core": "^2.10.0",
-    "@stencil/react-output-target": "^0.1.0",
+    "@iconify/iconify": "^2.1.2",
+    "@stencil/angular-output-target": "0.4.0",
+    "@stencil/core": "^2.13.0",
+    "@stencil/react-output-target": "^0.2.1",
     "@stencil/sass": "^1.5.2",
-    "@stencil/vue-output-target": "^0.5.1",
+    "@stencil/vue-output-target": "^0.6.0",
     "@types/clusterize.js": "^0.18.1",
-    "@types/lodash": "^4.14.177",
+    "@types/lodash": "^4.14.178",
     "@types/puppeteer": "^5.4.4",
     "clusterize.js": "^0.18.1",
     "clusterize.js-paging": "^1.0.3",
@@ -50,7 +50,7 @@
     "jest": "26.6.3",
     "jest-cli": "26.6.3",
     "lodash": "^4.17.21",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.26.0",
     "puppeteer": "^9.0.0",
     "rebase": "^0.3.0",
     "replace": "^1.2.1",
@@ -62,5 +62,5 @@
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
-  "buildnum": "7"
+  "buildnum": "8"
 }

@@ -1,9 +1,18 @@
-import { NgModule } from '@angular/core';
-import { defineCustomElements } from '@anywhere-ui/core/loader';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import {
+  ModuleWithProviders,
+  APP_INITIALIZER,
+  NgModule,
+  NgZone,
+  InjectionToken,
+} from '@angular/core';
+import { AnywhereUIConfig } from '@anywhere-ui/core';
+import { appInitialize } from './app-initialize';
+import { ConfigToken } from './providers/config';
 
 import { BooleanValueAccessor } from './directives/boolean-value-accessor';
 // import { NumericValueAccessor } from './directives/number-value-accessor';
-// import { RadioValueAccessor } from './directives/radio-value-accessor';
+import { RadioValueAccessor } from './directives/radio-value-accessor';
 import { SelectValueAccessor } from './directives/select-value-accessor';
 import { TextValueAccessor } from './directives/text-value-accessor';
 
@@ -20,9 +29,11 @@ import {
   AnyBadgeOverlay,
   AnyRippleEffect,
   AnyInputSwitch,
+  AnyRadioButton,
+  AnyRadioGroup,
 } from './directives/proxies';
 
-defineCustomElements(window);
+// defineCustomElements(window);
 
 const DECLARATIONS = [
   // proxies
@@ -38,11 +49,13 @@ const DECLARATIONS = [
   AnyBadgeOverlay,
   AnyRippleEffect,
   AnyInputSwitch,
+  AnyRadioButton,
+  AnyRadioGroup,
 
   // Value Accessors
   BooleanValueAccessor,
   // NumericValueAccessor,
-  // RadioValueAccessor,
+  RadioValueAccessor,
   SelectValueAccessor,
   TextValueAccessor,
 ];
@@ -50,6 +63,30 @@ const DECLARATIONS = [
 @NgModule({
   declarations: DECLARATIONS,
   exports: DECLARATIONS,
-  imports: [],
+  imports: [CommonModule],
 })
-export class AnywhereUiModule {}
+export class AnywhereUiModule {
+  static forRoot(
+    config?: AnywhereUIConfig
+  ): ModuleWithProviders<AnywhereUiModule> {
+    return {
+      ngModule: AnywhereUiModule,
+      providers: [
+        {
+          provide: ConfigToken,
+          useValue: config,
+        },
+        // {
+        //   provide: ConfigToken,
+        //   useValue: config,
+        // },
+        {
+          provide: APP_INITIALIZER,
+          useFactory: appInitialize,
+          multi: true,
+          deps: [ConfigToken, DOCUMENT, NgZone],
+        },
+      ],
+    };
+  }
+}

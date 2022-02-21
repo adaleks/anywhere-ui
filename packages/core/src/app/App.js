@@ -9,6 +9,7 @@ import TabView from "./views/TabView/TabView.js";
 import Button from "./views/Button/Button.js";
 import Badge from "./views/Badge/Badge.js";
 import RippleEffect from "./views/RippleEffect/RippleEffect.js";
+import RadioButton from "./views/RadioButton/RadioButton.js";
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -102,6 +103,10 @@ const router = () => {
       path: "/ripple-effect",
       view: RippleEffect,
     },
+    {
+      path: "/radio-button",
+      view: RadioButton,
+    },
   ];
 
   // Test each route for potential match
@@ -149,6 +154,8 @@ const router = () => {
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
+  // window.AnywhereUI.config.set('rippleEffect', false);
+
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
