@@ -2,7 +2,7 @@
 
 ## [v0.2.0](https://github.com/adaleks/anywhere-ui/tree/v0.2.0) (2022-02-21)
 
-[Full Changelog](https://github.com/adaleks/anywhere-ui/compare/v0.2.0...HEAD)
+[Full Changelog](https://github.com/adaleks/anywhere-ui/compare/v0.1.1...v0.2.0)
 
 **Implemented New Features and Enhancements:**
 
