@@ -1,13 +1,31 @@
 {
   "name": "@anywhere-ui/vue",
   "sideEffects": false,
-  "version": "0.2.0",
-  "description": "Vue specific wrapper AnywhereUI Web Components",
+  "version": "0.2.1",
+  "description": "AnywhereUI integration for Vue apps.",
   "license": "MIT",
+  "keywords": [
+    "anywhere-ui",
+    "framework",
+    "vue 3",
+    "stencil",
+    "mobile",
+    "app",
+    "webapp",
+    "capacitor",
+    "cordova",
+    "electron",
+    "progressive web app",
+    "pwa"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gjovanovicst/anywhere-ui.git"
+    "url": "https://github.com/adaleks/anywhere-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/adaleks/anywhere-ui/issues"
+  },
+  "homepage": "https://github.com/adaleks/anywhere-ui/tree/main/packages/vue#readme",
   "scripts": {
     "lint": "echo add linter",
     "test": "jest",
@@ -31,7 +49,9 @@
     "typescript": "^4.3.2",
     "vue": "^3.1.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@anywhere-ui/core": "^0.2.1"
+  },
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
@@ -42,5 +62,5 @@
       "dist"
     ]
   },
-  "buildnum": "8"
+  "buildnum": "9"
 }

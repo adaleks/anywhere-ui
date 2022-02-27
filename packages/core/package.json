@@ -1,7 +1,7 @@
 {
   "name": "@anywhere-ui/core",
-  "version": "0.2.0",
-  "description": "AnywhereUI",
+  "version": "0.2.1",
+  "description": "Base components for AnywhereUI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -10,10 +10,27 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/anywhere-ui/anywhere-ui.js",
+  "keywords": [
+    "anywhere-ui",
+    "framework",
+    "stencil",
+    "mobile",
+    "app",
+    "webapp",
+    "capacitor",
+    "cordova",
+    "electron",
+    "progressive web app",
+    "pwa"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gjovanovicst/anywhere-ui.git"
+    "url": "https://github.com/adaleks/anywhere-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/adaleks/anywhere-ui/issues"
+  },
+  "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "files": [
     "dist/",
     "loader/"
@@ -62,5 +79,5 @@
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
-  "buildnum": "8"
+  "buildnum": "9"
 }

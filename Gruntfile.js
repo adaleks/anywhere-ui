@@ -21,13 +21,13 @@ module.exports = function (grunt) {
       //     }
       //   },
 
-      files: ['packages/core/package.json', 'packages/angular/package.json', 'packages/react/package.json', 'packages/vue/package.json']
+      files: ['packages/core/package.json', 'packages/angular/package.json', 'packages/angular/projects/anywhere-ui/package.json', 'packages/react/package.json', 'packages/vue/package.json']
     },
     buildnumber: {
       options: {
         field: 'buildnum',
       },
-      files: ['packages/core/package.json', 'packages/angular/package.json', 'packages/react/package.json', 'packages/vue/package.json']
+      files: ['packages/core/package.json', 'packages/angular/package.json', 'packages/angular/projects/anywhere-ui//package.json', 'packages/react/package.json', 'packages/vue/package.json']
     }
 
   });

@@ -82,10 +82,12 @@ The `@anywhere-ui/core` package can by used in simple HTML, or by vanilla JavaSc
 
 ## Author
 
-👤 **Goran Jovanovic**
+👤 **Goran Jovanović**
 
 - Github: [@gjovanovicst](https://github.com/gjovanovicst)
-- LinkedIn: [@goran-jovanovic-11a51456](https://linkedin.com/in/goran-jovanovic-11a51456)
+- Github Organization: [Adaleks Technology](https://github.com/adaleks)
+- LinkedIn: [@goran-jovanović](https://linkedin.com/in/goran-jovanović-11a51456)
+- Twitter: [@gstjovanovic](https://twitter.com/gstjovanovic)
 
 ## Contribute
 
@@ -97,5 +99,5 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [Adaleks Technology](https://github.com/adaleks).<br />
+Copyright © 2022 [Adaleks Technology](https://github.com/adaleks).<br />
 This project is [MIT](https://github.com/adaleks/anywhere-ui/blob/main/LICENSE) licensed.

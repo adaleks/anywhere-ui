@@ -1,24 +1,94 @@
-# AnywhereUi
+# @anywhere-ui/angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.13.
+AnywhereUI integration for Angular apps.
 
-## Code scaffolding
+@anywhere-ui/angular combines the core AnywhereUI experience with the tooling and APIs that are tailored to Angular Developers.
 
-Run `ng generate component component-name --project anywhere-ui` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project anywhere-ui`.
-> Note: Don't forget to add `--project anywhere-ui` or else it will be added to the default project in your `angular.json` file. 
+## Angular
 
-## Build
+Angular has a pretty good story for integration with web components but there are a few issues with the developer experience. If you want to know what the story is without the bindings go here: https://stenciljs.com/docs/angular.
 
-Run `ng build anywhere-ui` to build the project. The build artifacts will be stored in the `dist/` directory.
+With bindings the web components get wrapped in an Angular component and then immediately become available as Angular Components. Some of the advantages of doing this are that you get types for your components and you also get the ability to use ngmodel on inputs. Your developers then consuming your web components from Angular applications import an actual Angular Library and to them it feels as though they are interacting with Angular components.
 
-## Publishing
+## Install
 
-After building your library with `ng build anywhere-ui`, go to the dist folder `cd dist/anywhere-ui` and run `npm publish`.
+```bash
+npm install @anywhere-ui/angular
+```
 
-## Running unit tests
+## Style
 
-Run `ng test anywhere-ui` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The css dependencies should be added in `angular.json` file
 
-## Further help
+```json
+{
+  ...
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  "build": {
+    ...
+
+    "options": {
+      "styles": [
+          "./node_modules/@anywhere-ui/core/dist/anywhere-ui/anywhere-ui.css"
+      ],
+    }
+  },
+  ...
+
+  "test": {
+    "styles": [
+        "./node_modules/@anywhere-ui/core/dist/anywhere-ui/anywhere-ui.css"
+    ],
+  }
+
+  ...
+
+}
+```
+
+## Usage
+
+```ts
+import { AnywhereUiModule } from '@anywhere-ui/angular';
+
+@NgModule({
+  ...
+  imports: [
+    AnywhereUiModule.forRoot(),
+  ],
+  ...
+})
+export class AppModule { }
+```
+
+## Config
+
+AnywhereUI Config provides a way to change the properties of components globally across an app. It can set the ripple effect, app mode, animations, and more.
+
+### Global Config
+
+To override the initial AnywhereUI config for the app, provide a config in `AnywhereUiModule.forRoot` in the `app.module.ts` file.
+
+```ts
+import { AnywhereUiModule } from '@anywhere-ui/angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    AnywhereUiModule.forRoot({
+      rippleEffect: false,
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+## Config Options
+
+Below is a list of config options that AnywhereUI uses.
+
+| Config       | Type    | Default | Description                                     |
+| ------------ | ------- | ------- | ----------------------------------------------- |
+| rippleEffect | boolean | true    | If `true` adds ripple effect to the components. |
