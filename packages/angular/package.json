@@ -1,6 +1,28 @@
 {
   "name": "@anywhere-ui/angular",
-  "version": "0.2.0",
+  "version": "0.2.1",
+  "keywords": [
+    "anywhere-ui",
+    "framework",
+    "angular",
+    "stencil",
+    "mobile",
+    "app",
+    "webapp",
+    "capacitor",
+    "cordova",
+    "electron",
+    "progressive web app",
+    "pwa"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adaleks/anywhere-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adaleks/anywhere-ui/issues"
+  },
+  "homepage": "https://github.com/adaleks/anywhere-ui/tree/main/packages/angular#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -18,6 +40,7 @@
     "@angular/platform-browser": "^13.0.2",
     "@angular/platform-browser-dynamic": "^13.0.2",
     "@angular/router": "^13.0.2",
+    "@anywhere-ui/core": "^0.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
@@ -42,5 +65,5 @@
     "tslint": "~6.1.0",
     "typescript": "~4.4.4"
   },
-  "buildnum": "8"
+  "buildnum": "9"
 }

@@ -8,6 +8,14 @@ With bindings the web components get wrapped in a React component and then immed
 
 These are AnyehereUI Web Components specifically build for React.
 
+## Style
+
+The css dependencies should be imported in `index.js` file
+
+```js
+import "@anywhere-ui/core/dist/anywhere-ui/anywhere-ui.css";
+```
+
 ## Usage
 
 Add this package to your project:
@@ -33,6 +41,30 @@ Use it in your JSX as any React component:
 ```html
 <AnyCheckbox checked="true" label="React"></AnyCheckbox>
 ```
+
+## Config
+
+AnywhereUI Config provides a way to change the properties of components globally across an app. It can set the ripple effect, app mode, animations, and more.
+
+### Global Config
+
+To override the initial AnywhereUI config for the app, provide a config in `setupAnywhereUIReact` method in the `App.js` file.
+
+```js
+import { setupAnywhereUIReact } from "@anywhere-ui/react";
+
+setupAnywhereUIReact({
+  rippleEffect: true,
+});
+```
+
+## Config Options
+
+Below is a list of config options that AnywhereUI uses.
+
+| Config       | Type    | Default | Description                                     |
+| ------------ | ------- | ------- | ----------------------------------------------- |
+| rippleEffect | boolean | true    | If `true` adds ripple effect to the components. |
 
 ## Build
 

@@ -14,14 +14,18 @@ Visit the [AnywhereUI Website](https://adaleks.github.io/anywhere-ui-showcase/) 
 | Project | Package | Version | Links |
 | ------- | ------- | ------- |:-----:|
 | **Core** | [`@anywhere-ui/core`](https://www.npmjs.com/package/@anywhere-ui/core) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fcore.svg)](https://badge.fury.io/js/@anywhere-ui%2Fcore) | [`README.md`](packages/core/README.md) |
+| **Angular** | [`@anywhere-ui/angular`](https://www.npmjs.com/package/@anywhere-ui/angular) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fangular.svg)](https://badge.fury.io/js/@anywhere-ui%2Fangular) | [`README.md`](packages/angular/README.md) |
+| **Vue** | [`@anywhere-ui/vue`](https://www.npmjs.com/package/@anywhere-ui/vue) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fvue.svg)](https://badge.fury.io/js/@anywhere-ui%2Fvue) | [`README.md`](packages/vue/README.md) |
+| **React** | [`@anywhere-ui/react`](https://www.npmjs.com/package/@anywhere-ui/react) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Freact.svg)](https://badge.fury.io/js/@anywhere-ui%2Freact) | [`README.md`](packages/react/README.md) |
 
 ## Getting Started
 
-To start building a new AnywhereUI web component using Stencil, fork this repo and clone to a new directory:
+To start building a new AnywhereUI web component using Stencil, fork this repo and clone to a new directory.
+
+Navigate into the project directory:
+
 
 ```bash
-git clone https://github.com/{github_username}/anywhere-ui.git
-
 cd anywhere-ui
 ```
 
