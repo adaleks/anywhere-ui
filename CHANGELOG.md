@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.1](https://github.com/adaleks/anywhere-ui/tree/v0.2.1) (2022-02-27)
+
+[Full Changelog](https://github.com/adaleks/anywhere-ui/compare/v0.2.0...v0.2.1)
+
+**Closed issues:**
+
+- Update README documentations across the packages [\#32](https://github.com/adaleks/anywhere-ui/issues/32)
+
 ## [v0.2.0](https://github.com/adaleks/anywhere-ui/tree/v0.2.0) (2022-02-21)
 
 [Full Changelog](https://github.com/adaleks/anywhere-ui/compare/v0.1.1...v0.2.0)
