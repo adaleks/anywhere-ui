@@ -11,7 +11,8 @@
     "generate": "bash packages/core/scripts/generate.sh",
     "deploy-docs": "lerna run deploy-docs --scope=@anywhere-ui/core --stream",
     "initialize-ghpages": "lerna run initialize-ghpages --scope=@anywhere-ui/core --stream",
-    "deploy-site-to-master": "lerna run deploy-site-to-master --scope=@anywhere-ui/core --stream"
+    "deploy-site-to-master": "lerna run deploy-site-to-master --scope=@anywhere-ui/core --stream",
+    "generate-changelog": "gren changelog --generate"
   },
   "devDependencies": {
     "grunt": "^1.4.1",

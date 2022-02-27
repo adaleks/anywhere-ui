@@ -1,0 +1,23 @@
+{
+  "username": "adaleks",
+  "repo": "anywhere-ui",
+  "groupBy": {
+    "Implemented New Features and Enhancements:": [
+      "enhancement",
+      "internal",
+      "Enhancement",
+      "new feature"
+    ],
+    "Fixed Bugs:": ["bug"],
+    "Documentations:": ["documentation"]
+  },
+  "ignoreIssuesWith": ["wontfix", "duplicate"],
+  "template": {
+    "release": "## [{{release}}](https://github.com/adaleks/anywhere-ui/tree/{{release}}) ({{date}})\n{{body}}",
+    "issue": "- {{name}} [{{text}}]({{url}})",
+    "group": "\n **{{heading}}**\n"
+  },
+  "onlyMIlestones": true,
+  "override": true,
+  "tags": "all"
+}
