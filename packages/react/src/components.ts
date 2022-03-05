@@ -15,6 +15,7 @@ export const AnyCheckbox = /*@__PURE__*/createReactComponent<JSX.AnyCheckbox, HT
 export const AnyDropdown = /*@__PURE__*/createReactComponent<JSX.AnyDropdown, HTMLAnyDropdownElement>('any-dropdown');
 export const AnyInputSwitch = /*@__PURE__*/createReactComponent<JSX.AnyInputSwitch, HTMLAnyInputSwitchElement>('any-input-switch');
 export const AnyInputText = /*@__PURE__*/createReactComponent<JSX.AnyInputText, HTMLAnyInputTextElement>('any-input-text');
+export const AnyInputTextarea = /*@__PURE__*/createReactComponent<JSX.AnyInputTextarea, HTMLAnyInputTextareaElement>('any-input-textarea');
 export const AnyListbox = /*@__PURE__*/createReactComponent<JSX.AnyListbox, HTMLAnyListboxElement>('any-listbox');
 export const AnyRadioButton = /*@__PURE__*/createReactComponent<JSX.AnyRadioButton, HTMLAnyRadioButtonElement>('any-radio-button');
 export const AnyRadioGroup = /*@__PURE__*/createReactComponent<JSX.AnyRadioGroup, HTMLAnyRadioGroupElement>('any-radio-group');

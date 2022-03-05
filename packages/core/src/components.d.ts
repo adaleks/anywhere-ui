@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { RadioGroupChangeEventDetail, SelectChangeEventDetail } from "./interfaces";
+import { RadioGroupChangeEventDetail, SelectChangeEventDetail, TextareaChangeEventDetail } from "./interfaces";
 export namespace Components {
     interface AnyBadge {
         /**
@@ -323,6 +323,80 @@ export namespace Components {
          */
         "value": string;
     }
+    interface AnyInputTextarea {
+        /**
+          * When present, textarea size changes as being typed.
+         */
+        "autoResize": boolean;
+        /**
+          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
+         */
+        "autocapitalize": string;
+        /**
+          * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer.
+         */
+        "cols"?: number;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled": boolean;
+        /**
+          * When enabled, the label will have floating effect on input text focus
+         */
+        "floatLabel": boolean;
+        /**
+          * Returns the native `<textarea>` element used under the hood.
+         */
+        "getInputElement": () => Promise<HTMLTextAreaElement>;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId": string;
+        /**
+          * The class of input wrapper element
+         */
+        "inputWrapperClass": string;
+        /**
+          * Label of the input text
+         */
+        "label": string;
+        /**
+          * Name of the input text.
+         */
+        "name": string;
+        /**
+          * Default text to display when no value in input textarea
+         */
+        "placeholder": string;
+        /**
+          * When present, it specifies that the element value cannot be changed
+         */
+        "readonly": boolean;
+        /**
+          * The number of visible text lines for the control.
+         */
+        "rows"?: number;
+        /**
+          * Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.blur()`.
+         */
+        "setBlur": () => Promise<void>;
+        /**
+          * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * If `true`, the element will have its spelling and grammar checked.
+         */
+        "spellcheck": boolean;
+        /**
+          * The value of the textarea.
+         */
+        "value"?: string | null;
+        /**
+          * Indicates how the control wraps text.
+         */
+        "wrap"?: "hard" | "soft" | "off";
+    }
     interface AnyListbox {
         /**
           * Inline style of the element
@@ -565,6 +639,12 @@ declare global {
         prototype: HTMLAnyInputTextElement;
         new (): HTMLAnyInputTextElement;
     };
+    interface HTMLAnyInputTextareaElement extends Components.AnyInputTextarea, HTMLStencilElement {
+    }
+    var HTMLAnyInputTextareaElement: {
+        prototype: HTMLAnyInputTextareaElement;
+        new (): HTMLAnyInputTextareaElement;
+    };
     interface HTMLAnyListboxElement extends Components.AnyListbox, HTMLStencilElement {
     }
     var HTMLAnyListboxElement: {
@@ -615,6 +695,7 @@ declare global {
         "any-dropdown": HTMLAnyDropdownElement;
         "any-input-switch": HTMLAnyInputSwitchElement;
         "any-input-text": HTMLAnyInputTextElement;
+        "any-input-textarea": HTMLAnyInputTextareaElement;
         "any-listbox": HTMLAnyListboxElement;
         "any-radio-button": HTMLAnyRadioButtonElement;
         "any-radio-group": HTMLAnyRadioGroupElement;
@@ -1011,6 +1092,88 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface AnyInputTextarea {
+        /**
+          * When present, textarea size changes as being typed.
+         */
+        "autoResize"?: boolean;
+        /**
+          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
+         */
+        "autocapitalize"?: string;
+        /**
+          * The visible width of the text control, in average character widths. If it is specified, it must be a positive integer.
+         */
+        "cols"?: number;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * When enabled, the label will have floating effect on input text focus
+         */
+        "floatLabel"?: boolean;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId"?: string;
+        /**
+          * The class of input wrapper element
+         */
+        "inputWrapperClass"?: string;
+        /**
+          * Label of the input text
+         */
+        "label"?: string;
+        /**
+          * Name of the input text.
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onAOnBlur"?: (event: CustomEvent<FocusEvent>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onAOnFocus"?: (event: CustomEvent<FocusEvent>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onAOnInput"?: (event: CustomEvent<InputEvent>) => void;
+        /**
+          * Emitted when the input has resized.
+         */
+        "onAOnResize"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the input value has changed.
+         */
+        "onValueChange"?: (event: CustomEvent<TextareaChangeEventDetail>) => void;
+        /**
+          * Default text to display when no value in input textarea
+         */
+        "placeholder"?: string;
+        /**
+          * When present, it specifies that the element value cannot be changed
+         */
+        "readonly"?: boolean;
+        /**
+          * The number of visible text lines for the control.
+         */
+        "rows"?: number;
+        /**
+          * If `true`, the element will have its spelling and grammar checked.
+         */
+        "spellcheck"?: boolean;
+        /**
+          * The value of the textarea.
+         */
+        "value"?: string | null;
+        /**
+          * Indicates how the control wraps text.
+         */
+        "wrap"?: "hard" | "soft" | "off";
+    }
     interface AnyListbox {
         /**
           * Inline style of the element
@@ -1253,6 +1416,7 @@ declare namespace LocalJSX {
         "any-dropdown": AnyDropdown;
         "any-input-switch": AnyInputSwitch;
         "any-input-text": AnyInputText;
+        "any-input-textarea": AnyInputTextarea;
         "any-listbox": AnyListbox;
         "any-radio-button": AnyRadioButton;
         "any-radio-group": AnyRadioGroup;
@@ -1273,6 +1437,7 @@ declare module "@stencil/core" {
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
+            "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
             "any-radio-button": LocalJSX.AnyRadioButton & JSXBase.HTMLAttributes<HTMLAnyRadioButtonElement>;
             "any-radio-group": LocalJSX.AnyRadioGroup & JSXBase.HTMLAttributes<HTMLAnyRadioGroupElement>;

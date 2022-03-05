@@ -1,0 +1,15 @@
+@import "../../themes/anywhere.globals.scss";
+@import "../input-text/input-text.scss";
+
+:host {
+  display: block;
+
+  .any-inputtextarea-resizable {
+    overflow: hidden;
+    resize: none;
+  }
+
+  .any-fluid .any-inputtextarea {
+    width: 100%;
+  }
+}

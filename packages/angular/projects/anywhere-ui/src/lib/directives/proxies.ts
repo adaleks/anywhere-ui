@@ -243,6 +243,51 @@ export class AnyInputText {
   }
 }
 
+import type { TextareaChangeEventDetail as IInputTextareaTextareaChangeEventDetail } from '@anywhere-ui/core';
+export declare interface AnyInputTextarea extends Components.AnyInputTextarea {
+  /**
+   * Emitted when the input loses focus. 
+   */
+  aOnBlur: EventEmitter<CustomEvent<FocusEvent>>;
+  /**
+   * Emitted when the input has focus. 
+   */
+  aOnFocus: EventEmitter<CustomEvent<FocusEvent>>;
+  /**
+   * Emitted when the input has resized. 
+   */
+  aOnResize: EventEmitter<CustomEvent<any>>;
+  /**
+   * Emitted when a keyboard input occurred. 
+   */
+  aOnInput: EventEmitter<CustomEvent<InputEvent>>;
+  /**
+   * Emitted when the input value has changed. 
+   */
+  valueChange: EventEmitter<CustomEvent<IInputTextareaTextareaChangeEventDetail>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['autoResize', 'autocapitalize', 'cols', 'disabled', 'floatLabel', 'inputId', 'inputWrapperClass', 'label', 'name', 'placeholder', 'readonly', 'rows', 'spellcheck', 'value', 'wrap'],
+  methods: ['setFocus', 'getInputElement']
+})
+@Component({
+  selector: 'any-input-textarea',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['autoResize', 'autocapitalize', 'cols', 'disabled', 'floatLabel', 'inputId', 'inputWrapperClass', 'label', 'name', 'placeholder', 'readonly', 'rows', 'spellcheck', 'value', 'wrap']
+})
+export class AnyInputTextarea {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['aOnBlur', 'aOnFocus', 'aOnResize', 'aOnInput', 'valueChange']);
+  }
+}
+
 import type { SelectChangeEventDetail as IAnyListboxSelectChangeEventDetail } from '@anywhere-ui/core';
 export declare interface AnyListbox extends Components.AnyListbox {
   /**

@@ -23,7 +23,10 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     type: "select",
   },
   {
-    elementSelectors: ["any-input-text:not([type=number])"],
+    elementSelectors: [
+      "any-input-text:not([type=number])",
+      "any-input-textarea",
+    ],
     event: "valueChange",
     targetAttr: "value",
     type: "text",
@@ -48,6 +51,7 @@ const vueComponentModels: ComponentModelConfig[] = [
       "any-dropdown",
       "any-listbox",
       "any-input-text",
+      "any-input-textarea",
       "any-radio-button",
       "any-radio-group",
     ],
@@ -84,7 +88,14 @@ export const config: Config = {
     shadowDomShim: true,
   },
   bundles: [
-    { components: ["any-dropdown", "any-listbox", "any-input-text"] },
+    {
+      components: [
+        "any-dropdown",
+        "any-listbox",
+        "any-input-text",
+        "any-input-textarea",
+      ],
+    },
     { components: ["any-virtual-scroller"] },
     { components: ["any-checkbox"] },
     { components: ["any-input-switch"] },
