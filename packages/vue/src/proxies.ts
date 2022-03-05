@@ -133,6 +133,31 @@ export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText>('any
 'value', 'v-value-change', 'valueChange');
 
 
+export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextarea>('any-input-textarea', undefined, [
+  'inputId',
+  'name',
+  'label',
+  'autoResize',
+  'disabled',
+  'readonly',
+  'placeholder',
+  'spellcheck',
+  'floatLabel',
+  'cols',
+  'rows',
+  'wrap',
+  'autocapitalize',
+  'inputWrapperClass',
+  'value',
+  'aOnBlur',
+  'aOnFocus',
+  'aOnResize',
+  'aOnInput',
+  'valueChange'
+],
+'value', 'v-value-change', 'valueChange');
+
+
 export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox>('any-listbox', undefined, [
   'options',
   'optionLabel',

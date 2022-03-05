@@ -1,113 +1,115 @@
 .product-badge {
-    border-radius: 2px;
-    padding: .25em .5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: .3px;
+  border-radius: 2px;
+  padding: 0.25em 0.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.3px;
 
-    &.status-instock {
-        background: #C8E6C9;
-        color: #256029;
-    }
+  &.status-instock {
+    background: #c8e6c9;
+    color: #256029;
+  }
 
-    &.status-outofstock {
-        background: #FFCDD2;
-        color: #C63737;
-    }
+  &.status-outofstock {
+    background: #ffcdd2;
+    color: #c63737;
+  }
 
-    &.status-lowstock {
-        background: #FEEDAF;
-        color: #8A5340;
-    }
+  &.status-lowstock {
+    background: #feedaf;
+    color: #8a5340;
+  }
 }
 
 .any-field-checkbox,
 .any-field-radiobutton {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .full-card {
-    background: var(--surface-e);
-    padding: 2rem;
-    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
-    border-radius: 4px;
-    margin-bottom: 2rem;
+  background: var(--surface-e);
+  padding: 2rem;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  margin-bottom: 2rem;
 }
 
 .any-ai-center {
-    align-items: center;
+  align-items: center;
 }
 
 .any-jc-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .any-d-flex {
-    display: flex !important;
+  display: flex !important;
 }
 
 .any-mr-2 {
-    margin-right: 0.5rem !important;
+  margin-right: 0.5rem !important;
 }
 
 .any-ai-end {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .any-jc-end {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .any-spin-right {
-    animation: fa-spin-right .7s infinite linear;
+  animation: fa-spin-right 0.7s infinite linear;
 }
 
 .any-spin-left {
-    animation: fa-spin-left .7s infinite linear;
+  animation: fa-spin-left 0.7s infinite linear;
 }
 
 .any-link {
-    text-align: left;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  text-align: left;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .any-field-radiobutton {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .any-link {
-    font-size: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    border-radius: 4px;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  border-radius: 4px;
 }
 
 .any-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -0.5rem;
-    margin-left: -0.5rem;
-    margin-top: -0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
 }
 
-.any-grid>.any-col,
-.any-grid>[class*=any-col] {
-    box-sizing: border-box;
+.any-grid > .any-col,
+.any-grid > [class*="any-col"] {
+  box-sizing: border-box;
 }
 
 .any-col-3 {
-    width: 25%;
+  width: 25%;
 }
 
 .any-col-1,
@@ -122,26 +124,32 @@
 .any-col-10,
 .any-col-11,
 .any-col-12 {
-    flex: 0 0 auto;
-    padding: 0.5rem;
+  flex: 0 0 auto;
+  padding: 0.5rem;
 }
 
 @keyframes fa-spin-right {
-    0% {
-        transform: rotate(0)
-    }
+  0% {
+    transform: rotate(0);
+  }
 
-    to {
-        transform: rotate(359deg)
-    }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 @keyframes fa-spin-left {
-    0% {
-        transform: rotate(0)
-    }
+  0% {
+    transform: rotate(0);
+  }
 
-    to {
-        transform: rotate(-359deg)
-    }
+  to {
+    transform: rotate(-359deg);
+  }
+}
+
+.any-field {
+  &.block label {
+    display: block !important;
+  }
 }

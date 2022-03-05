@@ -441,16 +441,16 @@ code[class*=language] {
   letter-spacing: 0.3px;
 }
 .product-badge.status-instock {
-  background: #C8E6C9;
+  background: #c8e6c9;
   color: #256029;
 }
 .product-badge.status-outofstock {
-  background: #FFCDD2;
-  color: #C63737;
+  background: #ffcdd2;
+  color: #c63737;
 }
 .product-badge.status-lowstock {
-  background: #FEEDAF;
-  color: #8A5340;
+  background: #feedaf;
+  color: #8a5340;
 }
 
 .any-field-checkbox,
@@ -573,6 +573,10 @@ code[class*=language] {
     transform: rotate(-359deg);
   }
 }
+.any-field.block label {
+  display: block !important;
+}
+
 @media screen and (max-width: 960px) {
   .layout-wrapper .layout-news {
     margin-left: 0;

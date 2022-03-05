@@ -115,9 +115,9 @@ export class AnyListbox {
   @Event() valueChange: EventEmitter<SelectChangeEventDetail>;
 
   @Watch("value")
-  valueChanged(newValue: any, oldValue: any) {
+  valueChanged(newValue: any) {
     if (this.didInit && this.mutationO) {
-      console.log("The new value of listbox is: ", newValue, oldValue);
+      // console.log("The new value of listbox is: ", newValue, oldValue);
       // if (!this.readonly) {
       let items = this.element.shadowRoot.querySelectorAll(
         ".any-listbox-item.any-highlight"

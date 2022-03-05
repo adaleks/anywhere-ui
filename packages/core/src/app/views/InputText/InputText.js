@@ -19,7 +19,7 @@ export default class extends AbstractView {
     // this.it1.value = "Goran";
     // it1 options
     this.it1.label = "Username";
-    this.it1.inputWrapperClass = "any-field";
+    this.it1.inputWrapperClass = "any-field block";
     // this.it1.disabled = true;
     // this.it1.readonly = true;
     this.it1.addEventListener("valueChange", (event) => {

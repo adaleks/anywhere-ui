@@ -110,9 +110,6 @@ export class AnyInputText {
                 : this.inputWrapperClass
             }
           >
-            {this.label && !this.floatLabel && (
-              <label htmlFor={this.inputId}>{this.label}</label>
-            )}
             <i
               class={
                 this.leftIconClass ? this.leftIconClass + " iconify" : "iconify"
@@ -120,6 +117,9 @@ export class AnyInputText {
             >
               <slot name="iconLeft" />
             </i>
+            {this.label && !this.floatLabel && (
+              <label htmlFor={this.inputId}>{this.label}</label>
+            )}
             <input
               id={this.inputId}
               name={this.name}

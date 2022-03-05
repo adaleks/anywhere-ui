@@ -186,8 +186,8 @@ export class AnyDropdown {
   @Event() aOnClick?: EventEmitter;
 
   @Watch("value")
-  valueChanged(newValue: any, oldValue: any) {
-    console.debug("The new value of DropDown is: ", newValue, oldValue);
+  valueChanged() {
+    // console.debug("The new value of DropDown is: ", newValue, oldValue);
     if (this.options) {
       this.selectedItem = this.options.find((x) =>
         _.isEqual(x.value, this.value)
