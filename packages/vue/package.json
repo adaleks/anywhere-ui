@@ -1,7 +1,7 @@
 {
   "name": "@anywhere-ui/vue",
   "sideEffects": false,
-  "version": "0.3.0+11",
+  "version": "0.3.0+12",
   "description": "AnywhereUI integration for Vue apps.",
   "license": "MIT",
   "keywords": [
@@ -62,5 +62,5 @@
       "dist"
     ]
   },
-  "buildnum": "11"
+  "buildnum": "12"
 }
