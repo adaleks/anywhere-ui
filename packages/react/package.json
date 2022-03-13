@@ -1,7 +1,7 @@
 {
   "name": "@anywhere-ui/react",
   "sideEffects": false,
-  "version": "0.3.0+10",
+  "version": "0.3.0+11",
   "description": "AnywhereUI integration for React apps",
   "license": "MIT",
   "keywords": [
@@ -66,5 +66,5 @@
       "dist"
     ]
   },
-  "buildnum": "10"
+  "buildnum": "11"
 }

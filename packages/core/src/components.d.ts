@@ -52,6 +52,7 @@ export namespace Components {
           * When present, it specifies that the component should be disabled.
          */
         "disabled": boolean;
+        "getButtonRef": () => Promise<HTMLButtonElement>;
         /**
           * Name of the icon.
          */
@@ -230,6 +231,168 @@ export namespace Components {
          */
         "virtualScroll": boolean;
     }
+    interface AnyInputNumber {
+        /**
+          * Text to display before the value.
+         */
+        "aPrefix": string;
+        /**
+          * Text to display after the value.
+         */
+        "aSuffix": string;
+        /**
+          * Title text of the input text.
+         */
+        "aTitle": string;
+        /**
+          * Determines whether the input field is empty.
+         */
+        "allowEmpty": boolean;
+        /**
+          * Used to indicate that user input is required on an element before a form can be submitted.
+         */
+        "anyAriaRequired": boolean;
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle": any;
+        /**
+          * Specifies tab order of the element.
+         */
+        "anyTabIndex": string;
+        /**
+          * Used to define a string that autocomplete attribute the current element.
+         */
+        "autocomplete": string;
+        /**
+          * Layout of the buttons, valid values are "stacked" (default), "horizontal" and "vertical".
+         */
+        "buttonLayout": string;
+        /**
+          * The currency to use in currency formatting. Possible values are the ISO 4217 currency codes(https://www.currency-iso.org/en/home/tables/table-a1.html), such as "USD" for the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB. There is no default value; if the style is "currency", the currency property must be provided.
+         */
+        "currency": string;
+        /**
+          * How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency symbol such as €, ü"code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
+         */
+        "currencyDisplay": string;
+        /**
+          * Style class of the decrement button.
+         */
+        "decrementButtonClass": string;
+        /**
+          * Style class of the decrement button.
+         */
+        "decrementButtonIcon": string;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled": boolean;
+        /**
+          * Whether to format the value.
+         */
+        "format": boolean;
+        /**
+          * Style class of the increment button.
+         */
+        "incrementButtonClass": string;
+        /**
+          * Style class of the increment button.
+         */
+        "incrementButtonIcon": string;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId": string;
+        /**
+          * Inline style of the input field.
+         */
+        "inputStyle": any;
+        /**
+          * Style class of the input field.
+         */
+        "inputStyleClass": string;
+        /**
+          * The class of input wrapper element
+         */
+        "inputWrapperClass": string;
+        /**
+          * Label of the component
+         */
+        "label": string;
+        /**
+          * Locale to be used in formatting.
+         */
+        "locale": string;
+        /**
+          * The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_negotiation for details.
+         */
+        "localeMatcher": string;
+        /**
+          * Maximum boundary value.
+         */
+        "max": number;
+        /**
+          * The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (https://www.currency-iso.org/en/home/tables/table-a1.html) (2 if the list doesn't provide that information).
+         */
+        "maxFractionDigits": number;
+        /**
+          * Maximum number of character allows in the input field.
+         */
+        "maxlength": number;
+        /**
+          * Mininum boundary value.
+         */
+        "min": number;
+        /**
+          * The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (https://www.currency-iso.org/en/home/tables/table-a1.html) (2 if the list doesn't provide that information).
+         */
+        "minFractionDigits": number;
+        /**
+          * Defines the behavior of the component, valid values are "decimal" and "currency".
+         */
+        "mode": string;
+        /**
+          * Name of the component
+         */
+        "name": string;
+        /**
+          * Advisory information to display on input.
+         */
+        "placeholder": string;
+        /**
+          * When present, it specifies that an input field is read-only.
+         */
+        "readonly": boolean;
+        /**
+          * When present, it specifies that an input field is required.
+         */
+        "required": boolean;
+        /**
+          * Displays spinner buttons.
+         */
+        "showButtons": boolean;
+        /**
+          * Size of the input field.
+         */
+        "size": number;
+        /**
+          * Step factor to increment/decrement the value.
+         */
+        "step": number;
+        /**
+          * Style class of the component.
+         */
+        "styleClass": string;
+        /**
+          * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
+         */
+        "useGrouping": boolean;
+        /**
+          * Value of the component.
+         */
+        "value": string;
+    }
     interface AnyInputSwitch {
         /**
           * Inline style of the component.
@@ -278,6 +441,22 @@ export namespace Components {
     }
     interface AnyInputText {
         /**
+          * Title text of the input text.
+         */
+        "aTitle": string;
+        /**
+          * Used to indicate that user input is required on an element before a form can be submitted.
+         */
+        "anyAriaRequired": boolean;
+        /**
+          * Specifies tab order of the element.
+         */
+        "anyTabIndex": string;
+        /**
+          * Used to define a string that autocomplete attribute the current element.
+         */
+        "autocomplete": string;
+        /**
           * When present, it specifies that the element should be disabled
          */
         "disabled": boolean;
@@ -287,9 +466,21 @@ export namespace Components {
         "floatLabel": boolean;
         "getInputRef": () => Promise<HTMLInputElement>;
         /**
+          * Inline style of the element
+         */
+        "inputClass"?: string;
+        /**
+          * The class of input holder element
+         */
+        "inputHolderClass": string;
+        /**
           * Identifier of the focus input to match a label defined for the component.
          */
         "inputId": string;
+        /**
+          * Inline style of the element
+         */
+        "inputStyle"?: any;
         /**
           * The class of input wrapper element
          */
@@ -303,6 +494,10 @@ export namespace Components {
          */
         "leftIconClass": string;
         /**
+          * Maximum number of character allows in the input field.
+         */
+        "maxlength": number;
+        /**
           * Name of the input text.
          */
         "name": string;
@@ -315,9 +510,17 @@ export namespace Components {
          */
         "readonly": boolean;
         /**
+          * When present, it specifies that an input field is required.
+         */
+        "required": boolean;
+        /**
           * The class of right icon wrapper element
          */
         "rightIconClass": string;
+        /**
+          * Size of the input field.
+         */
+        "size": number;
         /**
           * Value of the input text
          */
@@ -627,6 +830,12 @@ declare global {
         prototype: HTMLAnyDropdownElement;
         new (): HTMLAnyDropdownElement;
     };
+    interface HTMLAnyInputNumberElement extends Components.AnyInputNumber, HTMLStencilElement {
+    }
+    var HTMLAnyInputNumberElement: {
+        prototype: HTMLAnyInputNumberElement;
+        new (): HTMLAnyInputNumberElement;
+    };
     interface HTMLAnyInputSwitchElement extends Components.AnyInputSwitch, HTMLStencilElement {
     }
     var HTMLAnyInputSwitchElement: {
@@ -693,6 +902,7 @@ declare global {
         "any-button": HTMLAnyButtonElement;
         "any-checkbox": HTMLAnyCheckboxElement;
         "any-dropdown": HTMLAnyDropdownElement;
+        "any-input-number": HTMLAnyInputNumberElement;
         "any-input-switch": HTMLAnyInputSwitchElement;
         "any-input-text": HTMLAnyInputTextElement;
         "any-input-textarea": HTMLAnyInputTextareaElement;
@@ -984,6 +1194,188 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    interface AnyInputNumber {
+        /**
+          * Text to display before the value.
+         */
+        "aPrefix"?: string;
+        /**
+          * Text to display after the value.
+         */
+        "aSuffix"?: string;
+        /**
+          * Title text of the input text.
+         */
+        "aTitle"?: string;
+        /**
+          * Determines whether the input field is empty.
+         */
+        "allowEmpty"?: boolean;
+        /**
+          * Used to indicate that user input is required on an element before a form can be submitted.
+         */
+        "anyAriaRequired"?: boolean;
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle"?: any;
+        /**
+          * Specifies tab order of the element.
+         */
+        "anyTabIndex"?: string;
+        /**
+          * Used to define a string that autocomplete attribute the current element.
+         */
+        "autocomplete"?: string;
+        /**
+          * Layout of the buttons, valid values are "stacked" (default), "horizontal" and "vertical".
+         */
+        "buttonLayout"?: string;
+        /**
+          * The currency to use in currency formatting. Possible values are the ISO 4217 currency codes(https://www.currency-iso.org/en/home/tables/table-a1.html), such as "USD" for the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB. There is no default value; if the style is "currency", the currency property must be provided.
+         */
+        "currency"?: string;
+        /**
+          * How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency symbol such as €, ü"code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
+         */
+        "currencyDisplay"?: string;
+        /**
+          * Style class of the decrement button.
+         */
+        "decrementButtonClass"?: string;
+        /**
+          * Style class of the decrement button.
+         */
+        "decrementButtonIcon"?: string;
+        /**
+          * When present, it specifies that the element should be disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Whether to format the value.
+         */
+        "format"?: boolean;
+        /**
+          * Style class of the increment button.
+         */
+        "incrementButtonClass"?: string;
+        /**
+          * Style class of the increment button.
+         */
+        "incrementButtonIcon"?: string;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId"?: string;
+        /**
+          * Inline style of the input field.
+         */
+        "inputStyle"?: any;
+        /**
+          * Style class of the input field.
+         */
+        "inputStyleClass"?: string;
+        /**
+          * The class of input wrapper element
+         */
+        "inputWrapperClass"?: string;
+        /**
+          * Label of the component
+         */
+        "label"?: string;
+        /**
+          * Locale to be used in formatting.
+         */
+        "locale"?: string;
+        /**
+          * The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_negotiation for details.
+         */
+        "localeMatcher"?: string;
+        /**
+          * Maximum boundary value.
+         */
+        "max"?: number;
+        /**
+          * The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (https://www.currency-iso.org/en/home/tables/table-a1.html) (2 if the list doesn't provide that information).
+         */
+        "maxFractionDigits"?: number;
+        /**
+          * Maximum number of character allows in the input field.
+         */
+        "maxlength"?: number;
+        /**
+          * Mininum boundary value.
+         */
+        "min"?: number;
+        /**
+          * The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (https://www.currency-iso.org/en/home/tables/table-a1.html) (2 if the list doesn't provide that information).
+         */
+        "minFractionDigits"?: number;
+        /**
+          * Defines the behavior of the component, valid values are "decimal" and "currency".
+         */
+        "mode"?: string;
+        /**
+          * Name of the component
+         */
+        "name"?: string;
+        /**
+          * Callback to invoke when input loses focus.
+         */
+        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke when input receives focus.
+         */
+        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke when the value is entered.
+         */
+        "onAOnInput"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke when keyboard key is down.
+         */
+        "onAOnKeyDown"?: (event: CustomEvent<any>) => void;
+        /**
+          * Callback to invoke when value of componnt changes
+         */
+        "onValueChange"?: (event: CustomEvent<any>) => void;
+        /**
+          * Advisory information to display on input.
+         */
+        "placeholder"?: string;
+        /**
+          * When present, it specifies that an input field is read-only.
+         */
+        "readonly"?: boolean;
+        /**
+          * When present, it specifies that an input field is required.
+         */
+        "required"?: boolean;
+        /**
+          * Displays spinner buttons.
+         */
+        "showButtons"?: boolean;
+        /**
+          * Size of the input field.
+         */
+        "size"?: number;
+        /**
+          * Step factor to increment/decrement the value.
+         */
+        "step"?: number;
+        /**
+          * Style class of the component.
+         */
+        "styleClass"?: string;
+        /**
+          * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
+         */
+        "useGrouping"?: boolean;
+        /**
+          * Value of the component.
+         */
+        "value"?: string;
+    }
     interface AnyInputSwitch {
         /**
           * Inline style of the component.
@@ -1044,6 +1436,22 @@ declare namespace LocalJSX {
     }
     interface AnyInputText {
         /**
+          * Title text of the input text.
+         */
+        "aTitle"?: string;
+        /**
+          * Used to indicate that user input is required on an element before a form can be submitted.
+         */
+        "anyAriaRequired"?: boolean;
+        /**
+          * Specifies tab order of the element.
+         */
+        "anyTabIndex"?: string;
+        /**
+          * Used to define a string that autocomplete attribute the current element.
+         */
+        "autocomplete"?: string;
+        /**
           * When present, it specifies that the element should be disabled
          */
         "disabled"?: boolean;
@@ -1052,9 +1460,21 @@ declare namespace LocalJSX {
          */
         "floatLabel"?: boolean;
         /**
+          * Inline style of the element
+         */
+        "inputClass"?: string;
+        /**
+          * The class of input holder element
+         */
+        "inputHolderClass"?: string;
+        /**
           * Identifier of the focus input to match a label defined for the component.
          */
         "inputId"?: string;
+        /**
+          * Inline style of the element
+         */
+        "inputStyle"?: any;
         /**
           * The class of input wrapper element
          */
@@ -1067,6 +1487,10 @@ declare namespace LocalJSX {
           * The class of left icon wrapper element
          */
         "leftIconClass"?: string;
+        /**
+          * Maximum number of character allows in the input field.
+         */
+        "maxlength"?: number;
         /**
           * Name of the input text.
          */
@@ -1084,9 +1508,17 @@ declare namespace LocalJSX {
          */
         "readonly"?: boolean;
         /**
+          * When present, it specifies that an input field is required.
+         */
+        "required"?: boolean;
+        /**
           * The class of right icon wrapper element
          */
         "rightIconClass"?: string;
+        /**
+          * Size of the input field.
+         */
+        "size"?: number;
         /**
           * Value of the input text
          */
@@ -1414,6 +1846,7 @@ declare namespace LocalJSX {
         "any-button": AnyButton;
         "any-checkbox": AnyCheckbox;
         "any-dropdown": AnyDropdown;
+        "any-input-number": AnyInputNumber;
         "any-input-switch": AnyInputSwitch;
         "any-input-text": AnyInputText;
         "any-input-textarea": AnyInputTextarea;
@@ -1435,6 +1868,7 @@ declare module "@stencil/core" {
             "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
+            "any-input-number": LocalJSX.AnyInputNumber & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
             "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;

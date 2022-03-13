@@ -38,6 +38,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     type: "boolean",
   },
   {
+    elementSelectors: ["any-input-number"],
+    event: "valueChange",
+    targetAttr: "value",
+    type: "number",
+  },
+  {
     elementSelectors: ["any-radio-button"],
     event: "aOnSelect",
     targetAttr: "checked",
@@ -54,6 +60,7 @@ const vueComponentModels: ComponentModelConfig[] = [
       "any-input-textarea",
       "any-radio-button",
       "any-radio-group",
+      "any-input-number",
     ],
     event: "v-value-change",
     externalEvent: "valueChange",
@@ -94,6 +101,7 @@ export const config: Config = {
         "any-listbox",
         "any-input-text",
         "any-input-textarea",
+        "any-input-number",
       ],
     },
     { components: ["any-virtual-scroller"] },

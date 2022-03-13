@@ -3,9 +3,9 @@
 @import "./anywhere.keyframes";
 
 * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // body {
@@ -15,82 +15,82 @@
 .any-element,
 .any-element *,
 .any-component * {
-    font-family: var(--fontFamily);
-    font-size: var(--fontSize);
-    text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 
-    * {
-        box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .any-element.any-element-flex {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 .any-corner-all {
-    -moz-border-radius: var(--borderRadius);
-    -webkit-border-radius: var(--borderRadius);
-    border-radius: var(--borderRadius);
+  -moz-border-radius: var(--borderRadius);
+  -webkit-border-radius: var(--borderRadius);
+  border-radius: var(--borderRadius);
 }
 
 .any-corner-right {
-    -moz-border-radius-topright: var(--borderRadius);
-    -webkit-border-top-right-radius: var(--borderRadius);
-    border-top-right-radius: var(--borderRadius);
-    -moz-border-radius-bottomright: var(--borderRadius);
-    -webkit-border-bottom-right-radius: var(--borderRadius);
-    border-bottom-right-radius: var(--borderRadius);
+  -moz-border-radius-topright: var(--borderRadius);
+  -webkit-border-top-right-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
+  -moz-border-radius-bottomright: var(--borderRadius);
+  -webkit-border-bottom-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
 }
 
 .any-shadow {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 .any-disabled,
 .any-disabled * {
-    cursor: default !important;
-    pointer-events: none;
+  cursor: default !important;
+  pointer-events: none;
 }
 
 .any-checkbox-disabled {
-    cursor: default !important;
-    pointer-events: none;
+  cursor: default !important;
+  pointer-events: none;
 }
 
 .any-disabled,
 .any-component:disabled {
-    opacity: var(--disabledOpacity);
+  opacity: var(--disabledOpacity);
 }
 
 .iconify {
-    font-size: var(--anyIconFontSize);
-    display: flex;
-    align-items: center;
+  font-size: var(--anyIconFontSize);
+  display: flex;
+  align-items: center;
 
-    // &:not(:empty) {
-    //     width: var(--anyIconFontSize);
-    //     height: var(--anyIconFontSize);
-    // }
+  // &:not(:empty) {
+  //     width: var(--anyIconFontSize);
+  //     height: var(--anyIconFontSize);
+  // }
 }
 
 .growDown-animation {
-    animation: growDown 125ms ease-in-out forwards;
+  animation: growDown 125ms ease-in-out forwards;
 }
 
 .growUp-animation {
-    animation: growUp 125ms ease-in-out forwards;
+  animation: growUp 125ms ease-in-out forwards;
 }
 
 .rotateYDown-animation {
-    animation: rotateYDown 125ms ease-in-out forwards;
+  animation: rotateYDown 125ms ease-in-out forwards;
 }
 
 .rotateYUp-animation {
-    animation: rotateYUp 125ms ease-in-out forwards;
+  animation: rotateYUp 125ms ease-in-out forwards;
 }
 
 // .spin-animation {
@@ -98,46 +98,46 @@
 // }
 
 .direction-down {
-    transform-origin: top center;
+  transform-origin: top center;
 }
 
 .direction-up {
-    transform-origin: bottom center;
+  transform-origin: bottom center;
 }
 
-.any-field>label {
-    display: inline-block;
-    margin-bottom: .5rem;
-    margin-right: .5rem;
+.any-field > label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .any-hidden-accessible {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .any-spin {
-    animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
 }
 
 .any-ml-2 {
-    margin-left: 0.5rem !important;
+  margin-left: 0.5rem !important;
 }
 
 .any-mr-2 {
-    margin-right: 0.5rem !important;
+  margin-right: 0.5rem !important;
 }
 
 .any-mr-4 {
-    margin-right: 1.5rem !important;
+  margin-right: 1.5rem !important;
 }
 
 .any-text-bold {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
 }

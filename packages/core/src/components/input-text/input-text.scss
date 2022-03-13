@@ -1,4 +1,5 @@
 @import "../../themes/anywhere.globals.scss";
+@import "../input-number/input-number.scss";
 
 :host {
   display: block;
@@ -49,32 +50,32 @@
       position: absolute;
       pointer-events: none;
       top: 50%;
-      margin-top: -.5rem;
+      margin-top: -0.5rem;
       transition-property: all;
       transition-timing-function: ease;
       line-height: 1;
     }
 
-    textarea~label {
+    textarea ~ label {
       top: 1rem;
     }
 
-    input:focus~label,
-    input.any-filled~label,
-    textarea:focus~label,
-    textarea.any-filled~label,
-    .any-inputwrapper-focus~label,
-    .any-inputwrapper-filled~label {
-      top: -.75rem;
+    input:focus ~ label,
+    input.any-filled ~ label,
+    textarea:focus ~ label,
+    textarea.any-filled ~ label,
+    .any-inputwrapper-focus ~ label,
+    .any-inputwrapper-filled ~ label {
+      top: -0.75rem;
       font-size: 12px;
     }
 
-    .input:-webkit-autofill~label {
+    .input:-webkit-autofill ~ label {
       top: -20px;
       font-size: 12px;
     }
 
-    >label {
+    > label {
       left: 0.75rem;
       color: var(--inputPlaceholderTextColor);
       transition-duration: var(--transitionDuration);
@@ -87,11 +88,11 @@
     display: inline-block;
   }
 
-  .any-input-icon-left>i,
-  .any-input-icon-right>i {
+  .any-input-icon-left > i,
+  .any-input-icon-right > i {
     position: absolute;
     top: 50%;
-    margin-top: -.5rem;
+    margin-top: -0.5rem;
   }
 
   .any-fluid .any-input-icon-left,
@@ -100,20 +101,19 @@
     width: 100%;
   }
 
-  .any-input-icon-left>.any-inputtext {
+  .any-input-icon-left > span .any-inputtext {
     padding-left: 2rem;
   }
 
-  .any-input-icon-right>.any-inputtext {
+  .any-input-icon-right > span .any-inputtext {
     padding-right: 2rem;
   }
 
-  .any-input-icon-left>i:first-of-type {
+  .any-input-icon-left > i:first-of-type {
     left: 0.5rem;
   }
 
-  .any-input-icon-right>i:last-of-type {
+  .any-input-icon-right > i:last-of-type {
     right: 0.5rem;
   }
-
 }

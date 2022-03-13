@@ -68,7 +68,8 @@ export declare interface AnyButton extends Components.AnyButton {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['anyStyle', 'badge', 'badgeClass', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type']
+  inputs: ['anyStyle', 'badge', 'badgeClass', 'disabled', 'icon', 'iconHeight', 'iconPos', 'iconWidth', 'label', 'loading', 'loadingIcon', 'loadingIconStyleClass', 'styleClass', 'type'],
+  methods: ['getButtonRef']
 })
 @Component({
   selector: 'any-button',
@@ -179,6 +180,50 @@ export class AnyDropdown {
 }
 
 
+export declare interface AnyInputNumber extends Components.AnyInputNumber {
+  /**
+   * Callback to invoke when the value is entered. 
+   */
+  aOnInput: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when input receives focus. 
+   */
+  aOnFocus: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when input loses focus. 
+   */
+  aOnBlur: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when keyboard key is down. 
+   */
+  aOnKeyDown: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when value of componnt changes 
+   */
+  valueChange: EventEmitter<CustomEvent<any>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['aPrefix', 'aSuffix', 'aTitle', 'allowEmpty', 'anyAriaRequired', 'anyStyle', 'anyTabIndex', 'autocomplete', 'buttonLayout', 'currency', 'currencyDisplay', 'decrementButtonClass', 'decrementButtonIcon', 'disabled', 'format', 'incrementButtonClass', 'incrementButtonIcon', 'inputId', 'inputStyle', 'inputStyleClass', 'inputWrapperClass', 'label', 'locale', 'localeMatcher', 'max', 'maxFractionDigits', 'maxlength', 'min', 'minFractionDigits', 'mode', 'name', 'placeholder', 'readonly', 'required', 'showButtons', 'size', 'step', 'styleClass', 'useGrouping', 'value']
+})
+@Component({
+  selector: 'any-input-number',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['aPrefix', 'aSuffix', 'aTitle', 'allowEmpty', 'anyAriaRequired', 'anyStyle', 'anyTabIndex', 'autocomplete', 'buttonLayout', 'currency', 'currencyDisplay', 'decrementButtonClass', 'decrementButtonIcon', 'disabled', 'format', 'incrementButtonClass', 'incrementButtonIcon', 'inputId', 'inputStyle', 'inputStyleClass', 'inputWrapperClass', 'label', 'locale', 'localeMatcher', 'max', 'maxFractionDigits', 'maxlength', 'min', 'minFractionDigits', 'mode', 'name', 'placeholder', 'readonly', 'required', 'showButtons', 'size', 'step', 'styleClass', 'useGrouping', 'value']
+})
+export class AnyInputNumber {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['aOnInput', 'aOnFocus', 'aOnBlur', 'aOnKeyDown', 'valueChange']);
+  }
+}
+
+
 export declare interface AnyInputSwitch extends Components.AnyInputSwitch {
   /**
    * Callback to invoke when value of dropdown changes. 
@@ -225,14 +270,14 @@ export declare interface AnyInputText extends Components.AnyInputText {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'floatLabel', 'inputId', 'inputWrapperClass', 'label', 'leftIconClass', 'name', 'placeholder', 'readonly', 'rightIconClass', 'value'],
+  inputs: ['aTitle', 'anyAriaRequired', 'anyTabIndex', 'autocomplete', 'disabled', 'floatLabel', 'inputClass', 'inputHolderClass', 'inputId', 'inputStyle', 'inputWrapperClass', 'label', 'leftIconClass', 'maxlength', 'name', 'placeholder', 'readonly', 'required', 'rightIconClass', 'size', 'value'],
   methods: ['getInputRef']
 })
 @Component({
   selector: 'any-input-text',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'floatLabel', 'inputId', 'inputWrapperClass', 'label', 'leftIconClass', 'name', 'placeholder', 'readonly', 'rightIconClass', 'value']
+  inputs: ['aTitle', 'anyAriaRequired', 'anyTabIndex', 'autocomplete', 'disabled', 'floatLabel', 'inputClass', 'inputHolderClass', 'inputId', 'inputStyle', 'inputWrapperClass', 'label', 'leftIconClass', 'maxlength', 'name', 'placeholder', 'readonly', 'required', 'rightIconClass', 'size', 'value']
 })
 export class AnyInputText {
   protected el: HTMLElement;

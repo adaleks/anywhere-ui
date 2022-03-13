@@ -34,14 +34,32 @@
 | `aOnFocus` | Callback to execute when button is focused.  | `CustomEvent<any>` |
 
 
+## Methods
+
+### `getButtonRef() => Promise<HTMLButtonElement>`
+
+
+
+#### Returns
+
+Type: `Promise<HTMLButtonElement>`
+
+
+
+
 ## Shadow Parts
 
-| Part           | Description |
-| -------------- | ----------- |
-| `"any-button"` |             |
+| Part                 | Description |
+| -------------------- | ----------- |
+| `"any-button"`       |             |
+| `"any-button-label"` |             |
 
 
 ## Dependencies
+
+### Used by
+
+ - [any-input-number](../input-number)
 
 ### Depends on
 
@@ -53,6 +71,7 @@
 graph TD;
   any-button --> any-badge
   any-button --> any-ripple-effect
+  any-input-number --> any-button
   style any-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
