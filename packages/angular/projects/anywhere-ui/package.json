@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/angular",
-  "version": "0.3.0+11",
+  "version": "0.3.0+12",
   "license": "MIT",
   "keywords": [
     "anywhere-ui",
@@ -32,5 +32,5 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "buildnum": "11"
+  "buildnum": "12"
 }

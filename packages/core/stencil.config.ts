@@ -136,6 +136,10 @@ export const config: Config = {
         { src: "app" },
         { src: "docs/SHOWCASE_README.md", dest: "README.md" },
         { src: "docs/SHOWCASE_LICENSE", dest: "LICENSE" },
+        {
+          src: "../node_modules/anywhere-flex/anywhere-flex.css",
+          dest: "assets/css/anywhere-flex.css",
+        },
       ],
     },
     angularOutputTarget({

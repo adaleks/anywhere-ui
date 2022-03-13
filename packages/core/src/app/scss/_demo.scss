@@ -95,44 +95,44 @@
   border-radius: 4px;
 }
 
-.any-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -0.5rem;
-  margin-left: -0.5rem;
-  margin-top: -0.5rem;
-}
+// .any-grid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin-right: -0.5rem;
+//   margin-left: -0.5rem;
+//   margin-top: -0.5rem;
+// }
 
-.any-grid > .any-col,
-.any-grid > [class*="any-col"] {
-  box-sizing: border-box;
-}
+// .any-grid > .any-col,
+// .any-grid > [class*="any-col"] {
+//   box-sizing: border-box;
+// }
 
-.any-col-3 {
-  width: 25%;
-}
+// .any-col-3 {
+//   width: 25%;
+// }
 
-.any-col-1,
-.any-col-2,
-.any-col-3,
-.any-col-4,
-.any-col-5,
-.any-col-6,
-.any-col-7,
-.any-col-8,
-.any-col-9,
-.any-col-10,
-.any-col-11,
-.any-col-12 {
-  flex: 0 0 auto;
-  padding: 0.5rem;
-}
+// .any-col-1,
+// .any-col-2,
+// .any-col-3,
+// .any-col-4,
+// .any-col-5,
+// .any-col-6,
+// .any-col-7,
+// .any-col-8,
+// .any-col-9,
+// .any-col-10,
+// .any-col-11,
+// .any-col-12 {
+//   flex: 0 0 auto;
+//   padding: 0.5rem;
+// }
 
-.md\:col-3 {
-  flex: 0 0 auto;
-  padding: 0.5rem;
-  width: 25%;
-}
+// .md\:col-3 {
+//   flex: 0 0 auto;
+//   padding: 0.5rem;
+//   width: 25%;
+// }
 
 @keyframes fa-spin-right {
   0% {
