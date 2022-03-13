@@ -38,7 +38,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  any-button {
+  .buttons-intro any-button {
     &::part(any-button) {
       margin-bottom: 0.5rem;
     }

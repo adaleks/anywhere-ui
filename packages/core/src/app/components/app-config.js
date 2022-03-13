@@ -2,6 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
 <style>
     @import "/app/css/app.css";
+    @import "/assets/css/anywhere-flex.css";
     :host {
         display: block;
     }
@@ -118,16 +119,16 @@ template.innerHTML = `
         padding: 2rem;
     }
 
-    .any-grid > div {
+    .grid > div {
         padding: 1rem;
         text-align: center;
     }
 
-    .any-grid > div span {
+    .grid > div span {
         display: block;
     }
 
-    .any-grid > div button {
+    .grid > div button {
         position: relative;
         display: inline-flex;
         justify-content: center;
@@ -168,26 +169,26 @@ template.innerHTML = `
                 <p>Built-in component themes created by AdaleksTech.</p>
 
                 <h5>AdaleksTech Design</h5>
-                <div class="any-grid free-themes">
-                    <div class="any-col-3">
+                <div class="grid free-themes">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="anywhere-default">
                             <img src="assets/images/themes/anywhere-default-violet.png" alt="Adaleks Violet" />
                         </button>
                         <span>Violet</span>
                     </div>
-                    <div class="any-col-3">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="anywhere-default-light-purple">
                             <img src="assets/images/themes/anywhere-light-purple.png" alt="Adaleks Light Purple" />
                         </button>
                         <span>Purple</span>
                     </div>
-                    <div class="any-col-3">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="anywhere-default-dark-violet">
                             <img src="assets/images/themes/anywhere-dark-violet.png" alt="Adaleks Dark Violet" />
                         </button>
                         <span>Violet</span>
                     </div>
-                    <div class="any-col-3">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="anywhere-default-dark-purple">
                             <img src="assets/images/themes/anywhere-dark-purple.png" alt="Adaleks Dark Purple" />
                         </button>
@@ -195,26 +196,26 @@ template.innerHTML = `
                     </div>
                 </div>
                 <h5>Bootstrap</h5>
-                <div class="any-grid free-themes">
-                    <div class="any-col-3">
+                <div class="grid free-themes">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="bootstrap4-light-blue">
                             <img src="assets/images/themes/bootstrap4-light-blue.svg" alt="Bootstrap Light Blue" />
                         </button>
                         <span>Blue</span>
                     </div>
-                    <div class="any-col-3">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="bootstrap4-light-purple">
                             <img src="assets/images/themes/bootstrap4-light-purple.svg" alt="Bootstrap Light Purple" />
                         </button>
                         <span>Purple</span>
                     </div>
-                    <div class="any-col-3">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="bootstrap4-dark-blue">
                             <img src="assets/images/themes/bootstrap4-dark-blue.svg" alt="Bootstrap Dark Blue" />
                         </button>
                         <span>Blue</span>
                     </div>
-                    <div class="any-col-3">
+                    <div class="col-3">
                         <button class="any-link" data-select-theme="bootstrap4-dark-purple">
                             <img src="assets/images/themes/bootstrap4-dark-purple.svg" alt="Bootstrap Dark Purple" />
                         </button>
