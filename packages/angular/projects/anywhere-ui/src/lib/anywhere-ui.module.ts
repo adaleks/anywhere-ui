@@ -11,7 +11,7 @@ import { appInitialize } from './app-initialize';
 import { ConfigToken } from './providers/config';
 
 import { BooleanValueAccessor } from './directives/boolean-value-accessor';
-// import { NumericValueAccessor } from './directives/number-value-accessor';
+import { NumericValueAccessor } from './directives/number-value-accessor';
 import { RadioValueAccessor } from './directives/radio-value-accessor';
 import { SelectValueAccessor } from './directives/select-value-accessor';
 import { TextValueAccessor } from './directives/text-value-accessor';
@@ -31,6 +31,7 @@ import {
   AnyInputSwitch,
   AnyRadioButton,
   AnyRadioGroup,
+  AnyInputNumber,
 } from './directives/proxies';
 
 // defineCustomElements(window);
@@ -51,10 +52,11 @@ const DECLARATIONS = [
   AnyInputSwitch,
   AnyRadioButton,
   AnyRadioGroup,
+  AnyInputNumber,
 
   // Value Accessors
   BooleanValueAccessor,
-  // NumericValueAccessor,
+  NumericValueAccessor,
   RadioValueAccessor,
   SelectValueAccessor,
   TextValueAccessor,

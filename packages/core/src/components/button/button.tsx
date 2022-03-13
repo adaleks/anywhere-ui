@@ -7,6 +7,7 @@ import {
   Event,
   EventEmitter,
   Watch,
+  Method,
 } from "@stencil/core";
 import Iconify from "@iconify/iconify";
 import { loadIcons } from "../../utils/load-icons";
@@ -117,6 +118,11 @@ export class AnyButton {
     );
   }
 
+  @Method()
+  async getButtonRef() {
+    return this.element.shadowRoot.querySelector("button");
+  }
+
   componentWillLoad() {
     this.hasContentSlot = !!this.element.querySelector('[slot="content"]');
     this.loadIcons();
@@ -175,76 +181,77 @@ export class AnyButton {
 
   render() {
     return (
-      <Host>
-        <div class="any-element">
-          <div style={{ display: "none" }}>
-            <slot name="content" />
-          </div>
-          <button
-            part="any-button"
-            type={this.type}
-            style={this.anyStyle}
-            class={
-              "any-button any-component" +
-              (this.disabled || this.loading ? " any-disabled" : "") +
-              (this.styleClass ? " " + this.styleClass : "") +
-              ((this.iconPos === "top" || this.iconPos === "bottom") &&
-              this.label
-                ? " any-button-vertical"
-                : "") +
-              (this.icon && !this.label && !this.badge
-                ? " any-button-icon-only"
-                : "")
-            }
-            disabled={this.disabled || this.loading}
-            onClick={(e) => this.handleClick(e)}
-            onBlur={(e) => this.aOnBlur.emit(e)}
-            onFocus={(e) => this.aOnFocus.emit(e)}
-          >
-            {this.hasContentSlot && (
-              <span
-                class="any-button-content"
-                innerHTML={this.getContent("content")}
-              ></span>
-            )}
-            {(this.icon || (this.loading && !this.hasContentSlot)) && (
-              <span
-                aria-hidden="true"
-                class={
-                  "any-button-icon" +
-                  (this.iconPos === "left" && this.label
-                    ? " any-button-icon-left"
-                    : "") +
-                  (this.iconPos === "right" && this.label
-                    ? " any-button-icon-right"
-                    : "") +
-                  (this.iconPos === "top" && this.label
-                    ? " any-button-icon-top"
-                    : "") +
-                  (this.iconPos === "bottom" && this.label
-                    ? " any-button-icon-bottom"
-                    : "") +
-                  (this.loading
-                    ? " any-button-loading-icon " + this.loadingIconStyleClass
-                    : "")
-                }
-              ></span>
-            )}
-            {!this.hasContentSlot &&
-              (this.label ? (
-                <span class="any-button-label">{this.label}</span>
-              ) : (
-                <span class="any-button-label">&nbsp;</span>
-              ))}
-            {!this.hasContentSlot && this.badge && (
-              <any-badge
-                value={this.badge}
-                styleClass={this.badgeClass}
-              ></any-badge>
-            )}
-            <any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>
-          </button>
+      <Host class="any-element">
+        <div style={{ display: "none" }}>
+          <slot name="content" />
         </div>
+        <button
+          part="any-button"
+          type={this.type}
+          style={this.anyStyle}
+          class={
+            "any-button any-component" +
+            (this.disabled || this.loading ? " any-disabled" : "") +
+            (this.styleClass ? " " + this.styleClass : "") +
+            ((this.iconPos === "top" || this.iconPos === "bottom") && this.label
+              ? " any-button-vertical"
+              : "") +
+            (this.icon && !this.label && !this.badge
+              ? " any-button-icon-only"
+              : "")
+          }
+          disabled={this.disabled || this.loading}
+          onClick={(e) => this.handleClick(e)}
+          onBlur={(e) => this.aOnBlur.emit(e)}
+          onFocus={(e) => this.aOnFocus.emit(e)}
+        >
+          {this.hasContentSlot && (
+            <span
+              class="any-button-content"
+              innerHTML={this.getContent("content")}
+            ></span>
+          )}
+          {(this.icon || (this.loading && !this.hasContentSlot)) && (
+            <span
+              aria-hidden="true"
+              class={
+                "any-button-icon" +
+                (this.iconPos === "left" && this.label
+                  ? " any-button-icon-left"
+                  : "") +
+                (this.iconPos === "right" && this.label
+                  ? " any-button-icon-right"
+                  : "") +
+                (this.iconPos === "top" && this.label
+                  ? " any-button-icon-top"
+                  : "") +
+                (this.iconPos === "bottom" && this.label
+                  ? " any-button-icon-bottom"
+                  : "") +
+                (this.loading
+                  ? " any-button-loading-icon " + this.loadingIconStyleClass
+                  : "")
+              }
+            ></span>
+          )}
+          {!this.hasContentSlot &&
+            (this.label ? (
+              <span part="any-button-label" class="any-button-label">
+                {this.label}
+              </span>
+            ) : (
+              <span part="any-button-label" class="any-button-label">
+                &nbsp;
+              </span>
+            ))}
+          {!this.hasContentSlot && this.badge && (
+            <any-badge
+              value={this.badge}
+              styleClass={this.badgeClass}
+            ></any-badge>
+          )}
+          <any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>
+        </button>
       </Host>
     );
   }

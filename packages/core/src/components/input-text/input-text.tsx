@@ -49,6 +49,11 @@ export class AnyInputText {
   @Prop() inputWrapperClass: string = null;
 
   /**
+   * The class of input holder element
+   */
+  @Prop() inputHolderClass: string = null;
+
+  /**
    * When present, it specifies that the element should be disabled
    */
   @Prop() disabled: boolean = false;
@@ -74,6 +79,50 @@ export class AnyInputText {
   @Prop() leftIconClass: string = null;
 
   /**
+   * Inline style of the element
+   */
+  @Prop() inputStyle?: any = null;
+
+  /**
+   * Inline style of the element
+   */
+  @Prop() inputClass?: string = null;
+
+  /**
+   * Size of the input field.
+   */
+  @Prop() size: number;
+
+  /**
+   * Maximum number of character allows in the input field.
+   */
+  @Prop() maxlength: number;
+
+  /**
+   * Specifies tab order of the element.
+   */
+  @Prop() anyTabIndex: string;
+
+  /**
+   * Title text of the input text.
+   */
+  @Prop() aTitle: string;
+
+  /**
+   * Used to indicate that user input is required on an element before a form can be submitted.
+   */
+  @Prop() anyAriaRequired: boolean;
+  /**
+   * When present, it specifies that an input field is required.
+   */
+  @Prop() required: boolean;
+
+  /**
+   * Used to define a string that autocomplete attribute the current element.
+   */
+  @Prop() autocomplete: string;
+
+  /**
    * Callback to invoke when value of input text changes
    */
   @Event() valueChange: EventEmitter;
@@ -94,8 +143,10 @@ export class AnyInputText {
 
   inputChanged(ev: any) {
     let val = ev.target && ev.target.value;
-    this.value = val;
-    this.valueChange.emit(this.value);
+    if (this.value !== val) {
+      this.value = val;
+      this.valueChange.emit(this.value);
+    }
   }
 
   render() {
@@ -120,21 +171,43 @@ export class AnyInputText {
             {this.label && !this.floatLabel && (
               <label htmlFor={this.inputId}>{this.label}</label>
             )}
-            <input
-              id={this.inputId}
-              name={this.name}
-              disabled={this.disabled}
-              readonly={this.readonly}
-              placeholder={this.placeholder}
-              type="text"
+            <span
               class={
-                this.value
-                  ? "any-component any-inputtext any-corner-all any-filled"
-                  : "any-component any-inputtext any-corner-all"
+                (this.floatLabel ? "any-float-label " : "") +
+                (this.inputHolderClass ? this.inputHolderClass : "")
               }
-              value={this.value}
-              onInput={this.inputChanged.bind(this)}
-            />
+            >
+              <slot name="start" />
+              <input
+                part="any-inputtext"
+                id={this.inputId}
+                name={this.name}
+                disabled={this.disabled}
+                readonly={this.readonly}
+                placeholder={this.placeholder}
+                type="text"
+                style={this.inputStyle}
+                size={this.size}
+                maxlength={this.maxlength}
+                tabindex={this.anyTabIndex}
+                title={this.aTitle}
+                aria-required={this.anyAriaRequired}
+                required={this.required}
+                autocomplete={this.autocomplete}
+                class={
+                  (this.value
+                    ? "any-component any-inputtext any-corner-all any-filled"
+                    : "any-component any-inputtext any-corner-all") +
+                  (this.inputClass ? " " + this.inputClass : "")
+                }
+                value={this.value}
+                onInput={this.inputChanged.bind(this)}
+              />
+              <slot name="end" />
+              {this.label && this.floatLabel && (
+                <label htmlFor={this.inputId}>{this.label}</label>
+              )}
+            </span>
             <i
               class={
                 this.rightIconClass
@@ -144,9 +217,6 @@ export class AnyInputText {
             >
               <slot name="iconRight" />
             </i>
-            {this.label && this.floatLabel && (
-              <label htmlFor={this.inputId}>{this.label}</label>
-            )}
           </div>
         </div>
       </Host>

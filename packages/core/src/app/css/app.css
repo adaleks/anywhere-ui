@@ -557,6 +557,12 @@ code[class*=language] {
   padding: 0.5rem;
 }
 
+.md\:col-3 {
+  flex: 0 0 auto;
+  padding: 0.5rem;
+  width: 25%;
+}
+
 @keyframes fa-spin-right {
   0% {
     transform: rotate(0);
@@ -575,6 +581,28 @@ code[class*=language] {
 }
 .any-field.block label {
   display: block !important;
+}
+
+.any-fluid any-input-number,
+.any-fluid .any-input-number,
+.any-fluid .any-inputnumber {
+  width: 100%;
+}
+.any-fluid any-input-number .any-element,
+.any-fluid .any-input-number .any-element,
+.any-fluid .any-inputnumber .any-element {
+  width: 100%;
+}
+.any-fluid any-input-number any-input-text,
+.any-fluid any-input-number .any-input-text,
+.any-fluid any-input-number .any-inputnumber-buttons,
+.any-fluid .any-input-number any-input-text,
+.any-fluid .any-input-number .any-input-text,
+.any-fluid .any-input-number .any-inputnumber-buttons,
+.any-fluid .any-inputnumber any-input-text,
+.any-fluid .any-inputnumber .any-input-text,
+.any-fluid .any-inputnumber .any-inputnumber-buttons {
+  width: 100%;
 }
 
 @media screen and (max-width: 960px) {
@@ -786,7 +814,7 @@ code[class*=language] {
     display: none;
   }
 }
-any-button::part(any-button) {
+.buttons-intro any-button::part(any-button) {
   margin-right: 0.5rem;
 }
 

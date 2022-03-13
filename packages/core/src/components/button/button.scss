@@ -2,8 +2,10 @@
 
 :host {
   display: inline-block;
+  height: 100%;
 
   .any-button {
+    height: 100%;
     margin: 0;
     display: inline-flex;
     cursor: pointer;
@@ -80,7 +82,7 @@
   }
 
   .any-button-label {
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   .any-button {
@@ -110,13 +112,19 @@
       border: var(--outlinedButtonBorder);
 
       &:enabled:hover {
-        background: rgba(var(--primaryDarkColorRGBValue), var(--textButtonHoverBgOpacity));
+        background: rgba(
+          var(--primaryDarkColorRGBValue),
+          var(--textButtonHoverBgOpacity)
+        );
         color: var(--buttonBg);
         border: var(--outlinedButtonBorder);
       }
 
       &:enabled:active {
-        background: rgba(var(--primaryDarkerColorRGBValue), var(--textButtonActiveBgOpacity));
+        background: rgba(
+          var(--primaryDarkerColorRGBValue),
+          var(--textButtonActiveBgOpacity)
+        );
         color: var(--buttonBg);
         border: var(--outlinedButtonBorder);
       }
@@ -143,13 +151,19 @@
       border-color: transparent;
 
       &:enabled:hover {
-        background: rgba(var(--primaryDarkColorRGBValue), var(--textButtonHoverBgOpacity));
+        background: rgba(
+          var(--primaryDarkColorRGBValue),
+          var(--textButtonHoverBgOpacity)
+        );
         color: var(--buttonBg);
         border-color: transparent;
       }
 
       &:enabled:active {
-        background: rgba(var(--primaryDarkerColorRGBValue), var(--textButtonActiveBgOpacity));
+        background: rgba(
+          var(--primaryDarkerColorRGBValue),
+          var(--textButtonActiveBgOpacity)
+        );
         color: var(--buttonBg);
         border-color: transparent;
       }
@@ -253,7 +267,6 @@
     }
   }
 
-
   .any-button.any-button-lg .any-button-icon,
   .any-button.any-button-lg .any-button-icon * {
     font-size: 1.25rem;
@@ -284,468 +297,506 @@
   }
 
   .any-button.any-button-secondary,
-  .any-buttonset.any-button-secondary>.any-button,
-  .any-splitbutton.any-button-secondary>.any-button {
+  .any-buttonset.any-button-secondary > .any-button,
+  .any-splitbutton.any-button-secondary > .any-button {
     color: var(--secondaryButtonTextColor);
     background: var(--secondaryButtonBg);
     border: var(--secondaryButtonBorder);
   }
 
   .any-button.any-button-secondary:enabled:hover,
-  .any-buttonset.any-button-secondary>.any-button:enabled:hover,
-  .any-splitbutton.any-button-secondary>.any-button:enabled:hover {
+  .any-buttonset.any-button-secondary > .any-button:enabled:hover,
+  .any-splitbutton.any-button-secondary > .any-button:enabled:hover {
     background: var(--secondaryButtonHoverBg);
     color: var(--secondaryButtonTextHoverColor);
     border-color: var(--secondaryButtonHoverBorderColor);
   }
 
   .any-button.any-button-secondary:enabled:focus,
-  .any-buttonset.any-button-secondary>.any-button:enabled:focus,
-  .any-splitbutton.any-button-secondary>.any-button:enabled:focus {
+  .any-buttonset.any-button-secondary > .any-button:enabled:focus,
+  .any-splitbutton.any-button-secondary > .any-button:enabled:focus {
     box-shadow: var(--secondaryButtonFocusShadow);
   }
 
   .any-button.any-button-secondary:enabled:active,
-  .any-buttonset.any-button-secondary>.any-button:enabled:active,
-  .any-splitbutton.any-button-secondary>.any-button:enabled:active {
+  .any-buttonset.any-button-secondary > .any-button:enabled:active,
+  .any-splitbutton.any-button-secondary > .any-button:enabled:active {
     background: var(--secondaryButtonActiveBg);
     color: var(--secondaryButtonTextActiveColor);
     border-color: var(--secondaryButtonActiveBorderColor);
   }
 
   .any-button.any-button-secondary.any-button-outlined,
-  .any-buttonset.any-button-secondary>.any-button.any-button-outlined,
-  .any-splitbutton.any-button-secondary>.any-button.any-button-outlined {
+  .any-buttonset.any-button-secondary > .any-button.any-button-outlined,
+  .any-splitbutton.any-button-secondary > .any-button.any-button-outlined {
     background-color: transparent;
     color: var(--secondaryButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-secondary.any-button-outlined:enabled:hover,
-  .any-buttonset.any-button-secondary>.any-button.any-button-outlined:enabled:hover,
-  .any-splitbutton.any-button-secondary>.any-button.any-button-outlined:enabled:hover {
+  .any-buttonset.any-button-secondary
+    > .any-button.any-button-outlined:enabled:hover,
+  .any-splitbutton.any-button-secondary
+    > .any-button.any-button-outlined:enabled:hover {
     background: rgba(84, 110, 122, var(--textButtonHoverBgOpacity));
     color: var(--secondaryButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-secondary.any-button-outlined:enabled:active,
-  .any-buttonset.any-button-secondary>.any-button.any-button-outlined:enabled:active,
-  .any-splitbutton.any-button-secondary>.any-button.any-button-outlined:enabled:active {
+  .any-buttonset.any-button-secondary
+    > .any-button.any-button-outlined:enabled:active,
+  .any-splitbutton.any-button-secondary
+    > .any-button.any-button-outlined:enabled:active {
     background: rgba(69, 90, 100, var(--textButtonActiveBgOpacity));
     color: var(--secondaryButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-secondary.any-button-text,
-  .any-buttonset.any-button-secondary>.any-button.any-button-text,
-  .any-splitbutton.any-button-secondary>.any-button.any-button-text {
+  .any-buttonset.any-button-secondary > .any-button.any-button-text,
+  .any-splitbutton.any-button-secondary > .any-button.any-button-text {
     background-color: transparent;
     color: var(--secondaryButtonBg);
     border-color: transparent;
   }
 
   .any-button.any-button-secondary.any-button-text:enabled:hover,
-  .any-buttonset.any-button-secondary>.any-button.any-button-text:enabled:hover,
-  .any-splitbutton.any-button-secondary>.any-button.any-button-text:enabled:hover {
+  .any-buttonset.any-button-secondary
+    > .any-button.any-button-text:enabled:hover,
+  .any-splitbutton.any-button-secondary
+    > .any-button.any-button-text:enabled:hover {
     background: rgba(84, 110, 122, var(--textButtonHoverBgOpacity));
     border-color: transparent;
     color: var(--secondaryButtonBg);
   }
 
   .any-button.any-button-secondary.any-button-text:enabled:active,
-  .any-buttonset.any-button-secondary>.any-button.any-button-text:enabled:active,
-  .any-splitbutton.any-button-secondary>.any-button.any-button-text:enabled:active {
+  .any-buttonset.any-button-secondary
+    > .any-button.any-button-text:enabled:active,
+  .any-splitbutton.any-button-secondary
+    > .any-button.any-button-text:enabled:active {
     background: rgba(69, 90, 100, var(--textButtonActiveBgOpacity));
     border-color: transparent;
     color: var(--secondaryButtonBg);
   }
 
   .any-button.any-button-info,
-  .any-buttonset.any-button-info>.any-button,
-  .any-splitbutton.any-button-info>.any-button {
+  .any-buttonset.any-button-info > .any-button,
+  .any-splitbutton.any-button-info > .any-button {
     color: var(--infoButtonTextColor);
     background: var(--infoButtonBg);
     border: var(--infoButtonBorder);
   }
 
   .any-button.any-button-info:enabled:hover,
-  .any-buttonset.any-button-info>.any-button:enabled:hover,
-  .any-splitbutton.any-button-info>.any-button:enabled:hover {
+  .any-buttonset.any-button-info > .any-button:enabled:hover,
+  .any-splitbutton.any-button-info > .any-button:enabled:hover {
     background: var(--infoButtonHoverBg);
     color: var(--infoButtonTextHoverColor);
     border-color: var(--infoButtonHoverBorderColor);
   }
 
   .any-button.any-button-info:enabled:focus,
-  .any-buttonset.any-button-info>.any-button:enabled:focus,
-  .any-splitbutton.any-button-info>.any-button:enabled:focus {
+  .any-buttonset.any-button-info > .any-button:enabled:focus,
+  .any-splitbutton.any-button-info > .any-button:enabled:focus {
     box-shadow: var(--infoButtonFocusShadow);
   }
 
   .any-button.any-button-info:enabled:active,
-  .any-buttonset.any-button-info>.any-button:enabled:active,
-  .any-splitbutton.any-button-info>.any-button:enabled:active {
+  .any-buttonset.any-button-info > .any-button:enabled:active,
+  .any-splitbutton.any-button-info > .any-button:enabled:active {
     background: var(--infoButtonActiveBg);
     color: var(--infoButtonTextActiveColor);
     border-color: var(--infoButtonActiveBorderColor);
   }
 
   .any-button.any-button-info.any-button-outlined,
-  .any-buttonset.any-button-info>.any-button.any-button-outlined,
-  .any-splitbutton.any-button-info>.any-button.any-button-outlined {
+  .any-buttonset.any-button-info > .any-button.any-button-outlined,
+  .any-splitbutton.any-button-info > .any-button.any-button-outlined {
     background-color: transparent;
     color: var(--infoButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-info.any-button-outlined:enabled:hover,
-  .any-buttonset.any-button-info>.any-button.any-button-outlined:enabled:hover,
-  .any-splitbutton.any-button-info>.any-button.any-button-outlined:enabled:hover {
+  .any-buttonset.any-button-info
+    > .any-button.any-button-outlined:enabled:hover,
+  .any-splitbutton.any-button-info
+    > .any-button.any-button-outlined:enabled:hover {
     background: rgba(3, 155, 229, var(--textButtonHoverBgOpacity));
     color: var(--infoButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-info.any-button-outlined:enabled:active,
-  .any-buttonset.any-button-info>.any-button.any-button-outlined:enabled:active,
-  .any-splitbutton.any-button-info>.any-button.any-button-outlined:enabled:active {
+  .any-buttonset.any-button-info
+    > .any-button.any-button-outlined:enabled:active,
+  .any-splitbutton.any-button-info
+    > .any-button.any-button-outlined:enabled:active {
     background: rgba(2, 136, 209, var(--textButtonActiveBgOpacity));
     color: var(--infoButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-info.any-button-text,
-  .any-buttonset.any-button-info>.any-button.any-button-text,
-  .any-splitbutton.any-button-info>.any-button.any-button-text {
+  .any-buttonset.any-button-info > .any-button.any-button-text,
+  .any-splitbutton.any-button-info > .any-button.any-button-text {
     background-color: transparent;
     color: var(--infoButtonBg);
     border-color: transparent;
   }
 
   .any-button.any-button-info.any-button-text:enabled:hover,
-  .any-buttonset.any-button-info>.any-button.any-button-text:enabled:hover,
-  .any-splitbutton.any-button-info>.any-button.any-button-text:enabled:hover {
+  .any-buttonset.any-button-info > .any-button.any-button-text:enabled:hover,
+  .any-splitbutton.any-button-info > .any-button.any-button-text:enabled:hover {
     background: rgba(3, 155, 229, var(--textButtonHoverBgOpacity));
     border-color: transparent;
     color: var(--infoButtonBg);
   }
 
   .any-button.any-button-info.any-button-text:enabled:active,
-  .any-buttonset.any-button-info>.any-button.any-button-text:enabled:active,
-  .any-splitbutton.any-button-info>.any-button.any-button-text:enabled:active {
+  .any-buttonset.any-button-info > .any-button.any-button-text:enabled:active,
+  .any-splitbutton.any-button-info
+    > .any-button.any-button-text:enabled:active {
     background: rgba(2, 136, 209, var(--textButtonActiveBgOpacity));
     border-color: transparent;
     color: var(--infoButtonBg);
   }
 
   .any-button.any-button-success,
-  .any-buttonset.any-button-success>.any-button,
-  .any-splitbutton.any-button-success>.any-button {
+  .any-buttonset.any-button-success > .any-button,
+  .any-splitbutton.any-button-success > .any-button {
     color: var(--successButtonTextColor);
     background: var(--successButtonBg);
     border: var(--successButtonBorder);
   }
 
   .any-button.any-button-success:enabled:hover,
-  .any-buttonset.any-button-success>.any-button:enabled:hover,
-  .any-splitbutton.any-button-success>.any-button:enabled:hover {
+  .any-buttonset.any-button-success > .any-button:enabled:hover,
+  .any-splitbutton.any-button-success > .any-button:enabled:hover {
     background: var(--successButtonHoverBg);
     color: var(--successButtonTextHoverColor);
     border-color: var(--successButtonHoverBorderColor);
   }
 
   .any-button.any-button-success:enabled:focus,
-  .any-buttonset.any-button-success>.any-button:enabled:focus,
-  .any-splitbutton.any-button-success>.any-button:enabled:focus {
+  .any-buttonset.any-button-success > .any-button:enabled:focus,
+  .any-splitbutton.any-button-success > .any-button:enabled:focus {
     box-shadow: var(--successButtonFocusShadow);
   }
 
   .any-button.any-button-success:enabled:active,
-  .any-buttonset.any-button-success>.any-button:enabled:active,
-  .any-splitbutton.any-button-success>.any-button:enabled:active {
+  .any-buttonset.any-button-success > .any-button:enabled:active,
+  .any-splitbutton.any-button-success > .any-button:enabled:active {
     background: var(--successButtonActiveBg);
     color: var(--successButtonTextActiveColor);
     border-color: var(--successButtonActiveBorderColor);
   }
 
   .any-button.any-button-success.any-button-outlined,
-  .any-buttonset.any-button-success>.any-button.any-button-outlined,
-  .any-splitbutton.any-button-success>.any-button.any-button-outlined {
+  .any-buttonset.any-button-success > .any-button.any-button-outlined,
+  .any-splitbutton.any-button-success > .any-button.any-button-outlined {
     background-color: transparent;
     color: var(--successButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-success.any-button-outlined:enabled:hover,
-  .any-buttonset.any-button-success>.any-button.any-button-outlined:enabled:hover,
-  .any-splitbutton.any-button-success>.any-button.any-button-outlined:enabled:hover {
+  .any-buttonset.any-button-success
+    > .any-button.any-button-outlined:enabled:hover,
+  .any-splitbutton.any-button-success
+    > .any-button.any-button-outlined:enabled:hover {
     background: rgba(67, 160, 71, var(--textButtonHoverBgOpacity));
     color: var(--successButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-success.any-button-outlined:enabled:active,
-  .any-buttonset.any-button-success>.any-button.any-button-outlined:enabled:active,
-  .any-splitbutton.any-button-success>.any-button.any-button-outlined:enabled:active {
+  .any-buttonset.any-button-success
+    > .any-button.any-button-outlined:enabled:active,
+  .any-splitbutton.any-button-success
+    > .any-button.any-button-outlined:enabled:active {
     background: rgba(56, 142, 60, var(--textButtonActiveBgOpacity));
     color: var(--successButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-success.any-button-text,
-  .any-buttonset.any-button-success>.any-button.any-button-text,
-  .any-splitbutton.any-button-success>.any-button.any-button-text {
+  .any-buttonset.any-button-success > .any-button.any-button-text,
+  .any-splitbutton.any-button-success > .any-button.any-button-text {
     background-color: transparent;
     color: var(--successButtonBg);
     border-color: transparent;
   }
 
   .any-button.any-button-success.any-button-text:enabled:hover,
-  .any-buttonset.any-button-success>.any-button.any-button-text:enabled:hover,
-  .any-splitbutton.any-button-success>.any-button.any-button-text:enabled:hover {
+  .any-buttonset.any-button-success > .any-button.any-button-text:enabled:hover,
+  .any-splitbutton.any-button-success
+    > .any-button.any-button-text:enabled:hover {
     background: rgba(67, 160, 71, var(--textButtonHoverBgOpacity));
     border-color: transparent;
     color: var(--successButtonBg);
   }
 
   .any-button.any-button-success.any-button-text:enabled:active,
-  .any-buttonset.any-button-success>.any-button.any-button-text:enabled:active,
-  .any-splitbutton.any-button-success>.any-button.any-button-text:enabled:active {
+  .any-buttonset.any-button-success
+    > .any-button.any-button-text:enabled:active,
+  .any-splitbutton.any-button-success
+    > .any-button.any-button-text:enabled:active {
     background: rgba(56, 142, 60, var(--textButtonActiveBgOpacity));
     border-color: transparent;
     color: var(--successButtonBg);
   }
 
   .any-button.any-button-warning,
-  .any-buttonset.any-button-warning>.any-button,
-  .any-splitbutton.any-button-warning>.any-button {
+  .any-buttonset.any-button-warning > .any-button,
+  .any-splitbutton.any-button-warning > .any-button {
     color: var(--warningButtonTextColor);
     background: var(--warningButtonBg);
     border: var(--warningButtonBorder);
   }
 
   .any-button.any-button-warning:enabled:hover,
-  .any-buttonset.any-button-warning>.any-button:enabled:hover,
-  .any-splitbutton.any-button-warning>.any-button:enabled:hover {
+  .any-buttonset.any-button-warning > .any-button:enabled:hover,
+  .any-splitbutton.any-button-warning > .any-button:enabled:hover {
     background: var(--warningButtonHoverBg);
     color: var(--warningButtonTextHoverColor);
     border-color: var(--warningButtonHoverBorderColor);
   }
 
   .any-button.any-button-warning:enabled:focus,
-  .any-buttonset.any-button-warning>.any-button:enabled:focus,
-  .any-splitbutton.any-button-warning>.any-button:enabled:focus {
+  .any-buttonset.any-button-warning > .any-button:enabled:focus,
+  .any-splitbutton.any-button-warning > .any-button:enabled:focus {
     box-shadow: var(--warningButtonFocusShadow);
   }
 
   .any-button.any-button-warning:enabled:active,
-  .any-buttonset.any-button-warning>.any-button:enabled:active,
-  .any-splitbutton.any-button-warning>.any-button:enabled:active {
+  .any-buttonset.any-button-warning > .any-button:enabled:active,
+  .any-splitbutton.any-button-warning > .any-button:enabled:active {
     background: var(--warningButtonActiveBg);
     color: var(--warningButtonTextActiveColor);
     border-color: var(--warningButtonActiveBorderColor);
   }
 
   .any-button.any-button-warning.any-button-outlined,
-  .any-buttonset.any-button-warning>.any-button.any-button-outlined,
-  .any-splitbutton.any-button-warning>.any-button.any-button-outlined {
+  .any-buttonset.any-button-warning > .any-button.any-button-outlined,
+  .any-splitbutton.any-button-warning > .any-button.any-button-outlined {
     background-color: transparent;
     color: var(--warningButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-warning.any-button-outlined:enabled:hover,
-  .any-buttonset.any-button-warning>.any-button.any-button-outlined:enabled:hover,
-  .any-splitbutton.any-button-warning>.any-button.any-button-outlined:enabled:hover {
+  .any-buttonset.any-button-warning
+    > .any-button.any-button-outlined:enabled:hover,
+  .any-splitbutton.any-button-warning
+    > .any-button.any-button-outlined:enabled:hover {
     background: rgba(255, 179, 0, var(--textButtonHoverBgOpacity));
     color: var(--warningButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-warning.any-button-outlined:enabled:active,
-  .any-buttonset.any-button-warning>.any-button.any-button-outlined:enabled:active,
-  .any-splitbutton.any-button-warning>.any-button.any-button-outlined:enabled:active {
+  .any-buttonset.any-button-warning
+    > .any-button.any-button-outlined:enabled:active,
+  .any-splitbutton.any-button-warning
+    > .any-button.any-button-outlined:enabled:active {
     background: rgba(255, 160, 0, var(--textButtonActiveBgOpacity));
     color: var(--warningButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-warning.any-button-text,
-  .any-buttonset.any-button-warning>.any-button.any-button-text,
-  .any-splitbutton.any-button-warning>.any-button.any-button-text {
+  .any-buttonset.any-button-warning > .any-button.any-button-text,
+  .any-splitbutton.any-button-warning > .any-button.any-button-text {
     background-color: transparent;
     color: var(--warningButtonBg);
     border-color: transparent;
   }
 
   .any-button.any-button-warning.any-button-text:enabled:hover,
-  .any-buttonset.any-button-warning>.any-button.any-button-text:enabled:hover,
-  .any-splitbutton.any-button-warning>.any-button.any-button-text:enabled:hover {
+  .any-buttonset.any-button-warning > .any-button.any-button-text:enabled:hover,
+  .any-splitbutton.any-button-warning
+    > .any-button.any-button-text:enabled:hover {
     background: rgba(255, 179, 0, var(--textButtonHoverBgOpacity));
     border-color: transparent;
     color: var(--warningButtonBg);
   }
 
   .any-button.any-button-warning.any-button-text:enabled:active,
-  .any-buttonset.any-button-warning>.any-button.any-button-text:enabled:active,
-  .any-splitbutton.any-button-warning>.any-button.any-button-text:enabled:active {
+  .any-buttonset.any-button-warning
+    > .any-button.any-button-text:enabled:active,
+  .any-splitbutton.any-button-warning
+    > .any-button.any-button-text:enabled:active {
     background: rgba(255, 160, 0, var(--textButtonActiveBgOpacity));
     border-color: transparent;
     color: var(--warningButtonBg);
   }
 
   .any-button.any-button-help,
-  .any-buttonset.any-button-help>.any-button,
-  .any-splitbutton.any-button-help>.any-button {
+  .any-buttonset.any-button-help > .any-button,
+  .any-splitbutton.any-button-help > .any-button {
     color: var(--helpButtonTextColor);
     background: var(--helpButtonBg);
     border: var(--helpButtonBorder);
   }
 
   .any-button.any-button-help:enabled:hover,
-  .any-buttonset.any-button-help>.any-button:enabled:hover,
-  .any-splitbutton.any-button-help>.any-button:enabled:hover {
+  .any-buttonset.any-button-help > .any-button:enabled:hover,
+  .any-splitbutton.any-button-help > .any-button:enabled:hover {
     background: var(--helpButtonHoverBg);
     color: var(--helpButtonTextHoverColor);
     border-color: var(--helpButtonHoverBorderColor);
   }
 
   .any-button.any-button-help:enabled:focus,
-  .any-buttonset.any-button-help>.any-button:enabled:focus,
-  .any-splitbutton.any-button-help>.any-button:enabled:focus {
+  .any-buttonset.any-button-help > .any-button:enabled:focus,
+  .any-splitbutton.any-button-help > .any-button:enabled:focus {
     box-shadow: var(--helpButtonFocusShadow);
   }
 
   .any-button.any-button-help:enabled:active,
-  .any-buttonset.any-button-help>.any-button:enabled:active,
-  .any-splitbutton.any-button-help>.any-button:enabled:active {
+  .any-buttonset.any-button-help > .any-button:enabled:active,
+  .any-splitbutton.any-button-help > .any-button:enabled:active {
     background: var(--helpButtonActiveBg);
     color: var(--helpButtonTextActiveColor);
     border-color: var(--helpButtonActiveBorderColor);
   }
 
   .any-button.any-button-help.any-button-outlined,
-  .any-buttonset.any-button-help>.any-button.any-button-outlined,
-  .any-splitbutton.any-button-help>.any-button.any-button-outlined {
+  .any-buttonset.any-button-help > .any-button.any-button-outlined,
+  .any-splitbutton.any-button-help > .any-button.any-button-outlined {
     background-color: transparent;
     color: var(--helpButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-help.any-button-outlined:enabled:hover,
-  .any-buttonset.any-button-help>.any-button.any-button-outlined:enabled:hover,
-  .any-splitbutton.any-button-help>.any-button.any-button-outlined:enabled:hover {
+  .any-buttonset.any-button-help
+    > .any-button.any-button-outlined:enabled:hover,
+  .any-splitbutton.any-button-help
+    > .any-button.any-button-outlined:enabled:hover {
     background: rgba(142, 36, 170, var(--textButtonHoverBgOpacity));
     color: var(--helpButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-help.any-button-outlined:enabled:active,
-  .any-buttonset.any-button-help>.any-button.any-button-outlined:enabled:active,
-  .any-splitbutton.any-button-help>.any-button.any-button-outlined:enabled:active {
+  .any-buttonset.any-button-help
+    > .any-button.any-button-outlined:enabled:active,
+  .any-splitbutton.any-button-help
+    > .any-button.any-button-outlined:enabled:active {
     background: rgba(123, 31, 162, var(--textButtonActiveBgOpacity));
     color: var(--helpButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-help.any-button-text,
-  .any-buttonset.any-button-help>.any-button.any-button-text,
-  .any-splitbutton.any-button-help>.any-button.any-button-text {
+  .any-buttonset.any-button-help > .any-button.any-button-text,
+  .any-splitbutton.any-button-help > .any-button.any-button-text {
     background-color: transparent;
     color: var(--helpButtonBg);
     border-color: transparent;
   }
 
   .any-button.any-button-help.any-button-text:enabled:hover,
-  .any-buttonset.any-button-help>.any-button.any-button-text:enabled:hover,
-  .any-splitbutton.any-button-help>.any-button.any-button-text:enabled:hover {
+  .any-buttonset.any-button-help > .any-button.any-button-text:enabled:hover,
+  .any-splitbutton.any-button-help > .any-button.any-button-text:enabled:hover {
     background: rgba(142, 36, 170, var(--textButtonHoverBgOpacity));
     border-color: transparent;
     color: var(--helpButtonBg);
   }
 
   .any-button.any-button-help.any-button-text:enabled:active,
-  .any-buttonset.any-button-help>.any-button.any-button-text:enabled:active,
-  .any-splitbutton.any-button-help>.any-button.any-button-text:enabled:active {
+  .any-buttonset.any-button-help > .any-button.any-button-text:enabled:active,
+  .any-splitbutton.any-button-help
+    > .any-button.any-button-text:enabled:active {
     background: rgba(123, 31, 162, var(--textButtonActiveBgOpacity));
     border-color: transparent;
     color: var(--helpButtonBg);
   }
 
   .any-button.any-button-danger,
-  .any-buttonset.any-button-danger>.any-button,
-  .any-splitbutton.any-button-danger>.any-button {
+  .any-buttonset.any-button-danger > .any-button,
+  .any-splitbutton.any-button-danger > .any-button {
     color: var(--dangerButtonTextColor);
     background: var(--dangerButtonBg);
     border: var(--dangerButtonBorder);
   }
 
   .any-button.any-button-danger:enabled:hover,
-  .any-buttonset.any-button-danger>.any-button:enabled:hover,
-  .any-splitbutton.any-button-danger>.any-button:enabled:hover {
+  .any-buttonset.any-button-danger > .any-button:enabled:hover,
+  .any-splitbutton.any-button-danger > .any-button:enabled:hover {
     background: var(--dangerButtonHoverBg);
     color: var(--dangerButtonTextHoverColor);
     border-color: var(--dangerButtonHoverBorderColor);
   }
 
   .any-button.any-button-danger:enabled:focus,
-  .any-buttonset.any-button-danger>.any-button:enabled:focus,
-  .any-splitbutton.any-button-danger>.any-button:enabled:focus {
+  .any-buttonset.any-button-danger > .any-button:enabled:focus,
+  .any-splitbutton.any-button-danger > .any-button:enabled:focus {
     box-shadow: var(--dangerButtonFocusShadow);
   }
 
   .any-button.any-button-danger:enabled:active,
-  .any-buttonset.any-button-danger>.any-button:enabled:active,
-  .any-splitbutton.any-button-danger>.any-button:enabled:active {
+  .any-buttonset.any-button-danger > .any-button:enabled:active,
+  .any-splitbutton.any-button-danger > .any-button:enabled:active {
     background: var(--dangerButtonActiveBg);
     color: var(--dangerButtonTextActiveColor);
     border-color: var(--dangerButtonActiveBorderColor);
   }
 
   .any-button.any-button-danger.any-button-outlined,
-  .any-buttonset.any-button-danger>.any-button.any-button-outlined,
-  .any-splitbutton.any-button-danger>.any-button.any-button-outlined {
+  .any-buttonset.any-button-danger > .any-button.any-button-outlined,
+  .any-splitbutton.any-button-danger > .any-button.any-button-outlined {
     background-color: transparent;
     color: var(--dangerButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-danger.any-button-outlined:enabled:hover,
-  .any-buttonset.any-button-danger>.any-button.any-button-outlined:enabled:hover,
-  .any-splitbutton.any-button-danger>.any-button.any-button-outlined:enabled:hover {
+  .any-buttonset.any-button-danger
+    > .any-button.any-button-outlined:enabled:hover,
+  .any-splitbutton.any-button-danger
+    > .any-button.any-button-outlined:enabled:hover {
     background: rgba(229, 57, 53, var(--textButtonHoverBgOpacity));
     color: var(--dangerButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-danger.any-button-outlined:enabled:active,
-  .any-buttonset.any-button-danger>.any-button.any-button-outlined:enabled:active,
-  .any-splitbutton.any-button-danger>.any-button.any-button-outlined:enabled:active {
+  .any-buttonset.any-button-danger
+    > .any-button.any-button-outlined:enabled:active,
+  .any-splitbutton.any-button-danger
+    > .any-button.any-button-outlined:enabled:active {
     background: rgba(211, 47, 47, var(--textButtonActiveBgOpacity));
     color: var(--dangerButtonBg);
     border: var(--outlinedButtonBorder);
   }
 
   .any-button.any-button-danger.any-button-text,
-  .any-buttonset.any-button-danger>.any-button.any-button-text,
-  .any-splitbutton.any-button-danger>.any-button.any-button-text {
+  .any-buttonset.any-button-danger > .any-button.any-button-text,
+  .any-splitbutton.any-button-danger > .any-button.any-button-text {
     background-color: transparent;
     color: var(--dangerButtonBg);
     border-color: transparent;
   }
 
   .any-button.any-button-danger.any-button-text:enabled:hover,
-  .any-buttonset.any-button-danger>.any-button.any-button-text:enabled:hover,
-  .any-splitbutton.any-button-danger>.any-button.any-button-text:enabled:hover {
+  .any-buttonset.any-button-danger > .any-button.any-button-text:enabled:hover,
+  .any-splitbutton.any-button-danger
+    > .any-button.any-button-text:enabled:hover {
     background: rgba(229, 57, 53, var(--textButtonHoverBgOpacity));
     border-color: transparent;
     color: var(--dangerButtonBg);
   }
 
   .any-button.any-button-danger.any-button-text:enabled:active,
-  .any-buttonset.any-button-danger>.any-button.any-button-text:enabled:active,
-  .any-splitbutton.any-button-danger>.any-button.any-button-text:enabled:active {
+  .any-buttonset.any-button-danger > .any-button.any-button-text:enabled:active,
+  .any-splitbutton.any-button-danger
+    > .any-button.any-button-text:enabled:active {
     background: rgba(211, 47, 47, var(--textButtonActiveBgOpacity));
     border-color: transparent;
     color: var(--dangerButtonBg);

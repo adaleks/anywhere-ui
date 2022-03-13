@@ -13,6 +13,7 @@ export const AnyBadgeOverlay = /*@__PURE__*/createReactComponent<JSX.AnyBadgeOve
 export const AnyButton = /*@__PURE__*/createReactComponent<JSX.AnyButton, HTMLAnyButtonElement>('any-button');
 export const AnyCheckbox = /*@__PURE__*/createReactComponent<JSX.AnyCheckbox, HTMLAnyCheckboxElement>('any-checkbox');
 export const AnyDropdown = /*@__PURE__*/createReactComponent<JSX.AnyDropdown, HTMLAnyDropdownElement>('any-dropdown');
+export const AnyInputNumber = /*@__PURE__*/createReactComponent<JSX.AnyInputNumber, HTMLAnyInputNumberElement>('any-input-number');
 export const AnyInputSwitch = /*@__PURE__*/createReactComponent<JSX.AnyInputSwitch, HTMLAnyInputSwitchElement>('any-input-switch');
 export const AnyInputText = /*@__PURE__*/createReactComponent<JSX.AnyInputText, HTMLAnyInputTextElement>('any-input-text');
 export const AnyInputTextarea = /*@__PURE__*/createReactComponent<JSX.AnyInputTextarea, HTMLAnyInputTextareaElement>('any-input-textarea');
