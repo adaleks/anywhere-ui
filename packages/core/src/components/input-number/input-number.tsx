@@ -297,11 +297,10 @@ export class InputNumber {
 
   componentWillLoad() {
     this.constructParser();
-
-    this.initialized = true;
   }
 
   componentDidLoad() {
+    this.initialized = true;
     const input = this.element.querySelector(
       "any-input-text"
     ) as HTMLAnyInputTextElement;
@@ -467,11 +466,12 @@ export class InputNumber {
 
   constructParser() {
     this.numberFormat = new Intl.NumberFormat(this.locale, this.getOptions());
-    const numerals = [
-      ...new Intl.NumberFormat(this.locale, { useGrouping: false }).format(
-        9876543210
-      ),
-    ].reverse();
+    // const numerals = [
+    //   ...new Intl.NumberFormat(this.locale, { useGrouping: false }).format(
+    //     9876543210
+    //     ),
+    //   ].reverse();
+    const numerals = Array.from(String(9876543210)).reverse();
     const index = new Map(numerals.map((d, i) => [d, i]));
     this._numeral = new RegExp(`[${numerals.join("")}]`, "g");
     this._group = this.getGroupingExpression();
@@ -1184,6 +1184,13 @@ export class InputNumber {
   }
 
   isNumeralChar(char) {
+    console.log(
+      "isNumeralChar",
+      this._numeral,
+      this._decimal,
+      this._group,
+      this._minusSign
+    );
     if (
       char.length === 1 &&
       (this._numeral.test(char) ||
