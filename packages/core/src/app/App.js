@@ -169,6 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
+      const currentPath = e.target.href.substring(e.target.href.indexOf('#'));
+      if (currentPath === location.hash) return;
       navigateTo(e.target.href);
       const menuItems = document.querySelectorAll("[data-link]");
       menuItems.forEach(function (item) {

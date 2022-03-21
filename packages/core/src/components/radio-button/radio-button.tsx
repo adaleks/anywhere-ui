@@ -131,7 +131,6 @@ export class RadioButton {
 
   private updateState = () => {
     if (this.radioGroup) {
-      console.log("UPDATE STATE", this.radioGroup.value, this.value);
       this.checked = this.radioGroup.value === this.value;
     }
   };
