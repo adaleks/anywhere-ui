@@ -799,6 +799,50 @@ export namespace Components {
         "styleClass": string;
     }
 }
+export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyButtonElement;
+}
+export interface AnyCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyCheckboxElement;
+}
+export interface AnyDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyDropdownElement;
+}
+export interface AnyInputNumberCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyInputNumberElement;
+}
+export interface AnyInputSwitchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyInputSwitchElement;
+}
+export interface AnyInputTextCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyInputTextElement;
+}
+export interface AnyInputTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyInputTextareaElement;
+}
+export interface AnyListboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyListboxElement;
+}
+export interface AnyRadioButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyRadioButtonElement;
+}
+export interface AnyRadioGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyRadioGroupElement;
+}
+export interface AnyVirtualScrollerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyVirtualScrollerElement;
+}
 declare global {
     interface HTMLAnyBadgeElement extends Components.AnyBadge, HTMLStencilElement {
     }
@@ -996,15 +1040,15 @@ declare namespace LocalJSX {
         /**
           * Callback to execute when button loses focus.
          */
-        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        "onAOnBlur"?: (event: AnyButtonCustomEvent<any>) => void;
         /**
           * Callback to execute when button is clicked.
          */
-        "onAOnClick"?: (event: CustomEvent<any>) => void;
+        "onAOnClick"?: (event: AnyButtonCustomEvent<any>) => void;
         /**
           * Callback to execute when button is focused.
          */
-        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        "onAOnFocus"?: (event: AnyButtonCustomEvent<any>) => void;
         /**
           * Style class of the element.
          */
@@ -1058,15 +1102,15 @@ declare namespace LocalJSX {
         /**
           * Emitted when the toggle loses focus.
          */
-        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        "onAOnBlur"?: (event: AnyCheckboxCustomEvent<any>) => void;
         /**
           * Emitted when the toggle has focus.
          */
-        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        "onAOnFocus"?: (event: AnyCheckboxCustomEvent<any>) => void;
         /**
           * Callback to invoke when value of dropdown changes.
          */
-        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "onValueChange"?: (event: AnyCheckboxCustomEvent<any>) => void;
         /**
           * When present, it specifies that the component cannot be edited.
          */
@@ -1124,35 +1168,35 @@ declare namespace LocalJSX {
         /**
           * Callback to invoke when dropdown loses focus
          */
-        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        "onAOnBlur"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when component is clicked
          */
-        "onAOnClick"?: (event: CustomEvent<any>) => void;
+        "onAOnClick"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown gets focus
          */
-        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        "onAOnFocus"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay gets hidden
          */
-        "onAOnHide"?: (event: CustomEvent<any>) => void;
+        "onAOnHide"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay before gets hidden
          */
-        "onAOnHideStart"?: (event: CustomEvent<any>) => void;
+        "onAOnHideStart"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay gets visible
          */
-        "onAOnShow"?: (event: CustomEvent<any>) => void;
+        "onAOnShow"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay before gets visible
          */
-        "onAOnShowStart"?: (event: CustomEvent<any>) => void;
+        "onAOnShowStart"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when value of dropdown changes
          */
-        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "onValueChange"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Name of the label field of an option
          */
@@ -1322,23 +1366,23 @@ declare namespace LocalJSX {
         /**
           * Callback to invoke when input loses focus.
          */
-        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        "onAOnBlur"?: (event: AnyInputNumberCustomEvent<any>) => void;
         /**
           * Callback to invoke when input receives focus.
          */
-        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        "onAOnFocus"?: (event: AnyInputNumberCustomEvent<any>) => void;
         /**
           * Callback to invoke when the value is entered.
          */
-        "onAOnInput"?: (event: CustomEvent<any>) => void;
+        "onAOnInput"?: (event: AnyInputNumberCustomEvent<any>) => void;
         /**
           * Callback to invoke when keyboard key is down.
          */
-        "onAOnKeyDown"?: (event: CustomEvent<any>) => void;
+        "onAOnKeyDown"?: (event: AnyInputNumberCustomEvent<any>) => void;
         /**
           * Callback to invoke when value of componnt changes
          */
-        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "onValueChange"?: (event: AnyInputNumberCustomEvent<any>) => void;
         /**
           * Advisory information to display on input.
          */
@@ -1412,15 +1456,15 @@ declare namespace LocalJSX {
         /**
           * Emitted when the toggle loses focus.
          */
-        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        "onAOnBlur"?: (event: AnyInputSwitchCustomEvent<any>) => void;
         /**
           * Emitted when the toggle has focus.
          */
-        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        "onAOnFocus"?: (event: AnyInputSwitchCustomEvent<any>) => void;
         /**
           * Callback to invoke when value of dropdown changes.
          */
-        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "onValueChange"?: (event: AnyInputSwitchCustomEvent<any>) => void;
         /**
           * When present, it specifies that the component cannot be edited.
          */
@@ -1498,7 +1542,7 @@ declare namespace LocalJSX {
         /**
           * Callback to invoke when value of input text changes
          */
-        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "onValueChange"?: (event: AnyInputTextCustomEvent<any>) => void;
         /**
           * Default text to display when no value in input text
          */
@@ -1564,23 +1608,23 @@ declare namespace LocalJSX {
         /**
           * Emitted when the input loses focus.
          */
-        "onAOnBlur"?: (event: CustomEvent<FocusEvent>) => void;
+        "onAOnBlur"?: (event: AnyInputTextareaCustomEvent<FocusEvent>) => void;
         /**
           * Emitted when the input has focus.
          */
-        "onAOnFocus"?: (event: CustomEvent<FocusEvent>) => void;
+        "onAOnFocus"?: (event: AnyInputTextareaCustomEvent<FocusEvent>) => void;
         /**
           * Emitted when a keyboard input occurred.
          */
-        "onAOnInput"?: (event: CustomEvent<InputEvent>) => void;
+        "onAOnInput"?: (event: AnyInputTextareaCustomEvent<InputEvent>) => void;
         /**
           * Emitted when the input has resized.
          */
-        "onAOnResize"?: (event: CustomEvent<any>) => void;
+        "onAOnResize"?: (event: AnyInputTextareaCustomEvent<any>) => void;
         /**
           * Emitted when the input value has changed.
          */
-        "onValueChange"?: (event: CustomEvent<TextareaChangeEventDetail>) => void;
+        "onValueChange"?: (event: AnyInputTextareaCustomEvent<TextareaChangeEventDetail>) => void;
         /**
           * Default text to display when no value in input textarea
          */
@@ -1630,7 +1674,7 @@ declare namespace LocalJSX {
         /**
           * Callback to invoke when value of listbox changes
          */
-        "onValueChange"?: (event: CustomEvent<SelectChangeEventDetail>) => void;
+        "onValueChange"?: (event: AnyListboxCustomEvent<SelectChangeEventDetail>) => void;
         /**
           * Name of the label field of an option
          */
@@ -1692,15 +1736,15 @@ declare namespace LocalJSX {
         /**
           * Callback to invoke when the radio button loses focus.
          */
-        "onAOnBlur"?: (event: CustomEvent<any>) => void;
+        "onAOnBlur"?: (event: AnyRadioButtonCustomEvent<any>) => void;
         /**
           * Callback to invoke when the radio button receives focus.
          */
-        "onAOnFocus"?: (event: CustomEvent<any>) => void;
+        "onAOnFocus"?: (event: AnyRadioButtonCustomEvent<any>) => void;
         /**
           * Callback to invoke on radio button select.
          */
-        "onAOnSelect"?: (event: CustomEvent<any>) => void;
+        "onAOnSelect"?: (event: AnyRadioButtonCustomEvent<any>) => void;
         /**
           * Style class of the component.
          */
@@ -1722,7 +1766,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the value has changed.
          */
-        "onValueChange"?: (event: CustomEvent<RadioGroupChangeEventDetail>) => void;
+        "onValueChange"?: (event: AnyRadioGroupCustomEvent<RadioGroupChangeEventDetail>) => void;
         /**
           * the value of the radio group.
          */
@@ -1806,23 +1850,23 @@ declare namespace LocalJSX {
         /**
           * Callback when item is clicked
          */
-        "onAOnItemClick"?: (event: CustomEvent<any>) => void;
+        "onAOnItemClick"?: (event: AnyVirtualScrollerCustomEvent<any>) => void;
         /**
           * Callback to invoke in lazy mode to load new data
          */
-        "onAOnLazyLoad"?: (event: CustomEvent<any>) => void;
+        "onAOnLazyLoad"?: (event: AnyVirtualScrollerCustomEvent<any>) => void;
         /**
           * Will be called right after replacing previous cluster with new one
          */
-        "onClusterChanged"?: (event: CustomEvent<any>) => void;
+        "onClusterChanged"?: (event: AnyVirtualScrollerCustomEvent<any>) => void;
         /**
           * Will be called right before replacing previous cluster with new one
          */
-        "onClusterWillChange"?: (event: CustomEvent<any>) => void;
+        "onClusterWillChange"?: (event: AnyVirtualScrollerCustomEvent<any>) => void;
         /**
           * Will be called on scrolling. Returns progress position
          */
-        "onScrollingProgress"?: (event: CustomEvent<any>) => void;
+        "onScrollingProgress"?: (event: AnyVirtualScrollerCustomEvent<any>) => void;
         /**
           * Number of rows to display per page
          */
