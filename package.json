@@ -15,14 +15,14 @@
     "generate-changelog": "gren changelog --generate"
   },
   "devDependencies": {
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.3",
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-semver": "^0.1.9",
-    "lerna": "^4.0.0"
+    "lerna": "^5.5.2"
   },
   "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "dependencies": {
-    "semver": "^7.3.5"
+    "semver": "^7.3.7"
   }
 }
