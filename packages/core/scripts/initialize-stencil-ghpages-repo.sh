@@ -22,5 +22,6 @@ rm -rf www
 mkdir www
 # Install the dependencies (the checkout will have removed the 'node_modules' folder)
 npm i
+npm link anywhere-flex
 # Add a new worktree in the 'www' folder onto the 'master' branch
 git worktree add www master
