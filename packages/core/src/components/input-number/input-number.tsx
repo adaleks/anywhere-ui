@@ -812,7 +812,7 @@ export class InputNumber {
             ) {
               const insertedText =
                 this.isDecimalMode() &&
-                (this.minFractionDigits || 0) < decimalLength
+                  (this.minFractionDigits || 0) < decimalLength
                   ? ""
                   : "0";
               newValueStr =
@@ -881,7 +881,7 @@ export class InputNumber {
             ) {
               const insertedText =
                 this.isDecimalMode() &&
-                (this.minFractionDigits || 0) < decimalLength
+                  (this.minFractionDigits || 0) < decimalLength
                   ? ""
                   : "0";
               newValueStr =
@@ -1074,8 +1074,8 @@ export class InputNumber {
             currencyCharIndex >= selectionStart
               ? currencyCharIndex - 1
               : suffixCharIndex >= selectionStart
-              ? suffixCharIndex
-              : inputValue.length;
+                ? suffixCharIndex
+                : inputValue.length;
 
           newValueStr =
             inputValue.slice(0, selectionStart) +
@@ -1486,6 +1486,7 @@ export class InputNumber {
                     class={"any-inputnumber-button any-inputnumber-button-up"}
                   >
                     <any-button
+                      anyStyle={{ display: "flex" }}
                       icon={this.incrementButtonIcon}
                       disabled={this.disabled}
                     ></any-button>
@@ -1494,6 +1495,7 @@ export class InputNumber {
                     class={"any-inputnumber-button any-inputnumber-button-down"}
                   >
                     <any-button
+                      anyStyle={{ display: "flex" }}
                       icon={this.decrementButtonIcon}
                       disabled={this.disabled}
                     ></any-button>
