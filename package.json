@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "install-all": "lerna exec npm install",
-    "update-all": "lerna exec npm update",
     "start": "lerna run start --scope=@anywhere-ui/core --stream",
     "build": "npm run build.core && npm run build.framework-bindings",
     "build.watch": "lerna run build.watch --scope=@anywhere-ui/core --stream",
@@ -20,7 +19,7 @@
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-semver": "^0.1.9",
-    "lerna": "^5.5.4"
+    "lerna": "^6.3.0"
   },
   "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "dependencies": {
