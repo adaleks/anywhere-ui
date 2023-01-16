@@ -19,7 +19,7 @@
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-semver": "^0.1.9",
-    "lerna": "^6.3.0"
+    "lerna": "^6.4.1"
   },
   "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "dependencies": {

@@ -52,12 +52,12 @@
   "devDependencies": {
     "@iconify/iconify": "^3.0.1",
     "@stencil/angular-output-target": "0.4.0",
-    "@stencil/core": "^2.20.0",
+    "@stencil/core": "^2.21.0",
     "@stencil/react-output-target": "^0.3.1",
-    "@stencil/sass": "^2.0.1",
+    "@stencil/sass": "^2.0.2",
     "@stencil/vue-output-target": "^0.6.2",
     "@types/clusterize.js": "^0.18.1",
-    "@types/jest": "^29.2.4",
+    "@types/jest": "^29.2.5",
     "@types/lodash": "^4.14.191",
     "@types/puppeteer": "^5.4.7",
     "clusterize.js": "^0.19.0",
@@ -77,6 +77,7 @@
   "license": "MIT",
   "dependencies": {
     "@anywhere-ui/flex": "^1.0.2",
+    "@types/node": "^18.11.18",
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
