@@ -42,7 +42,7 @@
     "dist/"
   ],
   "devDependencies": {
-    "@vue/test-utils": "^2.2.6",
+    "@vue/test-utils": "^2.2.7",
     "rimraf": "^3.0.2",
     "rollup": "^2.79.1",
     "rollup-plugin-terser": "^7.0.2",
@@ -50,7 +50,8 @@
     "vue": "^3.2.45"
   },
   "dependencies": {
-    "@babel/types": "^7.20.7"
+    "@babel/types": "^7.20.7",
+    "@types/node": "^18.11.18"
   },
   "jest": {
     "preset": "ts-jest",
