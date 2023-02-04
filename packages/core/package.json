@@ -50,14 +50,14 @@
     "deploy-site-to-master": "bash scripts/deploy-site-to-master.sh"
   },
   "devDependencies": {
-    "@iconify/iconify": "^3.0.1",
+    "@iconify/iconify": "^3.1.0",
     "@stencil/angular-output-target": "0.4.0",
-    "@stencil/core": "^2.21.0",
+    "@stencil/core": "^2.22.2",
     "@stencil/react-output-target": "^0.3.1",
-    "@stencil/sass": "^2.0.2",
+    "@stencil/sass": "^2.0.3",
     "@stencil/vue-output-target": "^0.6.2",
     "@types/clusterize.js": "^0.18.1",
-    "@types/jest": "^29.2.5",
+    "@types/jest": "^29.4.0",
     "@types/lodash": "^4.14.191",
     "@types/puppeteer": "^5.4.7",
     "clusterize.js": "^0.19.0",
