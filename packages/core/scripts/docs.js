@@ -4,7 +4,7 @@ const path = require('path');
 const replace = require('replace');
 
 
-let subdir = 'anywhere-ui-showcase';
+let subdir = process.argv[2] || 'anywhere-ui-showcase';
 console.log(process.cwd() + '/' + subdir)
 
 // fs.removeSync(process.cwd() + '/' + subdir);

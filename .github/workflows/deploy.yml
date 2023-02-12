@@ -1,0 +1,123 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+  release:
+    types: [published]
+
+env:
+  PREVIEW_ENV: Preview
+  PRODUCTION_ENV: Production
+
+jobs:
+  deploy_preview:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: Preview
+      url: https://adaleks.github.io/anywhere-ui-showcase-preview
+    steps:
+      - name: Checkout Main Project
+        uses: actions/checkout@v2
+        with:
+          path: anywhere-ui
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: cd anywhere-ui && npm ci && npm run install-all && npm install grunt -g
+      - name: Build Code
+        run: |
+          cd anywhere-ui
+          npm run build.core
+          cd packages/core && node scripts/docs.js anywhere-ui-showcase-preview
+
+      - name: Checkout Preview Project
+        uses: actions/checkout@master
+        with:
+          repository: adaleks/anywhere-ui-showcase-preview
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ./anywhere-ui-showcase-preview
+
+      - name: Copy/Create file
+        run: |
+          FILES=./anywhere-ui/packages/core/www
+          if [ -d "$FILES" ]; then
+            echo "Copying $FILES"
+            cp -R ./anywhere-ui/packages/core/www/* ./anywhere-ui-showcase-preview
+          else 
+            echo "There is no www folder. Make sure that you build site."
+          fi
+      - name: Push Deployment Preview project
+        run: |
+          cd ./anywhere-ui-showcase-preview
+          git add .
+          if ! git diff-index --quiet HEAD; then
+            git config user.name gjovanovicst
+            git config user.email gjovanovic.st@gmail.com
+            git commit -am "File Replicated from anywhere-ui"
+            git push
+          else
+            echo "Nothing to commit, working tree clean"
+          fi
+
+  deploy_production:
+    runs-on: ubuntu-latest
+    # needs: deploy_preview
+    if: startsWith(github.ref_name, 'v')
+    environment:
+      name: Production
+      url: https://adaleks.github.io/anywhere-ui-showcase-production
+
+    steps:
+      - name: Checkout Main Project
+        uses: actions/checkout@v2
+        with:
+          path: anywhere-ui
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: cd anywhere-ui && npm ci && npm run install-all && npm install grunt -g
+      - name: Build Code
+        run: |
+          cd anywhere-ui
+          grunt buildnumber && grunt release:build && node packages/core/scripts/update-template-version.js
+          npm run build.core
+          cd packages/core && node scripts/docs.js anywhere-ui-showcase-production
+
+      - name: Checkout Production Project
+        uses: actions/checkout@master
+        with:
+          repository: adaleks/anywhere-ui-showcase-productionon
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ./anywhere-ui-showcase-production
+
+      - name: Copy/Create file
+        run: |
+          FILES=./anywhere-ui/packages/core/www
+          if [ -d "$FILES" ]; then
+            echo "Copying $FILES"
+            cp -R ./anywhere-ui/packages/core/www/* ./anywhere-ui-showcase-production
+          else 
+            echo "There is no www folder. Make sure that you build site."
+          fi
+      - name: Push Deployment Production project
+        run: |
+          cd ./anywhere-ui-showcase-production
+          git add .
+          if ! git diff-index --quiet HEAD; then
+            git config user.name gjovanovicst
+            git config user.email gjovanovic.st@gmail.com
+            git commit -am "File Replicated from anywhere-ui"
+            git push
+          else
+            echo "Nothing to commit, working tree clean"
+          fi
