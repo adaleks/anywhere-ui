@@ -1,5 +1,18 @@
 # Changelog
 
+## [v0.3.0](https://github.com/adaleks/anywhere-ui/tree/v0.3.0) (12/02/2023)
+
+ **Implemented New Features and Enhancements:**
+
+- InputNumber Component [#37](https://github.com/adaleks/anywhere-ui/issues/37)
+- InputTextarea Component [#35](https://github.com/adaleks/anywhere-ui/issues/35)
+
+ **Fixed Bugs:**
+
+- InputNumber horizontal mode wrong height  [#47](https://github.com/adaleks/anywhere-ui/issues/47)
+
+---
+
 ## [v0.2.1](https://github.com/adaleks/anywhere-ui/tree/v0.2.1) (27/02/2022)
 
  **Documentations:**
