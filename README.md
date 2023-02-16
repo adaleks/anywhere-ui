@@ -7,16 +7,16 @@ Rich web components, includes framework bindings.
 
 AnywhereUI is based on [Web Components](https://www.webcomponents.org/introduction) and comes with many significant performance, usability, and feature improvements over the past versions.
 
-Visit the [AnywhereUI Website](https://adaleks.github.io/anywhere-ui-showcase/) for general information, demos and documentation.
+Visit the [AnywhereUI Website](https://adaleks.github.io/anywhere-ui-showcase-production) for general information, demos and documentation.
 
 ### Packages
 
 | Project | Package | Version | Links |
 | ------- | ------- | ------- |:-----:|
-| **Core** | [`@anywhere-ui/core`](https://www.npmjs.com/package/@anywhere-ui/core) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fcore.svg)](https://badge.fury.io/js/@anywhere-ui%2Fcore) | [`README.md`](packages/core/README.md) |
-| **Angular** | [`@anywhere-ui/angular`](https://www.npmjs.com/package/@anywhere-ui/angular) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fangular.svg)](https://badge.fury.io/js/@anywhere-ui%2Fangular) | [`README.md`](packages/angular/README.md) |
-| **Vue** | [`@anywhere-ui/vue`](https://www.npmjs.com/package/@anywhere-ui/vue) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Fvue.svg)](https://badge.fury.io/js/@anywhere-ui%2Fvue) | [`README.md`](packages/vue/README.md) |
-| **React** | [`@anywhere-ui/react`](https://www.npmjs.com/package/@anywhere-ui/react) | [![npm version](https://badge.fury.io/js/@anywhere-ui%2Freact.svg)](https://badge.fury.io/js/@anywhere-ui%2Freact) | [`README.md`](packages/react/README.md) |
+| **Core** | [`@anywhere-ui/core`](https://www.npmjs.com/package/@anywhere-ui/core) | [![version](https://img.shields.io/npm/v/@anywhere-ui/core/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/core) | [`README.md`](packages/core/README.md) |
+| **Angular** | [`@anywhere-ui/angular`](https://www.npmjs.com/package/@anywhere-ui/angular) |[![version](https://img.shields.io/npm/v/@anywhere-ui/angular/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/angular) | [`README.md`](packages/angular/README.md) |
+| **Vue** | [`@anywhere-ui/vue`](https://www.npmjs.com/package/@anywhere-ui/vue) | [![version](https://img.shields.io/npm/v/@anywhere-ui/vue/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/vue) | [`README.md`](packages/vue/README.md) |
+| **React** | [`@anywhere-ui/react`](https://www.npmjs.com/package/@anywhere-ui/react) | [![version](https://img.shields.io/npm/v/@anywhere-ui/react/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/react) | [`README.md`](packages/react/README.md) |
 
 ## Getting Started
 

@@ -64,5 +64,8 @@
     ]
   },
   "buildnum": "13",
-  "dependencies": {}
+  "dependencies": {
+    "@anywhere-ui/core": "^0.3.0",
+    "@anywhere-ui/flex": "^1.0.2"
+  }
 }

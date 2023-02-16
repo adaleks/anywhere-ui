@@ -3,5 +3,6 @@
   "dest": "../../dist/anywhere-ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["@anywhere-ui/core", "@anywhere-ui/flex"]
 }
