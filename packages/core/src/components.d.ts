@@ -5,7 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { RadioGroupChangeEventDetail, SelectChangeEventDetail, TextareaChangeEventDetail } from "./interfaces";
+import { TextareaChangeEventDetail } from "./components/input-textarea/input-textarea-interface";
+import { SelectChangeEventDetail } from "./components/listbox/listbox-interface";
+import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-inteface";
+export { TextareaChangeEventDetail } from "./components/input-textarea/input-textarea-interface";
+export { SelectChangeEventDetail } from "./components/listbox/listbox-interface";
+export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-inteface";
 export namespace Components {
     interface AnyBadge {
         /**

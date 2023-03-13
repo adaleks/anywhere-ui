@@ -81,18 +81,16 @@ const vueComponentModels: ComponentModelConfig[] = [
 ];
 
 export const config: Config = {
+  autoprefixCss: true,
   namespace: "anywhere-ui",
   taskQueue: "async",
   globalStyle: "src/themes/anywhere.global.scss",
   globalScript: "src/global/anywhere-global.ts",
   buildEs5: "prod",
+  sourceMap: false,
   extras: {
-    cssVarsShim: true,
-    dynamicImportShim: true,
     initializeNextTick: true,
-    safari10: true,
     scriptDataOpts: true,
-    shadowDomShim: true,
   },
   bundles: [
     {
@@ -119,6 +117,11 @@ export const config: Config = {
     }),
   ],
   outputTargets: [
+    {
+      type: "dist-custom-elements",
+      generateTypeDeclarations: false,
+      customElementsExportBehavior: "bundle",
+    },
     {
       type: "dist",
       esmLoaderPath: "../loader",

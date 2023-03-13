@@ -11,7 +11,7 @@ import {
   h,
 } from "@stencil/core";
 
-import { RadioGroupChangeEventDetail } from "../../interfaces";
+import { RadioGroupChangeEventDetail } from "./radio-group-inteface";
 // import { renderHiddenInput } from "../../utils/helpers";
 
 @Component({

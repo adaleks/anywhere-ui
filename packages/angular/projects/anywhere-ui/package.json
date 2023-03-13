@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/angular",
-  "version": "0.3.0+13",
+  "version": "0.4.0+14",
   "license": "MIT",
   "keywords": [
     "anywhere-ui",
@@ -25,13 +25,13 @@
   },
   "homepage": "https://github.com/adaleks/anywhere-ui/tree/main/packages/angular#readme",
   "peerDependencies": {
-    "@angular/common": "^11.2.13",
-    "@angular/core": "^11.2.13"
+    "@angular/common": ">=11.2.13",
+    "@angular/core": ">=11.2.13"
   },
   "dependencies": {
     "tslib": "^2.0.0",
     "@anywhere-ui/core": "^0.3.0",
     "@anywhere-ui/flex": "^1.0.2"
   },
-  "buildnum": "13"
+  "buildnum": "14"
 }
