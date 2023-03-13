@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/core",
-  "version": "0.3.0+13",
+  "version": "0.4.0+14",
   "description": "Base components for AnywhereUI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -51,25 +51,24 @@
   },
   "devDependencies": {
     "@iconify/iconify": "^3.1.0",
-    "@stencil/angular-output-target": "0.4.0",
-    "@stencil/core": "^2.22.2",
-    "@stencil/react-output-target": "^0.3.1",
-    "@stencil/sass": "^2.0.3",
-    "@stencil/vue-output-target": "^0.6.2",
+    "@stencil/angular-output-target": "0.5.0",
+    "@stencil/core": "^3.1.0",
+    "@stencil/react-output-target": "^0.4.0",
+    "@stencil/sass": "^3.0.0",
+    "@stencil/vue-output-target": "^0.7.0",
     "@types/clusterize.js": "^0.18.1",
     "@types/jest": "^29.4.0",
     "@types/lodash": "^4.14.191",
     "@types/puppeteer": "^5.4.7",
-    "clusterize.js": "^0.19.0",
-    "clusterize.js-paging": "^1.0.3",
+    "clusterize.js": "^1.0.0",
     "dart-sass": "^1.25.0",
     "faker": "^6.6.6",
-    "fs-extra": "^10.1.0",
-    "jest": "29.0.3",
-    "jest-cli": "29.0.3",
+    "fs-extra": "^11.1.0",
+    "jest": "29.5.0",
+    "jest-cli": "29.5.0",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
-    "puppeteer": "^18.2.1",
+    "puppeteer": "^19.7.4",
     "rebase": "^0.3.0",
     "replace": "^1.2.2",
     "rollup-plugin-node-polyfills": "^0.2.1"
@@ -77,9 +76,9 @@
   "license": "MIT",
   "dependencies": {
     "@anywhere-ui/flex": "^1.0.2",
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.15.0",
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
-  "buildnum": "13"
+  "buildnum": "14"
 }

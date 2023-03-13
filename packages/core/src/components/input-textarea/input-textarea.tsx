@@ -10,7 +10,7 @@ import {
   EventEmitter,
 } from "@stencil/core";
 import { Attributes, inheritAttributes, raf } from "../../utils/helpers";
-import { TextareaChangeEventDetail } from "../../interfaces";
+import { TextareaChangeEventDetail } from "./input-textarea-interface";
 
 @Component({
   tag: "any-input-textarea",
