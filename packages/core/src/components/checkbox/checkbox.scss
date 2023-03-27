@@ -1,8 +1,7 @@
 @import "../../themes/anywhere.globals.scss";
 
 :host {
-  display: block;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   // font-family: var(--fontFamily);
 
@@ -47,7 +46,6 @@
           border-color: var(--inputHoverBorderColor);
         }
 
-
         &.any-focus {
           outline: var(--focusOutline);
           outline-offset: var(--focusOutlineOffset);
@@ -69,5 +67,4 @@
   .any-checkbox-label {
     margin-left: 0.5rem;
   }
-
 }

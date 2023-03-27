@@ -611,9 +611,25 @@ export namespace Components {
          */
         "anyStyle": any;
         /**
+          * When specified, allows selecting items with checkboxes
+         */
+        "checkbox": boolean;
+        /**
+          * A property to uniquely identify a value in options
+         */
+        "dataKey": string;
+        /**
           * When present, it specifies that the element should be disabled
          */
         "disabled": boolean;
+        /**
+          * When specified, displays a filter input at header
+         */
+        "filter": boolean;
+        /**
+          * Whether to display options as grouped when nested options are provided
+         */
+        "group": boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
          */
@@ -623,9 +639,25 @@ export namespace Components {
          */
         "listStyle": any;
         /**
+          * Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.
+         */
+        "metaKeySelection": boolean;
+        /**
+          * When specified, allows selecting multiple values.
+         */
+        "multiple": boolean;
+        /**
           * Name of the dropdown input.
          */
         "name": string;
+        /**
+          * Name of the disabled field of an option
+         */
+        "optionDisabled": string;
+        /**
+          * Name of the options field of an option group
+         */
+        "optionGroupChildren": string;
         /**
           * Name of the label field of an option
          */
@@ -646,6 +678,14 @@ export namespace Components {
           * Max height of the content area in inline mode
          */
         "scrollerHeight": string;
+        /**
+          * Icon class of the filter search input icon
+         */
+        "searchIcon"?: string;
+        /**
+          * Whether header checkbox is shown in multiple mode
+         */
+        "showToggleAll": boolean;
         /**
           * Value of the listbox
          */
@@ -712,6 +752,10 @@ export namespace Components {
         "value"?: any | null;
     }
     interface AnyRippleEffect {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle": any;
         /**
           * Sets the type of ripple-effect:
          */
@@ -1661,9 +1705,25 @@ declare namespace LocalJSX {
          */
         "anyStyle"?: any;
         /**
+          * When specified, allows selecting items with checkboxes
+         */
+        "checkbox"?: boolean;
+        /**
+          * A property to uniquely identify a value in options
+         */
+        "dataKey"?: string;
+        /**
           * When present, it specifies that the element should be disabled
          */
         "disabled"?: boolean;
+        /**
+          * When specified, displays a filter input at header
+         */
+        "filter"?: boolean;
+        /**
+          * Whether to display options as grouped when nested options are provided
+         */
+        "group"?: boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
          */
@@ -1673,6 +1733,14 @@ declare namespace LocalJSX {
          */
         "listStyle"?: any;
         /**
+          * Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.
+         */
+        "metaKeySelection"?: boolean;
+        /**
+          * When specified, allows selecting multiple values.
+         */
+        "multiple"?: boolean;
+        /**
           * Name of the dropdown input.
          */
         "name"?: string;
@@ -1680,6 +1748,14 @@ declare namespace LocalJSX {
           * Callback to invoke when value of listbox changes
          */
         "onValueChange"?: (event: AnyListboxCustomEvent<SelectChangeEventDetail>) => void;
+        /**
+          * Name of the disabled field of an option
+         */
+        "optionDisabled"?: string;
+        /**
+          * Name of the options field of an option group
+         */
+        "optionGroupChildren"?: string;
         /**
           * Name of the label field of an option
          */
@@ -1700,6 +1776,14 @@ declare namespace LocalJSX {
           * Max height of the content area in inline mode
          */
         "scrollerHeight"?: string;
+        /**
+          * Icon class of the filter search input icon
+         */
+        "searchIcon"?: string;
+        /**
+          * Whether header checkbox is shown in multiple mode
+         */
+        "showToggleAll"?: boolean;
         /**
           * Value of the listbox
          */
@@ -1778,6 +1862,10 @@ declare namespace LocalJSX {
         "value"?: any | null;
     }
     interface AnyRippleEffect {
+        /**
+          * Inline style of the component.
+         */
+        "anyStyle"?: any;
         /**
           * Sets the type of ripple-effect:
          */

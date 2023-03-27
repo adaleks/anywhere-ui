@@ -215,14 +215,11 @@
   --inputListItemTransition: background-color var(--transitionDuration),
     box-shadow var(--transitionDuration);
   --inputListItemDividerColor: #d8dae2;
-  --inputListHeaderPaddingTop: 0.429em;
-  --inputListHeaderPaddingLeft: 0.857em;
-  --inputListHeaderPaddingRight: 0.857em;
-  --inputListHeaderPaddingBottom: 0.429em;
+  --inputListHeaderPadding: 0.5rem 1rem;
   --inputListHeaderMargin: 0;
-  --inputListHeaderBgColor: #ffffff;
+  --inputListHeaderBg: #f8f9fa;
   --inputListHeaderTextColor: var(--textColor);
-  --inputListHeaderBorder: 1px solid #eaeaea;
+  --inputListHeaderBorder: 0 none;
   --inputListHeaderSearchIconColor: var(--primaryColor);
   --inputListHeaderCloseIconColor: var(--textSecondaryColor);
   --inputListHeaderCloseIconHoverColor: var(--textColor);

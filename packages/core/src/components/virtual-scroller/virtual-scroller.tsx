@@ -333,7 +333,10 @@ export class AnyVirtualScroller {
                     : ""
                 }
               >
-                <this.itemTag class="clusterize-no-data"></this.itemTag>
+                <this.itemTag
+                  class="clusterize-no-data"
+                  anyStyle={{ zIndex: 100 }}
+                ></this.itemTag>
               </this.contentElemTag>
             </div>
             <div class="any-virtualscroller-footer">

@@ -327,6 +327,7 @@ code[class*=language] {
 }
 .layout-sidebar .layout-menu .menu-items a.active {
   font-weight: 700;
+  color: var(--primaryColor) !important;
 }
 .layout-sidebar .layout-menu .menu-items a:focus {
   z-index: 1;

@@ -22,14 +22,15 @@ export default class extends AbstractView {
       return obj;
     });
 
-    let virtualItems = Array.from({
-      length: 10000
-    }).map((v, i) => {
-      return {
+    // Generate the virtual items array and add it to the Clusterize.js instance
+    const virtualItems = [];
+    for (let i = 0; i < 10000; i++) {
+      virtualItems.push({
         label: "Item " + i,
         value: "Item " + i,
-      };
-    });
+      });
+    }
+
 
     this.singleListbox = document.querySelector(".lb1");
     this.singleListbox.anyStyle = {
@@ -56,24 +57,28 @@ export default class extends AbstractView {
     // }, 3000);
 
     this.advancedListbox = document.querySelector(".lb2");
-    // this.advancedListbox.value = {
+    // this.advancedListbox.value = [{
     //   code: "NY",
     //   country: "USA",
     //   countryCode: "us",
     //   id: 1,
     //   name: "New York",
-    // };
+    // }];
     // this.advancedListbox.disabled = true;
     // this.advancedListbox.readonly = true;
     this.advancedListbox.anyStyle = {
       width: "15rem",
     };
     this.advancedListbox.listStyle = {
-      maxHeight: "200px",
+      maxHeight: "250px",
     };
     this.advancedListbox.options = citiesFormated;
     let style = document.querySelector(".flags-style");
     this.advancedListbox.shadowRoot.appendChild(style.cloneNode(true));
+    this.advancedListbox.multiple = true;
+    this.advancedListbox.metaKeySelection = false;
+    this.advancedListbox.checkbox = true;
+    this.advancedListbox.filter = true;
 
     this.virtualListbox = document.querySelector(".vlb1");
     this.virtualListbox.anyStyle = {
@@ -85,6 +90,10 @@ export default class extends AbstractView {
     // };
     this.virtualListbox.options = virtualItems;
     this.virtualListbox.virtualScroll = true;
+    // this.virtualListbox.multiple = true;
+    // this.virtualListbox.checkbox = true;
+    // this.virtualListbox.showToggleAll = false;
+
   }
 
   async getHtml() {

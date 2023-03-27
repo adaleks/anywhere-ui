@@ -1,0 +1,6 @@
+{
+  "name": "@anywhere-ui/core/hydrate",
+  "description": "AnywhereUi component hydration app.",
+  "main": "index.js",
+  "types": "index.d.ts"
+}
