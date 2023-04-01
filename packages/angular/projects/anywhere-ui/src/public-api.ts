@@ -1,6 +1,7 @@
 /*
  * Public API Surface of anywhere-ui
  */
+export * from './lib/providers/config';
 export * from './lib/anywhere-ui.module';
 export * from './lib/directives/proxies';
 export * from './lib/directives/boolean-value-accessor';

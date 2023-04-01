@@ -7,7 +7,9 @@ import {
   EventEmitter,
   Watch,
   Host,
+  State,
 } from "@stencil/core";
+import { config } from "../../global/config";
 import _ from "lodash";
 import { SelectChangeEventDetail } from "./listbox-interface";
 import { watchForOptions } from "../../utils/watch-options";
@@ -15,8 +17,10 @@ import { findAndReplaceInnerHtml, get } from "../../utils/utils";
 // import Clusterize from "clusterize.js";
 import { renderHiddenInput } from "../../utils/helpers";
 import { ObjectUtils } from "../../utils/objectutils";
+import { filterService } from "../../utils/filterService";
 import Iconify from "@iconify/iconify";
 import { loadIcons } from "../../utils/load-icons";
+import { TranslationKeys } from "../../utils/translation-keys";
 
 const parseValue = (value: any) => {
   if (value == null) {
@@ -48,8 +52,12 @@ export class AnyListbox {
   private hasItemSlot: boolean = false;
   private hasTabIndex: boolean = true;
   public optionTouched: boolean = false;
-  public _filteredOptions: any[];
+  public _filterValue: string;
+  public _options: any[];
+  public _translations = config.get("translations");
   // private clusterize: any = null;
+
+  @State() _filteredOptions: any[];
 
   @Element() private element: HTMLElement;
 
@@ -167,9 +175,51 @@ export class AnyListbox {
   @Prop() searchIcon?: string = "fa-solid:search";
 
   /**
+   * When specified, filter displays with this value.
+   */
+  @Prop() filterValue?: string = null;
+
+  /**
+   * When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.
+   */
+  @Prop() filterBy: string = null;
+
+  /**
+   * Defines how the items are filtered, valid values are "contains" (default) "startsWith", "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".
+   */
+  @Prop() filterMatchMode: string = "contains";
+
+  /**
+   * Locale to use in filtering. The default locale is the host environment's current locale
+   */
+  @Prop() filterLocale: string = undefined;
+
+  /**
+   * Text to display when there is no data. Defaults to global value in i18n translation configuration.
+   */
+  @Prop() emptyMessage: string;
+
+  /**
+   * Text to display when filtering does not return any results. Defaults to global value in i18n translation configuration.
+   */
+  @Prop() emptyFilterMessage: string;
+
+  /**
    * Callback to invoke when value of listbox changes
    */
   @Event() valueChange: EventEmitter<SelectChangeEventDetail>;
+
+  @Watch("filterValue")
+  setFilterValue(filterValue: string) {
+    this._filterValue = filterValue;
+    this.activateFilter();
+  }
+
+  @Watch("options")
+  setOptions(options: any[]) {
+    this._options = options;
+    if (this.hasFilter()) this.activateFilter();
+  }
 
   @Watch("value")
   valueChanged(newValue: any) {
@@ -179,6 +229,23 @@ export class AnyListbox {
         value: newValue,
       });
     }
+  }
+
+  get optionsToRender(): any[] {
+    return this._filteredOptions || this.options;
+  }
+
+  get emptyMessageLabel(): string {
+    return (
+      this.emptyMessage || this._translations[TranslationKeys.EMPTY_MESSAGE]
+    );
+  }
+
+  get emptyFilterMessageLabel(): string {
+    return (
+      this.emptyFilterMessage ||
+      this._translations[TranslationKeys.EMPTY_FILTER_MESSAGE]
+    );
   }
 
   async connectedCallback() {
@@ -200,6 +267,9 @@ export class AnyListbox {
     }
 
     this.loadIcons();
+
+    this.setOptions(this.options);
+    this.setFilterValue(this.filterValue);
   }
 
   async loadIcons() {
@@ -229,7 +299,7 @@ export class AnyListbox {
       let index = parseInt(item.getAttribute("data-index"));
       item.setAttribute(
         "aria-label",
-        get(this.optionLabel.split("."), this.options[index])
+        get(this.optionLabel.split("."), this.optionsToRender[index])
       );
     }
     if (this.value) {
@@ -342,7 +412,7 @@ export class AnyListbox {
   }
 
   private setSelectedVirtualOptionSingle(value: any) {
-    const selected = this.options.find((x: any) => _.isEqual(x.value, value));
+    const selected = this._options.find((x: any) => _.isEqual(x.value, value));
     let selectedElement = this.element.shadowRoot.querySelector(
       ".any-listbox-item.any-highlight"
     ) as HTMLElement;
@@ -364,7 +434,7 @@ export class AnyListbox {
 
   private setSelectedVirtualOptionMultiple(values: any[]) {
     const optionElementsMap = {};
-    const optionLabels = this.options.map((option) =>
+    const optionLabels = this.optionsToRender.map((option) =>
       get(this.optionLabel.split("."), option)
     );
 
@@ -379,8 +449,8 @@ export class AnyListbox {
     }
 
     // update selected options based on the map
-    for (let i = 0; i < this.options.length; i++) {
-      const option = this.options[i];
+    for (let i = 0; i < this.optionsToRender.length; i++) {
+      const option = this.optionsToRender[i];
       const optionLabel = get(this.optionLabel.split("."), option);
       const selectedElement = optionElementsMap[optionLabel];
       if (selectedElement) {
@@ -440,6 +510,14 @@ export class AnyListbox {
       : option.value;
   }
 
+  getOptionLabel(option: any) {
+    return this.optionLabel
+      ? ObjectUtils.resolveFieldData(option, this.optionLabel)
+      : option.label != undefined
+      ? option.label
+      : option;
+  }
+
   get allChecked(): boolean {
     let optionsToRender = this.optionsToRender;
     if (!optionsToRender || optionsToRender.length === 0) {
@@ -492,10 +570,6 @@ export class AnyListbox {
     }
   }
 
-  get optionsToRender(): any[] {
-    return this._filteredOptions || this.options;
-  }
-
   isOptionDisabled(option: any) {
     return this.optionDisabled
       ? ObjectUtils.resolveFieldData(option, this.optionDisabled)
@@ -527,6 +601,7 @@ export class AnyListbox {
     if (allChecked) this.uncheckAll();
     else this.checkAll();
 
+    if (this.virtualScroll) this.setSelectedVirtualOptionMultiple(this.value);
     // this.onModelChange(this.value);
     // this.onChange.emit({ originalEvent: event, value: this.value });
     event.preventDefault();
@@ -592,6 +667,63 @@ export class AnyListbox {
       : optionGroup.items;
   }
 
+  hasFilter() {
+    return this._filterValue && this._filterValue.trim().length > 0;
+  }
+
+  isEmpty() {
+    return (
+      !this.optionsToRender ||
+      (this.optionsToRender && this.optionsToRender.length === 0)
+    );
+  }
+
+  onFilter(event: CustomEvent) {
+    this._filterValue = event.detail;
+    this.activateFilter();
+  }
+
+  activateFilter() {
+    if (this.hasFilter() && this._options) {
+      if (this.group) {
+        let searchFields: string[] = (
+          this.filterBy ||
+          this.optionLabel ||
+          "label"
+        ).split(",");
+
+        let filteredGroups = [];
+        for (let optgroup of this._options) {
+          let filteredSubOptions = filterService.filter(
+            this.getOptionGroupChildren(optgroup),
+            searchFields,
+            this.filterValue,
+            this.filterMatchMode,
+            this.filterLocale
+          );
+          if (filteredSubOptions && filteredSubOptions.length) {
+            filteredGroups.push({
+              ...optgroup,
+              ...{ [this.optionGroupChildren]: filteredSubOptions },
+            });
+          }
+        }
+
+        this._filteredOptions = filteredGroups;
+      } else {
+        this._filteredOptions = this._options.filter((option) =>
+          filterService.filters[this.filterMatchMode](
+            this.getOptionLabel(option),
+            this._filterValue,
+            this.filterLocale
+          )
+        );
+      }
+    } else {
+      this._filteredOptions = null;
+    }
+  }
+
   render() {
     const {
       disabled,
@@ -629,7 +761,7 @@ export class AnyListbox {
             }
             style={this.anyStyle}
           >
-            {checkbox && multiple && (showToggleAll || filter) && (
+            {((checkbox && multiple && showToggleAll) || filter) && (
               <div class="any-listbox-header">
                 {checkbox && multiple && showToggleAll && (
                   <any-checkbox
@@ -643,6 +775,8 @@ export class AnyListbox {
                     <any-input-text
                       inputWrapperClass="any-input-icon-right"
                       inputClass="any-listbox-filter"
+                      value={this.filterValue}
+                      onValueChange={(e) => this.onFilter(e)}
                     >
                       <i slot="iconRight" class="any-listbox-search-icon"></i>
                     </any-input-text>
@@ -664,7 +798,7 @@ export class AnyListbox {
             >
               {!virtualScroll ? (
                 <ul class="any-listbox-list" part="items">
-                  {this.options.map((option, i) => (
+                  {this.optionsToRender.map((option, i) => (
                     <li
                       class={
                         "any-listbox-item" +
@@ -703,20 +837,35 @@ export class AnyListbox {
                       ></any-ripple-effect>
                     </li>
                   ))}
+                  {this.hasFilter() && this.isEmpty() && (
+                    <li class="any-listbox-empty-message">
+                      {this.emptyFilterMessageLabel}
+                    </li>
+                  )}
+                  {!this.hasFilter() && this.isEmpty() && (
+                    <li class="any-listbox-empty-message">
+                      {this.emptyMessageLabel}
+                    </li>
+                  )}
                 </ul>
               ) : (
                 <any-virtual-scroller
-                  items={this.options}
+                  items={this.optionsToRender}
                   scrollerHeight={this.scrollerHeight}
                   contentElemClass="any-listbox-list"
                   itemElemClass="any-listbox-item"
                   contentElemTag="ul"
                   itemTag="li"
+                  noDataText={
+                    this.hasFilter() && this.isEmpty()
+                      ? this.emptyFilterMessageLabel
+                      : this.emptyMessageLabel
+                  }
                   onClusterChanged={() => this.onClusterChanged()}
                   onAOnItemClick={(e) =>
                     this.itemClick(
                       e.detail.originalEvent,
-                      this.options[e.detail.index]
+                      this.optionsToRender[e.detail.index]
                     )
                   }
                 >

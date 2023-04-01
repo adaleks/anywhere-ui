@@ -250,7 +250,10 @@ export class AnyVirtualScroller {
             "any-virtual-scroll-item"
           )[0] as HTMLElement;
           this.defineVscrollItemClick();
-          this.first = parseInt(firstItemInCluster.getAttribute("data-index"));
+          if (firstItemInCluster)
+            this.first = parseInt(
+              firstItemInCluster.getAttribute("data-index")
+            );
           // console.log("CLUSTER CHANGED");
           this.clusterChanged.emit({
             first: this.first,

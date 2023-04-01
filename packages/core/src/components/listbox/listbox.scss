@@ -54,6 +54,10 @@
       .any-listbox-list {
         padding: var(--inputListPadding);
 
+        .clusterize-no-data {
+          padding: var(--inputListItemPadding);
+        }
+
         .any-listbox-item {
           margin: var(--inputListItemMargin);
           padding: var(--inputListItemPadding);
@@ -83,6 +87,12 @@
           any-checkbox {
             margin-right: 0.5rem;
           }
+        }
+
+        .any-listbox-empty-message {
+          padding: var(--inputListItemPadding);
+          color: var(---inputListItemTextColor);
+          background: transparent;
         }
       }
     }

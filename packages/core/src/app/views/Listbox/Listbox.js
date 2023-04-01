@@ -79,6 +79,7 @@ export default class extends AbstractView {
     this.advancedListbox.metaKeySelection = false;
     this.advancedListbox.checkbox = true;
     this.advancedListbox.filter = true;
+    // this.advancedListbox.filterValue = "is";
 
     this.virtualListbox = document.querySelector(".vlb1");
     this.virtualListbox.anyStyle = {
@@ -92,6 +93,7 @@ export default class extends AbstractView {
     this.virtualListbox.virtualScroll = true;
     // this.virtualListbox.multiple = true;
     // this.virtualListbox.checkbox = true;
+    // this.virtualListbox.filter = true;
     // this.virtualListbox.showToggleAll = false;
 
   }

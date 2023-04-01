@@ -623,9 +623,33 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Text to display when filtering does not return any results. Defaults to global value in i18n translation configuration.
+         */
+        "emptyFilterMessage": string;
+        /**
+          * Text to display when there is no data. Defaults to global value in i18n translation configuration.
+         */
+        "emptyMessage": string;
+        /**
           * When specified, displays a filter input at header
          */
         "filter": boolean;
+        /**
+          * When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.
+         */
+        "filterBy": string;
+        /**
+          * Locale to use in filtering. The default locale is the host environment's current locale
+         */
+        "filterLocale": string;
+        /**
+          * Defines how the items are filtered, valid values are "contains" (default) "startsWith", "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".
+         */
+        "filterMatchMode": string;
+        /**
+          * When specified, filter displays with this value.
+         */
+        "filterValue"?: string;
         /**
           * Whether to display options as grouped when nested options are provided
          */
@@ -1717,9 +1741,33 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Text to display when filtering does not return any results. Defaults to global value in i18n translation configuration.
+         */
+        "emptyFilterMessage"?: string;
+        /**
+          * Text to display when there is no data. Defaults to global value in i18n translation configuration.
+         */
+        "emptyMessage"?: string;
+        /**
           * When specified, displays a filter input at header
          */
         "filter"?: boolean;
+        /**
+          * When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.
+         */
+        "filterBy"?: string;
+        /**
+          * Locale to use in filtering. The default locale is the host environment's current locale
+         */
+        "filterLocale"?: string;
+        /**
+          * Defines how the items are filtered, valid values are "contains" (default) "startsWith", "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".
+         */
+        "filterMatchMode"?: string;
+        /**
+          * When specified, filter displays with this value.
+         */
+        "filterValue"?: string;
         /**
           * Whether to display options as grouped when nested options are provided
          */

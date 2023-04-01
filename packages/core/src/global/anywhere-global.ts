@@ -42,6 +42,11 @@ export const initialize = (userConfig: AnywhereUIConfig = {}) => {
     saveConfig(win, configObj);
   }
 
+  config.set("translations", {
+    emptyMessage: "No results found",
+    emptyFilterMessage: "No results found",
+  });
+
   AnywhereUI.config = config;
 };
 

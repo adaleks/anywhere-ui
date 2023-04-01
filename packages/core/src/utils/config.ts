@@ -1,4 +1,5 @@
 import { /*getMode, setMode,*/ setPlatformHelpers } from "@stencil/core";
+import { Translation } from "./translation";
 
 export interface AnywhereUIConfig {
   /**
@@ -12,12 +13,19 @@ export interface AnywhereUIConfig {
    */
   mode?: string;
 
+  translations?: Translation;
+
   persistConfig?: boolean;
   _zoneGate?: (h: () => any) => any;
   _ael?: (el: any, name: string, cb: any, opts: any) => any;
   _rel?: (el: any, name: string, cb: any, opts: any) => any;
   _ce?: (eventName: string, opts: any) => any;
 }
+
+// const translation: Translation = {
+//   emptyMessage: "No results found",
+//   emptyFilterMessage: "No results found",
+// };
 
 export const setupConfig = (config: AnywhereUIConfig) => {
   const win = window as any;
