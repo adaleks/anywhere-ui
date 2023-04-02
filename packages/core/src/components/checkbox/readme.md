@@ -46,6 +46,19 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Used by
+
+ - [any-listbox](../listbox)
+
+### Graph
+```mermaid
+graph TD;
+  any-listbox --> any-checkbox
+  style any-checkbox fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

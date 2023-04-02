@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                     | Type                       | Default     |
-| -------- | --------- | ------------------------------- | -------------------------- | ----------- |
-| `type`   | `type`    | Sets the type of ripple-effect: | `"bounded" \| "unbounded"` | `"bounded"` |
+| Property   | Attribute   | Description                     | Type                       | Default     |
+| ---------- | ----------- | ------------------------------- | -------------------------- | ----------- |
+| `anyStyle` | `any-style` | Inline style of the component.  | `any`                      | `null`      |
+| `type`     | `type`      | Sets the type of ripple-effect: | `"bounded" \| "unbounded"` | `"bounded"` |
 
 
 ## Shadow Parts

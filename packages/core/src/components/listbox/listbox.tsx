@@ -767,6 +767,7 @@ export class AnyListbox {
                   <any-checkbox
                     binary={true}
                     checked={allChecked}
+                    disabled={this.toggleAllDisabled}
                     onClick={(e) => this.toggleAll(e)}
                   ></any-checkbox>
                 )}
