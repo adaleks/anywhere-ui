@@ -250,7 +250,10 @@ export class AnyVirtualScroller {
             "any-virtual-scroll-item"
           )[0] as HTMLElement;
           this.defineVscrollItemClick();
-          this.first = parseInt(firstItemInCluster.getAttribute("data-index"));
+          if (firstItemInCluster)
+            this.first = parseInt(
+              firstItemInCluster.getAttribute("data-index")
+            );
           // console.log("CLUSTER CHANGED");
           this.clusterChanged.emit({
             first: this.first,
@@ -333,7 +336,10 @@ export class AnyVirtualScroller {
                     : ""
                 }
               >
-                <this.itemTag class="clusterize-no-data"></this.itemTag>
+                <this.itemTag
+                  class="clusterize-no-data"
+                  anyStyle={{ zIndex: 100 }}
+                ></this.itemTag>
               </this.contentElemTag>
             </div>
             <div class="any-virtualscroller-footer">

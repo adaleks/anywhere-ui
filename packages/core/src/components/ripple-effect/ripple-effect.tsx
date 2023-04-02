@@ -21,6 +21,11 @@ export class RippleEffect {
    */
   @Prop() type: "bounded" | "unbounded" = "bounded";
 
+  /**
+   * Inline style of the component.
+   */
+  @Prop() anyStyle: any = null;
+
   connectedCallback() {
     this.useRippleEffect = config.getBoolean("rippleEffect", true);
   }
@@ -87,7 +92,7 @@ export class RippleEffect {
 
   render() {
     return (
-      <Host class="any-ripple any-element">
+      <Host class="any-ripple any-element" style={this.anyStyle}>
         <span part="any-ink" class="any-ink"></span>
       </Host>
     );

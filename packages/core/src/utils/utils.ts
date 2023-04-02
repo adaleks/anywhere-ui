@@ -111,11 +111,11 @@ const getItem = (
   let itmClass = itemClass ? " " + itemClass : "";
 
   const newNode = findAndReplaceInnerHtml(slotNode, itemData);
-  itemHTML += `<${itemTag} aria-selected="false" class="any-virtual-scroll-item${itmClass}" data-index="${index}"`;
+  itemHTML += `<${itemTag} aria-selected="false" class="any-virtual-scroll-item${itmClass}" data-index="${index}" style="z-index:100;`;
   if (itemSize) {
-    itemHTML += `style="height: ${itemSize + "px"} "`;
+    itemHTML += `height: ${itemSize + "px;"} `;
   }
-  itemHTML += `>`;
+  itemHTML += `">`;
   itemHTML += `${newNode}`;
   itemHTML += `<any-ripple-effect exportparts="any-ink: any-ink"></any-ripple-effect>`;
   itemHTML += `</${itemTag}>`;

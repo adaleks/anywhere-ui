@@ -338,14 +338,14 @@ export declare interface AnyInputTextarea extends Components.AnyInputTextarea {
 
 
 @ProxyCmp({
-  inputs: ['anyStyle', 'disabled', 'inputId', 'listStyle', 'name', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'value', 'virtualScroll']
+  inputs: ['anyStyle', 'checkbox', 'dataKey', 'disabled', 'emptyFilterMessage', 'emptyMessage', 'filter', 'filterBy', 'filterLocale', 'filterMatchMode', 'filterValue', 'group', 'inputId', 'listStyle', 'metaKeySelection', 'multiple', 'name', 'optionDisabled', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'searchIcon', 'showToggleAll', 'value', 'virtualScroll']
 })
 @Component({
   selector: 'any-listbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['anyStyle', 'disabled', 'inputId', 'listStyle', 'name', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'value', 'virtualScroll'],
+  inputs: ['anyStyle', 'checkbox', 'dataKey', 'disabled', 'emptyFilterMessage', 'emptyMessage', 'filter', 'filterBy', 'filterLocale', 'filterMatchMode', 'filterValue', 'group', 'inputId', 'listStyle', 'metaKeySelection', 'multiple', 'name', 'optionDisabled', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'searchIcon', 'showToggleAll', 'value', 'virtualScroll'],
 })
 export class AnyListbox {
   protected el: HTMLElement;
@@ -435,14 +435,14 @@ export declare interface AnyRadioGroup extends Components.AnyRadioGroup {
 
 
 @ProxyCmp({
-  inputs: ['type']
+  inputs: ['anyStyle', 'type']
 })
 @Component({
   selector: 'any-ripple-effect',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['type'],
+  inputs: ['anyStyle', 'type'],
 })
 export class AnyRippleEffect {
   protected el: HTMLElement;

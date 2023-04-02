@@ -1,63 +1,100 @@
 @import "../../themes/anywhere.globals.scss";
 
 :host {
+  display: block;
+
+  .any-listbox-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .any-listbox-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .any-listbox {
     display: block;
+    padding: 0;
+    border: var(--inputListBorder);
+    background-color: var(--inputListBg);
 
-    .any-listbox-list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+    .any-listbox-header {
+      padding: var(--inputListHeaderPadding);
+      border-bottom: var(--inputListHeaderBorder);
+      color: var(--inputListHeaderTextColor);
+      background: var(--inputListHeaderBg);
+      margin: var(--inputListHeaderMargin);
+      border-top-right-radius: var(--borderRadius);
+      border-top-left-radius: var(--borderRadius);
+      display: flex;
+      align-items: center;
+
+      .any-listbox-search-icon {
+        color: var(--text-color-secondary);
+      }
+
+      .any-listbox-filter {
+        width: 100%;
+      }
+
+      any-checkbox {
+        margin-right: 0.5rem;
+      }
     }
 
-    .any-listbox-item {
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+    .any-listbox-list-wrapper {
+      overflow: auto;
 
-    .any-listbox {
-        display: block;
-        padding: 0;
-        border: var(--inputListBorder);
-        background-color: var(--inputListBg);
+      .any-listbox-list {
+        padding: var(--inputListPadding);
 
-        .any-listbox-list-wrapper {
-            overflow: auto;
-
-            .any-listbox-list {
-                padding: var(--inputListPadding);
-
-                .any-listbox-item {
-                    margin: var(--inputListItemMargin);
-                    padding: var(--inputListItemPadding);
-                    border: var(--inputListItemBorder);
-                    color: var(---inputListItemTextColor);
-                    transition: box-shadow 0.15s;
-                    border-radius: 0;
-                    font-weight: var(--fontWeight);
-
-                    &:not(.any-highlight):not(.any-disabled):focus {
-                        outline: 0;
-                        outline-offset: 0;
-                        box-shadow: var(--inputListItemFocusShadow);
-                    }
-
-                    &:not(.any-highlight):not(.any-disabled):hover {
-                        color: var(--inputListItemHoverTextColor);
-                        background: var(--inputListItemHoverBgColor);
-                    }
-
-                    &.any-highlight {
-                        color: var(--inputListItemHighlightTextColor);
-                        background: var(--inputListItemHighlightBgColor);
-                    }
-                }
-            }
+        .clusterize-no-data {
+          padding: var(--inputListItemPadding);
         }
 
+        .any-listbox-item {
+          margin: var(--inputListItemMargin);
+          padding: var(--inputListItemPadding);
+          border: var(--inputListItemBorder);
+          color: var(---inputListItemTextColor);
+          transition: box-shadow 0.15s;
+          border-radius: 0;
+          font-weight: var(--fontWeight);
+          display: flex;
 
+          &:not(.any-highlight):not(.any-disabled):focus {
+            outline: 0;
+            outline-offset: 0;
+            box-shadow: var(--inputListItemFocusShadow);
+          }
+
+          &:not(.any-highlight):not(.any-disabled):hover {
+            color: var(--inputListItemHoverTextColor);
+            background: var(--inputListItemHoverBgColor);
+          }
+
+          &.any-highlight {
+            color: var(--inputListItemHighlightTextColor);
+            background: var(--inputListItemHighlightBgColor);
+          }
+
+          any-checkbox {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .any-listbox-empty-message {
+          padding: var(--inputListItemPadding);
+          color: var(---inputListItemTextColor);
+          background: transparent;
+        }
+      }
     }
+  }
 }

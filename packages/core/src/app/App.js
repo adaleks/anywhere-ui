@@ -165,6 +165,10 @@ window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
   // window.AnywhereUI.config.set('rippleEffect', false);
+  // window.AnywhereUI.config.set('translations', {
+  //   emptyMessage: "No results found 1213",
+  //   emptyFilterMessage: "No results found 123",
+  // });
 
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {

@@ -231,6 +231,22 @@ export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox>('any-lis
   'readonly',
   'scrollerHeight',
   'virtualScroll',
+  'multiple',
+  'checkbox',
+  'dataKey',
+  'metaKeySelection',
+  'showToggleAll',
+  'filter',
+  'group',
+  'optionDisabled',
+  'optionGroupChildren',
+  'searchIcon',
+  'filterValue',
+  'filterBy',
+  'filterMatchMode',
+  'filterLocale',
+  'emptyMessage',
+  'emptyFilterMessage',
   'valueChange'
 ],
 'value', 'v-value-change', 'valueChange');
@@ -263,7 +279,8 @@ export const AnyRadioGroup = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup>('a
 
 
 export const AnyRippleEffect = /*@__PURE__*/ defineContainer<JSX.AnyRippleEffect>('any-ripple-effect', undefined, [
-  'type'
+  'type',
+  'anyStyle'
 ]);
 
 

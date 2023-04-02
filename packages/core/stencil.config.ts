@@ -117,6 +117,9 @@ export const config: Config = {
     }),
   ],
   outputTargets: [
+    // {
+    //   type: "dist-hydrate-script",
+    // },
     {
       type: "dist-custom-elements",
       generateTypeDeclarations: false,
@@ -134,6 +137,7 @@ export const config: Config = {
       type: "www",
       serviceWorker: null, // disable service workers
       empty: false,
+      baseUrl: "http://localhost:3333",
       copy: [
         { src: "assets" },
         { src: "app" },

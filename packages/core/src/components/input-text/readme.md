@@ -64,11 +64,13 @@ Type: `Promise<HTMLInputElement>`
 ### Used by
 
  - [any-input-number](../input-number)
+ - [any-listbox](../listbox)
 
 ### Graph
 ```mermaid
 graph TD;
   any-input-number --> any-input-text
+  any-listbox --> any-input-text
   style any-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
