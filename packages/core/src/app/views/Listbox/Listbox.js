@@ -1,19 +1,25 @@
 import AbstractView from "../AbstractView.js";
-import {
-  Cities
-} from "../../data/Cities.js";
+import { Cities } from "../../data/Cities.js";
+import { Cache } from "../../data/Cache.js";
+import CacheService from "../../services/CacheService.js";
+
+// const cache = new CacheService();
 
 export default class extends AbstractView {
   constructor(params) {
     super(params);
     this.setTitle("Listbox");
     this.cities = Cities;
+    this.cache = new CacheService(900);
   }
 
   executeScript() {
     this.viewOnGithubBtn = document.querySelector("#view_on_github");
     this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
-      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/listbox', '_blank');
+      window.open(
+        "https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/listbox",
+        "_blank"
+      );
     });
     let citiesFormated = this.cities.map((obj) => {
       if (obj.value.countryCode) {
@@ -23,14 +29,18 @@ export default class extends AbstractView {
     });
 
     // Generate the virtual items array and add it to the Clusterize.js instance
-    const virtualItems = [];
-    for (let i = 0; i < 10000; i++) {
-      virtualItems.push({
-        label: "Item " + i,
-        value: "Item " + i,
-      });
-    }
+    if (!this.cache.get("listboxVirtualItems")?.length) {
+      const items = [];
+      for (let i = 0; i < 10000; i++) {
+        items.push({
+          label: "Item " + i,
+          value: "Item " + i,
+        });
+      }
 
+      this.cache.set("listboxVirtualItems", items);
+    }
+    const virtualItems = this.cache.get("listboxVirtualItems");
 
     this.singleListbox = document.querySelector(".lb1");
     this.singleListbox.anyStyle = {
@@ -95,13 +105,11 @@ export default class extends AbstractView {
     // this.virtualListbox.checkbox = true;
     // this.virtualListbox.filter = true;
     // this.virtualListbox.showToggleAll = false;
-
   }
 
   async getHtml() {
-    return fetch('app/views/Listbox/Listbox.html')
-      .then(data => {
-        return data.text();
-      });
+    return fetch("app/views/Listbox/Listbox.html").then((data) => {
+      return data.text();
+    });
   }
 }

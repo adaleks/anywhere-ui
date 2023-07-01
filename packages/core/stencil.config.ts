@@ -14,6 +14,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: [
       "any-dropdown",
+      "any-multiselect",
       "any-listbox",
       "any-virtual-scroller",
       "any-radio-group",
@@ -55,6 +56,7 @@ const vueComponentModels: ComponentModelConfig[] = [
   {
     elements: [
       "any-dropdown",
+      "any-multiselect",
       "any-listbox",
       "any-input-text",
       "any-input-textarea",
@@ -96,6 +98,7 @@ export const config: Config = {
     {
       components: [
         "any-dropdown",
+        "any-multiselect",
         "any-listbox",
         "any-input-text",
         "any-input-textarea",
@@ -110,6 +113,7 @@ export const config: Config = {
     { components: ["any-badge", "any-badge-overlay"] },
     { components: ["any-ripple-effect"] },
     { components: ["any-radio-button", "any-radio-group"] },
+    { components: ["any-overlay"] },
   ],
   plugins: [
     sass({
@@ -154,18 +158,21 @@ export const config: Config = {
       directivesProxyFile:
         "../angular/projects/anywhere-ui/src/lib/directives/proxies.ts",
       valueAccessorConfigs: angularValueAccessorBindings,
+      // excludeComponents: ["any-overlay"],
     }),
 
     vueOutputTarget({
       componentCorePackage: "@anywhere-ui/core",
       proxiesFile: "../vue/src/proxies.ts",
       componentModels: vueComponentModels,
+      excludeComponents: ["any-overlay"],
     }),
     reactOutputTarget({
       componentCorePackage: "@anywhere-ui/core",
       proxiesFile: "../react/src/components.ts",
       includeDefineCustomElements: true,
       includePolyfills: true,
+      excludeComponents: ["any-overlay"],
     }),
   ],
   devServer: {

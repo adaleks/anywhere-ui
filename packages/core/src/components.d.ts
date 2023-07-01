@@ -707,6 +707,10 @@ export namespace Components {
          */
         "searchIcon"?: string;
         /**
+          * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.
+         */
+        "setFilterInputFocus": () => Promise<void>;
+        /**
           * Whether header checkbox is shown in multiple mode
          */
         "showToggleAll": boolean;
@@ -718,6 +722,130 @@ export namespace Components {
           * When present, list virtual scroller is enabled
          */
         "virtualScroll": boolean;
+    }
+    interface AnyMultiselect {
+        /**
+          * Inline style of the element
+         */
+        "anyStyle"?: any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
+        /**
+          * When specified, allows selecting items with checkboxes
+         */
+        "checkbox": boolean;
+        /**
+          * Icon class of the dropdown clear icon
+         */
+        "clearIcon"?: string;
+        /**
+          * A property to uniquely identify a value in options
+         */
+        "dataKey": string;
+        /**
+          * When specified, allows selecting items with checkboxes
+         */
+        "defaultLabel": string;
+        /**
+          * When present, it specifies that the element should be disabled
+         */
+        "disabled": boolean;
+        /**
+          * Icon class of the dropdown icon
+         */
+        "dropdownIcon"?: string;
+        /**
+          * When specified, displays a filter input at header
+         */
+        "filter": boolean;
+        /**
+          * Whether to display options as grouped when nested options are provided
+         */
+        "group": boolean;
+        /**
+          * Transition options for the hide animation.
+         */
+        "hideAnimation"?: string;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId": string;
+        /**
+          * Name of the dropdown input.
+         */
+        "name": string;
+        /**
+          * Name of the options field of an option group.
+         */
+        "optionGroupChildren": string;
+        /**
+          * Name of the label field of an option
+         */
+        "optionLabel": string;
+        /**
+          * Name of the value field of an option
+         */
+        "optionValue": string;
+        /**
+          * An array of objects to display as the available options.
+         */
+        "options": any[];
+        /**
+          * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+         */
+        "panelScrollHeight"?: string;
+        /**
+          * Default text to display when no option is selected
+         */
+        "placeholder"?: string;
+        /**
+          * When present, it specifies that the element value cannot be changed
+         */
+        "readonly": boolean;
+        /**
+          * Keyframe name for the show animation.
+         */
+        "showAnimation"?: string;
+        /**
+          * When enabled, a clear icon is displayed to clear the value
+         */
+        "showClear"?: boolean;
+        /**
+          * Value of the dropdown list
+         */
+        "value"?: any;
+        /**
+          * When present, list virtual scroller is enabled
+         */
+        "virtualScroll": boolean;
+    }
+    interface AnyOverlay {
+        /**
+          * Whether to automatically manage layering
+         */
+        "autoZIndex"?: boolean;
+        /**
+          * Base zIndex value to use in layering
+         */
+        "baseZIndex"?: string;
+        /**
+          * Transition options for the hide animation.
+         */
+        "hideAnimation"?: string;
+        /**
+          * Keyframe name for the show animation.
+         */
+        "showAnimation"?: string;
+        /**
+          * The target element to attach the dropdown to.
+         */
+        "target": any;
+        /**
+          * Whether the dropdown is currently visible or hidden.
+         */
+        "visible": boolean;
     }
     interface AnyRadioButton {
         /**
@@ -904,6 +1032,14 @@ export interface AnyListboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAnyListboxElement;
 }
+export interface AnyMultiselectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyMultiselectElement;
+}
+export interface AnyOverlayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAnyOverlayElement;
+}
 export interface AnyRadioButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAnyRadioButtonElement;
@@ -977,6 +1113,18 @@ declare global {
         prototype: HTMLAnyListboxElement;
         new (): HTMLAnyListboxElement;
     };
+    interface HTMLAnyMultiselectElement extends Components.AnyMultiselect, HTMLStencilElement {
+    }
+    var HTMLAnyMultiselectElement: {
+        prototype: HTMLAnyMultiselectElement;
+        new (): HTMLAnyMultiselectElement;
+    };
+    interface HTMLAnyOverlayElement extends Components.AnyOverlay, HTMLStencilElement {
+    }
+    var HTMLAnyOverlayElement: {
+        prototype: HTMLAnyOverlayElement;
+        new (): HTMLAnyOverlayElement;
+    };
     interface HTMLAnyRadioButtonElement extends Components.AnyRadioButton, HTMLStencilElement {
     }
     var HTMLAnyRadioButtonElement: {
@@ -1024,6 +1172,8 @@ declare global {
         "any-input-text": HTMLAnyInputTextElement;
         "any-input-textarea": HTMLAnyInputTextareaElement;
         "any-listbox": HTMLAnyListboxElement;
+        "any-multiselect": HTMLAnyMultiselectElement;
+        "any-overlay": HTMLAnyOverlayElement;
         "any-radio-button": HTMLAnyRadioButtonElement;
         "any-radio-group": HTMLAnyRadioGroupElement;
         "any-ripple-effect": HTMLAnyRippleEffectElement;
@@ -1841,6 +1991,178 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    interface AnyMultiselect {
+        /**
+          * Inline style of the element
+         */
+        "anyStyle"?: any;
+        /**
+          * Index of the element in tabbing order
+         */
+        "anyTabIndex"?: number;
+        /**
+          * When specified, allows selecting items with checkboxes
+         */
+        "checkbox"?: boolean;
+        /**
+          * Icon class of the dropdown clear icon
+         */
+        "clearIcon"?: string;
+        /**
+          * A property to uniquely identify a value in options
+         */
+        "dataKey"?: string;
+        /**
+          * When specified, allows selecting items with checkboxes
+         */
+        "defaultLabel"?: string;
+        /**
+          * When present, it specifies that the element should be disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Icon class of the dropdown icon
+         */
+        "dropdownIcon"?: string;
+        /**
+          * When specified, displays a filter input at header
+         */
+        "filter"?: boolean;
+        /**
+          * Whether to display options as grouped when nested options are provided
+         */
+        "group"?: boolean;
+        /**
+          * Transition options for the hide animation.
+         */
+        "hideAnimation"?: string;
+        /**
+          * Identifier of the focus input to match a label defined for the component.
+         */
+        "inputId"?: string;
+        /**
+          * Name of the dropdown input.
+         */
+        "name"?: string;
+        /**
+          * Callback to invoke when dropdown loses focus
+         */
+        "onAOnBlur"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when component is clicked
+         */
+        "onAOnClick"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when dropdown gets focus
+         */
+        "onAOnFocus"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when dropdown overlay gets hidden
+         */
+        "onAOnPanelHide"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when dropdown overlay before gets hidden
+         */
+        "onAOnPanelHideStart"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when dropdown overlay gets visible
+         */
+        "onAOnPanelShow"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when dropdown overlay before gets visible
+         */
+        "onAOnPanelShowStart"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when value of dropdown changes
+         */
+        "onValueChange"?: (event: AnyMultiselectCustomEvent<any>) => void;
+        /**
+          * Name of the options field of an option group.
+         */
+        "optionGroupChildren"?: string;
+        /**
+          * Name of the label field of an option
+         */
+        "optionLabel"?: string;
+        /**
+          * Name of the value field of an option
+         */
+        "optionValue"?: string;
+        /**
+          * An array of objects to display as the available options.
+         */
+        "options"?: any[];
+        /**
+          * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+         */
+        "panelScrollHeight"?: string;
+        /**
+          * Default text to display when no option is selected
+         */
+        "placeholder"?: string;
+        /**
+          * When present, it specifies that the element value cannot be changed
+         */
+        "readonly"?: boolean;
+        /**
+          * Keyframe name for the show animation.
+         */
+        "showAnimation"?: string;
+        /**
+          * When enabled, a clear icon is displayed to clear the value
+         */
+        "showClear"?: boolean;
+        /**
+          * Value of the dropdown list
+         */
+        "value"?: any;
+        /**
+          * When present, list virtual scroller is enabled
+         */
+        "virtualScroll"?: boolean;
+    }
+    interface AnyOverlay {
+        /**
+          * Whether to automatically manage layering
+         */
+        "autoZIndex"?: boolean;
+        /**
+          * Base zIndex value to use in layering
+         */
+        "baseZIndex"?: string;
+        /**
+          * Transition options for the hide animation.
+         */
+        "hideAnimation"?: string;
+        /**
+          * Callback to invoke when the dropdown overlay becomes hidden.
+         */
+        "onAOnHide"?: (event: AnyOverlayCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when the dropdown overlay is about to become hidden.
+         */
+        "onAOnHideStart"?: (event: AnyOverlayCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when the dropdown overlay becomes visible.
+         */
+        "onAOnShow"?: (event: AnyOverlayCustomEvent<any>) => void;
+        /**
+          * Callback to invoke when the dropdown overlay is about to become visible.
+         */
+        "onAOnShowStart"?: (event: AnyOverlayCustomEvent<any>) => void;
+        /**
+          * Keyframe name for the show animation.
+         */
+        "showAnimation"?: string;
+        /**
+          * The target element to attach the dropdown to.
+         */
+        "target"?: any;
+        /**
+          * Whether the dropdown is currently visible or hidden.
+         */
+        "visible"?: boolean;
+    }
     interface AnyRadioButton {
         /**
           * Inline style of the component.
@@ -2036,6 +2358,8 @@ declare namespace LocalJSX {
         "any-input-text": AnyInputText;
         "any-input-textarea": AnyInputTextarea;
         "any-listbox": AnyListbox;
+        "any-multiselect": AnyMultiselect;
+        "any-overlay": AnyOverlay;
         "any-radio-button": AnyRadioButton;
         "any-radio-group": AnyRadioGroup;
         "any-ripple-effect": AnyRippleEffect;
@@ -2058,6 +2382,8 @@ declare module "@stencil/core" {
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
+            "any-multiselect": LocalJSX.AnyMultiselect & JSXBase.HTMLAttributes<HTMLAnyMultiselectElement>;
+            "any-overlay": LocalJSX.AnyOverlay & JSXBase.HTMLAttributes<HTMLAnyOverlayElement>;
             "any-radio-button": LocalJSX.AnyRadioButton & JSXBase.HTMLAttributes<HTMLAnyRadioButtonElement>;
             "any-radio-group": LocalJSX.AnyRadioGroup & JSXBase.HTMLAttributes<HTMLAnyRadioGroupElement>;
             "any-ripple-effect": LocalJSX.AnyRippleEffect & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;

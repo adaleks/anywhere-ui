@@ -33,6 +33,8 @@ import {
   AnyRadioGroup,
   AnyInputNumber,
   AnyInputTextarea,
+  AnyMultiselect,
+  AnyOverlay,
 } from './directives/proxies';
 
 // defineCustomElements(window);
@@ -55,6 +57,8 @@ const DECLARATIONS = [
   AnyRadioGroup,
   AnyInputNumber,
   AnyInputTextarea,
+  AnyMultiselect,
+  AnyOverlay,
 
   // Value Accessors
   BooleanValueAccessor,

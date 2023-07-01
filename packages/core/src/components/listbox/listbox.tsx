@@ -8,6 +8,7 @@ import {
   Watch,
   Host,
   State,
+  Method,
 } from "@stencil/core";
 import { config } from "../../global/config";
 import _ from "lodash";
@@ -232,7 +233,7 @@ export class AnyListbox {
   }
 
   get optionsToRender(): any[] {
-    return this._filteredOptions || this.options;
+    return this._filteredOptions || this._options;
   }
 
   get emptyMessageLabel(): string {
@@ -312,7 +313,7 @@ export class AnyListbox {
     if (this.readonly) return;
 
     if (this.multiple) {
-      if (this.checkbox) this.onOptionClickCheckbox(selected);
+      if (this.checkbox) this.onOptionClickCheckbox(event, selected);
       else this.onOptionClickMultiple(event, selected);
     } else {
       this.onOptionClickSingle(event, selected);
@@ -338,18 +339,19 @@ export class AnyListbox {
     }
   }
 
-  private onOptionClickCheckbox(option: any) {
+  private onOptionClickCheckbox(event: any, option: any) {
     if (this.disabled || this.readonly) {
       return;
     }
+    this.itemPointerEvent = event;
 
     let selected = this.isSelected(option);
 
     if (selected) {
       this.removeOption(option);
     } else {
-      this.value = this.value ? this.value : [];
-      this.value = [...this.value, this.getOptionValue(option)];
+      const value = this.value ? this.value : [];
+      this.value = [...value, this.getOptionValue(option)];
     }
 
     if (this.virtualScroll) {
@@ -372,8 +374,8 @@ export class AnyListbox {
           this.value = [this.getOptionValue(option)];
         }
       } else {
-        this.value = metaKey ? this.value || [] : [];
-        this.value = [...this.value, this.getOptionValue(option)];
+        const value = metaKey ? this.value || [] : [];
+        this.value = [...value, this.getOptionValue(option)];
         // valueChanged = true;
       }
     } else {
@@ -383,6 +385,8 @@ export class AnyListbox {
         this.value = [...(this.value || []), this.getOptionValue(option)];
       }
     }
+
+    this.itemPointerEvent = event;
 
     if (this.virtualScroll)
       // Call setSelectedVirtualOption with the new value array
@@ -603,7 +607,7 @@ export class AnyListbox {
 
     if (this.virtualScroll) this.setSelectedVirtualOptionMultiple(this.value);
     // this.onModelChange(this.value);
-    // this.onChange.emit({ originalEvent: event, value: this.value });
+    this.valueChange.emit({ originalEvent: event, value: this.value });
     event.preventDefault();
   }
 
@@ -721,6 +725,20 @@ export class AnyListbox {
       }
     } else {
       this._filteredOptions = null;
+    }
+  }
+
+  /**
+   * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global
+   * `textarea.focus()`.
+   */
+  @Method()
+  async setFilterInputFocus() {
+    const filterInput = this.element.shadowRoot.querySelector(
+      ".any-inputtext"
+    ) as HTMLElement;
+    if (filterInput) {
+      filterInput.focus();
     }
   }
 

@@ -1,128 +1,126 @@
 @import "../../themes/anywhere.globals.scss";
 @import "../input-text/input-text.scss";
 
-
 :host {
+  display: block;
 
-    display: block;
+  .any-dropdown {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+    min-width: var(--inputListMinWidth);
+    background: var(--inputBgColor);
+    border: var(--inputBorder);
+    -moz-transition: var(--inputTransition);
+    -o-transition: var(--inputTransition);
+    -webkit-transition: var(--inputTransition);
+    transition: var(--inputTransition);
+    user-select: none;
 
-    .any-dropdown {
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        position: relative;
-        cursor: pointer;
-        min-width: var(--inputListMinWidth);
-        background: var(--inputBgColor);
-        border: var(--inputBorder);
-        -moz-transition: var(--inputTransition);
-        -o-transition: var(--inputTransition);
-        -webkit-transition: var(--inputTransition);
-        transition: var(--inputTransition);
-        user-select: none;
+    &:not(.ui-state-disabled) {
+      &:hover {
+        border-color: var(--inputHoverBorderColor);
+      }
 
-        &:not(.ui-state-disabled) {
-            &:hover {
-                border-color: var(--inputHoverBorderColor);
-            }
-
-            &.any-state-focus {
-                outline: 0 none;
-                outline-offset: 0;
-                -webkit-box-shadow: var(--focusShadow);
-                -moz-box-shadow: var(--focusShadow);
-                box-shadow: var(--focusShadow);
-                border-color: var(--focusOutlineColor);
-            }
-        }
-
-        label {
-            &.any-dropdown-label {
-                cursor: pointer;
-            }
-        }
-
-        .any-dropdown-label {
-            display: block;
-            border: none;
-            overflow: hidden;
-            width: 100%;
-            padding-right: 2.5em;
-            font-weight: 400;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-
-            &.any-placeholder {
-                color: var(--inputPlaceholderTextColor);
-            }
-        }
-
-        .any-dropdown-clear-icon {
-            position: absolute;
-            top: 50%;
-            margin-top: -.5rem;
-
-            svg {
-                // transition-duration: var(--transitionDuration);
-                // transition-property: transform;
-                color: var(--inputDropdownIconColor);
-            }
-
-            right: 2.357rem;
-        }
-
-        .any-dropdown-clearable {
-            .any-dropdown-label {
-                padding-right: 4em;
-            }
-        }
-
-        .any-dropdown-trigger {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            background: transparent;
-            width: 2.357rem;
-            // margin-top: .2rem;
-
-            svg {
-                transition-duration: var(--transitionDuration);
-                transition-property: transform;
-                color: var(--inputDropdownIconColor);
-            }
-
-            &[aria-expanded] {
-                svg {
-                    transform: rotate(-180deg) !important;
-                    -webkit-transform: rotate(-180deg) !important;
-                }
-            }
-        }
-
-        .any-dropdown-panel {
-            min-width: 100%;
-            // min-width: 100%;
-            // padding: 0;
-            // border: $inputOverlayBorder;
-            background: var(--inputOverlayBg);
-            position: absolute;
-            height: auto;
-
-            .any-dropdown-items-wrapper {
-                overflow: auto;
-            }
-
-            .any-listbox-item {
-                white-space: nowrap;
-                font-weight: var(--fontWeight);
-            }
-        }
+      &.any-state-focus {
+        outline: 0 none;
+        outline-offset: 0;
+        -webkit-box-shadow: var(--focusShadow);
+        -moz-box-shadow: var(--focusShadow);
+        box-shadow: var(--focusShadow);
+        border-color: var(--focusOutlineColor);
+      }
     }
+
+    label {
+      &.any-dropdown-label {
+        cursor: pointer;
+      }
+    }
+
+    .any-dropdown-label {
+      display: block;
+      border: none;
+      overflow: hidden;
+      width: 100%;
+      padding-right: 2.5em;
+      font-weight: 400;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.any-placeholder {
+        color: var(--inputPlaceholderTextColor);
+      }
+    }
+
+    .any-dropdown-clear-icon {
+      position: absolute;
+      top: 50%;
+      margin-top: -0.5rem;
+
+      svg {
+        // transition-duration: var(--transitionDuration);
+        // transition-property: transform;
+        color: var(--inputDropdownIconColor);
+      }
+
+      right: 2.357rem;
+    }
+
+    .any-dropdown-clearable {
+      .any-dropdown-label {
+        padding-right: 4em;
+      }
+    }
+
+    .any-dropdown-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: transparent;
+      width: 2.357rem;
+      // margin-top: .2rem;
+
+      svg {
+        transition-duration: var(--transitionDuration);
+        transition-property: transform;
+        color: var(--inputDropdownIconColor);
+      }
+
+      &[aria-expanded] {
+        svg {
+          transform: rotate(-180deg) !important;
+          -webkit-transform: rotate(-180deg) !important;
+        }
+      }
+    }
+
+    .any-dropdown-panel {
+      min-width: 100%;
+      // min-width: 100%;
+      // padding: 0;
+      // border: $inputOverlayBorder;
+      background: var(--inputOverlayBg);
+      position: absolute;
+      height: auto;
+
+      .any-dropdown-items-wrapper {
+        overflow: auto;
+      }
+
+      .any-listbox-item {
+        white-space: nowrap;
+        font-weight: var(--fontWeight);
+      }
+    }
+  }
 }
 
 .any-dropdown {
-    .any-dropdown-label {
-        background: transparent;
-        border: 0 none;
-    }
+  .any-dropdown-label {
+    background: transparent;
+    border: 0 none;
+  }
 }

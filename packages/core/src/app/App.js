@@ -12,6 +12,10 @@ import Button from "./views/Button/Button.js";
 import Badge from "./views/Badge/Badge.js";
 import RippleEffect from "./views/RippleEffect/RippleEffect.js";
 import RadioButton from "./views/RadioButton/RadioButton.js";
+import Multiselect from "./views/Multiselect/Multiselect.js";
+
+const templateCache = {};
+const tplCacheTimeout = 500000;
 
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -35,33 +39,34 @@ const navigateTo = (url) => {
 };
 
 const addClass = (element, className) => {
-  if (element.classList)
-    element.classList.add(className);
-  else
-    element.className += ' ' + className;
+  if (element.classList) element.classList.add(className);
+  else element.className += " " + className;
 };
 
 const removeClass = (element, className) => {
-  if (element.classList)
-    element.classList.remove(className);
+  if (element.classList) element.classList.remove(className);
   else
-    element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    element.className = element.className.replace(
+      new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"),
+      " "
+    );
 };
 
 const hideMenu = () => {
-  removeClass(document.body, 'blocked-scroll');
-  removeClass(document.querySelector('.layout-sidebar'), 'active');
-  removeClass(document.querySelector('.layout-mask'), 'layout-mask-active');
+  removeClass(document.body, "blocked-scroll");
+  removeClass(document.querySelector(".layout-sidebar"), "active");
+  removeClass(document.querySelector(".layout-mask"), "layout-mask-active");
 };
 
 const onMenuButtonClick = () => {
-  addClass(document.body, 'blocked-scroll');
-  addClass(document.querySelector('.layout-sidebar'), 'active');
-  addClass(document.querySelector('.layout-mask'), 'layout-mask-active');
+  addClass(document.body, "blocked-scroll");
+  addClass(document.querySelector(".layout-sidebar"), "active");
+  addClass(document.querySelector(".layout-mask"), "layout-mask-active");
 };
 
-const router = () => {
-  const routes = [{
+const router = async () => {
+  const routes = [
+    {
       path: "/",
       view: GetStarted,
     },
@@ -117,6 +122,10 @@ const router = () => {
       path: "/radio-button",
       view: RadioButton,
     },
+    {
+      path: "/multiselect",
+      view: Multiselect,
+    },
   ];
 
   // Test each route for potential match
@@ -138,42 +147,55 @@ const router = () => {
     };
   }
   const view = new match.route.view(getParams(match));
-
+  const viewPath = match.route.path;
 
   const menuItems = document.querySelectorAll("[data-link]");
   menuItems.forEach(function (item) {
     item.classList.remove("active");
-    if (location.hash === '') {
+    if (location.hash === "") {
       menuItems[0].classList.add("active");
-    } else if (item.href.indexOf(location.hash.replace('#', "")) > -1) {
+    } else if (item.href.indexOf(location.hash.replace("#", "")) > -1) {
       item.classList.add("active");
     }
   });
 
-  setTimeout(async () => {
-    document.querySelector("#app").innerHTML = await view.getHtml();
-    if (Prism) {
-      Prism.highlightAll();
-    }
+  let html = templateCache[viewPath]?.html;
+  const expires = templateCache[viewPath]?.expires;
 
-    view.executeScript();
-    hideMenu();
-  }, 100);
+  if (!html || expires < Date.now()) {
+    html = await view.getHtml();
+    const expirationTime = Date.now() + tplCacheTimeout; // expire after 1 minute
+    templateCache[viewPath] = {
+      html,
+      expires: expirationTime,
+    };
+  }
+
+  // setTimeout(async () => {
+  document.querySelector("#app").innerHTML = html;
+  if (Prism) {
+    Prism.highlightAll();
+  }
+
+  view.executeScript();
+  hideMenu();
+  // }, 10);
 };
 
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
   // window.AnywhereUI.config.set('rippleEffect', false);
-  // window.AnywhereUI.config.set('translations', {
+  // window.AnywhereUI.config.set("translations", {
   //   emptyMessage: "No results found 1213",
   //   emptyFilterMessage: "No results found 123",
+  //   choose: "Choose 123",
   // });
 
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
-      const currentPath = e.target.href.substring(e.target.href.indexOf('#'));
+      const currentPath = e.target.href.substring(e.target.href.indexOf("#"));
       if (currentPath === location.hash) return;
       navigateTo(e.target.href);
       const menuItems = document.querySelectorAll("[data-link]");
@@ -184,12 +206,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  let menuButton = document.querySelector('.menu-button');
+  let menuButton = document.querySelector(".menu-button");
   menuButton.onclick = function () {
     onMenuButtonClick();
   };
 
-  let mask = document.querySelector('.layout-mask');
+  let mask = document.querySelector(".layout-mask");
   mask.onclick = function () {
     hideMenu();
   };

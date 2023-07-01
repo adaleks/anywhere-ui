@@ -99,7 +99,7 @@ export class AnyCheckbox {
   /**
    * Callback to invoke when value of dropdown changes.
    */
-  @Event() valueChange?: EventEmitter;
+  @Event({ composed: false }) valueChange?: EventEmitter;
 
   /**
    * Emitted when the toggle has focus.

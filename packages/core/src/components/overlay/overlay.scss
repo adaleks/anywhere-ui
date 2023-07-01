@@ -1,0 +1,69 @@
+@import "../../themes/anywhere.globals.scss";
+
+:host {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .any-overlay-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    > .any-overlay-content {
+      z-index: 1;
+      width: 90%;
+    }
+  }
+  .any-overlay-content {
+    transform-origin: inherit;
+  }
+  .any-overlay-top {
+    align-items: flex-start;
+  }
+  .any-overlay-top-start {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .any-overlay-top-end {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .any-overlay-bottom {
+    align-items: flex-end;
+  }
+  .any-overlay-bottom-start {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .any-overlay-bottom-end {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .any-overlay-left {
+    justify-content: flex-start;
+  }
+  .any-overlay-left-start {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .any-overlay-left-end {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .any-overlay-right {
+    justify-content: flex-end;
+  }
+  .any-overlay-right-start {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .any-overlay-right-end {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

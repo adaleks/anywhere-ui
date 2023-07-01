@@ -254,7 +254,7 @@ export class AnyVirtualScroller {
             this.first = parseInt(
               firstItemInCluster.getAttribute("data-index")
             );
-          // console.log("CLUSTER CHANGED");
+          // console.log("CLUSTER CHANGED", this.rows);
           this.clusterChanged.emit({
             first: this.first,
             rows: this.rowsPerPage,

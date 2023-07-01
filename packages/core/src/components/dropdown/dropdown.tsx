@@ -465,89 +465,84 @@ export class AnyDropdown {
 
     return (
       <Host>
-        <div>
-          <div
-            part="any-dropdown"
-            style={this.anyStyle}
-            class={
-              "any-component any-dropdown any-corner-all" +
-              (this.disabled ? " any-disabled" : "")
-            }
-            tabindex={this.anyTabIndex}
-            onFocus={(e) => {
-              this.onFocusCallback(e);
-            }}
-            onBlur={(e) => {
-              this.onFocusOutCallback(e);
-            }}
-            onClick={(e) => this.handleElementClick(e)}
-          >
-            {this.hasSelectedItemSlot && this.selectedItem ? (
-              <span class="any-dropdown-label any-inputtext any-corner-all any-placeholder">
-                <div
-                  slot="selectedItem"
-                  innerHTML={this.getContent("selectedItem", this.selectedItem)}
-                ></div>
-              </span>
-            ) : (
-              <span
-                innerHTML={
-                  this.selectedOptionLabel
-                    ? this.selectedOptionLabel
-                    : this.placeholder
-                }
-                class="any-dropdown-label any-inputtext any-corner-all any-placeholder"
-              ></span>
-            )}
-            {this.showClear && (
-              <i
-                class="any-dropdown-clear-icon iconify"
-                style={{ display: this.selectedItem ? "block" : "none" }}
-              ></i>
-            )}
-            <div
-              class="any-dropdown-trigger any-state-default any-corner-right"
-              aria-expanded={this.isOpened}
-            >
-              <span class="any-dropdown-trigger-icon iconify"></span>
-            </div>
-            {this.isOpened && (
+        <div
+          part="any-dropdown"
+          style={this.anyStyle}
+          class={
+            "any-component any-dropdown any-corner-all" +
+            (this.disabled ? " any-disabled" : "")
+          }
+          tabindex={this.anyTabIndex}
+          onFocus={(e) => {
+            this.onFocusCallback(e);
+          }}
+          onBlur={(e) => {
+            this.onFocusOutCallback(e);
+          }}
+          onClick={(e) => this.handleElementClick(e)}
+        >
+          {this.hasSelectedItemSlot && this.selectedItem ? (
+            <span class="any-dropdown-label any-inputtext any-corner-all any-placeholder">
               <div
-                class="any-widget-content any-widget any-corner-all any-dropdown-panel any-shadow"
-                onAnimationEnd={(e) => this.onAnimationEndCallback(e)}
-                onAnimationStart={(e) => this.onAnimationStartCallback(e)}
-              >
-                <div
-                  class="any-dropdown-items-wrapper"
-                  style={
-                    !this.virtualScroll && {
-                      "max-height": this.panelScrollHeight,
-                    }
-                  }
-                >
-                  <any-listbox
-                    exportparts="any-ink: any-ink"
-                    options={this.options}
-                    value={this.value}
-                    optionLabel={this.optionLabel}
-                    optionValue={this.optionValue}
-                    scrollerHeight={
-                      this.virtualScroll ? this.panelScrollHeight : null
-                    }
-                    virtualScroll={this.virtualScroll}
-                    onValueChange={(ev: any) => this.onValueChangeCallback(ev)}
-                  >
-                    {this.hasItemSlot && (
-                      <div
-                        slot="item"
-                        innerHTML={this.getContent("item")}
-                      ></div>
-                    )}
-                  </any-listbox>
-                </div>
-              </div>
-            )}
+                slot="selectedItem"
+                innerHTML={this.getContent("selectedItem", this.selectedItem)}
+              ></div>
+            </span>
+          ) : (
+            <span
+              innerHTML={
+                this.selectedOptionLabel
+                  ? this.selectedOptionLabel
+                  : this.placeholder
+              }
+              class="any-dropdown-label any-inputtext any-corner-all any-placeholder"
+            ></span>
+          )}
+          {this.showClear && (
+            <i
+              class="any-dropdown-clear-icon iconify"
+              style={{ display: this.selectedItem ? "block" : "none" }}
+            ></i>
+          )}
+          <div
+            class="any-dropdown-trigger any-state-default any-corner-right"
+            aria-expanded={this.isOpened}
+          >
+            <span class="any-dropdown-trigger-icon iconify"></span>
           </div>
+          {this.isOpened && (
+            <div
+              class="any-widget-content any-widget any-corner-all any-dropdown-panel any-shadow"
+              onAnimationEnd={(e) => this.onAnimationEndCallback(e)}
+              onAnimationStart={(e) => this.onAnimationStartCallback(e)}
+            >
+              <div
+                class="any-dropdown-items-wrapper"
+                style={
+                  !this.virtualScroll && {
+                    "max-height": this.panelScrollHeight,
+                  }
+                }
+              >
+                <any-listbox
+                  exportparts="any-ink: any-ink"
+                  options={this.options}
+                  value={this.value}
+                  optionLabel={this.optionLabel}
+                  optionValue={this.optionValue}
+                  scrollerHeight={
+                    this.virtualScroll ? this.panelScrollHeight : null
+                  }
+                  virtualScroll={this.virtualScroll}
+                  onValueChange={(ev: any) => this.onValueChangeCallback(ev)}
+                >
+                  {this.hasItemSlot && (
+                    <div slot="item" innerHTML={this.getContent("item")}></div>
+                  )}
+                </any-listbox>
+              </div>
+            </div>
+          )}
         </div>
       </Host>
     );

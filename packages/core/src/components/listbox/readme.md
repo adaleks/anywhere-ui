@@ -46,6 +46,20 @@
 | `valueChange` | Callback to invoke when value of listbox changes | `CustomEvent<SelectChangeEventDetail<any>>` |
 
 
+## Methods
+
+### `setFilterInputFocus() => Promise<void>`
+
+Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global
+`textarea.focus()`.
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Shadow Parts
 
 | Part      | Description |
@@ -58,6 +72,7 @@
 ### Used by
 
  - [any-dropdown](../dropdown)
+ - [any-multiselect](../multiselect)
 
 ### Depends on
 
@@ -74,6 +89,7 @@ graph TD;
   any-listbox --> any-ripple-effect
   any-listbox --> any-virtual-scroller
   any-dropdown --> any-listbox
+  any-multiselect --> any-listbox
   style any-listbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

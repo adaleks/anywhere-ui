@@ -62,7 +62,8 @@ remove_prefix() {
             exit
         else
             real_name=${name//$WORDTOREMOVE/}
-            mv src/components/$name src/components/$real_name
+            cp -r src/components/$name src/components/$real_name
+            rm -rf src/components/$name
             mv src/components/$real_name/$name.css src/components/$real_name/$real_name.css
             mv src/components/$real_name/$name.tsx src/components/$real_name/$real_name.tsx
             mv src/components/$real_name/test/$name.e2e.ts src/components/$real_name/test/$real_name.e2e.ts
