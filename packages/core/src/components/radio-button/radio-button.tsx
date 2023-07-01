@@ -151,7 +151,6 @@ export class RadioButton {
     }
 
     this.checked = this.nativeInput.checked;
-    console.log("NATIVE", this.nativeInput);
 
     this.aOnSelect.emit(event);
 

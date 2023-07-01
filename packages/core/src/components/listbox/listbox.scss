@@ -67,6 +67,7 @@
           border-radius: 0;
           font-weight: var(--fontWeight);
           display: flex;
+          align-items: center;
 
           &:not(.any-highlight):not(.any-disabled):focus {
             outline: 0;

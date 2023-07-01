@@ -812,7 +812,7 @@ export class InputNumber {
             ) {
               const insertedText =
                 this.isDecimalMode() &&
-                  (this.minFractionDigits || 0) < decimalLength
+                (this.minFractionDigits || 0) < decimalLength
                   ? ""
                   : "0";
               newValueStr =
@@ -881,7 +881,7 @@ export class InputNumber {
             ) {
               const insertedText =
                 this.isDecimalMode() &&
-                  (this.minFractionDigits || 0) < decimalLength
+                (this.minFractionDigits || 0) < decimalLength
                   ? ""
                   : "0";
               newValueStr =
@@ -1074,8 +1074,8 @@ export class InputNumber {
             currencyCharIndex >= selectionStart
               ? currencyCharIndex - 1
               : suffixCharIndex >= selectionStart
-                ? suffixCharIndex
-                : inputValue.length;
+              ? suffixCharIndex
+              : inputValue.length;
 
           newValueStr =
             inputValue.slice(0, selectionStart) +
@@ -1184,13 +1184,6 @@ export class InputNumber {
   }
 
   isNumeralChar(char) {
-    console.log(
-      "isNumeralChar",
-      this._numeral,
-      this._decimal,
-      this._group,
-      this._minusSign
-    );
     if (
       char.length === 1 &&
       (this._numeral.test(char) ||

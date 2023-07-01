@@ -5,7 +5,7 @@ import { AnywhereUIConfig /*, Mode, setupConfig*/ } from "../interfaces";
 
 import { config, saveConfig, configFromSession, configFromURL } from "./config";
 
-declare const Context: any;
+// declare const Context: any;
 
 export const initialize = (userConfig: AnywhereUIConfig = {}) => {
   if (typeof (window as any) === "undefined") {
@@ -14,7 +14,7 @@ export const initialize = (userConfig: AnywhereUIConfig = {}) => {
 
   //   const doc = window.document;
   const win = window;
-  Context.config = config;
+  // Context.config = config;
   const AnywhereUI = ((win as any).AnywhereUI = (win as any).AnywhereUI || {});
 
   const platformHelpers: any = {};
@@ -45,6 +45,7 @@ export const initialize = (userConfig: AnywhereUIConfig = {}) => {
   config.set("translations", {
     emptyMessage: "No results found",
     emptyFilterMessage: "No results found",
+    choose: "Choose",
   });
 
   AnywhereUI.config = config;

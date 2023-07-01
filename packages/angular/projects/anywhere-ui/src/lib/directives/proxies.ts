@@ -338,7 +338,8 @@ export declare interface AnyInputTextarea extends Components.AnyInputTextarea {
 
 
 @ProxyCmp({
-  inputs: ['anyStyle', 'checkbox', 'dataKey', 'disabled', 'emptyFilterMessage', 'emptyMessage', 'filter', 'filterBy', 'filterLocale', 'filterMatchMode', 'filterValue', 'group', 'inputId', 'listStyle', 'metaKeySelection', 'multiple', 'name', 'optionDisabled', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'searchIcon', 'showToggleAll', 'value', 'virtualScroll']
+  inputs: ['anyStyle', 'checkbox', 'dataKey', 'disabled', 'emptyFilterMessage', 'emptyMessage', 'filter', 'filterBy', 'filterLocale', 'filterMatchMode', 'filterValue', 'group', 'inputId', 'listStyle', 'metaKeySelection', 'multiple', 'name', 'optionDisabled', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'readonly', 'scrollerHeight', 'searchIcon', 'showToggleAll', 'value', 'virtualScroll'],
+  methods: ['setFilterInputFocus']
 })
 @Component({
   selector: 'any-listbox',
@@ -364,6 +365,102 @@ export declare interface AnyListbox extends Components.AnyListbox {
    * Callback to invoke when value of listbox changes
    */
   valueChange: EventEmitter<CustomEvent<IAnyListboxSelectChangeEventDetail>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['anyStyle', 'anyTabIndex', 'checkbox', 'clearIcon', 'dataKey', 'defaultLabel', 'disabled', 'dropdownIcon', 'filter', 'group', 'hideAnimation', 'inputId', 'name', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll']
+})
+@Component({
+  selector: 'any-multiselect',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['anyStyle', 'anyTabIndex', 'checkbox', 'clearIcon', 'dataKey', 'defaultLabel', 'disabled', 'dropdownIcon', 'filter', 'group', 'hideAnimation', 'inputId', 'name', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll'],
+})
+export class AnyMultiselect {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChange', 'aOnPanelShow', 'aOnPanelShowStart', 'aOnPanelHide', 'aOnPanelHideStart', 'aOnFocus', 'aOnBlur', 'aOnClick']);
+  }
+}
+
+
+export declare interface AnyMultiselect extends Components.AnyMultiselect {
+  /**
+   * Callback to invoke when value of dropdown changes
+   */
+  valueChange: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when dropdown overlay gets visible
+   */
+  aOnPanelShow: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when dropdown overlay before gets visible
+   */
+  aOnPanelShowStart: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when dropdown overlay gets hidden
+   */
+  aOnPanelHide: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when dropdown overlay before gets hidden
+   */
+  aOnPanelHideStart: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when dropdown gets focus
+   */
+  aOnFocus: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when dropdown loses focus
+   */
+  aOnBlur: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when component is clicked
+   */
+  aOnClick: EventEmitter<CustomEvent<any>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['autoZIndex', 'baseZIndex', 'hideAnimation', 'showAnimation', 'target', 'visible']
+})
+@Component({
+  selector: 'any-overlay',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['autoZIndex', 'baseZIndex', 'hideAnimation', 'showAnimation', 'target', 'visible'],
+})
+export class AnyOverlay {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['aOnShow', 'aOnShowStart', 'aOnHide', 'aOnHideStart']);
+  }
+}
+
+
+export declare interface AnyOverlay extends Components.AnyOverlay {
+  /**
+   * Callback to invoke when the dropdown overlay becomes visible.
+   */
+  aOnShow: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when the dropdown overlay is about to become visible.
+   */
+  aOnShowStart: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when the dropdown overlay becomes hidden.
+   */
+  aOnHide: EventEmitter<CustomEvent<any>>;
+  /**
+   * Callback to invoke when the dropdown overlay is about to become hidden.
+   */
+  aOnHideStart: EventEmitter<CustomEvent<any>>;
 }
 
 

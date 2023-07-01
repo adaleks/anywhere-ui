@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { BadgeOverlay } from '../badge-overlay';
+import { AnyMultiselect } from '../multiselect';
 
-describe('any-badge-overlay', () => {
+describe('any-multiselect', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [BadgeOverlay],
-      html: `<any-badge-overlay></any-badge-overlay>`,
+      components: [AnyMultiselect],
+      html: `<any-multiselect></any-multiselect>`,
     });
     expect(page.root).toEqualHtml(`
-      <any-badge-overlay>
+      <any-multiselect>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </any-badge-overlay>
+      </any-multiselect>
     `);
   });
 });

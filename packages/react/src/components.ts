@@ -18,6 +18,7 @@ export const AnyInputSwitch = /*@__PURE__*/createReactComponent<JSX.AnyInputSwit
 export const AnyInputText = /*@__PURE__*/createReactComponent<JSX.AnyInputText, HTMLAnyInputTextElement>('any-input-text');
 export const AnyInputTextarea = /*@__PURE__*/createReactComponent<JSX.AnyInputTextarea, HTMLAnyInputTextareaElement>('any-input-textarea');
 export const AnyListbox = /*@__PURE__*/createReactComponent<JSX.AnyListbox, HTMLAnyListboxElement>('any-listbox');
+export const AnyMultiselect = /*@__PURE__*/createReactComponent<JSX.AnyMultiselect, HTMLAnyMultiselectElement>('any-multiselect');
 export const AnyRadioButton = /*@__PURE__*/createReactComponent<JSX.AnyRadioButton, HTMLAnyRadioButtonElement>('any-radio-button');
 export const AnyRadioGroup = /*@__PURE__*/createReactComponent<JSX.AnyRadioGroup, HTMLAnyRadioGroupElement>('any-radio-group');
 export const AnyRippleEffect = /*@__PURE__*/createReactComponent<JSX.AnyRippleEffect, HTMLAnyRippleEffectElement>('any-ripple-effect');

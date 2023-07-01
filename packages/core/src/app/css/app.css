@@ -85,10 +85,11 @@ p {
     background-color: rgba(165, 165, 165, 0.1);
   }
 }
-pre[class*=language-]:before, pre[class*=language-]:after {
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
   display: none !important;
 }
-pre[class*=language-] code {
+pre[class*="language-"] code {
   border-left: 10px solid var(--surface-d) !important;
   box-shadow: none !important;
   background: var(--surface-e) !important;
@@ -97,47 +98,53 @@ pre[class*=language-] code {
   font-size: 14px;
   text-shadow: none;
 }
-pre[class*=language-] code .token.tag, pre[class*=language-] code .token.keyword {
-  color: #2196F3 !important;
+pre[class*="language-"] code .token.tag,
+pre[class*="language-"] code .token.keyword {
+  color: #2196f3 !important;
 }
-pre[class*=language-] code .token.attr-name, pre[class*=language-] code .token.attr-string {
-  color: #2196F3 !important;
+pre[class*="language-"] code .token.attr-name,
+pre[class*="language-"] code .token.attr-string {
+  color: #2196f3 !important;
 }
-pre[class*=language-] code .token.attr-value {
-  color: #4CAF50 !important;
+pre[class*="language-"] code .token.attr-value {
+  color: #4caf50 !important;
 }
-pre[class*=language-] code .token.punctuation {
+pre[class*="language-"] code .token.punctuation {
   color: var(--text-color);
 }
-pre[class*=language-] code .token.operator, pre[class*=language-] code .token.string {
+pre[class*="language-"] code .token.operator,
+pre[class*="language-"] code .token.string {
   background: transparent;
 }
 
-:not(pre) > code[class*=language-],
-pre[class*=language-] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
   background-color: #fdfdfd;
   box-sizing: border-box;
   margin-bottom: 1em;
 }
 
-pre[class*=language-] {
+pre[class*="language-"] {
   position: relative;
   margin: 0.5em 0;
   overflow: visible;
   padding: 0;
 }
-pre[class*=language-] > code {
+pre[class*="language-"] > code {
   position: relative;
   border-left: 10px solid #358ccb;
   box-shadow: -1px 0 0 0 #358ccb, 0 0 0 1px #dfdfdf;
   background-color: #fdfdfd;
-  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 0);
+  background-image: linear-gradient(
+    transparent 50%,
+    rgba(69, 142, 209, 0.04) 0
+  );
   background-size: 3em 3em;
   background-origin: content-box;
   background-attachment: local;
 }
 
-code[class*=language] {
+code[class*="language"] {
   max-height: inherit;
   height: inherit;
   padding: 0 1em;
@@ -190,7 +197,10 @@ code[class*=language] {
   display: flex;
   justify-content: flex-end;
 }
-.layout-content .content-section.introduction app-demoActions .any-button-icon-only {
+.layout-content
+  .content-section.introduction
+  app-demoActions
+  .any-button-icon-only {
   padding: 0.5rem 0;
 }
 .layout-content .content-section.introduction app-demoActions a:hover {
@@ -375,7 +385,8 @@ code[class*=language] {
   color: var(--primary-color-text);
   padding: 0.5rem;
   border-radius: 4px;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
   max-width: 39px;
   max-height: 39px;
   display: flex;
@@ -410,7 +421,8 @@ code[class*=language] {
   transition: border-bottom-color 0.2s;
   cursor: pointer;
 }
-.layout-topbar .topbar-menu > li > a:focus, .layout-topbar .topbar-menu > li > a:hover {
+.layout-topbar .topbar-menu > li > a:focus,
+.layout-topbar .topbar-menu > li > a:hover {
   border-bottom-color: var(--primary-color);
 }
 .layout-topbar .topbar-menu > li > a:focus {
@@ -429,7 +441,7 @@ code[class*=language] {
   justify-content: space-between;
   position: absolute;
   bottom: 0;
-  width: calc(100% - 306px);
+  width: calc(100% - 250px);
   left: 250px;
 }
 
@@ -464,7 +476,8 @@ code[class*=language] {
 .full-card {
   background: var(--surface-e);
   padding: 2rem;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   margin-bottom: 2rem;
 }
@@ -521,7 +534,8 @@ code[class*=language] {
 
 .any-link {
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 4px;
 }
 
@@ -689,7 +703,8 @@ code[class*=language] {
   }
 
   .layout-footer {
-    width: calc(100% - 4rem);
+    /* width: calc(100% - 4rem); */
+    width: 100%;
     left: 0;
   }
 }
@@ -772,7 +787,7 @@ code[class*=language] {
   }
 
   .product-item .product-category,
-.product-item .product-category-icon {
+  .product-item .product-category-icon {
     display: none;
   }
 }
@@ -795,7 +810,8 @@ code[class*=language] {
 .any-buttonset any-button:not(:last-child)::part(any-button) {
   border-right: 0 none;
 }
-.any-buttonset any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
+.any-buttonset
+  any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
   border-radius: 0;
 }
 .any-buttonset any-button:first-of-type::part(any-button) {
@@ -832,7 +848,9 @@ code[class*=language] {
   .responsive .any-buttonset any-button::part(any-button) {
     margin-bottom: 0;
   }
-  .responsive .any-buttonset any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
+  .responsive
+    .any-buttonset
+    any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
     border-radius: 0;
   }
   .responsive .any-buttonset any-button:first-of-type::part(any-button) {

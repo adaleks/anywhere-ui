@@ -1,19 +1,23 @@
 import AbstractView from "../AbstractView.js";
-import {
-  Cities
-} from "../../data/Cities.js";
+import { Cities } from "../../data/Cities.js";
+import { Cache } from "../../data/Cache.js";
+import CacheService from "../../services/CacheService.js";
 
 export default class extends AbstractView {
   constructor(params) {
     super(params);
     this.setTitle("Dropdown");
     this.cities = Cities;
+    this.cache = new CacheService(900);
   }
 
   executeScript() {
     this.viewOnGithubBtn = document.querySelector("#view_on_github");
     this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
-      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/dropdown', '_blank');
+      window.open(
+        "https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/dropdown",
+        "_blank"
+      );
     });
     let citiesFormated = this.cities.map((obj) => {
       if (obj.value.countryCode) {
@@ -22,13 +26,19 @@ export default class extends AbstractView {
       return obj;
     });
 
-    const virtualItems = [];
-    for (let i = 0; i < 10000; i++) {
-      virtualItems.push({
-        label: "Item " + i,
-        value: "Item " + i,
-      });
+    // Generate the virtual items array and add it to the Clusterize.js instance
+    if (!this.cache.get("dropdownVirtualItems")?.length) {
+      const items = [];
+      for (let i = 0; i < 10000; i++) {
+        items.push({
+          label: "Item " + i,
+          value: "Item " + i,
+        });
+      }
+
+      this.cache.set("dropdownVirtualItems", items);
     }
+    const virtualItems = this.cache.get("dropdownVirtualItems");
 
     // BAsic Dropdown
     this.singleDropdown = document.querySelector(".dd1");
@@ -90,9 +100,8 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    return fetch('app/views/Dropdown/Dropdown.html')
-      .then(data => {
-        return data.text();
-      });
+    return fetch("app/views/Dropdown/Dropdown.html").then((data) => {
+      return data.text();
+    });
   }
 }

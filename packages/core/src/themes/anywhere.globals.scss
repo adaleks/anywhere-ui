@@ -93,9 +93,31 @@
   animation: rotateYUp 125ms ease-in-out forwards;
 }
 
-// .spin-animation {
-//     animation: spin 2s linear infinite;
-// }
+.fadeIn-animation {
+  animation: fadeIn 80ms ease-in-out forwards;
+}
+
+.fadeOut-animation {
+  animation: fadeOut 80ms ease-in-out forwards;
+}
+
+.slideUpFadeOut-animation {
+  &.direction-up {
+    animation: slideUpFadeOut 200ms ease-in-out forwards;
+  }
+  &.direction-down {
+    animation: slideDownFadeOut 200ms ease-in-out forwards;
+  }
+}
+
+.slideDownFadeIn-animation {
+  &.direction-down {
+    animation: slideDownFadeIn 200ms ease-in-out forwards;
+  }
+  &.direction-up {
+    animation: slideUpFadeIn 200ms ease-in-out forwards;
+  }
+}
 
 .direction-down {
   transform-origin: top center;
@@ -140,4 +162,8 @@
 
 .any-text-bold {
   font-weight: 700 !important;
+}
+
+.hidden {
+  display: none !important;
 }

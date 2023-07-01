@@ -43,7 +43,7 @@ export const AnyButton = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-butto
 ]);
 
 
-export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox>('any-checkbox', undefined, [
+export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox, JSX.AnyCheckbox["checked"]>('any-checkbox', undefined, [
   'checked',
   'binary',
   'inputId',
@@ -64,7 +64,7 @@ export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox>('any-c
 'checked', 'v-value-change', 'valueChange');
 
 
-export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown>('any-dropdown', undefined, [
+export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown, JSX.AnyDropdown["value"]>('any-dropdown', undefined, [
   'options',
   'optionLabel',
   'inputId',
@@ -97,7 +97,7 @@ export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown>('any-d
 'value', 'v-value-change', 'valueChange');
 
 
-export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber>('any-input-number', undefined, [
+export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, JSX.AnyInputNumber["value"]>('any-input-number', undefined, [
   'value',
   'format',
   'showButtons',
@@ -147,7 +147,7 @@ export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber>(
 'value', 'v-value-change', 'valueChange');
 
 
-export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch>('any-input-switch', undefined, [
+export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch, JSX.AnyInputSwitch["checked"]>('any-input-switch', undefined, [
   'inputId',
   'name',
   'checked',
@@ -166,7 +166,7 @@ export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch>(
 'checked', 'v-value-change', 'valueChange');
 
 
-export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText>('any-input-text', undefined, [
+export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText, JSX.AnyInputText["value"]>('any-input-text', undefined, [
   'value',
   'inputId',
   'name',
@@ -193,7 +193,7 @@ export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText>('any
 'value', 'v-value-change', 'valueChange');
 
 
-export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextarea>('any-input-textarea', undefined, [
+export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextarea, JSX.AnyInputTextarea["value"]>('any-input-textarea', undefined, [
   'inputId',
   'name',
   'label',
@@ -218,7 +218,7 @@ export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextar
 'value', 'v-value-change', 'valueChange');
 
 
-export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox>('any-listbox', undefined, [
+export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox, JSX.AnyListbox["value"]>('any-listbox', undefined, [
   'options',
   'optionLabel',
   'inputId',
@@ -252,7 +252,44 @@ export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox>('any-lis
 'value', 'v-value-change', 'valueChange');
 
 
-export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton>('any-radio-button', undefined, [
+export const AnyMultiselect = /*@__PURE__*/ defineContainer<JSX.AnyMultiselect, JSX.AnyMultiselect["value"]>('any-multiselect', undefined, [
+  'anyStyle',
+  'anyTabIndex',
+  'clearIcon',
+  'checkbox',
+  'disabled',
+  'dropdownIcon',
+  'filter',
+  'group',
+  'inputId',
+  'name',
+  'dataKey',
+  'placeholder',
+  'defaultLabel',
+  'optionGroupChildren',
+  'optionLabel',
+  'options',
+  'optionValue',
+  'panelScrollHeight',
+  'readonly',
+  'virtualScroll',
+  'showAnimation',
+  'hideAnimation',
+  'value',
+  'showClear',
+  'valueChange',
+  'aOnPanelShow',
+  'aOnPanelShowStart',
+  'aOnPanelHide',
+  'aOnPanelHideStart',
+  'aOnFocus',
+  'aOnBlur',
+  'aOnClick'
+],
+'value', 'v-value-change', 'valueChange');
+
+
+export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton, JSX.AnyRadioButton["value"]>('any-radio-button', undefined, [
   'value',
   'inputId',
   'label',
@@ -269,7 +306,7 @@ export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton>(
 'value', 'v-value-change', 'valueChange');
 
 
-export const AnyRadioGroup = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup>('any-radio-group', undefined, [
+export const AnyRadioGroup = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup, JSX.AnyRadioGroup["value"]>('any-radio-group', undefined, [
   'allowEmptySelection',
   'name',
   'value',
