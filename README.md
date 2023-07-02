@@ -1,11 +1,11 @@
 # AnywhereUI
-
-<p align="center">
-  <img width="1000" src="https://i.imgur.com/U78rhNM.png">
-</p>
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dm/@anywhere-ui/core.svg)](https://www.npmjs.com/package/@anywhere-ui/core)
+
+<p align="center">
+  <img width="1000" src="https://i.imgur.com/TCD5UXW.png">
+</p>
+
 
 Rich web components, includes framework bindings.
 
