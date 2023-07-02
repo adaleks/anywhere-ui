@@ -1,6 +1,5 @@
 import AbstractView from "../AbstractView.js";
 import { Cities } from "../../data/Cities.js";
-import { Cache } from "../../data/Cache.js";
 import CacheService from "../../services/CacheService.js";
 
 export default class extends AbstractView {
