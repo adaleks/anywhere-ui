@@ -13,6 +13,10 @@
     height: 100%;
     padding-bottom: 80px;
 
+    .layout-content-inner {
+        padding: 2rem 4rem;
+    }
+
     .content-section {
         // color: var(--text-color);
         padding: 2rem;
@@ -53,7 +57,7 @@
                 justify-content: flex-end;
 
                 .any-button-icon-only {
-                    padding: .5rem 0;
+                    padding: 0.5rem 0;
                 }
 
                 a {
@@ -62,7 +66,7 @@
                         height: 2.357 rem;
 
                         svg * {
-                            fill: var(--primary-color)
+                            fill: var(--primary-color);
                         }
                     }
                 }
@@ -77,7 +81,7 @@
             background-color: var(--surface-b);
             color: var(--text-color);
 
-            +.documentation {
+            + .documentation {
                 padding-top: 0;
             }
         }

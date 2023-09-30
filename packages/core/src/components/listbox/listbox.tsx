@@ -68,7 +68,7 @@ export class AnyListbox {
   @Prop() options: any[] = null;
 
   /**
-   * Name of the label field of an option
+   * Name of the label field of an option.
    */
   @Prop() optionLabel: string = "label";
 
@@ -83,42 +83,42 @@ export class AnyListbox {
   @Prop() name: string = this.inputId;
 
   /**
-   * Name of the value field of an option
+   * Name of the value field of an option.
    */
   @Prop() optionValue: string = "value";
 
   /**
-   * Value of the listbox
+   * Value of the listbox.
    */
   @Prop({ mutable: true }) value?: any = null;
 
   /**
-   * Inline style of the element
+   * Inline style of the element.
    */
   @Prop() anyStyle: any = null;
 
   /**
-   * Inline style of the list element
+   * Inline style of the list element.
    */
   @Prop() listStyle: any = null;
 
   /**
-   * When present, it specifies that the element should be disabled
+   * When present, it specifies that the element should be disabled.
    */
   @Prop() disabled: boolean = false;
 
   /**
-   * When present, it specifies that the element value cannot be changed
+   * When present, it specifies that the element value cannot be changed.
    */
   @Prop() readonly: boolean = false;
 
   /**
-   * Max height of the content area in inline mode
+   * Max height of the content area in inline mode.
    */
   @Prop() scrollerHeight: string = "200px";
 
   /**
-   * When present, list virtual scroller is enabled
+   * When present, list virtual scroller is enabled.
    */
   @Prop() virtualScroll: boolean = false;
 
@@ -128,12 +128,12 @@ export class AnyListbox {
   @Prop() multiple: boolean = false;
 
   /**
-   * When specified, allows selecting items with checkboxes
+   * When specified, allows selecting items with checkboxes.
    */
   @Prop() checkbox: boolean = false;
 
   /**
-   * A property to uniquely identify a value in options
+   * A property to uniquely identify a value in options.
    */
   @Prop() dataKey: string = null;
 
@@ -146,32 +146,32 @@ export class AnyListbox {
   @Prop() metaKeySelection: boolean = true;
 
   /**
-   * Whether header checkbox is shown in multiple mode
+   * Whether header checkbox is shown in multiple mode.
    */
   @Prop() showToggleAll: boolean = true;
 
   /**
-   * When specified, displays a filter input at header
+   * When specified, displays a filter input at header.
    */
   @Prop() filter: boolean = false;
 
   /**
-   * Whether to display options as grouped when nested options are provided
+   * Whether to display options as grouped when nested options are provided.
    */
   @Prop() group: boolean = false;
 
   /**
-   * Name of the disabled field of an option
+   * Name of the disabled field of an option.
    */
   @Prop() optionDisabled: string;
 
   /**
-   * Name of the options field of an option group
+   * Name of the options field of an option group.
    */
   @Prop() optionGroupChildren: string = "items";
 
   /**
-   * Icon class of the filter search input icon
+   * Icon class of the filter search input icon.
    */
   @Prop() searchIcon?: string = "fa-solid:search";
 
@@ -191,7 +191,7 @@ export class AnyListbox {
   @Prop() filterMatchMode: string = "contains";
 
   /**
-   * Locale to use in filtering. The default locale is the host environment's current locale
+   * Locale to use in filtering. The default locale is the host environment's current locale.
    */
   @Prop() filterLocale: string = undefined;
 
@@ -230,6 +230,7 @@ export class AnyListbox {
         value: newValue,
       });
     }
+    if (this.virtualScroll && _.isEmpty(newValue)) this.onClusterChanged();
   }
 
   get optionsToRender(): any[] {
@@ -292,6 +293,7 @@ export class AnyListbox {
   }
 
   componentWillRender() {}
+  componentWillUpdate() {}
 
   onClusterChanged() {
     let items = this.element.shadowRoot.querySelectorAll(".any-listbox-item");
@@ -303,10 +305,11 @@ export class AnyListbox {
         get(this.optionLabel.split("."), this.optionsToRender[index])
       );
     }
-    if (this.value) {
-      if (this.multiple) this.setSelectedVirtualOptionMultiple(this.value);
-      else this.setSelectedVirtualOptionSingle(this.value);
-    }
+    // if (this.value) {
+    if (this.multiple && Array.isArray(this.value))
+      this.setSelectedVirtualOptionMultiple(this.value);
+    else this.setSelectedVirtualOptionSingle(this.value);
+    // }
   }
 
   private itemClick(event: Event, selected: any) {
@@ -834,6 +837,7 @@ export class AnyListbox {
                     >
                       {multiple && checkbox && (
                         <any-checkbox
+                          exportparts="any-checkbox-box-highlight"
                           inputId={"cb" + i}
                           id={"cb" + i}
                           binary={true}

@@ -34,7 +34,7 @@ h6 {
   font-family: inherit;
   font-weight: 600;
   line-height: 1.2;
-  color: inherit;
+  color: var(--surface-900);
 }
 h1:first-child,
 h2:first-child,
@@ -46,27 +46,27 @@ h6:first-child {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
   font-size: 1.5rem;
 }
 
-h5 {
+h3 {
   font-size: 1.25rem;
 }
 
-h6 {
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
   font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
 }
 
 p {
@@ -85,11 +85,10 @@ p {
     background-color: rgba(165, 165, 165, 0.1);
   }
 }
-pre[class*="language-"]:before,
-pre[class*="language-"]:after {
+pre[class*=language-]:before, pre[class*=language-]:after {
   display: none !important;
 }
-pre[class*="language-"] code {
+pre[class*=language-] code {
   border-left: 10px solid var(--surface-d) !important;
   box-shadow: none !important;
   background: var(--surface-e) !important;
@@ -98,53 +97,47 @@ pre[class*="language-"] code {
   font-size: 14px;
   text-shadow: none;
 }
-pre[class*="language-"] code .token.tag,
-pre[class*="language-"] code .token.keyword {
+pre[class*=language-] code .token.tag, pre[class*=language-] code .token.keyword {
   color: #2196f3 !important;
 }
-pre[class*="language-"] code .token.attr-name,
-pre[class*="language-"] code .token.attr-string {
+pre[class*=language-] code .token.attr-name, pre[class*=language-] code .token.attr-string {
   color: #2196f3 !important;
 }
-pre[class*="language-"] code .token.attr-value {
+pre[class*=language-] code .token.attr-value {
   color: #4caf50 !important;
 }
-pre[class*="language-"] code .token.punctuation {
+pre[class*=language-] code .token.punctuation {
   color: var(--text-color);
 }
-pre[class*="language-"] code .token.operator,
-pre[class*="language-"] code .token.string {
+pre[class*=language-] code .token.operator, pre[class*=language-] code .token.string {
   background: transparent;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
   background-color: #fdfdfd;
   box-sizing: border-box;
   margin-bottom: 1em;
 }
 
-pre[class*="language-"] {
+pre[class*=language-] {
   position: relative;
   margin: 0.5em 0;
   overflow: visible;
   padding: 0;
 }
-pre[class*="language-"] > code {
+pre[class*=language-] > code {
   position: relative;
   border-left: 10px solid #358ccb;
   box-shadow: -1px 0 0 0 #358ccb, 0 0 0 1px #dfdfdf;
   background-color: #fdfdfd;
-  background-image: linear-gradient(
-    transparent 50%,
-    rgba(69, 142, 209, 0.04) 0
-  );
+  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 0);
   background-size: 3em 3em;
   background-origin: content-box;
   background-attachment: local;
 }
 
-code[class*="language"] {
+code[class*=language] {
   max-height: inherit;
   height: inherit;
   padding: 0 1em;
@@ -152,6 +145,42 @@ code[class*="language"] {
   overflow: auto;
 }
 
+/* Define CSS variables for both light and dark theme colors */
+:root {
+  --light-background-color: rgba(255, 255, 255, 0.6);
+  --dark-background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply default background color (light) */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background-color: var(--dark-background-color);
+}
+
+/* Apply dark theme styles */
+/* Styles for the rotating spinner icon */
+.loader .iconify {
+  animation: rotate 2s linear infinite;
+  font-size: 3rem; /* Adjust the size as needed */
+  color: var(--primaryColor); /* Change to your desired color */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .layout-wrapper {
   width: 100%;
   float: none;
@@ -166,6 +195,9 @@ code[class*="language"] {
   margin-left: 250px;
   height: 100%;
   padding-bottom: 80px;
+}
+.layout-content .layout-content-inner {
+  padding: 2rem 4rem;
 }
 .layout-content .content-section {
   padding: 2rem;
@@ -197,10 +229,7 @@ code[class*="language"] {
   display: flex;
   justify-content: flex-end;
 }
-.layout-content
-  .content-section.introduction
-  app-demoActions
-  .any-button-icon-only {
+.layout-content .content-section.introduction app-demoActions .any-button-icon-only {
   padding: 0.5rem 0;
 }
 .layout-content .content-section.introduction app-demoActions a:hover {
@@ -353,7 +382,6 @@ code[class*="language"] {
 }
 
 .layout-topbar {
-  background-color: var(--surface-a);
   /* background-color: var(--primaryColor); */
   height: 70px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
@@ -362,6 +390,12 @@ code[class*="language"] {
   align-items: center;
   padding: 0 35px;
   margin-left: 250px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 997;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 .layout-topbar .menu-button {
   display: none;
@@ -370,11 +404,13 @@ code[class*="language"] {
   height: 70px;
   line-height: 70px;
   text-align: center;
-  transition: background-color 0.2s;
   cursor: pointer;
 }
-.layout-topbar .menu-button:hover {
-  background-color: var(--surface-c);
+.layout-topbar .menu-button svg * {
+  transition: fill 0.2s;
+}
+.layout-topbar .menu-button:hover svg * {
+  fill: var(--primary-color);
 }
 .layout-topbar .menu-button svg {
   font-size: 24px;
@@ -385,8 +421,7 @@ code[class*="language"] {
   color: var(--primary-color-text);
   padding: 0.5rem;
   border-radius: 4px;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   max-width: 39px;
   max-height: 39px;
   display: flex;
@@ -421,8 +456,7 @@ code[class*="language"] {
   transition: border-bottom-color 0.2s;
   cursor: pointer;
 }
-.layout-topbar .topbar-menu > li > a:focus,
-.layout-topbar .topbar-menu > li > a:hover {
+.layout-topbar .topbar-menu > li > a:focus, .layout-topbar .topbar-menu > li > a:hover {
   border-bottom-color: var(--primary-color);
 }
 .layout-topbar .topbar-menu > li > a:focus {
@@ -476,8 +510,6 @@ code[class*="language"] {
 .full-card {
   background: var(--surface-e);
   padding: 2rem;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   margin-bottom: 2rem;
 }
@@ -534,8 +566,7 @@ code[class*="language"] {
 
 .any-link {
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 4px;
 }
 
@@ -582,13 +613,15 @@ code[class*="language"] {
 }
 
 @media screen and (max-width: 960px) {
+  app-docsection-nav {
+    display: none !important;
+  }
   .layout-wrapper .layout-news {
     margin-left: 0;
   }
   .layout-wrapper .layout-news .layout-news-button {
     display: none;
   }
-
   .layout-topbar {
     margin-left: 0;
     height: 110px;
@@ -597,7 +630,9 @@ code[class*="language"] {
     padding: 0;
   }
   .layout-topbar .menu-button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .layout-topbar .logo img {
     width: 150px;
@@ -607,7 +642,6 @@ code[class*="language"] {
     margin-right: 23px;
   }
   .layout-topbar .topbar-menu {
-    background-color: var(--surface-a);
     width: 100%;
     height: 40px;
     margin: 0;
@@ -630,7 +664,6 @@ code[class*="language"] {
   .layout-topbar .topbar-menu > li.topbar-submenu > ul {
     top: 40px;
   }
-
   .layout-sidebar {
     transform: translateX(-100%);
     z-index: 999;
@@ -638,7 +671,6 @@ code[class*="language"] {
   .layout-sidebar.active {
     transform: translateX(0);
   }
-
   .layout-content {
     margin-left: 0;
   }
@@ -662,7 +694,6 @@ code[class*="language"] {
     width: 100%;
     height: 100%;
   }
-
   .layout-mask {
     background-color: rgba(0, 0, 0, 0.1);
   }
@@ -676,7 +707,6 @@ code[class*="language"] {
     background-color: rgba(0, 0, 0, 0.4);
     transition: background-color 0.5s;
   }
-
   .home .introduction > div {
     width: 100%;
   }
@@ -689,7 +719,6 @@ code[class*="language"] {
   .home .prosupport > div {
     width: 100%;
   }
-
   .layout-config .layout-config-button {
     left: auto;
     right: -52px;
@@ -697,22 +726,21 @@ code[class*="language"] {
   .layout-config.layout-config-active {
     width: 100%;
   }
-
   .blocked-scroll {
     overflow: hidden;
   }
-
   .layout-footer {
-    /* width: calc(100% - 4rem); */
     width: 100%;
     left: 0;
   }
 }
 @media screen and (max-width: 640px) {
+  app-docsection-nav {
+    display: none !important;
+  }
   .layout-wrapper.layout-news-active .topbar-menu > li.topbar-submenu > ul {
     top: 180px;
   }
-
   .layout-topbar .topbar-menu > li.topbar-submenu {
     position: static;
   }
@@ -781,11 +809,9 @@ code[class*="language"] {
   .product-item h5 {
     font-size: 1rem;
   }
-
   .product-item img {
     width: 50px;
   }
-
   .product-item .product-category,
   .product-item .product-category-icon {
     display: none;
@@ -810,8 +836,7 @@ code[class*="language"] {
 .any-buttonset any-button:not(:last-child)::part(any-button) {
   border-right: 0 none;
 }
-.any-buttonset
-  any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
+.any-buttonset any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
   border-radius: 0;
 }
 .any-buttonset any-button:first-of-type::part(any-button) {
@@ -827,7 +852,6 @@ code[class*="language"] {
   .buttons-intro any-button::part(any-button) {
     margin-bottom: 0.5rem;
   }
-
   .responsive any-button {
     width: 100%;
   }
@@ -848,9 +872,7 @@ code[class*="language"] {
   .responsive .any-buttonset any-button::part(any-button) {
     margin-bottom: 0;
   }
-  .responsive
-    .any-buttonset
-    any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
+  .responsive .any-buttonset any-button:not(:first-of-type):not(:last-of-type)::part(any-button) {
     border-radius: 0;
   }
   .responsive .any-buttonset any-button:first-of-type::part(any-button) {

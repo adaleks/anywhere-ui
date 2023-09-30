@@ -60,6 +60,8 @@ Type: `Promise<HTMLButtonElement>`
 ### Used by
 
  - [any-input-number](../input-number)
+ - [app-code](../app-showcase/doc/app-code)
+ - [app-doc](../app-showcase/doc/app-doc)
 
 ### Depends on
 
@@ -72,6 +74,8 @@ graph TD;
   any-button --> any-badge
   any-button --> any-ripple-effect
   any-input-number --> any-button
+  app-code --> any-button
+  app-doc --> any-button
   style any-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

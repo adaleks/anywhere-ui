@@ -31,6 +31,19 @@
 | `valueChange` | Callback to invoke when value of dropdown changes. | `CustomEvent<any>` |
 
 
+## Dependencies
+
+### Used by
+
+ - [app-config](../app-showcase/config/app-config)
+
+### Graph
+```mermaid
+graph TD;
+  app-config --> any-input-switch
+  style any-input-switch fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

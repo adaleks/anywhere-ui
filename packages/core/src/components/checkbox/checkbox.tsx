@@ -15,6 +15,12 @@ import Iconify from "@iconify/iconify";
 import { loadIcons } from "../../utils/load-icons";
 import { renderHiddenInput } from "../../utils/helpers";
 
+/**
+ * Checkbox is an extension to standard checkbox element with theming.
+ *
+ * @part any-checkbox-box-highlight - This represents the container that encapsulates the checkbox mark and its associated visual elements.
+ * @part any-checkbox-box - This refers to the actual checkmark symbol within the checkbox, which indicates the checked state of the component.
+ */
 @Component({
   tag: "any-checkbox",
   styleUrl: "checkbox.scss",
@@ -175,6 +181,9 @@ export class AnyCheckbox {
     }
   }
 
+  /**
+   * Focuses on the checkbox element.
+   */
   @Method()
   async inputFocus() {
     this.checkbox.focus();

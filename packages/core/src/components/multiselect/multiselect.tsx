@@ -165,6 +165,11 @@ export class AnyMultiselect {
   @Prop({ mutable: true }) value?: any = null;
 
   /**
+   * Whether header checkbox is shown in multiple mode
+   */
+  @Prop() showToggleAll: boolean = true;
+
+  /**
    * Callback to invoke when value of dropdown changes
    */
   @Event() valueChange?: EventEmitter;
@@ -439,7 +444,6 @@ export class AnyMultiselect {
   }
 
   onFocusCallback(e: FocusEvent) {
-    console.log(e);
     if (this.readonly) return;
     this.focus = true;
 
@@ -577,6 +581,7 @@ export class AnyMultiselect {
               checkbox={checkbox}
               filter={filter}
               dataKey={dataKey}
+              showToggleAll={this.showToggleAll}
               scrollerHeight={
                 this.virtualScroll ? this.panelScrollHeight : undefined
               }

@@ -7,6 +7,7 @@ import {
   Watch,
   Event,
   EventEmitter,
+  Listen,
 } from "@stencil/core";
 import Clusterize from "clusterize.js";
 import { getRows, uuid, scrollStop } from "../../utils/utils";
@@ -127,6 +128,11 @@ export class AnyVirtualScroller {
    */
   @Event() aOnItemClick?: EventEmitter;
 
+  @Listen("resize", { target: "window" })
+  async handleWindowResize(_e: Event) {
+    await this.checkAndLoadIfVisible();
+  }
+
   @Watch("items")
   async itemsChanged() {
     if (this.clusterize) {
@@ -174,6 +180,50 @@ export class AnyVirtualScroller {
   }
 
   async componentDidLoad() {
+    await this.checkAndLoadIfVisible();
+  }
+
+  async checkAndLoadIfVisible() {
+    let timeoutId = null;
+    const contentEl = this.element.querySelector(
+      "#any-virtualscroller-content-" + this.instanceUuid
+    ) as HTMLElement;
+    const checkVisibility = async () => {
+      const isContentElVisible = await this.isElementVisible(contentEl);
+      if (isContentElVisible && this.items.length > 0) {
+        clearInterval(intervalId);
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(async () => {
+          if (this.clusterize) this.clusterize.clear();
+          await this.loadVirtual();
+        });
+      }
+    };
+
+    const intervalId = setInterval(checkVisibility, 1000); // Check every 1000 milliseconds (1 second)
+    checkVisibility(); // Check immediately
+  }
+
+  async isElementVisible(element) {
+    return new Promise((resolve) => {
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          resolve(true);
+        }
+      }, options);
+
+      observer.observe(element);
+    });
+  }
+
+  async loadVirtual() {
     let itemSlotNode = this.element
       .querySelector('[slot="item"]')
       .cloneNode(true) as HTMLElement;

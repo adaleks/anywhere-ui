@@ -5,6 +5,7 @@
     "install-all": "lerna exec npm install",
     "start": "lerna run start --scope=@anywhere-ui/core --stream",
     "build": "npm run build.core && npm run build.framework-bindings",
+    "build-doc-json": "lerna run build-doc-json --scope=@anywhere-ui/core --stream",
     "build.watch": "lerna run build.watch --scope=@anywhere-ui/core --stream",
     "build.core": "lerna run build --scope=@anywhere-ui/core --stream",
     "build.framework-bindings": "lerna run build --scope=@anywhere-ui/{angular,react,vue} --stream",
