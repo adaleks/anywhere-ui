@@ -14,7 +14,7 @@ import {
 import _ from "lodash";
 import Iconify from "@iconify/iconify";
 import { loadIcons } from "../../utils/load-icons";
-import { findAndReplaceInnerHtml, getNodeIndex, get } from "../../utils/utils";
+import { findAndReplaceInnerHtml, get } from "../../utils/utils";
 import { renderHiddenInput } from "../../utils/helpers";
 
 const parseValue = (value: any) => {
@@ -34,12 +34,11 @@ const parseValue = (value: any) => {
 })
 export class AnyDropdown {
   private dropdownWrapper: HTMLElement;
-  private open: boolean = false;
-  private openDown: boolean = true;
   private selectedOptionLabel: string = null;
   private hasItemSlot: boolean;
   private hasSelectedItemSlot: boolean;
   private selectedItem: any = null;
+  private textInput?: HTMLInputElement;
 
   @Element() private element: HTMLElement;
 
@@ -64,6 +63,11 @@ export class AnyDropdown {
    * Name of the dropdown input.
    */
   @Prop() name: string = this.inputId;
+
+  /**
+   * When specified, displays a filter input at header
+   */
+  @Prop() filter: boolean = false;
 
   /**
    * Name of the value field of an option
@@ -153,22 +157,22 @@ export class AnyDropdown {
   /**
    * Callback to invoke when dropdown overlay gets visible
    */
-  @Event() aOnShow?: EventEmitter;
+  @Event() aOnPanelShow?: EventEmitter;
 
   /**
    * Callback to invoke when dropdown overlay before gets visible
    */
-  @Event() aOnShowStart?: EventEmitter;
+  @Event() aOnPanelShowStart?: EventEmitter;
 
   /**
    * Callback to invoke when dropdown overlay gets hidden
    */
-  @Event() aOnHide?: EventEmitter;
+  @Event() aOnPanelHide?: EventEmitter;
 
   /**
    * Callback to invoke when dropdown overlay before gets hidden
    */
-  @Event() aOnHideStart?: EventEmitter;
+  @Event() aOnPanelHideStart?: EventEmitter;
 
   /**
    * Callback to invoke when dropdown gets focus
@@ -297,94 +301,57 @@ export class AnyDropdown {
   }
 
   private handleElementClick(e) {
-    const dropdownClearElement = this.element.shadowRoot.querySelector(
+    if (this.disabled || this.readonly) return;
+    const multiselectClearElement = this.element.shadowRoot.querySelector(
       ".any-dropdown-clear-icon"
-    ) as HTMLElement;
+    );
 
-    this.open = !this.open;
-    if (e.composedPath().includes(dropdownClearElement)) {
-      this.value = null;
-      this.selectedOptionLabel = null;
-      if (this.isOpened) {
-        this.animatePanelAppearance("close");
+    if (!e.composedPath().includes(multiselectClearElement)) {
+      const overlayElement = this.element.shadowRoot
+        .querySelector("any-listbox")
+        .shadowRoot.querySelector(".any-listbox-header") as HTMLElement;
+      if (!e.composedPath().includes(overlayElement)) {
+        this.isOpened = !this.isOpened;
       }
-      this.dropdownWrapper.blur();
-      dropdownClearElement.style.display = "none";
-      this.aOnBlur.emit(e);
-      this.valueChange.emit({
-        originalEvent: e,
-        value: this.value,
+      if (!this.isOpened) this.textInput.focus();
+    } else {
+      this.isOpened = false;
+    }
+
+    if (!this.isOpened) {
+      const rippleElements = this.element.shadowRoot
+        .querySelector("any-listbox")
+        ?.shadowRoot.querySelectorAll("any-ripple-effect");
+
+      rippleElements?.forEach((rippleElement) => {
+        rippleElement.shadowRoot
+          ?.querySelector(".any-ink")
+          ?.classList.remove("any-ink-active");
       });
-      return;
-    } else {
-      if (this.readonly) return;
-
-      this.dropdownWrapper.classList.add("any-state-focus");
-      this.dropdownWrapper.setAttribute("part", "any-dropdown-focused");
-      this.aOnFocus.emit(e);
-    }
-
-    if (this.open) {
-      this.animatePanelAppearance("open");
-    } else {
-      this.animatePanelAppearance("close");
     }
   }
 
-  private handleClickOutside(e) {
-    if (e.srcElement !== this.element && this.dropdownWrapper) {
-      this.dropdownWrapper.classList.remove("any-state-focus");
-      this.dropdownWrapper.setAttribute("part", "any-dropdown");
+  handleClickOutside = (event: MouseEvent) => {
+    const overlayElement = this.element.shadowRoot
+      .querySelector("any-overlay")
+      ?.shadowRoot.querySelector(".any-overlay");
+    const clickedElement = event.target as HTMLElement;
+    if (
+      overlayElement &&
+      !overlayElement.contains(clickedElement) &&
+      !this.element.contains(clickedElement) &&
+      !clickedElement.classList.contains(".any-element")
+    ) {
+      this.isOpened = false;
     }
-    this.open = false;
-    this.animatePanelAppearance("close");
-  }
+    if (!this.element.contains(clickedElement) && this.textInput) {
+      this.textInput.blur();
+    }
+  };
 
-  /**
-   * Panel appearance animation definition
-   *
-   * @private
-   * @param {string} action
-   * @memberof AnyDropdown
-   */
-  private animatePanelAppearance(action: string) {
-    const dropdownPanel = this.element.shadowRoot.querySelector(
-      ".any-dropdown-panel"
-    ) as HTMLElement;
-    if (action === "open") {
-      this.isOpened = true;
-      if (!dropdownPanel) {
-        window.requestAnimationFrame(() => this.animatePanelAppearance("open"));
-      } else {
-        document.removeEventListener("animationend", () => {});
-        dropdownPanel.classList.remove(this.hideAnimation + "-animation");
-        dropdownPanel.classList.add(this.showAnimation + "-animation");
-        // dropdownPanel.style.zIndex = this.baseZIndex ;
-        if (this.openDown) {
-          dropdownPanel.classList.add("direction-down");
-          dropdownPanel.style.top = this.dropdownWrapper.offsetHeight + "px";
-        } else {
-          dropdownPanel.classList.add("direction-up");
-          dropdownPanel.style.top = "-" + this.panelScrollHeight;
-        }
-        dropdownPanel.style.left = "0px";
-        dropdownPanel.style.zIndex = this.autoZIndex
-          ? (1090 + getNodeIndex(this.element)).toString()
-          : this.baseZIndex;
-      }
-    } else {
-      if (dropdownPanel) {
-        dropdownPanel.classList.remove(this.showAnimation + "-animation");
-        dropdownPanel.classList.add(this.hideAnimation + "-animation");
-        dropdownPanel.addEventListener(
-          "animationend",
-          () => {
-            this.isOpened = false;
-          },
-          false
-        );
-      }
-    }
+  onClearClick(_e: MouseEvent) {
+    this.value = null;
+    // this.focus = false;
   }
 
   private onValueChangeCallback(event) {
@@ -415,23 +382,27 @@ export class AnyDropdown {
     return newNode.innerHTML;
   }
 
-  onAnimationEndCallback(e: AnimationEvent) {
-    // console.log('event anim', e);
-    if (e.animationName === this.showAnimation) {
-      this.aOnShow.emit(e);
+  onOverlayShowStart(e: CustomEvent) {
+    if (this.filter) {
+      const listbox = this.element.shadowRoot.querySelector(
+        "any-listbox"
+      ) as HTMLAnyListboxElement;
+      listbox.setFilterInputFocus();
     }
-    if (e.animationName === this.hideAnimation) {
-      this.aOnHide.emit(e);
-    }
+
+    this.aOnPanelShowStart.emit(e);
   }
 
-  onAnimationStartCallback(e: AnimationEvent) {
-    if (e.animationName === this.showAnimation) {
-      this.aOnShowStart.emit(e);
-    }
-    if (e.animationName === this.hideAnimation) {
-      this.aOnHideStart.emit(e);
-    }
+  onOverlayHideStart(e: CustomEvent) {
+    this.aOnPanelHideStart.emit(e);
+  }
+
+  onOverlayHide(e: CustomEvent) {
+    this.aOnPanelHide.emit(e);
+  }
+
+  onOverlayShow(e: CustomEvent) {
+    this.aOnPanelShow.emit(e);
   }
 
   onFocusCallback(e: FocusEvent) {
@@ -498,10 +469,26 @@ export class AnyDropdown {
               class="any-dropdown-label any-inputtext any-corner-all any-placeholder"
             ></span>
           )}
+          <div class="any-hidden-accessible">
+            <input
+              type="text"
+              ref={(el) => (this.textInput = el as HTMLInputElement)}
+              tabindex={this.anyTabIndex}
+              id={this.inputId}
+              name={name}
+              onFocus={(e) => {
+                this.onFocusCallback(e);
+              }}
+              onBlur={(e) => {
+                this.onFocusOutCallback(e);
+              }}
+            />
+          </div>
           {this.showClear && (
             <i
               class="any-dropdown-clear-icon iconify"
               style={{ display: this.selectedItem ? "block" : "none" }}
+              onClick={(e) => this.onClearClick(e)}
             ></i>
           )}
           <div
@@ -510,39 +497,42 @@ export class AnyDropdown {
           >
             <span class="any-dropdown-trigger-icon iconify"></span>
           </div>
-          {this.isOpened && (
-            <div
-              class="any-widget-content any-widget any-corner-all any-dropdown-panel any-shadow"
-              onAnimationEnd={(e) => this.onAnimationEndCallback(e)}
-              onAnimationStart={(e) => this.onAnimationStartCallback(e)}
+          <any-overlay
+            style={
+              !this.virtualScroll && {
+                "max-height": this.panelScrollHeight,
+              }
+            }
+            target={this.element}
+            visible={this.isOpened}
+            hideAnimation={this.hideAnimation}
+            showAnimation={this.showAnimation}
+            onAOnShowStart={(e) => this.onOverlayShowStart(e)}
+            onAOnHideStart={(e) => this.onOverlayHideStart(e)}
+            onAOnHide={(e) => this.onOverlayHide(e)}
+            onAOnShow={(e) => this.onOverlayShow(e)}
+          >
+            <any-listbox
+              exportparts="any-ink: any-ink"
+              name={name}
+              disabled={this.disabled}
+              readonly={this.readonly}
+              options={this.options}
+              optionLabel={this.optionLabel}
+              optionValue={this.optionValue}
+              value={value}
+              filter={this.filter}
+              scrollerHeight={
+                this.virtualScroll ? this.panelScrollHeight : undefined
+              }
+              virtualScroll={this.virtualScroll}
+              onValueChange={(ev: any) => this.onValueChangeCallback(ev)}
             >
-              <div
-                class="any-dropdown-items-wrapper"
-                style={
-                  !this.virtualScroll && {
-                    "max-height": this.panelScrollHeight,
-                  }
-                }
-              >
-                <any-listbox
-                  exportparts="any-ink: any-ink"
-                  options={this.options}
-                  value={this.value}
-                  optionLabel={this.optionLabel}
-                  optionValue={this.optionValue}
-                  scrollerHeight={
-                    this.virtualScroll ? this.panelScrollHeight : null
-                  }
-                  virtualScroll={this.virtualScroll}
-                  onValueChange={(ev: any) => this.onValueChangeCallback(ev)}
-                >
-                  {this.hasItemSlot && (
-                    <div slot="item" innerHTML={this.getContent("item")}></div>
-                  )}
-                </any-listbox>
-              </div>
-            </div>
-          )}
+              {this.hasItemSlot && (
+                <div slot="item" innerHTML={this.getContent("item")}></div>
+              )}
+            </any-listbox>
+          </any-overlay>
         </div>
       </Host>
     );

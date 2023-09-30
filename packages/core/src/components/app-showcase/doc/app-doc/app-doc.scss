@@ -1,0 +1,110 @@
+@import "../../../../themes/anywhere.globals.scss";
+
+:host {
+  display: block;
+  .doc-component .doc-component-top {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 17rem 0 0;
+    border-bottom: 1px solid var(--surface-border);
+    margin-bottom: 2rem;
+
+    .app-demoactions {
+      display: flex;
+      align-items: center;
+      margin-top: 1em;
+    }
+  }
+
+  .doc-tabmenu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: 0;
+
+    li {
+      margin-bottom: -1px;
+
+      button {
+        background-color: transparent;
+        border: 0 none;
+        display: block;
+        padding: 1rem 0;
+        min-width: 12rem;
+        text-align: center;
+        color: var(--text-color-secondary);
+        font-size: 1.125rem;
+        letter-spacing: 2px;
+        cursor: pointer;
+        margin: 0;
+        transition: all 0.3s;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: var(--border-round);
+        border-top-left-radius: var(--border-round);
+
+        &:hover {
+          border-bottom-color: var(--text-color);
+        }
+
+        &:focus {
+          outline: 0 none;
+        }
+      }
+
+      &.doc-tabmenu-active {
+        button {
+          color: var(--primary-color);
+          border-bottom-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .doc-tabpanel,
+  .doc {
+    display: flex;
+  }
+
+  .doc-main {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+  }
+
+  .doc-intro {
+    margin-bottom: 2rem;
+
+    p {
+      font-size: 1.25rem;
+      color: var(--surface-800);
+    }
+  }
+
+  .layout-wrapper-light {
+    .doc-section-description {
+      > p {
+        i {
+          background-color: var(--primary-100);
+          color: var(--primary-900);
+        }
+      }
+    }
+  }
+
+  .layout-wrapper-dark {
+    .doc-section-description {
+      > p {
+        i {
+          background-color: var(--highlight-bg);
+          color: var(--highlight-text-color);
+        }
+      }
+    }
+  }
+
+  .doc-section-code-tooltip .any-tooltip-text {
+    padding: 0.5rem;
+    font-size: 11px;
+  }
+}

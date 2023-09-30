@@ -9,8 +9,8 @@
   --text-color-secondary: #6c757d;
   --primary-color: var(--primaryColor);
   --primary-color-text: #ffffff;
-  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
   --surface-0: #ffffff;
   --surface-50: #f9fafb;
   --surface-100: #f8f9fa;
@@ -22,6 +22,7 @@
   --surface-700: #495057;
   --surface-800: #343a40;
   --surface-900: #212529;
+  --surface-border: #dee2e6;
   --content-padding: 1.25rem;
   --inline-spacing: 0.5rem;
   --cog-icon: url("https://api.iconify.design/fa-solid/cog.svg?color=%23ffffff&height=26");
@@ -146,8 +147,8 @@
   --primary-color-l: 50%;
 
   //Global
-  --fontFamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --fontFamily: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
   --fontSize: 1rem;
   --fontWeight: normal;
   --textColor: #495057;
@@ -157,9 +158,8 @@
   --anyIconFontSize: 1rem;
   --disabledOpacity: 0.6;
   --errorColor: #e4677e;
-  --formElementTransition: background-color var(--transitionDuration),
-    color var(--transitionDuration), border-color var(--transitionDuration),
-    box-shadow var(--transitionDuration);
+  --formElementTransition: background-color var(--transitionDuration), color var(--transitionDuration),
+    border-color var(--transitionDuration), box-shadow var(--transitionDuration);
 
   //anchors
   --linkColor: var(--primaryColor);
@@ -171,11 +171,7 @@
   --highlightColorText: var(--primaryTextColor);
 
   //focus
-  --focusOutlineColor: hsl(
-    var(--primary-color-h),
-    var(--primary-color-s),
-    calc(var(--primary-color-l) + 30%)
-  );
+  --focusOutlineColor: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 30%));
   --focusOutline: 0 none;
   --focusOutlineOffset: 0;
   --focusShadow: 0 0 0 0.2rem var(--focusOutlineColor);
@@ -189,8 +185,7 @@
   --inputFocusBorderColor: var(--primaryColor);
   --inputErrorBorder: 1px solid #a80000;
   --inputPlaceholderTextColor: #6c757d;
-  --inputTransition: border-color var(--transitionDuration),
-    box-shadow var(--transitionDuration);
+  --inputTransition: border-color var(--transitionDuration), box-shadow var(--transitionDuration);
   --inputFilledBg: #f8f9fa;
   --inputFilledFocusBg: #ffffff;
   --inputFilledHoverBg: #f8f9fa;
@@ -212,8 +207,7 @@
   --inputListItemBorder: 0 none;
   --inputListItemMargin: 0;
   --inputListItemFocusShadow: inset var(--focusShadow);
-  --inputListItemTransition: background-color var(--transitionDuration),
-    box-shadow var(--transitionDuration);
+  --inputListItemTransition: background-color var(--transitionDuration), box-shadow var(--transitionDuration);
   --inputListItemDividerColor: #d8dae2;
   --inputListHeaderPadding: 0.5rem 1rem;
   --inputListHeaderMargin: 0;
@@ -223,8 +217,7 @@
   --inputListHeaderSearchIconColor: var(--primaryColor);
   --inputListHeaderCloseIconColor: var(--textSecondaryColor);
   --inputListHeaderCloseIconHoverColor: var(--textColor);
-  --inputListHeaderCloseIconTransition: color var(--transitionDuration),
-    background-color var(--transitionDuration),
+  --inputListHeaderCloseIconTransition: color var(--transitionDuration), background-color var(--transitionDuration),
     box-shadow var(--transitionDuration);
 
   //inputs with panels (e.g. password)
@@ -317,8 +310,8 @@
   // buttons
   --outlinedButtonBorder: 1px solid;
   --roundedButtonBorderRadius: 2rem;
-  --raisedButtonShadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  --raisedButtonShadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   --textButtonHoverBgOpacity: 0.04;
   --textButtonActiveBgOpacity: 0.16;
   --plainButtonTextColor: #6c757d;

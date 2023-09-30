@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Checkbox is an extension to standard checkbox element with theming.
+
 ## Properties
 
 | Property          | Attribute           | Description                                                                                                                                                                                                                                                  | Type      | Default                     |
@@ -37,7 +41,7 @@
 
 ### `inputFocus() => Promise<void>`
 
-
+Focuses on the checkbox element.
 
 #### Returns
 
@@ -46,16 +50,52 @@ Type: `Promise<void>`
 
 
 
+## Shadow Parts
+
+| Part                           | Description                                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `"any-checkbox-box"`           | This refers to the actual checkmark symbol within the checkbox, which indicates the checked state of the component. |
+| `"any-checkbox-box-highlight"` | This represents the container that encapsulates the checkbox mark and its associated visual elements.               |
+
+
+## CSS Custom Properties
+
+| Name                               | Description                                                   |
+| ---------------------------------- | ------------------------------------------------------------- |
+| `--checkboxActiveBg`               | The background color of the checkbox when active.             |
+| `--checkboxActiveBorderColor`      | The border color of the checkbox when active.                 |
+| `--checkboxActiveHoverBg`          | The background color of the checkbox when active and hovered. |
+| `--checkboxActiveHoverBorderColor` | The border color of the checkbox when active and hovered.     |
+| `--checkboxBorder`                 | The border of the checkbox.                                   |
+| `--checkboxHeight`                 | The height of the checkbox.                                   |
+| `--checkboxIconActiveColor`        | The color of the checkbox icon when active.                   |
+| `--checkboxIconActiveHoverColor`   | The color of the checkbox icon when active and hovered.       |
+| `--checkboxIconFontSize`           | The font size of the checkbox icon.                           |
+| `--checkboxWidth`                  | The width of the checkbox.                                    |
+
+
 ## Dependencies
 
 ### Used by
 
  - [any-listbox](../listbox)
+ - [checkbox-basic](../app-showcase/pages/checkbox/checkbox-basic)
+ - [checkbox-disabled](../app-showcase/pages/checkbox/checkbox-disabled)
+ - [checkbox-dynamic](../app-showcase/pages/checkbox/checkbox-dynamic)
+ - [checkbox-group](../app-showcase/pages/checkbox/checkbox-group)
+ - [checkbox-label](../app-showcase/pages/checkbox/checkbox-label)
+ - [checkbox-readonly](../app-showcase/pages/checkbox/checkbox-readonly)
 
 ### Graph
 ```mermaid
 graph TD;
   any-listbox --> any-checkbox
+  checkbox-basic --> any-checkbox
+  checkbox-disabled --> any-checkbox
+  checkbox-dynamic --> any-checkbox
+  checkbox-group --> any-checkbox
+  checkbox-label --> any-checkbox
+  checkbox-readonly --> any-checkbox
   style any-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

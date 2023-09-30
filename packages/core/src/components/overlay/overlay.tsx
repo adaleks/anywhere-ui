@@ -96,7 +96,8 @@ export class AnyOverlay {
   componentDidLoad() {}
 
   componentWillLoad() {
-    // console.log("Component is about to be rendered", this.target, this.element);
+    const targetRect = this.target.getBoundingClientRect();
+    this.positionTop = targetRect.height;
   }
 
   componentDidUpdate() {}
@@ -144,9 +145,9 @@ export class AnyOverlay {
     if (action === "open") {
       if (!overlayPanel) {
         window.requestAnimationFrame(() => {
-          this.showPanel = true;
           this.calculatePosition();
           this.calculateSize();
+          this.showPanel = true;
           this.animatePanelAppearance("open");
         });
       } else {
@@ -172,6 +173,13 @@ export class AnyOverlay {
           "animationend",
           () => {
             this.showPanel = false;
+            const targetRect = this.target.getBoundingClientRect();
+            if (!this.openDown) {
+              this.positionTop = targetRect.height;
+            } else {
+              const overlayHeight = overlayPanel.offsetHeight;
+              this.positionTop = -overlayHeight;
+            }
           },
           false
         );

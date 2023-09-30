@@ -1,5 +1,5 @@
 .layout-topbar {
-    background-color: var(--surface-a);
+    // background-color: var(--surface-a);
     /* background-color: var(--primaryColor); */
     height: 70px;
     box-shadow: 0 0 4px rgba(0 0 0/25%);
@@ -8,6 +8,13 @@
     align-items: center;
     padding: 0 35px;
     margin-left: 250px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    // background-color: var(--surface-b);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 
     .menu-button {
         display: none;
@@ -16,11 +23,16 @@
         height: 70px;
         line-height: 70px;
         text-align: center;
-        transition: background-color .2s;
         cursor: pointer;
-
+        svg * {
+            transition: fill 0.2s;
+        }
         &:hover {
-            background-color: var(--surface-c);
+            svg * {
+                fill: var(--primary-color);
+            }
+            // background-color: var(--surface-c);
+            // border: 1px solid var(--primary-color);
         }
 
         svg {
@@ -32,9 +44,12 @@
     .app-theme {
         background-color: var(--primary-color);
         color: var(--primary-color-text);
-        padding: .5rem;
+        padding: 0.5rem;
         border-radius: 4px;
-        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+        box-shadow:
+            0 2px 4px -1px rgba(0, 0, 0, 0.2),
+            0 4px 5px 0 rgba(0, 0, 0, 0.14),
+            0 1px 10px 0 rgba(0, 0, 0, 0.12);
         max-width: 39px;
         max-height: 39px;
         display: flex;
@@ -52,11 +67,11 @@
         margin: 0 0 0 auto;
         display: flex;
 
-        >li {
+        > li {
             height: 70px;
             line-height: 70px;
 
-            >a {
+            > a {
                 text-decoration: none;
                 color: var(--text-color);
                 min-width: 120px;

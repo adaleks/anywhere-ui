@@ -125,6 +125,10 @@ export const config: Config = {
     //   type: "dist-hydrate-script",
     // },
     {
+      type: "docs-json",
+      file: "src/doc/docs.json",
+    },
+    {
       type: "dist-custom-elements",
       generateTypeDeclarations: false,
       customElementsExportBehavior: "bundle",

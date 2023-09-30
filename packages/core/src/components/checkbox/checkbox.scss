@@ -1,6 +1,20 @@
 @import "../../themes/anywhere.globals.scss";
 
 :host {
+  /**
+   * CSS variables for the checkbox component.
+   * @prop --checkboxWidth: The width of the checkbox.
+   * @prop --checkboxHeight: The height of the checkbox.
+   * @prop --checkboxBorder: The border of the checkbox.
+   * @prop --checkboxIconFontSize: The font size of the checkbox icon.
+   * @prop --checkboxActiveBorderColor: The border color of the checkbox when active.
+   * @prop --checkboxActiveBg: The background color of the checkbox when active.
+   * @prop --checkboxIconActiveColor: The color of the checkbox icon when active.
+   * @prop --checkboxActiveHoverBg: The background color of the checkbox when active and hovered.
+   * @prop --checkboxIconActiveHoverColor: The color of the checkbox icon when active and hovered.
+   * @prop --checkboxActiveHoverBorderColor: The border color of the checkbox when active and hovered.
+   */
+
   display: inline-flex;
   align-items: center;
   // font-family: var(--fontFamily);

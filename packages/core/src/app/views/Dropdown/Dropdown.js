@@ -61,7 +61,7 @@ export default class extends AbstractView {
 
     // Advanced Dropdown
     this.advancedDropdown = document.querySelector(".dd2");
-    // this.advancedDropdown.readonly = true;
+    this.advancedDropdown.filter = true;
     // this.advancedDropdown.disabled = true;
     // this.advancedDropdown.value = {
     //   code: "NY",

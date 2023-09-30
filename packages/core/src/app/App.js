@@ -1,3 +1,4 @@
+// Import statements for various views
 import GetStarted from "./views/GetStarted/GetStarted.js";
 import Listbox from "./views/Listbox/Listbox.js";
 import Dropdown from "./views/Dropdown/Dropdown.js";
@@ -14,12 +15,15 @@ import RippleEffect from "./views/RippleEffect/RippleEffect.js";
 import RadioButton from "./views/RadioButton/RadioButton.js";
 import Multiselect from "./views/Multiselect/Multiselect.js";
 
+// A cache to store HTML templates with expiration time
 const templateCache = {};
-const tplCacheTimeout = 500000;
+const tplCacheTimeout = 500000; // Timeout for template cache in milliseconds
 
+// Function to convert a path string to a regular expression
 const pathToRegex = (path) =>
   new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
+// Function to extract route parameters from a matched URL
 const getParams = (match) => {
   const values = match.result.slice(1);
   const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(
@@ -33,11 +37,13 @@ const getParams = (match) => {
   );
 };
 
+// Function to navigate to a given URL using pushState
 const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
 };
 
+// Functions to add or remove CSS classes from an element
 const addClass = (element, className) => {
   if (element.classList) element.classList.add(className);
   else element.className += " " + className;
@@ -52,18 +58,35 @@ const removeClass = (element, className) => {
     );
 };
 
+// Function to hide the sidebar menu
 const hideMenu = () => {
   removeClass(document.body, "blocked-scroll");
   removeClass(document.querySelector(".layout-sidebar"), "active");
   removeClass(document.querySelector(".layout-mask"), "layout-mask-active");
 };
 
+// Function to show the sidebar menu
 const onMenuButtonClick = () => {
   addClass(document.body, "blocked-scroll");
   addClass(document.querySelector(".layout-sidebar"), "active");
   addClass(document.querySelector(".layout-mask"), "layout-mask-active");
 };
 
+// Function to update the active state of menu items based on the current path
+const updateMenuActiveState = (currentPath) => {
+  const menuItems = document.querySelectorAll("[data-link]");
+  menuItems.forEach((item) => {
+    item.classList.remove("active");
+    const itemHref = item.getAttribute("href");
+    if (currentPath === "" && itemHref === "/") {
+      item.classList.add("active");
+    } else if (currentPath === itemHref) {
+      item.classList.add("active");
+    }
+  });
+};
+
+// The main router function to handle URL routing and view updates
 const router = async () => {
   const routes = [
     {
@@ -128,11 +151,13 @@ const router = async () => {
     },
   ];
 
-  // Test each route for potential match
+  const currentPath = location.pathname;
+  updateMenuActiveState(currentPath);
+
   const potentialMatches = routes.map((route) => {
     return {
       route: route,
-      result: location.hash.replace("#", "").match(pathToRegex(route.path)),
+      result: currentPath.match(pathToRegex(route.path)),
     };
   });
 
@@ -143,21 +168,12 @@ const router = async () => {
   if (!match) {
     match = {
       route: routes[0],
-      result: [location.pathname],
+      result: [currentPath],
     };
   }
+
   const view = new match.route.view(getParams(match));
   const viewPath = match.route.path;
-
-  const menuItems = document.querySelectorAll("[data-link]");
-  menuItems.forEach(function (item) {
-    item.classList.remove("active");
-    if (location.hash === "") {
-      menuItems[0].classList.add("active");
-    } else if (item.href.indexOf(location.hash.replace("#", "")) > -1) {
-      item.classList.add("active");
-    }
-  });
 
   let html = templateCache[viewPath]?.html;
   const expires = templateCache[viewPath]?.expires;
@@ -171,7 +187,6 @@ const router = async () => {
     };
   }
 
-  // setTimeout(async () => {
   document.querySelector("#app").innerHTML = html;
   if (Prism) {
     Prism.highlightAll();
@@ -179,42 +194,92 @@ const router = async () => {
 
   view.executeScript();
   hideMenu();
-  // }, 10);
 };
 
-window.addEventListener("popstate", router);
+// function handleDocSearchTransformItems(results) {
+//   // const valid = process.env.NODE_ENV !== 'production';
+//   const valid = true;
+//   return results.map((result) => {
+//     if (valid) {
+//       const url = new URL(result.url);
 
+//       url.protocol = window.location.protocol;
+//       url.hostname = window.location.hostname;
+//       url.port = window.location.port;
+//       result.url = url.toString();
+//       // .replace("anywhere-ui-showcase-production/", "");
+//     }
+
+//     console.log(results);
+//     return result;
+//   });
+// }
+
+// Event listener when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // window.AnywhereUI.config.set('rippleEffect', false);
-  // window.AnywhereUI.config.set("translations", {
-  //   emptyMessage: "No results found 1213",
-  //   emptyFilterMessage: "No results found 123",
-  //   choose: "Choose 123",
+  // Event listener for clicks on links with data-link attribute
+  // docsearch({
+  //   appId: "KGAG3J42H0",
+
+  //   apiKey: "10a47a8aff3910e33e260f52158b51f5",
+
+  //   indexName: "dev_anywhereui",
+
+  //   // insights: true, // Optional, automatically send insights when user interacts with search results
+
+  //   container: "#dicsearch",
+
+  //   // debug: false, // Set debug to true if you want to inspect the modal
+  //   transformItems: handleDocSearchTransformItems.bind(this),
   // });
 
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
-      const currentPath = e.target.href.substring(e.target.href.indexOf("#"));
-      if (currentPath === location.hash) return;
-      navigateTo(e.target.href);
-      const menuItems = document.querySelectorAll("[data-link]");
-      menuItems.forEach(function (item) {
-        item.classList.remove("active");
-      });
-      e.target.classList.add("active");
+      const currentPath = e.target.getAttribute("href");
+      if (currentPath === location.pathname) return;
+      navigateTo(currentPath);
+      updateMenuActiveState(currentPath);
     }
   });
 
+  // Event listener for the menu button
   let menuButton = document.querySelector(".menu-button");
   menuButton.onclick = function () {
     onMenuButtonClick();
   };
 
+  // Event listener for the mask (overlay) when the menu is open
   let mask = document.querySelector(".layout-mask");
   mask.onclick = function () {
     hideMenu();
   };
 
+  let previousPathname = location.pathname;
+
+  window.addEventListener("popstate", () => {
+    const newPathname = location.pathname;
+
+    console.log("Previous Pathname:", previousPathname);
+    console.log("New Pathname:", newPathname);
+
+    if (newPathname !== previousPathname) {
+      previousPathname = newPathname;
+      console.log("Pathname Changed. Calling router()");
+      router();
+    } else {
+      console.log("Pathname not changed. Skipping router()");
+    }
+  });
+
+  // Enable router on browser back or forward button
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      // Hide the loader once content is loaded
+      document.querySelector(".loader").style.display = "none";
+    }, 1000);
+  });
+
+  // Initial router call
   router();
 });

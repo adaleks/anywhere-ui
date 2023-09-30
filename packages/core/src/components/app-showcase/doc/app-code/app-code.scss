@@ -1,0 +1,32 @@
+@import "../app-doc/app-doc.scss";
+
+:host {
+  display: block;
+
+  .doc-section-code {
+    // box-shadow:
+    //   0 2px 1px -1px rgba(0, 0, 0, 0.2),
+    //   0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    //   0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    div {
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+    }
+
+    .any-button-label {
+      font-weight: normal;
+      font-size: 0.875rem;
+    }
+
+    .doc-section-code-active {
+      .any-button-label {
+        font-weight: bold;
+      }
+    }
+
+    pre {
+      margin: 0 0 1.5rem 0;
+    }
+  }
+}

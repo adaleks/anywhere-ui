@@ -357,3 +357,112 @@ export const AnyVirtualScroller = /*@__PURE__*/ defineContainer<JSX.AnyVirtualSc
   'aOnItemClick'
 ]);
 
+
+export const AppCode = /*@__PURE__*/ defineContainer<JSX.AppCode>('app-code', undefined, [
+  'code',
+  'service',
+  'selector',
+  'extFiles',
+  'routeFiles',
+  'hideToggleCode',
+  'hideCodeSandbox',
+  'hideStackBlitz'
+]);
+
+
+export const AppConfig = /*@__PURE__*/ defineContainer<JSX.AppConfig>('app-config', undefined);
+
+
+export const AppDoc = /*@__PURE__*/ defineContainer<JSX.AppDoc>('app-doc', undefined, [
+  'docs',
+  'apiDocs',
+  'docTitle',
+  'header',
+  'description',
+  'githubPage'
+]);
+
+
+export const AppDocapisection = /*@__PURE__*/ defineContainer<JSX.AppDocapisection>('app-docapisection', undefined, [
+  'header',
+  'docs'
+]);
+
+
+export const AppDocapitable = /*@__PURE__*/ defineContainer<JSX.AppDocapitable>('app-docapitable', undefined, [
+  'anyId',
+  'label',
+  'data',
+  'description',
+  'relatedProp',
+  'parentTitle',
+  'parentDescription',
+  'parentId',
+  'level',
+  'isInterface'
+]);
+
+
+export const AppDocsection = /*@__PURE__*/ defineContainer<JSX.AppDocsection>('app-docsection', undefined, [
+  'docs',
+  'apiDocs'
+]);
+
+
+export const AppDocsectionNav = /*@__PURE__*/ defineContainer<JSX.AppDocsectionNav>('app-docsection-nav', undefined, [
+  'docs'
+]);
+
+
+export const AppDocsectiontext = /*@__PURE__*/ defineContainer<JSX.AppDocsectiontext>('app-docsectiontext', undefined, [
+  'textTitle',
+  'textId',
+  'level',
+  'label',
+  'parentTitle',
+  'parentDescription',
+  'parentId'
+]);
+
+
+export const CheckboxBasic = /*@__PURE__*/ defineContainer<JSX.CheckboxBasic>('checkbox-basic', undefined, [
+  'textId',
+  'textTitle',
+  'valueChange'
+]);
+
+
+export const CheckboxDisabled = /*@__PURE__*/ defineContainer<JSX.CheckboxDisabled>('checkbox-disabled', undefined, [
+  'textId',
+  'textTitle',
+  'valueChange'
+]);
+
+
+export const CheckboxDynamic = /*@__PURE__*/ defineContainer<JSX.CheckboxDynamic>('checkbox-dynamic', undefined, [
+  'textId',
+  'textTitle',
+  'valueChange'
+]);
+
+
+export const CheckboxGroup = /*@__PURE__*/ defineContainer<JSX.CheckboxGroup>('checkbox-group', undefined, [
+  'textId',
+  'textTitle',
+  'valueChange'
+]);
+
+
+export const CheckboxLabel = /*@__PURE__*/ defineContainer<JSX.CheckboxLabel>('checkbox-label', undefined, [
+  'textId',
+  'textTitle',
+  'valueChange'
+]);
+
+
+export const CheckboxReadonly = /*@__PURE__*/ defineContainer<JSX.CheckboxReadonly>('checkbox-readonly', undefined, [
+  'textId',
+  'textTitle',
+  'valueChange'
+]);
+

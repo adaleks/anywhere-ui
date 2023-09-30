@@ -9,6 +9,12 @@ export interface AnywhereUIConfig {
   rippleEffect?: boolean;
 
   /**
+   * Unstyled mode is enabled for the whole suite by setting unstyled as true.
+   * Theming is implemented with the pass through properties in unstyled mode.
+   */
+  unstyled?: boolean;
+
+  /**
    * The mode determines which platform styles to use for the whole application.
    */
   mode?: string;

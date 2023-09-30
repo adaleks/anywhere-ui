@@ -661,6 +661,10 @@ export class DomHandler {
     return element.offsetParent === null;
   }
 
+  public static isVisible(element: HTMLElement) {
+    return element && element.offsetParent != null;
+  }
+
   public static getFocusableElements(element: HTMLElement) {
     let focusableElements = DomHandler.find(
       element,

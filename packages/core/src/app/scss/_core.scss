@@ -35,7 +35,7 @@ h6 {
     font-family: inherit;
     font-weight: 600;
     line-height: 1.2;
-    color: inherit;
+    color: var(--surface-900);
 
     &:first-child {
         margin-top: 0;
@@ -43,27 +43,27 @@ h6 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
 }
 
 h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
-h4 {
     font-size: 1.5rem;
 }
 
-h5 {
+h3 {
     font-size: 1.25rem;
 }
 
-h6 {
+h4 {
+    font-size: 1.125rem;
+}
+
+h5 {
     font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.875rem;
 }
 
 p {
@@ -73,20 +73,19 @@ p {
 
 @keyframes pulse {
     0% {
-        background-color: rgba(165, 165, 165, 0.1)
+        background-color: rgba(165, 165, 165, 0.1);
     }
 
     50% {
-        background-color: rgba(165, 165, 165, 0.3)
+        background-color: rgba(165, 165, 165, 0.3);
     }
 
     100% {
-        background-color: rgba(165, 165, 165, 0.1)
+        background-color: rgba(165, 165, 165, 0.1);
     }
 }
 
 pre[class*="language-"] {
-
     &:before,
     &:after {
         display: none !important;
@@ -102,19 +101,18 @@ pre[class*="language-"] {
         text-shadow: none;
 
         .token {
-
             &.tag,
             &.keyword {
-                color: #2196F3 !important;
+                color: #2196f3 !important;
             }
 
             &.attr-name,
             &.attr-string {
-                color: #2196F3 !important;
+                color: #2196f3 !important;
             }
 
             &.attr-value {
-                color: #4CAF50 !important;
+                color: #4caf50 !important;
             }
 
             &.punctuation {
@@ -129,35 +127,85 @@ pre[class*="language-"] {
     }
 }
 
-:not(pre)>code[class*=language-],
-pre[class*=language-] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
     background-color: #fdfdfd;
     box-sizing: border-box;
     margin-bottom: 1em;
 }
 
-pre[class*=language-] {
+pre[class*="language-"] {
     position: relative;
-    margin: .5em 0;
+    margin: 0.5em 0;
     overflow: visible;
     padding: 0;
 
-    >code {
+    > code {
         position: relative;
         border-left: 10px solid #358ccb;
-        box-shadow: -1px 0 0 0 #358ccb, 0 0 0 1px #dfdfdf;
+        box-shadow:
+            -1px 0 0 0 #358ccb,
+            0 0 0 1px #dfdfdf;
         background-color: #fdfdfd;
-        background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, .04) 0);
+        background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 0);
         background-size: 3em 3em;
         background-origin: content-box;
         background-attachment: local;
     }
 }
 
-code[class*=language] {
+code[class*="language"] {
     max-height: inherit;
     height: inherit;
     padding: 0 1em;
     display: block;
     overflow: auto;
+}
+
+/* Define CSS variables for both light and dark theme colors */
+:root {
+    --light-background-color: rgba(255, 255, 255, 0.6);
+    --dark-background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply default background color (light) */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: var(--dark-background-color);
+}
+
+/* Apply dark theme styles */
+// @media (prefers-color-scheme: dark) {
+//     .loader {
+//         background-color: var(--dark-background-color);
+//     }
+// }
+// @media (prefers-color-scheme: light) {
+//     .loader {
+//         background-color: var(--light-background-color);
+//     }
+// }
+
+/* Styles for the rotating spinner icon */
+.loader .iconify {
+    animation: rotate 2s linear infinite;
+    font-size: 3rem; /* Adjust the size as needed */
+    color: var(--primaryColor); /* Change to your desired color */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

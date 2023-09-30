@@ -99,6 +99,9 @@ export namespace Components {
          */
         "type": "button" | "submit" | "reset";
     }
+    /**
+     * Checkbox is an extension to standard checkbox element with theming.
+     */
     interface AnyCheckbox {
         /**
           * Inline style of the component.
@@ -124,6 +127,9 @@ export namespace Components {
           * When present, it specifies that the element should be disabled.
          */
         "disabled": boolean;
+        /**
+          * Focuses on the checkbox element.
+         */
         "inputFocus": () => Promise<void>;
         /**
           * Identifier of the focus input to match a label defined for the component.
@@ -183,6 +189,10 @@ export namespace Components {
           * Icon class of the dropdown icon
          */
         "dropdownIcon"?: string;
+        /**
+          * When specified, displays a filter input at header
+         */
+        "filter": boolean;
         /**
           * Transition options of the hide animation
          */
@@ -607,19 +617,19 @@ export namespace Components {
     }
     interface AnyListbox {
         /**
-          * Inline style of the element
+          * Inline style of the element.
          */
         "anyStyle": any;
         /**
-          * When specified, allows selecting items with checkboxes
+          * When specified, allows selecting items with checkboxes.
          */
         "checkbox": boolean;
         /**
-          * A property to uniquely identify a value in options
+          * A property to uniquely identify a value in options.
          */
         "dataKey": string;
         /**
-          * When present, it specifies that the element should be disabled
+          * When present, it specifies that the element should be disabled.
          */
         "disabled": boolean;
         /**
@@ -631,7 +641,7 @@ export namespace Components {
          */
         "emptyMessage": string;
         /**
-          * When specified, displays a filter input at header
+          * When specified, displays a filter input at header.
          */
         "filter": boolean;
         /**
@@ -639,7 +649,7 @@ export namespace Components {
          */
         "filterBy": string;
         /**
-          * Locale to use in filtering. The default locale is the host environment's current locale
+          * Locale to use in filtering. The default locale is the host environment's current locale.
          */
         "filterLocale": string;
         /**
@@ -651,7 +661,7 @@ export namespace Components {
          */
         "filterValue"?: string;
         /**
-          * Whether to display options as grouped when nested options are provided
+          * Whether to display options as grouped when nested options are provided.
          */
         "group": boolean;
         /**
@@ -659,7 +669,7 @@ export namespace Components {
          */
         "inputId": string;
         /**
-          * Inline style of the list element
+          * Inline style of the list element.
          */
         "listStyle": any;
         /**
@@ -675,19 +685,19 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Name of the disabled field of an option
+          * Name of the disabled field of an option.
          */
         "optionDisabled": string;
         /**
-          * Name of the options field of an option group
+          * Name of the options field of an option group.
          */
         "optionGroupChildren": string;
         /**
-          * Name of the label field of an option
+          * Name of the label field of an option.
          */
         "optionLabel": string;
         /**
-          * Name of the value field of an option
+          * Name of the value field of an option.
          */
         "optionValue": string;
         /**
@@ -695,15 +705,15 @@ export namespace Components {
          */
         "options": any[];
         /**
-          * When present, it specifies that the element value cannot be changed
+          * When present, it specifies that the element value cannot be changed.
          */
         "readonly": boolean;
         /**
-          * Max height of the content area in inline mode
+          * Max height of the content area in inline mode.
          */
         "scrollerHeight": string;
         /**
-          * Icon class of the filter search input icon
+          * Icon class of the filter search input icon.
          */
         "searchIcon"?: string;
         /**
@@ -711,15 +721,15 @@ export namespace Components {
          */
         "setFilterInputFocus": () => Promise<void>;
         /**
-          * Whether header checkbox is shown in multiple mode
+          * Whether header checkbox is shown in multiple mode.
          */
         "showToggleAll": boolean;
         /**
-          * Value of the listbox
+          * Value of the listbox.
          */
         "value"?: any;
         /**
-          * When present, list virtual scroller is enabled
+          * When present, list virtual scroller is enabled.
          */
         "virtualScroll": boolean;
     }
@@ -812,6 +822,10 @@ export namespace Components {
           * When enabled, a clear icon is displayed to clear the value
          */
         "showClear"?: boolean;
+        /**
+          * Whether header checkbox is shown in multiple mode
+         */
+        "showToggleAll": boolean;
         /**
           * Value of the dropdown list
          */
@@ -999,6 +1013,82 @@ export namespace Components {
          */
         "styleClass": string;
     }
+    interface AppCode {
+        "code": any;
+        "extFiles": any[];
+        "hideCodeSandbox": boolean;
+        "hideStackBlitz": boolean;
+        "hideToggleCode": boolean;
+        "routeFiles": any[];
+        "selector": string;
+        "service": any;
+    }
+    interface AppConfig {
+    }
+    interface AppDoc {
+        "apiDocs": string[];
+        "description": string;
+        "docTitle": string;
+        "docs": any[];
+        "githubPage": string;
+        "header": string;
+    }
+    interface AppDocapisection {
+        "docs": any;
+        "header": string;
+    }
+    interface AppDocapitable {
+        "anyId": string;
+        "data": any[];
+        "description": string;
+        "isInterface": boolean;
+        "label": string;
+        "level": number;
+        "parentDescription": string;
+        "parentId": string;
+        "parentTitle": string;
+        "relatedProp": string;
+    }
+    interface AppDocsection {
+        "apiDocs"?: any[];
+        "docs"?: any[];
+    }
+    interface AppDocsectionNav {
+        "docs": any[];
+    }
+    interface AppDocsectiontext {
+        "label": string;
+        "level": number;
+        "parentDescription": string;
+        "parentId": string;
+        "parentTitle": string;
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxDynamic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxGroup {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxLabel {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxReadonly {
+        "textId": string;
+        "textTitle": string;
+    }
 }
 export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1052,6 +1142,30 @@ export interface AnyVirtualScrollerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAnyVirtualScrollerElement;
 }
+export interface CheckboxBasicCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxBasicElement;
+}
+export interface CheckboxDisabledCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxDisabledElement;
+}
+export interface CheckboxDynamicCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxDynamicElement;
+}
+export interface CheckboxGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxGroupElement;
+}
+export interface CheckboxLabelCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxLabelElement;
+}
+export interface CheckboxReadonlyCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCheckboxReadonlyElement;
+}
 declare global {
     interface HTMLAnyBadgeElement extends Components.AnyBadge, HTMLStencilElement {
     }
@@ -1071,6 +1185,9 @@ declare global {
         prototype: HTMLAnyButtonElement;
         new (): HTMLAnyButtonElement;
     };
+    /**
+     * Checkbox is an extension to standard checkbox element with theming.
+     */
     interface HTMLAnyCheckboxElement extends Components.AnyCheckbox, HTMLStencilElement {
     }
     var HTMLAnyCheckboxElement: {
@@ -1161,6 +1278,90 @@ declare global {
         prototype: HTMLAnyVirtualScrollerElement;
         new (): HTMLAnyVirtualScrollerElement;
     };
+    interface HTMLAppCodeElement extends Components.AppCode, HTMLStencilElement {
+    }
+    var HTMLAppCodeElement: {
+        prototype: HTMLAppCodeElement;
+        new (): HTMLAppCodeElement;
+    };
+    interface HTMLAppConfigElement extends Components.AppConfig, HTMLStencilElement {
+    }
+    var HTMLAppConfigElement: {
+        prototype: HTMLAppConfigElement;
+        new (): HTMLAppConfigElement;
+    };
+    interface HTMLAppDocElement extends Components.AppDoc, HTMLStencilElement {
+    }
+    var HTMLAppDocElement: {
+        prototype: HTMLAppDocElement;
+        new (): HTMLAppDocElement;
+    };
+    interface HTMLAppDocapisectionElement extends Components.AppDocapisection, HTMLStencilElement {
+    }
+    var HTMLAppDocapisectionElement: {
+        prototype: HTMLAppDocapisectionElement;
+        new (): HTMLAppDocapisectionElement;
+    };
+    interface HTMLAppDocapitableElement extends Components.AppDocapitable, HTMLStencilElement {
+    }
+    var HTMLAppDocapitableElement: {
+        prototype: HTMLAppDocapitableElement;
+        new (): HTMLAppDocapitableElement;
+    };
+    interface HTMLAppDocsectionElement extends Components.AppDocsection, HTMLStencilElement {
+    }
+    var HTMLAppDocsectionElement: {
+        prototype: HTMLAppDocsectionElement;
+        new (): HTMLAppDocsectionElement;
+    };
+    interface HTMLAppDocsectionNavElement extends Components.AppDocsectionNav, HTMLStencilElement {
+    }
+    var HTMLAppDocsectionNavElement: {
+        prototype: HTMLAppDocsectionNavElement;
+        new (): HTMLAppDocsectionNavElement;
+    };
+    interface HTMLAppDocsectiontextElement extends Components.AppDocsectiontext, HTMLStencilElement {
+    }
+    var HTMLAppDocsectiontextElement: {
+        prototype: HTMLAppDocsectiontextElement;
+        new (): HTMLAppDocsectiontextElement;
+    };
+    interface HTMLCheckboxBasicElement extends Components.CheckboxBasic, HTMLStencilElement {
+    }
+    var HTMLCheckboxBasicElement: {
+        prototype: HTMLCheckboxBasicElement;
+        new (): HTMLCheckboxBasicElement;
+    };
+    interface HTMLCheckboxDisabledElement extends Components.CheckboxDisabled, HTMLStencilElement {
+    }
+    var HTMLCheckboxDisabledElement: {
+        prototype: HTMLCheckboxDisabledElement;
+        new (): HTMLCheckboxDisabledElement;
+    };
+    interface HTMLCheckboxDynamicElement extends Components.CheckboxDynamic, HTMLStencilElement {
+    }
+    var HTMLCheckboxDynamicElement: {
+        prototype: HTMLCheckboxDynamicElement;
+        new (): HTMLCheckboxDynamicElement;
+    };
+    interface HTMLCheckboxGroupElement extends Components.CheckboxGroup, HTMLStencilElement {
+    }
+    var HTMLCheckboxGroupElement: {
+        prototype: HTMLCheckboxGroupElement;
+        new (): HTMLCheckboxGroupElement;
+    };
+    interface HTMLCheckboxLabelElement extends Components.CheckboxLabel, HTMLStencilElement {
+    }
+    var HTMLCheckboxLabelElement: {
+        prototype: HTMLCheckboxLabelElement;
+        new (): HTMLCheckboxLabelElement;
+    };
+    interface HTMLCheckboxReadonlyElement extends Components.CheckboxReadonly, HTMLStencilElement {
+    }
+    var HTMLCheckboxReadonlyElement: {
+        prototype: HTMLCheckboxReadonlyElement;
+        new (): HTMLCheckboxReadonlyElement;
+    };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
         "any-badge-overlay": HTMLAnyBadgeOverlayElement;
@@ -1180,6 +1381,20 @@ declare global {
         "any-tab-panel": HTMLAnyTabPanelElement;
         "any-tab-view": HTMLAnyTabViewElement;
         "any-virtual-scroller": HTMLAnyVirtualScrollerElement;
+        "app-code": HTMLAppCodeElement;
+        "app-config": HTMLAppConfigElement;
+        "app-doc": HTMLAppDocElement;
+        "app-docapisection": HTMLAppDocapisectionElement;
+        "app-docapitable": HTMLAppDocapitableElement;
+        "app-docsection": HTMLAppDocsectionElement;
+        "app-docsection-nav": HTMLAppDocsectionNavElement;
+        "app-docsectiontext": HTMLAppDocsectiontextElement;
+        "checkbox-basic": HTMLCheckboxBasicElement;
+        "checkbox-disabled": HTMLCheckboxDisabledElement;
+        "checkbox-dynamic": HTMLCheckboxDynamicElement;
+        "checkbox-group": HTMLCheckboxGroupElement;
+        "checkbox-label": HTMLCheckboxLabelElement;
+        "checkbox-readonly": HTMLCheckboxReadonlyElement;
     }
 }
 declare namespace LocalJSX {
@@ -1281,6 +1496,9 @@ declare namespace LocalJSX {
          */
         "type"?: "button" | "submit" | "reset";
     }
+    /**
+     * Checkbox is an extension to standard checkbox element with theming.
+     */
     interface AnyCheckbox {
         /**
           * Inline style of the component.
@@ -1377,6 +1595,10 @@ declare namespace LocalJSX {
          */
         "dropdownIcon"?: string;
         /**
+          * When specified, displays a filter input at header
+         */
+        "filter"?: boolean;
+        /**
           * Transition options of the hide animation
          */
         "hideAnimation"?: string;
@@ -1403,19 +1625,19 @@ declare namespace LocalJSX {
         /**
           * Callback to invoke when dropdown overlay gets hidden
          */
-        "onAOnHide"?: (event: AnyDropdownCustomEvent<any>) => void;
+        "onAOnPanelHide"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay before gets hidden
          */
-        "onAOnHideStart"?: (event: AnyDropdownCustomEvent<any>) => void;
+        "onAOnPanelHideStart"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay gets visible
          */
-        "onAOnShow"?: (event: AnyDropdownCustomEvent<any>) => void;
+        "onAOnPanelShow"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when dropdown overlay before gets visible
          */
-        "onAOnShowStart"?: (event: AnyDropdownCustomEvent<any>) => void;
+        "onAOnPanelShowStart"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Callback to invoke when value of dropdown changes
          */
@@ -1875,19 +2097,19 @@ declare namespace LocalJSX {
     }
     interface AnyListbox {
         /**
-          * Inline style of the element
+          * Inline style of the element.
          */
         "anyStyle"?: any;
         /**
-          * When specified, allows selecting items with checkboxes
+          * When specified, allows selecting items with checkboxes.
          */
         "checkbox"?: boolean;
         /**
-          * A property to uniquely identify a value in options
+          * A property to uniquely identify a value in options.
          */
         "dataKey"?: string;
         /**
-          * When present, it specifies that the element should be disabled
+          * When present, it specifies that the element should be disabled.
          */
         "disabled"?: boolean;
         /**
@@ -1899,7 +2121,7 @@ declare namespace LocalJSX {
          */
         "emptyMessage"?: string;
         /**
-          * When specified, displays a filter input at header
+          * When specified, displays a filter input at header.
          */
         "filter"?: boolean;
         /**
@@ -1907,7 +2129,7 @@ declare namespace LocalJSX {
          */
         "filterBy"?: string;
         /**
-          * Locale to use in filtering. The default locale is the host environment's current locale
+          * Locale to use in filtering. The default locale is the host environment's current locale.
          */
         "filterLocale"?: string;
         /**
@@ -1919,7 +2141,7 @@ declare namespace LocalJSX {
          */
         "filterValue"?: string;
         /**
-          * Whether to display options as grouped when nested options are provided
+          * Whether to display options as grouped when nested options are provided.
          */
         "group"?: boolean;
         /**
@@ -1927,7 +2149,7 @@ declare namespace LocalJSX {
          */
         "inputId"?: string;
         /**
-          * Inline style of the list element
+          * Inline style of the list element.
          */
         "listStyle"?: any;
         /**
@@ -1947,19 +2169,19 @@ declare namespace LocalJSX {
          */
         "onValueChange"?: (event: AnyListboxCustomEvent<SelectChangeEventDetail>) => void;
         /**
-          * Name of the disabled field of an option
+          * Name of the disabled field of an option.
          */
         "optionDisabled"?: string;
         /**
-          * Name of the options field of an option group
+          * Name of the options field of an option group.
          */
         "optionGroupChildren"?: string;
         /**
-          * Name of the label field of an option
+          * Name of the label field of an option.
          */
         "optionLabel"?: string;
         /**
-          * Name of the value field of an option
+          * Name of the value field of an option.
          */
         "optionValue"?: string;
         /**
@@ -1967,27 +2189,27 @@ declare namespace LocalJSX {
          */
         "options"?: any[];
         /**
-          * When present, it specifies that the element value cannot be changed
+          * When present, it specifies that the element value cannot be changed.
          */
         "readonly"?: boolean;
         /**
-          * Max height of the content area in inline mode
+          * Max height of the content area in inline mode.
          */
         "scrollerHeight"?: string;
         /**
-          * Icon class of the filter search input icon
+          * Icon class of the filter search input icon.
          */
         "searchIcon"?: string;
         /**
-          * Whether header checkbox is shown in multiple mode
+          * Whether header checkbox is shown in multiple mode.
          */
         "showToggleAll"?: boolean;
         /**
-          * Value of the listbox
+          * Value of the listbox.
          */
         "value"?: any;
         /**
-          * When present, list virtual scroller is enabled
+          * When present, list virtual scroller is enabled.
          */
         "virtualScroll"?: boolean;
     }
@@ -2112,6 +2334,10 @@ declare namespace LocalJSX {
           * When enabled, a clear icon is displayed to clear the value
          */
         "showClear"?: boolean;
+        /**
+          * Whether header checkbox is shown in multiple mode
+         */
+        "showToggleAll"?: boolean;
         /**
           * Value of the dropdown list
          */
@@ -2347,6 +2573,88 @@ declare namespace LocalJSX {
          */
         "styleClass"?: string;
     }
+    interface AppCode {
+        "code": any;
+        "extFiles"?: any[];
+        "hideCodeSandbox"?: boolean;
+        "hideStackBlitz"?: boolean;
+        "hideToggleCode"?: boolean;
+        "routeFiles"?: any[];
+        "selector": string;
+        "service"?: any;
+    }
+    interface AppConfig {
+    }
+    interface AppDoc {
+        "apiDocs": string[];
+        "description": string;
+        "docTitle"?: string;
+        "docs": any[];
+        "githubPage": string;
+        "header": string;
+    }
+    interface AppDocapisection {
+        "docs"?: any;
+        "header"?: string;
+    }
+    interface AppDocapitable {
+        "anyId"?: string;
+        "data"?: any[];
+        "description"?: string;
+        "isInterface"?: boolean;
+        "label"?: string;
+        "level"?: number;
+        "parentDescription"?: string;
+        "parentId"?: string;
+        "parentTitle"?: string;
+        "relatedProp"?: string;
+    }
+    interface AppDocsection {
+        "apiDocs"?: any[];
+        "docs"?: any[];
+    }
+    interface AppDocsectionNav {
+        "docs": any[];
+    }
+    interface AppDocsectiontext {
+        "label"?: string;
+        "level"?: number;
+        "parentDescription"?: string;
+        "parentId"?: string;
+        "parentTitle"?: string;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface CheckboxBasic {
+        "onValueChange"?: (event: CheckboxBasicCustomEvent<boolean>) => void;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface CheckboxDisabled {
+        "onValueChange"?: (event: CheckboxDisabledCustomEvent<boolean>) => void;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface CheckboxDynamic {
+        "onValueChange"?: (event: CheckboxDynamicCustomEvent<boolean>) => void;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface CheckboxGroup {
+        "onValueChange"?: (event: CheckboxGroupCustomEvent<boolean>) => void;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface CheckboxLabel {
+        "onValueChange"?: (event: CheckboxLabelCustomEvent<boolean>) => void;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface CheckboxReadonly {
+        "onValueChange"?: (event: CheckboxReadonlyCustomEvent<boolean>) => void;
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface IntrinsicElements {
         "any-badge": AnyBadge;
         "any-badge-overlay": AnyBadgeOverlay;
@@ -2366,6 +2674,20 @@ declare namespace LocalJSX {
         "any-tab-panel": AnyTabPanel;
         "any-tab-view": AnyTabView;
         "any-virtual-scroller": AnyVirtualScroller;
+        "app-code": AppCode;
+        "app-config": AppConfig;
+        "app-doc": AppDoc;
+        "app-docapisection": AppDocapisection;
+        "app-docapitable": AppDocapitable;
+        "app-docsection": AppDocsection;
+        "app-docsection-nav": AppDocsectionNav;
+        "app-docsectiontext": AppDocsectiontext;
+        "checkbox-basic": CheckboxBasic;
+        "checkbox-disabled": CheckboxDisabled;
+        "checkbox-dynamic": CheckboxDynamic;
+        "checkbox-group": CheckboxGroup;
+        "checkbox-label": CheckboxLabel;
+        "checkbox-readonly": CheckboxReadonly;
     }
 }
 export { LocalJSX as JSX };
@@ -2375,6 +2697,9 @@ declare module "@stencil/core" {
             "any-badge": LocalJSX.AnyBadge & JSXBase.HTMLAttributes<HTMLAnyBadgeElement>;
             "any-badge-overlay": LocalJSX.AnyBadgeOverlay & JSXBase.HTMLAttributes<HTMLAnyBadgeOverlayElement>;
             "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
+            /**
+             * Checkbox is an extension to standard checkbox element with theming.
+             */
             "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-number": LocalJSX.AnyInputNumber & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
@@ -2390,6 +2715,20 @@ declare module "@stencil/core" {
             "any-tab-panel": LocalJSX.AnyTabPanel & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
             "any-tab-view": LocalJSX.AnyTabView & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;
             "any-virtual-scroller": LocalJSX.AnyVirtualScroller & JSXBase.HTMLAttributes<HTMLAnyVirtualScrollerElement>;
+            "app-code": LocalJSX.AppCode & JSXBase.HTMLAttributes<HTMLAppCodeElement>;
+            "app-config": LocalJSX.AppConfig & JSXBase.HTMLAttributes<HTMLAppConfigElement>;
+            "app-doc": LocalJSX.AppDoc & JSXBase.HTMLAttributes<HTMLAppDocElement>;
+            "app-docapisection": LocalJSX.AppDocapisection & JSXBase.HTMLAttributes<HTMLAppDocapisectionElement>;
+            "app-docapitable": LocalJSX.AppDocapitable & JSXBase.HTMLAttributes<HTMLAppDocapitableElement>;
+            "app-docsection": LocalJSX.AppDocsection & JSXBase.HTMLAttributes<HTMLAppDocsectionElement>;
+            "app-docsection-nav": LocalJSX.AppDocsectionNav & JSXBase.HTMLAttributes<HTMLAppDocsectionNavElement>;
+            "app-docsectiontext": LocalJSX.AppDocsectiontext & JSXBase.HTMLAttributes<HTMLAppDocsectiontextElement>;
+            "checkbox-basic": LocalJSX.CheckboxBasic & JSXBase.HTMLAttributes<HTMLCheckboxBasicElement>;
+            "checkbox-disabled": LocalJSX.CheckboxDisabled & JSXBase.HTMLAttributes<HTMLCheckboxDisabledElement>;
+            "checkbox-dynamic": LocalJSX.CheckboxDynamic & JSXBase.HTMLAttributes<HTMLCheckboxDynamicElement>;
+            "checkbox-group": LocalJSX.CheckboxGroup & JSXBase.HTMLAttributes<HTMLCheckboxGroupElement>;
+            "checkbox-label": LocalJSX.CheckboxLabel & JSXBase.HTMLAttributes<HTMLCheckboxLabelElement>;
+            "checkbox-readonly": LocalJSX.CheckboxReadonly & JSXBase.HTMLAttributes<HTMLCheckboxReadonlyElement>;
         }
     }
 }

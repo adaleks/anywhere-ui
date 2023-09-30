@@ -295,4 +295,10 @@
       right: 2.357rem;
     }
   }
+
+  .any-highlight {
+    &::part(any-checkbox-box-highlight) {
+      border-color: var(--primaryTextColor) !important;
+    }
+  }
 }

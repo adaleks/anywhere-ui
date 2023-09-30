@@ -1,0 +1,69 @@
+@import "../app-doc/app-doc.scss";
+
+:host {
+  display: block;
+
+  .doc-section-nav {
+    position: sticky;
+    top: 7rem;
+    right: 0;
+    width: 14rem;
+    max-height: calc(100vh - 15rem);
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    margin-left: 4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-self: flex-start;
+
+    > .navbar-item {
+      .navbar-item-content {
+        border-left: 1px solid var(--surface-border);
+        padding-left: 0.25rem;
+      }
+    }
+
+    .navbar-item {
+      > .navbar-item-content {
+        display: flex;
+
+        .any-link {
+          padding: 0.25rem 1rem 0.25rem 1rem;
+          color: var(--text-color);
+          white-space: nowrap;
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+
+      &.active-navbar-item {
+        > .navbar-item-content {
+          border-color: var(--primary-color);
+
+          .any-link {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+          }
+        }
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .navbar-item {
+          .navbar-item-content {
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

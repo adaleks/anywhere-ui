@@ -86,7 +86,7 @@ export default class extends AbstractView {
     // Generate the virtual items array and add it to the Clusterize.js instance
     if (!this.cache.get("multiselectVirtualItems")?.length) {
       const items = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 10000; i++) {
         items.push({
           label: "Item " + i,
           value: "Item " + i,
@@ -95,16 +95,19 @@ export default class extends AbstractView {
 
       this.cache.set("multiselectVirtualItems", items);
     }
-    // const virtualItems = this.cache.get("multiselectVirtualItems");
+    const virtualItems = this.cache.get("multiselectVirtualItems");
 
-    // this.multiselectVirtual.anyStyle = {
-    //   minWidth: "15rem",
-    //   width: "18rem",
-    // };
-    // this.multiselectVirtual.showClear = true;
-    // // this.multiselectVirtual.filter = false;
-    // this.multiselectVirtual.virtualScroll = true;
-    // this.multiselectVirtual.options = virtualItems;
+    this.multiselectVirtual.anyStyle = {
+      minWidth: "15rem",
+      width: "18rem",
+    };
+    this.multiselectVirtual.showClear = true;
+    this.multiselectVirtual.showToggleAll = false;
+    // this.multiselectVirtual.filter = false;
+    this.multiselectVirtual.virtualScroll = true;
+    this.multiselectVirtual.options = virtualItems;
+    // this.multiselectVirtual.showAnimation = "fadeIn";
+    // this.multiselectVirtual.hideAnimation = "fadeOut";
   }
 
   async getHtml() {

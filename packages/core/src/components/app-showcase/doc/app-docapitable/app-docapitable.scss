@@ -1,0 +1,129 @@
+@import "../app-doc/app-doc.scss";
+
+:host {
+  .parameter-bold {
+    font-weight: bold;
+  }
+  .doc-tablewrapper {
+    overflow: auto;
+    // @include card;
+  }
+
+  .doc-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 960px;
+    background-color: var(--surface-card);
+    margin-bottom: 1.5rem;
+
+    th {
+      border-bottom: 1px solid var(--surface-border);
+      padding: 1rem;
+      text-align: left;
+      text-transform: capitalize;
+    }
+
+    tbody {
+      tr:hover {
+        background: var(--surface-hover);
+      }
+
+      td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--surface-border);
+        white-space: pre-wrap;
+        line-height: 1.5;
+
+        &.doc-option-type,
+        &.doc-option-attr {
+          font-family:
+            ui-monospace,
+            SFMono-Regular,
+            "SF Mono",
+            Menlo,
+            Consolas,
+            Liberation Mono,
+            monospace;
+          color: var(--primary-color);
+
+          > a {
+            color: var(--primary-color);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        &.doc-option-default {
+          font-family:
+            ui-monospace,
+            SFMono-Regular,
+            "SF Mono",
+            Menlo,
+            Consolas,
+            Liberation Mono,
+            monospace;
+          color: var(--primary-color);
+        }
+
+        &:first-child {
+          color: var(--primary-color);
+          font-weight: 700;
+          font-family:
+            ui-monospace,
+            SFMono-Regular,
+            "SF Mono",
+            Menlo,
+            Consolas,
+            Liberation Mono,
+            monospace;
+        }
+
+        .doc-option-name,
+        > i {
+          font-family:
+            ui-monospace,
+            SFMono-Regular,
+            "SF Mono",
+            Menlo,
+            Consolas,
+            Liberation Mono,
+            monospace;
+          position: relative;
+          scroll-margin-top: 6.5rem;
+          background-color: var(--highlight-bg);
+          color: var(--highlight-text-color);
+          border-radius: 6px;
+          padding: 2px 6px;
+          font-weight: 600;
+          font-style: normal;
+
+          .doc-option-link {
+            position: absolute;
+            top: 0;
+            right: -1.5rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+            display: none;
+            transition:
+              opacity 0.3s,
+              colors 0.3s;
+          }
+        }
+
+        &:hover {
+          .doc-option-name {
+            .doc-option-link {
+              display: inline;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
