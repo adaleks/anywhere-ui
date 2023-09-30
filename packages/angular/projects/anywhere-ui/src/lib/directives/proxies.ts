@@ -126,21 +126,21 @@ export declare interface AnyCheckbox extends Components.AnyCheckbox {
 
 
 @ProxyCmp({
-  inputs: ['anyStyle', 'anyTabIndex', 'autoZIndex', 'baseZIndex', 'clearIcon', 'disabled', 'dropdownIcon', 'hideAnimation', 'inputId', 'name', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll']
+  inputs: ['anyStyle', 'anyTabIndex', 'autoZIndex', 'baseZIndex', 'clearIcon', 'disabled', 'dropdownIcon', 'filter', 'hideAnimation', 'inputId', 'name', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll']
 })
 @Component({
   selector: 'any-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['anyStyle', 'anyTabIndex', 'autoZIndex', 'baseZIndex', 'clearIcon', 'disabled', 'dropdownIcon', 'hideAnimation', 'inputId', 'name', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll'],
+  inputs: ['anyStyle', 'anyTabIndex', 'autoZIndex', 'baseZIndex', 'clearIcon', 'disabled', 'dropdownIcon', 'filter', 'hideAnimation', 'inputId', 'name', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll'],
 })
 export class AnyDropdown {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChange', 'aOnShow', 'aOnShowStart', 'aOnHide', 'aOnHideStart', 'aOnFocus', 'aOnBlur', 'aOnClick']);
+    proxyOutputs(this, this.el, ['valueChange', 'aOnPanelShow', 'aOnPanelShowStart', 'aOnPanelHide', 'aOnPanelHideStart', 'aOnFocus', 'aOnBlur', 'aOnClick']);
   }
 }
 
@@ -153,19 +153,19 @@ export declare interface AnyDropdown extends Components.AnyDropdown {
   /**
    * Callback to invoke when dropdown overlay gets visible
    */
-  aOnShow: EventEmitter<CustomEvent<any>>;
+  aOnPanelShow: EventEmitter<CustomEvent<any>>;
   /**
    * Callback to invoke when dropdown overlay before gets visible
    */
-  aOnShowStart: EventEmitter<CustomEvent<any>>;
+  aOnPanelShowStart: EventEmitter<CustomEvent<any>>;
   /**
    * Callback to invoke when dropdown overlay gets hidden
    */
-  aOnHide: EventEmitter<CustomEvent<any>>;
+  aOnPanelHide: EventEmitter<CustomEvent<any>>;
   /**
    * Callback to invoke when dropdown overlay before gets hidden
    */
-  aOnHideStart: EventEmitter<CustomEvent<any>>;
+  aOnPanelHideStart: EventEmitter<CustomEvent<any>>;
   /**
    * Callback to invoke when dropdown gets focus
    */
@@ -369,14 +369,14 @@ export declare interface AnyListbox extends Components.AnyListbox {
 
 
 @ProxyCmp({
-  inputs: ['anyStyle', 'anyTabIndex', 'checkbox', 'clearIcon', 'dataKey', 'defaultLabel', 'disabled', 'dropdownIcon', 'filter', 'group', 'hideAnimation', 'inputId', 'name', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll']
+  inputs: ['anyStyle', 'anyTabIndex', 'checkbox', 'clearIcon', 'dataKey', 'defaultLabel', 'disabled', 'dropdownIcon', 'filter', 'group', 'hideAnimation', 'inputId', 'name', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'showToggleAll', 'value', 'virtualScroll']
 })
 @Component({
   selector: 'any-multiselect',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['anyStyle', 'anyTabIndex', 'checkbox', 'clearIcon', 'dataKey', 'defaultLabel', 'disabled', 'dropdownIcon', 'filter', 'group', 'hideAnimation', 'inputId', 'name', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'value', 'virtualScroll'],
+  inputs: ['anyStyle', 'anyTabIndex', 'checkbox', 'clearIcon', 'dataKey', 'defaultLabel', 'disabled', 'dropdownIcon', 'filter', 'group', 'hideAnimation', 'inputId', 'name', 'optionGroupChildren', 'optionLabel', 'optionValue', 'options', 'panelScrollHeight', 'placeholder', 'readonly', 'showAnimation', 'showClear', 'showToggleAll', 'value', 'virtualScroll'],
 })
 export class AnyMultiselect {
   protected el: HTMLElement;

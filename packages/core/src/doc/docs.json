@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-08-10T13:05:09",
+  "timestamp": "2023-09-30T19:15:05",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.0.3",
-    "typescriptVersion": "5.0.4"
+    "version": "4.3.0",
+    "typescriptVersion": "5.1.6"
   },
   "components": [
     {
@@ -1274,6 +1274,28 @@
           "required": false
         },
         {
+          "name": "filter",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "filter",
+          "reflectToAttr": false,
+          "docs": "When specified, displays a filter input at header",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "hideAnimation",
           "type": "string",
           "complexType": {
@@ -1604,7 +1626,7 @@
           "docsTags": []
         },
         {
-          "event": "aOnHide",
+          "event": "aOnPanelHide",
           "detail": "any",
           "bubbles": true,
           "complexType": {
@@ -1618,7 +1640,7 @@
           "docsTags": []
         },
         {
-          "event": "aOnHideStart",
+          "event": "aOnPanelHideStart",
           "detail": "any",
           "bubbles": true,
           "complexType": {
@@ -1632,7 +1654,7 @@
           "docsTags": []
         },
         {
-          "event": "aOnShow",
+          "event": "aOnPanelShow",
           "detail": "any",
           "bubbles": true,
           "complexType": {
@@ -1646,7 +1668,7 @@
           "docsTags": []
         },
         {
-          "event": "aOnShowStart",
+          "event": "aOnPanelShowStart",
           "detail": "any",
           "bubbles": true,
           "complexType": {
@@ -1692,10 +1714,12 @@
       ],
       "dependents": [],
       "dependencies": [
+        "any-overlay",
         "any-listbox"
       ],
       "dependencyGraph": {
         "any-dropdown": [
+          "any-overlay",
           "any-listbox"
         ],
         "any-listbox": [
@@ -4024,7 +4048,7 @@
           "mutable": false,
           "attr": "any-style",
           "reflectToAttr": false,
-          "docs": "Inline style of the element",
+          "docs": "Inline style of the element.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -4046,7 +4070,7 @@
           "mutable": false,
           "attr": "checkbox",
           "reflectToAttr": false,
-          "docs": "When specified, allows selecting items with checkboxes",
+          "docs": "When specified, allows selecting items with checkboxes.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4068,7 +4092,7 @@
           "mutable": false,
           "attr": "data-key",
           "reflectToAttr": false,
-          "docs": "A property to uniquely identify a value in options",
+          "docs": "A property to uniquely identify a value in options.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -4090,7 +4114,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "When present, it specifies that the element should be disabled",
+          "docs": "When present, it specifies that the element should be disabled.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4154,7 +4178,7 @@
           "mutable": false,
           "attr": "filter",
           "reflectToAttr": false,
-          "docs": "When specified, displays a filter input at header",
+          "docs": "When specified, displays a filter input at header.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4198,7 +4222,7 @@
           "mutable": false,
           "attr": "filter-locale",
           "reflectToAttr": false,
-          "docs": "Locale to use in filtering. The default locale is the host environment's current locale",
+          "docs": "Locale to use in filtering. The default locale is the host environment's current locale.",
           "docsTags": [],
           "default": "undefined",
           "values": [
@@ -4264,7 +4288,7 @@
           "mutable": false,
           "attr": "group",
           "reflectToAttr": false,
-          "docs": "Whether to display options as grouped when nested options are provided",
+          "docs": "Whether to display options as grouped when nested options are provided.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4308,7 +4332,7 @@
           "mutable": false,
           "attr": "list-style",
           "reflectToAttr": false,
-          "docs": "Inline style of the list element",
+          "docs": "Inline style of the list element.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -4396,7 +4420,7 @@
           "mutable": false,
           "attr": "option-disabled",
           "reflectToAttr": false,
-          "docs": "Name of the disabled field of an option",
+          "docs": "Name of the disabled field of an option.",
           "docsTags": [],
           "values": [
             {
@@ -4417,7 +4441,7 @@
           "mutable": false,
           "attr": "option-group-children",
           "reflectToAttr": false,
-          "docs": "Name of the options field of an option group",
+          "docs": "Name of the options field of an option group.",
           "docsTags": [],
           "default": "\"items\"",
           "values": [
@@ -4439,7 +4463,7 @@
           "mutable": false,
           "attr": "option-label",
           "reflectToAttr": false,
-          "docs": "Name of the label field of an option",
+          "docs": "Name of the label field of an option.",
           "docsTags": [],
           "default": "\"label\"",
           "values": [
@@ -4461,7 +4485,7 @@
           "mutable": false,
           "attr": "option-value",
           "reflectToAttr": false,
-          "docs": "Name of the value field of an option",
+          "docs": "Name of the value field of an option.",
           "docsTags": [],
           "default": "\"value\"",
           "values": [
@@ -4504,7 +4528,7 @@
           "mutable": false,
           "attr": "readonly",
           "reflectToAttr": false,
-          "docs": "When present, it specifies that the element value cannot be changed",
+          "docs": "When present, it specifies that the element value cannot be changed.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4526,7 +4550,7 @@
           "mutable": false,
           "attr": "scroller-height",
           "reflectToAttr": false,
-          "docs": "Max height of the content area in inline mode",
+          "docs": "Max height of the content area in inline mode.",
           "docsTags": [],
           "default": "\"200px\"",
           "values": [
@@ -4548,7 +4572,7 @@
           "mutable": false,
           "attr": "search-icon",
           "reflectToAttr": false,
-          "docs": "Icon class of the filter search input icon",
+          "docs": "Icon class of the filter search input icon.",
           "docsTags": [],
           "default": "\"fa-solid:search\"",
           "values": [
@@ -4570,7 +4594,7 @@
           "mutable": false,
           "attr": "show-toggle-all",
           "reflectToAttr": false,
-          "docs": "Whether header checkbox is shown in multiple mode",
+          "docs": "Whether header checkbox is shown in multiple mode.",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -4592,7 +4616,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "Value of the listbox",
+          "docs": "Value of the listbox.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -4614,7 +4638,7 @@
           "mutable": false,
           "attr": "virtual-scroll",
           "reflectToAttr": false,
-          "docs": "When present, list virtual scroller is enabled",
+          "docs": "When present, list virtual scroller is enabled.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -5203,6 +5227,28 @@
           "required": false
         },
         {
+          "name": "showToggleAll",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-toggle-all",
+          "reflectToAttr": false,
+          "docs": "Whether header checkbox is shown in multiple mode",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "value",
           "type": "any",
           "complexType": {
@@ -5603,10 +5649,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "any-dropdown",
         "any-multiselect"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "any-dropdown": [
+          "any-overlay"
+        ],
         "any-multiselect": [
           "any-overlay"
         ]
@@ -6662,7 +6712,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
       "styles": [],
       "slots": [],
       "parts": [],
@@ -7828,6 +7885,7 @@
       "filePath": "src/components/app-showcase/pages/checkbox/checkbox-disabled/checkbox-disabled.tsx",
       "encapsulation": "scoped",
       "tag": "checkbox-disabled",
+      "readme": "# checkbox-disabled\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -7921,6 +7979,7 @@
       "filePath": "src/components/app-showcase/pages/checkbox/checkbox-dynamic/checkbox-dynamic.tsx",
       "encapsulation": "scoped",
       "tag": "checkbox-dynamic",
+      "readme": "# checkbox-dynamic\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -8014,6 +8073,7 @@
       "filePath": "src/components/app-showcase/pages/checkbox/checkbox-group/checkbox-group.tsx",
       "encapsulation": "scoped",
       "tag": "checkbox-group",
+      "readme": "# checkbox-group\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -8107,6 +8167,7 @@
       "filePath": "src/components/app-showcase/pages/checkbox/checkbox-label/checkbox-label.tsx",
       "encapsulation": "scoped",
       "tag": "checkbox-label",
+      "readme": "# checkbox-label\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -8200,6 +8261,7 @@
       "filePath": "src/components/app-showcase/pages/checkbox/checkbox-readonly/checkbox-readonly.tsx",
       "encapsulation": "none",
       "tag": "checkbox-readonly",
+      "readme": "# checkbox-readonly\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

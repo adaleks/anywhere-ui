@@ -31,6 +31,7 @@
 | `readonly`            | `readonly`              | When present, it specifies that the element value cannot be changed                           | `boolean` | `false`                                      |
 | `showAnimation`       | `show-animation`        | Keyframe name for the show animation.                                                         | `string`  | `"growDown"`                                 |
 | `showClear`           | `show-clear`            | When enabled, a clear icon is displayed to clear the value                                    | `boolean` | `false`                                      |
+| `showToggleAll`       | `show-toggle-all`       | Whether header checkbox is shown in multiple mode                                             | `boolean` | `true`                                       |
 | `value`               | `value`                 | Value of the dropdown list                                                                    | `any`     | `null`                                       |
 | `virtualScroll`       | `virtual-scroll`        | When present, list virtual scroller is enabled                                                | `boolean` | `false`                                      |
 

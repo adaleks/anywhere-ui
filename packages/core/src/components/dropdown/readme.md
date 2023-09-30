@@ -16,6 +16,7 @@
 | `clearIcon`         | `clear-icon`          | Icon class of the dropdown clear icon                                                         | `string`  | `"fa-solid:times"`          |
 | `disabled`          | `disabled`            | When present, it specifies that the element should be disabled                                | `boolean` | `false`                     |
 | `dropdownIcon`      | `dropdown-icon`       | Icon class of the dropdown icon                                                               | `string`  | `"fa-solid:chevron-down"`   |
+| `filter`            | `filter`              | When specified, displays a filter input at header                                             | `boolean` | `false`                     |
 | `hideAnimation`     | `hide-animation`      | Transition options of the hide animation                                                      | `string`  | `"growUp"`                  |
 | `inputId`           | `input-id`            | Identifier of the focus input to match a label defined for the component.                     | `string`  | ``any-dd-${dropdownIds++}`` |
 | `name`              | `name`                | Name of the dropdown input.                                                                   | `string`  | `this.inputId`              |
@@ -33,16 +34,16 @@
 
 ## Events
 
-| Event          | Description                                                  | Type               |
-| -------------- | ------------------------------------------------------------ | ------------------ |
-| `aOnBlur`      | Callback to invoke when dropdown loses focus                 | `CustomEvent<any>` |
-| `aOnClick`     | Callback to invoke when component is clicked                 | `CustomEvent<any>` |
-| `aOnFocus`     | Callback to invoke when dropdown gets focus                  | `CustomEvent<any>` |
-| `aOnHide`      | Callback to invoke when dropdown overlay gets hidden         | `CustomEvent<any>` |
-| `aOnHideStart` | Callback to invoke when dropdown overlay before gets hidden  | `CustomEvent<any>` |
-| `aOnShow`      | Callback to invoke when dropdown overlay gets visible        | `CustomEvent<any>` |
-| `aOnShowStart` | Callback to invoke when dropdown overlay before gets visible | `CustomEvent<any>` |
-| `valueChange`  | Callback to invoke when value of dropdown changes            | `CustomEvent<any>` |
+| Event               | Description                                                  | Type               |
+| ------------------- | ------------------------------------------------------------ | ------------------ |
+| `aOnBlur`           | Callback to invoke when dropdown loses focus                 | `CustomEvent<any>` |
+| `aOnClick`          | Callback to invoke when component is clicked                 | `CustomEvent<any>` |
+| `aOnFocus`          | Callback to invoke when dropdown gets focus                  | `CustomEvent<any>` |
+| `aOnPanelHide`      | Callback to invoke when dropdown overlay gets hidden         | `CustomEvent<any>` |
+| `aOnPanelHideStart` | Callback to invoke when dropdown overlay before gets hidden  | `CustomEvent<any>` |
+| `aOnPanelShow`      | Callback to invoke when dropdown overlay gets visible        | `CustomEvent<any>` |
+| `aOnPanelShowStart` | Callback to invoke when dropdown overlay before gets visible | `CustomEvent<any>` |
+| `valueChange`       | Callback to invoke when value of dropdown changes            | `CustomEvent<any>` |
 
 
 ## Shadow Parts
@@ -56,11 +57,13 @@
 
 ### Depends on
 
+- [any-overlay](../overlay)
 - [any-listbox](../listbox)
 
 ### Graph
 ```mermaid
 graph TD;
+  any-dropdown --> any-overlay
   any-dropdown --> any-listbox
   any-listbox --> any-checkbox
   any-listbox --> any-input-text
