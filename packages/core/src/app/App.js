@@ -75,15 +75,32 @@ const onMenuButtonClick = () => {
 // Function to update the active state of menu items based on the current path
 const updateMenuActiveState = (currentPath) => {
   const menuItems = document.querySelectorAll("[data-link]");
-  menuItems.forEach((item) => {
+  menuItems.forEach(function (item) {
     item.classList.remove("active");
-    const itemHref = item.getAttribute("href");
-    if (currentPath === "" && itemHref === "/") {
-      item.classList.add("active");
-    } else if (currentPath === itemHref) {
+    if (location.hash === "") {
+      menuItems[0].classList.add("active");
+    } else if (
+      item.href.indexOf(removeSecondPartOfUrl(location.hash.replace("#", ""))) >
+      -1
+    ) {
       item.classList.add("active");
     }
   });
+};
+
+const removeSecondPartOfUrl = (inputUrl) => {
+  // Split the URL by "/"
+  var parts = inputUrl.split("/");
+
+  // Check if there are at least two parts (i.e., /checkbox/label format)
+  if (parts.length >= 2) {
+    // Remove the second part (label) by taking the first part (checkbox)
+    var newUrl = "/" + parts[1];
+    return newUrl;
+  } else {
+    // If there's only one part or no parts, return the original URL
+    return inputUrl;
+  }
 };
 
 // The main router function to handle URL routing and view updates
@@ -157,7 +174,9 @@ const router = async () => {
   const potentialMatches = routes.map((route) => {
     return {
       route: route,
-      result: currentPath.match(pathToRegex(route.path)),
+      result: removeSecondPartOfUrl(location.hash.replace("#", "")).match(
+        pathToRegex(route.path)
+      ),
     };
   });
 
@@ -168,7 +187,7 @@ const router = async () => {
   if (!match) {
     match = {
       route: routes[0],
-      result: [currentPath],
+      result: [location.pathname],
     };
   }
 
@@ -236,8 +255,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
-      const currentPath = e.target.getAttribute("href");
-      if (currentPath === location.pathname) return;
+      // const currentPath = e.target.getAttribute("href");
+      const currentPath = e.target.href.substring(e.target.href.indexOf("#"));
+      const path = location.hash;
+      if (currentPath === path) return;
       navigateTo(currentPath);
       updateMenuActiveState(currentPath);
     }

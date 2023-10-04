@@ -39,9 +39,26 @@ export class AppDocSectionNav {
     this.scrollToLabelById(this.activeId);
   }
 
+  removeFirstPartOfHash(hash) {
+    // Split the URL by "/"
+    var parts = hash.split("/");
+
+    // Check if there are at least two parts (i.e., /checkbox/label format)
+    if (parts.length >= 2) {
+      // Remove the second part (label) by taking the first part (checkbox)
+      var newUrl = parts[2];
+      return newUrl;
+    } else {
+      // If there's only one part or no parts, return the original URL
+      return hash;
+    }
+  }
+
   getCurrentHash() {
     if (typeof window !== "undefined") {
-      const hash = window.location.hash.substring(1);
+      const hash = this.removeFirstPartOfHash(
+        window.location.hash.substring(1)
+      );
       return ObjectUtils.isNotEmpty(hash) ? hash : "";
     }
     return "";
@@ -114,7 +131,15 @@ export class AppDocSectionNav {
     const label = document.getElementById(id);
     if (label) {
       const parentElement = label.parentElement;
-      window.location.hash = id;
+      const hashParts = window.location.hash.split("/");
+
+      if (hashParts[2]) {
+        hashParts.splice(2); // Remove all segments after "/#/checkbox/"
+        hashParts.push(id); // Add the new "id" segment
+        window.location.hash = hashParts.join("/");
+      } else {
+        window.location.hash = window.location.hash + "/" + id;
+      }
 
       if (parentElement) {
         parentElement.scrollIntoView({ block: "start", behavior: "smooth" });

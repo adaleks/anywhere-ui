@@ -22,7 +22,15 @@ export class AppDocSectionText {
     if (typeof window !== "undefined") {
       // const hash = window.location.hash.substring(1);
       const id = this.textId || this.parentId;
-      window.location.hash = id;
+      const hashParts = window.location.hash.split("/");
+
+      if (hashParts[2]) {
+        hashParts.splice(2); // Remove all segments after "/#/checkbox/"
+        hashParts.push(id); // Add the new "id" segment
+        window.location.hash = hashParts.join("/");
+      } else {
+        window.location.hash = window.location.hash + "/" + id;
+      }
 
       const parentElement = (event.target as HTMLElement).closest(
         ".doc-section-label"
