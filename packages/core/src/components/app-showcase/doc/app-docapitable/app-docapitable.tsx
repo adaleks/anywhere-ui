@@ -42,7 +42,19 @@ export class AppDocApiTable {
     if (typeof window !== "undefined") {
       const parentElement = (event.currentTarget as HTMLElement)
         .parentElement as HTMLElement;
-      window.location.hash = this.anyId + "." + param;
+
+      const hashParts = window.location.hash.split("/");
+
+      if (hashParts[2]) {
+        hashParts.splice(2); // Remove all segments after "/#/checkbox/"
+        hashParts.push(this.anyId); // Add the new "this.anyId" segment
+        window.location.hash = hashParts.join("/") + "." + param;
+      } else {
+        window.location.hash =
+          window.location.hash + "/" + hashParts.push(this.anyId) + "." + param; // Add the new "this.anyId" segment
+      }
+
+      // window.location.hash = this.anyId + "." + param;
 
       setTimeout(() => {
         parentElement.scrollIntoView({ block: "nearest", behavior: "smooth" });

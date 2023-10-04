@@ -19,7 +19,7 @@ export class AppDoc {
   componentWillLoad() {
     const currentURL = window.location.href;
 
-    if (currentURL.includes("#api")) {
+    if (currentURL.includes("/api")) {
       this.activeTab = 1;
     } else {
       this.activeTab = 0;

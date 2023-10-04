@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-09-30T19:15:05",
+  "timestamp": "2023-10-04T22:58:31",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.3.0",
-    "typescriptVersion": "5.1.6"
+    "version": "4.4.0",
+    "typescriptVersion": "5.2.2"
   },
   "components": [
     {

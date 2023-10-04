@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/core",
-  "version": "0.4.0+17",
+  "version": "0.4.0+18",
   "description": "Base components for AnywhereUI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -54,13 +54,13 @@
   "devDependencies": {
     "@iconify/iconify": "^3.1.1",
     "@stencil/angular-output-target": "0.8.2",
-    "@stencil/core": "^4.3.0",
+    "@stencil/core": "^4.4.0",
     "@stencil/react-output-target": "^0.5.3",
-    "@stencil/sass": "^3.0.5",
+    "@stencil/sass": "^3.0.6",
     "@stencil/vue-output-target": "^0.8.6",
     "@types/clusterize.js": "^0.18.1",
     "@types/jest": "^29.5.5",
-    "@types/lodash": "^4.14.198",
+    "@types/lodash": "^4.14.199",
     "@types/puppeteer": "^5.4.7",
     "clusterize.js": "^1.0.0",
     "concurrently": "^8.2.1",
@@ -71,19 +71,19 @@
     "jest-cli": "29.7.0",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
-    "puppeteer": "^21.3.0",
+    "puppeteer": "^21.3.6",
     "rebase": "^0.3.0",
     "replace": "^1.2.2",
     "rollup-plugin-node-polyfills": "^0.2.1",
-    "sass": "^1.67.0"
+    "sass": "^1.68.0"
   },
   "license": "MIT",
   "dependencies": {
     "@anywhere-ui/flex": "^1.0.2",
     "@docsearch/js": "^3.5.2",
-    "@types/node": "^20.6.2",
+    "@types/node": "^20.8.2",
     "build": "^0.1.4",
     "run": "^1.4.0"
   },
-  "buildnum": "17"
+  "buildnum": "18"
 }
