@@ -674,6 +674,9 @@ code[class*=language] {
   .layout-content {
     margin-left: 0;
   }
+  .layout-content .layout-content-inner {
+    padding: 2rem 1rem;
+  }
   .layout-content .content-section.introduction {
     flex-direction: column;
   }
