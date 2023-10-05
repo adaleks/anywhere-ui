@@ -215,48 +215,14 @@ const router = async () => {
   hideMenu();
 };
 
-// function handleDocSearchTransformItems(results) {
-//   // const valid = process.env.NODE_ENV !== 'production';
-//   const valid = true;
-//   return results.map((result) => {
-//     if (valid) {
-//       const url = new URL(result.url);
-
-//       url.protocol = window.location.protocol;
-//       url.hostname = window.location.hostname;
-//       url.port = window.location.port;
-//       result.url = url.toString();
-//       // .replace("anywhere-ui-showcase-production/", "");
-//     }
-
-//     console.log(results);
-//     return result;
-//   });
-// }
-
 // Event listener when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Event listener for clicks on links with data-link attribute
-  // docsearch({
-  //   appId: "KGAG3J42H0",
-
-  //   apiKey: "10a47a8aff3910e33e260f52158b51f5",
-
-  //   indexName: "dev_anywhereui",
-
-  //   // insights: true, // Optional, automatically send insights when user interacts with search results
-
-  //   container: "#dicsearch",
-
-  //   // debug: false, // Set debug to true if you want to inspect the modal
-  //   transformItems: handleDocSearchTransformItems.bind(this),
-  // });
-
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
       // const currentPath = e.target.getAttribute("href");
       const currentPath = e.target.href.substring(e.target.href.indexOf("#"));
+      previousPathname = removeSecondPartOfUrl(currentPath);
       const path = location.hash;
       if (currentPath === path) return;
       navigateTo(currentPath);
@@ -276,21 +242,24 @@ document.addEventListener("DOMContentLoaded", () => {
     hideMenu();
   };
 
-  let previousPathname = location.pathname;
+  let previousPathname = removeSecondPartOfUrl(location.hash.replace("#", ""));
 
-  window.addEventListener("popstate", () => {
-    const newPathname = location.pathname;
+  window.addEventListener("hashchange", () => {
+    setTimeout(() => {
+      const newPathname = removeSecondPartOfUrl(location.hash.replace("#", ""));
 
-    console.log("Previous Pathname:", previousPathname);
-    console.log("New Pathname:", newPathname);
+      // console.log("Previous Pathname:", previousPathname);
+      // console.log("New Pathname:", newPathname);
 
-    if (newPathname !== previousPathname) {
-      previousPathname = newPathname;
-      console.log("Pathname Changed. Calling router()");
-      router();
-    } else {
-      console.log("Pathname not changed. Skipping router()");
-    }
+      if (newPathname !== previousPathname) {
+        // console.log("Pathname Changed. Calling router()");
+        router();
+        previousPathname = newPathname;
+      }
+      // else {
+      //   // console.log("Pathname not changed. Skipping router()");
+      // }
+    }, 100);
   });
 
   // Enable router on browser back or forward button

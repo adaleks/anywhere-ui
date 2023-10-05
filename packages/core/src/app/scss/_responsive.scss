@@ -78,6 +78,10 @@
     .layout-content {
         margin-left: 0;
 
+        .layout-content-inner {
+            padding: 2rem 1rem;
+        }
+
         .content-section {
             &.introduction {
                 flex-direction: column;
