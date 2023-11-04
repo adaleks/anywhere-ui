@@ -100,7 +100,7 @@ export namespace Components {
         "type": "button" | "submit" | "reset";
     }
     /**
-     * Checkbox is an extension to standard checkbox element with theming.
+     * Checkbox is an extension to the standard checkbox element with theming.
      */
     interface AnyCheckbox {
         /**
@@ -160,41 +160,44 @@ export namespace Components {
          */
         "value": any;
     }
+    /**
+     * Dropdown, also known as Select, is used to choose an item from a collection of options.
+     */
     interface AnyDropdown {
         /**
-          * Inline style of the element
+          * Inline style of the element.
          */
         "anyStyle"?: any;
         /**
-          * Index of the element in tabbing order
+          * Index of the element in tabbing order.
          */
         "anyTabIndex"?: number;
         /**
-          * Whether to automatically manage layering
+          * Whether to automatically manage layering.
          */
         "autoZIndex"?: boolean;
         /**
-          * Base zIndex value to use in layering
+          * Base zIndex value to use in layering.
          */
         "baseZIndex"?: string;
         /**
-          * Icon class of the dropdown clear icon
+          * Icon class of the dropdown clear icon.
          */
         "clearIcon"?: string;
         /**
-          * When present, it specifies that the element should be disabled
+          * When present, it specifies that the element should be disabled.
          */
         "disabled": boolean;
         /**
-          * Icon class of the dropdown icon
+          * Icon class of the dropdown icon.
          */
         "dropdownIcon"?: string;
         /**
-          * When specified, displays a filter input at header
+          * When specified, displays a filter input at header.
          */
         "filter": boolean;
         /**
-          * Transition options of the hide animation
+          * Transition options of the hide animation.
          */
         "hideAnimation"?: string;
         /**
@@ -210,7 +213,7 @@ export namespace Components {
          */
         "optionLabel": string;
         /**
-          * Name of the value field of an option
+          * Name of the value field of an option.
          */
         "optionValue": string;
         /**
@@ -218,31 +221,31 @@ export namespace Components {
          */
         "options": any[];
         /**
-          * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+          * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.
          */
         "panelScrollHeight"?: string;
         /**
-          * Default text to display when no option is selected
+          * Default text to display when no option is selected.
          */
         "placeholder"?: string;
         /**
-          * When present, it specifies that the element value cannot be changed
+          * When present, it specifies that the element value cannot be changed.
          */
         "readonly": boolean;
         /**
-          * Keyframe name the show animation
+          * Keyframe name the show animation.
          */
         "showAnimation"?: string;
         /**
-          * When enabled, a clear icon is displayed to clear the value
+          * When enabled, a clear icon is displayed to clear the value.
          */
         "showClear"?: boolean;
         /**
-          * Value of the dropdown list
+          * Value of the dropdown list.
          */
         "value"?: any;
         /**
-          * When present, list virtual scroller is enabled
+          * When present, list virtual scroller is enabled.
          */
         "virtualScroll": boolean;
     }
@@ -1089,6 +1092,26 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface DropdownBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownFilter {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownTemplate {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownVirtualScroll {
+        "textId": string;
+        "textTitle": string;
+    }
 }
 export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1179,76 +1202,244 @@ declare global {
         prototype: HTMLAnyBadgeOverlayElement;
         new (): HTMLAnyBadgeOverlayElement;
     };
+    interface HTMLAnyButtonElementEventMap {
+        "aOnClick": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+    }
     interface HTMLAnyButtonElement extends Components.AnyButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyButtonElementEventMap>(type: K, listener: (this: HTMLAnyButtonElement, ev: AnyButtonCustomEvent<HTMLAnyButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyButtonElementEventMap>(type: K, listener: (this: HTMLAnyButtonElement, ev: AnyButtonCustomEvent<HTMLAnyButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyButtonElement: {
         prototype: HTMLAnyButtonElement;
         new (): HTMLAnyButtonElement;
     };
+    interface HTMLAnyCheckboxElementEventMap {
+        "valueChange": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+    }
     /**
-     * Checkbox is an extension to standard checkbox element with theming.
+     * Checkbox is an extension to the standard checkbox element with theming.
      */
     interface HTMLAnyCheckboxElement extends Components.AnyCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyCheckboxElementEventMap>(type: K, listener: (this: HTMLAnyCheckboxElement, ev: AnyCheckboxCustomEvent<HTMLAnyCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyCheckboxElementEventMap>(type: K, listener: (this: HTMLAnyCheckboxElement, ev: AnyCheckboxCustomEvent<HTMLAnyCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyCheckboxElement: {
         prototype: HTMLAnyCheckboxElement;
         new (): HTMLAnyCheckboxElement;
     };
+    interface HTMLAnyDropdownElementEventMap {
+        "valueChange": any;
+        "aOnPanelShow": any;
+        "aOnPanelShowStart": any;
+        "aOnPanelHide": any;
+        "aOnPanelHideStart": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+        "aOnClick": any;
+    }
+    /**
+     * Dropdown, also known as Select, is used to choose an item from a collection of options.
+     */
     interface HTMLAnyDropdownElement extends Components.AnyDropdown, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyDropdownElementEventMap>(type: K, listener: (this: HTMLAnyDropdownElement, ev: AnyDropdownCustomEvent<HTMLAnyDropdownElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyDropdownElementEventMap>(type: K, listener: (this: HTMLAnyDropdownElement, ev: AnyDropdownCustomEvent<HTMLAnyDropdownElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyDropdownElement: {
         prototype: HTMLAnyDropdownElement;
         new (): HTMLAnyDropdownElement;
     };
+    interface HTMLAnyInputNumberElementEventMap {
+        "aOnInput": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+        "aOnKeyDown": any;
+        "valueChange": any;
+    }
     interface HTMLAnyInputNumberElement extends Components.AnyInputNumber, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyInputNumberElementEventMap>(type: K, listener: (this: HTMLAnyInputNumberElement, ev: AnyInputNumberCustomEvent<HTMLAnyInputNumberElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyInputNumberElementEventMap>(type: K, listener: (this: HTMLAnyInputNumberElement, ev: AnyInputNumberCustomEvent<HTMLAnyInputNumberElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyInputNumberElement: {
         prototype: HTMLAnyInputNumberElement;
         new (): HTMLAnyInputNumberElement;
     };
+    interface HTMLAnyInputSwitchElementEventMap {
+        "valueChange": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+    }
     interface HTMLAnyInputSwitchElement extends Components.AnyInputSwitch, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyInputSwitchElementEventMap>(type: K, listener: (this: HTMLAnyInputSwitchElement, ev: AnyInputSwitchCustomEvent<HTMLAnyInputSwitchElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyInputSwitchElementEventMap>(type: K, listener: (this: HTMLAnyInputSwitchElement, ev: AnyInputSwitchCustomEvent<HTMLAnyInputSwitchElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyInputSwitchElement: {
         prototype: HTMLAnyInputSwitchElement;
         new (): HTMLAnyInputSwitchElement;
     };
+    interface HTMLAnyInputTextElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLAnyInputTextElement extends Components.AnyInputText, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyInputTextElementEventMap>(type: K, listener: (this: HTMLAnyInputTextElement, ev: AnyInputTextCustomEvent<HTMLAnyInputTextElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyInputTextElementEventMap>(type: K, listener: (this: HTMLAnyInputTextElement, ev: AnyInputTextCustomEvent<HTMLAnyInputTextElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyInputTextElement: {
         prototype: HTMLAnyInputTextElement;
         new (): HTMLAnyInputTextElement;
     };
+    interface HTMLAnyInputTextareaElementEventMap {
+        "aOnBlur": FocusEvent;
+        "aOnFocus": FocusEvent;
+        "aOnResize": any;
+        "aOnInput": InputEvent;
+        "valueChange": TextareaChangeEventDetail;
+    }
     interface HTMLAnyInputTextareaElement extends Components.AnyInputTextarea, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyInputTextareaElementEventMap>(type: K, listener: (this: HTMLAnyInputTextareaElement, ev: AnyInputTextareaCustomEvent<HTMLAnyInputTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyInputTextareaElementEventMap>(type: K, listener: (this: HTMLAnyInputTextareaElement, ev: AnyInputTextareaCustomEvent<HTMLAnyInputTextareaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyInputTextareaElement: {
         prototype: HTMLAnyInputTextareaElement;
         new (): HTMLAnyInputTextareaElement;
     };
+    interface HTMLAnyListboxElementEventMap {
+        "valueChange": SelectChangeEventDetail;
+    }
     interface HTMLAnyListboxElement extends Components.AnyListbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyListboxElementEventMap>(type: K, listener: (this: HTMLAnyListboxElement, ev: AnyListboxCustomEvent<HTMLAnyListboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyListboxElementEventMap>(type: K, listener: (this: HTMLAnyListboxElement, ev: AnyListboxCustomEvent<HTMLAnyListboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyListboxElement: {
         prototype: HTMLAnyListboxElement;
         new (): HTMLAnyListboxElement;
     };
+    interface HTMLAnyMultiselectElementEventMap {
+        "valueChange": any;
+        "aOnPanelShow": any;
+        "aOnPanelShowStart": any;
+        "aOnPanelHide": any;
+        "aOnPanelHideStart": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+        "aOnClick": any;
+    }
     interface HTMLAnyMultiselectElement extends Components.AnyMultiselect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyMultiselectElementEventMap>(type: K, listener: (this: HTMLAnyMultiselectElement, ev: AnyMultiselectCustomEvent<HTMLAnyMultiselectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyMultiselectElementEventMap>(type: K, listener: (this: HTMLAnyMultiselectElement, ev: AnyMultiselectCustomEvent<HTMLAnyMultiselectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyMultiselectElement: {
         prototype: HTMLAnyMultiselectElement;
         new (): HTMLAnyMultiselectElement;
     };
+    interface HTMLAnyOverlayElementEventMap {
+        "aOnShow": any;
+        "aOnShowStart": any;
+        "aOnHide": any;
+        "aOnHideStart": any;
+    }
     interface HTMLAnyOverlayElement extends Components.AnyOverlay, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyOverlayElementEventMap>(type: K, listener: (this: HTMLAnyOverlayElement, ev: AnyOverlayCustomEvent<HTMLAnyOverlayElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyOverlayElementEventMap>(type: K, listener: (this: HTMLAnyOverlayElement, ev: AnyOverlayCustomEvent<HTMLAnyOverlayElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyOverlayElement: {
         prototype: HTMLAnyOverlayElement;
         new (): HTMLAnyOverlayElement;
     };
+    interface HTMLAnyRadioButtonElementEventMap {
+        "aOnSelect": any;
+        "aOnFocus": any;
+        "aOnBlur": any;
+    }
     interface HTMLAnyRadioButtonElement extends Components.AnyRadioButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyRadioButtonElementEventMap>(type: K, listener: (this: HTMLAnyRadioButtonElement, ev: AnyRadioButtonCustomEvent<HTMLAnyRadioButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyRadioButtonElementEventMap>(type: K, listener: (this: HTMLAnyRadioButtonElement, ev: AnyRadioButtonCustomEvent<HTMLAnyRadioButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyRadioButtonElement: {
         prototype: HTMLAnyRadioButtonElement;
         new (): HTMLAnyRadioButtonElement;
     };
+    interface HTMLAnyRadioGroupElementEventMap {
+        "valueChange": RadioGroupChangeEventDetail;
+    }
     interface HTMLAnyRadioGroupElement extends Components.AnyRadioGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyRadioGroupElementEventMap>(type: K, listener: (this: HTMLAnyRadioGroupElement, ev: AnyRadioGroupCustomEvent<HTMLAnyRadioGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyRadioGroupElementEventMap>(type: K, listener: (this: HTMLAnyRadioGroupElement, ev: AnyRadioGroupCustomEvent<HTMLAnyRadioGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyRadioGroupElement: {
         prototype: HTMLAnyRadioGroupElement;
@@ -1272,7 +1463,22 @@ declare global {
         prototype: HTMLAnyTabViewElement;
         new (): HTMLAnyTabViewElement;
     };
+    interface HTMLAnyVirtualScrollerElementEventMap {
+        "scrollingProgress": any;
+        "clusterChanged": any;
+        "clusterWillChange": any;
+        "aOnLazyLoad": any;
+        "aOnItemClick": any;
+    }
     interface HTMLAnyVirtualScrollerElement extends Components.AnyVirtualScroller, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAnyVirtualScrollerElementEventMap>(type: K, listener: (this: HTMLAnyVirtualScrollerElement, ev: AnyVirtualScrollerCustomEvent<HTMLAnyVirtualScrollerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAnyVirtualScrollerElementEventMap>(type: K, listener: (this: HTMLAnyVirtualScrollerElement, ev: AnyVirtualScrollerCustomEvent<HTMLAnyVirtualScrollerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAnyVirtualScrollerElement: {
         prototype: HTMLAnyVirtualScrollerElement;
@@ -1326,41 +1532,137 @@ declare global {
         prototype: HTMLAppDocsectiontextElement;
         new (): HTMLAppDocsectiontextElement;
     };
+    interface HTMLCheckboxBasicElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCheckboxBasicElement extends Components.CheckboxBasic, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCheckboxBasicElementEventMap>(type: K, listener: (this: HTMLCheckboxBasicElement, ev: CheckboxBasicCustomEvent<HTMLCheckboxBasicElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCheckboxBasicElementEventMap>(type: K, listener: (this: HTMLCheckboxBasicElement, ev: CheckboxBasicCustomEvent<HTMLCheckboxBasicElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCheckboxBasicElement: {
         prototype: HTMLCheckboxBasicElement;
         new (): HTMLCheckboxBasicElement;
     };
+    interface HTMLCheckboxDisabledElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCheckboxDisabledElement extends Components.CheckboxDisabled, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCheckboxDisabledElementEventMap>(type: K, listener: (this: HTMLCheckboxDisabledElement, ev: CheckboxDisabledCustomEvent<HTMLCheckboxDisabledElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCheckboxDisabledElementEventMap>(type: K, listener: (this: HTMLCheckboxDisabledElement, ev: CheckboxDisabledCustomEvent<HTMLCheckboxDisabledElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCheckboxDisabledElement: {
         prototype: HTMLCheckboxDisabledElement;
         new (): HTMLCheckboxDisabledElement;
     };
+    interface HTMLCheckboxDynamicElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCheckboxDynamicElement extends Components.CheckboxDynamic, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCheckboxDynamicElementEventMap>(type: K, listener: (this: HTMLCheckboxDynamicElement, ev: CheckboxDynamicCustomEvent<HTMLCheckboxDynamicElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCheckboxDynamicElementEventMap>(type: K, listener: (this: HTMLCheckboxDynamicElement, ev: CheckboxDynamicCustomEvent<HTMLCheckboxDynamicElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCheckboxDynamicElement: {
         prototype: HTMLCheckboxDynamicElement;
         new (): HTMLCheckboxDynamicElement;
     };
+    interface HTMLCheckboxGroupElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCheckboxGroupElement extends Components.CheckboxGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCheckboxGroupElementEventMap>(type: K, listener: (this: HTMLCheckboxGroupElement, ev: CheckboxGroupCustomEvent<HTMLCheckboxGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCheckboxGroupElementEventMap>(type: K, listener: (this: HTMLCheckboxGroupElement, ev: CheckboxGroupCustomEvent<HTMLCheckboxGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCheckboxGroupElement: {
         prototype: HTMLCheckboxGroupElement;
         new (): HTMLCheckboxGroupElement;
     };
+    interface HTMLCheckboxLabelElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCheckboxLabelElement extends Components.CheckboxLabel, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCheckboxLabelElementEventMap>(type: K, listener: (this: HTMLCheckboxLabelElement, ev: CheckboxLabelCustomEvent<HTMLCheckboxLabelElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCheckboxLabelElementEventMap>(type: K, listener: (this: HTMLCheckboxLabelElement, ev: CheckboxLabelCustomEvent<HTMLCheckboxLabelElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCheckboxLabelElement: {
         prototype: HTMLCheckboxLabelElement;
         new (): HTMLCheckboxLabelElement;
     };
+    interface HTMLCheckboxReadonlyElementEventMap {
+        "valueChange": boolean;
+    }
     interface HTMLCheckboxReadonlyElement extends Components.CheckboxReadonly, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCheckboxReadonlyElementEventMap>(type: K, listener: (this: HTMLCheckboxReadonlyElement, ev: CheckboxReadonlyCustomEvent<HTMLCheckboxReadonlyElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCheckboxReadonlyElementEventMap>(type: K, listener: (this: HTMLCheckboxReadonlyElement, ev: CheckboxReadonlyCustomEvent<HTMLCheckboxReadonlyElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCheckboxReadonlyElement: {
         prototype: HTMLCheckboxReadonlyElement;
         new (): HTMLCheckboxReadonlyElement;
+    };
+    interface HTMLDropdownBasicElement extends Components.DropdownBasic, HTMLStencilElement {
+    }
+    var HTMLDropdownBasicElement: {
+        prototype: HTMLDropdownBasicElement;
+        new (): HTMLDropdownBasicElement;
+    };
+    interface HTMLDropdownDisabledElement extends Components.DropdownDisabled, HTMLStencilElement {
+    }
+    var HTMLDropdownDisabledElement: {
+        prototype: HTMLDropdownDisabledElement;
+        new (): HTMLDropdownDisabledElement;
+    };
+    interface HTMLDropdownFilterElement extends Components.DropdownFilter, HTMLStencilElement {
+    }
+    var HTMLDropdownFilterElement: {
+        prototype: HTMLDropdownFilterElement;
+        new (): HTMLDropdownFilterElement;
+    };
+    interface HTMLDropdownTemplateElement extends Components.DropdownTemplate, HTMLStencilElement {
+    }
+    var HTMLDropdownTemplateElement: {
+        prototype: HTMLDropdownTemplateElement;
+        new (): HTMLDropdownTemplateElement;
+    };
+    interface HTMLDropdownVirtualScrollElement extends Components.DropdownVirtualScroll, HTMLStencilElement {
+    }
+    var HTMLDropdownVirtualScrollElement: {
+        prototype: HTMLDropdownVirtualScrollElement;
+        new (): HTMLDropdownVirtualScrollElement;
     };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
@@ -1395,6 +1697,11 @@ declare global {
         "checkbox-group": HTMLCheckboxGroupElement;
         "checkbox-label": HTMLCheckboxLabelElement;
         "checkbox-readonly": HTMLCheckboxReadonlyElement;
+        "dropdown-basic": HTMLDropdownBasicElement;
+        "dropdown-disabled": HTMLDropdownDisabledElement;
+        "dropdown-filter": HTMLDropdownFilterElement;
+        "dropdown-template": HTMLDropdownTemplateElement;
+        "dropdown-virtual-scroll": HTMLDropdownVirtualScrollElement;
     }
 }
 declare namespace LocalJSX {
@@ -1497,7 +1804,7 @@ declare namespace LocalJSX {
         "type"?: "button" | "submit" | "reset";
     }
     /**
-     * Checkbox is an extension to standard checkbox element with theming.
+     * Checkbox is an extension to the standard checkbox element with theming.
      */
     interface AnyCheckbox {
         /**
@@ -1565,41 +1872,44 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    /**
+     * Dropdown, also known as Select, is used to choose an item from a collection of options.
+     */
     interface AnyDropdown {
         /**
-          * Inline style of the element
+          * Inline style of the element.
          */
         "anyStyle"?: any;
         /**
-          * Index of the element in tabbing order
+          * Index of the element in tabbing order.
          */
         "anyTabIndex"?: number;
         /**
-          * Whether to automatically manage layering
+          * Whether to automatically manage layering.
          */
         "autoZIndex"?: boolean;
         /**
-          * Base zIndex value to use in layering
+          * Base zIndex value to use in layering.
          */
         "baseZIndex"?: string;
         /**
-          * Icon class of the dropdown clear icon
+          * Icon class of the dropdown clear icon.
          */
         "clearIcon"?: string;
         /**
-          * When present, it specifies that the element should be disabled
+          * When present, it specifies that the element should be disabled.
          */
         "disabled"?: boolean;
         /**
-          * Icon class of the dropdown icon
+          * Icon class of the dropdown icon.
          */
         "dropdownIcon"?: string;
         /**
-          * When specified, displays a filter input at header
+          * When specified, displays a filter input at header.
          */
         "filter"?: boolean;
         /**
-          * Transition options of the hide animation
+          * Transition options of the hide animation.
          */
         "hideAnimation"?: string;
         /**
@@ -1611,35 +1921,35 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Callback to invoke when dropdown loses focus
+          * Callback to invoke when dropdown loses focus.
          */
         "onAOnBlur"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when component is clicked
+          * Callback to invoke when component is clicked.
          */
         "onAOnClick"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when dropdown gets focus
+          * Callback to invoke when dropdown gets focus.
          */
         "onAOnFocus"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when dropdown overlay gets hidden
+          * Callback to invoke when dropdown overlay gets hidden.
          */
         "onAOnPanelHide"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when dropdown overlay before gets hidden
+          * Callback to invoke when dropdown overlay before gets hidden.
          */
         "onAOnPanelHideStart"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when dropdown overlay gets visible
+          * Callback to invoke when dropdown overlay gets visible.
          */
         "onAOnPanelShow"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when dropdown overlay before gets visible
+          * Callback to invoke when dropdown overlay before gets visible.
          */
         "onAOnPanelShowStart"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
-          * Callback to invoke when value of dropdown changes
+          * Callback to invoke when value of dropdown changes.
          */
         "onValueChange"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
@@ -1647,7 +1957,7 @@ declare namespace LocalJSX {
          */
         "optionLabel"?: string;
         /**
-          * Name of the value field of an option
+          * Name of the value field of an option.
          */
         "optionValue"?: string;
         /**
@@ -1655,31 +1965,31 @@ declare namespace LocalJSX {
          */
         "options"?: any[];
         /**
-          * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+          * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.
          */
         "panelScrollHeight"?: string;
         /**
-          * Default text to display when no option is selected
+          * Default text to display when no option is selected.
          */
         "placeholder"?: string;
         /**
-          * When present, it specifies that the element value cannot be changed
+          * When present, it specifies that the element value cannot be changed.
          */
         "readonly"?: boolean;
         /**
-          * Keyframe name the show animation
+          * Keyframe name the show animation.
          */
         "showAnimation"?: string;
         /**
-          * When enabled, a clear icon is displayed to clear the value
+          * When enabled, a clear icon is displayed to clear the value.
          */
         "showClear"?: boolean;
         /**
-          * Value of the dropdown list
+          * Value of the dropdown list.
          */
         "value"?: any;
         /**
-          * When present, list virtual scroller is enabled
+          * When present, list virtual scroller is enabled.
          */
         "virtualScroll"?: boolean;
     }
@@ -2655,6 +2965,26 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface DropdownBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface DropdownDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface DropdownFilter {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface DropdownTemplate {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface DropdownVirtualScroll {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface IntrinsicElements {
         "any-badge": AnyBadge;
         "any-badge-overlay": AnyBadgeOverlay;
@@ -2688,6 +3018,11 @@ declare namespace LocalJSX {
         "checkbox-group": CheckboxGroup;
         "checkbox-label": CheckboxLabel;
         "checkbox-readonly": CheckboxReadonly;
+        "dropdown-basic": DropdownBasic;
+        "dropdown-disabled": DropdownDisabled;
+        "dropdown-filter": DropdownFilter;
+        "dropdown-template": DropdownTemplate;
+        "dropdown-virtual-scroll": DropdownVirtualScroll;
     }
 }
 export { LocalJSX as JSX };
@@ -2698,9 +3033,12 @@ declare module "@stencil/core" {
             "any-badge-overlay": LocalJSX.AnyBadgeOverlay & JSXBase.HTMLAttributes<HTMLAnyBadgeOverlayElement>;
             "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             /**
-             * Checkbox is an extension to standard checkbox element with theming.
+             * Checkbox is an extension to the standard checkbox element with theming.
              */
             "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
+            /**
+             * Dropdown, also known as Select, is used to choose an item from a collection of options.
+             */
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-number": LocalJSX.AnyInputNumber & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
             "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
@@ -2729,6 +3067,11 @@ declare module "@stencil/core" {
             "checkbox-group": LocalJSX.CheckboxGroup & JSXBase.HTMLAttributes<HTMLCheckboxGroupElement>;
             "checkbox-label": LocalJSX.CheckboxLabel & JSXBase.HTMLAttributes<HTMLCheckboxLabelElement>;
             "checkbox-readonly": LocalJSX.CheckboxReadonly & JSXBase.HTMLAttributes<HTMLCheckboxReadonlyElement>;
+            "dropdown-basic": LocalJSX.DropdownBasic & JSXBase.HTMLAttributes<HTMLDropdownBasicElement>;
+            "dropdown-disabled": LocalJSX.DropdownDisabled & JSXBase.HTMLAttributes<HTMLDropdownDisabledElement>;
+            "dropdown-filter": LocalJSX.DropdownFilter & JSXBase.HTMLAttributes<HTMLDropdownFilterElement>;
+            "dropdown-template": LocalJSX.DropdownTemplate & JSXBase.HTMLAttributes<HTMLDropdownTemplateElement>;
+            "dropdown-virtual-scroll": LocalJSX.DropdownVirtualScroll & JSXBase.HTMLAttributes<HTMLDropdownVirtualScrollElement>;
         }
     }
 }

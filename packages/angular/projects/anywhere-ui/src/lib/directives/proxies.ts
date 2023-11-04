@@ -147,35 +147,35 @@ export class AnyDropdown {
 
 export declare interface AnyDropdown extends Components.AnyDropdown {
   /**
-   * Callback to invoke when value of dropdown changes
+   * Callback to invoke when value of dropdown changes.
    */
   valueChange: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when dropdown overlay gets visible
+   * Callback to invoke when dropdown overlay gets visible.
    */
   aOnPanelShow: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when dropdown overlay before gets visible
+   * Callback to invoke when dropdown overlay before gets visible.
    */
   aOnPanelShowStart: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when dropdown overlay gets hidden
+   * Callback to invoke when dropdown overlay gets hidden.
    */
   aOnPanelHide: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when dropdown overlay before gets hidden
+   * Callback to invoke when dropdown overlay before gets hidden.
    */
   aOnPanelHideStart: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when dropdown gets focus
+   * Callback to invoke when dropdown gets focus.
    */
   aOnFocus: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when dropdown loses focus
+   * Callback to invoke when dropdown loses focus.
    */
   aOnBlur: EventEmitter<CustomEvent<any>>;
   /**
-   * Callback to invoke when component is clicked
+   * Callback to invoke when component is clicked.
    */
   aOnClick: EventEmitter<CustomEvent<any>>;
 }
@@ -970,5 +970,115 @@ export declare interface CheckboxReadonly extends Components.CheckboxReadonly {
 
   valueChange: EventEmitter<CustomEvent<boolean>>;
 }
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'dropdown-basic',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class DropdownBasic {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DropdownBasic extends Components.DropdownBasic {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'dropdown-disabled',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class DropdownDisabled {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DropdownDisabled extends Components.DropdownDisabled {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'dropdown-filter',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class DropdownFilter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DropdownFilter extends Components.DropdownFilter {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'dropdown-template',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class DropdownTemplate {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DropdownTemplate extends Components.DropdownTemplate {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'dropdown-virtual-scroll',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class DropdownVirtualScroll {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DropdownVirtualScroll extends Components.DropdownVirtualScroll {}
 
 

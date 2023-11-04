@@ -10,8 +10,8 @@
   --text-color-secondary: rgba(255, 255, 255, 0.6);
   --primary-color: var(--primaryColor);
   --primary-color-text: #ffffff;
-  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
   --surface-0: #121212;
   --surface-50: #2a2a2a;
   --surface-100: #414141;
@@ -43,8 +43,9 @@
   --surface-border: #383838;
   --surface-hover: rgba(255, 255, 255, 0.03);
   --maskbg: rgba(0, 0, 0, 0.4);
-  --focus-ring: 0 0 0 1px #cf95d9;
-  color-scheme: dark;
+  --highlight-bg: rgba(150, 111, 214, 0.16);
+  --highlight-text-color: var(--primaryColor);
+  --focus-ring: 0 0 0 1px #d0d0d0;
 }
 
 :root[theme="anywhere-default-dark-purple"],
@@ -169,11 +170,7 @@
   --textColor: rgba(255, 255, 255, 0.87);
   --textSecondaryColor: rgba(255, 255, 255, 0.6);
 
-  --focusOutlineColor: hsl(
-    var(--primary-color-h),
-    var(--primary-color-s),
-    calc(var(--primary-color-l) + 10%)
-  );
+  --focusOutlineColor: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 10%));
   --focusShadow: 0 0 0 0.2rem var(--focusOutlineColor);
 
   --inputBgColor: #121212;

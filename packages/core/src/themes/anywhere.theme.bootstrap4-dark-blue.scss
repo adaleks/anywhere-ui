@@ -10,8 +10,8 @@
   --text-color-secondary: rgba(255, 255, 255, 0.6);
   --primary-color: #8dd0ff;
   --primary-color-text: #151515;
-  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
   --surface-0: #20262e;
   --surface-50: #363c43;
   --surface-100: #4d5158;
@@ -44,6 +44,8 @@
   --surface-hover: rgba(255, 255, 255, 0.04);
   --maskbg: rgba(0, 0, 0, 0.4);
   --focus-ring: 0 0 0 1px #e3f3fe;
+  --highlight-bg: var(--primary-color);
+  --highlight-text-color: var(--primary-color-text);
   --cog-icon: url("https://api.iconify.design/fa-solid/cog.svg?color=%23151515&height=26");
   --times-icon: url("https://api.iconify.design/fa-solid/times.svg?color=%23151515&height=20");
   color-scheme: dark;
@@ -171,11 +173,7 @@
   --textSecondaryColor: rgba(255, 255, 255, 0.6);
 
   --borderRadius: 4px;
-  --focusOutlineColor: hsl(
-    var(--primary-color-h),
-    var(--primary-color-s),
-    calc(var(--primary-color-l) + 10%)
-  );
+  --focusOutlineColor: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + 10%));
   --focusShadow: 0 0 0 1px var(--focusOutlineColor);
 
   --buttonPadding: 0.5rem 0.75rem;

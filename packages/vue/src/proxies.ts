@@ -468,3 +468,33 @@ export const CheckboxReadonly = /*@__PURE__*/ defineContainer<JSX.CheckboxReadon
   'valueChange'
 ]);
 
+
+export const DropdownBasic = /*@__PURE__*/ defineContainer<JSX.DropdownBasic>('dropdown-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const DropdownDisabled = /*@__PURE__*/ defineContainer<JSX.DropdownDisabled>('dropdown-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const DropdownFilter = /*@__PURE__*/ defineContainer<JSX.DropdownFilter>('dropdown-filter', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const DropdownTemplate = /*@__PURE__*/ defineContainer<JSX.DropdownTemplate>('dropdown-template', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const DropdownVirtualScroll = /*@__PURE__*/ defineContainer<JSX.DropdownVirtualScroll>('dropdown-virtual-scroll', undefined, [
+  'textId',
+  'textTitle'
+]);
+

@@ -7,7 +7,7 @@
 
 ## Overview
 
-Checkbox is an extension to standard checkbox element with theming.
+Checkbox is an extension to the standard checkbox element with theming.
 
 ## Properties
 
@@ -50,12 +50,19 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot      | Description                                                                                                                                                  |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `"label"` | Represents the label or content associated with the checkbox. Use this slot to provide descriptive text or additional content that accompanies the checkbox. |
+
+
 ## Shadow Parts
 
-| Part                           | Description                                                                                                         |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| `"any-checkbox-box"`           | This refers to the actual checkmark symbol within the checkbox, which indicates the checked state of the component. |
-| `"any-checkbox-box-highlight"` | This represents the container that encapsulates the checkbox mark and its associated visual elements.               |
+| Part                           | Description                                                                                                    |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `"any-checkbox-box"`           | This refers to the actual checkmark symbol within the checkbox, indicating the checked state of the component. |
+| `"any-checkbox-box-highlight"` | This represents the container that encapsulates the checkbox mark and its associated visual elements.          |
 
 
 ## CSS Custom Properties

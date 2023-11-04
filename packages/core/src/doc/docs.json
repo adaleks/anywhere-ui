@@ -1,8 +1,8 @@
 {
-  "timestamp": "2023-10-05T21:18:13",
+  "timestamp": "2023-11-04T21:29:11",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.4.0",
+    "version": "4.6.0",
     "typescriptVersion": "5.2.2"
   },
   "components": [
@@ -644,7 +644,7 @@
       "encapsulation": "shadow",
       "tag": "any-checkbox",
       "readme": "# any-checkbox\r\n\r\n\r\n\r",
-      "docs": "Checkbox is an extension to standard checkbox element with theming.",
+      "docs": "Checkbox is an extension to the standard checkbox element with theming.",
       "docsTags": [
         {
           "name": "part",
@@ -652,7 +652,11 @@
         },
         {
           "name": "part",
-          "text": "any-checkbox-box - This refers to the actual checkmark symbol within the checkbox, which indicates the checked state of the component."
+          "text": "any-checkbox-box - This refers to the actual checkmark symbol within the checkbox, indicating the checked state of the component."
+        },
+        {
+          "name": "slot",
+          "text": "label - Represents the label or content associated with the checkbox.\nUse this slot to provide descriptive text or additional content that accompanies the checkbox."
         }
       ],
       "usage": {},
@@ -1065,11 +1069,16 @@
           "docs": "The width of the checkbox."
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "label",
+          "docs": "Represents the label or content associated with the checkbox.\nUse this slot to provide descriptive text or additional content that accompanies the checkbox."
+        }
+      ],
       "parts": [
         {
           "name": "any-checkbox-box",
-          "docs": "This refers to the actual checkmark symbol within the checkbox, which indicates the checked state of the component."
+          "docs": "This refers to the actual checkmark symbol within the checkbox, indicating the checked state of the component."
         },
         {
           "name": "any-checkbox-box-highlight",
@@ -1115,8 +1124,21 @@
       "encapsulation": "shadow",
       "tag": "any-dropdown",
       "readme": "# AnyDropdown\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "Dropdown, also known as Select, is used to choose an item from a collection of options.",
+      "docsTags": [
+        {
+          "name": "part",
+          "text": "any-dropdown - This refers to the actual component."
+        },
+        {
+          "name": "slot",
+          "text": "item - Represents individual items in the dropdown list.\r\nUse this slot to customize the appearance of each item in the list."
+        },
+        {
+          "name": "slot",
+          "text": "selectedItem - Represents the currently selected item in the dropdown.\r\nUse this slot to customize the appearance of the selected item in the dropdown."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -1130,7 +1152,7 @@
           "mutable": false,
           "attr": "any-style",
           "reflectToAttr": false,
-          "docs": "Inline style of the element",
+          "docs": "Inline style of the element.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -1152,7 +1174,7 @@
           "mutable": false,
           "attr": "any-tab-index",
           "reflectToAttr": false,
-          "docs": "Index of the element in tabbing order",
+          "docs": "Index of the element in tabbing order.",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -1174,7 +1196,7 @@
           "mutable": false,
           "attr": "auto-z-index",
           "reflectToAttr": false,
-          "docs": "Whether to automatically manage layering",
+          "docs": "Whether to automatically manage layering.",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -1196,7 +1218,7 @@
           "mutable": false,
           "attr": "base-z-index",
           "reflectToAttr": false,
-          "docs": "Base zIndex value to use in layering",
+          "docs": "Base zIndex value to use in layering.",
           "docsTags": [],
           "default": "\"0\"",
           "values": [
@@ -1218,7 +1240,7 @@
           "mutable": false,
           "attr": "clear-icon",
           "reflectToAttr": false,
-          "docs": "Icon class of the dropdown clear icon",
+          "docs": "Icon class of the dropdown clear icon.",
           "docsTags": [],
           "default": "\"fa-solid:times\"",
           "values": [
@@ -1240,7 +1262,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "When present, it specifies that the element should be disabled",
+          "docs": "When present, it specifies that the element should be disabled.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1262,7 +1284,7 @@
           "mutable": false,
           "attr": "dropdown-icon",
           "reflectToAttr": false,
-          "docs": "Icon class of the dropdown icon",
+          "docs": "Icon class of the dropdown icon.",
           "docsTags": [],
           "default": "\"fa-solid:chevron-down\"",
           "values": [
@@ -1284,7 +1306,7 @@
           "mutable": false,
           "attr": "filter",
           "reflectToAttr": false,
-          "docs": "When specified, displays a filter input at header",
+          "docs": "When specified, displays a filter input at header.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1306,7 +1328,7 @@
           "mutable": false,
           "attr": "hide-animation",
           "reflectToAttr": false,
-          "docs": "Transition options of the hide animation",
+          "docs": "Transition options of the hide animation.",
           "docsTags": [],
           "default": "\"growUp\"",
           "values": [
@@ -1394,7 +1416,7 @@
           "mutable": false,
           "attr": "option-value",
           "reflectToAttr": false,
-          "docs": "Name of the value field of an option",
+          "docs": "Name of the value field of an option.",
           "docsTags": [],
           "default": "\"value\"",
           "values": [
@@ -1437,7 +1459,7 @@
           "mutable": false,
           "attr": "panel-scroll-height",
           "reflectToAttr": false,
-          "docs": "Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value",
+          "docs": "Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.",
           "docsTags": [],
           "default": "\"200px\"",
           "values": [
@@ -1459,7 +1481,7 @@
           "mutable": false,
           "attr": "placeholder",
           "reflectToAttr": false,
-          "docs": "Default text to display when no option is selected",
+          "docs": "Default text to display when no option is selected.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -1481,7 +1503,7 @@
           "mutable": false,
           "attr": "readonly",
           "reflectToAttr": false,
-          "docs": "When present, it specifies that the element value cannot be changed",
+          "docs": "When present, it specifies that the element value cannot be changed.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1503,7 +1525,7 @@
           "mutable": false,
           "attr": "show-animation",
           "reflectToAttr": false,
-          "docs": "Keyframe name the show animation",
+          "docs": "Keyframe name the show animation.",
           "docsTags": [],
           "default": "\"growDown\"",
           "values": [
@@ -1525,7 +1547,7 @@
           "mutable": false,
           "attr": "show-clear",
           "reflectToAttr": false,
-          "docs": "When enabled, a clear icon is displayed to clear the value",
+          "docs": "When enabled, a clear icon is displayed to clear the value.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1547,7 +1569,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "Value of the dropdown list",
+          "docs": "Value of the dropdown list.",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -1569,7 +1591,7 @@
           "mutable": false,
           "attr": "virtual-scroll",
           "reflectToAttr": false,
-          "docs": "When present, list virtual scroller is enabled",
+          "docs": "When present, list virtual scroller is enabled.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1594,7 +1616,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when dropdown loses focus",
+          "docs": "Callback to invoke when dropdown loses focus.",
           "docsTags": []
         },
         {
@@ -1608,7 +1630,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when component is clicked",
+          "docs": "Callback to invoke when component is clicked.",
           "docsTags": []
         },
         {
@@ -1622,7 +1644,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when dropdown gets focus",
+          "docs": "Callback to invoke when dropdown gets focus.",
           "docsTags": []
         },
         {
@@ -1636,7 +1658,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when dropdown overlay gets hidden",
+          "docs": "Callback to invoke when dropdown overlay gets hidden.",
           "docsTags": []
         },
         {
@@ -1650,7 +1672,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when dropdown overlay before gets hidden",
+          "docs": "Callback to invoke when dropdown overlay before gets hidden.",
           "docsTags": []
         },
         {
@@ -1664,7 +1686,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when dropdown overlay gets visible",
+          "docs": "Callback to invoke when dropdown overlay gets visible.",
           "docsTags": []
         },
         {
@@ -1678,7 +1700,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when dropdown overlay before gets visible",
+          "docs": "Callback to invoke when dropdown overlay before gets visible.",
           "docsTags": []
         },
         {
@@ -1692,7 +1714,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "Callback to invoke when value of dropdown changes",
+          "docs": "Callback to invoke when value of dropdown changes.",
           "docsTags": []
         }
       ],
@@ -1704,15 +1726,36 @@
           "passive": false
         }
       ],
-      "styles": [],
-      "slots": [],
+      "styles": [
+        {
+          "name": "--inputDropdownIconColor",
+          "annotation": "prop",
+          "docs": "The color of the dropdown icon."
+        }
+      ],
+      "slots": [
+        {
+          "name": "item",
+          "docs": "Represents individual items in the dropdown list.\r\nUse this slot to customize the appearance of each item in the list."
+        },
+        {
+          "name": "selectedItem",
+          "docs": "Represents the currently selected item in the dropdown.\r\nUse this slot to customize the appearance of the selected item in the dropdown."
+        }
+      ],
       "parts": [
         {
           "name": "any-dropdown",
-          "docs": ""
+          "docs": "This refers to the actual component."
         }
       ],
-      "dependents": [],
+      "dependents": [
+        "dropdown-basic",
+        "dropdown-disabled",
+        "dropdown-filter",
+        "dropdown-template",
+        "dropdown-virtual-scroll"
+      ],
       "dependencies": [
         "any-overlay",
         "any-listbox"
@@ -1727,6 +1770,21 @@
           "any-input-text",
           "any-ripple-effect",
           "any-virtual-scroller"
+        ],
+        "dropdown-basic": [
+          "any-dropdown"
+        ],
+        "dropdown-disabled": [
+          "any-dropdown"
+        ],
+        "dropdown-filter": [
+          "any-dropdown"
+        ],
+        "dropdown-template": [
+          "any-dropdown"
+        ],
+        "dropdown-virtual-scroll": [
+          "any-dropdown"
         ]
       }
     },
@@ -5643,6 +5701,12 @@
           "target": "window",
           "capture": false,
           "passive": true
+        },
+        {
+          "event": "scroll",
+          "target": "window",
+          "capture": false,
+          "passive": true
         }
       ],
       "styles": [],
@@ -6926,7 +6990,12 @@
         "checkbox-dynamic",
         "checkbox-group",
         "checkbox-label",
-        "checkbox-readonly"
+        "checkbox-readonly",
+        "dropdown-basic",
+        "dropdown-disabled",
+        "dropdown-filter",
+        "dropdown-template",
+        "dropdown-virtual-scroll"
       ],
       "dependencies": [
         "any-button"
@@ -6955,6 +7024,21 @@
           "app-code"
         ],
         "checkbox-readonly": [
+          "app-code"
+        ],
+        "dropdown-basic": [
+          "app-code"
+        ],
+        "dropdown-disabled": [
+          "app-code"
+        ],
+        "dropdown-filter": [
+          "app-code"
+        ],
+        "dropdown-template": [
+          "app-code"
+        ],
+        "dropdown-virtual-scroll": [
           "app-code"
         ]
       }
@@ -7760,7 +7844,12 @@
         "checkbox-dynamic",
         "checkbox-group",
         "checkbox-label",
-        "checkbox-readonly"
+        "checkbox-readonly",
+        "dropdown-basic",
+        "dropdown-disabled",
+        "dropdown-filter",
+        "dropdown-template",
+        "dropdown-virtual-scroll"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -7783,6 +7872,21 @@
           "app-docsectiontext"
         ],
         "checkbox-readonly": [
+          "app-docsectiontext"
+        ],
+        "dropdown-basic": [
+          "app-docsectiontext"
+        ],
+        "dropdown-disabled": [
+          "app-docsectiontext"
+        ],
+        "dropdown-filter": [
+          "app-docsectiontext"
+        ],
+        "dropdown-template": [
+          "app-docsectiontext"
+        ],
+        "dropdown-virtual-scroll": [
           "app-docsectiontext"
         ]
       }
@@ -8341,6 +8445,456 @@
           "app-docsectiontext",
           "any-checkbox",
           "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/dropdown/dropdown-basic/dropdown-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "dropdown-basic",
+      "readme": "# dropdown-basic\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-dropdown",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "dropdown-basic": [
+          "app-docsectiontext",
+          "any-dropdown",
+          "app-code"
+        ],
+        "any-dropdown": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/dropdown/dropdown-disabled/dropdown-disabled.tsx",
+      "encapsulation": "scoped",
+      "tag": "dropdown-disabled",
+      "readme": "# dropdown-disabled\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-dropdown",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "dropdown-disabled": [
+          "app-docsectiontext",
+          "any-dropdown",
+          "app-code"
+        ],
+        "any-dropdown": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/dropdown/dropdown-filter/dropdown-filter.tsx",
+      "encapsulation": "scoped",
+      "tag": "dropdown-filter",
+      "readme": "# dropdown-filter\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-dropdown",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "dropdown-filter": [
+          "app-docsectiontext",
+          "any-dropdown",
+          "app-code"
+        ],
+        "any-dropdown": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/dropdown/dropdown-template/dropdown-template.tsx",
+      "encapsulation": "scoped",
+      "tag": "dropdown-template",
+      "readme": "# dropdown-template\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "flag-#=item.value.countrycode#",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-dropdown",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "dropdown-template": [
+          "app-docsectiontext",
+          "any-dropdown",
+          "app-code"
+        ],
+        "any-dropdown": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/dropdown/dropdown-virtual-scroll/dropdown-virtual-scroll.tsx",
+      "encapsulation": "scoped",
+      "tag": "dropdown-virtual-scroll",
+      "readme": "# dropdown-virtual-scroll\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-dropdown",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "dropdown-virtual-scroll": [
+          "app-docsectiontext",
+          "any-dropdown",
+          "app-code"
+        ],
+        "any-dropdown": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
         ],
         "app-code": [
           "any-button"
