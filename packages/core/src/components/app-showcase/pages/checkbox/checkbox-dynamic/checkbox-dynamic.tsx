@@ -103,7 +103,7 @@ categories.forEach((category) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>Checkboxes can be generated using a list of values.</p>
           </app-docsectiontext>

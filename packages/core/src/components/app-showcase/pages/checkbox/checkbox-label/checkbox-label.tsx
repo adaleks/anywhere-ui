@@ -65,7 +65,7 @@ checkboxes.forEach((checkbox) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               The label attribute provides a label text for the checkbox. This

@@ -68,7 +68,7 @@ checkboxes.forEach((checkbox) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>Multiple checkboxes can be grouped together.</p>
           </app-docsectiontext>
