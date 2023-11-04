@@ -217,7 +217,7 @@ dropdownTemplate.addEventListener("valueChange", (event) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               Both the selected option and the options list can be templated to

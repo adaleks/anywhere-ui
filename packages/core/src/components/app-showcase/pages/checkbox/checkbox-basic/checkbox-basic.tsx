@@ -63,7 +63,7 @@ cb1.addEventListener("valueChange", (event) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               Binary checkbox is used as a controlled input with <i>checked</i>{" "}

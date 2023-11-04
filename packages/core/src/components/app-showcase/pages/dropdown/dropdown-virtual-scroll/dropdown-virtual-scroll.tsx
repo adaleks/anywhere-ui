@@ -76,7 +76,7 @@ dropdownVirtual.addEventListener("valueChange", (event) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               VirtualScrolling is an efficient way of rendering the options by

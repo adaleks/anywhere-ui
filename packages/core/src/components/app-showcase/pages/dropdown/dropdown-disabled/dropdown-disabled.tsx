@@ -153,7 +153,7 @@ dropdownDisabled.addEventListener("valueChange", (event) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               When disabled is present, the element cannot be edited and

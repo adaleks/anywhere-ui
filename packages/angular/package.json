@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/angular",
-  "version": "0.4.0+20",
+  "version": "0.4.0+21",
   "license": "MIT",
   "keywords": [
     "anywhere-ui",
@@ -66,5 +66,5 @@
     "tslint": "~6.1.3",
     "typescript": "4.9.5"
   },
-  "buildnum": "20"
+  "buildnum": "21"
 }

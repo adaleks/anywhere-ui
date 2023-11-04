@@ -154,7 +154,7 @@ dropdownBasic.addEventListener("valueChange", (event) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               Dropdown is used as a controlled component with value property

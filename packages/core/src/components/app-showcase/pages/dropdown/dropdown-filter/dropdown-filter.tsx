@@ -155,7 +155,7 @@ dropdownBasic.addEventListener("valueChange", (event) => {
   render() {
     return (
       <Host>
-        <section>
+        <section class="py-4">
           <app-docsectiontext textTitle={this.textTitle} textId={this.textId}>
             <p>
               Dropdown provides built-in filtering that is enabled by adding the
