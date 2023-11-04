@@ -25,9 +25,34 @@ export class AppConfig {
   componentDidLoad() {
     this.attachEventListeners();
     const theme = localStorage.getItem("anywhereTheme");
+    document
+      .querySelector(".layout-wrapper")
+      .classList.remove("layout-wrapper-light");
+    document
+      .querySelector(".layout-wrapper")
+      .classList.remove("layout-wrapper-dark");
     if (theme) {
       document.documentElement.setAttribute("data-theme", theme);
       this.updateAppThemeImage(theme);
+      if (theme.includes("dark")) {
+        if (theme.includes("dark")) {
+          document
+            .querySelector(".layout-wrapper")
+            .classList.add("layout-wrapper-dark");
+        } else {
+          document
+            .querySelector(".layout-wrapper")
+            .classList.add("layout-wrapper-light");
+        }
+      } else {
+        document
+          .querySelector(".layout-wrapper")
+          .classList.add("layout-wrapper-light");
+      }
+    } else {
+      document
+        .querySelector(".layout-wrapper")
+        .classList.add("layout-wrapper-light");
     }
 
     const rippleSwitch = this.element.querySelector(
@@ -115,6 +140,23 @@ export class AppConfig {
       localStorage.setItem("anywhereTheme", theme);
     }
 
+    document
+      .querySelector(".layout-wrapper")
+      .classList.remove("layout-wrapper-light");
+    document
+      .querySelector(".layout-wrapper")
+      .classList.remove("layout-wrapper-dark");
+
+    if (theme.includes("dark")) {
+      document
+        .querySelector(".layout-wrapper")
+        .classList.add("layout-wrapper-dark");
+    } else {
+      document
+        .querySelector(".layout-wrapper")
+        .classList.add("layout-wrapper-light");
+    }
+
     this.updateAppThemeImage(theme);
   }
 
@@ -139,7 +181,13 @@ export class AppConfig {
           </a>
           <a tabindex="0" class="layout-config-close">
             <span
-              style={{ display: "inline-block", width: "25px", height: "25px" }}
+              style={{
+                display: "inline-flex",
+                width: "25px",
+                height: "25px",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
               <i></i>
             </span>

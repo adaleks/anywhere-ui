@@ -16,10 +16,12 @@ import { loadIcons } from "../../utils/load-icons";
 import { renderHiddenInput } from "../../utils/helpers";
 
 /**
- * Checkbox is an extension to standard checkbox element with theming.
+ * Checkbox is an extension to the standard checkbox element with theming.
  *
  * @part any-checkbox-box-highlight - This represents the container that encapsulates the checkbox mark and its associated visual elements.
- * @part any-checkbox-box - This refers to the actual checkmark symbol within the checkbox, which indicates the checked state of the component.
+ * @part any-checkbox-box - This refers to the actual checkmark symbol within the checkbox, indicating the checked state of the component.
+ * @slot label - Represents the label or content associated with the checkbox.
+ *   Use this slot to provide descriptive text or additional content that accompanies the checkbox.
  */
 @Component({
   tag: "any-checkbox",

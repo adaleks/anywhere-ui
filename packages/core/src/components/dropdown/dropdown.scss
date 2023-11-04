@@ -1,6 +1,10 @@
 @import "../../themes/anywhere.globals.scss";
 @import "../input-text/input-text.scss";
 
+/**
+ * CSS variables for the input dropdown component.
+ * @prop --inputDropdownIconColor: The color of the dropdown icon.
+ */
 :host {
   display: inline-block;
 

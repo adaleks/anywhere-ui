@@ -5,6 +5,7 @@
     "install-all": "lerna exec npm install",
     "start": "lerna run start --scope=@anywhere-ui/core --stream",
     "build": "npm run build.core && npm run build.framework-bindings",
+    "build-preview": "npm run build && grunt buildnumber && grunt release:build:auto && node packages/core/scripts/update-template-version.js",
     "build-doc-json": "lerna run build-doc-json --scope=@anywhere-ui/core --stream",
     "build.watch": "lerna run build.watch --scope=@anywhere-ui/core --stream",
     "build.core": "lerna run build --scope=@anywhere-ui/core --stream",
@@ -20,10 +21,10 @@
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-semver": "^0.1.9",
-    "lerna": "^6.4.1"
+    "lerna": "^7.4.1"
   },
   "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "dependencies": {
-    "semver": "^7.3.8"
+    "semver": "^7.5.4"
   }
 }

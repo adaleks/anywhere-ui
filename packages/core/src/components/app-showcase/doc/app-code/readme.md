@@ -29,6 +29,11 @@
  - [checkbox-group](../../pages/checkbox/checkbox-group)
  - [checkbox-label](../../pages/checkbox/checkbox-label)
  - [checkbox-readonly](../../pages/checkbox/checkbox-readonly)
+ - [dropdown-basic](../../pages/dropdown/dropdown-basic)
+ - [dropdown-disabled](../../pages/dropdown/dropdown-disabled)
+ - [dropdown-filter](../../pages/dropdown/dropdown-filter)
+ - [dropdown-template](../../pages/dropdown/dropdown-template)
+ - [dropdown-virtual-scroll](../../pages/dropdown/dropdown-virtual-scroll)
 
 ### Depends on
 
@@ -46,6 +51,11 @@ graph TD;
   checkbox-group --> app-code
   checkbox-label --> app-code
   checkbox-readonly --> app-code
+  dropdown-basic --> app-code
+  dropdown-disabled --> app-code
+  dropdown-filter --> app-code
+  dropdown-template --> app-code
+  dropdown-virtual-scroll --> app-code
   style app-code fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

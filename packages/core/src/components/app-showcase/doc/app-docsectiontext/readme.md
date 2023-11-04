@@ -29,6 +29,11 @@
  - [checkbox-group](../../pages/checkbox/checkbox-group)
  - [checkbox-label](../../pages/checkbox/checkbox-label)
  - [checkbox-readonly](../../pages/checkbox/checkbox-readonly)
+ - [dropdown-basic](../../pages/dropdown/dropdown-basic)
+ - [dropdown-disabled](../../pages/dropdown/dropdown-disabled)
+ - [dropdown-filter](../../pages/dropdown/dropdown-filter)
+ - [dropdown-template](../../pages/dropdown/dropdown-template)
+ - [dropdown-virtual-scroll](../../pages/dropdown/dropdown-virtual-scroll)
 
 ### Graph
 ```mermaid
@@ -40,6 +45,11 @@ graph TD;
   checkbox-group --> app-docsectiontext
   checkbox-label --> app-docsectiontext
   checkbox-readonly --> app-docsectiontext
+  dropdown-basic --> app-docsectiontext
+  dropdown-disabled --> app-docsectiontext
+  dropdown-filter --> app-docsectiontext
+  dropdown-template --> app-docsectiontext
+  dropdown-virtual-scroll --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

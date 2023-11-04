@@ -27,6 +27,15 @@ const parseValue = (value: any) => {
   return value.toString();
 };
 
+/**
+ * Dropdown, also known as Select, is used to choose an item from a collection of options.
+ *
+ * @part any-dropdown - This refers to the actual component.
+ * @slot item - Represents individual items in the dropdown list.
+ *   Use this slot to customize the appearance of each item in the list.
+ * @slot selectedItem - Represents the currently selected item in the dropdown.
+ *   Use this slot to customize the appearance of the selected item in the dropdown.
+ */
 @Component({
   tag: "any-dropdown",
   styleUrl: "dropdown.scss",
@@ -65,127 +74,127 @@ export class AnyDropdown {
   @Prop() name: string = this.inputId;
 
   /**
-   * When specified, displays a filter input at header
+   * When specified, displays a filter input at header.
    */
   @Prop() filter: boolean = false;
 
   /**
-   * Name of the value field of an option
+   * Name of the value field of an option.
    */
   @Prop() optionValue: string = "value";
 
   /**
-   * Default text to display when no option is selected
+   * Default text to display when no option is selected.
    */
   @Prop() placeholder?: string = null;
 
   /**
-   * Icon class of the dropdown icon
+   * Icon class of the dropdown icon.
    */
   @Prop() dropdownIcon?: string = "fa-solid:chevron-down";
 
   /**
-   * Icon class of the dropdown clear icon
+   * Icon class of the dropdown clear icon.
    */
   @Prop() clearIcon?: string = "fa-solid:times";
 
   /**
-   * Base zIndex value to use in layering
+   * Base zIndex value to use in layering.
    */
   @Prop() baseZIndex?: string = "0";
 
   /**
-   * Keyframe name the show animation
+   * Keyframe name the show animation.
    */
   @Prop() showAnimation?: string = "growDown";
 
   /**
-   * Transition options of the hide animation
+   * Transition options of the hide animation.
    */
   @Prop() hideAnimation?: string = "growUp";
 
   /**
-   * Index of the element in tabbing order
+   * Index of the element in tabbing order.
    */
   @Prop() anyTabIndex?: number = 0;
 
   /**
-   * Inline style of the element
+   * Inline style of the element.
    */
   @Prop() anyStyle?: any = null;
 
   /**
-   * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+   * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.
    */
   @Prop() panelScrollHeight?: string = "200px";
 
   /**
-   * When enabled, a clear icon is displayed to clear the value
+   * When enabled, a clear icon is displayed to clear the value.
    */
   @Prop() showClear?: boolean = false;
 
   /**
-   * Whether to automatically manage layering
+   * Whether to automatically manage layering.
    */
   @Prop() autoZIndex?: boolean = true;
 
   /**
-   * Value of the dropdown list
+   * Value of the dropdown list.
    */
   @Prop({ mutable: true }) value?: any = null;
 
   /**
-   * When present, it specifies that the element should be disabled
+   * When present, it specifies that the element should be disabled.
    */
   @Prop() disabled: boolean = false;
 
   /**
-   * When present, it specifies that the element value cannot be changed
+   * When present, it specifies that the element value cannot be changed.
    */
   @Prop() readonly: boolean = false;
 
   /**
-   * When present, list virtual scroller is enabled
+   * When present, list virtual scroller is enabled.
    */
   @Prop() virtualScroll: boolean = false;
 
   /**
-   * Callback to invoke when value of dropdown changes
+   * Callback to invoke when value of dropdown changes.
    */
   @Event() valueChange?: EventEmitter;
 
   /**
-   * Callback to invoke when dropdown overlay gets visible
+   * Callback to invoke when dropdown overlay gets visible.
    */
   @Event() aOnPanelShow?: EventEmitter;
 
   /**
-   * Callback to invoke when dropdown overlay before gets visible
+   * Callback to invoke when dropdown overlay before gets visible.
    */
   @Event() aOnPanelShowStart?: EventEmitter;
 
   /**
-   * Callback to invoke when dropdown overlay gets hidden
+   * Callback to invoke when dropdown overlay gets hidden.
    */
   @Event() aOnPanelHide?: EventEmitter;
 
   /**
-   * Callback to invoke when dropdown overlay before gets hidden
+   * Callback to invoke when dropdown overlay before gets hidden.
    */
   @Event() aOnPanelHideStart?: EventEmitter;
 
   /**
-   * Callback to invoke when dropdown gets focus
+   * Callback to invoke when dropdown gets focus.
    */
   @Event() aOnFocus?: EventEmitter;
 
   /**
-   * Callback to invoke when dropdown loses focus
+   * Callback to invoke when dropdown loses focus.
    */
   @Event() aOnBlur?: EventEmitter;
 
   /**
-   * Callback to invoke when component is clicked
+   * Callback to invoke when component is clicked.
    */
   @Event() aOnClick?: EventEmitter;
 

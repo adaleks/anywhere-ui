@@ -88,7 +88,13 @@ export class AnyOverlay {
   }
 
   @Listen("resize", { target: "window" })
-  handleViewportSizeChange(_event: any) {
+  handleViewportSizeChange(_event: Event) {
+    this.calculatePosition();
+    this.calculateSize();
+  }
+
+  @Listen("scroll", { target: "window" })
+  handleScroll(_ev: Event) {
     this.calculatePosition();
     this.calculateSize();
   }
