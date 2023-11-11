@@ -516,3 +516,21 @@ export const InputSwitchPreselection = /*@__PURE__*/ defineContainer<JSX.InputSw
   'textTitle'
 ]);
 
+
+export const InputTextBasic = /*@__PURE__*/ defineContainer<JSX.InputTextBasic>('input-text-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputTextDisabled = /*@__PURE__*/ defineContainer<JSX.InputTextDisabled>('input-text-disabled', undefined);
+
+
+export const InputTextFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTextFloatLabel>('input-text-float-label', undefined);
+
+
+export const InputTextIcons = /*@__PURE__*/ defineContainer<JSX.InputTextIcons>('input-text-icons', undefined, [
+  'textId',
+  'textTitle'
+]);
+

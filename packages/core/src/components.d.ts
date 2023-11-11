@@ -460,6 +460,10 @@ export namespace Components {
          */
         "trueValue": any;
     }
+    /**
+     * The InputText component is a wrapper to the HTML input element with custom styling and additional
+     * functionality.
+     */
     interface AnyInputText {
         /**
           * Title text of the input text.
@@ -485,7 +489,12 @@ export namespace Components {
           * When enabled, the label will have floating effect on input text focus
          */
         "floatLabel": boolean;
-        "getInputRef": () => Promise<HTMLInputElement>;
+        /**
+          * Retrieves a reference to the input element within the component.
+          * @returns The input element, or null if not found.
+          * @example const inputElement = await myComponent.getInputRef(); if (inputElement) {   // Do something with the input element   inputElement.focus(); }
+         */
+        "getInputRef": () => Promise<HTMLInputElement | null>;
         /**
           * Inline style of the element
          */
@@ -1127,6 +1136,22 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface InputTextBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextFloatLabel {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextIcons {
+        "textId": string;
+        "textTitle": string;
+    }
 }
 export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1331,6 +1356,10 @@ declare global {
     interface HTMLAnyInputTextElementEventMap {
         "valueChange": any;
     }
+    /**
+     * The InputText component is a wrapper to the HTML input element with custom styling and additional
+     * functionality.
+     */
     interface HTMLAnyInputTextElement extends Components.AnyInputText, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyInputTextElementEventMap>(type: K, listener: (this: HTMLAnyInputTextElement, ev: AnyInputTextCustomEvent<HTMLAnyInputTextElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1700,6 +1729,30 @@ declare global {
         prototype: HTMLInputSwitchPreselectionElement;
         new (): HTMLInputSwitchPreselectionElement;
     };
+    interface HTMLInputTextBasicElement extends Components.InputTextBasic, HTMLStencilElement {
+    }
+    var HTMLInputTextBasicElement: {
+        prototype: HTMLInputTextBasicElement;
+        new (): HTMLInputTextBasicElement;
+    };
+    interface HTMLInputTextDisabledElement extends Components.InputTextDisabled, HTMLStencilElement {
+    }
+    var HTMLInputTextDisabledElement: {
+        prototype: HTMLInputTextDisabledElement;
+        new (): HTMLInputTextDisabledElement;
+    };
+    interface HTMLInputTextFloatLabelElement extends Components.InputTextFloatLabel, HTMLStencilElement {
+    }
+    var HTMLInputTextFloatLabelElement: {
+        prototype: HTMLInputTextFloatLabelElement;
+        new (): HTMLInputTextFloatLabelElement;
+    };
+    interface HTMLInputTextIconsElement extends Components.InputTextIcons, HTMLStencilElement {
+    }
+    var HTMLInputTextIconsElement: {
+        prototype: HTMLInputTextIconsElement;
+        new (): HTMLInputTextIconsElement;
+    };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
         "any-badge-overlay": HTMLAnyBadgeOverlayElement;
@@ -1741,6 +1794,10 @@ declare global {
         "input-switch-basic": HTMLInputSwitchBasicElement;
         "input-switch-disabled": HTMLInputSwitchDisabledElement;
         "input-switch-preselection": HTMLInputSwitchPreselectionElement;
+        "input-text-basic": HTMLInputTextBasicElement;
+        "input-text-disabled": HTMLInputTextDisabledElement;
+        "input-text-float-label": HTMLInputTextFloatLabelElement;
+        "input-text-icons": HTMLInputTextIconsElement;
     }
 }
 declare namespace LocalJSX {
@@ -2275,6 +2332,10 @@ declare namespace LocalJSX {
          */
         "trueValue"?: any;
     }
+    /**
+     * The InputText component is a wrapper to the HTML input element with custom styling and additional
+     * functionality.
+     */
     interface AnyInputText {
         /**
           * Title text of the input text.
@@ -3039,6 +3100,22 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface InputTextBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputTextDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputTextFloatLabel {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputTextIcons {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface IntrinsicElements {
         "any-badge": AnyBadge;
         "any-badge-overlay": AnyBadgeOverlay;
@@ -3080,6 +3157,10 @@ declare namespace LocalJSX {
         "input-switch-basic": InputSwitchBasic;
         "input-switch-disabled": InputSwitchDisabled;
         "input-switch-preselection": InputSwitchPreselection;
+        "input-text-basic": InputTextBasic;
+        "input-text-disabled": InputTextDisabled;
+        "input-text-float-label": InputTextFloatLabel;
+        "input-text-icons": InputTextIcons;
     }
 }
 export { LocalJSX as JSX };
@@ -3102,6 +3183,10 @@ declare module "@stencil/core" {
              * InputSwitch is used to select a boolean value.
              */
             "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
+            /**
+             * The InputText component is a wrapper to the HTML input element with custom styling and additional
+             * functionality.
+             */
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
@@ -3135,6 +3220,10 @@ declare module "@stencil/core" {
             "input-switch-basic": LocalJSX.InputSwitchBasic & JSXBase.HTMLAttributes<HTMLInputSwitchBasicElement>;
             "input-switch-disabled": LocalJSX.InputSwitchDisabled & JSXBase.HTMLAttributes<HTMLInputSwitchDisabledElement>;
             "input-switch-preselection": LocalJSX.InputSwitchPreselection & JSXBase.HTMLAttributes<HTMLInputSwitchPreselectionElement>;
+            "input-text-basic": LocalJSX.InputTextBasic & JSXBase.HTMLAttributes<HTMLInputTextBasicElement>;
+            "input-text-disabled": LocalJSX.InputTextDisabled & JSXBase.HTMLAttributes<HTMLInputTextDisabledElement>;
+            "input-text-float-label": LocalJSX.InputTextFloatLabel & JSXBase.HTMLAttributes<HTMLInputTextFloatLabelElement>;
+            "input-text-icons": LocalJSX.InputTextIcons & JSXBase.HTMLAttributes<HTMLInputTextIconsElement>;
         }
     }
 }

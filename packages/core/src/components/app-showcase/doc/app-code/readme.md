@@ -37,6 +37,8 @@
  - [input-switch-basic](../../pages/input-switch/input-switch-basic)
  - [input-switch-disabled](../../pages/input-switch/input-switch-disabled)
  - [input-switch-preselection](../../pages/input-switch/input-switch-preselection)
+ - [input-text-basic](../../pages/input-text/input-text-basic)
+ - [input-text-icons](../../pages/input-text/input-text-icons)
 
 ### Depends on
 
@@ -62,6 +64,8 @@ graph TD;
   input-switch-basic --> app-code
   input-switch-disabled --> app-code
   input-switch-preselection --> app-code
+  input-text-basic --> app-code
+  input-text-icons --> app-code
   style app-code fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

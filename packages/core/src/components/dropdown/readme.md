@@ -67,9 +67,23 @@ Dropdown, also known as Select, is used to choose an item from a collection of o
 
 ## CSS Custom Properties
 
-| Name                       | Description                     |
-| -------------------------- | ------------------------------- |
-| `--inputDropdownIconColor` | The color of the dropdown icon. |
+| Name                          | Description                                                                                                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `--inputBgColor`              | The background color of the input field.                                                                                   |
+| `--inputBorder`               | The border of the input field.                                                                                             |
+| `--inputDropdownIconColor`    | The color of the dropdown icon.                                                                                            |
+| `--inputErrorBorder`          | The border of the input field in case of an error.                                                                         |
+| `--inputErrorBorderColor`     | The border color of the input field in case of an error, using the --errorColor variable.                                  |
+| `--inputFilledBg`             | The background color of the input field when filled.                                                                       |
+| `--inputFilledFocusBg`        | The background color of the input field when filled and focused.                                                           |
+| `--inputFilledHoverBg`        | The background color of the input field when filled and hovered.                                                           |
+| `--inputFocusBorderColor`     | The border color of the input field on focus, using the --primaryColor variable.                                           |
+| `--inputHoverBorderColor`     | The border color of the input field on hover, using the --primaryColor variable.                                           |
+| `--inputIconColor`            | The color of icons within the input field, using the --textColor variable.                                                 |
+| `--inputPadding`              | The padding of the input field.                                                                                            |
+| `--inputPlaceholderTextColor` | The text color of the input field placeholder.                                                                             |
+| `--inputTextColor`            | The text color of the input field, using the --textColor variable.                                                         |
+| `--inputTransition`           | The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable. |
 
 
 ## Dependencies

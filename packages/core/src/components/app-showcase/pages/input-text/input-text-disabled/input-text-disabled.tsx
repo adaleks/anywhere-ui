@@ -1,12 +1,12 @@
 import { Component, Host, Prop, h } from "@stencil/core";
 
 @Component({
-  tag: "input-switch-disabled",
-  styleUrl: "input-switch-disabled.scss",
+  tag: "input-text-disabled",
+  styleUrl: "input-text-disabled.scss",
   shadow: false,
   scoped: true,
 })
-export class InputSwitchDisabled {
+export class InputTextDisabled {
   @Prop() textId: string;
 
   @Prop() textTitle: string;
@@ -14,24 +14,24 @@ export class InputSwitchDisabled {
   code: any = {
     basic: `
 
-<any-input-switch id="inputSwitchDisabled" disabled="true"></any-input-switch>
+<any-input-text id="inputTextDisabled" disabled="true"></any-input-text>
 
 `,
 
     html: `
 
 <div class="full-card flex justify-content-center">
-    <any-input-switch id="inputSwitchDisabled" disabled="true"></any-input-switch>
+    <any-input-text id="inputTextDisabled" disabled="true"></any-input-text>
 </div>
 
 `,
 
     javascript: `
 
-let inputSwitchDisabled = document.getElementById("inputSwitchDisabled");
+let inputTextDisabled = document.getElementById("inputTextDisabled");
 
-inputSwitchDisabled.addEventListener("valueChange", (event) => {
-  console.log("InputSwitch changed:", event);
+inputTextDisabled.addEventListener("valueChange", (event) => {
+  console.log("InputText changed:", event);
 });
 
 `,
@@ -48,15 +48,12 @@ inputSwitchDisabled.addEventListener("valueChange", (event) => {
             </p>
           </app-docsectiontext>
           <div class="full-card flex justify-content-center">
-            <any-input-switch
-              id="inputSwitchDisabled"
+            <any-input-text
+              id="inputTextDisabled"
               disabled={true}
-            ></any-input-switch>
+            ></any-input-text>
           </div>
-          <app-code
-            code={this.code}
-            selector="input-switch-disabled"
-          ></app-code>
+          <app-code code={this.code} selector="input-text-disabled"></app-code>
         </section>
       </Host>
     );

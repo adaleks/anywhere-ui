@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-11-11T10:43:15",
+  "timestamp": "2023-11-11T19:05:08",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.7.0",
@@ -1728,9 +1728,79 @@
       ],
       "styles": [
         {
+          "name": "--inputBgColor",
+          "annotation": "prop",
+          "docs": "The background color of the input field."
+        },
+        {
+          "name": "--inputBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field."
+        },
+        {
           "name": "--inputDropdownIconColor",
           "annotation": "prop",
           "docs": "The color of the dropdown icon."
+        },
+        {
+          "name": "--inputErrorBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field in case of an error."
+        },
+        {
+          "name": "--inputErrorBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field in case of an error, using the --errorColor variable."
+        },
+        {
+          "name": "--inputFilledBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled."
+        },
+        {
+          "name": "--inputFilledFocusBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and focused."
+        },
+        {
+          "name": "--inputFilledHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and hovered."
+        },
+        {
+          "name": "--inputFocusBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on focus, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputHoverBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on hover, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputIconColor",
+          "annotation": "prop",
+          "docs": "The color of icons within the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input field."
+        },
+        {
+          "name": "--inputPlaceholderTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field placeholder."
+        },
+        {
+          "name": "--inputTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputTransition",
+          "annotation": "prop",
+          "docs": "The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable."
         }
       ],
       "slots": [
@@ -3140,8 +3210,29 @@
       "encapsulation": "scoped",
       "tag": "any-input-text",
       "readme": "# any-input-text\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "The InputText component is a wrapper to the HTML input element with custom styling and additional\r\nfunctionality.",
+      "docsTags": [
+        {
+          "name": "part",
+          "text": "any-inputtext - The main input text element."
+        },
+        {
+          "name": "slot",
+          "text": "iconLeft - Slot for an icon to be placed on the left side of the input."
+        },
+        {
+          "name": "slot",
+          "text": "start - Slot for content to be placed at the start of the input."
+        },
+        {
+          "name": "slot",
+          "text": "end - Slot for content to be placed at the end of the input."
+        },
+        {
+          "name": "slot",
+          "text": "iconRight - Slot for an icon to be placed on the right side of the input."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -3605,7 +3696,7 @@
           "name": "getInputRef",
           "returns": {
             "type": "Promise<HTMLInputElement>",
-            "docs": ""
+            "docs": "The input element, or null if not found."
           },
           "complexType": {
             "signature": "() => Promise<HTMLInputElement>",
@@ -3624,8 +3715,17 @@
           },
           "signature": "getInputRef() => Promise<HTMLInputElement>",
           "parameters": [],
-          "docs": "",
-          "docsTags": []
+          "docs": "Retrieves a reference to the input element within the component.",
+          "docsTags": [
+            {
+              "name": "returns",
+              "text": "The input element, or null if not found."
+            },
+            {
+              "name": "example",
+              "text": "const inputElement = await myComponent.getInputRef();\r\nif (inputElement) {\r\n  // Do something with the input element\r\n  inputElement.focus();\r\n}"
+            }
+          ]
         }
       ],
       "events": [
@@ -3645,17 +3745,107 @@
         }
       ],
       "listeners": [],
-      "styles": [],
-      "slots": [],
+      "styles": [
+        {
+          "name": "--inputBgColor",
+          "annotation": "prop",
+          "docs": "The background color of the input field."
+        },
+        {
+          "name": "--inputBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field."
+        },
+        {
+          "name": "--inputErrorBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field in case of an error."
+        },
+        {
+          "name": "--inputErrorBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field in case of an error, using the --errorColor variable."
+        },
+        {
+          "name": "--inputFilledBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled."
+        },
+        {
+          "name": "--inputFilledFocusBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and focused."
+        },
+        {
+          "name": "--inputFilledHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and hovered."
+        },
+        {
+          "name": "--inputFocusBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on focus, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputHoverBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on hover, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputIconColor",
+          "annotation": "prop",
+          "docs": "The color of icons within the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input field."
+        },
+        {
+          "name": "--inputPlaceholderTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field placeholder."
+        },
+        {
+          "name": "--inputTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputTransition",
+          "annotation": "prop",
+          "docs": "The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable."
+        }
+      ],
+      "slots": [
+        {
+          "name": "end",
+          "docs": "Slot for content to be placed at the end of the input."
+        },
+        {
+          "name": "iconLeft",
+          "docs": "Slot for an icon to be placed on the left side of the input."
+        },
+        {
+          "name": "iconRight",
+          "docs": "Slot for an icon to be placed on the right side of the input."
+        },
+        {
+          "name": "start",
+          "docs": "Slot for content to be placed at the start of the input."
+        }
+      ],
       "parts": [
         {
           "name": "any-inputtext",
-          "docs": ""
+          "docs": "The main input text element."
         }
       ],
       "dependents": [
         "any-input-number",
-        "any-listbox"
+        "any-listbox",
+        "input-text-basic",
+        "input-text-icons"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -3663,6 +3853,12 @@
           "any-input-text"
         ],
         "any-listbox": [
+          "any-input-text"
+        ],
+        "input-text-basic": [
+          "any-input-text"
+        ],
+        "input-text-icons": [
           "any-input-text"
         ]
       }
@@ -4157,7 +4353,78 @@
         }
       ],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--inputBgColor",
+          "annotation": "prop",
+          "docs": "The background color of the input field."
+        },
+        {
+          "name": "--inputBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field."
+        },
+        {
+          "name": "--inputErrorBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field in case of an error."
+        },
+        {
+          "name": "--inputErrorBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field in case of an error, using the --errorColor variable."
+        },
+        {
+          "name": "--inputFilledBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled."
+        },
+        {
+          "name": "--inputFilledFocusBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and focused."
+        },
+        {
+          "name": "--inputFilledHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and hovered."
+        },
+        {
+          "name": "--inputFocusBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on focus, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputHoverBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on hover, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputIconColor",
+          "annotation": "prop",
+          "docs": "The color of icons within the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input field."
+        },
+        {
+          "name": "--inputPlaceholderTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field placeholder."
+        },
+        {
+          "name": "--inputTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputTransition",
+          "annotation": "prop",
+          "docs": "The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable."
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -5552,7 +5819,78 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--inputBgColor",
+          "annotation": "prop",
+          "docs": "The background color of the input field."
+        },
+        {
+          "name": "--inputBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field."
+        },
+        {
+          "name": "--inputErrorBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field in case of an error."
+        },
+        {
+          "name": "--inputErrorBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field in case of an error, using the --errorColor variable."
+        },
+        {
+          "name": "--inputFilledBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled."
+        },
+        {
+          "name": "--inputFilledFocusBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and focused."
+        },
+        {
+          "name": "--inputFilledHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and hovered."
+        },
+        {
+          "name": "--inputFocusBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on focus, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputHoverBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on hover, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputIconColor",
+          "annotation": "prop",
+          "docs": "The color of icons within the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input field."
+        },
+        {
+          "name": "--inputPlaceholderTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field placeholder."
+        },
+        {
+          "name": "--inputTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputTransition",
+          "annotation": "prop",
+          "docs": "The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable."
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -7076,7 +7414,9 @@
         "dropdown-virtual-scroll",
         "input-switch-basic",
         "input-switch-disabled",
-        "input-switch-preselection"
+        "input-switch-preselection",
+        "input-text-basic",
+        "input-text-icons"
       ],
       "dependencies": [
         "any-button"
@@ -7129,6 +7469,12 @@
           "app-code"
         ],
         "input-switch-preselection": [
+          "app-code"
+        ],
+        "input-text-basic": [
+          "app-code"
+        ],
+        "input-text-icons": [
           "app-code"
         ]
       }
@@ -7942,7 +8288,9 @@
         "dropdown-virtual-scroll",
         "input-switch-basic",
         "input-switch-disabled",
-        "input-switch-preselection"
+        "input-switch-preselection",
+        "input-text-basic",
+        "input-text-icons"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -7989,6 +8337,12 @@
           "app-docsectiontext"
         ],
         "input-switch-preselection": [
+          "app-docsectiontext"
+        ],
+        "input-text-basic": [
+          "app-docsectiontext"
+        ],
+        "input-text-icons": [
           "app-docsectiontext"
         ]
       }
@@ -9233,6 +9587,202 @@
         "input-switch-preselection": [
           "app-docsectiontext",
           "any-input-switch",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-text/input-text-basic/input-text-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-text-basic",
+      "readme": "# input-text-basic\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-text",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-text-basic": [
+          "app-docsectiontext",
+          "any-input-text",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-text/input-text-disabled/input-text-disabled.tsx",
+      "encapsulation": "shadow",
+      "tag": "input-text-disabled",
+      "readme": "# input-text-disabled\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-text/input-text-float-label/input-text-float-label.tsx",
+      "encapsulation": "shadow",
+      "tag": "input-text-float-label",
+      "readme": "# input-text-float-label\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-text/input-text-icons/input-text-icons.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-text-icons",
+      "readme": "# input-text-icons\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-text",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-text-icons": [
+          "app-docsectiontext",
+          "any-input-text",
           "app-code"
         ],
         "app-code": [

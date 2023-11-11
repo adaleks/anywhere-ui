@@ -1148,3 +1148,89 @@ export class InputSwitchPreselection {
 export declare interface InputSwitchPreselection extends Components.InputSwitchPreselection {}
 
 
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-text-basic',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputTextBasic {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextBasic extends Components.InputTextBasic {}
+
+
+@ProxyCmp({
+})
+@Component({
+  selector: 'input-text-disabled',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InputTextDisabled {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextDisabled extends Components.InputTextDisabled {}
+
+
+@ProxyCmp({
+})
+@Component({
+  selector: 'input-text-float-label',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [],
+})
+export class InputTextFloatLabel {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextFloatLabel extends Components.InputTextFloatLabel {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-text-icons',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputTextIcons {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextIcons extends Components.InputTextIcons {}
+
+

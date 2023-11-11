@@ -5,6 +5,11 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The InputText component is a wrapper to the HTML input element with custom styling and additional
+functionality.
+
 ## Properties
 
 | Property            | Attribute             | Description                                                                                | Type      | Default                          |
@@ -43,20 +48,50 @@
 
 ### `getInputRef() => Promise<HTMLInputElement>`
 
-
+Retrieves a reference to the input element within the component.
 
 #### Returns
 
 Type: `Promise<HTMLInputElement>`
 
+The input element, or null if not found.
 
+
+## Slots
+
+| Slot          | Description                                                   |
+| ------------- | ------------------------------------------------------------- |
+| `"end"`       | Slot for content to be placed at the end of the input.        |
+| `"iconLeft"`  | Slot for an icon to be placed on the left side of the input.  |
+| `"iconRight"` | Slot for an icon to be placed on the right side of the input. |
+| `"start"`     | Slot for content to be placed at the start of the input.      |
 
 
 ## Shadow Parts
 
-| Part              | Description |
-| ----------------- | ----------- |
-| `"any-inputtext"` |             |
+| Part              | Description                  |
+| ----------------- | ---------------------------- |
+| `"any-inputtext"` | The main input text element. |
+
+
+## CSS Custom Properties
+
+| Name                          | Description                                                                                                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `--inputBgColor`              | The background color of the input field.                                                                                   |
+| `--inputBorder`               | The border of the input field.                                                                                             |
+| `--inputErrorBorder`          | The border of the input field in case of an error.                                                                         |
+| `--inputErrorBorderColor`     | The border color of the input field in case of an error, using the --errorColor variable.                                  |
+| `--inputFilledBg`             | The background color of the input field when filled.                                                                       |
+| `--inputFilledFocusBg`        | The background color of the input field when filled and focused.                                                           |
+| `--inputFilledHoverBg`        | The background color of the input field when filled and hovered.                                                           |
+| `--inputFocusBorderColor`     | The border color of the input field on focus, using the --primaryColor variable.                                           |
+| `--inputHoverBorderColor`     | The border color of the input field on hover, using the --primaryColor variable.                                           |
+| `--inputIconColor`            | The color of icons within the input field, using the --textColor variable.                                                 |
+| `--inputPadding`              | The padding of the input field.                                                                                            |
+| `--inputPlaceholderTextColor` | The text color of the input field placeholder.                                                                             |
+| `--inputTextColor`            | The text color of the input field, using the --textColor variable.                                                         |
+| `--inputTransition`           | The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable. |
 
 
 ## Dependencies
@@ -65,12 +100,16 @@ Type: `Promise<HTMLInputElement>`
 
  - [any-input-number](../input-number)
  - [any-listbox](../listbox)
+ - [input-text-basic](../app-showcase/pages/input-text/input-text-basic)
+ - [input-text-icons](../app-showcase/pages/input-text/input-text-icons)
 
 ### Graph
 ```mermaid
 graph TD;
   any-input-number --> any-input-text
   any-listbox --> any-input-text
+  input-text-basic --> any-input-text
+  input-text-icons --> any-input-text
   style any-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

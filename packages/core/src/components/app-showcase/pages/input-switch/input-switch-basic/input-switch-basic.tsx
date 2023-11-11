@@ -48,7 +48,7 @@ inputSwitchBasic.addEventListener("valueChange", (event) => {
           <div class="full-card flex justify-content-center">
             <any-input-switch id="inputSwitchBasic"></any-input-switch>
           </div>
-          <app-code code={this.code} selector="checkbox-basic"></app-code>
+          <app-code code={this.code} selector="input-switch-basic"></app-code>
         </section>
       </Host>
     );

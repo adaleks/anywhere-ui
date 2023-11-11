@@ -37,6 +37,8 @@
  - [input-switch-basic](../../pages/input-switch/input-switch-basic)
  - [input-switch-disabled](../../pages/input-switch/input-switch-disabled)
  - [input-switch-preselection](../../pages/input-switch/input-switch-preselection)
+ - [input-text-basic](../../pages/input-text/input-text-basic)
+ - [input-text-icons](../../pages/input-text/input-text-icons)
 
 ### Graph
 ```mermaid
@@ -56,6 +58,8 @@ graph TD;
   input-switch-basic --> app-docsectiontext
   input-switch-disabled --> app-docsectiontext
   input-switch-preselection --> app-docsectiontext
+  input-text-basic --> app-docsectiontext
+  input-text-icons --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

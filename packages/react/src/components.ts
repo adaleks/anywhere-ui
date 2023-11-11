@@ -47,3 +47,7 @@ export const DropdownVirtualScroll = /*@__PURE__*/createReactComponent<JSX.Dropd
 export const InputSwitchBasic = /*@__PURE__*/createReactComponent<JSX.InputSwitchBasic, HTMLInputSwitchBasicElement>('input-switch-basic');
 export const InputSwitchDisabled = /*@__PURE__*/createReactComponent<JSX.InputSwitchDisabled, HTMLInputSwitchDisabledElement>('input-switch-disabled');
 export const InputSwitchPreselection = /*@__PURE__*/createReactComponent<JSX.InputSwitchPreselection, HTMLInputSwitchPreselectionElement>('input-switch-preselection');
+export const InputTextBasic = /*@__PURE__*/createReactComponent<JSX.InputTextBasic, HTMLInputTextBasicElement>('input-text-basic');
+export const InputTextDisabled = /*@__PURE__*/createReactComponent<JSX.InputTextDisabled, HTMLInputTextDisabledElement>('input-text-disabled');
+export const InputTextFloatLabel = /*@__PURE__*/createReactComponent<JSX.InputTextFloatLabel, HTMLInputTextFloatLabelElement>('input-text-float-label');
+export const InputTextIcons = /*@__PURE__*/createReactComponent<JSX.InputTextIcons, HTMLInputTextIconsElement>('input-text-icons');
