@@ -38,6 +38,8 @@
  - [input-switch-disabled](../../pages/input-switch/input-switch-disabled)
  - [input-switch-preselection](../../pages/input-switch/input-switch-preselection)
  - [input-text-basic](../../pages/input-text/input-text-basic)
+ - [input-text-disabled](../../pages/input-text/input-text-disabled)
+ - [input-text-float-label](../../pages/input-text/input-text-float-label)
  - [input-text-icons](../../pages/input-text/input-text-icons)
 
 ### Graph
@@ -59,6 +61,8 @@ graph TD;
   input-switch-disabled --> app-docsectiontext
   input-switch-preselection --> app-docsectiontext
   input-text-basic --> app-docsectiontext
+  input-text-disabled --> app-docsectiontext
+  input-text-float-label --> app-docsectiontext
   input-text-icons --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
