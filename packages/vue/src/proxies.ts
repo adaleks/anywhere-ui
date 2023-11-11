@@ -523,10 +523,16 @@ export const InputTextBasic = /*@__PURE__*/ defineContainer<JSX.InputTextBasic>(
 ]);
 
 
-export const InputTextDisabled = /*@__PURE__*/ defineContainer<JSX.InputTextDisabled>('input-text-disabled', undefined);
+export const InputTextDisabled = /*@__PURE__*/ defineContainer<JSX.InputTextDisabled>('input-text-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
 
 
-export const InputTextFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTextFloatLabel>('input-text-float-label', undefined);
+export const InputTextFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTextFloatLabel>('input-text-float-label', undefined, [
+  'textId',
+  'textTitle'
+]);
 
 
 export const InputTextIcons = /*@__PURE__*/ defineContainer<JSX.InputTextIcons>('input-text-icons', undefined, [

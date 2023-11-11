@@ -46,7 +46,7 @@ functionality.
 
 ## Methods
 
-### `getInputRef() => Promise<HTMLInputElement>`
+### `getInputRef() => Promise<HTMLInputElement | null>`
 
 Retrieves a reference to the input element within the component.
 
@@ -101,6 +101,8 @@ The input element, or null if not found.
  - [any-input-number](../input-number)
  - [any-listbox](../listbox)
  - [input-text-basic](../app-showcase/pages/input-text/input-text-basic)
+ - [input-text-disabled](../app-showcase/pages/input-text/input-text-disabled)
+ - [input-text-float-label](../app-showcase/pages/input-text/input-text-float-label)
  - [input-text-icons](../app-showcase/pages/input-text/input-text-icons)
 
 ### Graph
@@ -109,6 +111,8 @@ graph TD;
   any-input-number --> any-input-text
   any-listbox --> any-input-text
   input-text-basic --> any-input-text
+  input-text-disabled --> any-input-text
+  input-text-float-label --> any-input-text
   input-text-icons --> any-input-text
   style any-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```

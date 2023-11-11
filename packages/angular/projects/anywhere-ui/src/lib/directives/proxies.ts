@@ -1171,13 +1171,14 @@ export declare interface InputTextBasic extends Components.InputTextBasic {}
 
 
 @ProxyCmp({
+  inputs: ['textId', 'textTitle']
 })
 @Component({
   selector: 'input-text-disabled',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['textId', 'textTitle'],
 })
 export class InputTextDisabled {
   protected el: HTMLElement;
@@ -1192,13 +1193,14 @@ export declare interface InputTextDisabled extends Components.InputTextDisabled 
 
 
 @ProxyCmp({
+  inputs: ['textId', 'textTitle']
 })
 @Component({
   selector: 'input-text-float-label',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['textId', 'textTitle'],
 })
 export class InputTextFloatLabel {
   protected el: HTMLElement;

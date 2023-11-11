@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-11-11T19:05:08",
+  "timestamp": "2023-11-11T23:16:25",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.7.0",
@@ -3699,7 +3699,7 @@
             "docs": "The input element, or null if not found."
           },
           "complexType": {
-            "signature": "() => Promise<HTMLInputElement>",
+            "signature": "() => Promise<HTMLInputElement | null>",
             "parameters": [],
             "references": {
               "Promise": {
@@ -3713,7 +3713,7 @@
             },
             "return": "Promise<HTMLInputElement>"
           },
-          "signature": "getInputRef() => Promise<HTMLInputElement>",
+          "signature": "getInputRef() => Promise<HTMLInputElement | null>",
           "parameters": [],
           "docs": "Retrieves a reference to the input element within the component.",
           "docsTags": [
@@ -3845,6 +3845,8 @@
         "any-input-number",
         "any-listbox",
         "input-text-basic",
+        "input-text-disabled",
+        "input-text-float-label",
         "input-text-icons"
       ],
       "dependencies": [],
@@ -3856,6 +3858,12 @@
           "any-input-text"
         ],
         "input-text-basic": [
+          "any-input-text"
+        ],
+        "input-text-disabled": [
+          "any-input-text"
+        ],
+        "input-text-float-label": [
           "any-input-text"
         ],
         "input-text-icons": [
@@ -7416,6 +7424,8 @@
         "input-switch-disabled",
         "input-switch-preselection",
         "input-text-basic",
+        "input-text-disabled",
+        "input-text-float-label",
         "input-text-icons"
       ],
       "dependencies": [
@@ -7472,6 +7482,12 @@
           "app-code"
         ],
         "input-text-basic": [
+          "app-code"
+        ],
+        "input-text-disabled": [
+          "app-code"
+        ],
+        "input-text-float-label": [
           "app-code"
         ],
         "input-text-icons": [
@@ -8290,6 +8306,8 @@
         "input-switch-disabled",
         "input-switch-preselection",
         "input-text-basic",
+        "input-text-disabled",
+        "input-text-float-label",
         "input-text-icons"
       ],
       "dependencies": [],
@@ -8340,6 +8358,12 @@
           "app-docsectiontext"
         ],
         "input-text-basic": [
+          "app-docsectiontext"
+        ],
+        "input-text-disabled": [
+          "app-docsectiontext"
+        ],
+        "input-text-float-label": [
           "app-docsectiontext"
         ],
         "input-text-icons": [
@@ -9679,13 +9703,56 @@
     },
     {
       "filePath": "src/components/app-showcase/pages/input-text/input-text-disabled/input-text-disabled.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "input-text-disabled",
       "readme": "# input-text-disabled\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -9693,18 +9760,78 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-text",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-text-disabled": [
+          "app-docsectiontext",
+          "any-input-text",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "src/components/app-showcase/pages/input-text/input-text-float-label/input-text-float-label.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "input-text-float-label",
       "readme": "# input-text-float-label\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -9712,8 +9839,25 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-text",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-text-float-label": [
+          "app-docsectiontext",
+          "any-input-text",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "src/components/app-showcase/pages/input-text/input-text-icons/input-text-icons.tsx",
