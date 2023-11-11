@@ -1,8 +1,8 @@
 {
-  "timestamp": "2023-11-04T22:29:13",
+  "timestamp": "2023-11-11T10:43:15",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.6.0",
+    "version": "4.7.0",
     "typescriptVersion": "5.2.2"
   },
   "components": [
@@ -2751,7 +2751,7 @@
       "encapsulation": "shadow",
       "tag": "any-input-switch",
       "readme": "# any-input-switch\r\n\r\n\r\n\r",
-      "docs": "",
+      "docs": "InputSwitch is used to select a boolean value.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -3044,15 +3044,93 @@
         }
       ],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--inputSwitchBorderRadius",
+          "annotation": "prop",
+          "docs": "The border radius of the input switch."
+        },
+        {
+          "name": "--inputSwitchHandleBorderRadius",
+          "annotation": "prop",
+          "docs": "The border radius of the input switch handle."
+        },
+        {
+          "name": "--inputSwitchHandleHeight",
+          "annotation": "prop",
+          "docs": "The height of the input switch handle."
+        },
+        {
+          "name": "--inputSwitchHandleOffBg",
+          "annotation": "prop",
+          "docs": "The background color of the input switch handle when in the off state."
+        },
+        {
+          "name": "--inputSwitchHandleOnBg",
+          "annotation": "prop",
+          "docs": "The background color of the input switch handle when in the on state."
+        },
+        {
+          "name": "--inputSwitchHandleWidth",
+          "annotation": "prop",
+          "docs": "The width of the input switch handle."
+        },
+        {
+          "name": "--inputSwitchHeight",
+          "annotation": "prop",
+          "docs": "The height of the input switch."
+        },
+        {
+          "name": "--inputSwitchSliderOffBg",
+          "annotation": "prop",
+          "docs": "The background color of the input switch slider when in the off state."
+        },
+        {
+          "name": "--inputSwitchSliderOffHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input switch slider when in the off state and hovered."
+        },
+        {
+          "name": "--inputSwitchSliderOnBg",
+          "annotation": "prop",
+          "docs": "The background color of the input switch slider when in the on state, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputSwitchSliderOnHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input switch slider when in the on state and hovered, using the --primaryDarkColor variable."
+        },
+        {
+          "name": "--inputSwitchSliderPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input switch slider."
+        },
+        {
+          "name": "--inputSwitchWidth",
+          "annotation": "prop",
+          "docs": "The width of the input switch."
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [
-        "app-config"
+        "app-config",
+        "input-switch-basic",
+        "input-switch-disabled",
+        "input-switch-preselection"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "app-config": [
+          "any-input-switch"
+        ],
+        "input-switch-basic": [
+          "any-input-switch"
+        ],
+        "input-switch-disabled": [
+          "any-input-switch"
+        ],
+        "input-switch-preselection": [
           "any-input-switch"
         ]
       }
@@ -6995,7 +7073,10 @@
         "dropdown-disabled",
         "dropdown-filter",
         "dropdown-template",
-        "dropdown-virtual-scroll"
+        "dropdown-virtual-scroll",
+        "input-switch-basic",
+        "input-switch-disabled",
+        "input-switch-preselection"
       ],
       "dependencies": [
         "any-button"
@@ -7039,6 +7120,15 @@
           "app-code"
         ],
         "dropdown-virtual-scroll": [
+          "app-code"
+        ],
+        "input-switch-basic": [
+          "app-code"
+        ],
+        "input-switch-disabled": [
+          "app-code"
+        ],
+        "input-switch-preselection": [
           "app-code"
         ]
       }
@@ -7849,7 +7939,10 @@
         "dropdown-disabled",
         "dropdown-filter",
         "dropdown-template",
-        "dropdown-virtual-scroll"
+        "dropdown-virtual-scroll",
+        "input-switch-basic",
+        "input-switch-disabled",
+        "input-switch-preselection"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -7887,6 +7980,15 @@
           "app-docsectiontext"
         ],
         "dropdown-virtual-scroll": [
+          "app-docsectiontext"
+        ],
+        "input-switch-basic": [
+          "app-docsectiontext"
+        ],
+        "input-switch-disabled": [
+          "app-docsectiontext"
+        ],
+        "input-switch-preselection": [
           "app-docsectiontext"
         ]
       }
@@ -8895,6 +8997,243 @@
           "any-input-text",
           "any-ripple-effect",
           "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-switch/input-switch-basic/input-switch-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-switch-basic",
+      "readme": "# input-switch-basic\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-switch",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-switch-basic": [
+          "app-docsectiontext",
+          "any-input-switch",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-switch/input-switch-disabled/input-switch-disabled.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-switch-disabled",
+      "readme": "# input-switch-disabled\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-switch",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-switch-disabled": [
+          "app-docsectiontext",
+          "any-input-switch",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-switch/input-switch-preselection/input-switch-preselection.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-switch-preselection",
+      "readme": "# input-switch-preselection\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-switch",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-switch-preselection": [
+          "app-docsectiontext",
+          "any-input-switch",
+          "app-code"
         ],
         "app-code": [
           "any-button"

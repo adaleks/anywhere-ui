@@ -498,3 +498,21 @@ export const DropdownVirtualScroll = /*@__PURE__*/ defineContainer<JSX.DropdownV
   'textTitle'
 ]);
 
+
+export const InputSwitchBasic = /*@__PURE__*/ defineContainer<JSX.InputSwitchBasic>('input-switch-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputSwitchDisabled = /*@__PURE__*/ defineContainer<JSX.InputSwitchDisabled>('input-switch-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputSwitchPreselection = /*@__PURE__*/ defineContainer<JSX.InputSwitchPreselection>('input-switch-preselection', undefined, [
+  'textId',
+  'textTitle'
+]);
+

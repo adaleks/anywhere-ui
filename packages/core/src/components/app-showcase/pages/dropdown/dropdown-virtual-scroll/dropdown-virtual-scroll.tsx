@@ -22,14 +22,14 @@ export class DropdownVirtualScroll {
   public code: any = {
     basic: `
 
-<any-dropdown id="dropdownBasic" placeholder="Select a Item" show-clear="true" virtual-scroll="true"></any-dropdown>
+<any-dropdown id="dropdownVirtual" placeholder="Select a Item" show-clear="true" virtual-scroll="true"></any-dropdown>
 
 `,
 
     html: `
 
 <div class="full-card flex justify-content-center">
-  <any-dropdown id="dropdownBasic" placeholder="Select a City" show-clear="true" virtual-scroll="true"></any-dropdown>
+  <any-dropdown id="dropdownVirtual" placeholder="Select a City" show-clear="true" virtual-scroll="true"></any-dropdown>
 </div>
 
 `,

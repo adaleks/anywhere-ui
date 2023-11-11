@@ -24,14 +24,14 @@ export class DropdownFilter {
   public code: any = {
     basic: `
 
-<any-dropdown id="dropdownBasic" placeholder="Select a City" show-clear="true" filter="true"></any-dropdown>
+<any-dropdown id="dropdownFilter" placeholder="Select a City" show-clear="true" filter="true"></any-dropdown>
 
 `,
 
     html: `
 
 <div class="full-card flex justify-content-center">
-  <any-dropdown id="dropdownBasic" placeholder="Select a City" show-clear="true" filter="true"></any-dropdown>
+  <any-dropdown id="dropdownFilter" placeholder="Select a City" show-clear="true" filter="true"></any-dropdown>
 </div>
 
 `,
@@ -121,14 +121,14 @@ let cities = [
   },
 ];
 
-let dropdownBasic = document.getElementById("dropdownBasic");
+let dropdownFilter = document.getElementById("dropdownFilter");
 
-dropdownBasic.options = cities;
-dropdownBasic.anyStyle = {
+dropdownFilter.options = cities;
+dropdownFilter.anyStyle = {
   width: "14rem"
 };
 
-dropdownBasic.addEventListener("valueChange", (event) => {
+dropdownFilter.addEventListener("valueChange", (event) => {
   console.log(event.detail.value);
 });
 

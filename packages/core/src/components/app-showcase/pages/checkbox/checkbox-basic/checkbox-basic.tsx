@@ -30,26 +30,26 @@ export class CheckboxBasic {
   code: any = {
     basic: `
 
-<any-checkbox id="cb1"></any-checkbox>
+<any-checkbox id="checkboxBasic"></any-checkbox>
 
 `,
 
     html: `
 
 <div class="full-card flex justify-content-center">
-    <any-checkbox id="cb1"></any-checkbox>
+    <any-checkbox id="checkboxBasic"></any-checkbox>
 </div>
 
 `,
 
     javascript: `
 
-let cb1 = document.getElementById("cb1");
+let checkboxBasic = document.getElementById("checkboxBasic");
 
-cb1.binary = true;
-cb1.label = false;
-cb1.addEventListener("valueChange", (event) => {
-  cb1.label = event.detail.value;
+checkboxBasic.binary = true;
+checkboxBasic.label = false;
+checkboxBasic.addEventListener("valueChange", (event) => {
+  checkboxBasic.label = event.detail.value;
 });
 
 `,
@@ -72,7 +72,7 @@ cb1.addEventListener("valueChange", (event) => {
           </app-docsectiontext>
           <div class="full-card flex justify-content-center">
             <any-checkbox
-              id="cb1"
+              id="checkboxBasic"
               label={this.label}
               binary={this.binary}
               onValueChange={(event) => this.handleValueChange(event)}

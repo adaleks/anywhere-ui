@@ -7,29 +7,30 @@ export default class extends AbstractView {
   }
 
   executeScript() {
-    this.viewOnGithubBtn = document.querySelector("#view_on_github");
-    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
-      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/input-switch', '_blank');
-    });
-    this.is1 = document.querySelector("#is1");
-    this.is2 = document.querySelector("#is2");
-    this.is2.trueValue = "on";
-    this.is2.falseValue = "off";
-    this.is2.checked = "on";
-    this.is2.addEventListener("valueChange", (event) => {
-      console.log("Input switch changed:", event);
-    });
-    // this.is2.readonly = true;
-    // this.is2.disabled = true;
-    // setTimeout(() => {
-    //   this.is2.checked = false;
-    // }, 2000);
+    this.appDoc = document.querySelector("#app-doc");
+    this.appDoc.apiDocs = ["any-input-switch"];
+    this.appDoc.docs = [
+      {
+        id: "basic",
+        label: "Basic",
+        component: "input-switch-basic",
+      },
+      {
+        id: "preselection",
+        label: "Preselection",
+        component: "input-switch-preselection",
+      },
+      {
+        id: "disabled",
+        label: "Disabled",
+        component: "input-switch-disabled",
+      },
+    ];
   }
 
   async getHtml() {
-    return fetch('app/views/InputSwitch/InputSwitch.html')
-      .then(data => {
-        return data.text();
-      });
+    return fetch("app/views/InputSwitch/InputSwitch.html").then((data) => {
+      return data.text();
+    });
   }
 }

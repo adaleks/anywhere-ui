@@ -20,22 +20,22 @@ export class CheckboxReadonly {
   code: any = {
     basic: `
 
-<any-checkbox id="cb1" readonly="true" label="Readonly"></any-checkbox>
+<any-checkbox id="checkboxReadonly" readonly="true" label="Readonly"></any-checkbox>
 
 `,
 
     html: `
 
 <div class="full-card flex justify-content-center ">
-    <any-checkbox id="cb1" readonly="true" label="Readonly"></any-checkbox>
+    <any-checkbox id="checkboxReadonly" readonly="true" label="Readonly"></any-checkbox>
 </div>
 
 `,
 
     javascript: `
 
-let cb1 = document.getElementById("cb1");
-cb1.checked = false;
+let checkboxReadonly = document.getElementById("checkboxReadonly");
+checkboxReadonly.checked = false;
 
     `,
   };
@@ -55,7 +55,7 @@ cb1.checked = false;
           </app-docsectiontext>
           <div class="full-card flex justify-content-center">
             <any-checkbox
-              id="cb1"
+              id="checkboxReadonly"
               label={this.label}
               readonly={true}
             ></any-checkbox>

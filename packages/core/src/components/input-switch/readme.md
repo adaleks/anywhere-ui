@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+InputSwitch is used to select a boolean value.
+
 ## Properties
 
 | Property        | Attribute         | Description                                                                                                     | Type      | Default                         |
@@ -31,16 +35,41 @@
 | `valueChange` | Callback to invoke when value of dropdown changes. | `CustomEvent<any>` |
 
 
+## CSS Custom Properties
+
+| Name                              | Description                                                                                                              |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `--inputSwitchBorderRadius`       | The border radius of the input switch.                                                                                   |
+| `--inputSwitchHandleBorderRadius` | The border radius of the input switch handle.                                                                            |
+| `--inputSwitchHandleHeight`       | The height of the input switch handle.                                                                                   |
+| `--inputSwitchHandleOffBg`        | The background color of the input switch handle when in the off state.                                                   |
+| `--inputSwitchHandleOnBg`         | The background color of the input switch handle when in the on state.                                                    |
+| `--inputSwitchHandleWidth`        | The width of the input switch handle.                                                                                    |
+| `--inputSwitchHeight`             | The height of the input switch.                                                                                          |
+| `--inputSwitchSliderOffBg`        | The background color of the input switch slider when in the off state.                                                   |
+| `--inputSwitchSliderOffHoverBg`   | The background color of the input switch slider when in the off state and hovered.                                       |
+| `--inputSwitchSliderOnBg`         | The background color of the input switch slider when in the on state, using the --primaryColor variable.                 |
+| `--inputSwitchSliderOnHoverBg`    | The background color of the input switch slider when in the on state and hovered, using the --primaryDarkColor variable. |
+| `--inputSwitchSliderPadding`      | The padding of the input switch slider.                                                                                  |
+| `--inputSwitchWidth`              | The width of the input switch.                                                                                           |
+
+
 ## Dependencies
 
 ### Used by
 
  - [app-config](../app-showcase/config/app-config)
+ - [input-switch-basic](../app-showcase/pages/input-switch/input-switch-basic)
+ - [input-switch-disabled](../app-showcase/pages/input-switch/input-switch-disabled)
+ - [input-switch-preselection](../app-showcase/pages/input-switch/input-switch-preselection)
 
 ### Graph
 ```mermaid
 graph TD;
   app-config --> any-input-switch
+  input-switch-basic --> any-input-switch
+  input-switch-disabled --> any-input-switch
+  input-switch-preselection --> any-input-switch
   style any-input-switch fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

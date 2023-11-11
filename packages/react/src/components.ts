@@ -44,3 +44,6 @@ export const DropdownDisabled = /*@__PURE__*/createReactComponent<JSX.DropdownDi
 export const DropdownFilter = /*@__PURE__*/createReactComponent<JSX.DropdownFilter, HTMLDropdownFilterElement>('dropdown-filter');
 export const DropdownTemplate = /*@__PURE__*/createReactComponent<JSX.DropdownTemplate, HTMLDropdownTemplateElement>('dropdown-template');
 export const DropdownVirtualScroll = /*@__PURE__*/createReactComponent<JSX.DropdownVirtualScroll, HTMLDropdownVirtualScrollElement>('dropdown-virtual-scroll');
+export const InputSwitchBasic = /*@__PURE__*/createReactComponent<JSX.InputSwitchBasic, HTMLInputSwitchBasicElement>('input-switch-basic');
+export const InputSwitchDisabled = /*@__PURE__*/createReactComponent<JSX.InputSwitchDisabled, HTMLInputSwitchDisabledElement>('input-switch-disabled');
+export const InputSwitchPreselection = /*@__PURE__*/createReactComponent<JSX.InputSwitchPreselection, HTMLInputSwitchPreselectionElement>('input-switch-preselection');

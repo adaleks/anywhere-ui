@@ -1082,3 +1082,69 @@ export class DropdownVirtualScroll {
 export declare interface DropdownVirtualScroll extends Components.DropdownVirtualScroll {}
 
 
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-switch-basic',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputSwitchBasic {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputSwitchBasic extends Components.InputSwitchBasic {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-switch-disabled',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputSwitchDisabled {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputSwitchDisabled extends Components.InputSwitchDisabled {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-switch-preselection',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputSwitchPreselection {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputSwitchPreselection extends Components.InputSwitchPreselection {}
+
+

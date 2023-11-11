@@ -1,6 +1,6 @@
 {
   "name": "@anywhere-ui/angular",
-  "version": "0.4.0+21",
+  "version": "0.4.0+22",
   "license": "MIT",
   "keywords": [
     "anywhere-ui",
@@ -33,5 +33,5 @@
     "@anywhere-ui/core": "^0.3.0",
     "@anywhere-ui/flex": "^1.0.2"
   },
-  "buildnum": "21"
+  "buildnum": "22"
 }

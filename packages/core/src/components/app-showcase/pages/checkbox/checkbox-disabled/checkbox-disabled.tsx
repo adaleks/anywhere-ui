@@ -21,22 +21,22 @@ export class CheckboxDisabled {
   code: any = {
     basic: `
 
-<any-checkbox id="cb1" disabled="true" label="Disabled"></any-checkbox>
+<any-checkbox id="checkboxDisabled" disabled="true" label="Disabled"></any-checkbox>
 
 `,
 
     html: `
 
 <div class="full-card flex justify-content-center ">
-    <any-checkbox id="cb1" disabled="true" label="Disabled"></any-checkbox>
+    <any-checkbox id="checkboxDisabled" disabled="true" label="Disabled"></any-checkbox>
 </div>
 
 `,
 
     javascript: `
 
-let cb1 = document.getElementById("cb1");
-cb1.checked = false;
+let checkboxDisabled = document.getElementById("checkboxDisabled");
+checkboxDisabled.checked = false;
 
     `,
   };
@@ -56,7 +56,7 @@ cb1.checked = false;
           </app-docsectiontext>
           <div class="full-card flex justify-content-center">
             <any-checkbox
-              id="cb1"
+              id="checkboxDisabled"
               label={this.label}
               disabled={true}
             ></any-checkbox>
