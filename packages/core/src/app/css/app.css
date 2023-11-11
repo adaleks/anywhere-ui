@@ -707,7 +707,7 @@ pre[class*=language-] code {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 997;
+  z-index: 1100;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }

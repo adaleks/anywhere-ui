@@ -10,6 +10,17 @@ import {
   Method,
 } from "@stencil/core";
 
+/**
+ * The InputText component is a wrapper to the HTML input element with custom styling and additional
+ * functionality.
+ *
+ * @part any-inputtext - The main input text element.
+ * @slot iconLeft - Slot for an icon to be placed on the left side of the input.
+ * @slot start - Slot for content to be placed at the start of the input.
+ * @slot end - Slot for content to be placed at the end of the input.
+ * @slot iconRight - Slot for an icon to be placed on the right side of the input.
+ *
+ */
 @Component({
   tag: "any-input-text",
   styleUrl: "input-text.scss",
@@ -136,8 +147,19 @@ export class AnyInputText {
     }
   }
 
+  /**
+   * Retrieves a reference to the input element within the component.
+   *
+   * @returns {HTMLInputElement | null} The input element, or null if not found.
+   * @example
+   * const inputElement = await myComponent.getInputRef();
+   * if (inputElement) {
+   *   // Do something with the input element
+   *   inputElement.focus();
+   * }
+   */
   @Method()
-  async getInputRef() {
+  async getInputRef(): Promise<HTMLInputElement | null> {
     return this.element.querySelector("input");
   }
 

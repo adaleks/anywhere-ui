@@ -172,7 +172,7 @@ dropdownFilter.addEventListener("valueChange", (event) => {
               filter={true}
             ></any-dropdown>
           </div>
-          <app-code code={this.code} selector="dropdown-basic"></app-code>
+          <app-code code={this.code} selector="dropdown-filter"></app-code>
         </section>
       </Host>
     );
