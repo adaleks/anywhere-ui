@@ -411,6 +411,9 @@ export namespace Components {
          */
         "value": string;
     }
+    /**
+     * InputSwitch is used to select a boolean value.
+     */
     interface AnyInputSwitch {
         /**
           * Inline style of the component.
@@ -1112,6 +1115,18 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface InputSwitchBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputSwitchDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputSwitchPreselection {
+        "textId": string;
+        "textTitle": string;
+    }
 }
 export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1296,6 +1311,9 @@ declare global {
         "aOnFocus": any;
         "aOnBlur": any;
     }
+    /**
+     * InputSwitch is used to select a boolean value.
+     */
     interface HTMLAnyInputSwitchElement extends Components.AnyInputSwitch, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyInputSwitchElementEventMap>(type: K, listener: (this: HTMLAnyInputSwitchElement, ev: AnyInputSwitchCustomEvent<HTMLAnyInputSwitchElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1664,6 +1682,24 @@ declare global {
         prototype: HTMLDropdownVirtualScrollElement;
         new (): HTMLDropdownVirtualScrollElement;
     };
+    interface HTMLInputSwitchBasicElement extends Components.InputSwitchBasic, HTMLStencilElement {
+    }
+    var HTMLInputSwitchBasicElement: {
+        prototype: HTMLInputSwitchBasicElement;
+        new (): HTMLInputSwitchBasicElement;
+    };
+    interface HTMLInputSwitchDisabledElement extends Components.InputSwitchDisabled, HTMLStencilElement {
+    }
+    var HTMLInputSwitchDisabledElement: {
+        prototype: HTMLInputSwitchDisabledElement;
+        new (): HTMLInputSwitchDisabledElement;
+    };
+    interface HTMLInputSwitchPreselectionElement extends Components.InputSwitchPreselection, HTMLStencilElement {
+    }
+    var HTMLInputSwitchPreselectionElement: {
+        prototype: HTMLInputSwitchPreselectionElement;
+        new (): HTMLInputSwitchPreselectionElement;
+    };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
         "any-badge-overlay": HTMLAnyBadgeOverlayElement;
@@ -1702,6 +1738,9 @@ declare global {
         "dropdown-filter": HTMLDropdownFilterElement;
         "dropdown-template": HTMLDropdownTemplateElement;
         "dropdown-virtual-scroll": HTMLDropdownVirtualScrollElement;
+        "input-switch-basic": HTMLInputSwitchBasicElement;
+        "input-switch-disabled": HTMLInputSwitchDisabledElement;
+        "input-switch-preselection": HTMLInputSwitchPreselectionElement;
     }
 }
 declare namespace LocalJSX {
@@ -2175,6 +2214,9 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    /**
+     * InputSwitch is used to select a boolean value.
+     */
     interface AnyInputSwitch {
         /**
           * Inline style of the component.
@@ -2985,6 +3027,18 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface InputSwitchBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputSwitchDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputSwitchPreselection {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface IntrinsicElements {
         "any-badge": AnyBadge;
         "any-badge-overlay": AnyBadgeOverlay;
@@ -3023,6 +3077,9 @@ declare namespace LocalJSX {
         "dropdown-filter": DropdownFilter;
         "dropdown-template": DropdownTemplate;
         "dropdown-virtual-scroll": DropdownVirtualScroll;
+        "input-switch-basic": InputSwitchBasic;
+        "input-switch-disabled": InputSwitchDisabled;
+        "input-switch-preselection": InputSwitchPreselection;
     }
 }
 export { LocalJSX as JSX };
@@ -3041,6 +3098,9 @@ declare module "@stencil/core" {
              */
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             "any-input-number": LocalJSX.AnyInputNumber & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
+            /**
+             * InputSwitch is used to select a boolean value.
+             */
             "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
@@ -3072,6 +3132,9 @@ declare module "@stencil/core" {
             "dropdown-filter": LocalJSX.DropdownFilter & JSXBase.HTMLAttributes<HTMLDropdownFilterElement>;
             "dropdown-template": LocalJSX.DropdownTemplate & JSXBase.HTMLAttributes<HTMLDropdownTemplateElement>;
             "dropdown-virtual-scroll": LocalJSX.DropdownVirtualScroll & JSXBase.HTMLAttributes<HTMLDropdownVirtualScrollElement>;
+            "input-switch-basic": LocalJSX.InputSwitchBasic & JSXBase.HTMLAttributes<HTMLInputSwitchBasicElement>;
+            "input-switch-disabled": LocalJSX.InputSwitchDisabled & JSXBase.HTMLAttributes<HTMLInputSwitchDisabledElement>;
+            "input-switch-preselection": LocalJSX.InputSwitchPreselection & JSXBase.HTMLAttributes<HTMLInputSwitchPreselectionElement>;
         }
     }
 }

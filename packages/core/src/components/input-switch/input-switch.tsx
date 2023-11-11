@@ -11,6 +11,9 @@ import {
 
 import { renderHiddenInput } from "../../utils/helpers";
 
+/**
+ * InputSwitch is used to select a boolean value.
+ */
 @Component({
   tag: "any-input-switch",
   styleUrl: "input-switch.scss",

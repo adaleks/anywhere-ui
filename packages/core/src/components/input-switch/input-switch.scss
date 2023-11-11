@@ -1,6 +1,23 @@
 @import "../../themes/anywhere.globals.scss";
 
 :host {
+  /**
+    * CSS variables for the input switch component.
+    * @prop --inputSwitchWidth: The width of the input switch.
+    * @prop --inputSwitchHeight: The height of the input switch.
+    * @prop --inputSwitchBorderRadius: The border radius of the input switch.
+    * @prop --inputSwitchHandleWidth: The width of the input switch handle.
+    * @prop --inputSwitchHandleHeight: The height of the input switch handle.
+    * @prop --inputSwitchHandleBorderRadius: The border radius of the input switch handle.
+    * @prop --inputSwitchSliderPadding: The padding of the input switch slider.
+    * @prop --inputSwitchSliderOffBg: The background color of the input switch slider when in the off state.
+    * @prop --inputSwitchHandleOffBg: The background color of the input switch handle when in the off state.
+    * @prop --inputSwitchSliderOffHoverBg: The background color of the input switch slider when in the off state and hovered.
+    * @prop --inputSwitchSliderOnBg: The background color of the input switch slider when in the on state, using the --primaryColor variable.
+    * @prop --inputSwitchSliderOnHoverBg: The background color of the input switch slider when in the on state and hovered, using the --primaryDarkColor variable.
+    * @prop --inputSwitchHandleOnBg: The background color of the input switch handle when in the on state.
+    */
+
   display: inline-block;
 
   .any-inputswitch {

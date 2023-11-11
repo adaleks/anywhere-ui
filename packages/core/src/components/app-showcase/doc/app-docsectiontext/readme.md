@@ -34,6 +34,9 @@
  - [dropdown-filter](../../pages/dropdown/dropdown-filter)
  - [dropdown-template](../../pages/dropdown/dropdown-template)
  - [dropdown-virtual-scroll](../../pages/dropdown/dropdown-virtual-scroll)
+ - [input-switch-basic](../../pages/input-switch/input-switch-basic)
+ - [input-switch-disabled](../../pages/input-switch/input-switch-disabled)
+ - [input-switch-preselection](../../pages/input-switch/input-switch-preselection)
 
 ### Graph
 ```mermaid
@@ -50,6 +53,9 @@ graph TD;
   dropdown-filter --> app-docsectiontext
   dropdown-template --> app-docsectiontext
   dropdown-virtual-scroll --> app-docsectiontext
+  input-switch-basic --> app-docsectiontext
+  input-switch-disabled --> app-docsectiontext
+  input-switch-preselection --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

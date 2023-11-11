@@ -34,6 +34,9 @@
  - [dropdown-filter](../../pages/dropdown/dropdown-filter)
  - [dropdown-template](../../pages/dropdown/dropdown-template)
  - [dropdown-virtual-scroll](../../pages/dropdown/dropdown-virtual-scroll)
+ - [input-switch-basic](../../pages/input-switch/input-switch-basic)
+ - [input-switch-disabled](../../pages/input-switch/input-switch-disabled)
+ - [input-switch-preselection](../../pages/input-switch/input-switch-preselection)
 
 ### Depends on
 
@@ -56,6 +59,9 @@ graph TD;
   dropdown-filter --> app-code
   dropdown-template --> app-code
   dropdown-virtual-scroll --> app-code
+  input-switch-basic --> app-code
+  input-switch-disabled --> app-code
+  input-switch-preselection --> app-code
   style app-code fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
