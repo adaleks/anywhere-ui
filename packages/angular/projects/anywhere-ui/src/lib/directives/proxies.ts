@@ -1236,3 +1236,91 @@ export class InputTextIcons {
 export declare interface InputTextIcons extends Components.InputTextIcons {}
 
 
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-textarea-auto-resize',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputTextareaAutoResize {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextareaAutoResize extends Components.InputTextareaAutoResize {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-textarea-basic',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputTextareaBasic {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextareaBasic extends Components.InputTextareaBasic {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-textarea-disabled',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputTextareaDisabled {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextareaDisabled extends Components.InputTextareaDisabled {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-textarea-float-label',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputTextareaFloatLabel {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputTextareaFloatLabel extends Components.InputTextareaFloatLabel {}
+
+

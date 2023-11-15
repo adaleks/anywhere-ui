@@ -540,3 +540,27 @@ export const InputTextIcons = /*@__PURE__*/ defineContainer<JSX.InputTextIcons>(
   'textTitle'
 ]);
 
+
+export const InputTextareaAutoResize = /*@__PURE__*/ defineContainer<JSX.InputTextareaAutoResize>('input-textarea-auto-resize', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputTextareaBasic = /*@__PURE__*/ defineContainer<JSX.InputTextareaBasic>('input-textarea-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputTextareaDisabled = /*@__PURE__*/ defineContainer<JSX.InputTextareaDisabled>('input-textarea-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputTextareaFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTextareaFloatLabel>('input-textarea-float-label', undefined, [
+  'textId',
+  'textTitle'
+]);
+

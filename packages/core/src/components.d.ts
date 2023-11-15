@@ -556,6 +556,9 @@ export namespace Components {
          */
         "value": string;
     }
+    /**
+     * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
+     */
     interface AnyInputTextarea {
         /**
           * When present, textarea size changes as being typed.
@@ -1152,6 +1155,22 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface InputTextareaAutoResize {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaFloatLabel {
+        "textId": string;
+        "textTitle": string;
+    }
 }
 export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1381,6 +1400,9 @@ declare global {
         "aOnInput": InputEvent;
         "valueChange": TextareaChangeEventDetail;
     }
+    /**
+     * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
+     */
     interface HTMLAnyInputTextareaElement extends Components.AnyInputTextarea, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyInputTextareaElementEventMap>(type: K, listener: (this: HTMLAnyInputTextareaElement, ev: AnyInputTextareaCustomEvent<HTMLAnyInputTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1753,6 +1775,30 @@ declare global {
         prototype: HTMLInputTextIconsElement;
         new (): HTMLInputTextIconsElement;
     };
+    interface HTMLInputTextareaAutoResizeElement extends Components.InputTextareaAutoResize, HTMLStencilElement {
+    }
+    var HTMLInputTextareaAutoResizeElement: {
+        prototype: HTMLInputTextareaAutoResizeElement;
+        new (): HTMLInputTextareaAutoResizeElement;
+    };
+    interface HTMLInputTextareaBasicElement extends Components.InputTextareaBasic, HTMLStencilElement {
+    }
+    var HTMLInputTextareaBasicElement: {
+        prototype: HTMLInputTextareaBasicElement;
+        new (): HTMLInputTextareaBasicElement;
+    };
+    interface HTMLInputTextareaDisabledElement extends Components.InputTextareaDisabled, HTMLStencilElement {
+    }
+    var HTMLInputTextareaDisabledElement: {
+        prototype: HTMLInputTextareaDisabledElement;
+        new (): HTMLInputTextareaDisabledElement;
+    };
+    interface HTMLInputTextareaFloatLabelElement extends Components.InputTextareaFloatLabel, HTMLStencilElement {
+    }
+    var HTMLInputTextareaFloatLabelElement: {
+        prototype: HTMLInputTextareaFloatLabelElement;
+        new (): HTMLInputTextareaFloatLabelElement;
+    };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
         "any-badge-overlay": HTMLAnyBadgeOverlayElement;
@@ -1798,6 +1844,10 @@ declare global {
         "input-text-disabled": HTMLInputTextDisabledElement;
         "input-text-float-label": HTMLInputTextFloatLabelElement;
         "input-text-icons": HTMLInputTextIconsElement;
+        "input-textarea-auto-resize": HTMLInputTextareaAutoResizeElement;
+        "input-textarea-basic": HTMLInputTextareaBasicElement;
+        "input-textarea-disabled": HTMLInputTextareaDisabledElement;
+        "input-textarea-float-label": HTMLInputTextareaFloatLabelElement;
     }
 }
 declare namespace LocalJSX {
@@ -2426,6 +2476,9 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    /**
+     * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
+     */
     interface AnyInputTextarea {
         /**
           * When present, textarea size changes as being typed.
@@ -3116,6 +3169,22 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface InputTextareaAutoResize {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputTextareaBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputTextareaDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputTextareaFloatLabel {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface IntrinsicElements {
         "any-badge": AnyBadge;
         "any-badge-overlay": AnyBadgeOverlay;
@@ -3161,6 +3230,10 @@ declare namespace LocalJSX {
         "input-text-disabled": InputTextDisabled;
         "input-text-float-label": InputTextFloatLabel;
         "input-text-icons": InputTextIcons;
+        "input-textarea-auto-resize": InputTextareaAutoResize;
+        "input-textarea-basic": InputTextareaBasic;
+        "input-textarea-disabled": InputTextareaDisabled;
+        "input-textarea-float-label": InputTextareaFloatLabel;
     }
 }
 export { LocalJSX as JSX };
@@ -3188,6 +3261,9 @@ declare module "@stencil/core" {
              * functionality.
              */
             "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
+            /**
+             * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
+             */
             "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
             "any-multiselect": LocalJSX.AnyMultiselect & JSXBase.HTMLAttributes<HTMLAnyMultiselectElement>;
@@ -3224,6 +3300,10 @@ declare module "@stencil/core" {
             "input-text-disabled": LocalJSX.InputTextDisabled & JSXBase.HTMLAttributes<HTMLInputTextDisabledElement>;
             "input-text-float-label": LocalJSX.InputTextFloatLabel & JSXBase.HTMLAttributes<HTMLInputTextFloatLabelElement>;
             "input-text-icons": LocalJSX.InputTextIcons & JSXBase.HTMLAttributes<HTMLInputTextIconsElement>;
+            "input-textarea-auto-resize": LocalJSX.InputTextareaAutoResize & JSXBase.HTMLAttributes<HTMLInputTextareaAutoResizeElement>;
+            "input-textarea-basic": LocalJSX.InputTextareaBasic & JSXBase.HTMLAttributes<HTMLInputTextareaBasicElement>;
+            "input-textarea-disabled": LocalJSX.InputTextareaDisabled & JSXBase.HTMLAttributes<HTMLInputTextareaDisabledElement>;
+            "input-textarea-float-label": LocalJSX.InputTextareaFloatLabel & JSXBase.HTMLAttributes<HTMLInputTextareaFloatLabelElement>;
         }
     }
 }

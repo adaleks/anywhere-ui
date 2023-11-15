@@ -41,6 +41,10 @@
  - [input-text-disabled](../../pages/input-text/input-text-disabled)
  - [input-text-float-label](../../pages/input-text/input-text-float-label)
  - [input-text-icons](../../pages/input-text/input-text-icons)
+ - [input-textarea-auto-resize](../../pages/input-textarea/input-textarea-auto-resize)
+ - [input-textarea-basic](../../pages/input-textarea/input-textarea-basic)
+ - [input-textarea-disabled](../../pages/input-textarea/input-textarea-disabled)
+ - [input-textarea-float-label](../../pages/input-textarea/input-textarea-float-label)
 
 ### Graph
 ```mermaid
@@ -64,6 +68,10 @@ graph TD;
   input-text-disabled --> app-docsectiontext
   input-text-float-label --> app-docsectiontext
   input-text-icons --> app-docsectiontext
+  input-textarea-auto-resize --> app-docsectiontext
+  input-textarea-basic --> app-docsectiontext
+  input-textarea-disabled --> app-docsectiontext
+  input-textarea-float-label --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

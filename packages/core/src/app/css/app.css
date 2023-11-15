@@ -105,7 +105,6 @@ p {
   background-color: var(--dark-background-color);
 }
 
-/* Apply dark theme styles */
 /* Styles for the rotating spinner icon */
 .loader .iconify {
   animation: rotate 2s linear infinite;
@@ -980,7 +979,7 @@ pre[class*=language-] code {
   }
   .layout-sidebar {
     transform: translateX(-100%);
-    z-index: 999;
+    z-index: 1102;
   }
   .layout-sidebar.active {
     transform: translateX(0);
@@ -1015,7 +1014,7 @@ pre[class*=language-] code {
     background-color: rgba(0, 0, 0, 0.1);
   }
   .layout-mask.layout-mask-active {
-    z-index: 998;
+    z-index: 1101;
     width: 100%;
     height: 100%;
     position: fixed;

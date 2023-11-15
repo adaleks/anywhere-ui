@@ -51,3 +51,7 @@ export const InputTextBasic = /*@__PURE__*/createReactComponent<JSX.InputTextBas
 export const InputTextDisabled = /*@__PURE__*/createReactComponent<JSX.InputTextDisabled, HTMLInputTextDisabledElement>('input-text-disabled');
 export const InputTextFloatLabel = /*@__PURE__*/createReactComponent<JSX.InputTextFloatLabel, HTMLInputTextFloatLabelElement>('input-text-float-label');
 export const InputTextIcons = /*@__PURE__*/createReactComponent<JSX.InputTextIcons, HTMLInputTextIconsElement>('input-text-icons');
+export const InputTextareaAutoResize = /*@__PURE__*/createReactComponent<JSX.InputTextareaAutoResize, HTMLInputTextareaAutoResizeElement>('input-textarea-auto-resize');
+export const InputTextareaBasic = /*@__PURE__*/createReactComponent<JSX.InputTextareaBasic, HTMLInputTextareaBasicElement>('input-textarea-basic');
+export const InputTextareaDisabled = /*@__PURE__*/createReactComponent<JSX.InputTextareaDisabled, HTMLInputTextareaDisabledElement>('input-textarea-disabled');
+export const InputTextareaFloatLabel = /*@__PURE__*/createReactComponent<JSX.InputTextareaFloatLabel, HTMLInputTextareaFloatLabelElement>('input-textarea-float-label');
