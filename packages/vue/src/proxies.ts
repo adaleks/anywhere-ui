@@ -61,7 +61,7 @@ export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox, JSX.An
   'aOnFocus',
   'aOnBlur'
 ],
-'checked', 'v-value-change', 'valueChange');
+'checked', 'v-value-change');
 
 
 export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown, JSX.AnyDropdown["value"]>('any-dropdown', undefined, [
@@ -95,7 +95,7 @@ export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown, JSX.An
   'aOnBlur',
   'aOnClick'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, JSX.AnyInputNumber["value"]>('any-input-number', undefined, [
@@ -145,7 +145,7 @@ export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, 
   'aOnKeyDown',
   'valueChange'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch, JSX.AnyInputSwitch["checked"]>('any-input-switch', undefined, [
@@ -164,7 +164,7 @@ export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch, 
   'aOnFocus',
   'aOnBlur'
 ],
-'checked', 'v-value-change', 'valueChange');
+'checked', 'v-value-change');
 
 
 export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText, JSX.AnyInputText["value"]>('any-input-text', undefined, [
@@ -191,7 +191,7 @@ export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText, JSX.
   'autocomplete',
   'valueChange'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextarea, JSX.AnyInputTextarea["value"]>('any-input-textarea', undefined, [
@@ -216,7 +216,7 @@ export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextar
   'aOnInput',
   'valueChange'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox, JSX.AnyListbox["value"]>('any-listbox', undefined, [
@@ -250,7 +250,7 @@ export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox, JSX.AnyL
   'emptyFilterMessage',
   'valueChange'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyMultiselect = /*@__PURE__*/ defineContainer<JSX.AnyMultiselect, JSX.AnyMultiselect["value"]>('any-multiselect', undefined, [
@@ -288,7 +288,7 @@ export const AnyMultiselect = /*@__PURE__*/ defineContainer<JSX.AnyMultiselect, 
   'aOnBlur',
   'aOnClick'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton, JSX.AnyRadioButton["value"]>('any-radio-button', undefined, [
@@ -305,7 +305,7 @@ export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton, 
   'aOnFocus',
   'aOnBlur'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyRadioGroup = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup, JSX.AnyRadioGroup["value"]>('any-radio-group', undefined, [
@@ -314,7 +314,7 @@ export const AnyRadioGroup = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup, JS
   'value',
   'valueChange'
 ],
-'value', 'v-value-change', 'valueChange');
+'value', 'v-value-change');
 
 
 export const AnyRippleEffect = /*@__PURE__*/ defineContainer<JSX.AnyRippleEffect>('any-ripple-effect', undefined, [
