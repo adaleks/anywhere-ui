@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-11-11T23:16:25",
+  "timestamp": "2023-11-15T20:38:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.7.0",
@@ -3876,7 +3876,7 @@
       "encapsulation": "scoped",
       "tag": "any-input-textarea",
       "readme": "# any-input-textarea\r\n\r\n\r\n\r",
-      "docs": "",
+      "docs": "The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4435,9 +4435,27 @@
       ],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "input-textarea-auto-resize",
+        "input-textarea-basic",
+        "input-textarea-disabled",
+        "input-textarea-float-label"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "input-textarea-auto-resize": [
+          "any-input-textarea"
+        ],
+        "input-textarea-basic": [
+          "any-input-textarea"
+        ],
+        "input-textarea-disabled": [
+          "any-input-textarea"
+        ],
+        "input-textarea-float-label": [
+          "any-input-textarea"
+        ]
+      }
     },
     {
       "filePath": "src/components/listbox/listbox.tsx",
@@ -7426,7 +7444,11 @@
         "input-text-basic",
         "input-text-disabled",
         "input-text-float-label",
-        "input-text-icons"
+        "input-text-icons",
+        "input-textarea-auto-resize",
+        "input-textarea-basic",
+        "input-textarea-disabled",
+        "input-textarea-float-label"
       ],
       "dependencies": [
         "any-button"
@@ -7491,6 +7513,18 @@
           "app-code"
         ],
         "input-text-icons": [
+          "app-code"
+        ],
+        "input-textarea-auto-resize": [
+          "app-code"
+        ],
+        "input-textarea-basic": [
+          "app-code"
+        ],
+        "input-textarea-disabled": [
+          "app-code"
+        ],
+        "input-textarea-float-label": [
           "app-code"
         ]
       }
@@ -8308,7 +8342,11 @@
         "input-text-basic",
         "input-text-disabled",
         "input-text-float-label",
-        "input-text-icons"
+        "input-text-icons",
+        "input-textarea-auto-resize",
+        "input-textarea-basic",
+        "input-textarea-disabled",
+        "input-textarea-float-label"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -8367,6 +8405,18 @@
           "app-docsectiontext"
         ],
         "input-text-icons": [
+          "app-docsectiontext"
+        ],
+        "input-textarea-auto-resize": [
+          "app-docsectiontext"
+        ],
+        "input-textarea-basic": [
+          "app-docsectiontext"
+        ],
+        "input-textarea-disabled": [
+          "app-docsectiontext"
+        ],
+        "input-textarea-float-label": [
           "app-docsectiontext"
         ]
       }
@@ -9927,6 +9977,318 @@
         "input-text-icons": [
           "app-docsectiontext",
           "any-input-text",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-auto-resize/input-textarea-auto-resize.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-textarea-auto-resize",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-textarea",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-textarea-auto-resize": [
+          "app-docsectiontext",
+          "any-input-textarea",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-basic/input-textarea-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-textarea-basic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-textarea",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-textarea-basic": [
+          "app-docsectiontext",
+          "any-input-textarea",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-disabled/input-textarea-disabled.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-textarea-disabled",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-textarea",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-textarea-disabled": [
+          "app-docsectiontext",
+          "any-input-textarea",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-float-label/input-textarea-float-label.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-textarea-float-label",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-textarea",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-textarea-float-label": [
+          "app-docsectiontext",
+          "any-input-textarea",
           "app-code"
         ],
         "app-code": [

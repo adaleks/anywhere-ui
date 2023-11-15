@@ -12,6 +12,9 @@ import {
 import { Attributes, inheritAttributes, raf } from "../../utils/helpers";
 import { TextareaChangeEventDetail } from "./input-textarea-interface";
 
+/**
+ * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
+ */
 @Component({
   tag: "any-input-textarea",
   styleUrl: "input-textarea.scss",

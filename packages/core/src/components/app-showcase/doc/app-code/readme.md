@@ -41,6 +41,10 @@
  - [input-text-disabled](../../pages/input-text/input-text-disabled)
  - [input-text-float-label](../../pages/input-text/input-text-float-label)
  - [input-text-icons](../../pages/input-text/input-text-icons)
+ - [input-textarea-auto-resize](../../pages/input-textarea/input-textarea-auto-resize)
+ - [input-textarea-basic](../../pages/input-textarea/input-textarea-basic)
+ - [input-textarea-disabled](../../pages/input-textarea/input-textarea-disabled)
+ - [input-textarea-float-label](../../pages/input-textarea/input-textarea-float-label)
 
 ### Depends on
 
@@ -70,6 +74,10 @@ graph TD;
   input-text-disabled --> app-code
   input-text-float-label --> app-code
   input-text-icons --> app-code
+  input-textarea-auto-resize --> app-code
+  input-textarea-basic --> app-code
+  input-textarea-disabled --> app-code
+  input-textarea-float-label --> app-code
   style app-code fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

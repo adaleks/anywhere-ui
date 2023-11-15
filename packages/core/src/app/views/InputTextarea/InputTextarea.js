@@ -7,35 +7,35 @@ export default class extends AbstractView {
   }
 
   executeScript() {
-    this.viewOnGithubBtn = document.querySelector("#view_on_github");
-    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
-      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/input-textarea', '_blank');
-    });
-    this.it1 = document.querySelector("#ita1");
-    this.it2 = document.querySelector("#ita2");
-    this.it3 = document.querySelector("#ita3");
-
-    this.it1.inputWrapperClass = "any-field block";
-
-    // this.it3.addEventListener("valueChange", (event) => {
-    //   console.log("Input Textaera Value changed:", event);
-    // });
-
-    // this.it3.addEventListener("aOnFocus", (event) => {
-    //   console.log("Input Textaera On Focus:", event);
-    // });
-    // this.it3.addEventListener("aOnBlur", (event) => {
-    //   console.log("Input Textaera On Blur:", event);
-    // });
-    // this.it3.addEventListener("aOnResize", (event) => {
-    //   console.log("Input Textaera On Resize:", event);
-    // });
+    this.appDoc = document.querySelector("#app-doc");
+    this.appDoc.apiDocs = ["any-input-textarea"];
+    this.appDoc.docs = [
+      {
+        id: "basic",
+        label: "Basic",
+        component: "input-textarea-basic",
+      },
+      {
+        id: "auto-resize",
+        label: "AutoResize",
+        component: "input-textarea-auto-resize",
+      },
+      {
+        id: "float-label",
+        label: "Float Label",
+        component: "input-textarea-float-label",
+      },
+      {
+        id: "disabled",
+        label: "Disabled",
+        component: "input-textarea-disabled",
+      },
+    ];
   }
 
   async getHtml() {
-    return fetch('app/views/InputTextarea/InputTextarea.html')
-      .then(data => {
-        return data.text();
-      });
+    return fetch("app/views/InputTextarea/InputTextarea.html").then((data) => {
+      return data.text();
+    });
   }
 }

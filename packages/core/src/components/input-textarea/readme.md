@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
+
 ## Properties
 
 | Property            | Attribute             | Description                                                                                                                                                                                               | Type                        | Default                                 |
@@ -80,6 +84,25 @@ Type: `Promise<void>`
 | `--inputTextColor`            | The text color of the input field, using the --textColor variable.                                                         |
 | `--inputTransition`           | The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable. |
 
+
+## Dependencies
+
+### Used by
+
+ - [input-textarea-auto-resize](../app-showcase/pages/input-textarea/input-textarea-auto-resize)
+ - [input-textarea-basic](../app-showcase/pages/input-textarea/input-textarea-basic)
+ - [input-textarea-disabled](../app-showcase/pages/input-textarea/input-textarea-disabled)
+ - [input-textarea-float-label](../app-showcase/pages/input-textarea/input-textarea-float-label)
+
+### Graph
+```mermaid
+graph TD;
+  input-textarea-auto-resize --> any-input-textarea
+  input-textarea-basic --> any-input-textarea
+  input-textarea-disabled --> any-input-textarea
+  input-textarea-float-label --> any-input-textarea
+  style any-input-textarea fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
