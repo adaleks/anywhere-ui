@@ -1,8 +1,8 @@
 {
-  "timestamp": "2023-11-15T20:38:29",
+  "timestamp": "2023-11-15T20:50:22",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.7.0",
+    "version": "4.7.2",
     "typescriptVersion": "5.2.2"
   },
   "components": [
@@ -9992,6 +9992,7 @@
       "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-auto-resize/input-textarea-auto-resize.tsx",
       "encapsulation": "scoped",
       "tag": "input-textarea-auto-resize",
+      "readme": "# input-textarea-auto-resize\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -10070,6 +10071,7 @@
       "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-basic/input-textarea-basic.tsx",
       "encapsulation": "scoped",
       "tag": "input-textarea-basic",
+      "readme": "# input-textarea-basic\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -10148,6 +10150,7 @@
       "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-disabled/input-textarea-disabled.tsx",
       "encapsulation": "scoped",
       "tag": "input-textarea-disabled",
+      "readme": "# input-textarea-disabled\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -10226,6 +10229,7 @@
       "filePath": "src/components/app-showcase/pages/input-textarea/input-textarea-float-label/input-textarea-float-label.tsx",
       "encapsulation": "scoped",
       "tag": "input-textarea-float-label",
+      "readme": "# input-textarea-float-label\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
