@@ -104,6 +104,7 @@ export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, 
   'showButtons',
   'buttonLayout',
   'inputId',
+  'floatLabel',
   'styleClass',
   'anyStyle',
   'placeholder',
@@ -494,6 +495,54 @@ export const DropdownTemplate = /*@__PURE__*/ defineContainer<JSX.DropdownTempla
 
 
 export const DropdownVirtualScroll = /*@__PURE__*/ defineContainer<JSX.DropdownVirtualScroll>('dropdown-virtual-scroll', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberButtons = /*@__PURE__*/ defineContainer<JSX.InputNumberButtons>('input-number-buttons', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberCurrency = /*@__PURE__*/ defineContainer<JSX.InputNumberCurrency>('input-number-currency', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberDisabled = /*@__PURE__*/ defineContainer<JSX.InputNumberDisabled>('input-number-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputNumberFloatLabel>('input-number-float-label', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberLocale = /*@__PURE__*/ defineContainer<JSX.InputNumberLocale>('input-number-locale', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberNumeral = /*@__PURE__*/ defineContainer<JSX.InputNumberNumeral>('input-number-numeral', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberPrefixAndSuffix = /*@__PURE__*/ defineContainer<JSX.InputNumberPrefixAndSuffix>('input-number-prefix-and-suffix', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const InputNumberVertical = /*@__PURE__*/ defineContainer<JSX.InputNumberVertical>('input-number-vertical', undefined, [
   'textId',
   'textTitle'
 ]);

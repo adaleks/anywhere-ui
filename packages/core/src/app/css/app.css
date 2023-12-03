@@ -743,11 +743,13 @@ pre[class*=language-] code {
 .layout-topbar .app-theme img {
   width: 25px;
 }
+.layout-topbar .buyMeACoffee {
+  margin: 0 30px 0 auto;
+}
 .layout-topbar .topbar-menu {
   list-style-type: none;
   padding: 0;
   height: 100%;
-  margin: 0 0 0 auto;
   display: flex;
 }
 .layout-topbar .topbar-menu > li {
@@ -755,12 +757,14 @@ pre[class*=language-] code {
   line-height: 70px;
 }
 .layout-topbar .topbar-menu > li > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-decoration: none;
   color: var(--text-color);
   min-width: 120px;
   font-size: 16px;
-  display: block;
-  text-align: center;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;

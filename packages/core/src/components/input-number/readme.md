@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+InputNumber is a component for numeric input, allowing users to input numeric values.
+
 ## Properties
 
 | Property               | Attribute                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                    | Type      | Default                            |
@@ -23,6 +27,7 @@
 | `decrementButtonClass` | `decrement-button-class` | Style class of the decrement button.                                                                                                                                                                                                                                                                                                                                                                                                           | `string`  | `undefined`                        |
 | `decrementButtonIcon`  | `decrement-button-icon`  | Style class of the decrement button.                                                                                                                                                                                                                                                                                                                                                                                                           | `string`  | `"fa-solid:angle-down"`            |
 | `disabled`             | `disabled`               | When present, it specifies that the element should be disabled.                                                                                                                                                                                                                                                                                                                                                                                | `boolean` | `false`                            |
+| `floatLabel`           | `float-label`            | When enabled, the label will have floating effect on input text focus                                                                                                                                                                                                                                                                                                                                                                          | `boolean` | `false`                            |
 | `format`               | `format`                 | Whether to format the value.                                                                                                                                                                                                                                                                                                                                                                                                                   | `boolean` | `true`                             |
 | `incrementButtonClass` | `increment-button-class` | Style class of the increment button.                                                                                                                                                                                                                                                                                                                                                                                                           | `string`  | `undefined`                        |
 | `incrementButtonIcon`  | `increment-button-icon`  | Style class of the increment button.                                                                                                                                                                                                                                                                                                                                                                                                           | `string`  | `"fa-solid:angle-up"`              |
@@ -48,7 +53,7 @@
 | `step`                 | `step`                   | Step factor to increment/decrement the value.                                                                                                                                                                                                                                                                                                                                                                                                  | `number`  | `1`                                |
 | `styleClass`           | `style-class`            | Style class of the component.                                                                                                                                                                                                                                                                                                                                                                                                                  | `string`  | `undefined`                        |
 | `useGrouping`          | `use-grouping`           | Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.                                                                                                                                                                                                                                                                                                                                            | `boolean` | `true`                             |
-| `value`                | `value`                  | Value of the component.                                                                                                                                                                                                                                                                                                                                                                                                                        | `string`  | `null`                             |
+| `value`                | `value`                  | Value of the component.                                                                                                                                                                                                                                                                                                                                                                                                                        | `number`  | `null`                             |
 
 
 ## Events
@@ -62,7 +67,46 @@
 | `valueChange` | Callback to invoke when value of componnt changes | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot      | Description                                                                                                                                      |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `"end"`   | Represents the content or elements to be placed after the numeric input. Use this slot to add any content or components after the input field.   |
+| `"start"` | Represents the content or elements to be placed before the numeric input. Use this slot to add any content or components before the input field. |
+
+
+## CSS Custom Properties
+
+| Name                          | Description                                                                                                                |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `--inputBgColor`              | The background color of the input field.                                                                                   |
+| `--inputBorder`               | The border of the input field.                                                                                             |
+| `--inputErrorBorder`          | The border of the input field in case of an error.                                                                         |
+| `--inputErrorBorderColor`     | The border color of the input field in case of an error, using the --errorColor variable.                                  |
+| `--inputFilledBg`             | The background color of the input field when filled.                                                                       |
+| `--inputFilledFocusBg`        | The background color of the input field when filled and focused.                                                           |
+| `--inputFilledHoverBg`        | The background color of the input field when filled and hovered.                                                           |
+| `--inputFocusBorderColor`     | The border color of the input field on focus, using the --primaryColor variable.                                           |
+| `--inputHoverBorderColor`     | The border color of the input field on hover, using the --primaryColor variable.                                           |
+| `--inputIconColor`            | The color of icons within the input field, using the --textColor variable.                                                 |
+| `--inputPadding`              | The padding of the input field.                                                                                            |
+| `--inputPlaceholderTextColor` | The text color of the input field placeholder.                                                                             |
+| `--inputTextColor`            | The text color of the input field, using the --textColor variable.                                                         |
+| `--inputTransition`           | The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable. |
+
+
 ## Dependencies
+
+### Used by
+
+ - [input-number-buttons](../app-showcase/pages/input-number/input-number-buttons)
+ - [input-number-currency](../app-showcase/pages/input-number/input-number-currency)
+ - [input-number-disabled](../app-showcase/pages/input-number/input-number-disabled)
+ - [input-number-float-label](../app-showcase/pages/input-number/input-number-float-label)
+ - [input-number-locale](../app-showcase/pages/input-number/input-number-locale)
+ - [input-number-numeral](../app-showcase/pages/input-number/input-number-numeral)
+ - [input-number-prefix-and-suffix](../app-showcase/pages/input-number/input-number-prefix-and-suffix)
+ - [input-number-vertical](../app-showcase/pages/input-number/input-number-vertical)
 
 ### Depends on
 
@@ -76,6 +120,14 @@ graph TD;
   any-input-number --> any-button
   any-button --> any-badge
   any-button --> any-ripple-effect
+  input-number-buttons --> any-input-number
+  input-number-currency --> any-input-number
+  input-number-disabled --> any-input-number
+  input-number-float-label --> any-input-number
+  input-number-locale --> any-input-number
+  input-number-numeral --> any-input-number
+  input-number-prefix-and-suffix --> any-input-number
+  input-number-vertical --> any-input-number
   style any-input-number fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

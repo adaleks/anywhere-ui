@@ -1,8 +1,8 @@
 {
-  "timestamp": "2023-11-15T20:50:22",
+  "timestamp": "2023-12-03T14:56:45",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.7.2",
+    "version": "4.8.0",
     "typescriptVersion": "5.2.2"
   },
   "components": [
@@ -1863,8 +1863,29 @@
       "encapsulation": "scoped",
       "tag": "any-input-number",
       "readme": "# any-input-number\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "InputNumber is a component for numeric input, allowing users to input numeric values.",
+      "docsTags": [
+        {
+          "name": "tag",
+          "text": "any-input-number - The custom tag for this component."
+        },
+        {
+          "name": "styleUrl",
+          "text": "input-number.scss - The stylesheet associated with this component."
+        },
+        {
+          "name": "scoped",
+          "text": "true - Indicates that the styles are scoped to this component only."
+        },
+        {
+          "name": "slot",
+          "text": "start - Represents the content or elements to be placed before the numeric input.\r\nUse this slot to add any content or components before the input field."
+        },
+        {
+          "name": "slot",
+          "text": "end - Represents the content or elements to be placed after the numeric input.\r\nUse this slot to add any content or components after the input field."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -2155,6 +2176,28 @@
           "attr": "disabled",
           "reflectToAttr": false,
           "docs": "When present, it specifies that the element should be disabled.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "floatLabel",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "float-label",
+          "reflectToAttr": false,
+          "docs": "When enabled, the label will have floating effect on input text focus",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -2702,10 +2745,10 @@
         },
         {
           "name": "value",
-          "type": "string",
+          "type": "number",
           "complexType": {
-            "original": "string",
-            "resolved": "string",
+            "original": "number",
+            "resolved": "number",
             "references": {}
           },
           "mutable": true,
@@ -2716,7 +2759,7 @@
           "default": "null",
           "values": [
             {
-              "type": "string"
+              "type": "number"
             }
           ],
           "optional": false,
@@ -2797,10 +2840,99 @@
         }
       ],
       "listeners": [],
-      "styles": [],
-      "slots": [],
+      "styles": [
+        {
+          "name": "--inputBgColor",
+          "annotation": "prop",
+          "docs": "The background color of the input field."
+        },
+        {
+          "name": "--inputBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field."
+        },
+        {
+          "name": "--inputErrorBorder",
+          "annotation": "prop",
+          "docs": "The border of the input field in case of an error."
+        },
+        {
+          "name": "--inputErrorBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field in case of an error, using the --errorColor variable."
+        },
+        {
+          "name": "--inputFilledBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled."
+        },
+        {
+          "name": "--inputFilledFocusBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and focused."
+        },
+        {
+          "name": "--inputFilledHoverBg",
+          "annotation": "prop",
+          "docs": "The background color of the input field when filled and hovered."
+        },
+        {
+          "name": "--inputFocusBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on focus, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputHoverBorderColor",
+          "annotation": "prop",
+          "docs": "The border color of the input field on hover, using the --primaryColor variable."
+        },
+        {
+          "name": "--inputIconColor",
+          "annotation": "prop",
+          "docs": "The color of icons within the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input field."
+        },
+        {
+          "name": "--inputPlaceholderTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field placeholder."
+        },
+        {
+          "name": "--inputTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the input field, using the --textColor variable."
+        },
+        {
+          "name": "--inputTransition",
+          "annotation": "prop",
+          "docs": "The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable."
+        }
+      ],
+      "slots": [
+        {
+          "name": "end",
+          "docs": "Represents the content or elements to be placed after the numeric input.\r\nUse this slot to add any content or components after the input field."
+        },
+        {
+          "name": "start",
+          "docs": "Represents the content or elements to be placed before the numeric input.\r\nUse this slot to add any content or components before the input field."
+        }
+      ],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "input-number-buttons",
+        "input-number-currency",
+        "input-number-disabled",
+        "input-number-float-label",
+        "input-number-locale",
+        "input-number-numeral",
+        "input-number-prefix-and-suffix",
+        "input-number-vertical"
+      ],
       "dependencies": [
         "any-input-text",
         "any-button"
@@ -2813,6 +2945,30 @@
         "any-button": [
           "any-badge",
           "any-ripple-effect"
+        ],
+        "input-number-buttons": [
+          "any-input-number"
+        ],
+        "input-number-currency": [
+          "any-input-number"
+        ],
+        "input-number-disabled": [
+          "any-input-number"
+        ],
+        "input-number-float-label": [
+          "any-input-number"
+        ],
+        "input-number-locale": [
+          "any-input-number"
+        ],
+        "input-number-numeral": [
+          "any-input-number"
+        ],
+        "input-number-prefix-and-suffix": [
+          "any-input-number"
+        ],
+        "input-number-vertical": [
+          "any-input-number"
         ]
       }
     },
@@ -7438,6 +7594,14 @@
         "dropdown-filter",
         "dropdown-template",
         "dropdown-virtual-scroll",
+        "input-number-buttons",
+        "input-number-currency",
+        "input-number-disabled",
+        "input-number-float-label",
+        "input-number-locale",
+        "input-number-numeral",
+        "input-number-prefix-and-suffix",
+        "input-number-vertical",
         "input-switch-basic",
         "input-switch-disabled",
         "input-switch-preselection",
@@ -7492,6 +7656,30 @@
           "app-code"
         ],
         "dropdown-virtual-scroll": [
+          "app-code"
+        ],
+        "input-number-buttons": [
+          "app-code"
+        ],
+        "input-number-currency": [
+          "app-code"
+        ],
+        "input-number-disabled": [
+          "app-code"
+        ],
+        "input-number-float-label": [
+          "app-code"
+        ],
+        "input-number-locale": [
+          "app-code"
+        ],
+        "input-number-numeral": [
+          "app-code"
+        ],
+        "input-number-prefix-and-suffix": [
+          "app-code"
+        ],
+        "input-number-vertical": [
           "app-code"
         ],
         "input-switch-basic": [
@@ -8336,6 +8524,14 @@
         "dropdown-filter",
         "dropdown-template",
         "dropdown-virtual-scroll",
+        "input-number-buttons",
+        "input-number-currency",
+        "input-number-disabled",
+        "input-number-float-label",
+        "input-number-locale",
+        "input-number-numeral",
+        "input-number-prefix-and-suffix",
+        "input-number-vertical",
         "input-switch-basic",
         "input-switch-disabled",
         "input-switch-preselection",
@@ -8384,6 +8580,30 @@
           "app-docsectiontext"
         ],
         "dropdown-virtual-scroll": [
+          "app-docsectiontext"
+        ],
+        "input-number-buttons": [
+          "app-docsectiontext"
+        ],
+        "input-number-currency": [
+          "app-docsectiontext"
+        ],
+        "input-number-disabled": [
+          "app-docsectiontext"
+        ],
+        "input-number-float-label": [
+          "app-docsectiontext"
+        ],
+        "input-number-locale": [
+          "app-docsectiontext"
+        ],
+        "input-number-numeral": [
+          "app-docsectiontext"
+        ],
+        "input-number-prefix-and-suffix": [
+          "app-docsectiontext"
+        ],
+        "input-number-vertical": [
           "app-docsectiontext"
         ],
         "input-switch-basic": [
@@ -9432,6 +9652,669 @@
         "any-button": [
           "any-badge",
           "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-buttons/input-number-buttons.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-buttons",
+      "readme": "# input-number-buttons\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-buttons": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-currency/input-number-currency.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-currency",
+      "readme": "# input-number-currency\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-currency": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-disabled/input-number-disabled.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-disabled",
+      "readme": "# input-number-disabled\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-disabled": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-float-label/input-number-float-label.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-float-label",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-float-label": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-locale/input-number-locale.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-locale",
+      "readme": "# input-number-locale\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-locale": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-numeral/input-number-numeral.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-numeral",
+      "readme": "# input-number-numeral\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-numeral": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-prefix-and-suffix/input-number-prefix-and-suffix.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-prefix-and-suffix",
+      "readme": "# input-number-prefix-and-suffix\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-prefix-and-suffix": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/input-number/input-number-vertical/input-number-vertical.tsx",
+      "encapsulation": "scoped",
+      "tag": "input-number-vertical",
+      "readme": "# input-number-vertical\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-input-number",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "input-number-vertical": [
+          "app-docsectiontext",
+          "any-input-number",
+          "app-code"
+        ],
+        "any-input-number": [
+          "any-input-text",
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
         ]
       }
     },

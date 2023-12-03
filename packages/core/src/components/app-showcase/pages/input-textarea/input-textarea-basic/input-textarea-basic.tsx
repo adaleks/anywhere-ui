@@ -51,7 +51,7 @@ inputTextareaBasic.addEventListener("valueChange", (event) => {
               cols={30}
             ></any-input-textarea>
           </div>
-          <app-code code={this.code} selector="input-text-basic"></app-code>
+          <app-code code={this.code} selector="input-textarea-basic"></app-code>
         </section>
       </Host>
     );

@@ -182,14 +182,14 @@ export declare interface AnyDropdown extends Components.AnyDropdown {
 
 
 @ProxyCmp({
-  inputs: ['aPrefix', 'aSuffix', 'aTitle', 'allowEmpty', 'anyAriaRequired', 'anyStyle', 'anyTabIndex', 'autocomplete', 'buttonLayout', 'currency', 'currencyDisplay', 'decrementButtonClass', 'decrementButtonIcon', 'disabled', 'format', 'incrementButtonClass', 'incrementButtonIcon', 'inputId', 'inputStyle', 'inputStyleClass', 'inputWrapperClass', 'label', 'locale', 'localeMatcher', 'max', 'maxFractionDigits', 'maxlength', 'min', 'minFractionDigits', 'mode', 'name', 'placeholder', 'readonly', 'required', 'showButtons', 'size', 'step', 'styleClass', 'useGrouping', 'value']
+  inputs: ['aPrefix', 'aSuffix', 'aTitle', 'allowEmpty', 'anyAriaRequired', 'anyStyle', 'anyTabIndex', 'autocomplete', 'buttonLayout', 'currency', 'currencyDisplay', 'decrementButtonClass', 'decrementButtonIcon', 'disabled', 'floatLabel', 'format', 'incrementButtonClass', 'incrementButtonIcon', 'inputId', 'inputStyle', 'inputStyleClass', 'inputWrapperClass', 'label', 'locale', 'localeMatcher', 'max', 'maxFractionDigits', 'maxlength', 'min', 'minFractionDigits', 'mode', 'name', 'placeholder', 'readonly', 'required', 'showButtons', 'size', 'step', 'styleClass', 'useGrouping', 'value']
 })
 @Component({
   selector: 'any-input-number',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['aPrefix', 'aSuffix', 'aTitle', 'allowEmpty', 'anyAriaRequired', 'anyStyle', 'anyTabIndex', 'autocomplete', 'buttonLayout', 'currency', 'currencyDisplay', 'decrementButtonClass', 'decrementButtonIcon', 'disabled', 'format', 'incrementButtonClass', 'incrementButtonIcon', 'inputId', 'inputStyle', 'inputStyleClass', 'inputWrapperClass', 'label', 'locale', 'localeMatcher', 'max', 'maxFractionDigits', 'maxlength', 'min', 'minFractionDigits', 'mode', 'name', 'placeholder', 'readonly', 'required', 'showButtons', 'size', 'step', 'styleClass', 'useGrouping', 'value'],
+  inputs: ['aPrefix', 'aSuffix', 'aTitle', 'allowEmpty', 'anyAriaRequired', 'anyStyle', 'anyTabIndex', 'autocomplete', 'buttonLayout', 'currency', 'currencyDisplay', 'decrementButtonClass', 'decrementButtonIcon', 'disabled', 'floatLabel', 'format', 'incrementButtonClass', 'incrementButtonIcon', 'inputId', 'inputStyle', 'inputStyleClass', 'inputWrapperClass', 'label', 'locale', 'localeMatcher', 'max', 'maxFractionDigits', 'maxlength', 'min', 'minFractionDigits', 'mode', 'name', 'placeholder', 'readonly', 'required', 'showButtons', 'size', 'step', 'styleClass', 'useGrouping', 'value'],
 })
 export class AnyInputNumber {
   protected el: HTMLElement;
@@ -1080,6 +1080,182 @@ export class DropdownVirtualScroll {
 
 
 export declare interface DropdownVirtualScroll extends Components.DropdownVirtualScroll {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-buttons',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberButtons {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberButtons extends Components.InputNumberButtons {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-currency',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberCurrency {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberCurrency extends Components.InputNumberCurrency {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-disabled',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberDisabled {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberDisabled extends Components.InputNumberDisabled {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-float-label',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberFloatLabel {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberFloatLabel extends Components.InputNumberFloatLabel {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-locale',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberLocale {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberLocale extends Components.InputNumberLocale {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-numeral',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberNumeral {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberNumeral extends Components.InputNumberNumeral {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-prefix-and-suffix',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberPrefixAndSuffix {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberPrefixAndSuffix extends Components.InputNumberPrefixAndSuffix {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'input-number-vertical',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+})
+export class InputNumberVertical {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface InputNumberVertical extends Components.InputNumberVertical {}
 
 
 @ProxyCmp({

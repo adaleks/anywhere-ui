@@ -55,7 +55,10 @@ inputTextareaAutoResize.addEventListener("valueChange", (event) => {
               autoResize={true}
             ></any-input-textarea>
           </div>
-          <app-code code={this.code} selector="input-text-basic"></app-code>
+          <app-code
+            code={this.code}
+            selector="input-textarea-auto-resize"
+          ></app-code>
         </section>
       </Host>
     );

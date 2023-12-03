@@ -1,4 +1,24 @@
+@import "../../themes/anywhere.globals.scss";
+// @import "../input-text/input-tsext.scss";
+
 :host {
+  /**
+    * CSS variables for input field components (e.g., input text, spinner, input mask).
+    * @prop --inputPadding: The padding of the input field.
+    * @prop --inputBgColor: The background color of the input field.
+    * @prop --inputBorder: The border of the input field.
+    * @prop --inputTextColor: The text color of the input field, using the --textColor variable.
+    * @prop --inputHoverBorderColor: The border color of the input field on hover, using the --primaryColor variable.
+    * @prop --inputFocusBorderColor: The border color of the input field on focus, using the --primaryColor variable.
+    * @prop --inputErrorBorder: The border of the input field in case of an error.
+    * @prop --inputPlaceholderTextColor: The text color of the input field placeholder.
+    * @prop --inputTransition: The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable.
+    * @prop --inputFilledBg: The background color of the input field when filled.
+    * @prop --inputFilledFocusBg: The background color of the input field when filled and focused.
+    * @prop --inputFilledHoverBg: The background color of the input field when filled and hovered.
+    * @prop --inputIconColor: The color of icons within the input field, using the --textColor variable.
+    * @prop --inputErrorBorderColor: The border color of the input field in case of an error, using the --errorColor variable.
+    */
   display: inline-flex;
 
   .any-inputnumber,
@@ -16,12 +36,8 @@
     flex: 0 0 auto;
   }
 
-  .any-inputnumber-buttons-stacked
-    .any-inputnumber-button
-    ::part(any-button-label),
-  .any-inputnumber-buttons-horizontal
-    .any-inputnumber-button
-    ::part(any-button-label) {
+  .any-inputnumber-buttons-stacked .any-inputnumber-button ::part(any-button-label),
+  .any-inputnumber-buttons-horizontal .any-inputnumber-button ::part(any-button-label) {
     display: none;
   }
 
@@ -40,9 +56,7 @@
     border-bottom-right-radius: 0;
   }
 
-  .any-inputnumber-buttons-stacked
-    .any-inputnumber-button-down
-    ::part(any-button) {
+  .any-inputnumber-buttons-stacked .any-inputnumber-button-down ::part(any-button) {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -56,9 +70,7 @@
     // align-self: flex-end;
   }
 
-  .any-inputnumber-buttons-stacked
-    .any-inputnumber-button-group
-    .any-inputnumber-button {
+  .any-inputnumber-buttons-stacked .any-inputnumber-button-group .any-inputnumber-button {
     flex: 1 1 auto;
   }
 
