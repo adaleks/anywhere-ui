@@ -34,6 +34,14 @@
  - [dropdown-filter](../../pages/dropdown/dropdown-filter)
  - [dropdown-template](../../pages/dropdown/dropdown-template)
  - [dropdown-virtual-scroll](../../pages/dropdown/dropdown-virtual-scroll)
+ - [input-number-buttons](../../pages/input-number/input-number-buttons)
+ - [input-number-currency](../../pages/input-number/input-number-currency)
+ - [input-number-disabled](../../pages/input-number/input-number-disabled)
+ - [input-number-float-label](../../pages/input-number/input-number-float-label)
+ - [input-number-locale](../../pages/input-number/input-number-locale)
+ - [input-number-numeral](../../pages/input-number/input-number-numeral)
+ - [input-number-prefix-and-suffix](../../pages/input-number/input-number-prefix-and-suffix)
+ - [input-number-vertical](../../pages/input-number/input-number-vertical)
  - [input-switch-basic](../../pages/input-switch/input-switch-basic)
  - [input-switch-disabled](../../pages/input-switch/input-switch-disabled)
  - [input-switch-preselection](../../pages/input-switch/input-switch-preselection)
@@ -61,6 +69,14 @@ graph TD;
   dropdown-filter --> app-docsectiontext
   dropdown-template --> app-docsectiontext
   dropdown-virtual-scroll --> app-docsectiontext
+  input-number-buttons --> app-docsectiontext
+  input-number-currency --> app-docsectiontext
+  input-number-disabled --> app-docsectiontext
+  input-number-float-label --> app-docsectiontext
+  input-number-locale --> app-docsectiontext
+  input-number-numeral --> app-docsectiontext
+  input-number-prefix-and-suffix --> app-docsectiontext
+  input-number-vertical --> app-docsectiontext
   input-switch-basic --> app-docsectiontext
   input-switch-disabled --> app-docsectiontext
   input-switch-preselection --> app-docsectiontext

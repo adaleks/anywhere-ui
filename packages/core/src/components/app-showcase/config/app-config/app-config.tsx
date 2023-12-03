@@ -66,6 +66,8 @@ export class AppConfig {
         document.body.classList.remove("any-ripple-disabled");
       }
     });
+
+    this.buyMeACoffeeStyleChange();
   }
 
   attachEventListeners() {
@@ -158,6 +160,8 @@ export class AppConfig {
     }
 
     this.updateAppThemeImage(theme);
+
+    this.buyMeACoffeeStyleChange();
   }
 
   updateAppThemeImage(theme: string) {
@@ -166,6 +170,43 @@ export class AppConfig {
       appThemeImage as HTMLImageElement
     ).src = `assets/images/themes/${this.logoMap[theme]}`;
     (appThemeImage.parentNode as HTMLElement).setAttribute("title", theme);
+  }
+
+  buyMeACoffeeStyleChange() {
+    // Get the primary color from the CSS variable
+    var primaryColor = getComputedStyle(document.documentElement)
+      .getPropertyValue("--primary-color")
+      .trim();
+    var primaryTextColor = getComputedStyle(document.documentElement)
+      .getPropertyValue("--primary-color-text")
+      .trim();
+
+    (document.querySelector(".bmc-btn") as HTMLElement).style.setProperty(
+      "height",
+      "40px",
+      "important"
+    );
+    (document.querySelector(".bmc-btn") as HTMLElement).style.setProperty(
+      "font-size",
+      "24px",
+      "important"
+    );
+    (document.querySelector(".bmc-btn") as HTMLElement).style.setProperty(
+      "line-height",
+      "normal",
+      "important"
+    );
+    // Set the background color of the Buy Me a Coffee button
+    (document.querySelector(".bmc-btn") as HTMLElement).style.setProperty(
+      "background-color",
+      primaryColor,
+      "important"
+    );
+    (document.querySelector(".bmc-btn") as HTMLElement).style.setProperty(
+      "color",
+      primaryTextColor,
+      "important"
+    );
   }
 
   render() {

@@ -8,6 +8,17 @@ import {
   EventEmitter,
 } from "@stencil/core";
 
+/**
+ * InputNumber is a component for numeric input, allowing users to input numeric values.
+ *
+ * @tag any-input-number - The custom tag for this component.
+ * @styleUrl input-number.scss - The stylesheet associated with this component.
+ * @scoped true - Indicates that the styles are scoped to this component only.
+ * @slot start - Represents the content or elements to be placed before the numeric input.
+ *   Use this slot to add any content or components before the input field.
+ * @slot end - Represents the content or elements to be placed after the numeric input.
+ *   Use this slot to add any content or components after the input field.
+ */
 @Component({
   tag: "any-input-number",
   styleUrl: "input-number.scss",
@@ -19,7 +30,7 @@ export class InputNumber {
   /**
    * Value of the component.
    */
-  @Prop({ mutable: true }) value: string = null;
+  @Prop({ mutable: true }) value: number = null;
 
   /**
    * Whether to format the value.
@@ -40,6 +51,11 @@ export class InputNumber {
    * Identifier of the focus input to match a label defined for the component.
    */
   @Prop() inputId: string = `any-input-number-${inputIds++}`;
+
+  /**
+   * When enabled, the label will have floating effect on input text focus
+   */
+  @Prop() floatLabel: boolean = false;
 
   /**
    * Style class of the component.
@@ -1442,6 +1458,7 @@ export class InputNumber {
           >
             <any-input-text
               exportparts="any-inputtext"
+              floatLabel={this.floatLabel}
               inputStyle={this.inputStyle}
               label={this.label}
               inputId={this.inputId}

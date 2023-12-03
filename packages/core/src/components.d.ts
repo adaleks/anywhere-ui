@@ -249,6 +249,12 @@ export namespace Components {
          */
         "virtualScroll": boolean;
     }
+    /**
+     * InputNumber is a component for numeric input, allowing users to input numeric values.
+     * @tag any-input-number - The custom tag for this component.
+     * @styleUrl input-number.scss - The stylesheet associated with this component.
+     * @scoped true - Indicates that the styles are scoped to this component only.
+     */
     interface AnyInputNumber {
         /**
           * Text to display before the value.
@@ -306,6 +312,10 @@ export namespace Components {
           * When present, it specifies that the element should be disabled.
          */
         "disabled": boolean;
+        /**
+          * When enabled, the label will have floating effect on input text focus
+         */
+        "floatLabel": boolean;
         /**
           * Whether to format the value.
          */
@@ -409,7 +419,7 @@ export namespace Components {
         /**
           * Value of the component.
          */
-        "value": string;
+        "value": number;
     }
     /**
      * InputSwitch is used to select a boolean value.
@@ -1127,6 +1137,38 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface InputNumberButtons {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberCurrency {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberFloatLabel {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberLocale {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberNumeral {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberPrefixAndSuffix {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberVertical {
+        "textId": string;
+        "textTitle": string;
+    }
     interface InputSwitchBasic {
         "textId": string;
         "textTitle": string;
@@ -1336,6 +1378,12 @@ declare global {
         "aOnKeyDown": any;
         "valueChange": any;
     }
+    /**
+     * InputNumber is a component for numeric input, allowing users to input numeric values.
+     * @tag any-input-number - The custom tag for this component.
+     * @styleUrl input-number.scss - The stylesheet associated with this component.
+     * @scoped true - Indicates that the styles are scoped to this component only.
+     */
     interface HTMLAnyInputNumberElement extends Components.AnyInputNumber, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyInputNumberElementEventMap>(type: K, listener: (this: HTMLAnyInputNumberElement, ev: AnyInputNumberCustomEvent<HTMLAnyInputNumberElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1733,6 +1781,54 @@ declare global {
         prototype: HTMLDropdownVirtualScrollElement;
         new (): HTMLDropdownVirtualScrollElement;
     };
+    interface HTMLInputNumberButtonsElement extends Components.InputNumberButtons, HTMLStencilElement {
+    }
+    var HTMLInputNumberButtonsElement: {
+        prototype: HTMLInputNumberButtonsElement;
+        new (): HTMLInputNumberButtonsElement;
+    };
+    interface HTMLInputNumberCurrencyElement extends Components.InputNumberCurrency, HTMLStencilElement {
+    }
+    var HTMLInputNumberCurrencyElement: {
+        prototype: HTMLInputNumberCurrencyElement;
+        new (): HTMLInputNumberCurrencyElement;
+    };
+    interface HTMLInputNumberDisabledElement extends Components.InputNumberDisabled, HTMLStencilElement {
+    }
+    var HTMLInputNumberDisabledElement: {
+        prototype: HTMLInputNumberDisabledElement;
+        new (): HTMLInputNumberDisabledElement;
+    };
+    interface HTMLInputNumberFloatLabelElement extends Components.InputNumberFloatLabel, HTMLStencilElement {
+    }
+    var HTMLInputNumberFloatLabelElement: {
+        prototype: HTMLInputNumberFloatLabelElement;
+        new (): HTMLInputNumberFloatLabelElement;
+    };
+    interface HTMLInputNumberLocaleElement extends Components.InputNumberLocale, HTMLStencilElement {
+    }
+    var HTMLInputNumberLocaleElement: {
+        prototype: HTMLInputNumberLocaleElement;
+        new (): HTMLInputNumberLocaleElement;
+    };
+    interface HTMLInputNumberNumeralElement extends Components.InputNumberNumeral, HTMLStencilElement {
+    }
+    var HTMLInputNumberNumeralElement: {
+        prototype: HTMLInputNumberNumeralElement;
+        new (): HTMLInputNumberNumeralElement;
+    };
+    interface HTMLInputNumberPrefixAndSuffixElement extends Components.InputNumberPrefixAndSuffix, HTMLStencilElement {
+    }
+    var HTMLInputNumberPrefixAndSuffixElement: {
+        prototype: HTMLInputNumberPrefixAndSuffixElement;
+        new (): HTMLInputNumberPrefixAndSuffixElement;
+    };
+    interface HTMLInputNumberVerticalElement extends Components.InputNumberVertical, HTMLStencilElement {
+    }
+    var HTMLInputNumberVerticalElement: {
+        prototype: HTMLInputNumberVerticalElement;
+        new (): HTMLInputNumberVerticalElement;
+    };
     interface HTMLInputSwitchBasicElement extends Components.InputSwitchBasic, HTMLStencilElement {
     }
     var HTMLInputSwitchBasicElement: {
@@ -1837,6 +1933,14 @@ declare global {
         "dropdown-filter": HTMLDropdownFilterElement;
         "dropdown-template": HTMLDropdownTemplateElement;
         "dropdown-virtual-scroll": HTMLDropdownVirtualScrollElement;
+        "input-number-buttons": HTMLInputNumberButtonsElement;
+        "input-number-currency": HTMLInputNumberCurrencyElement;
+        "input-number-disabled": HTMLInputNumberDisabledElement;
+        "input-number-float-label": HTMLInputNumberFloatLabelElement;
+        "input-number-locale": HTMLInputNumberLocaleElement;
+        "input-number-numeral": HTMLInputNumberNumeralElement;
+        "input-number-prefix-and-suffix": HTMLInputNumberPrefixAndSuffixElement;
+        "input-number-vertical": HTMLInputNumberVerticalElement;
         "input-switch-basic": HTMLInputSwitchBasicElement;
         "input-switch-disabled": HTMLInputSwitchDisabledElement;
         "input-switch-preselection": HTMLInputSwitchPreselectionElement;
@@ -2139,6 +2243,12 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    /**
+     * InputNumber is a component for numeric input, allowing users to input numeric values.
+     * @tag any-input-number - The custom tag for this component.
+     * @styleUrl input-number.scss - The stylesheet associated with this component.
+     * @scoped true - Indicates that the styles are scoped to this component only.
+     */
     interface AnyInputNumber {
         /**
           * Text to display before the value.
@@ -2196,6 +2306,10 @@ declare namespace LocalJSX {
           * When present, it specifies that the element should be disabled.
          */
         "disabled"?: boolean;
+        /**
+          * When enabled, the label will have floating effect on input text focus
+         */
+        "floatLabel"?: boolean;
         /**
           * Whether to format the value.
          */
@@ -2319,7 +2433,7 @@ declare namespace LocalJSX {
         /**
           * Value of the component.
          */
-        "value"?: string;
+        "value"?: number;
     }
     /**
      * InputSwitch is used to select a boolean value.
@@ -3141,6 +3255,38 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface InputNumberButtons {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberCurrency {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberFloatLabel {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberLocale {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberNumeral {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberPrefixAndSuffix {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface InputNumberVertical {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface InputSwitchBasic {
         "textId"?: string;
         "textTitle"?: string;
@@ -3223,6 +3369,14 @@ declare namespace LocalJSX {
         "dropdown-filter": DropdownFilter;
         "dropdown-template": DropdownTemplate;
         "dropdown-virtual-scroll": DropdownVirtualScroll;
+        "input-number-buttons": InputNumberButtons;
+        "input-number-currency": InputNumberCurrency;
+        "input-number-disabled": InputNumberDisabled;
+        "input-number-float-label": InputNumberFloatLabel;
+        "input-number-locale": InputNumberLocale;
+        "input-number-numeral": InputNumberNumeral;
+        "input-number-prefix-and-suffix": InputNumberPrefixAndSuffix;
+        "input-number-vertical": InputNumberVertical;
         "input-switch-basic": InputSwitchBasic;
         "input-switch-disabled": InputSwitchDisabled;
         "input-switch-preselection": InputSwitchPreselection;
@@ -3251,6 +3405,12 @@ declare module "@stencil/core" {
              * Dropdown, also known as Select, is used to choose an item from a collection of options.
              */
             "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
+            /**
+             * InputNumber is a component for numeric input, allowing users to input numeric values.
+             * @tag any-input-number - The custom tag for this component.
+             * @styleUrl input-number.scss - The stylesheet associated with this component.
+             * @scoped true - Indicates that the styles are scoped to this component only.
+             */
             "any-input-number": LocalJSX.AnyInputNumber & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
             /**
              * InputSwitch is used to select a boolean value.
@@ -3293,6 +3453,14 @@ declare module "@stencil/core" {
             "dropdown-filter": LocalJSX.DropdownFilter & JSXBase.HTMLAttributes<HTMLDropdownFilterElement>;
             "dropdown-template": LocalJSX.DropdownTemplate & JSXBase.HTMLAttributes<HTMLDropdownTemplateElement>;
             "dropdown-virtual-scroll": LocalJSX.DropdownVirtualScroll & JSXBase.HTMLAttributes<HTMLDropdownVirtualScrollElement>;
+            "input-number-buttons": LocalJSX.InputNumberButtons & JSXBase.HTMLAttributes<HTMLInputNumberButtonsElement>;
+            "input-number-currency": LocalJSX.InputNumberCurrency & JSXBase.HTMLAttributes<HTMLInputNumberCurrencyElement>;
+            "input-number-disabled": LocalJSX.InputNumberDisabled & JSXBase.HTMLAttributes<HTMLInputNumberDisabledElement>;
+            "input-number-float-label": LocalJSX.InputNumberFloatLabel & JSXBase.HTMLAttributes<HTMLInputNumberFloatLabelElement>;
+            "input-number-locale": LocalJSX.InputNumberLocale & JSXBase.HTMLAttributes<HTMLInputNumberLocaleElement>;
+            "input-number-numeral": LocalJSX.InputNumberNumeral & JSXBase.HTMLAttributes<HTMLInputNumberNumeralElement>;
+            "input-number-prefix-and-suffix": LocalJSX.InputNumberPrefixAndSuffix & JSXBase.HTMLAttributes<HTMLInputNumberPrefixAndSuffixElement>;
+            "input-number-vertical": LocalJSX.InputNumberVertical & JSXBase.HTMLAttributes<HTMLInputNumberVerticalElement>;
             "input-switch-basic": LocalJSX.InputSwitchBasic & JSXBase.HTMLAttributes<HTMLInputSwitchBasicElement>;
             "input-switch-disabled": LocalJSX.InputSwitchDisabled & JSXBase.HTMLAttributes<HTMLInputSwitchDisabledElement>;
             "input-switch-preselection": LocalJSX.InputSwitchPreselection & JSXBase.HTMLAttributes<HTMLInputSwitchPreselectionElement>;

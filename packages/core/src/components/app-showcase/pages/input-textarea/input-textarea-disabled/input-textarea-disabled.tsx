@@ -55,7 +55,10 @@ inputTextareaDisabled.addEventListener("valueChange", (event) => {
               disabled={true}
             ></any-input-textarea>
           </div>
-          <app-code code={this.code} selector="input-text-basic"></app-code>
+          <app-code
+            code={this.code}
+            selector="input-textarea-disabled"
+          ></app-code>
         </section>
       </Host>
     );
