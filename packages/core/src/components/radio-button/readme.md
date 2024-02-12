@@ -35,6 +35,12 @@
 
 Applies focus.
 
+#### Parameters
+
+| Name | Type  | Description |
+| ---- | ----- | ----------- |
+| `ev` | `any` |             |
+
 #### Returns
 
 Type: `Promise<void>`

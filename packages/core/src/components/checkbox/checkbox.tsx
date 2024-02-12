@@ -36,9 +36,14 @@ export class AnyCheckbox {
   checkbox: HTMLElement | null = null;
 
   /**
-   * If `true`, the checkbox is selected.
+   * Inline style of the component.
    */
-  @Prop({ mutable: true }) checked: boolean = false;
+  @Prop() anyStyle: any = null;
+
+  /**
+   * Index of the element in tabbing order
+   */
+  @Prop() anyTabIndex?: number = 0;
 
   /**
    * Allows to select a boolean value instead of multiple values.
@@ -46,9 +51,34 @@ export class AnyCheckbox {
   @Prop() binary: boolean = false;
 
   /**
+   * If `true`, the checkbox is selected.
+   */
+  @Prop({ mutable: true }) checked: boolean = false;
+
+  /**
+   * Icon class of the checkbox icon.
+   */
+  @Prop() checkboxIcon: string = "fa-solid:check";
+
+  /**
+   * When present, it specifies that the element should be disabled.
+   */
+  @Prop() disabled: boolean = false;
+
+  /**
    * Identifier of the focus input to match a label defined for the component.
    */
   @Prop() inputId: string = `any-cb-${checkboxIds++}`;
+
+  /**
+   * Label of the checkbox.
+   */
+  @Prop() label: string = null;
+
+  /**
+   * Style class of the label.
+   */
+  @Prop() labelStyleClass: string = null;
 
   /**
    * Name of the checkbox group.
@@ -56,9 +86,14 @@ export class AnyCheckbox {
   @Prop() name: string = this.inputId;
 
   /**
-   * Index of the element in tabbing order
+   * When present, it specifies that the component cannot be edited.
    */
-  @Prop() anyTabIndex?: number = 0;
+  @Prop() readonly: boolean = false;
+
+  /**
+   * Style class of the component.
+   */
+  @Prop() styleClass: any = null;
 
   /**
    * The value of the checkbox does not mean if it's checked or not, use the `checked`
@@ -68,41 +103,6 @@ export class AnyCheckbox {
    * it's only used when the checkbox participates in a native `<form>`.
    */
   @Prop({ mutable: true }) value: any = "on";
-
-  /**
-   * Label of the checkbox.
-   */
-  @Prop() label: string = null;
-
-  /**
-   * Inline style of the component.
-   */
-  @Prop() anyStyle: any = null;
-
-  /**
-   * Style class of the component.
-   */
-  @Prop() styleClass: any = null;
-
-  /**
-   * Style class of the label.
-   */
-  @Prop() labelStyleClass: string = null;
-
-  /**
-   * When present, it specifies that the element should be disabled.
-   */
-  @Prop() disabled: boolean = false;
-
-  /**
-   * When present, it specifies that the component cannot be edited.
-   */
-  @Prop() readonly: boolean = false;
-
-  /**
-   * Icon class of the checkbox icon.
-   */
-  @Prop() checkboxIcon: string = "fa-solid:check";
 
   /**
    * Callback to invoke when value of dropdown changes.

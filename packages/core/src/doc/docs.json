@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-12-03T14:56:45",
+  "timestamp": "2024-02-12T22:02:51",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.8.0",
-    "typescriptVersion": "5.2.2"
+    "version": "4.12.1",
+    "typescriptVersion": "5.3.3"
   },
   "components": [
     {
@@ -6542,8 +6542,9 @@
             "signature": "(ev: any) => Promise<void>",
             "parameters": [
               {
-                "tags": [],
-                "text": ""
+                "name": "ev",
+                "type": "any",
+                "docs": ""
               }
             ],
             "references": {
@@ -6555,7 +6556,13 @@
             "return": "Promise<void>"
           },
           "signature": "setFocus(ev: any) => Promise<void>",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "ev",
+              "type": "any",
+              "docs": ""
+            }
+          ],
           "docs": "Applies focus.",
           "docsTags": []
         }
@@ -9908,6 +9915,7 @@
       "filePath": "src/components/app-showcase/pages/input-number/input-number-float-label/input-number-float-label.tsx",
       "encapsulation": "scoped",
       "tag": "input-number-float-label",
+      "readme": "# input-number-float-label\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
