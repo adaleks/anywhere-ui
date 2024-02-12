@@ -53,13 +53,13 @@
   },
   "devDependencies": {
     "@iconify/iconify": "^3.1.1",
-    "@stencil/angular-output-target": "0.8.3",
-    "@stencil/core": "^4.8.0",
+    "@stencil/angular-output-target": "0.8.4",
+    "@stencil/core": "^4.12.1",
     "@stencil/react-output-target": "^0.5.3",
-    "@stencil/sass": "^3.0.7",
+    "@stencil/sass": "^3.0.9",
     "@stencil/vue-output-target": "^0.8.7",
     "@types/clusterize.js": "^0.18.3",
-    "@types/jest": "^29.5.10",
+    "@types/jest": "^29.5.12",
     "@types/lodash": "^4.14.202",
     "@types/puppeteer": "^5.4.7",
     "clusterize.js": "^1.0.0",
@@ -71,19 +71,19 @@
     "jest-cli": "29.7.0",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
-    "puppeteer": "^21.5.2",
+    "puppeteer": "^22.0.0",
     "rebase": "^0.3.0",
     "replace": "^1.2.2",
     "rollup-plugin-node-polyfills": "^0.2.1",
-    "sass": "^1.69.5"
+    "sass": "^1.70.0"
   },
   "license": "MIT",
   "dependencies": {
     "@anywhere-ui/flex": "^1.0.2",
     "@docsearch/js": "^3.5.2",
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.11.17",
     "build": "^0.1.4",
-    "run": "^1.4.0"
+    "run": "^1.5.0"
   },
   "buildnum": "25"
 }
