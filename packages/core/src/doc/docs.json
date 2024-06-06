@@ -1,9 +1,9 @@
 {
-  "timestamp": "2024-02-12T22:02:51",
+  "timestamp": "2024-06-06T19:31:02",
   "compiler": {
     "name": "@stencil/core",
-    "version": "4.12.1",
-    "typescriptVersion": "5.3.3"
+    "version": "4.18.3",
+    "typescriptVersion": "5.4.5"
   },
   "components": [
     {
@@ -4618,8 +4618,21 @@
       "encapsulation": "shadow",
       "tag": "any-listbox",
       "readme": "# any-listbox\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "ListBox is used to select one or more values from a list of items.",
+      "docsTags": [
+        {
+          "name": "part",
+          "text": "lists - Represents the container for the list of options."
+        },
+        {
+          "name": "part",
+          "text": "items - Represents the list of options."
+        },
+        {
+          "name": "slot",
+          "text": "item - Represents individual items in the listbox.\r\nUse this slot to customize the appearance of each item in the list."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -5259,8 +5272,12 @@
           },
           "signature": "setFilterInputFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\r\n`textarea.focus()`.",
-          "docsTags": []
+          "docs": "Sets the focus on the filter input element.",
+          "docsTags": [
+            {
+              "name": "return"
+            }
+          ]
         }
       ],
       "events": [
@@ -5286,17 +5303,158 @@
         }
       ],
       "listeners": [],
-      "styles": [],
-      "slots": [],
+      "styles": [
+        {
+          "name": "--inputListBg",
+          "annotation": "prop",
+          "docs": "The background color of the input list."
+        },
+        {
+          "name": "--inputListBorder",
+          "annotation": "prop",
+          "docs": "The border of the input list."
+        },
+        {
+          "name": "--inputListHeaderBg",
+          "annotation": "prop",
+          "docs": "The background color of the header in the input list."
+        },
+        {
+          "name": "--inputListHeaderBorder",
+          "annotation": "prop",
+          "docs": "The border of the header in the input list."
+        },
+        {
+          "name": "--inputListHeaderCloseIconColor",
+          "annotation": "prop",
+          "docs": "The color of the close icon in the header of the input list."
+        },
+        {
+          "name": "--inputListHeaderCloseIconHoverColor",
+          "annotation": "prop",
+          "docs": "The hover color of the close icon in the header of the input list."
+        },
+        {
+          "name": "--inputListHeaderCloseIconTransition",
+          "annotation": "prop",
+          "docs": "The transition properties of the close icon in the header of the input list."
+        },
+        {
+          "name": "--inputListHeaderMargin",
+          "annotation": "prop",
+          "docs": "The margin of the header in the input list."
+        },
+        {
+          "name": "--inputListHeaderPadding",
+          "annotation": "prop",
+          "docs": "The padding of the header in the input list."
+        },
+        {
+          "name": "--inputListHeaderSearchIconColor",
+          "annotation": "prop",
+          "docs": "The color of the search icon in the header of the input list."
+        },
+        {
+          "name": "--inputListHeaderTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the header in the input list."
+        },
+        {
+          "name": "--inputListItemBgColor",
+          "annotation": "prop",
+          "docs": "The background color of each item in the input list."
+        },
+        {
+          "name": "--inputListItemBorder",
+          "annotation": "prop",
+          "docs": "The border of each item in the input list."
+        },
+        {
+          "name": "--inputListItemDividerColor",
+          "annotation": "prop",
+          "docs": "The color of the divider in the input list."
+        },
+        {
+          "name": "--inputListItemFocusShadow",
+          "annotation": "prop",
+          "docs": "The shadow of each item in the input list on focus."
+        },
+        {
+          "name": "--inputListItemHighlightBgColor",
+          "annotation": "prop",
+          "docs": "The background color of the highlighted item in the input list."
+        },
+        {
+          "name": "--inputListItemHighlightTextColor",
+          "annotation": "prop",
+          "docs": "The text color of the highlighted item in the input list."
+        },
+        {
+          "name": "--inputListItemHoverBgColor",
+          "annotation": "prop",
+          "docs": "The background color of each item in the input list on hover."
+        },
+        {
+          "name": "--inputListItemHoverTextColor",
+          "annotation": "prop",
+          "docs": "The text color of each item in the input list on hover."
+        },
+        {
+          "name": "--inputListItemMargin",
+          "annotation": "prop",
+          "docs": "The margin of each item in the input list."
+        },
+        {
+          "name": "--inputListItemPadding",
+          "annotation": "prop",
+          "docs": "The padding of each item in the input list."
+        },
+        {
+          "name": "--inputListItemTextColor",
+          "annotation": "prop",
+          "docs": "The text color of each item in the input list."
+        },
+        {
+          "name": "--inputListItemTransition",
+          "annotation": "prop",
+          "docs": "The transition properties of each item in the input list."
+        },
+        {
+          "name": "--inputListMinWidth",
+          "annotation": "prop",
+          "docs": "The minimum width of the input list."
+        },
+        {
+          "name": "--inputListPadding",
+          "annotation": "prop",
+          "docs": "The padding of the input list."
+        }
+      ],
+      "slots": [
+        {
+          "name": "item",
+          "docs": "Represents individual items in the listbox.\r\nUse this slot to customize the appearance of each item in the list."
+        }
+      ],
       "parts": [
         {
           "name": "items",
-          "docs": ""
+          "docs": "Represents the list of options."
+        },
+        {
+          "name": "lists",
+          "docs": "Represents the container for the list of options."
         }
       ],
       "dependents": [
         "any-dropdown",
-        "any-multiselect"
+        "any-multiselect",
+        "listbox-basic",
+        "listbox-disabled",
+        "listbox-filter",
+        "listbox-multiple",
+        "listbox-template",
+        "listbox-virtual-scroll"
       ],
       "dependencies": [
         "any-checkbox",
@@ -5315,6 +5473,24 @@
           "any-listbox"
         ],
         "any-multiselect": [
+          "any-listbox"
+        ],
+        "listbox-basic": [
+          "any-listbox"
+        ],
+        "listbox-disabled": [
+          "any-listbox"
+        ],
+        "listbox-filter": [
+          "any-listbox"
+        ],
+        "listbox-multiple": [
+          "any-listbox"
+        ],
+        "listbox-template": [
+          "any-listbox"
+        ],
+        "listbox-virtual-scroll": [
           "any-listbox"
         ]
       }
@@ -7619,7 +7795,13 @@
         "input-textarea-auto-resize",
         "input-textarea-basic",
         "input-textarea-disabled",
-        "input-textarea-float-label"
+        "input-textarea-float-label",
+        "listbox-basic",
+        "listbox-disabled",
+        "listbox-filter",
+        "listbox-multiple",
+        "listbox-template",
+        "listbox-virtual-scroll"
       ],
       "dependencies": [
         "any-button"
@@ -7720,6 +7902,24 @@
           "app-code"
         ],
         "input-textarea-float-label": [
+          "app-code"
+        ],
+        "listbox-basic": [
+          "app-code"
+        ],
+        "listbox-disabled": [
+          "app-code"
+        ],
+        "listbox-filter": [
+          "app-code"
+        ],
+        "listbox-multiple": [
+          "app-code"
+        ],
+        "listbox-template": [
+          "app-code"
+        ],
+        "listbox-virtual-scroll": [
           "app-code"
         ]
       }
@@ -8549,7 +8749,13 @@
         "input-textarea-auto-resize",
         "input-textarea-basic",
         "input-textarea-disabled",
-        "input-textarea-float-label"
+        "input-textarea-float-label",
+        "listbox-basic",
+        "listbox-disabled",
+        "listbox-filter",
+        "listbox-multiple",
+        "listbox-template",
+        "listbox-virtual-scroll"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -8644,6 +8850,24 @@
           "app-docsectiontext"
         ],
         "input-textarea-float-label": [
+          "app-docsectiontext"
+        ],
+        "listbox-basic": [
+          "app-docsectiontext"
+        ],
+        "listbox-disabled": [
+          "app-docsectiontext"
+        ],
+        "listbox-filter": [
+          "app-docsectiontext"
+        ],
+        "listbox-multiple": [
+          "app-docsectiontext"
+        ],
+        "listbox-template": [
+          "app-docsectiontext"
+        ],
+        "listbox-virtual-scroll": [
           "app-docsectiontext"
         ]
       }
@@ -11185,6 +11409,521 @@
           "app-docsectiontext",
           "any-input-textarea",
           "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-basic/listbox-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-basic",
+      "readme": "# listbox-basic\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-basic": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-disabled/listbox-disabled.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-disabled",
+      "readme": "# listbox-disabled\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-disabled": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-filter/listbox-filter.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-filter",
+      "readme": "# listbox-filter\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-filter": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-multiple/listbox-multiple.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-multiple",
+      "readme": "# listbox-multiple\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-multiple": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-template/listbox-template.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-template",
+      "readme": "# listbox-template\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "flag-#=item.value.countrycode#",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-template": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-virtual-scroll/listbox-virtual-scroll.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-virtual-scroll",
+      "readme": "# listbox-virtual-scroll\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-virtual-scroll": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-input-text",
+          "any-ripple-effect",
+          "any-virtual-scroller"
         ],
         "app-code": [
           "any-button"

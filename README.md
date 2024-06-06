@@ -1,11 +1,9 @@
 # AnywhereUI
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dm/@anywhere-ui/core.svg)](https://www.npmjs.com/package/@anywhere-ui/core)
 
-<p align="center">
-  <img width="1000" src="https://i.imgur.com/TCD5UXW.png">
-</p>
-
+<img width="1000" src="https://i.imgur.com/TCD5UXW.png">
 
 Rich web components, includes framework bindings.
 
@@ -15,12 +13,12 @@ Visit the [AnywhereUI Website](https://adaleks.github.io/anywhere-ui-showcase-pr
 
 ### Packages
 
-| Project | Package | Version | Links |
-| ------- | ------- | ------- |:-----:|
-| **Core** | [`@anywhere-ui/core`](https://www.npmjs.com/package/@anywhere-ui/core) | [![version](https://img.shields.io/npm/v/@anywhere-ui/core/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/core) | [`README.md`](packages/core/README.md) |
-| **Angular** | [`@anywhere-ui/angular`](https://www.npmjs.com/package/@anywhere-ui/angular) |[![version](https://img.shields.io/npm/v/@anywhere-ui/angular/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/angular) | [`README.md`](packages/angular/README.md) |
-| **Vue** | [`@anywhere-ui/vue`](https://www.npmjs.com/package/@anywhere-ui/vue) | [![version](https://img.shields.io/npm/v/@anywhere-ui/vue/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/vue) | [`README.md`](packages/vue/README.md) |
-| **React** | [`@anywhere-ui/react`](https://www.npmjs.com/package/@anywhere-ui/react) | [![version](https://img.shields.io/npm/v/@anywhere-ui/react/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/react) | [`README.md`](packages/react/README.md) |
+| Project     | Package                                                                      | Version                                                                                                                        |                   Links                   |
+| ----------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------: |
+| **Core**    | [`@anywhere-ui/core`](https://www.npmjs.com/package/@anywhere-ui/core)       | [![version](https://img.shields.io/npm/v/@anywhere-ui/core/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/core)       |  [`README.md`](packages/core/README.md)   |
+| **Angular** | [`@anywhere-ui/angular`](https://www.npmjs.com/package/@anywhere-ui/angular) | [![version](https://img.shields.io/npm/v/@anywhere-ui/angular/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/angular) | [`README.md`](packages/angular/README.md) |
+| **Vue**     | [`@anywhere-ui/vue`](https://www.npmjs.com/package/@anywhere-ui/vue)         | [![version](https://img.shields.io/npm/v/@anywhere-ui/vue/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/vue)         |   [`README.md`](packages/vue/README.md)   |
+| **React**   | [`@anywhere-ui/react`](https://www.npmjs.com/package/@anywhere-ui/react)     | [![version](https://img.shields.io/npm/v/@anywhere-ui/react/latest.svg)](https://www.npmjs.com/package/@anywhere-ui/react)     |  [`README.md`](packages/react/README.md)  |
 
 ## Getting Started
 
@@ -28,16 +26,19 @@ To start building a new AnywhereUI web component using Stencil, fork this repo a
 
 Navigate into the project directory:
 
-
 ```bash
 cd anywhere-ui
 ```
 
-Install dependencies and start project:
+Install dependencies:
 
 ```bash
-npm run install-all
+npm install
+```
 
+Start project:
+
+```bash
 npm start
 ```
 

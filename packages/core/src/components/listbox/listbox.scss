@@ -1,5 +1,34 @@
 @import "../../themes/anywhere.globals.scss";
 
+/**
+ * CSS variables for the listbox component.
+ *
+ * @prop --inputListMinWidth: The minimum width of the input list.
+ * @prop --inputListBg: The background color of the input list.
+ * @prop --inputListPadding: The padding of the input list.
+ * @prop --inputListItemPadding: The padding of each item in the input list.
+ * @prop --inputListItemBgColor: The background color of each item in the input list.
+ * @prop --inputListItemTextColor: The text color of each item in the input list.
+ * @prop --inputListItemHoverBgColor: The background color of each item in the input list on hover.
+ * @prop --inputListItemHoverTextColor: The text color of each item in the input list on hover.
+ * @prop --inputListItemHighlightBgColor: The background color of the highlighted item in the input list.
+ * @prop --inputListItemHighlightTextColor: The text color of the highlighted item in the input list.
+ * @prop --inputListItemBorder: The border of each item in the input list.
+ * @prop --inputListItemMargin: The margin of each item in the input list.
+ * @prop --inputListItemFocusShadow: The shadow of each item in the input list on focus.
+ * @prop --inputListItemTransition: The transition properties of each item in the input list.
+ * @prop --inputListItemDividerColor: The color of the divider in the input list.
+ * @prop --inputListHeaderPadding: The padding of the header in the input list.
+ * @prop --inputListHeaderMargin: The margin of the header in the input list.
+ * @prop --inputListHeaderBg: The background color of the header in the input list.
+ * @prop --inputListHeaderTextColor: The text color of the header in the input list.
+ * @prop --inputListHeaderBorder: The border of the header in the input list.
+ * @prop --inputListHeaderSearchIconColor: The color of the search icon in the header of the input list.
+ * @prop --inputListHeaderCloseIconColor: The color of the close icon in the header of the input list.
+ * @prop --inputListHeaderCloseIconHoverColor: The hover color of the close icon in the header of the input list.
+ * @prop --inputListHeaderCloseIconTransition: The transition properties of the close icon in the header of the input list.
+ * @prop --inputListBorder: The border of the input list.
+ */
 :host {
   display: block;
 

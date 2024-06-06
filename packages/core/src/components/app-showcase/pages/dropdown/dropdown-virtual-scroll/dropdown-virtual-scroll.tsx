@@ -61,12 +61,16 @@ dropdownVirtual.addEventListener("valueChange", (event) => {
   componentWillLoad() {
     // Generate the virtual items array and add it to the Clusterize.js instance
     if (!this.cache.get("dropdownVirtualItems")?.length) {
+      // Create items array in chunks of 1000
       const items = [];
-      for (let i = 0; i < 10000; i++) {
-        items.push({
-          label: "Item " + i,
-          value: "Item " + i,
-        });
+      const chunkSize = 1000;
+      const chunkCount = Math.ceil(10000 / chunkSize);
+      for (let i = 0; i < chunkCount; i++) {
+        const chunk = Array.from({ length: chunkSize }, (_v, k) => ({
+          label: `Item ${i * chunkSize + k}`,
+          value: `Item ${i * chunkSize + k}`,
+        }));
+        items.push(...chunk);
       }
       this.cache.set("dropdownVirtualItems", items);
     }

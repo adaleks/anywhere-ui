@@ -643,6 +643,9 @@ export namespace Components {
          */
         "wrap"?: "hard" | "soft" | "off";
     }
+    /**
+     * ListBox is used to select one or more values from a list of items.
+     */
     interface AnyListbox {
         /**
           * Inline style of the element.
@@ -745,7 +748,8 @@ export namespace Components {
          */
         "searchIcon"?: string;
         /**
-          * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.
+          * Sets the focus on the filter input element.
+          * @return
          */
         "setFilterInputFocus": () => Promise<void>;
         /**
@@ -1213,6 +1217,30 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface ListboxBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxFilter {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxMultiple {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxTemplate {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxVirtualScroll {
+        "textId": string;
+        "textTitle": string;
+    }
 }
 export interface AnyButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1468,6 +1496,9 @@ declare global {
     interface HTMLAnyListboxElementEventMap {
         "valueChange": SelectChangeEventDetail;
     }
+    /**
+     * ListBox is used to select one or more values from a list of items.
+     */
     interface HTMLAnyListboxElement extends Components.AnyListbox, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyListboxElementEventMap>(type: K, listener: (this: HTMLAnyListboxElement, ev: AnyListboxCustomEvent<HTMLAnyListboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1895,6 +1926,42 @@ declare global {
         prototype: HTMLInputTextareaFloatLabelElement;
         new (): HTMLInputTextareaFloatLabelElement;
     };
+    interface HTMLListboxBasicElement extends Components.ListboxBasic, HTMLStencilElement {
+    }
+    var HTMLListboxBasicElement: {
+        prototype: HTMLListboxBasicElement;
+        new (): HTMLListboxBasicElement;
+    };
+    interface HTMLListboxDisabledElement extends Components.ListboxDisabled, HTMLStencilElement {
+    }
+    var HTMLListboxDisabledElement: {
+        prototype: HTMLListboxDisabledElement;
+        new (): HTMLListboxDisabledElement;
+    };
+    interface HTMLListboxFilterElement extends Components.ListboxFilter, HTMLStencilElement {
+    }
+    var HTMLListboxFilterElement: {
+        prototype: HTMLListboxFilterElement;
+        new (): HTMLListboxFilterElement;
+    };
+    interface HTMLListboxMultipleElement extends Components.ListboxMultiple, HTMLStencilElement {
+    }
+    var HTMLListboxMultipleElement: {
+        prototype: HTMLListboxMultipleElement;
+        new (): HTMLListboxMultipleElement;
+    };
+    interface HTMLListboxTemplateElement extends Components.ListboxTemplate, HTMLStencilElement {
+    }
+    var HTMLListboxTemplateElement: {
+        prototype: HTMLListboxTemplateElement;
+        new (): HTMLListboxTemplateElement;
+    };
+    interface HTMLListboxVirtualScrollElement extends Components.ListboxVirtualScroll, HTMLStencilElement {
+    }
+    var HTMLListboxVirtualScrollElement: {
+        prototype: HTMLListboxVirtualScrollElement;
+        new (): HTMLListboxVirtualScrollElement;
+    };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
         "any-badge-overlay": HTMLAnyBadgeOverlayElement;
@@ -1952,6 +2019,12 @@ declare global {
         "input-textarea-basic": HTMLInputTextareaBasicElement;
         "input-textarea-disabled": HTMLInputTextareaDisabledElement;
         "input-textarea-float-label": HTMLInputTextareaFloatLabelElement;
+        "listbox-basic": HTMLListboxBasicElement;
+        "listbox-disabled": HTMLListboxDisabledElement;
+        "listbox-filter": HTMLListboxFilterElement;
+        "listbox-multiple": HTMLListboxMultipleElement;
+        "listbox-template": HTMLListboxTemplateElement;
+        "listbox-virtual-scroll": HTMLListboxVirtualScrollElement;
     }
 }
 declare namespace LocalJSX {
@@ -2675,6 +2748,9 @@ declare namespace LocalJSX {
          */
         "wrap"?: "hard" | "soft" | "off";
     }
+    /**
+     * ListBox is used to select one or more values from a list of items.
+     */
     interface AnyListbox {
         /**
           * Inline style of the element.
@@ -3331,6 +3407,30 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface ListboxBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ListboxDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ListboxFilter {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ListboxMultiple {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ListboxTemplate {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ListboxVirtualScroll {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface IntrinsicElements {
         "any-badge": AnyBadge;
         "any-badge-overlay": AnyBadgeOverlay;
@@ -3388,6 +3488,12 @@ declare namespace LocalJSX {
         "input-textarea-basic": InputTextareaBasic;
         "input-textarea-disabled": InputTextareaDisabled;
         "input-textarea-float-label": InputTextareaFloatLabel;
+        "listbox-basic": ListboxBasic;
+        "listbox-disabled": ListboxDisabled;
+        "listbox-filter": ListboxFilter;
+        "listbox-multiple": ListboxMultiple;
+        "listbox-template": ListboxTemplate;
+        "listbox-virtual-scroll": ListboxVirtualScroll;
     }
 }
 export { LocalJSX as JSX };
@@ -3425,6 +3531,9 @@ declare module "@stencil/core" {
              * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
              */
             "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
+            /**
+             * ListBox is used to select one or more values from a list of items.
+             */
             "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
             "any-multiselect": LocalJSX.AnyMultiselect & JSXBase.HTMLAttributes<HTMLAnyMultiselectElement>;
             "any-overlay": LocalJSX.AnyOverlay & JSXBase.HTMLAttributes<HTMLAnyOverlayElement>;
@@ -3472,6 +3581,12 @@ declare module "@stencil/core" {
             "input-textarea-basic": LocalJSX.InputTextareaBasic & JSXBase.HTMLAttributes<HTMLInputTextareaBasicElement>;
             "input-textarea-disabled": LocalJSX.InputTextareaDisabled & JSXBase.HTMLAttributes<HTMLInputTextareaDisabledElement>;
             "input-textarea-float-label": LocalJSX.InputTextareaFloatLabel & JSXBase.HTMLAttributes<HTMLInputTextareaFloatLabelElement>;
+            "listbox-basic": LocalJSX.ListboxBasic & JSXBase.HTMLAttributes<HTMLListboxBasicElement>;
+            "listbox-disabled": LocalJSX.ListboxDisabled & JSXBase.HTMLAttributes<HTMLListboxDisabledElement>;
+            "listbox-filter": LocalJSX.ListboxFilter & JSXBase.HTMLAttributes<HTMLListboxFilterElement>;
+            "listbox-multiple": LocalJSX.ListboxMultiple & JSXBase.HTMLAttributes<HTMLListboxMultipleElement>;
+            "listbox-template": LocalJSX.ListboxTemplate & JSXBase.HTMLAttributes<HTMLListboxTemplateElement>;
+            "listbox-virtual-scroll": LocalJSX.ListboxVirtualScroll & JSXBase.HTMLAttributes<HTMLListboxVirtualScrollElement>;
         }
     }
 }

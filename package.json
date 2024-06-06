@@ -22,10 +22,13 @@
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-semver": "^0.1.9",
-    "lerna": "^8.1.2"
+    "lerna": "^8.1.3"
   },
   "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "dependencies": {
-    "semver": "^7.6.0"
-  }
+    "semver": "^7.6.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

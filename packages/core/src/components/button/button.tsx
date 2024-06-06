@@ -123,11 +123,23 @@ export class AnyButton {
     return this.element.shadowRoot.querySelector("button");
   }
 
+  /**
+   * Initializes the component before it is rendered.
+   *
+   * No parameters.
+   *
+   * No return value.
+   */
   componentWillLoad() {
     this.hasContentSlot = !!this.element.querySelector('[slot="content"]');
     this.loadIcons();
   }
 
+  /**
+   * Asynchronously loads icons and renders them.
+   *
+   * @return {Promise<void>} - A promise that resolves when the icons are loaded and rendered.
+   */
   async loadIcons() {
     await loadIcons([this.icon, this.loadingIcon]).catch((err) => {
       console.error("Failed to load icons:", err.missing);
@@ -139,7 +151,12 @@ export class AnyButton {
     );
   }
 
-  renderIcon(icon: HTMLElement) {
+  /**
+   * Renders an icon using the provided HTMLElement.
+   *
+   * @param icon - The HTMLElement to render the icon into.
+   */
+  renderIcon(icon: HTMLElement): void {
     icon.innerHTML = Iconify.renderHTML(
       this.loading ? this.loadingIcon : this.icon,
       {
@@ -171,6 +188,12 @@ export class AnyButton {
     this.aOnClick.emit(ev);
   };
 
+  /**
+   * Retrieves the content of a specified slot.
+   *
+   * @param {string} slot - The name of the slot to retrieve content from.
+   * @return {string} The HTML content of the specified slot.
+   */
   private getContent(slot: string) {
     const node = this.element
       .querySelector('[slot="' + slot + '"]')

@@ -30,3 +30,4 @@ UserInterfaceState.xcuserstate
 
 # GitHub
 .github_changelog_generator
+.nx/cache

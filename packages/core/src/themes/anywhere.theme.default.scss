@@ -239,14 +239,13 @@
   --inputListHeaderCloseIconHoverColor: var(--textColor);
   --inputListHeaderCloseIconTransition: color var(--transitionDuration), background-color var(--transitionDuration),
     box-shadow var(--transitionDuration);
+  //static positioned input lists like listbox
+  --inputListBorder: var(--inputBorder);
 
   //inputs with panels (e.g. password)
   --inputContentPanelPadding: 12px;
   --inputContentPanelBgColor: #ffffff;
   --inputContentPanelTextColor: var(--textColor);
-
-  //static positioned input lists like listbox
-  --inputListBorder: var(--inputBorder);
 
   //inputs with overlays (e.g. autocomplete, dropdown, multiselect)
   --inputOverlayBorder: 1px solid #c8c8c8;

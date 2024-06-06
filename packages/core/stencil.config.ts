@@ -65,14 +65,14 @@ const vueComponentModels: ComponentModelConfig[] = [
       "any-input-number",
     ],
     event: "v-value-change",
-    externalEvent: "valueChange",
+    // externalEvent: "valueChange",
     targetAttr: "value",
   },
   {
     elements: ["any-checkbox", "any-input-switch"],
     event: "v-value-change",
     targetAttr: "checked",
-    externalEvent: "valueChange",
+    // externalEvent: "valueChange",
   },
   // {
   //   elements: ["any-radio-button"],
@@ -152,7 +152,7 @@ export const config: Config = {
         { src: "docs/SHOWCASE_README.md", dest: "README.md" },
         { src: "docs/SHOWCASE_LICENSE", dest: "LICENSE" },
         {
-          src: "../node_modules/@anywhere-ui/flex/anywhere-flex.css",
+          src: "../../../node_modules/@anywhere-ui/flex/anywhere-flex.css",
           dest: "assets/css/anywhere-flex.css",
         },
       ],
