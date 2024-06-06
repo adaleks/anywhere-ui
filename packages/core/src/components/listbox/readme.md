@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+ListBox is used to select one or more values from a list of items.
+
 ## Properties
 
 | Property              | Attribute               | Description                                                                                                                                                                                                                                                       | Type      | Default                    |
@@ -50,8 +54,7 @@
 
 ### `setFilterInputFocus() => Promise<void>`
 
-Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global
-`textarea.focus()`.
+Sets the focus on the filter input element.
 
 #### Returns
 
@@ -60,11 +63,50 @@ Type: `Promise<void>`
 
 
 
+## Slots
+
+| Slot     | Description                                                                                                     |
+| -------- | --------------------------------------------------------------------------------------------------------------- |
+| `"item"` | Represents individual items in the listbox. Use this slot to customize the appearance of each item in the list. |
+
+
 ## Shadow Parts
 
-| Part      | Description |
-| --------- | ----------- |
-| `"items"` |             |
+| Part      | Description                                       |
+| --------- | ------------------------------------------------- |
+| `"items"` | Represents the list of options.                   |
+| `"lists"` | Represents the container for the list of options. |
+
+
+## CSS Custom Properties
+
+| Name                                   | Description                                                                  |
+| -------------------------------------- | ---------------------------------------------------------------------------- |
+| `--inputListBg`                        | The background color of the input list.                                      |
+| `--inputListBorder`                    | The border of the input list.                                                |
+| `--inputListHeaderBg`                  | The background color of the header in the input list.                        |
+| `--inputListHeaderBorder`              | The border of the header in the input list.                                  |
+| `--inputListHeaderCloseIconColor`      | The color of the close icon in the header of the input list.                 |
+| `--inputListHeaderCloseIconHoverColor` | The hover color of the close icon in the header of the input list.           |
+| `--inputListHeaderCloseIconTransition` | The transition properties of the close icon in the header of the input list. |
+| `--inputListHeaderMargin`              | The margin of the header in the input list.                                  |
+| `--inputListHeaderPadding`             | The padding of the header in the input list.                                 |
+| `--inputListHeaderSearchIconColor`     | The color of the search icon in the header of the input list.                |
+| `--inputListHeaderTextColor`           | The text color of the header in the input list.                              |
+| `--inputListItemBgColor`               | The background color of each item in the input list.                         |
+| `--inputListItemBorder`                | The border of each item in the input list.                                   |
+| `--inputListItemDividerColor`          | The color of the divider in the input list.                                  |
+| `--inputListItemFocusShadow`           | The shadow of each item in the input list on focus.                          |
+| `--inputListItemHighlightBgColor`      | The background color of the highlighted item in the input list.              |
+| `--inputListItemHighlightTextColor`    | The text color of the highlighted item in the input list.                    |
+| `--inputListItemHoverBgColor`          | The background color of each item in the input list on hover.                |
+| `--inputListItemHoverTextColor`        | The text color of each item in the input list on hover.                      |
+| `--inputListItemMargin`                | The margin of each item in the input list.                                   |
+| `--inputListItemPadding`               | The padding of each item in the input list.                                  |
+| `--inputListItemTextColor`             | The text color of each item in the input list.                               |
+| `--inputListItemTransition`            | The transition properties of each item in the input list.                    |
+| `--inputListMinWidth`                  | The minimum width of the input list.                                         |
+| `--inputListPadding`                   | The padding of the input list.                                               |
 
 
 ## Dependencies
@@ -73,6 +115,12 @@ Type: `Promise<void>`
 
  - [any-dropdown](../dropdown)
  - [any-multiselect](../multiselect)
+ - [listbox-basic](../app-showcase/pages/listbox/listbox-basic)
+ - [listbox-disabled](../app-showcase/pages/listbox/listbox-disabled)
+ - [listbox-filter](../app-showcase/pages/listbox/listbox-filter)
+ - [listbox-multiple](../app-showcase/pages/listbox/listbox-multiple)
+ - [listbox-template](../app-showcase/pages/listbox/listbox-template)
+ - [listbox-virtual-scroll](../app-showcase/pages/listbox/listbox-virtual-scroll)
 
 ### Depends on
 
@@ -90,6 +138,12 @@ graph TD;
   any-listbox --> any-virtual-scroller
   any-dropdown --> any-listbox
   any-multiselect --> any-listbox
+  listbox-basic --> any-listbox
+  listbox-disabled --> any-listbox
+  listbox-filter --> any-listbox
+  listbox-multiple --> any-listbox
+  listbox-template --> any-listbox
+  listbox-virtual-scroll --> any-listbox
   style any-listbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

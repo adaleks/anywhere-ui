@@ -53,6 +53,12 @@
  - [input-textarea-basic](../../pages/input-textarea/input-textarea-basic)
  - [input-textarea-disabled](../../pages/input-textarea/input-textarea-disabled)
  - [input-textarea-float-label](../../pages/input-textarea/input-textarea-float-label)
+ - [listbox-basic](../../pages/listbox/listbox-basic)
+ - [listbox-disabled](../../pages/listbox/listbox-disabled)
+ - [listbox-filter](../../pages/listbox/listbox-filter)
+ - [listbox-multiple](../../pages/listbox/listbox-multiple)
+ - [listbox-template](../../pages/listbox/listbox-template)
+ - [listbox-virtual-scroll](../../pages/listbox/listbox-virtual-scroll)
 
 ### Graph
 ```mermaid
@@ -88,6 +94,12 @@ graph TD;
   input-textarea-basic --> app-docsectiontext
   input-textarea-disabled --> app-docsectiontext
   input-textarea-float-label --> app-docsectiontext
+  listbox-basic --> app-docsectiontext
+  listbox-disabled --> app-docsectiontext
+  listbox-filter --> app-docsectiontext
+  listbox-multiple --> app-docsectiontext
+  listbox-template --> app-docsectiontext
+  listbox-virtual-scroll --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

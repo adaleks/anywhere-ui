@@ -41,6 +41,14 @@ const hasSomeParentTheClass = (element, classname) => {
   );
 };
 
+/**
+ * ListBox is used to select one or more values from a list of items.
+ *
+ * @part lists - Represents the container for the list of options.
+ * @part items - Represents the list of options.
+ * @slot item - Represents individual items in the listbox.
+ *   Use this slot to customize the appearance of each item in the list.
+ */
 @Component({
   tag: "any-listbox",
   styleUrl: "listbox.scss",
@@ -439,7 +447,12 @@ export class AnyListbox {
     }
   }
 
-  private setSelectedVirtualOptionMultiple(values: any[]) {
+  /**
+   * Sets the selected virtual options.
+   *
+   * @param {any[]} values - The array of values representing the selected options.
+   */
+  private setSelectedVirtualOptionMultiple(values: any[]): void {
     const optionElementsMap = {};
     const optionLabels = this.optionsToRender.map((option) =>
       get(this.optionLabel.split("."), option)
@@ -732,8 +745,9 @@ export class AnyListbox {
   }
 
   /**
-   * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global
-   * `textarea.focus()`.
+   * Sets the focus on the filter input element.
+   *
+   * @return {void}
    */
   @Method()
   async setFilterInputFocus() {

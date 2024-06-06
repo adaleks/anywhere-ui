@@ -613,3 +613,39 @@ export const InputTextareaFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTe
   'textTitle'
 ]);
 
+
+export const ListboxBasic = /*@__PURE__*/ defineContainer<JSX.ListboxBasic>('listbox-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ListboxDisabled = /*@__PURE__*/ defineContainer<JSX.ListboxDisabled>('listbox-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ListboxFilter = /*@__PURE__*/ defineContainer<JSX.ListboxFilter>('listbox-filter', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ListboxMultiple = /*@__PURE__*/ defineContainer<JSX.ListboxMultiple>('listbox-multiple', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ListboxTemplate = /*@__PURE__*/ defineContainer<JSX.ListboxTemplate>('listbox-template', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ListboxVirtualScroll = /*@__PURE__*/ defineContainer<JSX.ListboxVirtualScroll>('listbox-virtual-scroll', undefined, [
+  'textId',
+  'textTitle'
+]);
+
