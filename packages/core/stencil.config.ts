@@ -64,22 +64,14 @@ const vueComponentModels: ComponentModelConfig[] = [
       "any-radio-group",
       "any-input-number",
     ],
-    event: "v-value-change",
-    // externalEvent: "valueChange",
+    event: "valueChange",
     targetAttr: "value",
   },
   {
     elements: ["any-checkbox", "any-input-switch"],
-    event: "v-value-change",
+    event: "valueChange",
     targetAttr: "checked",
-    // externalEvent: "valueChange",
   },
-  // {
-  //   elements: ["any-radio-button"],
-  //   event: "v-a-on-select",
-  //   targetAttr: "checked",
-  //   externalEvent: "aOnSelect",
-  // },
 ];
 
 export const config: Config = {
@@ -118,6 +110,9 @@ export const config: Config = {
   plugins: [
     sass({
       injectGlobalPaths: ["src/themes/anywhere.skip.warns.scss"],
+      // the theme files still use the legacy `@import` syntax; don't drown the
+      // build output in deprecation warnings (migrate to `@use` separately)
+      silenceDeprecations: ["import"],
     }),
   ],
   outputTargets: [
@@ -130,8 +125,9 @@ export const config: Config = {
     },
     {
       type: "dist-custom-elements",
-      generateTypeDeclarations: false,
+      generateTypeDeclarations: true,
       customElementsExportBehavior: "bundle",
+      externalRuntime: false,
     },
     {
       type: "dist",
@@ -161,10 +157,11 @@ export const config: Config = {
       componentCorePackage: "@anywhere-ui/core",
       directivesProxyFile:
         "../angular/projects/anywhere-ui/src/lib/directives/proxies.ts",
+      directivesArrayFile:
+        "../angular/projects/anywhere-ui/src/lib/directives/index.ts",
       valueAccessorConfigs: angularValueAccessorBindings,
-      // excludeComponents: ["any-overlay"],
+      outputType: "component",
     }),
-
     vueOutputTarget({
       componentCorePackage: "@anywhere-ui/core",
       proxiesFile: "../vue/src/proxies.ts",
@@ -172,11 +169,7 @@ export const config: Config = {
       excludeComponents: ["any-overlay"],
     }),
     reactOutputTarget({
-      componentCorePackage: "@anywhere-ui/core",
-      proxiesFile: "../react/src/components.ts",
-      includeDefineCustomElements: true,
-      includePolyfills: true,
-      excludeComponents: ["any-overlay"],
+      outDir: "../react/src",
     }),
   ],
   devServer: {

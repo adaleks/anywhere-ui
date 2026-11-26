@@ -1,34 +1,39 @@
 {
   "name": "root",
   "private": true,
+  "engines": {
+    "node": ">=22.22.3"
+  },
   "scripts": {
-    "install-all": "lerna exec npm install",
-    "prestart": "sh -c 'nvm install $(cat .nvmrc)' && sh -c 'nvm use $(cat .nvmrc)'",
-    "start": "lerna run start --scope=@anywhere-ui/core --stream",
+    "install-all": "npm install",
+    "start": "npm -w @anywhere-ui/core run start",
+    "test": "npm -w @anywhere-ui/core run test",
     "build": "npm run build.core && npm run build.framework-bindings",
     "build-preview": "npm run build && grunt buildnumber && grunt release:build:auto && node packages/core/scripts/update-template-version.js",
-    "build-doc-json": "lerna run build-doc-json --scope=@anywhere-ui/core --stream",
-    "build.watch": "lerna run build.watch --scope=@anywhere-ui/core --stream",
-    "build.core": "lerna run build --scope=@anywhere-ui/core --stream",
-    "build.framework-bindings": "lerna run build --scope=@anywhere-ui/{angular,react,vue} --stream",
+    "build-doc-json": "npm -w @anywhere-ui/core run build-doc-json",
+    "build.watch": "npm -w @anywhere-ui/core run build.watch",
+    "build.core": "npm -w @anywhere-ui/core run build",
+    "build.framework-bindings": "npm -w @anywhere-ui/angular run build && npm -w @anywhere-ui/react run build && npm -w @anywhere-ui/vue run build",
     "generate": "bash packages/core/scripts/generate.sh",
-    "deploy-docs": "lerna run deploy-docs --scope=@anywhere-ui/core --stream",
-    "initialize-ghpages": "lerna run initialize-ghpages --scope=@anywhere-ui/core --stream",
-    "deploy-site-to-master": "lerna run deploy-site-to-master --scope=@anywhere-ui/core --stream",
+    "deploy-docs": "npm -w @anywhere-ui/core run deploy-docs",
+    "initialize-ghpages": "npm -w @anywhere-ui/core run initialize-ghpages",
+    "deploy-site-to-master": "npm -w @anywhere-ui/core run deploy-site-to-master",
     "generate-changelog": "gren changelog --generate"
   },
   "devDependencies": {
-    "grunt": "^1.6.1",
+    "grunt": "^1.6.3",
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-semver": "^0.1.9",
-    "lerna": "^8.1.3"
+    "lerna": "^10.1.3"
   },
   "homepage": "https://adaleks.github.io/anywhere-ui-showcase",
   "dependencies": {
-    "semver": "^7.6.2"
+    "semver": "^7.8.6"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
 }

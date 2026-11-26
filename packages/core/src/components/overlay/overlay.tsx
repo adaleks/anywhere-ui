@@ -102,6 +102,7 @@ export class AnyOverlay {
   componentDidLoad() {}
 
   componentWillLoad() {
+    if (!this.target) return;
     const targetRect = this.target.getBoundingClientRect();
     this.positionTop = targetRect.height;
   }
@@ -116,6 +117,7 @@ export class AnyOverlay {
     if (!overlayPanel) return;
 
     const targetElement = this.target;
+    if (!targetElement) return;
     const targetRect = targetElement.getBoundingClientRect();
     const overlayHeight = overlayPanel.offsetHeight;
     const availableSpace = window.innerHeight - targetRect.bottom;
@@ -134,6 +136,7 @@ export class AnyOverlay {
   }
 
   calculateSize() {
+    if (!this.target) return;
     this.minWidth = this.target.offsetWidth;
   }
 
@@ -179,6 +182,7 @@ export class AnyOverlay {
           "animationend",
           () => {
             this.showPanel = false;
+            if (!this.target) return;
             const targetRect = this.target.getBoundingClientRect();
             if (!this.openDown) {
               this.positionTop = targetRect.height;

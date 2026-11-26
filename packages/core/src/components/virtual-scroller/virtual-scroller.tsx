@@ -20,6 +20,8 @@ import { getRows, uuid, scrollStop } from "../../utils/utils";
 export class AnyVirtualScroller {
   clusterize = null;
   rows: any[] = [];
+  private visibilityIntervalId: any = null;
+  private visibilityTimeoutId: any = null;
   instanceUuid: string = "";
   rowsInBlock: number = 10;
   blocksInCluster: number = 4;
@@ -184,27 +186,46 @@ export class AnyVirtualScroller {
   }
 
   async checkAndLoadIfVisible() {
-    let timeoutId = null;
+    this.clearVisibilityTimers();
     const contentEl = this.element.querySelector(
       "#any-virtualscroller-content-" + this.instanceUuid
     ) as HTMLElement;
     const checkVisibility = async () => {
       const isContentElVisible = await this.isElementVisible(contentEl);
       if (isContentElVisible && this.items.length > 0) {
-        clearInterval(intervalId);
-        if (timeoutId) clearTimeout(timeoutId);
-        timeoutId = setTimeout(async () => {
+        this.clearVisibilityTimers();
+        this.visibilityTimeoutId = setTimeout(async () => {
           if (this.clusterize) this.clusterize.clear();
           await this.loadVirtual();
         });
       }
     };
 
-    const intervalId = setInterval(checkVisibility, 1000); // Check every 1000 milliseconds (1 second)
+    this.visibilityIntervalId = setInterval(checkVisibility, 1000); // Check every 1000 milliseconds (1 second)
     checkVisibility(); // Check immediately
   }
 
+  private clearVisibilityTimers() {
+    if (this.visibilityIntervalId) {
+      clearInterval(this.visibilityIntervalId);
+      this.visibilityIntervalId = null;
+    }
+    if (this.visibilityTimeoutId) {
+      clearTimeout(this.visibilityTimeoutId);
+      this.visibilityTimeoutId = null;
+    }
+  }
+
+  disconnectedCallback() {
+    this.clearVisibilityTimers();
+  }
+
   async isElementVisible(element) {
+    // No element or no IntersectionObserver (older browsers, jsdom/spec tests):
+    // treat the content as visible instead of throwing inside the promise.
+    if (!element || typeof IntersectionObserver === "undefined") {
+      return true;
+    }
     return new Promise((resolve) => {
       const options = {
         root: null,

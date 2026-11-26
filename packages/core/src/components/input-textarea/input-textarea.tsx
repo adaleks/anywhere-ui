@@ -147,23 +147,27 @@ export class InputTextarea {
   }
 
   componentDidLoad() {
-    this.resizeOb = new ResizeObserver((entries) => {
-      // since we are observing only a single element, so we access the first element in entries array
-      let rect = entries[0].contentRect;
+    const nativeTextarea = this.element.querySelector("textarea");
+    // ResizeObserver is not available in every environment (older browsers, spec tests)
+    if (typeof ResizeObserver !== "undefined" && nativeTextarea) {
+      this.resizeOb = new ResizeObserver((entries) => {
+        // since we are observing only a single element, so we access the first element in entries array
+        let rect = entries[0].contentRect;
 
-      // current width & height
-      let width = rect.width;
-      let height = rect.height;
+        // current width & height
+        let width = rect.width;
+        let height = rect.height;
 
-      this.aOnResize.emit({ inputHeight: height, inputWidth: width });
-    });
-    this.resizeOb.observe(this.element.querySelector("textarea"));
+        this.aOnResize.emit({ inputHeight: height, inputWidth: width });
+      });
+      this.resizeOb.observe(nativeTextarea);
+    }
 
     if (this.autoResize) raf(() => this.resize());
   }
 
   disconnectedCallback() {
-    this.resizeOb.disconnect();
+    this.resizeOb?.disconnect();
   }
 
   /**

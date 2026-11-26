@@ -17,7 +17,7 @@
 
 | Part                               | Description |
 | ---------------------------------- | ----------- |
-| `"flag-#=item.value.countrycode#"` |             |
+| `"flag-#=item.value.countryCode#"` |             |
 
 
 ## Dependencies

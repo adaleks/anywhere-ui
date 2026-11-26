@@ -14,6 +14,13 @@
 | `selected` | `selected` | Defines if tab is active.           | `boolean` | `false` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

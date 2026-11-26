@@ -270,6 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 
+  // The stylesheet keeps <html> hidden to avoid a flash of unstyled content;
+  // reveal the app as soon as the router is ready.
+  document.documentElement.style.visibility = "visible";
+
   // Initial router call
   router();
 });

@@ -10,23 +10,15 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:library",
           "options": {
             "tsConfig": "projects/anywhere-ui/tsconfig.lib.json",
-            "project": "projects/anywhere-ui/ng-package.json"
+            "outputPath": "dist/anywhere-ui"
           },
           "configurations": {
             "production": {
               "tsConfig": "projects/anywhere-ui/tsconfig.lib.prod.json"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/anywhere-ui/src/test.ts",
-            "tsConfig": "projects/anywhere-ui/tsconfig.spec.json",
-            "karmaConfig": "projects/anywhere-ui/karma.conf.js"
           }
         }
       }

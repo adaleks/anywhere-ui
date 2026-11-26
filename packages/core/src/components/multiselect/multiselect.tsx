@@ -38,7 +38,7 @@ export class AnyMultiselect {
   // private multiselectWrapper: HTMLElement;
   public lbValue: any = [];
   public valuesAsString: string;
-  public _translations = config.get("translations");
+  public _translations = config.get("translations") || {};
   private textInput?: HTMLInputElement;
   private selectedItem: any = null;
   private hasItemSlot: boolean;
@@ -112,7 +112,7 @@ export class AnyMultiselect {
   /**
    * When specified, allows selecting items with checkboxes
    */
-  @Prop() defaultLabel: string = this._translations[TranslationKeys.CHOOSE];
+  @Prop() defaultLabel: string = this._translations?.[TranslationKeys.CHOOSE];
 
   /**
    * Name of the options field of an option group.

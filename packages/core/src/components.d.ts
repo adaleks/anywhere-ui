@@ -15,87 +15,107 @@ export namespace Components {
     interface AnyBadge {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle": any;
         /**
           * Severity type of the badge.
+          * @default null
          */
         "severity": string;
         /**
           * Size of the badge, valid options are "large" and "xlarge".
+          * @default null
          */
         "size": string;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass": string;
         /**
           * Value to display inside the badge.
+          * @default null
          */
         "value": string;
     }
     interface AnyBadgeOverlay {
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass": string;
     }
     interface AnyButton {
         /**
           * Inline style of the element.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Value of the badge.
+          * @default null
          */
         "badge": string;
         /**
           * Style class of the badge.
+          * @default null
          */
         "badgeClass": string;
         /**
           * When present, it specifies that the component should be disabled.
+          * @default false
          */
         "disabled": boolean;
         "getButtonRef": () => Promise<HTMLButtonElement>;
         /**
           * Name of the icon.
+          * @default null
          */
         "icon": string;
         /**
           * Height of the icon
+          * @default null
          */
         "iconHeight": number;
         /**
           * Position of the icon, valid values are "left" and "right".
+          * @default "left"
          */
         "iconPos": "left" | "right" | "top" | "bottom";
         /**
           * Width of the icon
+          * @default null
          */
         "iconWidth": number;
         /**
           * Text of the button.
+          * @default null
          */
         "label": string;
         /**
           * Whether the button is in loading state.
+          * @default false
          */
         "loading": boolean;
         /**
           * Icon to display in loading state.
+          * @default "fa-solid:spinner"
          */
         "loadingIcon": string;
         /**
           * Style class of the icon element
+          * @default "any-spin"
          */
         "loadingIconStyleClass": string;
         /**
           * Style class of the element.
+          * @default null
          */
         "styleClass": string;
         /**
           * Type of the button.
+          * @default "button"
          */
         "type": "button" | "submit" | "reset";
     }
@@ -105,26 +125,32 @@ export namespace Components {
     interface AnyCheckbox {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle": any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * Allows to select a boolean value instead of multiple values.
+          * @default false
          */
         "binary": boolean;
         /**
           * Icon class of the checkbox icon.
+          * @default "fa-solid:check"
          */
         "checkboxIcon": string;
         /**
           * If `true`, the checkbox is selected.
+          * @default false
          */
         "checked": boolean;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -133,30 +159,37 @@ export namespace Components {
         "inputFocus": () => Promise<void>;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-cb-${checkboxIds++}`
          */
         "inputId": string;
         /**
           * Label of the checkbox.
+          * @default null
          */
         "label": string;
         /**
           * Style class of the label.
+          * @default null
          */
         "labelStyleClass": string;
         /**
           * Name of the checkbox group.
+          * @default this.inputId
          */
         "name": string;
         /**
           * When present, it specifies that the component cannot be edited.
+          * @default false
          */
         "readonly": boolean;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass": any;
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
+          * @default "on"
          */
         "value": any;
     }
@@ -166,86 +199,107 @@ export namespace Components {
     interface AnyDropdown {
         /**
           * Inline style of the element.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order.
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * Whether to automatically manage layering.
+          * @default true
          */
         "autoZIndex"?: boolean;
         /**
           * Base zIndex value to use in layering.
+          * @default "0"
          */
         "baseZIndex"?: string;
         /**
           * Icon class of the dropdown clear icon.
+          * @default "fa-solid:times"
          */
         "clearIcon"?: string;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
           * Icon class of the dropdown icon.
+          * @default "fa-solid:chevron-down"
          */
         "dropdownIcon"?: string;
         /**
           * When specified, displays a filter input at header.
+          * @default false
          */
         "filter": boolean;
         /**
           * Transition options of the hide animation.
+          * @default "growUp"
          */
         "hideAnimation"?: string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-dd-${dropdownIds++}`
          */
         "inputId": string;
         /**
           * Name of the dropdown input.
+          * @default this.inputId
          */
         "name": string;
         /**
           * Name of the label field of an option
+          * @default "label"
          */
         "optionLabel": string;
         /**
           * Name of the value field of an option.
+          * @default "value"
          */
         "optionValue": string;
         /**
           * An array of objects to display as the available options.
+          * @default null
          */
         "options": any[];
         /**
           * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.
+          * @default "200px"
          */
         "panelScrollHeight"?: string;
         /**
           * Default text to display when no option is selected.
+          * @default null
          */
         "placeholder"?: string;
         /**
           * When present, it specifies that the element value cannot be changed.
+          * @default false
          */
         "readonly": boolean;
         /**
           * Keyframe name the show animation.
+          * @default "growDown"
          */
         "showAnimation"?: string;
         /**
           * When enabled, a clear icon is displayed to clear the value.
+          * @default false
          */
         "showClear"?: boolean;
         /**
           * Value of the dropdown list.
+          * @default null
          */
         "value"?: any;
         /**
           * When present, list virtual scroller is enabled.
+          * @default false
          */
         "virtualScroll": boolean;
     }
@@ -270,6 +324,7 @@ export namespace Components {
         "aTitle": string;
         /**
           * Determines whether the input field is empty.
+          * @default true
          */
         "allowEmpty": boolean;
         /**
@@ -290,6 +345,7 @@ export namespace Components {
         "autocomplete": string;
         /**
           * Layout of the buttons, valid values are "stacked" (default), "horizontal" and "vertical".
+          * @default "stacked"
          */
         "buttonLayout": string;
         /**
@@ -299,25 +355,29 @@ export namespace Components {
         /**
           * How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency symbol such as €, ü"code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
          */
-        "currencyDisplay": string;
+        "currencyDisplay": "symbol" | "code" | "name";
         /**
           * Style class of the decrement button.
          */
         "decrementButtonClass": string;
         /**
           * Style class of the decrement button.
+          * @default "fa-solid:angle-down"
          */
         "decrementButtonIcon": string;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
           * When enabled, the label will have floating effect on input text focus
+          * @default false
          */
         "floatLabel": boolean;
         /**
           * Whether to format the value.
+          * @default true
          */
         "format": boolean;
         /**
@@ -326,10 +386,12 @@ export namespace Components {
         "incrementButtonClass": string;
         /**
           * Style class of the increment button.
+          * @default "fa-solid:angle-up"
          */
         "incrementButtonIcon": string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-input-number-${inputIds++}`
          */
         "inputId": string;
         /**
@@ -342,10 +404,12 @@ export namespace Components {
         "inputStyleClass": string;
         /**
           * The class of input wrapper element
+          * @default null
          */
         "inputWrapperClass": string;
         /**
           * Label of the component
+          * @default null
          */
         "label": string;
         /**
@@ -354,8 +418,9 @@ export namespace Components {
         "locale": string;
         /**
           * The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_negotiation for details.
+          * @default "best fit"
          */
-        "localeMatcher": string;
+        "localeMatcher": "lookup" | "best fit";
         /**
           * Maximum boundary value.
          */
@@ -378,8 +443,9 @@ export namespace Components {
         "minFractionDigits": number;
         /**
           * Defines the behavior of the component, valid values are "decimal" and "currency".
+          * @default "decimal"
          */
-        "mode": string;
+        "mode": "decimal" | "currency";
         /**
           * Name of the component
          */
@@ -390,6 +456,7 @@ export namespace Components {
         "placeholder": string;
         /**
           * When present, it specifies that an input field is read-only.
+          * @default false
          */
         "readonly": boolean;
         /**
@@ -398,6 +465,7 @@ export namespace Components {
         "required": boolean;
         /**
           * Displays spinner buttons.
+          * @default false
          */
         "showButtons": boolean;
         /**
@@ -406,6 +474,7 @@ export namespace Components {
         "size": number;
         /**
           * Step factor to increment/decrement the value.
+          * @default 1
          */
         "step": number;
         /**
@@ -414,10 +483,12 @@ export namespace Components {
         "styleClass": string;
         /**
           * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
+          * @default true
          */
         "useGrouping": boolean;
         /**
           * Value of the component.
+          * @default null
          */
         "value": number;
     }
@@ -427,46 +498,57 @@ export namespace Components {
     interface AnyInputSwitch {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle": any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
+          * @default null
          */
         "ariaLabeledBy"?: string;
         /**
           * If `true`, the input-switch is selected.
+          * @default false
          */
         "checked": boolean;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
           * Value in unchecked state.
+          * @default false
          */
         "falseValue": any;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-isw-${inputSwitchIds++}`
          */
         "inputId": string;
         /**
           * Name of the checkbox group.
+          * @default this.inputId
          */
         "name": string;
         /**
           * When present, it specifies that the component cannot be edited.
+          * @default false
          */
         "readonly": boolean;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass": any;
         /**
           * Value in checked state.
+          * @default true
          */
         "trueValue": any;
     }
@@ -493,10 +575,12 @@ export namespace Components {
         "autocomplete": string;
         /**
           * When present, it specifies that the element should be disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * When enabled, the label will have floating effect on input text focus
+          * @default false
          */
         "floatLabel": boolean;
         /**
@@ -507,30 +591,37 @@ export namespace Components {
         "getInputRef": () => Promise<HTMLInputElement | null>;
         /**
           * Inline style of the element
+          * @default null
          */
         "inputClass"?: string;
         /**
           * The class of input holder element
+          * @default null
          */
         "inputHolderClass": string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-input-text-${inputIds++}`
          */
         "inputId": string;
         /**
           * Inline style of the element
+          * @default null
          */
         "inputStyle"?: any;
         /**
           * The class of input wrapper element
+          * @default null
          */
         "inputWrapperClass": string;
         /**
           * Label of the input text
+          * @default null
          */
         "label": string;
         /**
           * The class of left icon wrapper element
+          * @default null
          */
         "leftIconClass": string;
         /**
@@ -539,14 +630,17 @@ export namespace Components {
         "maxlength": number;
         /**
           * Name of the input text.
+          * @default this.inputId
          */
         "name": string;
         /**
           * Default text to display when no value in input text
+          * @default null
          */
         "placeholder": string;
         /**
           * When present, it specifies that the element value cannot be changed
+          * @default false
          */
         "readonly": boolean;
         /**
@@ -555,6 +649,7 @@ export namespace Components {
         "required": boolean;
         /**
           * The class of right icon wrapper element
+          * @default null
          */
         "rightIconClass": string;
         /**
@@ -563,6 +658,7 @@ export namespace Components {
         "size": number;
         /**
           * Value of the input text
+          * @default null
          */
         "value": string;
     }
@@ -572,10 +668,12 @@ export namespace Components {
     interface AnyInputTextarea {
         /**
           * When present, textarea size changes as being typed.
+          * @default false
          */
         "autoResize": boolean;
         /**
           * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
+          * @default "none"
          */
         "autocapitalize": string;
         /**
@@ -584,10 +682,12 @@ export namespace Components {
         "cols"?: number;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
           * When enabled, the label will have floating effect on input text focus
+          * @default false
          */
         "floatLabel": boolean;
         /**
@@ -596,26 +696,32 @@ export namespace Components {
         "getInputElement": () => Promise<HTMLTextAreaElement>;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-input-textarea-${textareaIds++}`
          */
         "inputId": string;
         /**
           * The class of input wrapper element
+          * @default null
          */
         "inputWrapperClass": string;
         /**
           * Label of the input text
+          * @default null
          */
         "label": string;
         /**
           * Name of the input text.
+          * @default this.inputId
          */
         "name": string;
         /**
           * Default text to display when no value in input textarea
+          * @default null
          */
         "placeholder": string;
         /**
           * When present, it specifies that the element value cannot be changed
+          * @default false
          */
         "readonly": boolean;
         /**
@@ -632,10 +738,12 @@ export namespace Components {
         "setFocus": () => Promise<void>;
         /**
           * If `true`, the element will have its spelling and grammar checked.
+          * @default false
          */
         "spellcheck": boolean;
         /**
           * The value of the textarea.
+          * @default ""
          */
         "value"?: string | null;
         /**
@@ -649,18 +757,22 @@ export namespace Components {
     interface AnyListbox {
         /**
           * Inline style of the element.
+          * @default null
          */
         "anyStyle": any;
         /**
           * When specified, allows selecting items with checkboxes.
+          * @default false
          */
         "checkbox": boolean;
         /**
           * A property to uniquely identify a value in options.
+          * @default null
          */
         "dataKey": string;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -673,46 +785,57 @@ export namespace Components {
         "emptyMessage": string;
         /**
           * When specified, displays a filter input at header.
+          * @default false
          */
         "filter": boolean;
         /**
           * When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.
+          * @default null
          */
         "filterBy": string;
         /**
           * Locale to use in filtering. The default locale is the host environment's current locale.
+          * @default undefined
          */
         "filterLocale": string;
         /**
           * Defines how the items are filtered, valid values are "contains" (default) "startsWith", "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".
+          * @default "contains"
          */
         "filterMatchMode": string;
         /**
           * When specified, filter displays with this value.
+          * @default null
          */
         "filterValue"?: string;
         /**
           * Whether to display options as grouped when nested options are provided.
+          * @default false
          */
         "group": boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-lb-${listboxIds++}`
          */
         "inputId": string;
         /**
           * Inline style of the list element.
+          * @default null
          */
         "listStyle": any;
         /**
           * Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.
+          * @default true
          */
         "metaKeySelection": boolean;
         /**
           * When specified, allows selecting multiple values.
+          * @default false
          */
         "multiple": boolean;
         /**
           * Name of the dropdown input.
+          * @default this.inputId
          */
         "name": string;
         /**
@@ -721,30 +844,37 @@ export namespace Components {
         "optionDisabled": string;
         /**
           * Name of the options field of an option group.
+          * @default "items"
          */
         "optionGroupChildren": string;
         /**
           * Name of the label field of an option.
+          * @default "label"
          */
         "optionLabel": string;
         /**
           * Name of the value field of an option.
+          * @default "value"
          */
         "optionValue": string;
         /**
           * An array of objects to display as the available options.
+          * @default null
          */
         "options": any[];
         /**
           * When present, it specifies that the element value cannot be changed.
+          * @default false
          */
         "readonly": boolean;
         /**
           * Max height of the content area in inline mode.
+          * @default "200px"
          */
         "scrollerHeight": string;
         /**
           * Icon class of the filter search input icon.
+          * @default "fa-solid:search"
          */
         "searchIcon"?: string;
         /**
@@ -754,134 +884,166 @@ export namespace Components {
         "setFilterInputFocus": () => Promise<void>;
         /**
           * Whether header checkbox is shown in multiple mode.
+          * @default true
          */
         "showToggleAll": boolean;
         /**
           * Value of the listbox.
+          * @default null
          */
         "value"?: any;
         /**
           * When present, list virtual scroller is enabled.
+          * @default false
          */
         "virtualScroll": boolean;
     }
     interface AnyMultiselect {
         /**
           * Inline style of the element
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * When specified, allows selecting items with checkboxes
+          * @default true
          */
         "checkbox": boolean;
         /**
           * Icon class of the dropdown clear icon
+          * @default "fa-solid:times"
          */
         "clearIcon"?: string;
         /**
           * A property to uniquely identify a value in options
+          * @default null
          */
         "dataKey": string;
         /**
           * When specified, allows selecting items with checkboxes
+          * @default this._translations?.[TranslationKeys.CHOOSE]
          */
         "defaultLabel": string;
         /**
           * When present, it specifies that the element should be disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * Icon class of the dropdown icon
+          * @default "fa-solid:chevron-down"
          */
         "dropdownIcon"?: string;
         /**
           * When specified, displays a filter input at header
+          * @default true
          */
         "filter": boolean;
         /**
           * Whether to display options as grouped when nested options are provided
+          * @default false
          */
         "group": boolean;
         /**
           * Transition options for the hide animation.
+          * @default "growUp"
          */
         "hideAnimation"?: string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-ms-${multiselectIds++}`
          */
         "inputId": string;
         /**
           * Name of the dropdown input.
+          * @default this.inputId
          */
         "name": string;
         /**
           * Name of the options field of an option group.
+          * @default "items"
          */
         "optionGroupChildren": string;
         /**
           * Name of the label field of an option
+          * @default "label"
          */
         "optionLabel": string;
         /**
           * Name of the value field of an option
+          * @default "value"
          */
         "optionValue": string;
         /**
           * An array of objects to display as the available options.
+          * @default null
          */
         "options": any[];
         /**
           * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+          * @default "200px"
          */
         "panelScrollHeight"?: string;
         /**
           * Default text to display when no option is selected
+          * @default null
          */
         "placeholder"?: string;
         /**
           * When present, it specifies that the element value cannot be changed
+          * @default false
          */
         "readonly": boolean;
         /**
           * Keyframe name for the show animation.
+          * @default "growDown"
          */
         "showAnimation"?: string;
         /**
           * When enabled, a clear icon is displayed to clear the value
+          * @default false
          */
         "showClear"?: boolean;
         /**
           * Whether header checkbox is shown in multiple mode
+          * @default true
          */
         "showToggleAll": boolean;
         /**
           * Value of the dropdown list
+          * @default null
          */
         "value"?: any;
         /**
           * When present, list virtual scroller is enabled
+          * @default false
          */
         "virtualScroll": boolean;
     }
     interface AnyOverlay {
         /**
           * Whether to automatically manage layering
+          * @default true
          */
         "autoZIndex"?: boolean;
         /**
           * Base zIndex value to use in layering
+          * @default "0"
          */
         "baseZIndex"?: string;
         /**
           * Transition options for the hide animation.
+          * @default "growUp"
          */
         "hideAnimation"?: string;
         /**
           * Keyframe name for the show animation.
+          * @default "growDown"
          */
         "showAnimation"?: string;
         /**
@@ -890,36 +1052,44 @@ export namespace Components {
         "target": any;
         /**
           * Whether the dropdown is currently visible or hidden.
+          * @default false
          */
         "visible": boolean;
     }
     interface AnyRadioButton {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle": any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-rb-${radiobuttonIds++}`
          */
         "inputId": string;
         /**
           * Label of the radiobutton.
+          * @default null
          */
         "label": string;
         /**
           * Style class of the label.
+          * @default null
          */
         "labelStyleClass": string;
         /**
           * The name of the control, which is submitted with the form data.
+          * @default this.inputId
          */
         "name": string;
         /**
@@ -928,6 +1098,7 @@ export namespace Components {
         "setFocus": (ev: any) => Promise<void>;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass": any;
         /**
@@ -938,10 +1109,12 @@ export namespace Components {
     interface AnyRadioGroup {
         /**
           * If `true`, the radios can be deselected.
+          * @default false
          */
         "allowEmptySelection": boolean;
         /**
           * The name of the control, which is submitted with the form data.
+          * @default this.inputId
          */
         "name": string;
         /**
@@ -952,105 +1125,142 @@ export namespace Components {
     interface AnyRippleEffect {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle": any;
         /**
           * Sets the type of ripple-effect:
+          * @default "bounded"
          */
         "type": "bounded" | "unbounded";
     }
     interface AnyTabPanel {
         /**
           * When true, tab cannot be activated.
+          * @default false
          */
         "disabled": boolean;
         /**
           * Title of the tabPanel.
+          * @default null
          */
         "header": string;
         /**
           * Defines if tab is active.
+          * @default false
          */
         "selected": boolean;
     }
     interface AnyTabView {
         /**
           * Index of the active tab to change selected tab programmatically.
+          * @default 0
          */
         "activeIndex": number;
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle": any;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass": string;
     }
     interface AnyVirtualScroller {
         /**
           * Inline style of the component
+          * @default null
          */
         "anyStyle": any;
         /**
           * Class name of the content element where items will be rendered
+          * @default null
          */
         "contentElemClass": string;
         /**
           * Tag name of content element whwre items will be rendered
+          * @default "div"
          */
         "contentElemTag": string;
         /**
           * Threshold in milliseconds to delay lazy loading during scrolling
+          * @default 250
          */
         "delay": number;
         /**
           * Class name of the item element
+          * @default null
          */
         "itemElemClass": string;
         /**
           * Height of an item in the list
+          * @default null
          */
         "itemSize": number;
         /**
           * Tag name for supporting elements: spacing extra rows, empty-data row. It will be determined by itself once data provided, so it's optional. But if your data is not provided during initialization - it is better to specify this option because otherwise plugin will be unable to correctly render empty-data row.
+          * @default "div"
          */
         "itemTag": string;
         /**
           * An array of objects to display
+          * @default []
          */
         "items": any[];
         /**
           * Defines if data is loaded and interacted with in lazy manner
+          * @default false
          */
         "lazy": boolean;
         /**
           * Text for placeholder element if there is no data provided
+          * @default "No Data"
          */
         "noDataText": string;
         /**
           * Number of rows to display per page
+          * @default null
          */
         "rowsPerPage": number;
         /**
           * Class name of the scroll element
+          * @default null
          */
         "scrollElemClass": string;
         /**
           * Max height of the content area in inline mode
+          * @default null
          */
         "scrollerHeight": any;
         /**
           * Inline style of the component
+          * @default null
          */
         "styleClass": string;
     }
     interface AppCode {
         "code": any;
+        /**
+          * @default []
+         */
         "extFiles": any[];
+        /**
+          * @default false
+         */
         "hideCodeSandbox": boolean;
+        /**
+          * @default false
+         */
         "hideStackBlitz": boolean;
+        /**
+          * @default false
+         */
         "hideToggleCode": boolean;
+        /**
+          * @default []
+         */
         "routeFiles": any[];
         "selector": string;
         "service": any;
@@ -1073,6 +1283,9 @@ export namespace Components {
         "anyId": string;
         "data": any[];
         "description": string;
+        /**
+          * @default false
+         */
         "isInterface": boolean;
         "label": string;
         "level": number;
@@ -1090,6 +1303,9 @@ export namespace Components {
     }
     interface AppDocsectiontext {
         "label": string;
+        /**
+          * @default 2
+         */
         "level": number;
         "parentDescription": string;
         "parentId": string;
@@ -2028,81 +2244,101 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    type OneOf<K extends string, PropT, AttrT = PropT> = { [P in K]: PropT } & { [P in `attr:${K}`]?: never } | { [P in `attr:${K}`]: AttrT } & { [P in K]?: never };
+
     interface AnyBadge {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Severity type of the badge.
+          * @default null
          */
         "severity"?: string;
         /**
           * Size of the badge, valid options are "large" and "xlarge".
+          * @default null
          */
         "size"?: string;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass"?: string;
         /**
           * Value to display inside the badge.
+          * @default null
          */
         "value"?: string;
     }
     interface AnyBadgeOverlay {
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass"?: string;
     }
     interface AnyButton {
         /**
           * Inline style of the element.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Value of the badge.
+          * @default null
          */
         "badge"?: string;
         /**
           * Style class of the badge.
+          * @default null
          */
         "badgeClass"?: string;
         /**
           * When present, it specifies that the component should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Name of the icon.
+          * @default null
          */
         "icon"?: string;
         /**
           * Height of the icon
+          * @default null
          */
         "iconHeight"?: number;
         /**
           * Position of the icon, valid values are "left" and "right".
+          * @default "left"
          */
         "iconPos"?: "left" | "right" | "top" | "bottom";
         /**
           * Width of the icon
+          * @default null
          */
         "iconWidth"?: number;
         /**
           * Text of the button.
+          * @default null
          */
         "label"?: string;
         /**
           * Whether the button is in loading state.
+          * @default false
          */
         "loading"?: boolean;
         /**
           * Icon to display in loading state.
+          * @default "fa-solid:spinner"
          */
         "loadingIcon"?: string;
         /**
           * Style class of the icon element
+          * @default "any-spin"
          */
         "loadingIconStyleClass"?: string;
         /**
@@ -2119,10 +2355,12 @@ declare namespace LocalJSX {
         "onAOnFocus"?: (event: AnyButtonCustomEvent<any>) => void;
         /**
           * Style class of the element.
+          * @default null
          */
         "styleClass"?: string;
         /**
           * Type of the button.
+          * @default "button"
          */
         "type"?: "button" | "submit" | "reset";
     }
@@ -2132,42 +2370,52 @@ declare namespace LocalJSX {
     interface AnyCheckbox {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * Allows to select a boolean value instead of multiple values.
+          * @default false
          */
         "binary"?: boolean;
         /**
           * Icon class of the checkbox icon.
+          * @default "fa-solid:check"
          */
         "checkboxIcon"?: string;
         /**
           * If `true`, the checkbox is selected.
+          * @default false
          */
         "checked"?: boolean;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-cb-${checkboxIds++}`
          */
         "inputId"?: string;
         /**
           * Label of the checkbox.
+          * @default null
          */
         "label"?: string;
         /**
           * Style class of the label.
+          * @default null
          */
         "labelStyleClass"?: string;
         /**
           * Name of the checkbox group.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2184,14 +2432,17 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: AnyCheckboxCustomEvent<any>) => void;
         /**
           * When present, it specifies that the component cannot be edited.
+          * @default false
          */
         "readonly"?: boolean;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass"?: any;
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
+          * @default "on"
          */
         "value"?: any;
     }
@@ -2201,46 +2452,57 @@ declare namespace LocalJSX {
     interface AnyDropdown {
         /**
           * Inline style of the element.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order.
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * Whether to automatically manage layering.
+          * @default true
          */
         "autoZIndex"?: boolean;
         /**
           * Base zIndex value to use in layering.
+          * @default "0"
          */
         "baseZIndex"?: string;
         /**
           * Icon class of the dropdown clear icon.
+          * @default "fa-solid:times"
          */
         "clearIcon"?: string;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Icon class of the dropdown icon.
+          * @default "fa-solid:chevron-down"
          */
         "dropdownIcon"?: string;
         /**
           * When specified, displays a filter input at header.
+          * @default false
          */
         "filter"?: boolean;
         /**
           * Transition options of the hide animation.
+          * @default "growUp"
          */
         "hideAnimation"?: string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-dd-${dropdownIds++}`
          */
         "inputId"?: string;
         /**
           * Name of the dropdown input.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2277,42 +2539,52 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: AnyDropdownCustomEvent<any>) => void;
         /**
           * Name of the label field of an option
+          * @default "label"
          */
         "optionLabel"?: string;
         /**
           * Name of the value field of an option.
+          * @default "value"
          */
         "optionValue"?: string;
         /**
           * An array of objects to display as the available options.
+          * @default null
          */
         "options"?: any[];
         /**
           * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.
+          * @default "200px"
          */
         "panelScrollHeight"?: string;
         /**
           * Default text to display when no option is selected.
+          * @default null
          */
         "placeholder"?: string;
         /**
           * When present, it specifies that the element value cannot be changed.
+          * @default false
          */
         "readonly"?: boolean;
         /**
           * Keyframe name the show animation.
+          * @default "growDown"
          */
         "showAnimation"?: string;
         /**
           * When enabled, a clear icon is displayed to clear the value.
+          * @default false
          */
         "showClear"?: boolean;
         /**
           * Value of the dropdown list.
+          * @default null
          */
         "value"?: any;
         /**
           * When present, list virtual scroller is enabled.
+          * @default false
          */
         "virtualScroll"?: boolean;
     }
@@ -2337,6 +2609,7 @@ declare namespace LocalJSX {
         "aTitle"?: string;
         /**
           * Determines whether the input field is empty.
+          * @default true
          */
         "allowEmpty"?: boolean;
         /**
@@ -2357,6 +2630,7 @@ declare namespace LocalJSX {
         "autocomplete"?: string;
         /**
           * Layout of the buttons, valid values are "stacked" (default), "horizontal" and "vertical".
+          * @default "stacked"
          */
         "buttonLayout"?: string;
         /**
@@ -2366,25 +2640,29 @@ declare namespace LocalJSX {
         /**
           * How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency symbol such as €, ü"code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
          */
-        "currencyDisplay"?: string;
+        "currencyDisplay"?: "symbol" | "code" | "name";
         /**
           * Style class of the decrement button.
          */
         "decrementButtonClass"?: string;
         /**
           * Style class of the decrement button.
+          * @default "fa-solid:angle-down"
          */
         "decrementButtonIcon"?: string;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * When enabled, the label will have floating effect on input text focus
+          * @default false
          */
         "floatLabel"?: boolean;
         /**
           * Whether to format the value.
+          * @default true
          */
         "format"?: boolean;
         /**
@@ -2393,10 +2671,12 @@ declare namespace LocalJSX {
         "incrementButtonClass"?: string;
         /**
           * Style class of the increment button.
+          * @default "fa-solid:angle-up"
          */
         "incrementButtonIcon"?: string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-input-number-${inputIds++}`
          */
         "inputId"?: string;
         /**
@@ -2409,10 +2689,12 @@ declare namespace LocalJSX {
         "inputStyleClass"?: string;
         /**
           * The class of input wrapper element
+          * @default null
          */
         "inputWrapperClass"?: string;
         /**
           * Label of the component
+          * @default null
          */
         "label"?: string;
         /**
@@ -2421,8 +2703,9 @@ declare namespace LocalJSX {
         "locale"?: string;
         /**
           * The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_negotiation for details.
+          * @default "best fit"
          */
-        "localeMatcher"?: string;
+        "localeMatcher"?: "lookup" | "best fit";
         /**
           * Maximum boundary value.
          */
@@ -2445,8 +2728,9 @@ declare namespace LocalJSX {
         "minFractionDigits"?: number;
         /**
           * Defines the behavior of the component, valid values are "decimal" and "currency".
+          * @default "decimal"
          */
-        "mode"?: string;
+        "mode"?: "decimal" | "currency";
         /**
           * Name of the component
          */
@@ -2477,6 +2761,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         /**
           * When present, it specifies that an input field is read-only.
+          * @default false
          */
         "readonly"?: boolean;
         /**
@@ -2485,6 +2770,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         /**
           * Displays spinner buttons.
+          * @default false
          */
         "showButtons"?: boolean;
         /**
@@ -2493,6 +2779,7 @@ declare namespace LocalJSX {
         "size"?: number;
         /**
           * Step factor to increment/decrement the value.
+          * @default 1
          */
         "step"?: number;
         /**
@@ -2501,10 +2788,12 @@ declare namespace LocalJSX {
         "styleClass"?: string;
         /**
           * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
+          * @default true
          */
         "useGrouping"?: boolean;
         /**
           * Value of the component.
+          * @default null
          */
         "value"?: number;
     }
@@ -2514,34 +2803,42 @@ declare namespace LocalJSX {
     interface AnyInputSwitch {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
+          * @default null
          */
         "ariaLabeledBy"?: string;
         /**
           * If `true`, the input-switch is selected.
+          * @default false
          */
         "checked"?: boolean;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Value in unchecked state.
+          * @default false
          */
         "falseValue"?: any;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-isw-${inputSwitchIds++}`
          */
         "inputId"?: string;
         /**
           * Name of the checkbox group.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2558,14 +2855,17 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: AnyInputSwitchCustomEvent<any>) => void;
         /**
           * When present, it specifies that the component cannot be edited.
+          * @default false
          */
         "readonly"?: boolean;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass"?: any;
         /**
           * Value in checked state.
+          * @default true
          */
         "trueValue"?: any;
     }
@@ -2592,38 +2892,47 @@ declare namespace LocalJSX {
         "autocomplete"?: string;
         /**
           * When present, it specifies that the element should be disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * When enabled, the label will have floating effect on input text focus
+          * @default false
          */
         "floatLabel"?: boolean;
         /**
           * Inline style of the element
+          * @default null
          */
         "inputClass"?: string;
         /**
           * The class of input holder element
+          * @default null
          */
         "inputHolderClass"?: string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-input-text-${inputIds++}`
          */
         "inputId"?: string;
         /**
           * Inline style of the element
+          * @default null
          */
         "inputStyle"?: any;
         /**
           * The class of input wrapper element
+          * @default null
          */
         "inputWrapperClass"?: string;
         /**
           * Label of the input text
+          * @default null
          */
         "label"?: string;
         /**
           * The class of left icon wrapper element
+          * @default null
          */
         "leftIconClass"?: string;
         /**
@@ -2632,6 +2941,7 @@ declare namespace LocalJSX {
         "maxlength"?: number;
         /**
           * Name of the input text.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2640,10 +2950,12 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: AnyInputTextCustomEvent<any>) => void;
         /**
           * Default text to display when no value in input text
+          * @default null
          */
         "placeholder"?: string;
         /**
           * When present, it specifies that the element value cannot be changed
+          * @default false
          */
         "readonly"?: boolean;
         /**
@@ -2652,6 +2964,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         /**
           * The class of right icon wrapper element
+          * @default null
          */
         "rightIconClass"?: string;
         /**
@@ -2660,6 +2973,7 @@ declare namespace LocalJSX {
         "size"?: number;
         /**
           * Value of the input text
+          * @default null
          */
         "value"?: string;
     }
@@ -2669,10 +2983,12 @@ declare namespace LocalJSX {
     interface AnyInputTextarea {
         /**
           * When present, textarea size changes as being typed.
+          * @default false
          */
         "autoResize"?: boolean;
         /**
           * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
+          * @default "none"
          */
         "autocapitalize"?: string;
         /**
@@ -2681,26 +2997,32 @@ declare namespace LocalJSX {
         "cols"?: number;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * When enabled, the label will have floating effect on input text focus
+          * @default false
          */
         "floatLabel"?: boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-input-textarea-${textareaIds++}`
          */
         "inputId"?: string;
         /**
           * The class of input wrapper element
+          * @default null
          */
         "inputWrapperClass"?: string;
         /**
           * Label of the input text
+          * @default null
          */
         "label"?: string;
         /**
           * Name of the input text.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2725,10 +3047,12 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: AnyInputTextareaCustomEvent<TextareaChangeEventDetail>) => void;
         /**
           * Default text to display when no value in input textarea
+          * @default null
          */
         "placeholder"?: string;
         /**
           * When present, it specifies that the element value cannot be changed
+          * @default false
          */
         "readonly"?: boolean;
         /**
@@ -2737,10 +3061,12 @@ declare namespace LocalJSX {
         "rows"?: number;
         /**
           * If `true`, the element will have its spelling and grammar checked.
+          * @default false
          */
         "spellcheck"?: boolean;
         /**
           * The value of the textarea.
+          * @default ""
          */
         "value"?: string | null;
         /**
@@ -2754,18 +3080,22 @@ declare namespace LocalJSX {
     interface AnyListbox {
         /**
           * Inline style of the element.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * When specified, allows selecting items with checkboxes.
+          * @default false
          */
         "checkbox"?: boolean;
         /**
           * A property to uniquely identify a value in options.
+          * @default null
          */
         "dataKey"?: string;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -2778,46 +3108,57 @@ declare namespace LocalJSX {
         "emptyMessage"?: string;
         /**
           * When specified, displays a filter input at header.
+          * @default false
          */
         "filter"?: boolean;
         /**
           * When filtering is enabled, filterBy decides which field or fields (comma separated) to search against.
+          * @default null
          */
         "filterBy"?: string;
         /**
           * Locale to use in filtering. The default locale is the host environment's current locale.
+          * @default undefined
          */
         "filterLocale"?: string;
         /**
           * Defines how the items are filtered, valid values are "contains" (default) "startsWith", "endsWith", "equals", "notEquals", "in", "lt", "lte", "gt" and "gte".
+          * @default "contains"
          */
         "filterMatchMode"?: string;
         /**
           * When specified, filter displays with this value.
+          * @default null
          */
         "filterValue"?: string;
         /**
           * Whether to display options as grouped when nested options are provided.
+          * @default false
          */
         "group"?: boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-lb-${listboxIds++}`
          */
         "inputId"?: string;
         /**
           * Inline style of the list element.
+          * @default null
          */
         "listStyle"?: any;
         /**
           * Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.
+          * @default true
          */
         "metaKeySelection"?: boolean;
         /**
           * When specified, allows selecting multiple values.
+          * @default false
          */
         "multiple"?: boolean;
         /**
           * Name of the dropdown input.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2830,96 +3171,119 @@ declare namespace LocalJSX {
         "optionDisabled"?: string;
         /**
           * Name of the options field of an option group.
+          * @default "items"
          */
         "optionGroupChildren"?: string;
         /**
           * Name of the label field of an option.
+          * @default "label"
          */
         "optionLabel"?: string;
         /**
           * Name of the value field of an option.
+          * @default "value"
          */
         "optionValue"?: string;
         /**
           * An array of objects to display as the available options.
+          * @default null
          */
         "options"?: any[];
         /**
           * When present, it specifies that the element value cannot be changed.
+          * @default false
          */
         "readonly"?: boolean;
         /**
           * Max height of the content area in inline mode.
+          * @default "200px"
          */
         "scrollerHeight"?: string;
         /**
           * Icon class of the filter search input icon.
+          * @default "fa-solid:search"
          */
         "searchIcon"?: string;
         /**
           * Whether header checkbox is shown in multiple mode.
+          * @default true
          */
         "showToggleAll"?: boolean;
         /**
           * Value of the listbox.
+          * @default null
          */
         "value"?: any;
         /**
           * When present, list virtual scroller is enabled.
+          * @default false
          */
         "virtualScroll"?: boolean;
     }
     interface AnyMultiselect {
         /**
           * Inline style of the element
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * When specified, allows selecting items with checkboxes
+          * @default true
          */
         "checkbox"?: boolean;
         /**
           * Icon class of the dropdown clear icon
+          * @default "fa-solid:times"
          */
         "clearIcon"?: string;
         /**
           * A property to uniquely identify a value in options
+          * @default null
          */
         "dataKey"?: string;
         /**
           * When specified, allows selecting items with checkboxes
+          * @default this._translations?.[TranslationKeys.CHOOSE]
          */
         "defaultLabel"?: string;
         /**
           * When present, it specifies that the element should be disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Icon class of the dropdown icon
+          * @default "fa-solid:chevron-down"
          */
         "dropdownIcon"?: string;
         /**
           * When specified, displays a filter input at header
+          * @default true
          */
         "filter"?: boolean;
         /**
           * Whether to display options as grouped when nested options are provided
+          * @default false
          */
         "group"?: boolean;
         /**
           * Transition options for the hide animation.
+          * @default "growUp"
          */
         "hideAnimation"?: string;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-ms-${multiselectIds++}`
          */
         "inputId"?: string;
         /**
           * Name of the dropdown input.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2956,64 +3320,79 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: AnyMultiselectCustomEvent<any>) => void;
         /**
           * Name of the options field of an option group.
+          * @default "items"
          */
         "optionGroupChildren"?: string;
         /**
           * Name of the label field of an option
+          * @default "label"
          */
         "optionLabel"?: string;
         /**
           * Name of the value field of an option
+          * @default "value"
          */
         "optionValue"?: string;
         /**
           * An array of objects to display as the available options.
+          * @default null
          */
         "options"?: any[];
         /**
           * Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value
+          * @default "200px"
          */
         "panelScrollHeight"?: string;
         /**
           * Default text to display when no option is selected
+          * @default null
          */
         "placeholder"?: string;
         /**
           * When present, it specifies that the element value cannot be changed
+          * @default false
          */
         "readonly"?: boolean;
         /**
           * Keyframe name for the show animation.
+          * @default "growDown"
          */
         "showAnimation"?: string;
         /**
           * When enabled, a clear icon is displayed to clear the value
+          * @default false
          */
         "showClear"?: boolean;
         /**
           * Whether header checkbox is shown in multiple mode
+          * @default true
          */
         "showToggleAll"?: boolean;
         /**
           * Value of the dropdown list
+          * @default null
          */
         "value"?: any;
         /**
           * When present, list virtual scroller is enabled
+          * @default false
          */
         "virtualScroll"?: boolean;
     }
     interface AnyOverlay {
         /**
           * Whether to automatically manage layering
+          * @default true
          */
         "autoZIndex"?: boolean;
         /**
           * Base zIndex value to use in layering
+          * @default "0"
          */
         "baseZIndex"?: string;
         /**
           * Transition options for the hide animation.
+          * @default "growUp"
          */
         "hideAnimation"?: string;
         /**
@@ -3034,6 +3413,7 @@ declare namespace LocalJSX {
         "onAOnShowStart"?: (event: AnyOverlayCustomEvent<any>) => void;
         /**
           * Keyframe name for the show animation.
+          * @default "growDown"
          */
         "showAnimation"?: string;
         /**
@@ -3042,36 +3422,44 @@ declare namespace LocalJSX {
         "target"?: any;
         /**
           * Whether the dropdown is currently visible or hidden.
+          * @default false
          */
         "visible"?: boolean;
     }
     interface AnyRadioButton {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Index of the element in tabbing order
+          * @default 0
          */
         "anyTabIndex"?: number;
         /**
           * When present, it specifies that the element should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Identifier of the focus input to match a label defined for the component.
+          * @default `any-rb-${radiobuttonIds++}`
          */
         "inputId"?: string;
         /**
           * Label of the radiobutton.
+          * @default null
          */
         "label"?: string;
         /**
           * Style class of the label.
+          * @default null
          */
         "labelStyleClass"?: string;
         /**
           * The name of the control, which is submitted with the form data.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -3088,6 +3476,7 @@ declare namespace LocalJSX {
         "onAOnSelect"?: (event: AnyRadioButtonCustomEvent<any>) => void;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass"?: any;
         /**
@@ -3098,10 +3487,12 @@ declare namespace LocalJSX {
     interface AnyRadioGroup {
         /**
           * If `true`, the radios can be deselected.
+          * @default false
          */
         "allowEmptySelection"?: boolean;
         /**
           * The name of the control, which is submitted with the form data.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -3116,80 +3507,98 @@ declare namespace LocalJSX {
     interface AnyRippleEffect {
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Sets the type of ripple-effect:
+          * @default "bounded"
          */
         "type"?: "bounded" | "unbounded";
     }
     interface AnyTabPanel {
         /**
           * When true, tab cannot be activated.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Title of the tabPanel.
+          * @default null
          */
         "header"?: string;
         /**
           * Defines if tab is active.
+          * @default false
          */
         "selected"?: boolean;
     }
     interface AnyTabView {
         /**
           * Index of the active tab to change selected tab programmatically.
+          * @default 0
          */
         "activeIndex"?: number;
         /**
           * Inline style of the component.
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Style class of the component.
+          * @default null
          */
         "styleClass"?: string;
     }
     interface AnyVirtualScroller {
         /**
           * Inline style of the component
+          * @default null
          */
         "anyStyle"?: any;
         /**
           * Class name of the content element where items will be rendered
+          * @default null
          */
         "contentElemClass"?: string;
         /**
           * Tag name of content element whwre items will be rendered
+          * @default "div"
          */
         "contentElemTag"?: string;
         /**
           * Threshold in milliseconds to delay lazy loading during scrolling
+          * @default 250
          */
         "delay"?: number;
         /**
           * Class name of the item element
+          * @default null
          */
         "itemElemClass"?: string;
         /**
           * Height of an item in the list
+          * @default null
          */
         "itemSize"?: number;
         /**
           * Tag name for supporting elements: spacing extra rows, empty-data row. It will be determined by itself once data provided, so it's optional. But if your data is not provided during initialization - it is better to specify this option because otherwise plugin will be unable to correctly render empty-data row.
+          * @default "div"
          */
         "itemTag"?: string;
         /**
           * An array of objects to display
+          * @default []
          */
         "items"?: any[];
         /**
           * Defines if data is loaded and interacted with in lazy manner
+          * @default false
          */
         "lazy"?: boolean;
         /**
           * Text for placeholder element if there is no data provided
+          * @default "No Data"
          */
         "noDataText"?: string;
         /**
@@ -3214,27 +3623,46 @@ declare namespace LocalJSX {
         "onScrollingProgress"?: (event: AnyVirtualScrollerCustomEvent<any>) => void;
         /**
           * Number of rows to display per page
+          * @default null
          */
         "rowsPerPage"?: number;
         /**
           * Class name of the scroll element
+          * @default null
          */
         "scrollElemClass"?: string;
         /**
           * Max height of the content area in inline mode
+          * @default null
          */
         "scrollerHeight"?: any;
         /**
           * Inline style of the component
+          * @default null
          */
         "styleClass"?: string;
     }
     interface AppCode {
         "code": any;
+        /**
+          * @default []
+         */
         "extFiles"?: any[];
+        /**
+          * @default false
+         */
         "hideCodeSandbox"?: boolean;
+        /**
+          * @default false
+         */
         "hideStackBlitz"?: boolean;
+        /**
+          * @default false
+         */
         "hideToggleCode"?: boolean;
+        /**
+          * @default []
+         */
         "routeFiles"?: any[];
         "selector": string;
         "service"?: any;
@@ -3257,6 +3685,9 @@ declare namespace LocalJSX {
         "anyId"?: string;
         "data"?: any[];
         "description"?: string;
+        /**
+          * @default false
+         */
         "isInterface"?: boolean;
         "label"?: string;
         "level"?: number;
@@ -3274,6 +3705,9 @@ declare namespace LocalJSX {
     }
     interface AppDocsectiontext {
         "label"?: string;
+        /**
+          * @default 2
+         */
         "level"?: number;
         "parentDescription"?: string;
         "parentId"?: string;
@@ -3431,162 +3865,613 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+
+    interface AnyBadgeAttributes {
+        "styleClass": string;
+        "anyStyle": string;
+        "size": string;
+        "severity": string;
+        "value": string;
+    }
+    interface AnyBadgeOverlayAttributes {
+        "styleClass": string;
+    }
+    interface AnyButtonAttributes {
+        "type": "button" | "submit" | "reset";
+        "label": string;
+        "disabled": boolean;
+        "styleClass": string;
+        "icon": string;
+        "iconPos": "left" | "right" | "top" | "bottom";
+        "iconWidth": number;
+        "iconHeight": number;
+        "badge": string;
+        "badgeClass": string;
+        "loadingIcon": string;
+        "loadingIconStyleClass": string;
+        "loading": boolean;
+        "anyStyle": string;
+    }
+    interface AnyCheckboxAttributes {
+        "anyStyle": string;
+        "anyTabIndex": number;
+        "binary": boolean;
+        "checked": boolean;
+        "checkboxIcon": string;
+        "disabled": boolean;
+        "inputId": string;
+        "label": string;
+        "labelStyleClass": string;
+        "name": string;
+        "readonly": boolean;
+        "styleClass": string;
+        "value": string;
+    }
+    interface AnyDropdownAttributes {
+        "optionLabel": string;
+        "inputId": string;
+        "name": string;
+        "filter": boolean;
+        "optionValue": string;
+        "placeholder": string;
+        "dropdownIcon": string;
+        "clearIcon": string;
+        "baseZIndex": string;
+        "showAnimation": string;
+        "hideAnimation": string;
+        "anyTabIndex": number;
+        "anyStyle": string;
+        "panelScrollHeight": string;
+        "showClear": boolean;
+        "autoZIndex": boolean;
+        "value": string;
+        "disabled": boolean;
+        "readonly": boolean;
+        "virtualScroll": boolean;
+    }
+    interface AnyInputNumberAttributes {
+        "value": number;
+        "format": boolean;
+        "showButtons": boolean;
+        "buttonLayout": string;
+        "inputId": string;
+        "floatLabel": boolean;
+        "styleClass": string;
+        "anyStyle": string;
+        "placeholder": string;
+        "size": number;
+        "maxlength": number;
+        "anyTabIndex": string;
+        "aTitle": string;
+        "label": string;
+        "anyAriaRequired": boolean;
+        "name": string;
+        "required": boolean;
+        "autocomplete": string;
+        "min": number;
+        "max": number;
+        "incrementButtonClass": string;
+        "decrementButtonClass": string;
+        "incrementButtonIcon": string;
+        "decrementButtonIcon": string;
+        "disabled": boolean;
+        "readonly": boolean;
+        "step": number;
+        "allowEmpty": boolean;
+        "locale": string;
+        "localeMatcher": "lookup" | "best fit";
+        "mode": "decimal" | "currency";
+        "currency": string;
+        "currencyDisplay": "symbol" | "code" | "name";
+        "useGrouping": boolean;
+        "minFractionDigits": number;
+        "maxFractionDigits": number;
+        "aPrefix": string;
+        "aSuffix": string;
+        "inputStyle": string;
+        "inputWrapperClass": string;
+        "inputStyleClass": string;
+    }
+    interface AnyInputSwitchAttributes {
+        "inputId": string;
+        "name": string;
+        "checked": boolean;
+        "anyStyle": string;
+        "styleClass": string;
+        "disabled": boolean;
+        "readonly": boolean;
+        "trueValue": string;
+        "falseValue": string;
+        "anyTabIndex": number;
+        "ariaLabeledBy": string;
+    }
+    interface AnyInputTextAttributes {
+        "value": string;
+        "inputId": string;
+        "name": string;
+        "label": string;
+        "floatLabel": boolean;
+        "inputWrapperClass": string;
+        "inputHolderClass": string;
+        "disabled": boolean;
+        "readonly": boolean;
+        "placeholder": string;
+        "rightIconClass": string;
+        "leftIconClass": string;
+        "inputStyle": string;
+        "inputClass": string;
+        "size": number;
+        "maxlength": number;
+        "anyTabIndex": string;
+        "aTitle": string;
+        "anyAriaRequired": boolean;
+        "required": boolean;
+        "autocomplete": string;
+    }
+    interface AnyInputTextareaAttributes {
+        "inputId": string;
+        "name": string;
+        "label": string;
+        "autoResize": boolean;
+        "disabled": boolean;
+        "readonly": boolean;
+        "placeholder": string;
+        "spellcheck": boolean;
+        "floatLabel": boolean;
+        "cols": number;
+        "rows": number;
+        "wrap": "hard" | "soft" | "off";
+        "autocapitalize": string;
+        "inputWrapperClass": string;
+        "value": string | null;
+    }
+    interface AnyListboxAttributes {
+        "optionLabel": string;
+        "inputId": string;
+        "name": string;
+        "optionValue": string;
+        "value": string;
+        "anyStyle": string;
+        "listStyle": string;
+        "disabled": boolean;
+        "readonly": boolean;
+        "scrollerHeight": string;
+        "virtualScroll": boolean;
+        "multiple": boolean;
+        "checkbox": boolean;
+        "dataKey": string;
+        "metaKeySelection": boolean;
+        "showToggleAll": boolean;
+        "filter": boolean;
+        "group": boolean;
+        "optionDisabled": string;
+        "optionGroupChildren": string;
+        "searchIcon": string;
+        "filterValue": string;
+        "filterBy": string;
+        "filterMatchMode": string;
+        "filterLocale": string;
+        "emptyMessage": string;
+        "emptyFilterMessage": string;
+    }
+    interface AnyMultiselectAttributes {
+        "anyStyle": string;
+        "anyTabIndex": number;
+        "clearIcon": string;
+        "checkbox": boolean;
+        "disabled": boolean;
+        "dropdownIcon": string;
+        "filter": boolean;
+        "group": boolean;
+        "inputId": string;
+        "name": string;
+        "dataKey": string;
+        "placeholder": string;
+        "defaultLabel": string;
+        "optionGroupChildren": string;
+        "optionLabel": string;
+        "optionValue": string;
+        "panelScrollHeight": string;
+        "readonly": boolean;
+        "virtualScroll": boolean;
+        "showAnimation": string;
+        "hideAnimation": string;
+        "value": string;
+        "showToggleAll": boolean;
+        "showClear": boolean;
+    }
+    interface AnyOverlayAttributes {
+        "autoZIndex": boolean;
+        "baseZIndex": string;
+        "target": string;
+        "showAnimation": string;
+        "hideAnimation": string;
+        "visible": boolean;
+    }
+    interface AnyRadioButtonAttributes {
+        "value": string;
+        "inputId": string;
+        "label": string;
+        "anyStyle": string;
+        "styleClass": string;
+        "labelStyleClass": string;
+        "disabled": boolean;
+        "name": string;
+        "anyTabIndex": number;
+    }
+    interface AnyRadioGroupAttributes {
+        "allowEmptySelection": boolean;
+        "name": string;
+        "value": string;
+    }
+    interface AnyRippleEffectAttributes {
+        "type": "bounded" | "unbounded";
+        "anyStyle": string;
+    }
+    interface AnyTabPanelAttributes {
+        "header": string;
+        "disabled": boolean;
+        "selected": boolean;
+    }
+    interface AnyTabViewAttributes {
+        "activeIndex": number;
+        "anyStyle": string;
+        "styleClass": string;
+    }
+    interface AnyVirtualScrollerAttributes {
+        "scrollerHeight": string;
+        "itemSize": number;
+        "lazy": boolean;
+        "rowsPerPage": number;
+        "anyStyle": string;
+        "styleClass": string;
+        "itemTag": string;
+        "contentElemTag": string;
+        "noDataText": string;
+        "delay": number;
+        "contentElemClass": string;
+        "scrollElemClass": string;
+        "itemElemClass": string;
+    }
+    interface AppCodeAttributes {
+        "code": string;
+        "service": string;
+        "selector": string;
+        "hideToggleCode": boolean;
+        "hideCodeSandbox": boolean;
+        "hideStackBlitz": boolean;
+    }
+    interface AppDocAttributes {
+        "docTitle": string;
+        "header": string;
+        "description": string;
+        "githubPage": string;
+    }
+    interface AppDocapisectionAttributes {
+        "header": string;
+        "docs": string;
+    }
+    interface AppDocapitableAttributes {
+        "anyId": string;
+        "label": string;
+        "description": string;
+        "relatedProp": string;
+        "parentTitle": string;
+        "parentDescription": string;
+        "parentId": string;
+        "level": number;
+        "isInterface": boolean;
+    }
+    interface AppDocsectiontextAttributes {
+        "textTitle": string;
+        "textId": string;
+        "level": number;
+        "label": string;
+        "parentTitle": string;
+        "parentDescription": string;
+        "parentId": string;
+    }
+    interface CheckboxBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxDynamicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxGroupAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxLabelAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface CheckboxReadonlyAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownFilterAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownTemplateAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface DropdownVirtualScrollAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberButtonsAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberCurrencyAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberFloatLabelAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberLocaleAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberNumeralAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberPrefixAndSuffixAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputNumberVerticalAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputSwitchBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputSwitchDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputSwitchPreselectionAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextFloatLabelAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextIconsAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaAutoResizeAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface InputTextareaFloatLabelAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxFilterAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxMultipleAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxTemplateAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ListboxVirtualScrollAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+
     interface IntrinsicElements {
-        "any-badge": AnyBadge;
-        "any-badge-overlay": AnyBadgeOverlay;
-        "any-button": AnyButton;
-        "any-checkbox": AnyCheckbox;
-        "any-dropdown": AnyDropdown;
-        "any-input-number": AnyInputNumber;
-        "any-input-switch": AnyInputSwitch;
-        "any-input-text": AnyInputText;
-        "any-input-textarea": AnyInputTextarea;
-        "any-listbox": AnyListbox;
-        "any-multiselect": AnyMultiselect;
-        "any-overlay": AnyOverlay;
-        "any-radio-button": AnyRadioButton;
-        "any-radio-group": AnyRadioGroup;
-        "any-ripple-effect": AnyRippleEffect;
-        "any-tab-panel": AnyTabPanel;
-        "any-tab-view": AnyTabView;
-        "any-virtual-scroller": AnyVirtualScroller;
-        "app-code": AppCode;
+        "any-badge": Omit<AnyBadge, keyof AnyBadgeAttributes> & { [K in keyof AnyBadge & keyof AnyBadgeAttributes]?: AnyBadge[K] } & { [K in keyof AnyBadge & keyof AnyBadgeAttributes as `attr:${K}`]?: AnyBadgeAttributes[K] } & { [K in keyof AnyBadge & keyof AnyBadgeAttributes as `prop:${K}`]?: AnyBadge[K] };
+        "any-badge-overlay": Omit<AnyBadgeOverlay, keyof AnyBadgeOverlayAttributes> & { [K in keyof AnyBadgeOverlay & keyof AnyBadgeOverlayAttributes]?: AnyBadgeOverlay[K] } & { [K in keyof AnyBadgeOverlay & keyof AnyBadgeOverlayAttributes as `attr:${K}`]?: AnyBadgeOverlayAttributes[K] } & { [K in keyof AnyBadgeOverlay & keyof AnyBadgeOverlayAttributes as `prop:${K}`]?: AnyBadgeOverlay[K] };
+        "any-button": Omit<AnyButton, keyof AnyButtonAttributes> & { [K in keyof AnyButton & keyof AnyButtonAttributes]?: AnyButton[K] } & { [K in keyof AnyButton & keyof AnyButtonAttributes as `attr:${K}`]?: AnyButtonAttributes[K] } & { [K in keyof AnyButton & keyof AnyButtonAttributes as `prop:${K}`]?: AnyButton[K] };
+        "any-checkbox": Omit<AnyCheckbox, keyof AnyCheckboxAttributes> & { [K in keyof AnyCheckbox & keyof AnyCheckboxAttributes]?: AnyCheckbox[K] } & { [K in keyof AnyCheckbox & keyof AnyCheckboxAttributes as `attr:${K}`]?: AnyCheckboxAttributes[K] } & { [K in keyof AnyCheckbox & keyof AnyCheckboxAttributes as `prop:${K}`]?: AnyCheckbox[K] };
+        "any-dropdown": Omit<AnyDropdown, keyof AnyDropdownAttributes> & { [K in keyof AnyDropdown & keyof AnyDropdownAttributes]?: AnyDropdown[K] } & { [K in keyof AnyDropdown & keyof AnyDropdownAttributes as `attr:${K}`]?: AnyDropdownAttributes[K] } & { [K in keyof AnyDropdown & keyof AnyDropdownAttributes as `prop:${K}`]?: AnyDropdown[K] };
+        "any-input-number": Omit<AnyInputNumber, keyof AnyInputNumberAttributes> & { [K in keyof AnyInputNumber & keyof AnyInputNumberAttributes]?: AnyInputNumber[K] } & { [K in keyof AnyInputNumber & keyof AnyInputNumberAttributes as `attr:${K}`]?: AnyInputNumberAttributes[K] } & { [K in keyof AnyInputNumber & keyof AnyInputNumberAttributes as `prop:${K}`]?: AnyInputNumber[K] };
+        "any-input-switch": Omit<AnyInputSwitch, keyof AnyInputSwitchAttributes> & { [K in keyof AnyInputSwitch & keyof AnyInputSwitchAttributes]?: AnyInputSwitch[K] } & { [K in keyof AnyInputSwitch & keyof AnyInputSwitchAttributes as `attr:${K}`]?: AnyInputSwitchAttributes[K] } & { [K in keyof AnyInputSwitch & keyof AnyInputSwitchAttributes as `prop:${K}`]?: AnyInputSwitch[K] };
+        "any-input-text": Omit<AnyInputText, keyof AnyInputTextAttributes> & { [K in keyof AnyInputText & keyof AnyInputTextAttributes]?: AnyInputText[K] } & { [K in keyof AnyInputText & keyof AnyInputTextAttributes as `attr:${K}`]?: AnyInputTextAttributes[K] } & { [K in keyof AnyInputText & keyof AnyInputTextAttributes as `prop:${K}`]?: AnyInputText[K] };
+        "any-input-textarea": Omit<AnyInputTextarea, keyof AnyInputTextareaAttributes> & { [K in keyof AnyInputTextarea & keyof AnyInputTextareaAttributes]?: AnyInputTextarea[K] } & { [K in keyof AnyInputTextarea & keyof AnyInputTextareaAttributes as `attr:${K}`]?: AnyInputTextareaAttributes[K] } & { [K in keyof AnyInputTextarea & keyof AnyInputTextareaAttributes as `prop:${K}`]?: AnyInputTextarea[K] };
+        "any-listbox": Omit<AnyListbox, keyof AnyListboxAttributes> & { [K in keyof AnyListbox & keyof AnyListboxAttributes]?: AnyListbox[K] } & { [K in keyof AnyListbox & keyof AnyListboxAttributes as `attr:${K}`]?: AnyListboxAttributes[K] } & { [K in keyof AnyListbox & keyof AnyListboxAttributes as `prop:${K}`]?: AnyListbox[K] };
+        "any-multiselect": Omit<AnyMultiselect, keyof AnyMultiselectAttributes> & { [K in keyof AnyMultiselect & keyof AnyMultiselectAttributes]?: AnyMultiselect[K] } & { [K in keyof AnyMultiselect & keyof AnyMultiselectAttributes as `attr:${K}`]?: AnyMultiselectAttributes[K] } & { [K in keyof AnyMultiselect & keyof AnyMultiselectAttributes as `prop:${K}`]?: AnyMultiselect[K] };
+        "any-overlay": Omit<AnyOverlay, keyof AnyOverlayAttributes> & { [K in keyof AnyOverlay & keyof AnyOverlayAttributes]?: AnyOverlay[K] } & { [K in keyof AnyOverlay & keyof AnyOverlayAttributes as `attr:${K}`]?: AnyOverlayAttributes[K] } & { [K in keyof AnyOverlay & keyof AnyOverlayAttributes as `prop:${K}`]?: AnyOverlay[K] };
+        "any-radio-button": Omit<AnyRadioButton, keyof AnyRadioButtonAttributes> & { [K in keyof AnyRadioButton & keyof AnyRadioButtonAttributes]?: AnyRadioButton[K] } & { [K in keyof AnyRadioButton & keyof AnyRadioButtonAttributes as `attr:${K}`]?: AnyRadioButtonAttributes[K] } & { [K in keyof AnyRadioButton & keyof AnyRadioButtonAttributes as `prop:${K}`]?: AnyRadioButton[K] };
+        "any-radio-group": Omit<AnyRadioGroup, keyof AnyRadioGroupAttributes> & { [K in keyof AnyRadioGroup & keyof AnyRadioGroupAttributes]?: AnyRadioGroup[K] } & { [K in keyof AnyRadioGroup & keyof AnyRadioGroupAttributes as `attr:${K}`]?: AnyRadioGroupAttributes[K] } & { [K in keyof AnyRadioGroup & keyof AnyRadioGroupAttributes as `prop:${K}`]?: AnyRadioGroup[K] };
+        "any-ripple-effect": Omit<AnyRippleEffect, keyof AnyRippleEffectAttributes> & { [K in keyof AnyRippleEffect & keyof AnyRippleEffectAttributes]?: AnyRippleEffect[K] } & { [K in keyof AnyRippleEffect & keyof AnyRippleEffectAttributes as `attr:${K}`]?: AnyRippleEffectAttributes[K] } & { [K in keyof AnyRippleEffect & keyof AnyRippleEffectAttributes as `prop:${K}`]?: AnyRippleEffect[K] };
+        "any-tab-panel": Omit<AnyTabPanel, keyof AnyTabPanelAttributes> & { [K in keyof AnyTabPanel & keyof AnyTabPanelAttributes]?: AnyTabPanel[K] } & { [K in keyof AnyTabPanel & keyof AnyTabPanelAttributes as `attr:${K}`]?: AnyTabPanelAttributes[K] } & { [K in keyof AnyTabPanel & keyof AnyTabPanelAttributes as `prop:${K}`]?: AnyTabPanel[K] };
+        "any-tab-view": Omit<AnyTabView, keyof AnyTabViewAttributes> & { [K in keyof AnyTabView & keyof AnyTabViewAttributes]?: AnyTabView[K] } & { [K in keyof AnyTabView & keyof AnyTabViewAttributes as `attr:${K}`]?: AnyTabViewAttributes[K] } & { [K in keyof AnyTabView & keyof AnyTabViewAttributes as `prop:${K}`]?: AnyTabView[K] };
+        "any-virtual-scroller": Omit<AnyVirtualScroller, keyof AnyVirtualScrollerAttributes> & { [K in keyof AnyVirtualScroller & keyof AnyVirtualScrollerAttributes]?: AnyVirtualScroller[K] } & { [K in keyof AnyVirtualScroller & keyof AnyVirtualScrollerAttributes as `attr:${K}`]?: AnyVirtualScrollerAttributes[K] } & { [K in keyof AnyVirtualScroller & keyof AnyVirtualScrollerAttributes as `prop:${K}`]?: AnyVirtualScroller[K] };
+        "app-code": Omit<AppCode, keyof AppCodeAttributes> & { [K in keyof AppCode & keyof AppCodeAttributes]?: AppCode[K] } & { [K in keyof AppCode & keyof AppCodeAttributes as `attr:${K}`]?: AppCodeAttributes[K] } & { [K in keyof AppCode & keyof AppCodeAttributes as `prop:${K}`]?: AppCode[K] } & OneOf<"code", AppCode["code"], AppCodeAttributes["code"]> & OneOf<"selector", AppCode["selector"], AppCodeAttributes["selector"]>;
         "app-config": AppConfig;
-        "app-doc": AppDoc;
-        "app-docapisection": AppDocapisection;
-        "app-docapitable": AppDocapitable;
+        "app-doc": Omit<AppDoc, keyof AppDocAttributes> & { [K in keyof AppDoc & keyof AppDocAttributes]?: AppDoc[K] } & { [K in keyof AppDoc & keyof AppDocAttributes as `attr:${K}`]?: AppDocAttributes[K] } & { [K in keyof AppDoc & keyof AppDocAttributes as `prop:${K}`]?: AppDoc[K] } & OneOf<"header", AppDoc["header"], AppDocAttributes["header"]> & OneOf<"description", AppDoc["description"], AppDocAttributes["description"]> & OneOf<"githubPage", AppDoc["githubPage"], AppDocAttributes["githubPage"]>;
+        "app-docapisection": Omit<AppDocapisection, keyof AppDocapisectionAttributes> & { [K in keyof AppDocapisection & keyof AppDocapisectionAttributes]?: AppDocapisection[K] } & { [K in keyof AppDocapisection & keyof AppDocapisectionAttributes as `attr:${K}`]?: AppDocapisectionAttributes[K] } & { [K in keyof AppDocapisection & keyof AppDocapisectionAttributes as `prop:${K}`]?: AppDocapisection[K] };
+        "app-docapitable": Omit<AppDocapitable, keyof AppDocapitableAttributes> & { [K in keyof AppDocapitable & keyof AppDocapitableAttributes]?: AppDocapitable[K] } & { [K in keyof AppDocapitable & keyof AppDocapitableAttributes as `attr:${K}`]?: AppDocapitableAttributes[K] } & { [K in keyof AppDocapitable & keyof AppDocapitableAttributes as `prop:${K}`]?: AppDocapitable[K] };
         "app-docsection": AppDocsection;
         "app-docsection-nav": AppDocsectionNav;
-        "app-docsectiontext": AppDocsectiontext;
-        "checkbox-basic": CheckboxBasic;
-        "checkbox-disabled": CheckboxDisabled;
-        "checkbox-dynamic": CheckboxDynamic;
-        "checkbox-group": CheckboxGroup;
-        "checkbox-label": CheckboxLabel;
-        "checkbox-readonly": CheckboxReadonly;
-        "dropdown-basic": DropdownBasic;
-        "dropdown-disabled": DropdownDisabled;
-        "dropdown-filter": DropdownFilter;
-        "dropdown-template": DropdownTemplate;
-        "dropdown-virtual-scroll": DropdownVirtualScroll;
-        "input-number-buttons": InputNumberButtons;
-        "input-number-currency": InputNumberCurrency;
-        "input-number-disabled": InputNumberDisabled;
-        "input-number-float-label": InputNumberFloatLabel;
-        "input-number-locale": InputNumberLocale;
-        "input-number-numeral": InputNumberNumeral;
-        "input-number-prefix-and-suffix": InputNumberPrefixAndSuffix;
-        "input-number-vertical": InputNumberVertical;
-        "input-switch-basic": InputSwitchBasic;
-        "input-switch-disabled": InputSwitchDisabled;
-        "input-switch-preselection": InputSwitchPreselection;
-        "input-text-basic": InputTextBasic;
-        "input-text-disabled": InputTextDisabled;
-        "input-text-float-label": InputTextFloatLabel;
-        "input-text-icons": InputTextIcons;
-        "input-textarea-auto-resize": InputTextareaAutoResize;
-        "input-textarea-basic": InputTextareaBasic;
-        "input-textarea-disabled": InputTextareaDisabled;
-        "input-textarea-float-label": InputTextareaFloatLabel;
-        "listbox-basic": ListboxBasic;
-        "listbox-disabled": ListboxDisabled;
-        "listbox-filter": ListboxFilter;
-        "listbox-multiple": ListboxMultiple;
-        "listbox-template": ListboxTemplate;
-        "listbox-virtual-scroll": ListboxVirtualScroll;
+        "app-docsectiontext": Omit<AppDocsectiontext, keyof AppDocsectiontextAttributes> & { [K in keyof AppDocsectiontext & keyof AppDocsectiontextAttributes]?: AppDocsectiontext[K] } & { [K in keyof AppDocsectiontext & keyof AppDocsectiontextAttributes as `attr:${K}`]?: AppDocsectiontextAttributes[K] } & { [K in keyof AppDocsectiontext & keyof AppDocsectiontextAttributes as `prop:${K}`]?: AppDocsectiontext[K] };
+        "checkbox-basic": Omit<CheckboxBasic, keyof CheckboxBasicAttributes> & { [K in keyof CheckboxBasic & keyof CheckboxBasicAttributes]?: CheckboxBasic[K] } & { [K in keyof CheckboxBasic & keyof CheckboxBasicAttributes as `attr:${K}`]?: CheckboxBasicAttributes[K] } & { [K in keyof CheckboxBasic & keyof CheckboxBasicAttributes as `prop:${K}`]?: CheckboxBasic[K] };
+        "checkbox-disabled": Omit<CheckboxDisabled, keyof CheckboxDisabledAttributes> & { [K in keyof CheckboxDisabled & keyof CheckboxDisabledAttributes]?: CheckboxDisabled[K] } & { [K in keyof CheckboxDisabled & keyof CheckboxDisabledAttributes as `attr:${K}`]?: CheckboxDisabledAttributes[K] } & { [K in keyof CheckboxDisabled & keyof CheckboxDisabledAttributes as `prop:${K}`]?: CheckboxDisabled[K] };
+        "checkbox-dynamic": Omit<CheckboxDynamic, keyof CheckboxDynamicAttributes> & { [K in keyof CheckboxDynamic & keyof CheckboxDynamicAttributes]?: CheckboxDynamic[K] } & { [K in keyof CheckboxDynamic & keyof CheckboxDynamicAttributes as `attr:${K}`]?: CheckboxDynamicAttributes[K] } & { [K in keyof CheckboxDynamic & keyof CheckboxDynamicAttributes as `prop:${K}`]?: CheckboxDynamic[K] };
+        "checkbox-group": Omit<CheckboxGroup, keyof CheckboxGroupAttributes> & { [K in keyof CheckboxGroup & keyof CheckboxGroupAttributes]?: CheckboxGroup[K] } & { [K in keyof CheckboxGroup & keyof CheckboxGroupAttributes as `attr:${K}`]?: CheckboxGroupAttributes[K] } & { [K in keyof CheckboxGroup & keyof CheckboxGroupAttributes as `prop:${K}`]?: CheckboxGroup[K] };
+        "checkbox-label": Omit<CheckboxLabel, keyof CheckboxLabelAttributes> & { [K in keyof CheckboxLabel & keyof CheckboxLabelAttributes]?: CheckboxLabel[K] } & { [K in keyof CheckboxLabel & keyof CheckboxLabelAttributes as `attr:${K}`]?: CheckboxLabelAttributes[K] } & { [K in keyof CheckboxLabel & keyof CheckboxLabelAttributes as `prop:${K}`]?: CheckboxLabel[K] };
+        "checkbox-readonly": Omit<CheckboxReadonly, keyof CheckboxReadonlyAttributes> & { [K in keyof CheckboxReadonly & keyof CheckboxReadonlyAttributes]?: CheckboxReadonly[K] } & { [K in keyof CheckboxReadonly & keyof CheckboxReadonlyAttributes as `attr:${K}`]?: CheckboxReadonlyAttributes[K] } & { [K in keyof CheckboxReadonly & keyof CheckboxReadonlyAttributes as `prop:${K}`]?: CheckboxReadonly[K] };
+        "dropdown-basic": Omit<DropdownBasic, keyof DropdownBasicAttributes> & { [K in keyof DropdownBasic & keyof DropdownBasicAttributes]?: DropdownBasic[K] } & { [K in keyof DropdownBasic & keyof DropdownBasicAttributes as `attr:${K}`]?: DropdownBasicAttributes[K] } & { [K in keyof DropdownBasic & keyof DropdownBasicAttributes as `prop:${K}`]?: DropdownBasic[K] };
+        "dropdown-disabled": Omit<DropdownDisabled, keyof DropdownDisabledAttributes> & { [K in keyof DropdownDisabled & keyof DropdownDisabledAttributes]?: DropdownDisabled[K] } & { [K in keyof DropdownDisabled & keyof DropdownDisabledAttributes as `attr:${K}`]?: DropdownDisabledAttributes[K] } & { [K in keyof DropdownDisabled & keyof DropdownDisabledAttributes as `prop:${K}`]?: DropdownDisabled[K] };
+        "dropdown-filter": Omit<DropdownFilter, keyof DropdownFilterAttributes> & { [K in keyof DropdownFilter & keyof DropdownFilterAttributes]?: DropdownFilter[K] } & { [K in keyof DropdownFilter & keyof DropdownFilterAttributes as `attr:${K}`]?: DropdownFilterAttributes[K] } & { [K in keyof DropdownFilter & keyof DropdownFilterAttributes as `prop:${K}`]?: DropdownFilter[K] };
+        "dropdown-template": Omit<DropdownTemplate, keyof DropdownTemplateAttributes> & { [K in keyof DropdownTemplate & keyof DropdownTemplateAttributes]?: DropdownTemplate[K] } & { [K in keyof DropdownTemplate & keyof DropdownTemplateAttributes as `attr:${K}`]?: DropdownTemplateAttributes[K] } & { [K in keyof DropdownTemplate & keyof DropdownTemplateAttributes as `prop:${K}`]?: DropdownTemplate[K] };
+        "dropdown-virtual-scroll": Omit<DropdownVirtualScroll, keyof DropdownVirtualScrollAttributes> & { [K in keyof DropdownVirtualScroll & keyof DropdownVirtualScrollAttributes]?: DropdownVirtualScroll[K] } & { [K in keyof DropdownVirtualScroll & keyof DropdownVirtualScrollAttributes as `attr:${K}`]?: DropdownVirtualScrollAttributes[K] } & { [K in keyof DropdownVirtualScroll & keyof DropdownVirtualScrollAttributes as `prop:${K}`]?: DropdownVirtualScroll[K] };
+        "input-number-buttons": Omit<InputNumberButtons, keyof InputNumberButtonsAttributes> & { [K in keyof InputNumberButtons & keyof InputNumberButtonsAttributes]?: InputNumberButtons[K] } & { [K in keyof InputNumberButtons & keyof InputNumberButtonsAttributes as `attr:${K}`]?: InputNumberButtonsAttributes[K] } & { [K in keyof InputNumberButtons & keyof InputNumberButtonsAttributes as `prop:${K}`]?: InputNumberButtons[K] };
+        "input-number-currency": Omit<InputNumberCurrency, keyof InputNumberCurrencyAttributes> & { [K in keyof InputNumberCurrency & keyof InputNumberCurrencyAttributes]?: InputNumberCurrency[K] } & { [K in keyof InputNumberCurrency & keyof InputNumberCurrencyAttributes as `attr:${K}`]?: InputNumberCurrencyAttributes[K] } & { [K in keyof InputNumberCurrency & keyof InputNumberCurrencyAttributes as `prop:${K}`]?: InputNumberCurrency[K] };
+        "input-number-disabled": Omit<InputNumberDisabled, keyof InputNumberDisabledAttributes> & { [K in keyof InputNumberDisabled & keyof InputNumberDisabledAttributes]?: InputNumberDisabled[K] } & { [K in keyof InputNumberDisabled & keyof InputNumberDisabledAttributes as `attr:${K}`]?: InputNumberDisabledAttributes[K] } & { [K in keyof InputNumberDisabled & keyof InputNumberDisabledAttributes as `prop:${K}`]?: InputNumberDisabled[K] };
+        "input-number-float-label": Omit<InputNumberFloatLabel, keyof InputNumberFloatLabelAttributes> & { [K in keyof InputNumberFloatLabel & keyof InputNumberFloatLabelAttributes]?: InputNumberFloatLabel[K] } & { [K in keyof InputNumberFloatLabel & keyof InputNumberFloatLabelAttributes as `attr:${K}`]?: InputNumberFloatLabelAttributes[K] } & { [K in keyof InputNumberFloatLabel & keyof InputNumberFloatLabelAttributes as `prop:${K}`]?: InputNumberFloatLabel[K] };
+        "input-number-locale": Omit<InputNumberLocale, keyof InputNumberLocaleAttributes> & { [K in keyof InputNumberLocale & keyof InputNumberLocaleAttributes]?: InputNumberLocale[K] } & { [K in keyof InputNumberLocale & keyof InputNumberLocaleAttributes as `attr:${K}`]?: InputNumberLocaleAttributes[K] } & { [K in keyof InputNumberLocale & keyof InputNumberLocaleAttributes as `prop:${K}`]?: InputNumberLocale[K] };
+        "input-number-numeral": Omit<InputNumberNumeral, keyof InputNumberNumeralAttributes> & { [K in keyof InputNumberNumeral & keyof InputNumberNumeralAttributes]?: InputNumberNumeral[K] } & { [K in keyof InputNumberNumeral & keyof InputNumberNumeralAttributes as `attr:${K}`]?: InputNumberNumeralAttributes[K] } & { [K in keyof InputNumberNumeral & keyof InputNumberNumeralAttributes as `prop:${K}`]?: InputNumberNumeral[K] };
+        "input-number-prefix-and-suffix": Omit<InputNumberPrefixAndSuffix, keyof InputNumberPrefixAndSuffixAttributes> & { [K in keyof InputNumberPrefixAndSuffix & keyof InputNumberPrefixAndSuffixAttributes]?: InputNumberPrefixAndSuffix[K] } & { [K in keyof InputNumberPrefixAndSuffix & keyof InputNumberPrefixAndSuffixAttributes as `attr:${K}`]?: InputNumberPrefixAndSuffixAttributes[K] } & { [K in keyof InputNumberPrefixAndSuffix & keyof InputNumberPrefixAndSuffixAttributes as `prop:${K}`]?: InputNumberPrefixAndSuffix[K] };
+        "input-number-vertical": Omit<InputNumberVertical, keyof InputNumberVerticalAttributes> & { [K in keyof InputNumberVertical & keyof InputNumberVerticalAttributes]?: InputNumberVertical[K] } & { [K in keyof InputNumberVertical & keyof InputNumberVerticalAttributes as `attr:${K}`]?: InputNumberVerticalAttributes[K] } & { [K in keyof InputNumberVertical & keyof InputNumberVerticalAttributes as `prop:${K}`]?: InputNumberVertical[K] };
+        "input-switch-basic": Omit<InputSwitchBasic, keyof InputSwitchBasicAttributes> & { [K in keyof InputSwitchBasic & keyof InputSwitchBasicAttributes]?: InputSwitchBasic[K] } & { [K in keyof InputSwitchBasic & keyof InputSwitchBasicAttributes as `attr:${K}`]?: InputSwitchBasicAttributes[K] } & { [K in keyof InputSwitchBasic & keyof InputSwitchBasicAttributes as `prop:${K}`]?: InputSwitchBasic[K] };
+        "input-switch-disabled": Omit<InputSwitchDisabled, keyof InputSwitchDisabledAttributes> & { [K in keyof InputSwitchDisabled & keyof InputSwitchDisabledAttributes]?: InputSwitchDisabled[K] } & { [K in keyof InputSwitchDisabled & keyof InputSwitchDisabledAttributes as `attr:${K}`]?: InputSwitchDisabledAttributes[K] } & { [K in keyof InputSwitchDisabled & keyof InputSwitchDisabledAttributes as `prop:${K}`]?: InputSwitchDisabled[K] };
+        "input-switch-preselection": Omit<InputSwitchPreselection, keyof InputSwitchPreselectionAttributes> & { [K in keyof InputSwitchPreselection & keyof InputSwitchPreselectionAttributes]?: InputSwitchPreselection[K] } & { [K in keyof InputSwitchPreselection & keyof InputSwitchPreselectionAttributes as `attr:${K}`]?: InputSwitchPreselectionAttributes[K] } & { [K in keyof InputSwitchPreselection & keyof InputSwitchPreselectionAttributes as `prop:${K}`]?: InputSwitchPreselection[K] };
+        "input-text-basic": Omit<InputTextBasic, keyof InputTextBasicAttributes> & { [K in keyof InputTextBasic & keyof InputTextBasicAttributes]?: InputTextBasic[K] } & { [K in keyof InputTextBasic & keyof InputTextBasicAttributes as `attr:${K}`]?: InputTextBasicAttributes[K] } & { [K in keyof InputTextBasic & keyof InputTextBasicAttributes as `prop:${K}`]?: InputTextBasic[K] };
+        "input-text-disabled": Omit<InputTextDisabled, keyof InputTextDisabledAttributes> & { [K in keyof InputTextDisabled & keyof InputTextDisabledAttributes]?: InputTextDisabled[K] } & { [K in keyof InputTextDisabled & keyof InputTextDisabledAttributes as `attr:${K}`]?: InputTextDisabledAttributes[K] } & { [K in keyof InputTextDisabled & keyof InputTextDisabledAttributes as `prop:${K}`]?: InputTextDisabled[K] };
+        "input-text-float-label": Omit<InputTextFloatLabel, keyof InputTextFloatLabelAttributes> & { [K in keyof InputTextFloatLabel & keyof InputTextFloatLabelAttributes]?: InputTextFloatLabel[K] } & { [K in keyof InputTextFloatLabel & keyof InputTextFloatLabelAttributes as `attr:${K}`]?: InputTextFloatLabelAttributes[K] } & { [K in keyof InputTextFloatLabel & keyof InputTextFloatLabelAttributes as `prop:${K}`]?: InputTextFloatLabel[K] };
+        "input-text-icons": Omit<InputTextIcons, keyof InputTextIconsAttributes> & { [K in keyof InputTextIcons & keyof InputTextIconsAttributes]?: InputTextIcons[K] } & { [K in keyof InputTextIcons & keyof InputTextIconsAttributes as `attr:${K}`]?: InputTextIconsAttributes[K] } & { [K in keyof InputTextIcons & keyof InputTextIconsAttributes as `prop:${K}`]?: InputTextIcons[K] };
+        "input-textarea-auto-resize": Omit<InputTextareaAutoResize, keyof InputTextareaAutoResizeAttributes> & { [K in keyof InputTextareaAutoResize & keyof InputTextareaAutoResizeAttributes]?: InputTextareaAutoResize[K] } & { [K in keyof InputTextareaAutoResize & keyof InputTextareaAutoResizeAttributes as `attr:${K}`]?: InputTextareaAutoResizeAttributes[K] } & { [K in keyof InputTextareaAutoResize & keyof InputTextareaAutoResizeAttributes as `prop:${K}`]?: InputTextareaAutoResize[K] };
+        "input-textarea-basic": Omit<InputTextareaBasic, keyof InputTextareaBasicAttributes> & { [K in keyof InputTextareaBasic & keyof InputTextareaBasicAttributes]?: InputTextareaBasic[K] } & { [K in keyof InputTextareaBasic & keyof InputTextareaBasicAttributes as `attr:${K}`]?: InputTextareaBasicAttributes[K] } & { [K in keyof InputTextareaBasic & keyof InputTextareaBasicAttributes as `prop:${K}`]?: InputTextareaBasic[K] };
+        "input-textarea-disabled": Omit<InputTextareaDisabled, keyof InputTextareaDisabledAttributes> & { [K in keyof InputTextareaDisabled & keyof InputTextareaDisabledAttributes]?: InputTextareaDisabled[K] } & { [K in keyof InputTextareaDisabled & keyof InputTextareaDisabledAttributes as `attr:${K}`]?: InputTextareaDisabledAttributes[K] } & { [K in keyof InputTextareaDisabled & keyof InputTextareaDisabledAttributes as `prop:${K}`]?: InputTextareaDisabled[K] };
+        "input-textarea-float-label": Omit<InputTextareaFloatLabel, keyof InputTextareaFloatLabelAttributes> & { [K in keyof InputTextareaFloatLabel & keyof InputTextareaFloatLabelAttributes]?: InputTextareaFloatLabel[K] } & { [K in keyof InputTextareaFloatLabel & keyof InputTextareaFloatLabelAttributes as `attr:${K}`]?: InputTextareaFloatLabelAttributes[K] } & { [K in keyof InputTextareaFloatLabel & keyof InputTextareaFloatLabelAttributes as `prop:${K}`]?: InputTextareaFloatLabel[K] };
+        "listbox-basic": Omit<ListboxBasic, keyof ListboxBasicAttributes> & { [K in keyof ListboxBasic & keyof ListboxBasicAttributes]?: ListboxBasic[K] } & { [K in keyof ListboxBasic & keyof ListboxBasicAttributes as `attr:${K}`]?: ListboxBasicAttributes[K] } & { [K in keyof ListboxBasic & keyof ListboxBasicAttributes as `prop:${K}`]?: ListboxBasic[K] };
+        "listbox-disabled": Omit<ListboxDisabled, keyof ListboxDisabledAttributes> & { [K in keyof ListboxDisabled & keyof ListboxDisabledAttributes]?: ListboxDisabled[K] } & { [K in keyof ListboxDisabled & keyof ListboxDisabledAttributes as `attr:${K}`]?: ListboxDisabledAttributes[K] } & { [K in keyof ListboxDisabled & keyof ListboxDisabledAttributes as `prop:${K}`]?: ListboxDisabled[K] };
+        "listbox-filter": Omit<ListboxFilter, keyof ListboxFilterAttributes> & { [K in keyof ListboxFilter & keyof ListboxFilterAttributes]?: ListboxFilter[K] } & { [K in keyof ListboxFilter & keyof ListboxFilterAttributes as `attr:${K}`]?: ListboxFilterAttributes[K] } & { [K in keyof ListboxFilter & keyof ListboxFilterAttributes as `prop:${K}`]?: ListboxFilter[K] };
+        "listbox-multiple": Omit<ListboxMultiple, keyof ListboxMultipleAttributes> & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes]?: ListboxMultiple[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `attr:${K}`]?: ListboxMultipleAttributes[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `prop:${K}`]?: ListboxMultiple[K] };
+        "listbox-template": Omit<ListboxTemplate, keyof ListboxTemplateAttributes> & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes]?: ListboxTemplate[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `attr:${K}`]?: ListboxTemplateAttributes[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `prop:${K}`]?: ListboxTemplate[K] };
+        "listbox-virtual-scroll": Omit<ListboxVirtualScroll, keyof ListboxVirtualScrollAttributes> & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes]?: ListboxVirtualScroll[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `attr:${K}`]?: ListboxVirtualScrollAttributes[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `prop:${K}`]?: ListboxVirtualScroll[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "any-badge": LocalJSX.AnyBadge & JSXBase.HTMLAttributes<HTMLAnyBadgeElement>;
-            "any-badge-overlay": LocalJSX.AnyBadgeOverlay & JSXBase.HTMLAttributes<HTMLAnyBadgeOverlayElement>;
-            "any-button": LocalJSX.AnyButton & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
+            "any-badge": LocalJSX.IntrinsicElements["any-badge"] & JSXBase.HTMLAttributes<HTMLAnyBadgeElement>;
+            "any-badge-overlay": LocalJSX.IntrinsicElements["any-badge-overlay"] & JSXBase.HTMLAttributes<HTMLAnyBadgeOverlayElement>;
+            "any-button": LocalJSX.IntrinsicElements["any-button"] & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             /**
              * Checkbox is an extension to the standard checkbox element with theming.
              */
-            "any-checkbox": LocalJSX.AnyCheckbox & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
+            "any-checkbox": LocalJSX.IntrinsicElements["any-checkbox"] & JSXBase.HTMLAttributes<HTMLAnyCheckboxElement>;
             /**
              * Dropdown, also known as Select, is used to choose an item from a collection of options.
              */
-            "any-dropdown": LocalJSX.AnyDropdown & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
+            "any-dropdown": LocalJSX.IntrinsicElements["any-dropdown"] & JSXBase.HTMLAttributes<HTMLAnyDropdownElement>;
             /**
              * InputNumber is a component for numeric input, allowing users to input numeric values.
              * @tag any-input-number - The custom tag for this component.
              * @styleUrl input-number.scss - The stylesheet associated with this component.
              * @scoped true - Indicates that the styles are scoped to this component only.
              */
-            "any-input-number": LocalJSX.AnyInputNumber & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
+            "any-input-number": LocalJSX.IntrinsicElements["any-input-number"] & JSXBase.HTMLAttributes<HTMLAnyInputNumberElement>;
             /**
              * InputSwitch is used to select a boolean value.
              */
-            "any-input-switch": LocalJSX.AnyInputSwitch & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
+            "any-input-switch": LocalJSX.IntrinsicElements["any-input-switch"] & JSXBase.HTMLAttributes<HTMLAnyInputSwitchElement>;
             /**
              * The InputText component is a wrapper to the HTML input element with custom styling and additional
              * functionality.
              */
-            "any-input-text": LocalJSX.AnyInputText & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
+            "any-input-text": LocalJSX.IntrinsicElements["any-input-text"] & JSXBase.HTMLAttributes<HTMLAnyInputTextElement>;
             /**
              * The InputTextarea component is a wrapper to the HTML textarea element with custom styling and additional functionality.
              */
-            "any-input-textarea": LocalJSX.AnyInputTextarea & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
+            "any-input-textarea": LocalJSX.IntrinsicElements["any-input-textarea"] & JSXBase.HTMLAttributes<HTMLAnyInputTextareaElement>;
             /**
              * ListBox is used to select one or more values from a list of items.
              */
-            "any-listbox": LocalJSX.AnyListbox & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
-            "any-multiselect": LocalJSX.AnyMultiselect & JSXBase.HTMLAttributes<HTMLAnyMultiselectElement>;
-            "any-overlay": LocalJSX.AnyOverlay & JSXBase.HTMLAttributes<HTMLAnyOverlayElement>;
-            "any-radio-button": LocalJSX.AnyRadioButton & JSXBase.HTMLAttributes<HTMLAnyRadioButtonElement>;
-            "any-radio-group": LocalJSX.AnyRadioGroup & JSXBase.HTMLAttributes<HTMLAnyRadioGroupElement>;
-            "any-ripple-effect": LocalJSX.AnyRippleEffect & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;
-            "any-tab-panel": LocalJSX.AnyTabPanel & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
-            "any-tab-view": LocalJSX.AnyTabView & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;
-            "any-virtual-scroller": LocalJSX.AnyVirtualScroller & JSXBase.HTMLAttributes<HTMLAnyVirtualScrollerElement>;
-            "app-code": LocalJSX.AppCode & JSXBase.HTMLAttributes<HTMLAppCodeElement>;
-            "app-config": LocalJSX.AppConfig & JSXBase.HTMLAttributes<HTMLAppConfigElement>;
-            "app-doc": LocalJSX.AppDoc & JSXBase.HTMLAttributes<HTMLAppDocElement>;
-            "app-docapisection": LocalJSX.AppDocapisection & JSXBase.HTMLAttributes<HTMLAppDocapisectionElement>;
-            "app-docapitable": LocalJSX.AppDocapitable & JSXBase.HTMLAttributes<HTMLAppDocapitableElement>;
-            "app-docsection": LocalJSX.AppDocsection & JSXBase.HTMLAttributes<HTMLAppDocsectionElement>;
-            "app-docsection-nav": LocalJSX.AppDocsectionNav & JSXBase.HTMLAttributes<HTMLAppDocsectionNavElement>;
-            "app-docsectiontext": LocalJSX.AppDocsectiontext & JSXBase.HTMLAttributes<HTMLAppDocsectiontextElement>;
-            "checkbox-basic": LocalJSX.CheckboxBasic & JSXBase.HTMLAttributes<HTMLCheckboxBasicElement>;
-            "checkbox-disabled": LocalJSX.CheckboxDisabled & JSXBase.HTMLAttributes<HTMLCheckboxDisabledElement>;
-            "checkbox-dynamic": LocalJSX.CheckboxDynamic & JSXBase.HTMLAttributes<HTMLCheckboxDynamicElement>;
-            "checkbox-group": LocalJSX.CheckboxGroup & JSXBase.HTMLAttributes<HTMLCheckboxGroupElement>;
-            "checkbox-label": LocalJSX.CheckboxLabel & JSXBase.HTMLAttributes<HTMLCheckboxLabelElement>;
-            "checkbox-readonly": LocalJSX.CheckboxReadonly & JSXBase.HTMLAttributes<HTMLCheckboxReadonlyElement>;
-            "dropdown-basic": LocalJSX.DropdownBasic & JSXBase.HTMLAttributes<HTMLDropdownBasicElement>;
-            "dropdown-disabled": LocalJSX.DropdownDisabled & JSXBase.HTMLAttributes<HTMLDropdownDisabledElement>;
-            "dropdown-filter": LocalJSX.DropdownFilter & JSXBase.HTMLAttributes<HTMLDropdownFilterElement>;
-            "dropdown-template": LocalJSX.DropdownTemplate & JSXBase.HTMLAttributes<HTMLDropdownTemplateElement>;
-            "dropdown-virtual-scroll": LocalJSX.DropdownVirtualScroll & JSXBase.HTMLAttributes<HTMLDropdownVirtualScrollElement>;
-            "input-number-buttons": LocalJSX.InputNumberButtons & JSXBase.HTMLAttributes<HTMLInputNumberButtonsElement>;
-            "input-number-currency": LocalJSX.InputNumberCurrency & JSXBase.HTMLAttributes<HTMLInputNumberCurrencyElement>;
-            "input-number-disabled": LocalJSX.InputNumberDisabled & JSXBase.HTMLAttributes<HTMLInputNumberDisabledElement>;
-            "input-number-float-label": LocalJSX.InputNumberFloatLabel & JSXBase.HTMLAttributes<HTMLInputNumberFloatLabelElement>;
-            "input-number-locale": LocalJSX.InputNumberLocale & JSXBase.HTMLAttributes<HTMLInputNumberLocaleElement>;
-            "input-number-numeral": LocalJSX.InputNumberNumeral & JSXBase.HTMLAttributes<HTMLInputNumberNumeralElement>;
-            "input-number-prefix-and-suffix": LocalJSX.InputNumberPrefixAndSuffix & JSXBase.HTMLAttributes<HTMLInputNumberPrefixAndSuffixElement>;
-            "input-number-vertical": LocalJSX.InputNumberVertical & JSXBase.HTMLAttributes<HTMLInputNumberVerticalElement>;
-            "input-switch-basic": LocalJSX.InputSwitchBasic & JSXBase.HTMLAttributes<HTMLInputSwitchBasicElement>;
-            "input-switch-disabled": LocalJSX.InputSwitchDisabled & JSXBase.HTMLAttributes<HTMLInputSwitchDisabledElement>;
-            "input-switch-preselection": LocalJSX.InputSwitchPreselection & JSXBase.HTMLAttributes<HTMLInputSwitchPreselectionElement>;
-            "input-text-basic": LocalJSX.InputTextBasic & JSXBase.HTMLAttributes<HTMLInputTextBasicElement>;
-            "input-text-disabled": LocalJSX.InputTextDisabled & JSXBase.HTMLAttributes<HTMLInputTextDisabledElement>;
-            "input-text-float-label": LocalJSX.InputTextFloatLabel & JSXBase.HTMLAttributes<HTMLInputTextFloatLabelElement>;
-            "input-text-icons": LocalJSX.InputTextIcons & JSXBase.HTMLAttributes<HTMLInputTextIconsElement>;
-            "input-textarea-auto-resize": LocalJSX.InputTextareaAutoResize & JSXBase.HTMLAttributes<HTMLInputTextareaAutoResizeElement>;
-            "input-textarea-basic": LocalJSX.InputTextareaBasic & JSXBase.HTMLAttributes<HTMLInputTextareaBasicElement>;
-            "input-textarea-disabled": LocalJSX.InputTextareaDisabled & JSXBase.HTMLAttributes<HTMLInputTextareaDisabledElement>;
-            "input-textarea-float-label": LocalJSX.InputTextareaFloatLabel & JSXBase.HTMLAttributes<HTMLInputTextareaFloatLabelElement>;
-            "listbox-basic": LocalJSX.ListboxBasic & JSXBase.HTMLAttributes<HTMLListboxBasicElement>;
-            "listbox-disabled": LocalJSX.ListboxDisabled & JSXBase.HTMLAttributes<HTMLListboxDisabledElement>;
-            "listbox-filter": LocalJSX.ListboxFilter & JSXBase.HTMLAttributes<HTMLListboxFilterElement>;
-            "listbox-multiple": LocalJSX.ListboxMultiple & JSXBase.HTMLAttributes<HTMLListboxMultipleElement>;
-            "listbox-template": LocalJSX.ListboxTemplate & JSXBase.HTMLAttributes<HTMLListboxTemplateElement>;
-            "listbox-virtual-scroll": LocalJSX.ListboxVirtualScroll & JSXBase.HTMLAttributes<HTMLListboxVirtualScrollElement>;
+            "any-listbox": LocalJSX.IntrinsicElements["any-listbox"] & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
+            "any-multiselect": LocalJSX.IntrinsicElements["any-multiselect"] & JSXBase.HTMLAttributes<HTMLAnyMultiselectElement>;
+            "any-overlay": LocalJSX.IntrinsicElements["any-overlay"] & JSXBase.HTMLAttributes<HTMLAnyOverlayElement>;
+            "any-radio-button": LocalJSX.IntrinsicElements["any-radio-button"] & JSXBase.HTMLAttributes<HTMLAnyRadioButtonElement>;
+            "any-radio-group": LocalJSX.IntrinsicElements["any-radio-group"] & JSXBase.HTMLAttributes<HTMLAnyRadioGroupElement>;
+            "any-ripple-effect": LocalJSX.IntrinsicElements["any-ripple-effect"] & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;
+            "any-tab-panel": LocalJSX.IntrinsicElements["any-tab-panel"] & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
+            "any-tab-view": LocalJSX.IntrinsicElements["any-tab-view"] & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;
+            "any-virtual-scroller": LocalJSX.IntrinsicElements["any-virtual-scroller"] & JSXBase.HTMLAttributes<HTMLAnyVirtualScrollerElement>;
+            "app-code": LocalJSX.IntrinsicElements["app-code"] & JSXBase.HTMLAttributes<HTMLAppCodeElement>;
+            "app-config": LocalJSX.IntrinsicElements["app-config"] & JSXBase.HTMLAttributes<HTMLAppConfigElement>;
+            "app-doc": LocalJSX.IntrinsicElements["app-doc"] & JSXBase.HTMLAttributes<HTMLAppDocElement>;
+            "app-docapisection": LocalJSX.IntrinsicElements["app-docapisection"] & JSXBase.HTMLAttributes<HTMLAppDocapisectionElement>;
+            "app-docapitable": LocalJSX.IntrinsicElements["app-docapitable"] & JSXBase.HTMLAttributes<HTMLAppDocapitableElement>;
+            "app-docsection": LocalJSX.IntrinsicElements["app-docsection"] & JSXBase.HTMLAttributes<HTMLAppDocsectionElement>;
+            "app-docsection-nav": LocalJSX.IntrinsicElements["app-docsection-nav"] & JSXBase.HTMLAttributes<HTMLAppDocsectionNavElement>;
+            "app-docsectiontext": LocalJSX.IntrinsicElements["app-docsectiontext"] & JSXBase.HTMLAttributes<HTMLAppDocsectiontextElement>;
+            "checkbox-basic": LocalJSX.IntrinsicElements["checkbox-basic"] & JSXBase.HTMLAttributes<HTMLCheckboxBasicElement>;
+            "checkbox-disabled": LocalJSX.IntrinsicElements["checkbox-disabled"] & JSXBase.HTMLAttributes<HTMLCheckboxDisabledElement>;
+            "checkbox-dynamic": LocalJSX.IntrinsicElements["checkbox-dynamic"] & JSXBase.HTMLAttributes<HTMLCheckboxDynamicElement>;
+            "checkbox-group": LocalJSX.IntrinsicElements["checkbox-group"] & JSXBase.HTMLAttributes<HTMLCheckboxGroupElement>;
+            "checkbox-label": LocalJSX.IntrinsicElements["checkbox-label"] & JSXBase.HTMLAttributes<HTMLCheckboxLabelElement>;
+            "checkbox-readonly": LocalJSX.IntrinsicElements["checkbox-readonly"] & JSXBase.HTMLAttributes<HTMLCheckboxReadonlyElement>;
+            "dropdown-basic": LocalJSX.IntrinsicElements["dropdown-basic"] & JSXBase.HTMLAttributes<HTMLDropdownBasicElement>;
+            "dropdown-disabled": LocalJSX.IntrinsicElements["dropdown-disabled"] & JSXBase.HTMLAttributes<HTMLDropdownDisabledElement>;
+            "dropdown-filter": LocalJSX.IntrinsicElements["dropdown-filter"] & JSXBase.HTMLAttributes<HTMLDropdownFilterElement>;
+            "dropdown-template": LocalJSX.IntrinsicElements["dropdown-template"] & JSXBase.HTMLAttributes<HTMLDropdownTemplateElement>;
+            "dropdown-virtual-scroll": LocalJSX.IntrinsicElements["dropdown-virtual-scroll"] & JSXBase.HTMLAttributes<HTMLDropdownVirtualScrollElement>;
+            "input-number-buttons": LocalJSX.IntrinsicElements["input-number-buttons"] & JSXBase.HTMLAttributes<HTMLInputNumberButtonsElement>;
+            "input-number-currency": LocalJSX.IntrinsicElements["input-number-currency"] & JSXBase.HTMLAttributes<HTMLInputNumberCurrencyElement>;
+            "input-number-disabled": LocalJSX.IntrinsicElements["input-number-disabled"] & JSXBase.HTMLAttributes<HTMLInputNumberDisabledElement>;
+            "input-number-float-label": LocalJSX.IntrinsicElements["input-number-float-label"] & JSXBase.HTMLAttributes<HTMLInputNumberFloatLabelElement>;
+            "input-number-locale": LocalJSX.IntrinsicElements["input-number-locale"] & JSXBase.HTMLAttributes<HTMLInputNumberLocaleElement>;
+            "input-number-numeral": LocalJSX.IntrinsicElements["input-number-numeral"] & JSXBase.HTMLAttributes<HTMLInputNumberNumeralElement>;
+            "input-number-prefix-and-suffix": LocalJSX.IntrinsicElements["input-number-prefix-and-suffix"] & JSXBase.HTMLAttributes<HTMLInputNumberPrefixAndSuffixElement>;
+            "input-number-vertical": LocalJSX.IntrinsicElements["input-number-vertical"] & JSXBase.HTMLAttributes<HTMLInputNumberVerticalElement>;
+            "input-switch-basic": LocalJSX.IntrinsicElements["input-switch-basic"] & JSXBase.HTMLAttributes<HTMLInputSwitchBasicElement>;
+            "input-switch-disabled": LocalJSX.IntrinsicElements["input-switch-disabled"] & JSXBase.HTMLAttributes<HTMLInputSwitchDisabledElement>;
+            "input-switch-preselection": LocalJSX.IntrinsicElements["input-switch-preselection"] & JSXBase.HTMLAttributes<HTMLInputSwitchPreselectionElement>;
+            "input-text-basic": LocalJSX.IntrinsicElements["input-text-basic"] & JSXBase.HTMLAttributes<HTMLInputTextBasicElement>;
+            "input-text-disabled": LocalJSX.IntrinsicElements["input-text-disabled"] & JSXBase.HTMLAttributes<HTMLInputTextDisabledElement>;
+            "input-text-float-label": LocalJSX.IntrinsicElements["input-text-float-label"] & JSXBase.HTMLAttributes<HTMLInputTextFloatLabelElement>;
+            "input-text-icons": LocalJSX.IntrinsicElements["input-text-icons"] & JSXBase.HTMLAttributes<HTMLInputTextIconsElement>;
+            "input-textarea-auto-resize": LocalJSX.IntrinsicElements["input-textarea-auto-resize"] & JSXBase.HTMLAttributes<HTMLInputTextareaAutoResizeElement>;
+            "input-textarea-basic": LocalJSX.IntrinsicElements["input-textarea-basic"] & JSXBase.HTMLAttributes<HTMLInputTextareaBasicElement>;
+            "input-textarea-disabled": LocalJSX.IntrinsicElements["input-textarea-disabled"] & JSXBase.HTMLAttributes<HTMLInputTextareaDisabledElement>;
+            "input-textarea-float-label": LocalJSX.IntrinsicElements["input-textarea-float-label"] & JSXBase.HTMLAttributes<HTMLInputTextareaFloatLabelElement>;
+            "listbox-basic": LocalJSX.IntrinsicElements["listbox-basic"] & JSXBase.HTMLAttributes<HTMLListboxBasicElement>;
+            "listbox-disabled": LocalJSX.IntrinsicElements["listbox-disabled"] & JSXBase.HTMLAttributes<HTMLListboxDisabledElement>;
+            "listbox-filter": LocalJSX.IntrinsicElements["listbox-filter"] & JSXBase.HTMLAttributes<HTMLListboxFilterElement>;
+            "listbox-multiple": LocalJSX.IntrinsicElements["listbox-multiple"] & JSXBase.HTMLAttributes<HTMLListboxMultipleElement>;
+            "listbox-template": LocalJSX.IntrinsicElements["listbox-template"] & JSXBase.HTMLAttributes<HTMLListboxTemplateElement>;
+            "listbox-virtual-scroll": LocalJSX.IntrinsicElements["listbox-virtual-scroll"] & JSXBase.HTMLAttributes<HTMLListboxVirtualScrollElement>;
         }
     }
 }
