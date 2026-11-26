@@ -1,14 +1,15 @@
 /* eslint-disable */
 /* tslint:disable */
 /* auto-generated vue proxies */
-import { defineContainer } from './vue-component-lib/utils';
+import { defineContainer, type StencilVueComponent } from '@stencil/vue-output-target/runtime';
 
 import type { JSX } from '@anywhere-ui/core';
 
 
 
 
-export const AnyBadge = /*@__PURE__*/ defineContainer<JSX.AnyBadge>('any-badge', undefined, [
+
+export const AnyBadge: StencilVueComponent<JSX.AnyBadge> = /*@__PURE__*/ defineContainer<JSX.AnyBadge>('any-badge', undefined, [
   'styleClass',
   'anyStyle',
   'size',
@@ -17,12 +18,12 @@ export const AnyBadge = /*@__PURE__*/ defineContainer<JSX.AnyBadge>('any-badge',
 ]);
 
 
-export const AnyBadgeOverlay = /*@__PURE__*/ defineContainer<JSX.AnyBadgeOverlay>('any-badge-overlay', undefined, [
+export const AnyBadgeOverlay: StencilVueComponent<JSX.AnyBadgeOverlay> = /*@__PURE__*/ defineContainer<JSX.AnyBadgeOverlay>('any-badge-overlay', undefined, [
   'styleClass'
 ]);
 
 
-export const AnyButton = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-button', undefined, [
+export const AnyButton: StencilVueComponent<JSX.AnyButton> = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-button', undefined, [
   'type',
   'label',
   'disabled',
@@ -40,10 +41,14 @@ export const AnyButton = /*@__PURE__*/ defineContainer<JSX.AnyButton>('any-butto
   'aOnClick',
   'aOnFocus',
   'aOnBlur'
+], [
+  'aOnClick',
+  'aOnFocus',
+  'aOnBlur'
 ]);
 
 
-export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox, JSX.AnyCheckbox["checked"]>('any-checkbox', undefined, [
+export const AnyCheckbox: StencilVueComponent<JSX.AnyCheckbox, JSX.AnyCheckbox["checked"]> = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox, JSX.AnyCheckbox["checked"]>('any-checkbox', undefined, [
   'anyStyle',
   'anyTabIndex',
   'binary',
@@ -60,11 +65,15 @@ export const AnyCheckbox = /*@__PURE__*/ defineContainer<JSX.AnyCheckbox, JSX.An
   'valueChange',
   'aOnFocus',
   'aOnBlur'
+], [
+  'valueChange',
+  'aOnFocus',
+  'aOnBlur'
 ],
-'checked', 'v-value-change');
+'checked', 'valueChange', undefined);
 
 
-export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown, JSX.AnyDropdown["value"]>('any-dropdown', undefined, [
+export const AnyDropdown: StencilVueComponent<JSX.AnyDropdown, JSX.AnyDropdown["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyDropdown, JSX.AnyDropdown["value"]>('any-dropdown', undefined, [
   'options',
   'optionLabel',
   'inputId',
@@ -94,11 +103,20 @@ export const AnyDropdown = /*@__PURE__*/ defineContainer<JSX.AnyDropdown, JSX.An
   'aOnFocus',
   'aOnBlur',
   'aOnClick'
+], [
+  'valueChange',
+  'aOnPanelShow',
+  'aOnPanelShowStart',
+  'aOnPanelHide',
+  'aOnPanelHideStart',
+  'aOnFocus',
+  'aOnBlur',
+  'aOnClick'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, JSX.AnyInputNumber["value"]>('any-input-number', undefined, [
+export const AnyInputNumber: StencilVueComponent<JSX.AnyInputNumber, JSX.AnyInputNumber["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, JSX.AnyInputNumber["value"]>('any-input-number', undefined, [
   'value',
   'format',
   'showButtons',
@@ -145,11 +163,17 @@ export const AnyInputNumber = /*@__PURE__*/ defineContainer<JSX.AnyInputNumber, 
   'aOnBlur',
   'aOnKeyDown',
   'valueChange'
+], [
+  'aOnInput',
+  'aOnFocus',
+  'aOnBlur',
+  'aOnKeyDown',
+  'valueChange'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch, JSX.AnyInputSwitch["checked"]>('any-input-switch', undefined, [
+export const AnyInputSwitch: StencilVueComponent<JSX.AnyInputSwitch, JSX.AnyInputSwitch["checked"]> = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch, JSX.AnyInputSwitch["checked"]>('any-input-switch', undefined, [
   'inputId',
   'name',
   'checked',
@@ -164,11 +188,15 @@ export const AnyInputSwitch = /*@__PURE__*/ defineContainer<JSX.AnyInputSwitch, 
   'valueChange',
   'aOnFocus',
   'aOnBlur'
+], [
+  'valueChange',
+  'aOnFocus',
+  'aOnBlur'
 ],
-'checked', 'v-value-change');
+'checked', 'valueChange', undefined);
 
 
-export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText, JSX.AnyInputText["value"]>('any-input-text', undefined, [
+export const AnyInputText: StencilVueComponent<JSX.AnyInputText, JSX.AnyInputText["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyInputText, JSX.AnyInputText["value"]>('any-input-text', undefined, [
   'value',
   'inputId',
   'name',
@@ -191,11 +219,13 @@ export const AnyInputText = /*@__PURE__*/ defineContainer<JSX.AnyInputText, JSX.
   'required',
   'autocomplete',
   'valueChange'
+], [
+  'valueChange'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextarea, JSX.AnyInputTextarea["value"]>('any-input-textarea', undefined, [
+export const AnyInputTextarea: StencilVueComponent<JSX.AnyInputTextarea, JSX.AnyInputTextarea["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyInputTextarea, JSX.AnyInputTextarea["value"]>('any-input-textarea', undefined, [
   'inputId',
   'name',
   'label',
@@ -216,11 +246,17 @@ export const AnyInputTextarea = /*@__PURE__*/ defineContainer<JSX.AnyInputTextar
   'aOnResize',
   'aOnInput',
   'valueChange'
+], [
+  'aOnBlur',
+  'aOnFocus',
+  'aOnResize',
+  'aOnInput',
+  'valueChange'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox, JSX.AnyListbox["value"]>('any-listbox', undefined, [
+export const AnyListbox: StencilVueComponent<JSX.AnyListbox, JSX.AnyListbox["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyListbox, JSX.AnyListbox["value"]>('any-listbox', undefined, [
   'options',
   'optionLabel',
   'inputId',
@@ -250,11 +286,13 @@ export const AnyListbox = /*@__PURE__*/ defineContainer<JSX.AnyListbox, JSX.AnyL
   'emptyMessage',
   'emptyFilterMessage',
   'valueChange'
+], [
+  'valueChange'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyMultiselect = /*@__PURE__*/ defineContainer<JSX.AnyMultiselect, JSX.AnyMultiselect["value"]>('any-multiselect', undefined, [
+export const AnyMultiselect: StencilVueComponent<JSX.AnyMultiselect, JSX.AnyMultiselect["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyMultiselect, JSX.AnyMultiselect["value"]>('any-multiselect', undefined, [
   'anyStyle',
   'anyTabIndex',
   'clearIcon',
@@ -288,11 +326,20 @@ export const AnyMultiselect = /*@__PURE__*/ defineContainer<JSX.AnyMultiselect, 
   'aOnFocus',
   'aOnBlur',
   'aOnClick'
+], [
+  'valueChange',
+  'aOnPanelShow',
+  'aOnPanelShowStart',
+  'aOnPanelHide',
+  'aOnPanelHideStart',
+  'aOnFocus',
+  'aOnBlur',
+  'aOnClick'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton, JSX.AnyRadioButton["value"]>('any-radio-button', undefined, [
+export const AnyRadioButton: StencilVueComponent<JSX.AnyRadioButton, JSX.AnyRadioButton["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton, JSX.AnyRadioButton["value"]>('any-radio-button', undefined, [
   'value',
   'inputId',
   'label',
@@ -305,40 +352,46 @@ export const AnyRadioButton = /*@__PURE__*/ defineContainer<JSX.AnyRadioButton, 
   'aOnSelect',
   'aOnFocus',
   'aOnBlur'
+], [
+  'aOnSelect',
+  'aOnFocus',
+  'aOnBlur'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyRadioGroup = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup, JSX.AnyRadioGroup["value"]>('any-radio-group', undefined, [
+export const AnyRadioGroup: StencilVueComponent<JSX.AnyRadioGroup, JSX.AnyRadioGroup["value"]> = /*@__PURE__*/ defineContainer<JSX.AnyRadioGroup, JSX.AnyRadioGroup["value"]>('any-radio-group', undefined, [
   'allowEmptySelection',
   'name',
   'value',
   'valueChange'
+], [
+  'valueChange'
 ],
-'value', 'v-value-change');
+'value', 'valueChange', undefined);
 
 
-export const AnyRippleEffect = /*@__PURE__*/ defineContainer<JSX.AnyRippleEffect>('any-ripple-effect', undefined, [
+export const AnyRippleEffect: StencilVueComponent<JSX.AnyRippleEffect> = /*@__PURE__*/ defineContainer<JSX.AnyRippleEffect>('any-ripple-effect', undefined, [
   'type',
   'anyStyle'
 ]);
 
 
-export const AnyTabPanel = /*@__PURE__*/ defineContainer<JSX.AnyTabPanel>('any-tab-panel', undefined, [
+export const AnyTabPanel: StencilVueComponent<JSX.AnyTabPanel> = /*@__PURE__*/ defineContainer<JSX.AnyTabPanel>('any-tab-panel', undefined, [
   'header',
   'disabled',
   'selected'
 ]);
 
 
-export const AnyTabView = /*@__PURE__*/ defineContainer<JSX.AnyTabView>('any-tab-view', undefined, [
+export const AnyTabView: StencilVueComponent<JSX.AnyTabView> = /*@__PURE__*/ defineContainer<JSX.AnyTabView>('any-tab-view', undefined, [
   'activeIndex',
   'anyStyle',
   'styleClass'
 ]);
 
 
-export const AnyVirtualScroller = /*@__PURE__*/ defineContainer<JSX.AnyVirtualScroller>('any-virtual-scroller', undefined, [
+export const AnyVirtualScroller: StencilVueComponent<JSX.AnyVirtualScroller> = /*@__PURE__*/ defineContainer<JSX.AnyVirtualScroller>('any-virtual-scroller', undefined, [
   'items',
   'scrollerHeight',
   'itemSize',
@@ -358,10 +411,16 @@ export const AnyVirtualScroller = /*@__PURE__*/ defineContainer<JSX.AnyVirtualSc
   'clusterWillChange',
   'aOnLazyLoad',
   'aOnItemClick'
+], [
+  'scrollingProgress',
+  'clusterChanged',
+  'clusterWillChange',
+  'aOnLazyLoad',
+  'aOnItemClick'
 ]);
 
 
-export const AppCode = /*@__PURE__*/ defineContainer<JSX.AppCode>('app-code', undefined, [
+export const AppCode: StencilVueComponent<JSX.AppCode> = /*@__PURE__*/ defineContainer<JSX.AppCode>('app-code', undefined, [
   'code',
   'service',
   'selector',
@@ -373,10 +432,10 @@ export const AppCode = /*@__PURE__*/ defineContainer<JSX.AppCode>('app-code', un
 ]);
 
 
-export const AppConfig = /*@__PURE__*/ defineContainer<JSX.AppConfig>('app-config', undefined);
+export const AppConfig: StencilVueComponent<JSX.AppConfig> = /*@__PURE__*/ defineContainer<JSX.AppConfig>('app-config', undefined);
 
 
-export const AppDoc = /*@__PURE__*/ defineContainer<JSX.AppDoc>('app-doc', undefined, [
+export const AppDoc: StencilVueComponent<JSX.AppDoc> = /*@__PURE__*/ defineContainer<JSX.AppDoc>('app-doc', undefined, [
   'docs',
   'apiDocs',
   'docTitle',
@@ -386,13 +445,13 @@ export const AppDoc = /*@__PURE__*/ defineContainer<JSX.AppDoc>('app-doc', undef
 ]);
 
 
-export const AppDocapisection = /*@__PURE__*/ defineContainer<JSX.AppDocapisection>('app-docapisection', undefined, [
+export const AppDocapisection: StencilVueComponent<JSX.AppDocapisection> = /*@__PURE__*/ defineContainer<JSX.AppDocapisection>('app-docapisection', undefined, [
   'header',
   'docs'
 ]);
 
 
-export const AppDocapitable = /*@__PURE__*/ defineContainer<JSX.AppDocapitable>('app-docapitable', undefined, [
+export const AppDocapitable: StencilVueComponent<JSX.AppDocapitable> = /*@__PURE__*/ defineContainer<JSX.AppDocapitable>('app-docapitable', undefined, [
   'anyId',
   'label',
   'data',
@@ -406,18 +465,18 @@ export const AppDocapitable = /*@__PURE__*/ defineContainer<JSX.AppDocapitable>(
 ]);
 
 
-export const AppDocsection = /*@__PURE__*/ defineContainer<JSX.AppDocsection>('app-docsection', undefined, [
+export const AppDocsection: StencilVueComponent<JSX.AppDocsection> = /*@__PURE__*/ defineContainer<JSX.AppDocsection>('app-docsection', undefined, [
   'docs',
   'apiDocs'
 ]);
 
 
-export const AppDocsectionNav = /*@__PURE__*/ defineContainer<JSX.AppDocsectionNav>('app-docsection-nav', undefined, [
+export const AppDocsectionNav: StencilVueComponent<JSX.AppDocsectionNav> = /*@__PURE__*/ defineContainer<JSX.AppDocsectionNav>('app-docsection-nav', undefined, [
   'docs'
 ]);
 
 
-export const AppDocsectiontext = /*@__PURE__*/ defineContainer<JSX.AppDocsectiontext>('app-docsectiontext', undefined, [
+export const AppDocsectiontext: StencilVueComponent<JSX.AppDocsectiontext> = /*@__PURE__*/ defineContainer<JSX.AppDocsectiontext>('app-docsectiontext', undefined, [
   'textTitle',
   'textId',
   'level',
@@ -428,224 +487,237 @@ export const AppDocsectiontext = /*@__PURE__*/ defineContainer<JSX.AppDocsection
 ]);
 
 
-export const CheckboxBasic = /*@__PURE__*/ defineContainer<JSX.CheckboxBasic>('checkbox-basic', undefined, [
+export const CheckboxBasic: StencilVueComponent<JSX.CheckboxBasic> = /*@__PURE__*/ defineContainer<JSX.CheckboxBasic>('checkbox-basic', undefined, [
   'textId',
   'textTitle',
+  'valueChange'
+], [
   'valueChange'
 ]);
 
 
-export const CheckboxDisabled = /*@__PURE__*/ defineContainer<JSX.CheckboxDisabled>('checkbox-disabled', undefined, [
+export const CheckboxDisabled: StencilVueComponent<JSX.CheckboxDisabled> = /*@__PURE__*/ defineContainer<JSX.CheckboxDisabled>('checkbox-disabled', undefined, [
   'textId',
   'textTitle',
+  'valueChange'
+], [
   'valueChange'
 ]);
 
 
-export const CheckboxDynamic = /*@__PURE__*/ defineContainer<JSX.CheckboxDynamic>('checkbox-dynamic', undefined, [
+export const CheckboxDynamic: StencilVueComponent<JSX.CheckboxDynamic> = /*@__PURE__*/ defineContainer<JSX.CheckboxDynamic>('checkbox-dynamic', undefined, [
   'textId',
   'textTitle',
+  'valueChange'
+], [
   'valueChange'
 ]);
 
 
-export const CheckboxGroup = /*@__PURE__*/ defineContainer<JSX.CheckboxGroup>('checkbox-group', undefined, [
+export const CheckboxGroup: StencilVueComponent<JSX.CheckboxGroup> = /*@__PURE__*/ defineContainer<JSX.CheckboxGroup>('checkbox-group', undefined, [
   'textId',
   'textTitle',
+  'valueChange'
+], [
   'valueChange'
 ]);
 
 
-export const CheckboxLabel = /*@__PURE__*/ defineContainer<JSX.CheckboxLabel>('checkbox-label', undefined, [
+export const CheckboxLabel: StencilVueComponent<JSX.CheckboxLabel> = /*@__PURE__*/ defineContainer<JSX.CheckboxLabel>('checkbox-label', undefined, [
   'textId',
   'textTitle',
+  'valueChange'
+], [
   'valueChange'
 ]);
 
 
-export const CheckboxReadonly = /*@__PURE__*/ defineContainer<JSX.CheckboxReadonly>('checkbox-readonly', undefined, [
+export const CheckboxReadonly: StencilVueComponent<JSX.CheckboxReadonly> = /*@__PURE__*/ defineContainer<JSX.CheckboxReadonly>('checkbox-readonly', undefined, [
   'textId',
   'textTitle',
+  'valueChange'
+], [
   'valueChange'
 ]);
 
 
-export const DropdownBasic = /*@__PURE__*/ defineContainer<JSX.DropdownBasic>('dropdown-basic', undefined, [
+export const DropdownBasic: StencilVueComponent<JSX.DropdownBasic> = /*@__PURE__*/ defineContainer<JSX.DropdownBasic>('dropdown-basic', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const DropdownDisabled = /*@__PURE__*/ defineContainer<JSX.DropdownDisabled>('dropdown-disabled', undefined, [
+export const DropdownDisabled: StencilVueComponent<JSX.DropdownDisabled> = /*@__PURE__*/ defineContainer<JSX.DropdownDisabled>('dropdown-disabled', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const DropdownFilter = /*@__PURE__*/ defineContainer<JSX.DropdownFilter>('dropdown-filter', undefined, [
+export const DropdownFilter: StencilVueComponent<JSX.DropdownFilter> = /*@__PURE__*/ defineContainer<JSX.DropdownFilter>('dropdown-filter', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const DropdownTemplate = /*@__PURE__*/ defineContainer<JSX.DropdownTemplate>('dropdown-template', undefined, [
+export const DropdownTemplate: StencilVueComponent<JSX.DropdownTemplate> = /*@__PURE__*/ defineContainer<JSX.DropdownTemplate>('dropdown-template', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const DropdownVirtualScroll = /*@__PURE__*/ defineContainer<JSX.DropdownVirtualScroll>('dropdown-virtual-scroll', undefined, [
+export const DropdownVirtualScroll: StencilVueComponent<JSX.DropdownVirtualScroll> = /*@__PURE__*/ defineContainer<JSX.DropdownVirtualScroll>('dropdown-virtual-scroll', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberButtons = /*@__PURE__*/ defineContainer<JSX.InputNumberButtons>('input-number-buttons', undefined, [
+export const InputNumberButtons: StencilVueComponent<JSX.InputNumberButtons> = /*@__PURE__*/ defineContainer<JSX.InputNumberButtons>('input-number-buttons', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberCurrency = /*@__PURE__*/ defineContainer<JSX.InputNumberCurrency>('input-number-currency', undefined, [
+export const InputNumberCurrency: StencilVueComponent<JSX.InputNumberCurrency> = /*@__PURE__*/ defineContainer<JSX.InputNumberCurrency>('input-number-currency', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberDisabled = /*@__PURE__*/ defineContainer<JSX.InputNumberDisabled>('input-number-disabled', undefined, [
+export const InputNumberDisabled: StencilVueComponent<JSX.InputNumberDisabled> = /*@__PURE__*/ defineContainer<JSX.InputNumberDisabled>('input-number-disabled', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputNumberFloatLabel>('input-number-float-label', undefined, [
+export const InputNumberFloatLabel: StencilVueComponent<JSX.InputNumberFloatLabel> = /*@__PURE__*/ defineContainer<JSX.InputNumberFloatLabel>('input-number-float-label', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberLocale = /*@__PURE__*/ defineContainer<JSX.InputNumberLocale>('input-number-locale', undefined, [
+export const InputNumberLocale: StencilVueComponent<JSX.InputNumberLocale> = /*@__PURE__*/ defineContainer<JSX.InputNumberLocale>('input-number-locale', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberNumeral = /*@__PURE__*/ defineContainer<JSX.InputNumberNumeral>('input-number-numeral', undefined, [
+export const InputNumberNumeral: StencilVueComponent<JSX.InputNumberNumeral> = /*@__PURE__*/ defineContainer<JSX.InputNumberNumeral>('input-number-numeral', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberPrefixAndSuffix = /*@__PURE__*/ defineContainer<JSX.InputNumberPrefixAndSuffix>('input-number-prefix-and-suffix', undefined, [
+export const InputNumberPrefixAndSuffix: StencilVueComponent<JSX.InputNumberPrefixAndSuffix> = /*@__PURE__*/ defineContainer<JSX.InputNumberPrefixAndSuffix>('input-number-prefix-and-suffix', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputNumberVertical = /*@__PURE__*/ defineContainer<JSX.InputNumberVertical>('input-number-vertical', undefined, [
+export const InputNumberVertical: StencilVueComponent<JSX.InputNumberVertical> = /*@__PURE__*/ defineContainer<JSX.InputNumberVertical>('input-number-vertical', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputSwitchBasic = /*@__PURE__*/ defineContainer<JSX.InputSwitchBasic>('input-switch-basic', undefined, [
+export const InputSwitchBasic: StencilVueComponent<JSX.InputSwitchBasic> = /*@__PURE__*/ defineContainer<JSX.InputSwitchBasic>('input-switch-basic', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputSwitchDisabled = /*@__PURE__*/ defineContainer<JSX.InputSwitchDisabled>('input-switch-disabled', undefined, [
+export const InputSwitchDisabled: StencilVueComponent<JSX.InputSwitchDisabled> = /*@__PURE__*/ defineContainer<JSX.InputSwitchDisabled>('input-switch-disabled', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputSwitchPreselection = /*@__PURE__*/ defineContainer<JSX.InputSwitchPreselection>('input-switch-preselection', undefined, [
+export const InputSwitchPreselection: StencilVueComponent<JSX.InputSwitchPreselection> = /*@__PURE__*/ defineContainer<JSX.InputSwitchPreselection>('input-switch-preselection', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextBasic = /*@__PURE__*/ defineContainer<JSX.InputTextBasic>('input-text-basic', undefined, [
+export const InputTextBasic: StencilVueComponent<JSX.InputTextBasic> = /*@__PURE__*/ defineContainer<JSX.InputTextBasic>('input-text-basic', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextDisabled = /*@__PURE__*/ defineContainer<JSX.InputTextDisabled>('input-text-disabled', undefined, [
+export const InputTextDisabled: StencilVueComponent<JSX.InputTextDisabled> = /*@__PURE__*/ defineContainer<JSX.InputTextDisabled>('input-text-disabled', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTextFloatLabel>('input-text-float-label', undefined, [
+export const InputTextFloatLabel: StencilVueComponent<JSX.InputTextFloatLabel> = /*@__PURE__*/ defineContainer<JSX.InputTextFloatLabel>('input-text-float-label', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextIcons = /*@__PURE__*/ defineContainer<JSX.InputTextIcons>('input-text-icons', undefined, [
+export const InputTextIcons: StencilVueComponent<JSX.InputTextIcons> = /*@__PURE__*/ defineContainer<JSX.InputTextIcons>('input-text-icons', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextareaAutoResize = /*@__PURE__*/ defineContainer<JSX.InputTextareaAutoResize>('input-textarea-auto-resize', undefined, [
+export const InputTextareaAutoResize: StencilVueComponent<JSX.InputTextareaAutoResize> = /*@__PURE__*/ defineContainer<JSX.InputTextareaAutoResize>('input-textarea-auto-resize', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextareaBasic = /*@__PURE__*/ defineContainer<JSX.InputTextareaBasic>('input-textarea-basic', undefined, [
+export const InputTextareaBasic: StencilVueComponent<JSX.InputTextareaBasic> = /*@__PURE__*/ defineContainer<JSX.InputTextareaBasic>('input-textarea-basic', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextareaDisabled = /*@__PURE__*/ defineContainer<JSX.InputTextareaDisabled>('input-textarea-disabled', undefined, [
+export const InputTextareaDisabled: StencilVueComponent<JSX.InputTextareaDisabled> = /*@__PURE__*/ defineContainer<JSX.InputTextareaDisabled>('input-textarea-disabled', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const InputTextareaFloatLabel = /*@__PURE__*/ defineContainer<JSX.InputTextareaFloatLabel>('input-textarea-float-label', undefined, [
+export const InputTextareaFloatLabel: StencilVueComponent<JSX.InputTextareaFloatLabel> = /*@__PURE__*/ defineContainer<JSX.InputTextareaFloatLabel>('input-textarea-float-label', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const ListboxBasic = /*@__PURE__*/ defineContainer<JSX.ListboxBasic>('listbox-basic', undefined, [
+export const ListboxBasic: StencilVueComponent<JSX.ListboxBasic> = /*@__PURE__*/ defineContainer<JSX.ListboxBasic>('listbox-basic', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const ListboxDisabled = /*@__PURE__*/ defineContainer<JSX.ListboxDisabled>('listbox-disabled', undefined, [
+export const ListboxDisabled: StencilVueComponent<JSX.ListboxDisabled> = /*@__PURE__*/ defineContainer<JSX.ListboxDisabled>('listbox-disabled', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const ListboxFilter = /*@__PURE__*/ defineContainer<JSX.ListboxFilter>('listbox-filter', undefined, [
+export const ListboxFilter: StencilVueComponent<JSX.ListboxFilter> = /*@__PURE__*/ defineContainer<JSX.ListboxFilter>('listbox-filter', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const ListboxMultiple = /*@__PURE__*/ defineContainer<JSX.ListboxMultiple>('listbox-multiple', undefined, [
+export const ListboxMultiple: StencilVueComponent<JSX.ListboxMultiple> = /*@__PURE__*/ defineContainer<JSX.ListboxMultiple>('listbox-multiple', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const ListboxTemplate = /*@__PURE__*/ defineContainer<JSX.ListboxTemplate>('listbox-template', undefined, [
+export const ListboxTemplate: StencilVueComponent<JSX.ListboxTemplate> = /*@__PURE__*/ defineContainer<JSX.ListboxTemplate>('listbox-template', undefined, [
   'textId',
   'textTitle'
 ]);
 
 
-export const ListboxVirtualScroll = /*@__PURE__*/ defineContainer<JSX.ListboxVirtualScroll>('listbox-virtual-scroll', undefined, [
+export const ListboxVirtualScroll: StencilVueComponent<JSX.ListboxVirtualScroll> = /*@__PURE__*/ defineContainer<JSX.ListboxVirtualScroll>('listbox-virtual-scroll', undefined, [
   'textId',
   'textTitle'
 ]);
+
 

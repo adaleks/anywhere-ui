@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "packageManager": "npm"
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*"],
     "prod": ["!{projectRoot}/**/*.spec.tsx"],

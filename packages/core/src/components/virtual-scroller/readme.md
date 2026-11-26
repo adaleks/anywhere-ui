@@ -36,6 +36,16 @@
 | `scrollingProgress` | Will be called on scrolling. Returns progress position              | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot            | Description |
+| --------------- | ----------- |
+| `"footer"`      |             |
+| `"header"`      |             |
+| `"item"`        |             |
+| `"loadingItem"` |             |
+
+
 ## Dependencies
 
 ### Used by

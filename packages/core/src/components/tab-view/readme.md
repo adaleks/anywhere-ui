@@ -14,6 +14,13 @@
 | `styleClass`  | `style-class`  | Style class of the component.                                    | `string` | `null`  |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Depends on

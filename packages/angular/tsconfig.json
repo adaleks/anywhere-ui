@@ -1,30 +1,21 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+/* To learn more about this file see: https://angular.dev/guide/tsconfig */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "anywhere-ui": [
-        "dist/anywhere-ui/anywhere-ui",
-        "dist/anywhere-ui"
-      ]
-    },
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "useDefineForClassFields": false
+    "module": "preserve",
+    "lib": ["es2022", "dom"],
+    "useDefineForClassFields": false,
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictTemplates": false
   }
 }

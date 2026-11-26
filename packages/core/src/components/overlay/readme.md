@@ -27,6 +27,13 @@
 | `aOnShowStart` | Callback to invoke when the dropdown overlay is about to become visible. | `CustomEvent<any>` |
 
 
+## Slots
+
+| Slot | Description      |
+| ---- | ---------------- |
+|      | The default slot |
+
+
 ## Dependencies
 
 ### Used by

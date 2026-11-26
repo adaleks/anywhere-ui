@@ -25,13 +25,15 @@
   },
   "homepage": "https://github.com/adaleks/anywhere-ui/tree/main/packages/angular#readme",
   "peerDependencies": {
-    "@angular/common": ">=11.2.13",
-    "@angular/core": ">=11.2.13"
-  },
-  "dependencies": {
-    "tslib": "^2.0.0",
-    "@anywhere-ui/core": "^0.3.0",
+    "@angular/common": ">=18.0.0",
+    "@angular/core": ">=18.0.0",
+    "@anywhere-ui/core": "^0.4.0",
     "@anywhere-ui/flex": "^1.0.2"
   },
-  "buildnum": "26"
+  "buildnum": "26",
+  "module": "./fesm2022/anywhere-ui.mjs",
+  "typings": "./index.d.ts",
+  "exports": {
+    ".": "./src/public-api.ts"
+  }
 }

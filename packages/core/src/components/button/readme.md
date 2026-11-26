@@ -47,6 +47,13 @@ Type: `Promise<HTMLButtonElement>`
 
 
 
+## Slots
+
+| Slot        | Description |
+| ----------- | ----------- |
+| `"content"` |             |
+
+
 ## Shadow Parts
 
 | Part                 | Description |

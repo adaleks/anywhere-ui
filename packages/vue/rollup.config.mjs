@@ -15,5 +15,11 @@ export default {
       plugins: [terser()],
     },
   ],
-  external: ["@anywhere-ui/core", "@anywhere-ui/core/loader", "vue"],
+  external: [
+    "@anywhere-ui/core",
+    "@anywhere-ui/core/loader",
+    "@stencil/vue-output-target/runtime",
+    "vue",
+    "vue-router",
+  ],
 };

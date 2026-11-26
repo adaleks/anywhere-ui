@@ -21,14 +21,14 @@ jobs:
       url: https://adaleks.github.io/anywhere-ui-showcase-preview
     steps:
       - name: Checkout Main Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: anywhere-ui
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.12.2
+          node-version: 26.0.0
 
       - name: Install dependencies
         run: cd anywhere-ui && npm ci && npm run install-all && npm install grunt -g
@@ -39,7 +39,7 @@ jobs:
           cd packages/core && node scripts/docs.js anywhere-ui-showcase-preview
 
       - name: Checkout Preview Project
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           repository: adaleks/anywhere-ui-showcase-preview
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -77,13 +77,13 @@ jobs:
 
     steps:
       - name: Checkout Main Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: anywhere-ui
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.12.2
+          node-version: 26.0.0
       - name: Install dependencies
         run: cd anywhere-ui && npm ci && npm run install-all && npm install grunt -g
       - name: Build Code
@@ -94,7 +94,7 @@ jobs:
           cd packages/core && node scripts/docs.js anywhere-ui-showcase-production
 
       - name: Checkout Production Project
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           repository: adaleks/anywhere-ui-showcase-production
           token: ${{ secrets.ACCESS_TOKEN }}

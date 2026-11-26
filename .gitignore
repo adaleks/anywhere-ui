@@ -30,4 +30,12 @@ UserInterfaceState.xcuserstate
 
 # GitHub
 .github_changelog_generator
-.nx/cache
+.nx/
+
+# local tooling caches (npm cache redirected into the workspace, headless browser profiles)
+.npm-cache/
+.chrome-profile/
+.edge-profile/
+screenshots/
+.dsh-backup/
+

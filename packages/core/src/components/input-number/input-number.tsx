@@ -178,12 +178,12 @@ export class InputNumber {
    * The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit".
    * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_negotiation for details.
    */
-  @Prop() localeMatcher: string;
+  @Prop() localeMatcher: "lookup" | "best fit" = "best fit";
 
   /**
    * Defines the behavior of the component, valid values are "decimal" and "currency".
    */
-  @Prop() mode: string = "decimal";
+  @Prop() mode: "decimal" | "currency" = "decimal";
 
   /**
    * The currency to use in currency formatting.
@@ -198,7 +198,7 @@ export class InputNumber {
    * Possible values are "symbol" to use a localized currency symbol such as €, ü"code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
    *
    */
-  @Prop() currencyDisplay: string;
+  @Prop() currencyDisplay: "symbol" | "code" | "name";
 
   /**
    * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators.
@@ -315,13 +315,30 @@ export class InputNumber {
     this.constructParser();
   }
 
+  /**
+   * Waits for a nested Stencil component to be ready. `componentOnReady` only exists
+   * on lazy-loaded elements, so fall back to a resolved promise (custom-elements builds,
+   * spec tests).
+   */
+  private whenReady(element: any): Promise<void> {
+    return element && typeof element.componentOnReady === "function"
+      ? element.componentOnReady()
+      : Promise.resolve();
+  }
+
   componentDidLoad() {
     this.initialized = true;
     const input = this.element.querySelector(
       "any-input-text"
     ) as HTMLAnyInputTextElement;
-    input.componentOnReady().then(async () => {
-      this.input = await input.getInputRef();
+    if (!input) return;
+    this.whenReady(input).then(async () => {
+      const inputRef =
+        typeof input.getInputRef === "function"
+          ? await input.getInputRef()
+          : null;
+      if (!inputRef) return;
+      this.input = inputRef;
       this.defineInputEvents();
     });
     const upButton = this.element.querySelector(
@@ -332,28 +349,39 @@ export class InputNumber {
     ) as HTMLAnyButtonElement;
 
     if (upButton) {
-      upButton.componentOnReady().then(async () => {
-        this.upButton = await upButton.getButtonRef();
+      this.whenReady(upButton).then(async () => {
+        const buttonRef =
+          typeof upButton.getButtonRef === "function"
+            ? await upButton.getButtonRef()
+            : null;
+        if (!buttonRef) return;
+        this.upButton = buttonRef;
         this.defineUpButtonEvents();
       });
     }
 
     if (downButton) {
-      downButton.componentOnReady().then(async () => {
-        this.downButton = await downButton.getButtonRef();
+      this.whenReady(downButton).then(async () => {
+        const buttonRef =
+          typeof downButton.getButtonRef === "function"
+            ? await downButton.getButtonRef()
+            : null;
+        if (!buttonRef) return;
+        this.downButton = buttonRef;
         this.defineDownButtonEvents();
       });
     }
   }
 
+
   disconnectedCallback() {
-    this.input.removeEventListener("input", this.onUserInput, false);
-    this.input.removeEventListener("keydown", this.onInputKeyDown, false);
-    this.input.removeEventListener("keypress", this.onInputKeyPress, false);
-    this.input.removeEventListener("paste", this.onPaste, false);
-    this.input.removeEventListener("click", this.onInputClick, false);
-    this.input.removeEventListener("focus", this.onInputFocus, false);
-    this.input.removeEventListener("blur", this.onInputBlur, false);
+    this.input?.removeEventListener("input", this.onUserInput, false);
+    this.input?.removeEventListener("keydown", this.onInputKeyDown, false);
+    this.input?.removeEventListener("keypress", this.onInputKeyPress, false);
+    this.input?.removeEventListener("paste", this.onPaste, false);
+    this.input?.removeEventListener("click", this.onInputClick, false);
+    this.input?.removeEventListener("focus", this.onInputFocus, false);
+    this.input?.removeEventListener("blur", this.onInputBlur, false);
 
     if (this.upButton) {
       this.upButton.removeEventListener(

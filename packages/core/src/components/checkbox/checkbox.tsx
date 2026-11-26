@@ -132,8 +132,23 @@ export class AnyCheckbox {
     });
   }
 
+  @Watch("checkboxIcon")
+  checkboxIconChanged() {
+    this.loadIcons();
+  }
+
+  private destroyed = false;
+
   componentWillLoad() {
     this.loadIcons();
+  }
+
+  connectedCallback() {
+    this.destroyed = false;
+  }
+
+  disconnectedCallback() {
+    this.destroyed = true;
   }
 
   componentDidLoad() {
@@ -146,11 +161,23 @@ export class AnyCheckbox {
     await loadIcons([this.checkboxIcon]).catch((err) => {
       console.error("Failed to load icons:", err.missing);
     });
-    const checkboxElement = this.element.shadowRoot.querySelector(
-      ".any-checkbox-icon"
-    ) as HTMLElement;
-    // if (this.checked && checkboxElement)
-    checkboxElement.innerHTML = Iconify.renderHTML(this.checkboxIcon, {});
+    // The icon request is asynchronous: the host element may already be gone
+    // when it settles (page teardown, fast unmount, detached component), in
+    // which case Stencil's @Element() getter throws.
+    if (this.destroyed) {
+      return;
+    }
+    let checkboxElement: HTMLElement = null;
+    try {
+      checkboxElement = this.element?.shadowRoot?.querySelector(
+        ".any-checkbox-icon"
+      ) as HTMLElement;
+    } catch {
+      return;
+    }
+    if (checkboxElement) {
+      checkboxElement.innerHTML = Iconify.renderHTML(this.checkboxIcon, {});
+    }
   }
 
   onClick(event, focus: boolean) {
@@ -215,6 +242,7 @@ export class AnyCheckbox {
                 id={this.inputId}
                 name={this.name}
                 checked={checked}
+                disabled={disabled}
                 value={this.value}
                 aria-checked={`${checked}`}
                 tabindex={this.anyTabIndex}

@@ -179,13 +179,13 @@ listboxTemplate.addEventListener("valueChange", (event) => {
   }
 
   componentDidLoad() {
-    this.templateDD = document.getElementById("listboxTemplate");
-    let style = document.querySelector(".flags-style");
-    this.templateDD.shadowRoot.appendChild(style.cloneNode(true));
-    let listboxAStyle =
-      this.templateDD.shadowRoot.querySelector(".flags-style");
-    if (!listboxAStyle)
-      this.templateDD.shadowRoot.appendChild(style.cloneNode(true));
+    const listbox = document.getElementById("listboxTemplate");
+    const style = document.querySelector(".flags-style");
+    if (!listbox || !listbox.shadowRoot || !style) return;
+    this.templateDD = listbox;
+    if (!listbox.shadowRoot.querySelector(".flags-style")) {
+      listbox.shadowRoot.appendChild(style.cloneNode(true));
+    }
   }
 
   render() {
