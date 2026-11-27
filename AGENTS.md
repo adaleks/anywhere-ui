@@ -56,6 +56,19 @@ Root scripts intentionally use **npm workspaces**, not `lerna run`: `lerna run s
 Stencil dev server but it never accepts connections (reproduced with lerna 10.1.3). Lerna 10 is kept
 only for version/publish workflows (`lerna.json`, `nx.json`).
 
+## Remotes and workflow
+
+| Remote | URL | Purpose |
+| ------ | --- | ------- |
+| `origin` | `git@github.com:adaleks/anywhere-ui.git` | main repository — push branches here |
+| `fork`   | `git@github.com:gjovanovicst/anywhere-ui.git` | archive/backup only, not part of the workflow |
+
+Both remotes use SSH (the maintainer's key is registered), so no PAT/credential helper is needed for
+`git push`. `gh`/`gh pr` still authenticate with their own token.
+
+`main` is protected (changes must arrive through a pull request): create a branch, push it to `origin`
+and open a PR against `main` (`gh pr create --base main`). Do not push directly to `main`.
+
 ## Generated files — do not edit by hand
 
 `stencil build` rewrites all of these:
