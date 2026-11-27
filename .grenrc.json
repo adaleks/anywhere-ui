@@ -17,7 +17,7 @@
     "issue": "- {{name}} [{{text}}]({{url}})",
     "group": "\n **{{heading}}**\n"
   },
-  "onlyMIlestones": true,
+  "onlyMilestones": true,
   "override": true,
   "tags": "all"
 }
