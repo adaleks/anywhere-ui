@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputNumberDisabled } from "../input-number-disabled";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-number-disabled";
 
 describe("input-number-disabled", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputNumberDisabled],
-      html: `<input-number-disabled></input-number-disabled>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-number-disabled>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-number-disabled>
-    // `);
+    const { root } = await render("<input-number-disabled></input-number-disabled>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-number-disabled");
   });
 });

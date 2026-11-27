@@ -11,6 +11,15 @@ export class AppConfig {
 
   @State() rippleSwitchChecked = true;
 
+  /** localStorage is unavailable during SSR and in restricted environments */
+  private get storage(): Storage | null {
+    try {
+      return typeof localStorage !== "undefined" ? localStorage : null;
+    } catch {
+      return null;
+    }
+  }
+
   logoMap = {
     "anywhere-default": "anywhere-default-violet.png",
     "anywhere-default-dark-violet": "anywhere-dark-violet.png",
@@ -23,38 +32,28 @@ export class AppConfig {
   };
 
   componentDidLoad() {
+    // app-config is part of the showcase shell; rendering it standalone
+    // (e.g. in a spec test) must not throw.
+    const layoutWrapper = document.querySelector(
+      ".layout-wrapper"
+    ) as HTMLElement | null;
+    if (!layoutWrapper) return;
+
     this.attachEventListeners();
-    const theme = localStorage.getItem("anywhereTheme");
-    document
-      .querySelector(".layout-wrapper")
-      .classList.remove("layout-wrapper-light");
-    document
-      .querySelector(".layout-wrapper")
-      .classList.remove("layout-wrapper-dark");
+    const theme = this.storage?.getItem("anywhereTheme") ?? null;
+    layoutWrapper.classList.remove("layout-wrapper-light");
+    layoutWrapper.classList.remove("layout-wrapper-dark");
     if (theme) {
       document.documentElement.setAttribute("data-theme", theme);
       this.updateAppThemeImage(theme);
       if (theme.includes("dark")) {
-        if (theme.includes("dark")) {
-          document
-            .querySelector(".layout-wrapper")
-            .classList.add("layout-wrapper-dark");
-        } else {
-          document
-            .querySelector(".layout-wrapper")
-            .classList.add("layout-wrapper-light");
-        }
+        layoutWrapper.classList.add("layout-wrapper-dark");
       } else {
-        document
-          .querySelector(".layout-wrapper")
-          .classList.add("layout-wrapper-light");
+        layoutWrapper.classList.add("layout-wrapper-light");
       }
     } else {
-      document
-        .querySelector(".layout-wrapper")
-        .classList.add("layout-wrapper-light");
+      layoutWrapper.classList.add("layout-wrapper-light");
     }
-
     const rippleSwitch = this.element.querySelector(
       "#ripple-switch"
     ) as HTMLAnyCheckboxElement;
@@ -136,10 +135,10 @@ export class AppConfig {
   changeTheme(theme: string) {
     if (theme === "anywhere-default") {
       document.documentElement.removeAttribute("data-theme");
-      localStorage.removeItem("anywhereTheme");
+      this.storage?.removeItem("anywhereTheme");
     } else {
       document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("anywhereTheme", theme);
+      this.storage?.setItem("anywhereTheme", theme);
     }
 
     document

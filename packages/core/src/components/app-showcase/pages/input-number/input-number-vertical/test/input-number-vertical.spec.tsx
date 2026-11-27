@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputNumberVertical } from "../input-number-vertical";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-number-vertical";
 
 describe("input-number-vertical", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputNumberVertical],
-      html: `<input-number-vertical></input-number-vertical>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-number-vertical>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-number-vertical>
-    // `);
+    const { root } = await render("<input-number-vertical></input-number-vertical>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-number-vertical");
   });
 });

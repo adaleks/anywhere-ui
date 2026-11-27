@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { ListboxTemplate } from "../listbox-template";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../listbox-template";
 
 describe("listbox-template", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [ListboxTemplate],
-      html: `<listbox-template></listbox-template>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <listbox-template>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </listbox-template>
-    // `);
+    const { root } = await render("<listbox-template></listbox-template>");
+
+    expect(root.tagName.toLowerCase()).toBe("listbox-template");
   });
 });

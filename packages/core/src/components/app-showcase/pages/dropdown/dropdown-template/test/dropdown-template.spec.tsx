@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { DropdownTemplate } from "../dropdown-template";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../dropdown-template";
 
 describe("dropdown-template", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [DropdownTemplate],
-      html: `<dropdown-template></dropdown-template>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <dropdown-template>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </dropdown-template>
-    // `);
+    const { root } = await render("<dropdown-template></dropdown-template>");
+
+    expect(root.tagName.toLowerCase()).toBe("dropdown-template");
   });
 });

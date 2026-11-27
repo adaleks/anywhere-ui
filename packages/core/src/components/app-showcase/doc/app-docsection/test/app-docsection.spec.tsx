@@ -1,18 +1,10 @@
-// import { newSpecPage } from "@stencil/core/testing";
-// import { AppDocSection } from "../app-docsection";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../app-docsection";
 
-describe("any-app-docsection", () => {
+describe("app-docsection", () => {
   it("renders", async () => {
-    // const page = await newSpecPage({
-    //   components: [AppDocSection],
-    //   html: `<any-app-docsection></any-app-docsection>`,
-    // });
-    // expect(page.root).toEqualHtml(`
-    //   <any-app-docsection>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-app-docsection>
-    // `);
+    const { root } = await render("<app-docsection></app-docsection>");
+
+    expect(root.tagName.toLowerCase()).toBe("app-docsection");
   });
 });

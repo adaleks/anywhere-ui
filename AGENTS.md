@@ -36,7 +36,7 @@ The showcase site (docs, demos, API tables) is built from `packages/core` and pu
   Angular 22 and lerna 10 require Node `^22.22.3 || ^24.15 || >=26`, so use Node 26.
 - **Stencil 4.45**, `@stencil/sass` 3.3, Sass 1.108, TypeScript **6.0**.
 - **Angular 22.3** (all `@angular/*`, ng-packagr 22), React **19.3**, Vue **3.5** (+ vue-router 5).
-- Test runner: Stencil's integrated Jest runner with **jest 29** pinned (Stencil 4.45 requires it).
+- Tests: **Vitest** via `@stencil/vitest` (`stencil-test`, `vitest.config.mts`, jsdom env).
 
 ## Commands (repository root)
 
@@ -49,7 +49,7 @@ The showcase site (docs, demos, API tables) is built from `packages/core` and pu
 | `npm run build.framework-bindings` | Builds `@anywhere-ui/angular`, then `react`, then `vue`                        |
 | `npm run build.watch`              | Stencil dev watch+serve only                                                  |
 | `npm run build-doc-json`           | Regenerates `src/doc/docs.json`                                               |
-| `npm test`                         | Spec tests via `stencil test --spec` (Jest)                                   |
+| `npm test`                         | Spec tests via `stencil-test` (Stencil dev build + Vitest)                     |
 | `npm run generate`                 | Scaffold a component (bash script, needs bash)                                |
 
 Root scripts intentionally use **npm workspaces**, not `lerna run`: `lerna run start` starts the
@@ -77,8 +77,8 @@ Change the component sources or `stencil.config.ts` and rebuild instead.
 - Events use `@Event()` (`valueChange`, `aOnFocus`, …); Vue `v-model` mappings live in
   `vueComponentModels` in `stencil.config.ts` and must match the emitted event name (`valueChange`)
   and target prop (`value` / `checked`).
-- Tests: `test/<name>.spec.tsx` using `newSpecPage` from `@stencil/core/testing`; e2e via Puppeteer
-  (`*.e2e.ts`) — Puppeteer browsers are not downloaded by default here.
+- Tests: `test/<name>.spec.tsx` using `render()` from `@stencil/vitest` (see Testing notes); the legacy
+  Puppeteer `*.e2e.ts` specs are not executed.
 - Adding a showcase page touches: a demo component under `app-showcase/pages/`, a view under
   `src/app/views/`, a route in `src/app/App.js`, and a sidebar link in `src/index.html`.
 - The showcase stylesheet hides `<html>` (`visibility: hidden`) to avoid a flash of unstyled content;
@@ -122,22 +122,42 @@ The generated wrapper APIs depend on the installed output-target versions, so ke
 
 ## Testing notes
 
-- `npm test` is green: 60/60 spec suites, 68 tests. The suite is mostly smoke coverage — most
-  `it("renders")` specs only instantiate the component (their snapshot assertion is commented out).
-  `checkbox.spec.tsx` is the one behavioural spec; use it as the template when writing real tests.
-- Components are written to tolerate missing props/browser APIs in the spec environment (guards for
-  `ResizeObserver`, `IntersectionObserver`, missing `target`, missing nested component refs), and
-  intervals/observers are cleaned up in `disconnectedCallback`.
-- Stencil 4.45's integrated Jest runner is deprecated; the long-term path is `@stencil/vitest`
-  (requires Node 22.12+). Jest stays pinned to 29 until that migration.
+- `npm test` runs **Vitest** through `stencil-test` (`@stencil/vitest` + `stencilVitestPlugin`), then
+  `vitest.config.mts` defines a single `spec` project with the `jsdom` DOM environment.
+- 60 spec files, 68 tests, all green. Write a spec as:
+
+  ```tsx
+  import { describe, it, expect, render } from "@stencil/vitest";
+  import "../my-component"; // side-effect import: registers the element
+
+  describe("my-component", () => {
+    it("renders", async () => {
+      const { root, setProps, waitForChanges } = await render("<my-component></my-component>");
+      await setProps({ label: "Hi" });
+      expect(root.shadowRoot.querySelector(".label").textContent).toBe("Hi");
+    });
+  });
+  ```
+
+- Render with an HTML **string**, not JSX: `render(<my-component />)` produced
+  `Invalid vNode child undefined` with this Stencil/Vite combination. Attributes that map to props are
+  set with `setProps()` (attribute-at-construction triggers a `$instanceValues$` error in the jsdom env).
+- Spec and e2e files are excluded from the library build (`packages/core/tsconfig.json`), so the Stencil
+  build does not type-check them.
+- Components tolerate missing props/browser APIs in the spec environment (guards for `ResizeObserver`,
+  `IntersectionObserver`, missing `target`, missing nested component refs, unavailable `localStorage`,
+  `getAssetPath` without a loader base), and intervals/observers are cleaned up in `disconnectedCallback`.
+- `*.e2e.ts` files are legacy Stencil/Puppeteer specs. They are not run; migrating them to
+  `@stencil/playwright` is the remaining test follow-up.
 
 ## Known pre-existing issues
 
 - Sass 1.108 warns that `@import` is deprecated and will be removed in Dart Sass 3. The theme files still
   use `@import`; the deprecation warnings are silenced in `stencil.config.ts` and the `sass` scripts.
 - `src/index.html` loads Iconify, Prism and DocSearch from CDNs, so the showcase needs network access.
-- `npm test` prints a "worker process has failed to exit gracefully" warning from a leftover open handle
-  in the spec environment; it does not affect the (green) result.
+- The showcase `app/` folder keeps its browser-ready `.js` files (views, `Cities.js`, `CacheService.js`);
+  the duplicate compiled `.js` files next to `.ts` sources elsewhere were removed because Vite resolves
+  `.js` before `.ts` and shadowed the TypeScript modules in tests.
 
 ## Skills worth loading
 

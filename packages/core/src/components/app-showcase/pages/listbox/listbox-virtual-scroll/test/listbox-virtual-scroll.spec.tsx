@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { ListboxVirtualScroll } from "../listbox-virtual-scroll";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../listbox-virtual-scroll";
 
 describe("listbox-virtual-scroll", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [ListboxVirtualScroll],
-      html: `<listbox-virtual-scroll></listbox-virtual-scroll>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <listbox-virtual-scroll>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </listbox-virtual-scroll>
-    // `);
+    const { root } = await render("<listbox-virtual-scroll></listbox-virtual-scroll>");
+
+    expect(root.tagName.toLowerCase()).toBe("listbox-virtual-scroll");
   });
 });

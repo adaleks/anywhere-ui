@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { CheckboxLabel } from "../checkbox-label";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../checkbox-label";
 
-describe("any-checkbox-label", () => {
+describe("checkbox-label", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [CheckboxLabel],
-      html: `<any-checkbox-label></any-checkbox-label>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-checkbox-label>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-checkbox-label>
-    // `);
+    const { root } = await render("<checkbox-label></checkbox-label>");
+
+    expect(root.tagName.toLowerCase()).toBe("checkbox-label");
   });
 });

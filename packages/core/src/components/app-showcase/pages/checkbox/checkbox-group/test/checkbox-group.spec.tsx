@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { CheckboxGroup } from "../checkbox-group";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../checkbox-group";
 
-describe("any-checkbox-group", () => {
+describe("checkbox-group", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [CheckboxGroup],
-      html: `<any-checkbox-group></any-checkbox-group>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-checkbox-group>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-checkbox-group>
-    // `);
+    const { root } = await render("<checkbox-group></checkbox-group>");
+
+    expect(root.tagName.toLowerCase()).toBe("checkbox-group");
   });
 });

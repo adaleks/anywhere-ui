@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputTextBasic } from "../input-text-basic";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-text-basic";
 
 describe("input-text-basic", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputTextBasic],
-      html: `<input-text-basic></input-text-basic>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-text-basic>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-text-basic>
-    // `);
+    const { root } = await render("<input-text-basic></input-text-basic>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-text-basic");
   });
 });

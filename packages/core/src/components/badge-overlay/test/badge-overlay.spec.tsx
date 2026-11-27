@@ -1,18 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { BadgeOverlay } from "../badge-overlay";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../badge-overlay";
 
 describe("any-badge-overlay", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [BadgeOverlay],
-      html: `<any-badge-overlay></any-badge-overlay>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-badge-overlay>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-badge-overlay>
-    // `);
+    const { root } = await render("<any-badge-overlay></any-badge-overlay>");
+
+    expect(root.tagName.toLowerCase()).toBe("any-badge-overlay");
+    expect(root).toHaveShadowRoot();
   });
 });

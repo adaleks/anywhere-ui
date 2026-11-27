@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputTextareaDisabled } from "../input-textarea-disabled";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-textarea-disabled";
 
 describe("input-textarea-disabled", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputTextareaDisabled],
-      html: `<input-textarea-disabled></input-textarea-disabled>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-textarea-disabled>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-textarea-disabled>
-    // `);
+    const { root } = await render("<input-textarea-disabled></input-textarea-disabled>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-textarea-disabled");
   });
 });

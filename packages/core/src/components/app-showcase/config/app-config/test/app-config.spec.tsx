@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { AppConfig } from "../app-config";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../app-config";
 
-describe("any-app-config", () => {
+describe("app-config", () => {
   it("renders", async () => {
-    // const page = await newSpecPage({
-    //   components: [AppConfig],
-    //   html: `<any-app-config></any-app-config>`,
-    // });
-    // expect(page.root).toEqualHtml(`
-    //   <any-app-config>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-app-config>
-    // `);
+    const { root } = await render("<app-config></app-config>");
+
+    expect(root.tagName.toLowerCase()).toBe("app-config");
   });
 });

@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputSwitchPreselection } from "../input-switch-preselection";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-switch-preselection";
 
 describe("input-switch-preselection", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputSwitchPreselection],
-      html: `<input-switch-preselection></input-switch-preselection>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-switch-preselection>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-switch-preselection>
-    // `);
+    const { root } = await render("<input-switch-preselection></input-switch-preselection>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-switch-preselection");
   });
 });

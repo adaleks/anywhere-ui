@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { ListboxMultiple } from "../listbox-multiple";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../listbox-multiple";
 
 describe("listbox-multiple", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [ListboxMultiple],
-      html: `<listbox-multiple></listbox-multiple>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <listbox-multiple>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </listbox-multiple>
-    // `);
+    const { root } = await render("<listbox-multiple></listbox-multiple>");
+
+    expect(root.tagName.toLowerCase()).toBe("listbox-multiple");
   });
 });

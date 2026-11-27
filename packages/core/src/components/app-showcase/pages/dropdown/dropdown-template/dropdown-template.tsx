@@ -18,7 +18,7 @@ export class DropdownTemplate {
   public cities: any = Cities;
   public cache: any = new CacheService();
   public citiesFormated: any[] = [];
-  public placeholderImage: string = getAssetPath(
+  public placeholderImage: string = this.resolveAssetPath(
     `../assets/images/flag/flag_placeholder.png`
   );
   public dropdownWidth = {
@@ -182,6 +182,18 @@ dropdownTemplate.addEventListener("valueChange", (event) => {
 
 `,
   };
+
+  /**
+   * getAssetPath() needs the lazy loader's script base; fall back to the raw
+   * path when there is none (SSR, spec tests).
+   */
+  private resolveAssetPath(path: string): string {
+    try {
+      return getAssetPath(path);
+    } catch {
+      return path;
+    }
+  }
 
   private templateDD: HTMLElement;
 
