@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: adaleks/anywhere-ui-showcase-preview
-          token: ${{ secrets.ACCESS_TOKEN }}
+          ssh-key: ${{ secrets.SHOWCASE_DEPLOY_KEY }}
           path: ./anywhere-ui-showcase-preview
 
       - name: Copy/Create file
@@ -97,7 +97,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: adaleks/anywhere-ui-showcase-production
-          token: ${{ secrets.ACCESS_TOKEN }}
+          ssh-key: ${{ secrets.SHOWCASE_DEPLOY_KEY_PROD }}
           path: ./anywhere-ui-showcase-production
 
       - name: Copy/Create file
