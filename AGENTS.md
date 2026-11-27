@@ -69,6 +69,23 @@ Both remotes use SSH (the maintainer's key is registered), so no PAT/credential 
 `main` is protected (changes must arrive through a pull request): create a branch, push it to `origin`
 and open a PR against `main` (`gh pr create --base main`). Do not push directly to `main`.
 
+## Changelog and releases
+
+- The changelog is built from **issues**, not commits: `.grenrc.json` has `onlyMilestones: true` and
+  groups issues by label (`enhancement`/`new feature` → features, `bug` → fixes, `documentation` → docs).
+- Merged-but-unreleased work is previewed in the `## [Unreleased]` section of `CHANGELOG.md`:
+
+  ```bash
+  GITHUB_TOKEN=$(gh auth token) npm run changelog:unreleased
+  ```
+
+  `scripts/changelog-unreleased.mjs` rebuilds that section from the closed issues of the **open (next)
+  milestone** using the same grouping rules as gren and leaves released sections untouched. It needs a
+  token in `GITHUB_TOKEN`/`GREN_GITHUB_TOKEN`, or a logged-in `gh` CLI.
+- `0.4.0` is still in progress — do not publish a release until the milestone is done.
+- Release flow: tag `v0.4.0` → `npm run generate-changelog` (gren rewrites the whole file from GitHub
+  releases and drops the `Unreleased` section) → commit `CHANGELOG.md` → `gh release create v0.4.0`.
+
 ## Generated files — do not edit by hand
 
 `stencil build` rewrites all of these:
