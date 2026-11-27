@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('listbox-virtual-scroll', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<listbox-virtual-scroll></listbox-virtual-scroll>');
+test.describe("listbox-virtual-scroll", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<listbox-virtual-scroll></listbox-virtual-scroll>");
 
-    const element = await page.find('listbox-virtual-scroll');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("listbox-virtual-scroll")).toHaveClass(/hydrated/);
   });
 });

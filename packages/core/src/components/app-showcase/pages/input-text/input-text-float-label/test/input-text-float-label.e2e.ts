@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('input-text-float-label', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<input-text-float-label></input-text-float-label>');
+test.describe("input-text-float-label", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<input-text-float-label></input-text-float-label>");
 
-    const element = await page.find('input-text-float-label');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("input-text-float-label")).toHaveClass(/hydrated/);
   });
 });

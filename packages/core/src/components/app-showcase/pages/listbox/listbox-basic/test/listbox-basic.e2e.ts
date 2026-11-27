@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('listbox-basic', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<listbox-basic></listbox-basic>');
+test.describe("listbox-basic", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<listbox-basic></listbox-basic>");
 
-    const element = await page.find('listbox-basic');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("listbox-basic")).toHaveClass(/hydrated/);
   });
 });

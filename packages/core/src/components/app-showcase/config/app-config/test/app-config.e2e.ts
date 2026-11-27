@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-app-config', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-app-config></any-app-config>');
+test.describe("app-config", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<app-config></app-config>");
 
-    const element = await page.find('any-app-config');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("app-config")).toHaveClass(/hydrated/);
   });
 });

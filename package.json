@@ -19,7 +19,8 @@
     "initialize-ghpages": "npm -w @anywhere-ui/core run initialize-ghpages",
     "deploy-site-to-master": "npm -w @anywhere-ui/core run deploy-site-to-master",
     "generate-changelog": "node scripts/changelog-unreleased.mjs --release",
-    "changelog:unreleased": "node scripts/changelog-unreleased.mjs"
+    "changelog:unreleased": "node scripts/changelog-unreleased.mjs",
+    "test:e2e": "npm -w @anywhere-ui/core run test.e2e"
   },
   "devDependencies": {
     "grunt": "^1.6.3",

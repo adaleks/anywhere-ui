@@ -39,3 +39,6 @@ UserInterfaceState.xcuserstate
 screenshots/
 .dsh-backup/
 .tmp-*
+.playwright-browsers/
+test-results/
+playwright-report/

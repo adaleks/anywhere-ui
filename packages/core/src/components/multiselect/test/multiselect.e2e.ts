@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-multiselect', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-multiselect></any-multiselect>');
+test.describe("any-multiselect", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<any-multiselect></any-multiselect>");
 
-    const element = await page.find('any-multiselect');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("any-multiselect")).toHaveClass(/hydrated/);
   });
 });

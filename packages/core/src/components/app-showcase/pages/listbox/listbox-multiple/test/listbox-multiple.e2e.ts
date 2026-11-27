@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('listbox-multiple', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<listbox-multiple></listbox-multiple>');
+test.describe("listbox-multiple", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<listbox-multiple></listbox-multiple>");
 
-    const element = await page.find('listbox-multiple');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("listbox-multiple")).toHaveClass(/hydrated/);
   });
 });

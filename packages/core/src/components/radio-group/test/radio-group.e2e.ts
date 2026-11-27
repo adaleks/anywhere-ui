@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-radio-group', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-radio-group></any-radio-group>');
+test.describe("any-radio-group", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<any-radio-group></any-radio-group>");
 
-    const element = await page.find('any-radio-group');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("any-radio-group")).toHaveClass(/hydrated/);
   });
 });

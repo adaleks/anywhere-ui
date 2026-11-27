@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-overlay', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-overlay></any-overlay>');
+test.describe("any-overlay", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<any-overlay></any-overlay>");
 
-    const element = await page.find('any-overlay');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("any-overlay")).toHaveClass(/hydrated/);
   });
 });

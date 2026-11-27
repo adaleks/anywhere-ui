@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('input-switch-preselection', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<input-switch-preselection></input-switch-preselection>');
+test.describe("input-switch-preselection", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<input-switch-preselection></input-switch-preselection>");
 
-    const element = await page.find('input-switch-preselection');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("input-switch-preselection")).toHaveClass(/hydrated/);
   });
 });

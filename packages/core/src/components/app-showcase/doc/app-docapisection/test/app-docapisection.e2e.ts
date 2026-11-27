@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-app-docapisection', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-app-docapisection></any-app-docapisection>');
+test.describe("app-docapisection", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<app-docapisection></app-docapisection>");
 
-    const element = await page.find('any-app-docapisection');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("app-docapisection")).toHaveClass(/hydrated/);
   });
 });
