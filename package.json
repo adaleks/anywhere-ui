@@ -18,11 +18,10 @@
     "deploy-docs": "npm -w @anywhere-ui/core run deploy-docs",
     "initialize-ghpages": "npm -w @anywhere-ui/core run initialize-ghpages",
     "deploy-site-to-master": "npm -w @anywhere-ui/core run deploy-site-to-master",
-    "generate-changelog": "gren changelog --generate",
+    "generate-changelog": "node scripts/changelog-unreleased.mjs --release",
     "changelog:unreleased": "node scripts/changelog-unreleased.mjs"
   },
   "devDependencies": {
-    "github-release-notes": "^0.17.3",
     "grunt": "^1.6.3",
     "grunt-build-number": "^1.0.0",
     "grunt-bumpup": "^0.6.3",
