@@ -11,10 +11,12 @@
 - Translation API for easier i18n in AnywhereUI [#62](https://github.com/adaleks/anywhere-ui/issues/62)
 - Migrate to Stencil v4 [#63](https://github.com/adaleks/anywhere-ui/issues/63)
 - Dropdown Component - Filtering [#68](https://github.com/adaleks/anywhere-ui/issues/68)
+- Listbox Component - Grouping [#69](https://github.com/adaleks/anywhere-ui/issues/69)
 - Upgrade to Stencil 4.45, Angular 22, React 19, Vue 3.5 and Node 26 [#88](https://github.com/adaleks/anywhere-ui/issues/88)
 - Migrate the spec test suite from Jest to Vitest [#91](https://github.com/adaleks/anywhere-ui/issues/91)
 - Migrate e2e tests from Stencil's Puppeteer runner to @stencil/playwright [#96](https://github.com/adaleks/anywhere-ui/issues/96)
 - Generate the changelog Unreleased section from the open milestone [#98](https://github.com/adaleks/anywhere-ui/issues/98)
+- Add the Listbox grouping demo and document the overlay component [#102](https://github.com/adaleks/anywhere-ui/issues/102)
 
  **Fixed Bugs:**
 
