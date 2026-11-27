@@ -15,11 +15,11 @@ export default createConfig({
   use: {
     // Stencil's default devServer.address is 0.0.0.0, which the browser cannot
     // load; the dev server is reachable on localhost for the test run.
-    baseURL: "http://localhost:3333",
+    baseURL: "http://127.0.0.1:3333",
   },
   webServer: {
     // Stencil's dev server has no /ping endpoint; any 200 on the root is enough
-    url: "http://localhost:3333/",
+    url: "http://127.0.0.1:3333/",
     timeout: 120_000,
   },
 });

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-27T21:09:42",
+  "timestamp": "2026-11-27T23:37:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.45.5",
@@ -2230,8 +2230,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "dropdown-basic": [
@@ -6484,6 +6484,10 @@
       ],
       "parts": [
         {
+          "name": "group",
+          "docs": ""
+        },
+        {
           "name": "items",
           "docs": "Represents the list of options."
         },
@@ -6499,21 +6503,22 @@
         "listbox-basic",
         "listbox-disabled",
         "listbox-filter",
+        "listbox-grouping",
         "listbox-multiple",
         "listbox-template",
         "listbox-virtual-scroll"
       ],
       "dependencies": [
         "any-checkbox",
-        "any-input-text",
         "any-ripple-effect",
+        "any-input-text",
         "any-virtual-scroller"
       ],
       "dependencyGraph": {
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "any-dropdown": [
@@ -6529,6 +6534,9 @@
           "any-listbox"
         ],
         "listbox-filter": [
+          "any-listbox"
+        ],
+        "listbox-grouping": [
           "any-listbox"
         ],
         "listbox-multiple": [
@@ -7486,8 +7494,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ]
       }
@@ -9369,6 +9377,7 @@
         "listbox-basic",
         "listbox-disabled",
         "listbox-filter",
+        "listbox-grouping",
         "listbox-multiple",
         "listbox-template",
         "listbox-virtual-scroll"
@@ -9481,6 +9490,9 @@
           "app-code"
         ],
         "listbox-filter": [
+          "app-code"
+        ],
+        "listbox-grouping": [
           "app-code"
         ],
         "listbox-multiple": [
@@ -10401,6 +10413,7 @@
         "listbox-basic",
         "listbox-disabled",
         "listbox-filter",
+        "listbox-grouping",
         "listbox-multiple",
         "listbox-template",
         "listbox-virtual-scroll"
@@ -10507,6 +10520,9 @@
           "app-docsectiontext"
         ],
         "listbox-filter": [
+          "app-docsectiontext"
+        ],
+        "listbox-grouping": [
           "app-docsectiontext"
         ],
         "listbox-multiple": [
@@ -11195,8 +11211,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -11289,8 +11305,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -11383,8 +11399,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -11482,8 +11498,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -11576,8 +11592,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -13294,8 +13310,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -13384,8 +13400,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -13474,8 +13490,98 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/listbox/listbox-grouping/listbox-grouping.tsx",
+      "encapsulation": "scoped",
+      "tag": "listbox-grouping",
+      "readme": "# listbox-grouping\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-listbox",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "listbox-grouping": [
+          "app-docsectiontext",
+          "any-listbox",
+          "app-code"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -13564,8 +13670,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -13659,8 +13765,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [
@@ -13749,8 +13855,8 @@
         ],
         "any-listbox": [
           "any-checkbox",
-          "any-input-text",
           "any-ripple-effect",
+          "any-input-text",
           "any-virtual-scroller"
         ],
         "app-code": [

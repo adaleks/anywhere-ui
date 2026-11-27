@@ -83,8 +83,8 @@ graph TD;
   any-multiselect --> any-overlay
   any-multiselect --> any-listbox
   any-listbox --> any-checkbox
-  any-listbox --> any-input-text
   any-listbox --> any-ripple-effect
+  any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
   style any-multiselect fill:#f9f,stroke:#333,stroke-width:4px
 ```

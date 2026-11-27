@@ -37,8 +37,8 @@ graph TD;
   any-dropdown --> any-overlay
   any-dropdown --> any-listbox
   any-listbox --> any-checkbox
-  any-listbox --> any-input-text
   any-listbox --> any-ripple-effect
+  any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
   app-code --> any-button
   any-button --> any-badge

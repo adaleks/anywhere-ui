@@ -43,7 +43,7 @@ The showcase site (docs, demos, API tables) is built from `packages/core` and pu
 | Command                            | What it does                                                                 |
 | ---------------------------------- | ---------------------------------------------------------------------------- |
 | `npm install`                      | Install all workspaces                                                        |
-| `npm start`                        | `npm -w @anywhere-ui/core run start`: Stencil dev watch+serve on **http://localhost:3333** + `sass --watch` for the showcase CSS |
+| `npm start`                        | `npm -w @anywhere-ui/core run start`: Stencil dev watch+serve on **http://127.0.0.1:3333** + `sass --watch` for the showcase CSS |
 | `npm run build`                    | `build.core` then `build.framework-bindings` (sequential per package)         |
 | `npm run build.core`               | `stencil build --docs` (production build; regenerates proxies, docs, readmes)  |
 | `npm run build.framework-bindings` | Builds `@anywhere-ui/angular`, then `react`, then `vue`                        |
@@ -160,7 +160,7 @@ The generated wrapper APIs depend on the installed output-target versions, so ke
 
 - `npm test` runs **Vitest** through `stencil-test` (`@stencil/vitest` + `stencilVitestPlugin`), then
   `vitest.config.mts` defines a single `spec` project with the `jsdom` DOM environment.
-- 60 spec files, 68 tests, all green. Write a spec as:
+- 61 spec files, 69 tests, all green (the Playwright e2e suite adds 62 browser tests). Write a spec as:
 
   ```tsx
   import { describe, it, expect, render } from "@stencil/vitest";
@@ -189,11 +189,13 @@ The generated wrapper APIs depend on the installed output-target versions, so ke
   assertions (`await expect(page.locator("any-x")).toHaveClass(/hydrated/)`).
 - Two adapter quirks are handled in `playwright.config.ts`: `STENCIL_ENTRY_PATH` is forced to
   `./build/anywhere-ui` (the adapter derives `./www/build/…`, which the dev server does not serve) and
-  `use.baseURL` is `http://localhost:3333` (Stencil's default `devServer.address` is `0.0.0.0`, which a
+  `use.baseURL` is `http://127.0.0.1:3333` (Stencil's default `devServer.address` is `0.0.0.0`, which a
   browser cannot load).
 - Playwright browsers: `npx playwright install chromium`. On this sandboxed machine set
   `PLAYWRIGHT_BROWSERS_PATH=<repo>/.playwright-browsers` (the default `%LOCALAPPDATA%\ms-playwright` is
   not writable).
+- Locally `npm run test:e2e` reuses an already running dev server, so start `npm start` first
+  (Playwright's own webServer start-up is unreliable on this Windows box, while CI starts it fine).
 - `.github/workflows/test.yml` runs Vitest and Playwright for every PR and push to `main`.
 
 ## Known pre-existing issues

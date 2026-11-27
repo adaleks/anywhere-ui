@@ -61,6 +61,7 @@ export const DIRECTIVES = [
   d.ListboxBasic,
   d.ListboxDisabled,
   d.ListboxFilter,
+  d.ListboxGrouping,
   d.ListboxMultiple,
   d.ListboxTemplate,
   d.ListboxVirtualScroll

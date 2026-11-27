@@ -32,6 +32,11 @@ export default class extends AbstractView {
         component: "listbox-filter",
       },
       {
+        id: "grouping",
+        label: "Grouping",
+        component: "listbox-grouping",
+      },
+      {
         id: "template",
         label: "Template",
         component: "listbox-template",

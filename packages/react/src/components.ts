@@ -69,6 +69,7 @@ import { InputTextareaFloatLabel as InputTextareaFloatLabelElement, defineCustom
 import { ListboxBasic as ListboxBasicElement, defineCustomElement as defineListboxBasic } from '@anywhere-ui/core/dist/components/listbox-basic.js';
 import { ListboxDisabled as ListboxDisabledElement, defineCustomElement as defineListboxDisabled } from '@anywhere-ui/core/dist/components/listbox-disabled.js';
 import { ListboxFilter as ListboxFilterElement, defineCustomElement as defineListboxFilter } from '@anywhere-ui/core/dist/components/listbox-filter.js';
+import { ListboxGrouping as ListboxGroupingElement, defineCustomElement as defineListboxGrouping } from '@anywhere-ui/core/dist/components/listbox-grouping.js';
 import { ListboxMultiple as ListboxMultipleElement, defineCustomElement as defineListboxMultiple } from '@anywhere-ui/core/dist/components/listbox-multiple.js';
 import { ListboxTemplate as ListboxTemplateElement, defineCustomElement as defineListboxTemplate } from '@anywhere-ui/core/dist/components/listbox-template.js';
 import { ListboxVirtualScroll as ListboxVirtualScrollElement, defineCustomElement as defineListboxVirtualScroll } from '@anywhere-ui/core/dist/components/listbox-virtual-scroll.js';
@@ -872,6 +873,17 @@ export const ListboxFilter: StencilReactComponent<ListboxFilterElement, ListboxF
     react: React,
     events: {} as ListboxFilterEvents,
     defineCustomElement: defineListboxFilter,
+});
+
+export type ListboxGroupingEvents = NonNullable<unknown>;
+
+export const ListboxGrouping: StencilReactComponent<ListboxGroupingElement, ListboxGroupingEvents, Components.ListboxGrouping> = /*@__PURE__*/ createComponent<ListboxGroupingElement, ListboxGroupingEvents, Components.ListboxGrouping>({
+    tagName: 'listbox-grouping',
+    elementClass: ListboxGroupingElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ListboxGroupingEvents,
+    defineCustomElement: defineListboxGrouping,
 });
 
 export type ListboxMultipleEvents = NonNullable<unknown>;

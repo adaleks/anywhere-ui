@@ -9,6 +9,7 @@ import {
   Host,
   State,
   Method,
+  Fragment,
 } from "@stencil/core";
 import { config } from "../../global/config";
 import _ from "lodash";
@@ -759,6 +760,44 @@ export class AnyListbox {
     }
   }
 
+  /**
+   * Renders a single option row (used both for flat and grouped lists).
+   */
+  private renderOption(option: any, key: string | number) {
+    return (
+      <li
+        key={key}
+        class={
+          "any-listbox-item" + (this.isSelected(option) ? " any-highlight" : "")
+        }
+        tabindex={this.hasTabIndex ? "0" : null}
+        aria-selected={this.isSelected(option)}
+        aria-label={this.getOptionLabel(option)}
+        onClick={(e) => this.itemClick(e, option)}
+      >
+        {this.multiple && this.checkbox && (
+          <any-checkbox
+            exportparts="any-checkbox-box-highlight"
+            inputId={"cb" + key}
+            id={"cb" + key}
+            binary={true}
+            anyStyle={{ zIndex: 101, position: "relative" }}
+            checked={this.isSelected(option)}
+          ></any-checkbox>
+        )}
+        {!this.hasItemSlot ? (
+          <div>{this.getOptionLabel(option)}</div>
+        ) : (
+          <div innerHTML={this.getContent("item", option)}></div>
+        )}
+        <any-ripple-effect
+          exportparts="any-ink: any-ink"
+          anyStyle={{ zIndex: 100 }}
+        ></any-ripple-effect>
+      </li>
+    );
+  }
+
   render() {
     const {
       disabled,
@@ -834,46 +873,28 @@ export class AnyListbox {
             >
               {!virtualScroll ? (
                 <ul class="any-listbox-list" part="items">
-                  {this.optionsToRender.map((option, i) => (
-                    <li
-                      class={
-                        "any-listbox-item" +
-                        (this.isSelected(option) ? " any-highlight" : "")
-                      }
-                      tabindex={this.hasTabIndex ? "0" : null}
-                      aria-selected={this.isSelected(option)}
-                      aria-label={
-                        get(this.optionLabel.split("."), option)
-                          ? get(this.optionLabel.split("."), option)
-                          : option.label
-                      }
-                      onClick={(e) => this.itemClick(e, option)}
-                    >
-                      {multiple && checkbox && (
-                        <any-checkbox
-                          exportparts="any-checkbox-box-highlight"
-                          inputId={"cb" + i}
-                          id={"cb" + i}
-                          binary={true}
-                          anyStyle={{ zIndex: 101, position: "relative" }}
-                          checked={this.isSelected(option)}
-                        ></any-checkbox>
+                  {this.group
+                    ? this.optionsToRender.map((groupOption, groupIndex) => (
+                        <Fragment>
+                          <li
+                            class="any-listbox-item-group"
+                            part="group"
+                            aria-label={this.getOptionLabel(groupOption)}
+                          >
+                            {this.getOptionLabel(groupOption)}
+                          </li>
+                          {this.getOptionGroupChildren(groupOption).map(
+                            (option, optionIndex) =>
+                              this.renderOption(
+                                option,
+                                `${groupIndex}-${optionIndex}`
+                              )
+                          )}
+                        </Fragment>
+                      ))
+                    : this.optionsToRender.map((option, i) =>
+                        this.renderOption(option, i)
                       )}
-                      {!this.hasItemSlot ? (
-                        <div>
-                          {get(this.optionLabel.split("."), option)
-                            ? get(this.optionLabel.split("."), option)
-                            : option.label}
-                        </div>
-                      ) : (
-                        <div innerHTML={this.getContent("item", option)}></div>
-                      )}
-                      <any-ripple-effect
-                        exportparts="any-ink: any-ink"
-                        anyStyle={{ zIndex: 100 }}
-                      ></any-ripple-effect>
-                    </li>
-                  ))}
                   {this.hasFilter() && this.isEmpty() && (
                     <li class="any-listbox-empty-message">
                       {this.emptyFilterMessageLabel}

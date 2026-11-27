@@ -10,7 +10,7 @@ export default class extends AbstractView {
 
   executeScript() {
     this.appDoc = document.querySelector("#app-doc");
-    this.appDoc.apiDocs = ["any-dropdown"];
+    this.appDoc.apiDocs = ["any-dropdown", "any-overlay"];
     this.appDoc.docs = [
       {
         id: "basic",

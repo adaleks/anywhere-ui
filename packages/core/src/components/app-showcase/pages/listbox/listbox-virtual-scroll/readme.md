@@ -28,8 +28,8 @@ graph TD;
   listbox-virtual-scroll --> any-listbox
   listbox-virtual-scroll --> app-code
   any-listbox --> any-checkbox
-  any-listbox --> any-input-text
   any-listbox --> any-ripple-effect
+  any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
   app-code --> any-button
   any-button --> any-badge
