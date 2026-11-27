@@ -1,18 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { RadioButton } from "../radio-button";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../radio-button";
 
 describe("any-radio-button", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [RadioButton],
-      html: `<any-radio-button></any-radio-button>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-radio-button>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-radio-button>
-    // `);
+    const { root } = await render("<any-radio-button></any-radio-button>");
+
+    expect(root.tagName.toLowerCase()).toBe("any-radio-button");
+    expect(root).toHaveShadowRoot();
   });
 });

@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputNumberFloatLabel } from "../input-number-float-label";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-number-float-label";
 
 describe("input-number-float-label", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputNumberFloatLabel],
-      html: `<input-number-float-label></input-number-float-label>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-number-float-label>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-number-float-label>
-    // `);
+    const { root } = await render("<input-number-float-label></input-number-float-label>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-number-float-label");
   });
 });

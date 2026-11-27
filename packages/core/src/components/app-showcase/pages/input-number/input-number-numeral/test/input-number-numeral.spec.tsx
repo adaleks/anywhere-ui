@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputNumberNumeral } from "../input-number-numeral";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-number-numeral";
 
 describe("input-number-numeral", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputNumberNumeral],
-      html: `<input-number-numeral></input-number-numeral>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-number-numeral>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-number-numeral>
-    // `);
+    const { root } = await render("<input-number-numeral></input-number-numeral>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-number-numeral");
   });
 });

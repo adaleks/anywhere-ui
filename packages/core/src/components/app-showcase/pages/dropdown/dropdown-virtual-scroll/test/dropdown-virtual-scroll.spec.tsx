@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { DropdownVirtualScroll } from "../dropdown-virtual-scroll";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../dropdown-virtual-scroll";
 
 describe("dropdown-virtual-scroll", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [DropdownVirtualScroll],
-      html: `<dropdown-virtual-scroll></dropdown-virtual-scroll>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <dropdown-virtual-scroll>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </dropdown-virtual-scroll>
-    // `);
+    const { root } = await render("<dropdown-virtual-scroll></dropdown-virtual-scroll>");
+
+    expect(root.tagName.toLowerCase()).toBe("dropdown-virtual-scroll");
   });
 });

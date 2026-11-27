@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { AnyVirtualScroller } from "../virtual-scroller";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../virtual-scroller";
 
-describe("virtual-scroller", () => {
+describe("any-virtual-scroller", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [AnyVirtualScroller],
-      html: `<any-virtual-scroller></any-virtual-scroller>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-virtual-scroller>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-virtual-scroller>
-    // `);
+    const { root } = await render("<any-virtual-scroller></any-virtual-scroller>");
+
+    expect(root.tagName.toLowerCase()).toBe("any-virtual-scroller");
   });
 });

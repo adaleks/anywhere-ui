@@ -1,18 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { AnyOverlay } from "../overlay";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../overlay";
 
 describe("any-overlay", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [AnyOverlay],
-      html: `<any-overlay></any-overlay>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-overlay>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-overlay>
-    // `);
+    const { root } = await render("<any-overlay></any-overlay>");
+
+    expect(root.tagName.toLowerCase()).toBe("any-overlay");
+    expect(root).toHaveShadowRoot();
   });
 });

@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { DropdownDisabled } from "../dropdown-disabled";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../dropdown-disabled";
 
 describe("dropdown-disabled", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [DropdownDisabled],
-      html: `<dropdown-disabled></dropdown-disabled>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <dropdown-disabled>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </dropdown-disabled>
-    // `);
+    const { root } = await render("<dropdown-disabled></dropdown-disabled>");
+
+    expect(root.tagName.toLowerCase()).toBe("dropdown-disabled");
   });
 });

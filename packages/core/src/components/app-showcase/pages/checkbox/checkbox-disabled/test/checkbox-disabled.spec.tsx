@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { CheckboxDisabled } from "../checkbox-disabled";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../checkbox-disabled";
 
-describe("any-checkbox-disabled", () => {
+describe("checkbox-disabled", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [CheckboxDisabled],
-      html: `<any-checkbox-disabled></any-checkbox-disabled>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-checkbox-disabled>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-checkbox-disabled>
-    // `);
+    const { root } = await render("<checkbox-disabled></checkbox-disabled>");
+
+    expect(root.tagName.toLowerCase()).toBe("checkbox-disabled");
   });
 });

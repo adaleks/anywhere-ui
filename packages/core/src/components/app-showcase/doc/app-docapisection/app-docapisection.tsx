@@ -233,7 +233,7 @@ export class AppDocapisection {
           <div class="doc-intro">
             <h1>
               {this.header}{" "}
-              {!this.header.toLowerCase().includes("api") ? "API" : null}
+              {!(this.header ?? "").toLowerCase().includes("api") ? "API" : null}
             </h1>
             <p>
               API defines helper props, events and others for the AnywhereUI{" "}

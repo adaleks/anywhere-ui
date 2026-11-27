@@ -4,7 +4,10 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2020",
@@ -15,6 +18,15 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["src", "types/jsx.d.ts"],
-  "exclude": ["node_modules", "src/doc/docs.d.ts"]
+  "include": [
+    "src",
+    "types/jsx.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/doc/docs.d.ts",
+    "**/*.e2e.ts",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ]
 }

@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { AppDocApiTable } from "../app-docapitable";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../app-docapitable";
 
-describe("any-app-docapitable", () => {
+describe("app-docapitable", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [AppDocApiTable],
-      html: `<any-app-docapitable></any-app-docapitable>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <any-app-docapitable>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </any-app-docapitable>
-    // `);
+    const { root } = await render("<app-docapitable></app-docapitable>");
+
+    expect(root.tagName.toLowerCase()).toBe("app-docapitable");
   });
 });

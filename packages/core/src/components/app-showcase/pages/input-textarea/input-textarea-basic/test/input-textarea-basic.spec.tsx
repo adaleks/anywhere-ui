@@ -1,18 +1,10 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { InputTextareaBasic } from "../input-textarea-basic";
+import { describe, it, expect, render } from "@stencil/vitest";
+import "../input-textarea-basic";
 
 describe("input-textarea-basic", () => {
   it("renders", async () => {
-    const page = await newSpecPage({
-      components: [InputTextareaBasic],
-      html: `<input-textarea-basic></input-textarea-basic>`,
-    });
-    // expect(page.root).toEqualHtml(`
-    //   <input-textarea-basic>
-    //     <mock:shadow-root>
-    //       <slot></slot>
-    //     </mock:shadow-root>
-    //   </input-textarea-basic>
-    // `);
+    const { root } = await render("<input-textarea-basic></input-textarea-basic>");
+
+    expect(root.tagName.toLowerCase()).toBe("input-textarea-basic");
   });
 });
