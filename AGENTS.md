@@ -71,20 +71,25 @@ and open a PR against `main` (`gh pr create --base main`). Do not push directly 
 
 ## Changelog and releases
 
-- The changelog is built from **issues**, not commits: `.grenrc.json` has `onlyMilestones: true` and
-  groups issues by label (`enhancement`/`new feature` → features, `bug` → fixes, `documentation` → docs).
-- Merged-but-unreleased work is previewed in the `## [Unreleased]` section of `CHANGELOG.md`:
+- The changelog is generated from **issues**, grouped by label. `scripts/changelog-unreleased.mjs`
+  reads `.grenrc.json` (`groupBy`, `ignoreIssuesWith`) and takes the closed, non-PR issues of the
+  **open (next) milestone**. Pull requests are ignored, so every release-note-worthy change needs an
+  issue in that milestone.
+- Preview while a release is in progress:
 
   ```bash
   GITHUB_TOKEN=$(gh auth token) npm run changelog:unreleased
   ```
 
-  `scripts/changelog-unreleased.mjs` rebuilds that section from the closed issues of the **open (next)
-  milestone** using the same grouping rules as gren and leaves released sections untouched. It needs a
-  token in `GITHUB_TOKEN`/`GREN_GITHUB_TOKEN`, or a logged-in `gh` CLI.
+  It rewrites only the `## [Unreleased]` section of `CHANGELOG.md` (idempotent); `--dry-run` prints the
+  section without touching the file. A token is read from `GITHUB_TOKEN`/`GREN_GITHUB_TOKEN` or
+  `gh auth token`.
+- Release: `GITHUB_TOKEN=$(gh auth token) npm run generate-changelog` renders the dated
+  `## [vX.Y.Z](…/tree/vX.Y.Z)` section from the same issues and replaces `Unreleased`. Then tag, push
+  the tag, commit `CHANGELOG.md` and `gh release create`.
 - `0.4.0` is still in progress — do not publish a release until the milestone is done.
-- Release flow: tag `v0.4.0` → `npm run generate-changelog` (gren rewrites the whole file from GitHub
-  releases and drops the `Unreleased` section) → commit `CHANGELOG.md` → `gh release create v0.4.0`.
+- Do **not** re-add `github-release-notes` (gren): it depends on `npm@6`, which lands in
+  `node_modules/npm` and shadows the workflow's npm on GitHub Actions, breaking `npm -w …`.
 
 ## Generated files — do not edit by hand
 
