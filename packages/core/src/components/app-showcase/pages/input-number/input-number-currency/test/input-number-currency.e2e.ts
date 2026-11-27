@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('input-number-currency', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<input-number-currency></input-number-currency>');
+test.describe("input-number-currency", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<input-number-currency></input-number-currency>");
 
-    const element = await page.find('input-number-currency');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("input-number-currency")).toHaveClass(/hydrated/);
   });
 });

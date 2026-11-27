@@ -1,11 +1,10 @@
-import { newE2EPage } from "@stencil/core/testing";
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe("input-text", () => {
-  it("renders", async () => {
-    const page = await newE2EPage();
+test.describe("any-input-text", () => {
+  test("renders", async ({ page }) => {
     await page.setContent("<any-input-text></any-input-text>");
 
-    const element = await page.find("any-input-text");
-    expect(element).toHaveClass("hydrated");
+    await expect(page.locator("any-input-text")).toHaveClass(/hydrated/);
   });
 });

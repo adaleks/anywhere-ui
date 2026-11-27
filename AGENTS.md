@@ -50,6 +50,7 @@ The showcase site (docs, demos, API tables) is built from `packages/core` and pu
 | `npm run build.watch`              | Stencil dev watch+serve only                                                  |
 | `npm run build-doc-json`           | Regenerates `src/doc/docs.json`                                               |
 | `npm test`                         | Spec tests via `stencil-test` (Stencil dev build + Vitest)                     |
+| `npm run test:e2e`                 | Browser tests via Playwright (`@stencil/playwright`)                           |
 | `npm run generate`                 | Scaffold a component (bash script, needs bash)                                |
 
 Root scripts intentionally use **npm workspaces**, not `lerna run`: `lerna run start` starts the
@@ -112,8 +113,8 @@ Change the component sources or `stencil.config.ts` and rebuild instead.
 - Events use `@Event()` (`valueChange`, `aOnFocus`, …); Vue `v-model` mappings live in
   `vueComponentModels` in `stencil.config.ts` and must match the emitted event name (`valueChange`)
   and target prop (`value` / `checked`).
-- Tests: `test/<name>.spec.tsx` using `render()` from `@stencil/vitest` (see Testing notes); the legacy
-  Puppeteer `*.e2e.ts` specs are not executed.
+- Tests: `test/<name>.spec.tsx` using `render()` from `@stencil/vitest`; browser tests are
+  `test/<name>.e2e.ts` and run with Playwright (`npm run test:e2e`).
 - Adding a showcase page touches: a demo component under `app-showcase/pages/`, a view under
   `src/app/views/`, a route in `src/app/App.js`, and a sidebar link in `src/index.html`.
 - The showcase stylesheet hides `<html>` (`visibility: hidden`) to avoid a flash of unstyled content;
@@ -182,8 +183,18 @@ The generated wrapper APIs depend on the installed output-target versions, so ke
 - Components tolerate missing props/browser APIs in the spec environment (guards for `ResizeObserver`,
   `IntersectionObserver`, missing `target`, missing nested component refs, unavailable `localStorage`,
   `getAssetPath` without a loader base), and intervals/observers are cleaned up in `disconnectedCallback`.
-- `*.e2e.ts` files are legacy Stencil/Puppeteer specs. They are not run; migrating them to
-  `@stencil/playwright` is the remaining test follow-up.
+- E2E tests run with **Playwright** through `@stencil/playwright`:
+  `npm run test:e2e` (config in `packages/core/playwright.config.ts`, specs are `*.e2e.ts`).
+  The config starts/reuses the Stencil dev server and the specs use `page.setContent()` plus locator
+  assertions (`await expect(page.locator("any-x")).toHaveClass(/hydrated/)`).
+- Two adapter quirks are handled in `playwright.config.ts`: `STENCIL_ENTRY_PATH` is forced to
+  `./build/anywhere-ui` (the adapter derives `./www/build/…`, which the dev server does not serve) and
+  `use.baseURL` is `http://localhost:3333` (Stencil's default `devServer.address` is `0.0.0.0`, which a
+  browser cannot load).
+- Playwright browsers: `npx playwright install chromium`. On this sandboxed machine set
+  `PLAYWRIGHT_BROWSERS_PATH=<repo>/.playwright-browsers` (the default `%LOCALAPPDATA%\ms-playwright` is
+  not writable).
+- `.github/workflows/test.yml` runs Vitest and Playwright for every PR and push to `main`.
 
 ## Known pre-existing issues
 

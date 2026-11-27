@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('input-textarea-auto-resize', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<input-textarea-auto-resize></input-textarea-auto-resize>');
+test.describe("input-textarea-auto-resize", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<input-textarea-auto-resize></input-textarea-auto-resize>");
 
-    const element = await page.find('input-textarea-auto-resize');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("input-textarea-auto-resize")).toHaveClass(/hydrated/);
   });
 });

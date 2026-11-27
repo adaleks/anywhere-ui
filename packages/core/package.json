@@ -48,12 +48,15 @@
     "deploy-docs": "bash scripts/clear-www.sh && npm run build && node scripts/docs.js && cd www && git add --all && git commit -m \"deployed site to master\" && git push --set-upstream origin master && cd ..",
     "initialize-ghpages": "bash scripts/initialize-stencil-ghpages-repo.sh",
     "deploy-site-to-master": "bash scripts/deploy-site-to-master.sh",
-    "test.watch": "stencil-test --watch"
+    "test.watch": "stencil-test --watch",
+    "test.e2e": "playwright test"
   },
   "devDependencies": {
     "@iconify/iconify": "^3.1.1",
+    "@playwright/test": "^1.65.1",
     "@stencil/angular-output-target": "^1.6.0",
     "@stencil/core": "^4.45.5",
+    "@stencil/playwright": "^0.6.1",
     "@stencil/react-output-target": "^1.8.1",
     "@stencil/sass": "^3.3.3",
     "@stencil/vitest": "^1.16.2",

@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-checkbox-dynamic', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-checkbox-dynamic></any-checkbox-dynamic>');
+test.describe("checkbox-dynamic", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<checkbox-dynamic></checkbox-dynamic>");
 
-    const element = await page.find('any-checkbox-dynamic');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("checkbox-dynamic")).toHaveClass(/hydrated/);
   });
 });

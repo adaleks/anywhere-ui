@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-input-switch', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-input-switch></any-input-switch>');
+test.describe("any-input-switch", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<any-input-switch></any-input-switch>");
 
-    const element = await page.find('any-input-switch');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("any-input-switch")).toHaveClass(/hydrated/);
   });
 });

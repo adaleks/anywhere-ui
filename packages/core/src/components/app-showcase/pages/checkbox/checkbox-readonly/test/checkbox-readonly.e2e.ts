@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-checkbox-readonly', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-checkbox-readonly></any-checkbox-readonly>');
+test.describe("checkbox-readonly", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<checkbox-readonly></checkbox-readonly>");
 
-    const element = await page.find('any-checkbox-readonly');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("checkbox-readonly")).toHaveClass(/hydrated/);
   });
 });

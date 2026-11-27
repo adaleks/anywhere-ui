@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-badge-overlay', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-badge-overlay></any-badge-overlay>');
+test.describe("any-badge-overlay", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<any-badge-overlay></any-badge-overlay>");
 
-    const element = await page.find('any-badge-overlay');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("any-badge-overlay")).toHaveClass(/hydrated/);
   });
 });

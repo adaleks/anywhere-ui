@@ -1,11 +1,10 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from "@playwright/test";
+import { test } from "@stencil/playwright";
 
-describe('any-tab-view', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<any-tab-view></any-tab-view>');
+test.describe("any-tab-view", () => {
+  test("renders", async ({ page }) => {
+    await page.setContent("<any-tab-view></any-tab-view>");
 
-    const element = await page.find('any-tab-view');
-    expect(element).toHaveClass('hydrated');
+    await expect(page.locator("any-tab-view")).toHaveClass(/hydrated/);
   });
 });
