@@ -1445,6 +1445,10 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface ListboxGrouping {
+        "textId": string;
+        "textTitle": string;
+    }
     interface ListboxMultiple {
         "textId": string;
         "textTitle": string;
@@ -2160,6 +2164,12 @@ declare global {
         prototype: HTMLListboxFilterElement;
         new (): HTMLListboxFilterElement;
     };
+    interface HTMLListboxGroupingElement extends Components.ListboxGrouping, HTMLStencilElement {
+    }
+    var HTMLListboxGroupingElement: {
+        prototype: HTMLListboxGroupingElement;
+        new (): HTMLListboxGroupingElement;
+    };
     interface HTMLListboxMultipleElement extends Components.ListboxMultiple, HTMLStencilElement {
     }
     var HTMLListboxMultipleElement: {
@@ -2238,6 +2248,7 @@ declare global {
         "listbox-basic": HTMLListboxBasicElement;
         "listbox-disabled": HTMLListboxDisabledElement;
         "listbox-filter": HTMLListboxFilterElement;
+        "listbox-grouping": HTMLListboxGroupingElement;
         "listbox-multiple": HTMLListboxMultipleElement;
         "listbox-template": HTMLListboxTemplateElement;
         "listbox-virtual-scroll": HTMLListboxVirtualScrollElement;
@@ -3853,6 +3864,10 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface ListboxGrouping {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface ListboxMultiple {
         "textId"?: string;
         "textTitle"?: string;
@@ -4303,6 +4318,10 @@ declare namespace LocalJSX {
         "textId": string;
         "textTitle": string;
     }
+    interface ListboxGroupingAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
     interface ListboxMultipleAttributes {
         "textId": string;
         "textTitle": string;
@@ -4376,6 +4395,7 @@ declare namespace LocalJSX {
         "listbox-basic": Omit<ListboxBasic, keyof ListboxBasicAttributes> & { [K in keyof ListboxBasic & keyof ListboxBasicAttributes]?: ListboxBasic[K] } & { [K in keyof ListboxBasic & keyof ListboxBasicAttributes as `attr:${K}`]?: ListboxBasicAttributes[K] } & { [K in keyof ListboxBasic & keyof ListboxBasicAttributes as `prop:${K}`]?: ListboxBasic[K] };
         "listbox-disabled": Omit<ListboxDisabled, keyof ListboxDisabledAttributes> & { [K in keyof ListboxDisabled & keyof ListboxDisabledAttributes]?: ListboxDisabled[K] } & { [K in keyof ListboxDisabled & keyof ListboxDisabledAttributes as `attr:${K}`]?: ListboxDisabledAttributes[K] } & { [K in keyof ListboxDisabled & keyof ListboxDisabledAttributes as `prop:${K}`]?: ListboxDisabled[K] };
         "listbox-filter": Omit<ListboxFilter, keyof ListboxFilterAttributes> & { [K in keyof ListboxFilter & keyof ListboxFilterAttributes]?: ListboxFilter[K] } & { [K in keyof ListboxFilter & keyof ListboxFilterAttributes as `attr:${K}`]?: ListboxFilterAttributes[K] } & { [K in keyof ListboxFilter & keyof ListboxFilterAttributes as `prop:${K}`]?: ListboxFilter[K] };
+        "listbox-grouping": Omit<ListboxGrouping, keyof ListboxGroupingAttributes> & { [K in keyof ListboxGrouping & keyof ListboxGroupingAttributes]?: ListboxGrouping[K] } & { [K in keyof ListboxGrouping & keyof ListboxGroupingAttributes as `attr:${K}`]?: ListboxGroupingAttributes[K] } & { [K in keyof ListboxGrouping & keyof ListboxGroupingAttributes as `prop:${K}`]?: ListboxGrouping[K] };
         "listbox-multiple": Omit<ListboxMultiple, keyof ListboxMultipleAttributes> & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes]?: ListboxMultiple[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `attr:${K}`]?: ListboxMultipleAttributes[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `prop:${K}`]?: ListboxMultiple[K] };
         "listbox-template": Omit<ListboxTemplate, keyof ListboxTemplateAttributes> & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes]?: ListboxTemplate[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `attr:${K}`]?: ListboxTemplateAttributes[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `prop:${K}`]?: ListboxTemplate[K] };
         "listbox-virtual-scroll": Omit<ListboxVirtualScroll, keyof ListboxVirtualScrollAttributes> & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes]?: ListboxVirtualScroll[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `attr:${K}`]?: ListboxVirtualScrollAttributes[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `prop:${K}`]?: ListboxVirtualScroll[K] };
@@ -4469,6 +4489,7 @@ declare module "@stencil/core" {
             "listbox-basic": LocalJSX.IntrinsicElements["listbox-basic"] & JSXBase.HTMLAttributes<HTMLListboxBasicElement>;
             "listbox-disabled": LocalJSX.IntrinsicElements["listbox-disabled"] & JSXBase.HTMLAttributes<HTMLListboxDisabledElement>;
             "listbox-filter": LocalJSX.IntrinsicElements["listbox-filter"] & JSXBase.HTMLAttributes<HTMLListboxFilterElement>;
+            "listbox-grouping": LocalJSX.IntrinsicElements["listbox-grouping"] & JSXBase.HTMLAttributes<HTMLListboxGroupingElement>;
             "listbox-multiple": LocalJSX.IntrinsicElements["listbox-multiple"] & JSXBase.HTMLAttributes<HTMLListboxMultipleElement>;
             "listbox-template": LocalJSX.IntrinsicElements["listbox-template"] & JSXBase.HTMLAttributes<HTMLListboxTemplateElement>;
             "listbox-virtual-scroll": LocalJSX.IntrinsicElements["listbox-virtual-scroll"] & JSXBase.HTMLAttributes<HTMLListboxVirtualScrollElement>;

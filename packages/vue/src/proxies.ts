@@ -703,6 +703,12 @@ export const ListboxFilter: StencilVueComponent<JSX.ListboxFilter> = /*@__PURE__
 ]);
 
 
+export const ListboxGrouping: StencilVueComponent<JSX.ListboxGrouping> = /*@__PURE__*/ defineContainer<JSX.ListboxGrouping>('listbox-grouping', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
 export const ListboxMultiple: StencilVueComponent<JSX.ListboxMultiple> = /*@__PURE__*/ defineContainer<JSX.ListboxMultiple>('listbox-multiple', undefined, [
   'textId',
   'textTitle'

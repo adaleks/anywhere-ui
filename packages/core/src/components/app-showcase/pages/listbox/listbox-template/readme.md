@@ -35,8 +35,8 @@ graph TD;
   listbox-template --> any-listbox
   listbox-template --> app-code
   any-listbox --> any-checkbox
-  any-listbox --> any-input-text
   any-listbox --> any-ripple-effect
+  any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
   app-code --> any-button
   any-button --> any-badge

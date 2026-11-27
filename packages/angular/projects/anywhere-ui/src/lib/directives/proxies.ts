@@ -1720,6 +1720,29 @@ export declare interface ListboxFilter extends Components.ListboxFilter {}
   inputs: ['textId', 'textTitle']
 })
 @Component({
+  selector: 'listbox-grouping',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ListboxGrouping {
+  protected el: HTMLListboxGroupingElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ListboxGrouping extends Components.ListboxGrouping {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
   selector: 'listbox-multiple',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',

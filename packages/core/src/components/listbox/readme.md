@@ -74,6 +74,7 @@ Type: `Promise<void>`
 
 | Part      | Description                                       |
 | --------- | ------------------------------------------------- |
+| `"group"` |                                                   |
 | `"items"` | Represents the list of options.                   |
 | `"lists"` | Represents the container for the list of options. |
 
@@ -118,6 +119,7 @@ Type: `Promise<void>`
  - [listbox-basic](../app-showcase/pages/listbox/listbox-basic)
  - [listbox-disabled](../app-showcase/pages/listbox/listbox-disabled)
  - [listbox-filter](../app-showcase/pages/listbox/listbox-filter)
+ - [listbox-grouping](../app-showcase/pages/listbox/listbox-grouping)
  - [listbox-multiple](../app-showcase/pages/listbox/listbox-multiple)
  - [listbox-template](../app-showcase/pages/listbox/listbox-template)
  - [listbox-virtual-scroll](../app-showcase/pages/listbox/listbox-virtual-scroll)
@@ -125,22 +127,23 @@ Type: `Promise<void>`
 ### Depends on
 
 - [any-checkbox](../checkbox)
-- [any-input-text](../input-text)
 - [any-ripple-effect](../ripple-effect)
+- [any-input-text](../input-text)
 - [any-virtual-scroller](../virtual-scroller)
 
 ### Graph
 ```mermaid
 graph TD;
   any-listbox --> any-checkbox
-  any-listbox --> any-input-text
   any-listbox --> any-ripple-effect
+  any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
   any-dropdown --> any-listbox
   any-multiselect --> any-listbox
   listbox-basic --> any-listbox
   listbox-disabled --> any-listbox
   listbox-filter --> any-listbox
+  listbox-grouping --> any-listbox
   listbox-multiple --> any-listbox
   listbox-template --> any-listbox
   listbox-virtual-scroll --> any-listbox

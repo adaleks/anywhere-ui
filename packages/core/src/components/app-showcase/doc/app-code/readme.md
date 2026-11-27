@@ -56,6 +56,7 @@
  - [listbox-basic](../../pages/listbox/listbox-basic)
  - [listbox-disabled](../../pages/listbox/listbox-disabled)
  - [listbox-filter](../../pages/listbox/listbox-filter)
+ - [listbox-grouping](../../pages/listbox/listbox-grouping)
  - [listbox-multiple](../../pages/listbox/listbox-multiple)
  - [listbox-template](../../pages/listbox/listbox-template)
  - [listbox-virtual-scroll](../../pages/listbox/listbox-virtual-scroll)
@@ -103,6 +104,7 @@ graph TD;
   listbox-basic --> app-code
   listbox-disabled --> app-code
   listbox-filter --> app-code
+  listbox-grouping --> app-code
   listbox-multiple --> app-code
   listbox-template --> app-code
   listbox-virtual-scroll --> app-code

@@ -107,8 +107,8 @@ graph TD;
   any-dropdown --> any-overlay
   any-dropdown --> any-listbox
   any-listbox --> any-checkbox
-  any-listbox --> any-input-text
   any-listbox --> any-ripple-effect
+  any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
   dropdown-basic --> any-dropdown
   dropdown-disabled --> any-dropdown

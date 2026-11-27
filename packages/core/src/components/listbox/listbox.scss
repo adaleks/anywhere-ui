@@ -128,3 +128,17 @@
     }
   }
 }
+
+  .any-listbox-item-group {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    cursor: default;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    color: var(--text-color-secondary, inherit);
+    background-color: var(--surface-100, var(--inputListHeaderBg, transparent));
+    border-bottom: 1px solid var(--surface-border, transparent);
+  }
