@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+MultiSelect is used to select multiple items from a collection.
+
 ## Properties
 
 | Property              | Attribute               | Description                                                                                   | Type      | Default                                        |
@@ -48,6 +52,14 @@
 | `aOnPanelShow`      | Callback to invoke when dropdown overlay gets visible        | `CustomEvent<any>` |
 | `aOnPanelShowStart` | Callback to invoke when dropdown overlay before gets visible | `CustomEvent<any>` |
 | `valueChange`       | Callback to invoke when value of dropdown changes            | `CustomEvent<any>` |
+
+
+## Slots
+
+| Slot             | Description                                       |
+| ---------------- | ------------------------------------------------- |
+| `"item"`         | Custom content for an option row in the list.     |
+| `"selectedItem"` | Custom content for the chip of a selected option. |
 
 
 ## CSS Custom Properties

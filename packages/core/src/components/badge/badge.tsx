@@ -1,5 +1,10 @@
 import { Component, Host, h, Prop } from "@stencil/core";
 
+/**
+ * Badge is a small status indicator for another element.
+ *
+ * @part any-badge - The badge element.
+ */
 @Component({
   tag: "any-badge",
   styleUrl: "badge.scss",

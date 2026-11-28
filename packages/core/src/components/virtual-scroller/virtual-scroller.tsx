@@ -12,6 +12,14 @@ import {
 import Clusterize from "clusterize.js";
 import { getRows, uuid, scrollStop } from "../../utils/utils";
 
+/**
+ * Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.
+ *
+ * @slot header - Content rendered above the list.
+ * @slot item - Template for a single row; the #=item.field# placeholders are replaced per item.
+ * @slot loadingItem - Row placeholder rendered while a lazy page is loading.
+ * @slot footer - Content rendered below the list.
+ */
 @Component({
   tag: "any-virtual-scroller",
   styleUrl: "virtual-scroller.scss",

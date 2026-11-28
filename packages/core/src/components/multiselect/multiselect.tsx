@@ -29,6 +29,12 @@ const parseValue = (value: any) => {
   return value.toString();
 };
 
+/**
+ * MultiSelect is used to select multiple items from a collection.
+ *
+ * @slot item - Custom content for an option row in the list.
+ * @slot selectedItem - Custom content for the chip of a selected option.
+ */
 @Component({
   tag: "any-multiselect",
   styleUrl: "multiselect.scss",
