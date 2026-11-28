@@ -28,6 +28,7 @@
  **Documentations:**
 
 - Document repository workflow and remotes in AGENTS.md [#92](https://github.com/adaleks/anywhere-ui/issues/92)
+- Refresh the Get Started guide for the current stack [#103](https://github.com/adaleks/anywhere-ui/issues/103)
 
 ## [v0.3.0](https://github.com/adaleks/anywhere-ui/tree/v0.3.0) (12/02/2023)
 
