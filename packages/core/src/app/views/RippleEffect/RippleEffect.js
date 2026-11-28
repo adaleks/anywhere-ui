@@ -7,16 +7,20 @@ export default class extends AbstractView {
   }
 
   executeScript() {
-    this.viewOnGithubBtn = document.querySelector("#view_on_github");
-    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
-      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/ripple-effect', '_blank');
-    });
+    this.appDoc = document.querySelector("#app-doc");
+    this.appDoc.apiDocs = ["any-ripple-effect"];
+    this.appDoc.docs = [
+      {
+        id: "effect-basic",
+        label: "Basic",
+        component: "ripple-effect-basic",
+      },
+    ];
   }
 
   async getHtml() {
-    return fetch('app/views/RippleEffect/RippleEffect.html')
-      .then(data => {
-        return data.text();
-      });
+    return fetch("app/views/RippleEffect/RippleEffect.html").then((data) => {
+      return data.text();
+    });
   }
 }

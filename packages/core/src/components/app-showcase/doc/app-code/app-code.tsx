@@ -53,16 +53,25 @@ export class AppCode {
     return "";
   }
 
+  /**
+   * The demo sources are authored as template literals; drop the leading and
+   * trailing blank lines so every code block starts at a consistent offset
+   * (the padding lives in app-code.scss).
+   */
+  private normalizeCode(code: string): string {
+    return typeof code === "string" ? code.replace(/^\n+/, "").replace(/\s+$/, "") : "";
+  }
+
   async copyCode() {
-    await navigator.clipboard.writeText(this.code[this.lang]);
+    await navigator.clipboard.writeText(this.normalizeCode(this.code[this.lang]));
   }
 
   getCode(lang: string = "basic") {
     if (this.code) {
       if (this.fullCodeVisible || this.hideToggleCode) {
-        return this.code[lang];
+        return this.normalizeCode(this.code[lang]);
       } else {
-        return this.code["basic"];
+        return this.normalizeCode(this.code["basic"]);
       }
     }
     return "";
@@ -70,7 +79,7 @@ export class AppCode {
 
   changeLang(lang: string) {
     this.lang = lang;
-    this.codeElement.textContent = this.code[this.lang];
+    this.codeElement.textContent = this.normalizeCode(this.code[this.lang]);
     this.rerunCodeHighlight(lang);
   }
 
@@ -79,7 +88,7 @@ export class AppCode {
     this.fullCodeVisible = !this.fullCodeVisible;
     this.fullCodeVisible && (this.lang = "html");
     !this.fullCodeVisible && (this.lang = "basic");
-    this.codeElement.textContent = this.code[this.lang];
+    this.codeElement.textContent = this.normalizeCode(this.code[this.lang]);
 
     this.rerunCodeHighlight(this.lang);
   }

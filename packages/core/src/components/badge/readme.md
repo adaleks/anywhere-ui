@@ -28,11 +28,17 @@
 ### Used by
 
  - [any-button](../button)
+ - [badge-numbers](../app-showcase/pages/badge/badge-numbers)
+ - [badge-positioned](../app-showcase/pages/badge/badge-positioned)
+ - [badge-sizes](../app-showcase/pages/badge/badge-sizes)
 
 ### Graph
 ```mermaid
 graph TD;
   any-button --> any-badge
+  badge-numbers --> any-badge
+  badge-positioned --> any-badge
+  badge-sizes --> any-badge
   style any-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

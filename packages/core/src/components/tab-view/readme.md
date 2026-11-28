@@ -23,6 +23,12 @@
 
 ## Dependencies
 
+### Used by
+
+ - [tab-view-basic](../app-showcase/pages/tab-view/tab-view-basic)
+ - [tab-view-disabled](../app-showcase/pages/tab-view/tab-view-disabled)
+ - [tab-view-programmatic](../app-showcase/pages/tab-view/tab-view-programmatic)
+
 ### Depends on
 
 - [any-ripple-effect](../ripple-effect)
@@ -31,6 +37,9 @@
 ```mermaid
 graph TD;
   any-tab-view --> any-ripple-effect
+  tab-view-basic --> any-tab-view
+  tab-view-disabled --> any-tab-view
+  tab-view-programmatic --> any-tab-view
   style any-tab-view fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

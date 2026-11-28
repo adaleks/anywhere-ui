@@ -487,6 +487,72 @@ export const AppDocsectiontext: StencilVueComponent<JSX.AppDocsectiontext> = /*@
 ]);
 
 
+export const BadgeInline: StencilVueComponent<JSX.BadgeInline> = /*@__PURE__*/ defineContainer<JSX.BadgeInline>('badge-inline', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const BadgeNumbers: StencilVueComponent<JSX.BadgeNumbers> = /*@__PURE__*/ defineContainer<JSX.BadgeNumbers>('badge-numbers', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const BadgePositioned: StencilVueComponent<JSX.BadgePositioned> = /*@__PURE__*/ defineContainer<JSX.BadgePositioned>('badge-positioned', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const BadgeSizes: StencilVueComponent<JSX.BadgeSizes> = /*@__PURE__*/ defineContainer<JSX.BadgeSizes>('badge-sizes', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonBadges: StencilVueComponent<JSX.ButtonBadges> = /*@__PURE__*/ defineContainer<JSX.ButtonBadges>('button-badges', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonBasic: StencilVueComponent<JSX.ButtonBasic> = /*@__PURE__*/ defineContainer<JSX.ButtonBasic>('button-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonIconStyles: StencilVueComponent<JSX.ButtonIconStyles> = /*@__PURE__*/ defineContainer<JSX.ButtonIconStyles>('button-icon-styles', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonSeverities: StencilVueComponent<JSX.ButtonSeverities> = /*@__PURE__*/ defineContainer<JSX.ButtonSeverities>('button-severities', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonSizes: StencilVueComponent<JSX.ButtonSizes> = /*@__PURE__*/ defineContainer<JSX.ButtonSizes>('button-sizes', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonStyles: StencilVueComponent<JSX.ButtonStyles> = /*@__PURE__*/ defineContainer<JSX.ButtonStyles>('button-styles', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const ButtonTemplating: StencilVueComponent<JSX.ButtonTemplating> = /*@__PURE__*/ defineContainer<JSX.ButtonTemplating>('button-templating', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
 export const CheckboxBasic: StencilVueComponent<JSX.CheckboxBasic> = /*@__PURE__*/ defineContainer<JSX.CheckboxBasic>('checkbox-basic', undefined, [
   'textId',
   'textTitle',
@@ -722,6 +788,72 @@ export const ListboxTemplate: StencilVueComponent<JSX.ListboxTemplate> = /*@__PU
 
 
 export const ListboxVirtualScroll: StencilVueComponent<JSX.ListboxVirtualScroll> = /*@__PURE__*/ defineContainer<JSX.ListboxVirtualScroll>('listbox-virtual-scroll', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const MsBasic: StencilVueComponent<JSX.MsBasic> = /*@__PURE__*/ defineContainer<JSX.MsBasic>('ms-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const MsTemplate: StencilVueComponent<JSX.MsTemplate> = /*@__PURE__*/ defineContainer<JSX.MsTemplate>('ms-template', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const MsVirtual: StencilVueComponent<JSX.MsVirtual> = /*@__PURE__*/ defineContainer<JSX.MsVirtual>('ms-virtual', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const RadioButtonBasic: StencilVueComponent<JSX.RadioButtonBasic> = /*@__PURE__*/ defineContainer<JSX.RadioButtonBasic>('radio-button-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const RadioButtonDynamic: StencilVueComponent<JSX.RadioButtonDynamic> = /*@__PURE__*/ defineContainer<JSX.RadioButtonDynamic>('radio-button-dynamic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const RippleEffectBasic: StencilVueComponent<JSX.RippleEffectBasic> = /*@__PURE__*/ defineContainer<JSX.RippleEffectBasic>('ripple-effect-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const TabViewBasic: StencilVueComponent<JSX.TabViewBasic> = /*@__PURE__*/ defineContainer<JSX.TabViewBasic>('tab-view-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const TabViewDisabled: StencilVueComponent<JSX.TabViewDisabled> = /*@__PURE__*/ defineContainer<JSX.TabViewDisabled>('tab-view-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const TabViewProgrammatic: StencilVueComponent<JSX.TabViewProgrammatic> = /*@__PURE__*/ defineContainer<JSX.TabViewProgrammatic>('tab-view-programmatic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const VsLazy: StencilVueComponent<JSX.VsLazy> = /*@__PURE__*/ defineContainer<JSX.VsLazy>('vs-lazy', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const VsPrepopulated: StencilVueComponent<JSX.VsPrepopulated> = /*@__PURE__*/ defineContainer<JSX.VsPrepopulated>('vs-prepopulated', undefined, [
   'textId',
   'textTitle'
 ]);

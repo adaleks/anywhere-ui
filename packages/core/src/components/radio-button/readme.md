@@ -48,6 +48,21 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Used by
+
+ - [radio-button-basic](../app-showcase/pages/radio-button/radio-button-basic)
+ - [radio-button-dynamic](../app-showcase/pages/radio-button/radio-button-dynamic)
+
+### Graph
+```mermaid
+graph TD;
+  radio-button-basic --> any-radio-button
+  radio-button-dynamic --> any-radio-button
+  style any-radio-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

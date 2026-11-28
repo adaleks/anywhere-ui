@@ -27,6 +27,7 @@
  - [any-button](../button)
  - [any-listbox](../listbox)
  - [any-tab-view](../tab-view)
+ - [ripple-effect-basic](../app-showcase/pages/ripple-effect/ripple-effect-basic)
 
 ### Graph
 ```mermaid
@@ -34,6 +35,7 @@ graph TD;
   any-button --> any-ripple-effect
   any-listbox --> any-ripple-effect
   any-tab-view --> any-ripple-effect
+  ripple-effect-basic --> any-ripple-effect
   style any-ripple-effect fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

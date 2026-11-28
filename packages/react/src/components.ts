@@ -36,6 +36,17 @@ import { AppDocapitable as AppDocapitableElement, defineCustomElement as defineA
 import { AppDocsection as AppDocsectionElement, defineCustomElement as defineAppDocsection } from '@anywhere-ui/core/dist/components/app-docsection.js';
 import { AppDocsectionNav as AppDocsectionNavElement, defineCustomElement as defineAppDocsectionNav } from '@anywhere-ui/core/dist/components/app-docsection-nav.js';
 import { AppDocsectiontext as AppDocsectiontextElement, defineCustomElement as defineAppDocsectiontext } from '@anywhere-ui/core/dist/components/app-docsectiontext.js';
+import { BadgeInline as BadgeInlineElement, defineCustomElement as defineBadgeInline } from '@anywhere-ui/core/dist/components/badge-inline.js';
+import { BadgeNumbers as BadgeNumbersElement, defineCustomElement as defineBadgeNumbers } from '@anywhere-ui/core/dist/components/badge-numbers.js';
+import { BadgePositioned as BadgePositionedElement, defineCustomElement as defineBadgePositioned } from '@anywhere-ui/core/dist/components/badge-positioned.js';
+import { BadgeSizes as BadgeSizesElement, defineCustomElement as defineBadgeSizes } from '@anywhere-ui/core/dist/components/badge-sizes.js';
+import { ButtonBadges as ButtonBadgesElement, defineCustomElement as defineButtonBadges } from '@anywhere-ui/core/dist/components/button-badges.js';
+import { ButtonBasic as ButtonBasicElement, defineCustomElement as defineButtonBasic } from '@anywhere-ui/core/dist/components/button-basic.js';
+import { ButtonIconStyles as ButtonIconStylesElement, defineCustomElement as defineButtonIconStyles } from '@anywhere-ui/core/dist/components/button-icon-styles.js';
+import { ButtonSeverities as ButtonSeveritiesElement, defineCustomElement as defineButtonSeverities } from '@anywhere-ui/core/dist/components/button-severities.js';
+import { ButtonSizes as ButtonSizesElement, defineCustomElement as defineButtonSizes } from '@anywhere-ui/core/dist/components/button-sizes.js';
+import { ButtonStyles as ButtonStylesElement, defineCustomElement as defineButtonStyles } from '@anywhere-ui/core/dist/components/button-styles.js';
+import { ButtonTemplating as ButtonTemplatingElement, defineCustomElement as defineButtonTemplating } from '@anywhere-ui/core/dist/components/button-templating.js';
 import { CheckboxBasic as CheckboxBasicElement, defineCustomElement as defineCheckboxBasic } from '@anywhere-ui/core/dist/components/checkbox-basic.js';
 import { CheckboxDisabled as CheckboxDisabledElement, defineCustomElement as defineCheckboxDisabled } from '@anywhere-ui/core/dist/components/checkbox-disabled.js';
 import { CheckboxDynamic as CheckboxDynamicElement, defineCustomElement as defineCheckboxDynamic } from '@anywhere-ui/core/dist/components/checkbox-dynamic.js';
@@ -73,6 +84,17 @@ import { ListboxGrouping as ListboxGroupingElement, defineCustomElement as defin
 import { ListboxMultiple as ListboxMultipleElement, defineCustomElement as defineListboxMultiple } from '@anywhere-ui/core/dist/components/listbox-multiple.js';
 import { ListboxTemplate as ListboxTemplateElement, defineCustomElement as defineListboxTemplate } from '@anywhere-ui/core/dist/components/listbox-template.js';
 import { ListboxVirtualScroll as ListboxVirtualScrollElement, defineCustomElement as defineListboxVirtualScroll } from '@anywhere-ui/core/dist/components/listbox-virtual-scroll.js';
+import { MsBasic as MsBasicElement, defineCustomElement as defineMsBasic } from '@anywhere-ui/core/dist/components/ms-basic.js';
+import { MsTemplate as MsTemplateElement, defineCustomElement as defineMsTemplate } from '@anywhere-ui/core/dist/components/ms-template.js';
+import { MsVirtual as MsVirtualElement, defineCustomElement as defineMsVirtual } from '@anywhere-ui/core/dist/components/ms-virtual.js';
+import { RadioButtonBasic as RadioButtonBasicElement, defineCustomElement as defineRadioButtonBasic } from '@anywhere-ui/core/dist/components/radio-button-basic.js';
+import { RadioButtonDynamic as RadioButtonDynamicElement, defineCustomElement as defineRadioButtonDynamic } from '@anywhere-ui/core/dist/components/radio-button-dynamic.js';
+import { RippleEffectBasic as RippleEffectBasicElement, defineCustomElement as defineRippleEffectBasic } from '@anywhere-ui/core/dist/components/ripple-effect-basic.js';
+import { TabViewBasic as TabViewBasicElement, defineCustomElement as defineTabViewBasic } from '@anywhere-ui/core/dist/components/tab-view-basic.js';
+import { TabViewDisabled as TabViewDisabledElement, defineCustomElement as defineTabViewDisabled } from '@anywhere-ui/core/dist/components/tab-view-disabled.js';
+import { TabViewProgrammatic as TabViewProgrammaticElement, defineCustomElement as defineTabViewProgrammatic } from '@anywhere-ui/core/dist/components/tab-view-programmatic.js';
+import { VsLazy as VsLazyElement, defineCustomElement as defineVsLazy } from '@anywhere-ui/core/dist/components/vs-lazy.js';
+import { VsPrepopulated as VsPrepopulatedElement, defineCustomElement as defineVsPrepopulated } from '@anywhere-ui/core/dist/components/vs-prepopulated.js';
 import type { AnyButtonCustomEvent, AnyCheckboxCustomEvent, AnyDropdownCustomEvent, AnyInputNumberCustomEvent, AnyInputSwitchCustomEvent, AnyInputTextCustomEvent, TextareaChangeEventDetail, AnyInputTextareaCustomEvent, SelectChangeEventDetail, AnyListboxCustomEvent, AnyMultiselectCustomEvent, AnyOverlayCustomEvent, AnyRadioButtonCustomEvent, RadioGroupChangeEventDetail, AnyRadioGroupCustomEvent, AnyVirtualScrollerCustomEvent, CheckboxBasicCustomEvent, CheckboxDisabledCustomEvent, CheckboxDynamicCustomEvent, CheckboxGroupCustomEvent, CheckboxLabelCustomEvent, CheckboxReadonlyCustomEvent } from '@anywhere-ui/core';
 import type { StencilReactComponent, EventName } from '@stencil/react-output-target/runtime';
 
@@ -486,6 +508,127 @@ export const AppDocsectiontext: StencilReactComponent<AppDocsectiontextElement, 
     react: React,
     events: {} as AppDocsectiontextEvents,
     defineCustomElement: defineAppDocsectiontext,
+});
+
+export type BadgeInlineEvents = NonNullable<unknown>;
+
+export const BadgeInline: StencilReactComponent<BadgeInlineElement, BadgeInlineEvents, Components.BadgeInline> = /*@__PURE__*/ createComponent<BadgeInlineElement, BadgeInlineEvents, Components.BadgeInline>({
+    tagName: 'badge-inline',
+    elementClass: BadgeInlineElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as BadgeInlineEvents,
+    defineCustomElement: defineBadgeInline,
+});
+
+export type BadgeNumbersEvents = NonNullable<unknown>;
+
+export const BadgeNumbers: StencilReactComponent<BadgeNumbersElement, BadgeNumbersEvents, Components.BadgeNumbers> = /*@__PURE__*/ createComponent<BadgeNumbersElement, BadgeNumbersEvents, Components.BadgeNumbers>({
+    tagName: 'badge-numbers',
+    elementClass: BadgeNumbersElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as BadgeNumbersEvents,
+    defineCustomElement: defineBadgeNumbers,
+});
+
+export type BadgePositionedEvents = NonNullable<unknown>;
+
+export const BadgePositioned: StencilReactComponent<BadgePositionedElement, BadgePositionedEvents, Components.BadgePositioned> = /*@__PURE__*/ createComponent<BadgePositionedElement, BadgePositionedEvents, Components.BadgePositioned>({
+    tagName: 'badge-positioned',
+    elementClass: BadgePositionedElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as BadgePositionedEvents,
+    defineCustomElement: defineBadgePositioned,
+});
+
+export type BadgeSizesEvents = NonNullable<unknown>;
+
+export const BadgeSizes: StencilReactComponent<BadgeSizesElement, BadgeSizesEvents, Components.BadgeSizes> = /*@__PURE__*/ createComponent<BadgeSizesElement, BadgeSizesEvents, Components.BadgeSizes>({
+    tagName: 'badge-sizes',
+    elementClass: BadgeSizesElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as BadgeSizesEvents,
+    defineCustomElement: defineBadgeSizes,
+});
+
+export type ButtonBadgesEvents = NonNullable<unknown>;
+
+export const ButtonBadges: StencilReactComponent<ButtonBadgesElement, ButtonBadgesEvents, Components.ButtonBadges> = /*@__PURE__*/ createComponent<ButtonBadgesElement, ButtonBadgesEvents, Components.ButtonBadges>({
+    tagName: 'button-badges',
+    elementClass: ButtonBadgesElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonBadgesEvents,
+    defineCustomElement: defineButtonBadges,
+});
+
+export type ButtonBasicEvents = NonNullable<unknown>;
+
+export const ButtonBasic: StencilReactComponent<ButtonBasicElement, ButtonBasicEvents, Components.ButtonBasic> = /*@__PURE__*/ createComponent<ButtonBasicElement, ButtonBasicEvents, Components.ButtonBasic>({
+    tagName: 'button-basic',
+    elementClass: ButtonBasicElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonBasicEvents,
+    defineCustomElement: defineButtonBasic,
+});
+
+export type ButtonIconStylesEvents = NonNullable<unknown>;
+
+export const ButtonIconStyles: StencilReactComponent<ButtonIconStylesElement, ButtonIconStylesEvents, Components.ButtonIconStyles> = /*@__PURE__*/ createComponent<ButtonIconStylesElement, ButtonIconStylesEvents, Components.ButtonIconStyles>({
+    tagName: 'button-icon-styles',
+    elementClass: ButtonIconStylesElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonIconStylesEvents,
+    defineCustomElement: defineButtonIconStyles,
+});
+
+export type ButtonSeveritiesEvents = NonNullable<unknown>;
+
+export const ButtonSeverities: StencilReactComponent<ButtonSeveritiesElement, ButtonSeveritiesEvents, Components.ButtonSeverities> = /*@__PURE__*/ createComponent<ButtonSeveritiesElement, ButtonSeveritiesEvents, Components.ButtonSeverities>({
+    tagName: 'button-severities',
+    elementClass: ButtonSeveritiesElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonSeveritiesEvents,
+    defineCustomElement: defineButtonSeverities,
+});
+
+export type ButtonSizesEvents = NonNullable<unknown>;
+
+export const ButtonSizes: StencilReactComponent<ButtonSizesElement, ButtonSizesEvents, Components.ButtonSizes> = /*@__PURE__*/ createComponent<ButtonSizesElement, ButtonSizesEvents, Components.ButtonSizes>({
+    tagName: 'button-sizes',
+    elementClass: ButtonSizesElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonSizesEvents,
+    defineCustomElement: defineButtonSizes,
+});
+
+export type ButtonStylesEvents = NonNullable<unknown>;
+
+export const ButtonStyles: StencilReactComponent<ButtonStylesElement, ButtonStylesEvents, Components.ButtonStyles> = /*@__PURE__*/ createComponent<ButtonStylesElement, ButtonStylesEvents, Components.ButtonStyles>({
+    tagName: 'button-styles',
+    elementClass: ButtonStylesElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonStylesEvents,
+    defineCustomElement: defineButtonStyles,
+});
+
+export type ButtonTemplatingEvents = NonNullable<unknown>;
+
+export const ButtonTemplating: StencilReactComponent<ButtonTemplatingElement, ButtonTemplatingEvents, Components.ButtonTemplating> = /*@__PURE__*/ createComponent<ButtonTemplatingElement, ButtonTemplatingEvents, Components.ButtonTemplating>({
+    tagName: 'button-templating',
+    elementClass: ButtonTemplatingElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as ButtonTemplatingEvents,
+    defineCustomElement: defineButtonTemplating,
 });
 
 export type CheckboxBasicEvents = {
@@ -917,4 +1060,125 @@ export const ListboxVirtualScroll: StencilReactComponent<ListboxVirtualScrollEle
     react: React,
     events: {} as ListboxVirtualScrollEvents,
     defineCustomElement: defineListboxVirtualScroll,
+});
+
+export type MsBasicEvents = NonNullable<unknown>;
+
+export const MsBasic: StencilReactComponent<MsBasicElement, MsBasicEvents, Components.MsBasic> = /*@__PURE__*/ createComponent<MsBasicElement, MsBasicEvents, Components.MsBasic>({
+    tagName: 'ms-basic',
+    elementClass: MsBasicElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as MsBasicEvents,
+    defineCustomElement: defineMsBasic,
+});
+
+export type MsTemplateEvents = NonNullable<unknown>;
+
+export const MsTemplate: StencilReactComponent<MsTemplateElement, MsTemplateEvents, Components.MsTemplate> = /*@__PURE__*/ createComponent<MsTemplateElement, MsTemplateEvents, Components.MsTemplate>({
+    tagName: 'ms-template',
+    elementClass: MsTemplateElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as MsTemplateEvents,
+    defineCustomElement: defineMsTemplate,
+});
+
+export type MsVirtualEvents = NonNullable<unknown>;
+
+export const MsVirtual: StencilReactComponent<MsVirtualElement, MsVirtualEvents, Components.MsVirtual> = /*@__PURE__*/ createComponent<MsVirtualElement, MsVirtualEvents, Components.MsVirtual>({
+    tagName: 'ms-virtual',
+    elementClass: MsVirtualElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as MsVirtualEvents,
+    defineCustomElement: defineMsVirtual,
+});
+
+export type RadioButtonBasicEvents = NonNullable<unknown>;
+
+export const RadioButtonBasic: StencilReactComponent<RadioButtonBasicElement, RadioButtonBasicEvents, Components.RadioButtonBasic> = /*@__PURE__*/ createComponent<RadioButtonBasicElement, RadioButtonBasicEvents, Components.RadioButtonBasic>({
+    tagName: 'radio-button-basic',
+    elementClass: RadioButtonBasicElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as RadioButtonBasicEvents,
+    defineCustomElement: defineRadioButtonBasic,
+});
+
+export type RadioButtonDynamicEvents = NonNullable<unknown>;
+
+export const RadioButtonDynamic: StencilReactComponent<RadioButtonDynamicElement, RadioButtonDynamicEvents, Components.RadioButtonDynamic> = /*@__PURE__*/ createComponent<RadioButtonDynamicElement, RadioButtonDynamicEvents, Components.RadioButtonDynamic>({
+    tagName: 'radio-button-dynamic',
+    elementClass: RadioButtonDynamicElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as RadioButtonDynamicEvents,
+    defineCustomElement: defineRadioButtonDynamic,
+});
+
+export type RippleEffectBasicEvents = NonNullable<unknown>;
+
+export const RippleEffectBasic: StencilReactComponent<RippleEffectBasicElement, RippleEffectBasicEvents, Components.RippleEffectBasic> = /*@__PURE__*/ createComponent<RippleEffectBasicElement, RippleEffectBasicEvents, Components.RippleEffectBasic>({
+    tagName: 'ripple-effect-basic',
+    elementClass: RippleEffectBasicElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as RippleEffectBasicEvents,
+    defineCustomElement: defineRippleEffectBasic,
+});
+
+export type TabViewBasicEvents = NonNullable<unknown>;
+
+export const TabViewBasic: StencilReactComponent<TabViewBasicElement, TabViewBasicEvents, Components.TabViewBasic> = /*@__PURE__*/ createComponent<TabViewBasicElement, TabViewBasicEvents, Components.TabViewBasic>({
+    tagName: 'tab-view-basic',
+    elementClass: TabViewBasicElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as TabViewBasicEvents,
+    defineCustomElement: defineTabViewBasic,
+});
+
+export type TabViewDisabledEvents = NonNullable<unknown>;
+
+export const TabViewDisabled: StencilReactComponent<TabViewDisabledElement, TabViewDisabledEvents, Components.TabViewDisabled> = /*@__PURE__*/ createComponent<TabViewDisabledElement, TabViewDisabledEvents, Components.TabViewDisabled>({
+    tagName: 'tab-view-disabled',
+    elementClass: TabViewDisabledElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as TabViewDisabledEvents,
+    defineCustomElement: defineTabViewDisabled,
+});
+
+export type TabViewProgrammaticEvents = NonNullable<unknown>;
+
+export const TabViewProgrammatic: StencilReactComponent<TabViewProgrammaticElement, TabViewProgrammaticEvents, Components.TabViewProgrammatic> = /*@__PURE__*/ createComponent<TabViewProgrammaticElement, TabViewProgrammaticEvents, Components.TabViewProgrammatic>({
+    tagName: 'tab-view-programmatic',
+    elementClass: TabViewProgrammaticElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as TabViewProgrammaticEvents,
+    defineCustomElement: defineTabViewProgrammatic,
+});
+
+export type VsLazyEvents = NonNullable<unknown>;
+
+export const VsLazy: StencilReactComponent<VsLazyElement, VsLazyEvents, Components.VsLazy> = /*@__PURE__*/ createComponent<VsLazyElement, VsLazyEvents, Components.VsLazy>({
+    tagName: 'vs-lazy',
+    elementClass: VsLazyElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as VsLazyEvents,
+    defineCustomElement: defineVsLazy,
+});
+
+export type VsPrepopulatedEvents = NonNullable<unknown>;
+
+export const VsPrepopulated: StencilReactComponent<VsPrepopulatedElement, VsPrepopulatedEvents, Components.VsPrepopulated> = /*@__PURE__*/ createComponent<VsPrepopulatedElement, VsPrepopulatedEvents, Components.VsPrepopulated>({
+    tagName: 'vs-prepopulated',
+    elementClass: VsPrepopulatedElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as VsPrepopulatedEvents,
+    defineCustomElement: defineVsPrepopulated,
 });

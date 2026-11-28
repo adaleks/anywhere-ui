@@ -51,11 +51,15 @@
 ### Used by
 
  - [any-listbox](../listbox)
+ - [vs-lazy](../app-showcase/pages/virtual-scroller/vs-lazy)
+ - [vs-prepopulated](../app-showcase/pages/virtual-scroller/vs-prepopulated)
 
 ### Graph
 ```mermaid
 graph TD;
   any-listbox --> any-virtual-scroller
+  vs-lazy --> any-virtual-scroller
+  vs-prepopulated --> any-virtual-scroller
   style any-virtual-scroller fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
