@@ -16,6 +16,7 @@
 - Migrate the spec test suite from Jest to Vitest [#91](https://github.com/adaleks/anywhere-ui/issues/91)
 - Migrate e2e tests from Stencil's Puppeteer runner to @stencil/playwright [#96](https://github.com/adaleks/anywhere-ui/issues/96)
 - Generate the changelog Unreleased section from the open milestone [#98](https://github.com/adaleks/anywhere-ui/issues/98)
+- Migrate the remaining showcase pages to the app-doc structure [#101](https://github.com/adaleks/anywhere-ui/issues/101)
 - Add the Listbox grouping demo and document the overlay component [#102](https://github.com/adaleks/anywhere-ui/issues/102)
 
  **Fixed Bugs:**
