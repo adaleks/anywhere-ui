@@ -19,6 +19,19 @@
 |      | The default slot |
 
 
+## Dependencies
+
+### Used by
+
+ - [badge-positioned](../app-showcase/pages/badge/badge-positioned)
+
+### Graph
+```mermaid
+graph TD;
+  badge-positioned --> any-badge-overlay
+  style any-badge-overlay fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

@@ -30,6 +30,17 @@
 ### Used by
 
  - [app-docapitable](../app-docapitable)
+ - [badge-inline](../../pages/badge/badge-inline)
+ - [badge-numbers](../../pages/badge/badge-numbers)
+ - [badge-positioned](../../pages/badge/badge-positioned)
+ - [badge-sizes](../../pages/badge/badge-sizes)
+ - [button-badges](../../pages/button/button-badges)
+ - [button-basic](../../pages/button/button-basic)
+ - [button-icon-styles](../../pages/button/button-icon-styles)
+ - [button-severities](../../pages/button/button-severities)
+ - [button-sizes](../../pages/button/button-sizes)
+ - [button-styles](../../pages/button/button-styles)
+ - [button-templating](../../pages/button/button-templating)
  - [checkbox-basic](../../pages/checkbox/checkbox-basic)
  - [checkbox-disabled](../../pages/checkbox/checkbox-disabled)
  - [checkbox-dynamic](../../pages/checkbox/checkbox-dynamic)
@@ -67,11 +78,23 @@
  - [listbox-multiple](../../pages/listbox/listbox-multiple)
  - [listbox-template](../../pages/listbox/listbox-template)
  - [listbox-virtual-scroll](../../pages/listbox/listbox-virtual-scroll)
+ - [ripple-effect-basic](../../pages/ripple-effect/ripple-effect-basic)
 
 ### Graph
 ```mermaid
 graph TD;
   app-docapitable --> app-docsectiontext
+  badge-inline --> app-docsectiontext
+  badge-numbers --> app-docsectiontext
+  badge-positioned --> app-docsectiontext
+  badge-sizes --> app-docsectiontext
+  button-badges --> app-docsectiontext
+  button-basic --> app-docsectiontext
+  button-icon-styles --> app-docsectiontext
+  button-severities --> app-docsectiontext
+  button-sizes --> app-docsectiontext
+  button-styles --> app-docsectiontext
+  button-templating --> app-docsectiontext
   checkbox-basic --> app-docsectiontext
   checkbox-disabled --> app-docsectiontext
   checkbox-dynamic --> app-docsectiontext
@@ -109,6 +132,7 @@ graph TD;
   listbox-multiple --> app-docsectiontext
   listbox-template --> app-docsectiontext
   listbox-virtual-scroll --> app-docsectiontext
+  ripple-effect-basic --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

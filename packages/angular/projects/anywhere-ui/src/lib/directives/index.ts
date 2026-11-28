@@ -28,6 +28,17 @@ export const DIRECTIVES = [
   d.AppDocsection,
   d.AppDocsectionNav,
   d.AppDocsectiontext,
+  d.BadgeInline,
+  d.BadgeNumbers,
+  d.BadgePositioned,
+  d.BadgeSizes,
+  d.ButtonBadges,
+  d.ButtonBasic,
+  d.ButtonIconStyles,
+  d.ButtonSeverities,
+  d.ButtonSizes,
+  d.ButtonStyles,
+  d.ButtonTemplating,
   d.CheckboxBasic,
   d.CheckboxDisabled,
   d.CheckboxDynamic,
@@ -64,5 +75,6 @@ export const DIRECTIVES = [
   d.ListboxGrouping,
   d.ListboxMultiple,
   d.ListboxTemplate,
-  d.ListboxVirtualScroll
+  d.ListboxVirtualScroll,
+  d.RippleEffectBasic
 ];

@@ -1313,6 +1313,50 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface BadgeInline {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface BadgeNumbers {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface BadgePositioned {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface BadgeSizes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonBadges {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonIconStyles {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonSeverities {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonSizes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonStyles {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonTemplating {
+        "textId": string;
+        "textTitle": string;
+    }
     interface CheckboxBasic {
         "textId": string;
         "textTitle": string;
@@ -1458,6 +1502,10 @@ export namespace Components {
         "textTitle": string;
     }
     interface ListboxVirtualScroll {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface RippleEffectBasic {
         "textId": string;
         "textTitle": string;
     }
@@ -1900,6 +1948,72 @@ declare global {
         prototype: HTMLAppDocsectiontextElement;
         new (): HTMLAppDocsectiontextElement;
     };
+    interface HTMLBadgeInlineElement extends Components.BadgeInline, HTMLStencilElement {
+    }
+    var HTMLBadgeInlineElement: {
+        prototype: HTMLBadgeInlineElement;
+        new (): HTMLBadgeInlineElement;
+    };
+    interface HTMLBadgeNumbersElement extends Components.BadgeNumbers, HTMLStencilElement {
+    }
+    var HTMLBadgeNumbersElement: {
+        prototype: HTMLBadgeNumbersElement;
+        new (): HTMLBadgeNumbersElement;
+    };
+    interface HTMLBadgePositionedElement extends Components.BadgePositioned, HTMLStencilElement {
+    }
+    var HTMLBadgePositionedElement: {
+        prototype: HTMLBadgePositionedElement;
+        new (): HTMLBadgePositionedElement;
+    };
+    interface HTMLBadgeSizesElement extends Components.BadgeSizes, HTMLStencilElement {
+    }
+    var HTMLBadgeSizesElement: {
+        prototype: HTMLBadgeSizesElement;
+        new (): HTMLBadgeSizesElement;
+    };
+    interface HTMLButtonBadgesElement extends Components.ButtonBadges, HTMLStencilElement {
+    }
+    var HTMLButtonBadgesElement: {
+        prototype: HTMLButtonBadgesElement;
+        new (): HTMLButtonBadgesElement;
+    };
+    interface HTMLButtonBasicElement extends Components.ButtonBasic, HTMLStencilElement {
+    }
+    var HTMLButtonBasicElement: {
+        prototype: HTMLButtonBasicElement;
+        new (): HTMLButtonBasicElement;
+    };
+    interface HTMLButtonIconStylesElement extends Components.ButtonIconStyles, HTMLStencilElement {
+    }
+    var HTMLButtonIconStylesElement: {
+        prototype: HTMLButtonIconStylesElement;
+        new (): HTMLButtonIconStylesElement;
+    };
+    interface HTMLButtonSeveritiesElement extends Components.ButtonSeverities, HTMLStencilElement {
+    }
+    var HTMLButtonSeveritiesElement: {
+        prototype: HTMLButtonSeveritiesElement;
+        new (): HTMLButtonSeveritiesElement;
+    };
+    interface HTMLButtonSizesElement extends Components.ButtonSizes, HTMLStencilElement {
+    }
+    var HTMLButtonSizesElement: {
+        prototype: HTMLButtonSizesElement;
+        new (): HTMLButtonSizesElement;
+    };
+    interface HTMLButtonStylesElement extends Components.ButtonStyles, HTMLStencilElement {
+    }
+    var HTMLButtonStylesElement: {
+        prototype: HTMLButtonStylesElement;
+        new (): HTMLButtonStylesElement;
+    };
+    interface HTMLButtonTemplatingElement extends Components.ButtonTemplating, HTMLStencilElement {
+    }
+    var HTMLButtonTemplatingElement: {
+        prototype: HTMLButtonTemplatingElement;
+        new (): HTMLButtonTemplatingElement;
+    };
     interface HTMLCheckboxBasicElementEventMap {
         "valueChange": boolean;
     }
@@ -2188,6 +2302,12 @@ declare global {
         prototype: HTMLListboxVirtualScrollElement;
         new (): HTMLListboxVirtualScrollElement;
     };
+    interface HTMLRippleEffectBasicElement extends Components.RippleEffectBasic, HTMLStencilElement {
+    }
+    var HTMLRippleEffectBasicElement: {
+        prototype: HTMLRippleEffectBasicElement;
+        new (): HTMLRippleEffectBasicElement;
+    };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
         "any-badge-overlay": HTMLAnyBadgeOverlayElement;
@@ -2215,6 +2335,17 @@ declare global {
         "app-docsection": HTMLAppDocsectionElement;
         "app-docsection-nav": HTMLAppDocsectionNavElement;
         "app-docsectiontext": HTMLAppDocsectiontextElement;
+        "badge-inline": HTMLBadgeInlineElement;
+        "badge-numbers": HTMLBadgeNumbersElement;
+        "badge-positioned": HTMLBadgePositionedElement;
+        "badge-sizes": HTMLBadgeSizesElement;
+        "button-badges": HTMLButtonBadgesElement;
+        "button-basic": HTMLButtonBasicElement;
+        "button-icon-styles": HTMLButtonIconStylesElement;
+        "button-severities": HTMLButtonSeveritiesElement;
+        "button-sizes": HTMLButtonSizesElement;
+        "button-styles": HTMLButtonStylesElement;
+        "button-templating": HTMLButtonTemplatingElement;
         "checkbox-basic": HTMLCheckboxBasicElement;
         "checkbox-disabled": HTMLCheckboxDisabledElement;
         "checkbox-dynamic": HTMLCheckboxDynamicElement;
@@ -2252,6 +2383,7 @@ declare global {
         "listbox-multiple": HTMLListboxMultipleElement;
         "listbox-template": HTMLListboxTemplateElement;
         "listbox-virtual-scroll": HTMLListboxVirtualScrollElement;
+        "ripple-effect-basic": HTMLRippleEffectBasicElement;
     }
 }
 declare namespace LocalJSX {
@@ -3726,6 +3858,50 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface BadgeInline {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface BadgeNumbers {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface BadgePositioned {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface BadgeSizes {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonBadges {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonIconStyles {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonSeverities {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonSizes {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonStyles {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface ButtonTemplating {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface CheckboxBasic {
         "onValueChange"?: (event: CheckboxBasicCustomEvent<boolean>) => void;
         "textId"?: string;
@@ -3877,6 +4053,10 @@ declare namespace LocalJSX {
         "textTitle"?: string;
     }
     interface ListboxVirtualScroll {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface RippleEffectBasic {
         "textId"?: string;
         "textTitle"?: string;
     }
@@ -4186,6 +4366,50 @@ declare namespace LocalJSX {
         "parentDescription": string;
         "parentId": string;
     }
+    interface BadgeInlineAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface BadgeNumbersAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface BadgePositionedAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface BadgeSizesAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonBadgesAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonIconStylesAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonSeveritiesAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonSizesAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonStylesAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface ButtonTemplatingAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
     interface CheckboxBasicAttributes {
         "textId": string;
         "textTitle": string;
@@ -4334,6 +4558,10 @@ declare namespace LocalJSX {
         "textId": string;
         "textTitle": string;
     }
+    interface RippleEffectBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
 
     interface IntrinsicElements {
         "any-badge": Omit<AnyBadge, keyof AnyBadgeAttributes> & { [K in keyof AnyBadge & keyof AnyBadgeAttributes]?: AnyBadge[K] } & { [K in keyof AnyBadge & keyof AnyBadgeAttributes as `attr:${K}`]?: AnyBadgeAttributes[K] } & { [K in keyof AnyBadge & keyof AnyBadgeAttributes as `prop:${K}`]?: AnyBadge[K] };
@@ -4362,6 +4590,17 @@ declare namespace LocalJSX {
         "app-docsection": AppDocsection;
         "app-docsection-nav": AppDocsectionNav;
         "app-docsectiontext": Omit<AppDocsectiontext, keyof AppDocsectiontextAttributes> & { [K in keyof AppDocsectiontext & keyof AppDocsectiontextAttributes]?: AppDocsectiontext[K] } & { [K in keyof AppDocsectiontext & keyof AppDocsectiontextAttributes as `attr:${K}`]?: AppDocsectiontextAttributes[K] } & { [K in keyof AppDocsectiontext & keyof AppDocsectiontextAttributes as `prop:${K}`]?: AppDocsectiontext[K] };
+        "badge-inline": Omit<BadgeInline, keyof BadgeInlineAttributes> & { [K in keyof BadgeInline & keyof BadgeInlineAttributes]?: BadgeInline[K] } & { [K in keyof BadgeInline & keyof BadgeInlineAttributes as `attr:${K}`]?: BadgeInlineAttributes[K] } & { [K in keyof BadgeInline & keyof BadgeInlineAttributes as `prop:${K}`]?: BadgeInline[K] };
+        "badge-numbers": Omit<BadgeNumbers, keyof BadgeNumbersAttributes> & { [K in keyof BadgeNumbers & keyof BadgeNumbersAttributes]?: BadgeNumbers[K] } & { [K in keyof BadgeNumbers & keyof BadgeNumbersAttributes as `attr:${K}`]?: BadgeNumbersAttributes[K] } & { [K in keyof BadgeNumbers & keyof BadgeNumbersAttributes as `prop:${K}`]?: BadgeNumbers[K] };
+        "badge-positioned": Omit<BadgePositioned, keyof BadgePositionedAttributes> & { [K in keyof BadgePositioned & keyof BadgePositionedAttributes]?: BadgePositioned[K] } & { [K in keyof BadgePositioned & keyof BadgePositionedAttributes as `attr:${K}`]?: BadgePositionedAttributes[K] } & { [K in keyof BadgePositioned & keyof BadgePositionedAttributes as `prop:${K}`]?: BadgePositioned[K] };
+        "badge-sizes": Omit<BadgeSizes, keyof BadgeSizesAttributes> & { [K in keyof BadgeSizes & keyof BadgeSizesAttributes]?: BadgeSizes[K] } & { [K in keyof BadgeSizes & keyof BadgeSizesAttributes as `attr:${K}`]?: BadgeSizesAttributes[K] } & { [K in keyof BadgeSizes & keyof BadgeSizesAttributes as `prop:${K}`]?: BadgeSizes[K] };
+        "button-badges": Omit<ButtonBadges, keyof ButtonBadgesAttributes> & { [K in keyof ButtonBadges & keyof ButtonBadgesAttributes]?: ButtonBadges[K] } & { [K in keyof ButtonBadges & keyof ButtonBadgesAttributes as `attr:${K}`]?: ButtonBadgesAttributes[K] } & { [K in keyof ButtonBadges & keyof ButtonBadgesAttributes as `prop:${K}`]?: ButtonBadges[K] };
+        "button-basic": Omit<ButtonBasic, keyof ButtonBasicAttributes> & { [K in keyof ButtonBasic & keyof ButtonBasicAttributes]?: ButtonBasic[K] } & { [K in keyof ButtonBasic & keyof ButtonBasicAttributes as `attr:${K}`]?: ButtonBasicAttributes[K] } & { [K in keyof ButtonBasic & keyof ButtonBasicAttributes as `prop:${K}`]?: ButtonBasic[K] };
+        "button-icon-styles": Omit<ButtonIconStyles, keyof ButtonIconStylesAttributes> & { [K in keyof ButtonIconStyles & keyof ButtonIconStylesAttributes]?: ButtonIconStyles[K] } & { [K in keyof ButtonIconStyles & keyof ButtonIconStylesAttributes as `attr:${K}`]?: ButtonIconStylesAttributes[K] } & { [K in keyof ButtonIconStyles & keyof ButtonIconStylesAttributes as `prop:${K}`]?: ButtonIconStyles[K] };
+        "button-severities": Omit<ButtonSeverities, keyof ButtonSeveritiesAttributes> & { [K in keyof ButtonSeverities & keyof ButtonSeveritiesAttributes]?: ButtonSeverities[K] } & { [K in keyof ButtonSeverities & keyof ButtonSeveritiesAttributes as `attr:${K}`]?: ButtonSeveritiesAttributes[K] } & { [K in keyof ButtonSeverities & keyof ButtonSeveritiesAttributes as `prop:${K}`]?: ButtonSeverities[K] };
+        "button-sizes": Omit<ButtonSizes, keyof ButtonSizesAttributes> & { [K in keyof ButtonSizes & keyof ButtonSizesAttributes]?: ButtonSizes[K] } & { [K in keyof ButtonSizes & keyof ButtonSizesAttributes as `attr:${K}`]?: ButtonSizesAttributes[K] } & { [K in keyof ButtonSizes & keyof ButtonSizesAttributes as `prop:${K}`]?: ButtonSizes[K] };
+        "button-styles": Omit<ButtonStyles, keyof ButtonStylesAttributes> & { [K in keyof ButtonStyles & keyof ButtonStylesAttributes]?: ButtonStyles[K] } & { [K in keyof ButtonStyles & keyof ButtonStylesAttributes as `attr:${K}`]?: ButtonStylesAttributes[K] } & { [K in keyof ButtonStyles & keyof ButtonStylesAttributes as `prop:${K}`]?: ButtonStyles[K] };
+        "button-templating": Omit<ButtonTemplating, keyof ButtonTemplatingAttributes> & { [K in keyof ButtonTemplating & keyof ButtonTemplatingAttributes]?: ButtonTemplating[K] } & { [K in keyof ButtonTemplating & keyof ButtonTemplatingAttributes as `attr:${K}`]?: ButtonTemplatingAttributes[K] } & { [K in keyof ButtonTemplating & keyof ButtonTemplatingAttributes as `prop:${K}`]?: ButtonTemplating[K] };
         "checkbox-basic": Omit<CheckboxBasic, keyof CheckboxBasicAttributes> & { [K in keyof CheckboxBasic & keyof CheckboxBasicAttributes]?: CheckboxBasic[K] } & { [K in keyof CheckboxBasic & keyof CheckboxBasicAttributes as `attr:${K}`]?: CheckboxBasicAttributes[K] } & { [K in keyof CheckboxBasic & keyof CheckboxBasicAttributes as `prop:${K}`]?: CheckboxBasic[K] };
         "checkbox-disabled": Omit<CheckboxDisabled, keyof CheckboxDisabledAttributes> & { [K in keyof CheckboxDisabled & keyof CheckboxDisabledAttributes]?: CheckboxDisabled[K] } & { [K in keyof CheckboxDisabled & keyof CheckboxDisabledAttributes as `attr:${K}`]?: CheckboxDisabledAttributes[K] } & { [K in keyof CheckboxDisabled & keyof CheckboxDisabledAttributes as `prop:${K}`]?: CheckboxDisabled[K] };
         "checkbox-dynamic": Omit<CheckboxDynamic, keyof CheckboxDynamicAttributes> & { [K in keyof CheckboxDynamic & keyof CheckboxDynamicAttributes]?: CheckboxDynamic[K] } & { [K in keyof CheckboxDynamic & keyof CheckboxDynamicAttributes as `attr:${K}`]?: CheckboxDynamicAttributes[K] } & { [K in keyof CheckboxDynamic & keyof CheckboxDynamicAttributes as `prop:${K}`]?: CheckboxDynamic[K] };
@@ -4399,6 +4638,7 @@ declare namespace LocalJSX {
         "listbox-multiple": Omit<ListboxMultiple, keyof ListboxMultipleAttributes> & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes]?: ListboxMultiple[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `attr:${K}`]?: ListboxMultipleAttributes[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `prop:${K}`]?: ListboxMultiple[K] };
         "listbox-template": Omit<ListboxTemplate, keyof ListboxTemplateAttributes> & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes]?: ListboxTemplate[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `attr:${K}`]?: ListboxTemplateAttributes[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `prop:${K}`]?: ListboxTemplate[K] };
         "listbox-virtual-scroll": Omit<ListboxVirtualScroll, keyof ListboxVirtualScrollAttributes> & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes]?: ListboxVirtualScroll[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `attr:${K}`]?: ListboxVirtualScrollAttributes[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `prop:${K}`]?: ListboxVirtualScroll[K] };
+        "ripple-effect-basic": Omit<RippleEffectBasic, keyof RippleEffectBasicAttributes> & { [K in keyof RippleEffectBasic & keyof RippleEffectBasicAttributes]?: RippleEffectBasic[K] } & { [K in keyof RippleEffectBasic & keyof RippleEffectBasicAttributes as `attr:${K}`]?: RippleEffectBasicAttributes[K] } & { [K in keyof RippleEffectBasic & keyof RippleEffectBasicAttributes as `prop:${K}`]?: RippleEffectBasic[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -4456,6 +4696,17 @@ declare module "@stencil/core" {
             "app-docsection": LocalJSX.IntrinsicElements["app-docsection"] & JSXBase.HTMLAttributes<HTMLAppDocsectionElement>;
             "app-docsection-nav": LocalJSX.IntrinsicElements["app-docsection-nav"] & JSXBase.HTMLAttributes<HTMLAppDocsectionNavElement>;
             "app-docsectiontext": LocalJSX.IntrinsicElements["app-docsectiontext"] & JSXBase.HTMLAttributes<HTMLAppDocsectiontextElement>;
+            "badge-inline": LocalJSX.IntrinsicElements["badge-inline"] & JSXBase.HTMLAttributes<HTMLBadgeInlineElement>;
+            "badge-numbers": LocalJSX.IntrinsicElements["badge-numbers"] & JSXBase.HTMLAttributes<HTMLBadgeNumbersElement>;
+            "badge-positioned": LocalJSX.IntrinsicElements["badge-positioned"] & JSXBase.HTMLAttributes<HTMLBadgePositionedElement>;
+            "badge-sizes": LocalJSX.IntrinsicElements["badge-sizes"] & JSXBase.HTMLAttributes<HTMLBadgeSizesElement>;
+            "button-badges": LocalJSX.IntrinsicElements["button-badges"] & JSXBase.HTMLAttributes<HTMLButtonBadgesElement>;
+            "button-basic": LocalJSX.IntrinsicElements["button-basic"] & JSXBase.HTMLAttributes<HTMLButtonBasicElement>;
+            "button-icon-styles": LocalJSX.IntrinsicElements["button-icon-styles"] & JSXBase.HTMLAttributes<HTMLButtonIconStylesElement>;
+            "button-severities": LocalJSX.IntrinsicElements["button-severities"] & JSXBase.HTMLAttributes<HTMLButtonSeveritiesElement>;
+            "button-sizes": LocalJSX.IntrinsicElements["button-sizes"] & JSXBase.HTMLAttributes<HTMLButtonSizesElement>;
+            "button-styles": LocalJSX.IntrinsicElements["button-styles"] & JSXBase.HTMLAttributes<HTMLButtonStylesElement>;
+            "button-templating": LocalJSX.IntrinsicElements["button-templating"] & JSXBase.HTMLAttributes<HTMLButtonTemplatingElement>;
             "checkbox-basic": LocalJSX.IntrinsicElements["checkbox-basic"] & JSXBase.HTMLAttributes<HTMLCheckboxBasicElement>;
             "checkbox-disabled": LocalJSX.IntrinsicElements["checkbox-disabled"] & JSXBase.HTMLAttributes<HTMLCheckboxDisabledElement>;
             "checkbox-dynamic": LocalJSX.IntrinsicElements["checkbox-dynamic"] & JSXBase.HTMLAttributes<HTMLCheckboxDynamicElement>;
@@ -4493,6 +4744,7 @@ declare module "@stencil/core" {
             "listbox-multiple": LocalJSX.IntrinsicElements["listbox-multiple"] & JSXBase.HTMLAttributes<HTMLListboxMultipleElement>;
             "listbox-template": LocalJSX.IntrinsicElements["listbox-template"] & JSXBase.HTMLAttributes<HTMLListboxTemplateElement>;
             "listbox-virtual-scroll": LocalJSX.IntrinsicElements["listbox-virtual-scroll"] & JSXBase.HTMLAttributes<HTMLListboxVirtualScrollElement>;
+            "ripple-effect-basic": LocalJSX.IntrinsicElements["ripple-effect-basic"] & JSXBase.HTMLAttributes<HTMLRippleEffectBasicElement>;
         }
     }
 }

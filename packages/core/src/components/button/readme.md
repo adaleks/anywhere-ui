@@ -69,6 +69,14 @@ Type: `Promise<HTMLButtonElement>`
  - [any-input-number](../input-number)
  - [app-code](../app-showcase/doc/app-code)
  - [app-doc](../app-showcase/doc/app-doc)
+ - [badge-inline](../app-showcase/pages/badge/badge-inline)
+ - [button-badges](../app-showcase/pages/button/button-badges)
+ - [button-basic](../app-showcase/pages/button/button-basic)
+ - [button-icon-styles](../app-showcase/pages/button/button-icon-styles)
+ - [button-severities](../app-showcase/pages/button/button-severities)
+ - [button-sizes](../app-showcase/pages/button/button-sizes)
+ - [button-styles](../app-showcase/pages/button/button-styles)
+ - [button-templating](../app-showcase/pages/button/button-templating)
 
 ### Depends on
 
@@ -83,6 +91,14 @@ graph TD;
   any-input-number --> any-button
   app-code --> any-button
   app-doc --> any-button
+  badge-inline --> any-button
+  button-badges --> any-button
+  button-basic --> any-button
+  button-icon-styles --> any-button
+  button-severities --> any-button
+  button-sizes --> any-button
+  button-styles --> any-button
+  button-templating --> any-button
   style any-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

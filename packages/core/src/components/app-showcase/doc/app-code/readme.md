@@ -23,6 +23,17 @@
 
 ### Used by
 
+ - [badge-inline](../../pages/badge/badge-inline)
+ - [badge-numbers](../../pages/badge/badge-numbers)
+ - [badge-positioned](../../pages/badge/badge-positioned)
+ - [badge-sizes](../../pages/badge/badge-sizes)
+ - [button-badges](../../pages/button/button-badges)
+ - [button-basic](../../pages/button/button-basic)
+ - [button-icon-styles](../../pages/button/button-icon-styles)
+ - [button-severities](../../pages/button/button-severities)
+ - [button-sizes](../../pages/button/button-sizes)
+ - [button-styles](../../pages/button/button-styles)
+ - [button-templating](../../pages/button/button-templating)
  - [checkbox-basic](../../pages/checkbox/checkbox-basic)
  - [checkbox-disabled](../../pages/checkbox/checkbox-disabled)
  - [checkbox-dynamic](../../pages/checkbox/checkbox-dynamic)
@@ -60,6 +71,7 @@
  - [listbox-multiple](../../pages/listbox/listbox-multiple)
  - [listbox-template](../../pages/listbox/listbox-template)
  - [listbox-virtual-scroll](../../pages/listbox/listbox-virtual-scroll)
+ - [ripple-effect-basic](../../pages/ripple-effect/ripple-effect-basic)
 
 ### Depends on
 
@@ -71,6 +83,17 @@ graph TD;
   app-code --> any-button
   any-button --> any-badge
   any-button --> any-ripple-effect
+  badge-inline --> app-code
+  badge-numbers --> app-code
+  badge-positioned --> app-code
+  badge-sizes --> app-code
+  button-badges --> app-code
+  button-basic --> app-code
+  button-icon-styles --> app-code
+  button-severities --> app-code
+  button-sizes --> app-code
+  button-styles --> app-code
+  button-templating --> app-code
   checkbox-basic --> app-code
   checkbox-disabled --> app-code
   checkbox-dynamic --> app-code
@@ -108,6 +131,7 @@ graph TD;
   listbox-multiple --> app-code
   listbox-template --> app-code
   listbox-virtual-scroll --> app-code
+  ripple-effect-basic --> app-code
   style app-code fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

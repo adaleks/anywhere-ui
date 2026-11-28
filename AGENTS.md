@@ -70,6 +70,18 @@ Both remotes use SSH (the maintainer's key is registered), so no PAT/credential 
 `main` is protected (changes must arrive through a pull request): create a branch, push it to `origin`
 and open a PR against `main` (`gh pr create --base main`). Do not push directly to `main`.
 
+### Commit / push / merge approval (mandatory)
+
+The maintainer approves every remote step, so never run one on your own initiative:
+
+1. implement and verify the change locally, leaving it **uncommitted**;
+2. **ask** whether to commit and push — only after an explicit yes, commit, push the branch and open
+   the PR;
+3. stop again and **ask** whether to merge — only after an explicit yes, merge the PR.
+
+This also applies to small or generated changes (changelog refreshes, version bumps, docs fixes).
+
+
 ## Changelog and releases
 
 - The changelog is generated from **issues**, grouped by label. `scripts/changelog-unreleased.mjs`

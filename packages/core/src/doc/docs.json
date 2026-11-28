@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-27T23:37:01",
+  "timestamp": "2026-11-27T23:56:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.45.5",
@@ -174,11 +174,23 @@
       ],
       "states": [],
       "dependents": [
-        "any-button"
+        "any-button",
+        "badge-numbers",
+        "badge-positioned",
+        "badge-sizes"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "any-button": [
+          "any-badge"
+        ],
+        "badge-numbers": [
+          "any-badge"
+        ],
+        "badge-positioned": [
+          "any-badge"
+        ],
+        "badge-sizes": [
           "any-badge"
         ]
       }
@@ -234,9 +246,15 @@
       ],
       "parts": [],
       "states": [],
-      "dependents": [],
+      "dependents": [
+        "badge-positioned"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "badge-positioned": [
+          "any-badge-overlay"
+        ]
+      }
     },
     {
       "filePath": "src/components/button/button.tsx",
@@ -770,7 +788,15 @@
       "dependents": [
         "any-input-number",
         "app-code",
-        "app-doc"
+        "app-doc",
+        "badge-inline",
+        "button-badges",
+        "button-basic",
+        "button-icon-styles",
+        "button-severities",
+        "button-sizes",
+        "button-styles",
+        "button-templating"
       ],
       "dependencies": [
         "any-badge",
@@ -788,6 +814,30 @@
           "any-button"
         ],
         "app-doc": [
+          "any-button"
+        ],
+        "badge-inline": [
+          "any-button"
+        ],
+        "button-badges": [
+          "any-button"
+        ],
+        "button-basic": [
+          "any-button"
+        ],
+        "button-icon-styles": [
+          "any-button"
+        ],
+        "button-severities": [
+          "any-button"
+        ],
+        "button-sizes": [
+          "any-button"
+        ],
+        "button-styles": [
+          "any-button"
+        ],
+        "button-templating": [
           "any-button"
         ]
       }
@@ -8340,7 +8390,8 @@
       "dependents": [
         "any-button",
         "any-listbox",
-        "any-tab-view"
+        "any-tab-view",
+        "ripple-effect-basic"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -8351,6 +8402,9 @@
           "any-ripple-effect"
         ],
         "any-tab-view": [
+          "any-ripple-effect"
+        ],
+        "ripple-effect-basic": [
           "any-ripple-effect"
         ]
       }
@@ -9344,6 +9398,17 @@
       "parts": [],
       "states": [],
       "dependents": [
+        "badge-inline",
+        "badge-numbers",
+        "badge-positioned",
+        "badge-sizes",
+        "button-badges",
+        "button-basic",
+        "button-icon-styles",
+        "button-severities",
+        "button-sizes",
+        "button-styles",
+        "button-templating",
         "checkbox-basic",
         "checkbox-disabled",
         "checkbox-dynamic",
@@ -9380,7 +9445,8 @@
         "listbox-grouping",
         "listbox-multiple",
         "listbox-template",
-        "listbox-virtual-scroll"
+        "listbox-virtual-scroll",
+        "ripple-effect-basic"
       ],
       "dependencies": [
         "any-button"
@@ -9392,6 +9458,39 @@
         "any-button": [
           "any-badge",
           "any-ripple-effect"
+        ],
+        "badge-inline": [
+          "app-code"
+        ],
+        "badge-numbers": [
+          "app-code"
+        ],
+        "badge-positioned": [
+          "app-code"
+        ],
+        "badge-sizes": [
+          "app-code"
+        ],
+        "button-badges": [
+          "app-code"
+        ],
+        "button-basic": [
+          "app-code"
+        ],
+        "button-icon-styles": [
+          "app-code"
+        ],
+        "button-severities": [
+          "app-code"
+        ],
+        "button-sizes": [
+          "app-code"
+        ],
+        "button-styles": [
+          "app-code"
+        ],
+        "button-templating": [
+          "app-code"
         ],
         "checkbox-basic": [
           "app-code"
@@ -9502,6 +9601,9 @@
           "app-code"
         ],
         "listbox-virtual-scroll": [
+          "app-code"
+        ],
+        "ripple-effect-basic": [
           "app-code"
         ]
       }
@@ -10380,6 +10482,17 @@
       "states": [],
       "dependents": [
         "app-docapitable",
+        "badge-inline",
+        "badge-numbers",
+        "badge-positioned",
+        "badge-sizes",
+        "button-badges",
+        "button-basic",
+        "button-icon-styles",
+        "button-severities",
+        "button-sizes",
+        "button-styles",
+        "button-templating",
         "checkbox-basic",
         "checkbox-disabled",
         "checkbox-dynamic",
@@ -10416,11 +10529,45 @@
         "listbox-grouping",
         "listbox-multiple",
         "listbox-template",
-        "listbox-virtual-scroll"
+        "listbox-virtual-scroll",
+        "ripple-effect-basic"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "app-docapitable": [
+          "app-docsectiontext"
+        ],
+        "badge-inline": [
+          "app-docsectiontext"
+        ],
+        "badge-numbers": [
+          "app-docsectiontext"
+        ],
+        "badge-positioned": [
+          "app-docsectiontext"
+        ],
+        "badge-sizes": [
+          "app-docsectiontext"
+        ],
+        "button-badges": [
+          "app-docsectiontext"
+        ],
+        "button-basic": [
+          "app-docsectiontext"
+        ],
+        "button-icon-styles": [
+          "app-docsectiontext"
+        ],
+        "button-severities": [
+          "app-docsectiontext"
+        ],
+        "button-sizes": [
+          "app-docsectiontext"
+        ],
+        "button-styles": [
+          "app-docsectiontext"
+        ],
+        "button-templating": [
           "app-docsectiontext"
         ],
         "checkbox-basic": [
@@ -10533,6 +10680,928 @@
         ],
         "listbox-virtual-scroll": [
           "app-docsectiontext"
+        ],
+        "ripple-effect-basic": [
+          "app-docsectiontext"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/badge/badge-inline/badge-inline.tsx",
+      "encapsulation": "scoped",
+      "tag": "badge-inline",
+      "readme": "# badge-inline\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "badge-inline": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/badge/badge-numbers/badge-numbers.tsx",
+      "encapsulation": "scoped",
+      "tag": "badge-numbers",
+      "readme": "# badge-numbers\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-badge",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "badge-numbers": [
+          "app-docsectiontext",
+          "any-badge",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/badge/badge-positioned/badge-positioned.tsx",
+      "encapsulation": "scoped",
+      "tag": "badge-positioned",
+      "readme": "# badge-positioned\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-badge-overlay",
+        "any-badge",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "badge-positioned": [
+          "app-docsectiontext",
+          "any-badge-overlay",
+          "any-badge",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/badge/badge-sizes/badge-sizes.tsx",
+      "encapsulation": "scoped",
+      "tag": "badge-sizes",
+      "readme": "# badge-sizes\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-badge",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "badge-sizes": [
+          "app-docsectiontext",
+          "any-badge",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-badges/button-badges.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-badges",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-badges": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-basic/button-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-basic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-basic": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-icon-styles/button-icon-styles.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-icon-styles",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-icon-styles": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-severities/button-severities.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-severities",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-severities": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-sizes/button-sizes.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-sizes",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-sizes": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-styles/button-styles.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-styles",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-styles": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/button/button-templating/button-templating.tsx",
+      "encapsulation": "scoped",
+      "tag": "button-templating",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "button-templating": [
+          "app-docsectiontext",
+          "any-button",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
         ]
       }
     },
@@ -13858,6 +14927,89 @@
           "any-ripple-effect",
           "any-input-text",
           "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/ripple-effect/ripple-effect-basic/ripple-effect-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "ripple-effect-basic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-ripple-effect",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "ripple-effect-basic": [
+          "app-docsectiontext",
+          "any-ripple-effect",
+          "app-code"
         ],
         "app-code": [
           "any-button"

@@ -919,6 +919,259 @@ export declare interface AppDocsectiontext extends Components.AppDocsectiontext 
   inputs: ['textId', 'textTitle']
 })
 @Component({
+  selector: 'badge-inline',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class BadgeInline {
+  protected el: HTMLBadgeInlineElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface BadgeInline extends Components.BadgeInline {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'badge-numbers',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class BadgeNumbers {
+  protected el: HTMLBadgeNumbersElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface BadgeNumbers extends Components.BadgeNumbers {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'badge-positioned',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class BadgePositioned {
+  protected el: HTMLBadgePositionedElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface BadgePositioned extends Components.BadgePositioned {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'badge-sizes',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class BadgeSizes {
+  protected el: HTMLBadgeSizesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface BadgeSizes extends Components.BadgeSizes {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-badges',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonBadges {
+  protected el: HTMLButtonBadgesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonBadges extends Components.ButtonBadges {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-basic',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonBasic {
+  protected el: HTMLButtonBasicElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonBasic extends Components.ButtonBasic {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-icon-styles',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonIconStyles {
+  protected el: HTMLButtonIconStylesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonIconStyles extends Components.ButtonIconStyles {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-severities',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonSeverities {
+  protected el: HTMLButtonSeveritiesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonSeverities extends Components.ButtonSeverities {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-sizes',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonSizes {
+  protected el: HTMLButtonSizesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonSizes extends Components.ButtonSizes {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-styles',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonStyles {
+  protected el: HTMLButtonStylesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonStyles extends Components.ButtonStyles {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'button-templating',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class ButtonTemplating {
+  protected el: HTMLButtonTemplatingElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ButtonTemplating extends Components.ButtonTemplating {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
   selector: 'checkbox-basic',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
@@ -1806,5 +2059,28 @@ export class ListboxVirtualScroll {
 
 
 export declare interface ListboxVirtualScroll extends Components.ListboxVirtualScroll {}
+
+
+@ProxyCmp({
+  inputs: ['textId', 'textTitle']
+})
+@Component({
+  selector: 'ripple-effect-basic',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['textId', 'textTitle'],
+  standalone: false
+})
+export class RippleEffectBasic {
+  protected el: HTMLRippleEffectBasicElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RippleEffectBasic extends Components.RippleEffectBasic {}
 
 

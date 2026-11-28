@@ -7,37 +7,50 @@ export default class extends AbstractView {
   }
 
   executeScript() {
-    this.b1 = document.querySelector("#b1");
-    this.b1.addEventListener("aOnClick", (event) => {
-      console.log("Button onClick:", event);
-    });
-    this.b1.addEventListener("aOnBlur", (event) => {
-      console.log("Button onBlur:", event);
-    });
-    this.b1.addEventListener("aOnFocus", (event) => {
-      console.log("Button onFocus:", event);
-    });
-    this.viewOnGithubBtn = document.querySelector("#view_on_github");
-    this.viewOnGithubBtn.addEventListener("aOnClick", (event) => {
-      window.open('https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/button', '_blank');
-    });
-
-    document.querySelectorAll('.lb').forEach(item => {
-      // item.loadingIcon = "icomoon-free:spinner3";
-      item.addEventListener('aOnClick', event => {
-        item.loading = true;
-        setTimeout(() => {
-          item.loading = false;
-        }, 1000);
-      });
-    });
-
+    this.appDoc = document.querySelector("#app-doc");
+    this.appDoc.apiDocs = ["any-button"];
+    this.appDoc.docs = [
+      {
+        id: "basic",
+        label: "Basic",
+        component: "button-basic",
+      },
+      {
+        id: "severities",
+        label: "Severities",
+        component: "button-severities",
+      },
+      {
+        id: "styles",
+        label: "Styles",
+        component: "button-styles",
+      },
+      {
+        id: "icon-styles",
+        label: "Icon Styles",
+        component: "button-icon-styles",
+      },
+      {
+        id: "badges",
+        label: "Badges & Loading",
+        component: "button-badges",
+      },
+      {
+        id: "templating",
+        label: "Templating",
+        component: "button-templating",
+      },
+      {
+        id: "sizes",
+        label: "Sizes",
+        component: "button-sizes",
+      },
+    ];
   }
 
   async getHtml() {
-    return fetch('app/views/Button/Button.html')
-      .then(data => {
-        return data.text();
-      });
+    return fetch("app/views/Button/Button.html").then((data) => {
+      return data.text();
+    });
   }
 }
