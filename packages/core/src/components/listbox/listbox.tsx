@@ -47,6 +47,7 @@ const hasSomeParentTheClass = (element, classname) => {
  *
  * @part lists - Represents the container for the list of options.
  * @part items - Represents the list of options.
+ * @part group - The sticky header of an option group when "group" is enabled.
  * @slot item - Represents individual items in the listbox.
  *   Use this slot to customize the appearance of each item in the list.
  */

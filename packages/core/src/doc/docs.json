@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-28T00:50:51",
+  "timestamp": "2026-11-28T01:20:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.45.5",
@@ -11,8 +11,13 @@
       "encapsulation": "shadow",
       "tag": "any-badge",
       "readme": "# any-badge-overlay\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "Badge is a small status indicator for another element.",
+      "docsTags": [
+        {
+          "name": "part",
+          "text": "any-badge - The badge element."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -169,7 +174,7 @@
       "parts": [
         {
           "name": "any-badge",
-          "docs": ""
+          "docs": "The badge element."
         }
       ],
       "states": [],
@@ -261,8 +266,21 @@
       "encapsulation": "shadow",
       "tag": "any-button",
       "readme": "# any-button\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "Button is an extension to the standard button element with icons and theming.",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "content - Custom content rendered inside the button."
+        },
+        {
+          "name": "part",
+          "text": "any-button - The native button element."
+        },
+        {
+          "name": "part",
+          "text": "any-button-label - The label element."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -771,17 +789,17 @@
       "slots": [
         {
           "name": "content",
-          "docs": ""
+          "docs": "Custom content rendered inside the button."
         }
       ],
       "parts": [
         {
           "name": "any-button",
-          "docs": ""
+          "docs": "The native button element."
         },
         {
           "name": "any-button-label",
-          "docs": ""
+          "docs": "The label element."
         }
       ],
       "states": [],
@@ -5551,6 +5569,10 @@
           "text": "items - Represents the list of options."
         },
         {
+          "name": "part",
+          "text": "group - The sticky header of an option group when \"group\" is enabled."
+        },
+        {
           "name": "slot",
           "text": "item - Represents individual items in the listbox.\r\nUse this slot to customize the appearance of each item in the list."
         }
@@ -6543,7 +6565,7 @@
       "parts": [
         {
           "name": "group",
-          "docs": ""
+          "docs": "The sticky header of an option group when \"group\" is enabled."
         },
         {
           "name": "items",
@@ -6613,8 +6635,17 @@
       "encapsulation": "shadow",
       "tag": "any-multiselect",
       "readme": "# any-multiselect\n\n\n",
-      "docs": "",
-      "docsTags": [],
+      "docs": "MultiSelect is used to select multiple items from a collection.",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "item - Custom content for an option row in the list."
+        },
+        {
+          "name": "slot",
+          "text": "selectedItem - Custom content for the chip of a selected option."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -7537,7 +7568,16 @@
           "docs": "The transition effect for the input field, involving border color and box shadow, using the --transitionDuration variable."
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "item",
+          "docs": "Custom content for an option row in the list."
+        },
+        {
+          "name": "selectedItem",
+          "docs": "Custom content for the chip of a selected option."
+        }
+      ],
       "parts": [],
       "states": [],
       "dependents": [
@@ -8348,8 +8388,13 @@
       "encapsulation": "shadow",
       "tag": "any-ripple-effect",
       "readme": "# any-ripple-effect\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "RippleEffect adds an ink ripple to its parent element.",
+      "docsTags": [
+        {
+          "name": "part",
+          "text": "any-ink - The ripple ink element."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -8424,7 +8469,7 @@
       "parts": [
         {
           "name": "any-ink",
-          "docs": ""
+          "docs": "The ripple ink element."
         }
       ],
       "states": [],
@@ -8714,8 +8759,25 @@
       "encapsulation": "scoped",
       "tag": "any-virtual-scroller",
       "readme": "# any-virtual-scroller\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
+      "docs": "Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "header - Content rendered above the list."
+        },
+        {
+          "name": "slot",
+          "text": "item - Template for a single row; the #=item.field# placeholders are replaced per item."
+        },
+        {
+          "name": "slot",
+          "text": "loadingItem - Row placeholder rendered while a lazy page is loading."
+        },
+        {
+          "name": "slot",
+          "text": "footer - Content rendered below the list."
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -9209,19 +9271,19 @@
       "slots": [
         {
           "name": "footer",
-          "docs": ""
+          "docs": "Content rendered below the list."
         },
         {
           "name": "header",
-          "docs": ""
+          "docs": "Content rendered above the list."
         },
         {
           "name": "item",
-          "docs": ""
+          "docs": "Template for a single row; the #=item.field# placeholders are replaced per item."
         },
         {
           "name": "loadingItem",
-          "docs": ""
+          "docs": "Row placeholder rendered while a lazy page is loading."
         }
       ],
       "parts": [],

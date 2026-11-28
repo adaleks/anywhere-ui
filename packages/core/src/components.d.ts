@@ -12,6 +12,9 @@ export { TextareaChangeEventDetail } from "./components/input-textarea/input-tex
 export { SelectChangeEventDetail } from "./components/listbox/listbox-interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-inteface";
 export namespace Components {
+    /**
+     * Badge is a small status indicator for another element.
+     */
     interface AnyBadge {
         /**
           * Inline style of the component.
@@ -46,6 +49,9 @@ export namespace Components {
          */
         "styleClass": string;
     }
+    /**
+     * Button is an extension to the standard button element with icons and theming.
+     */
     interface AnyButton {
         /**
           * Inline style of the element.
@@ -898,6 +904,9 @@ export namespace Components {
          */
         "virtualScroll": boolean;
     }
+    /**
+     * MultiSelect is used to select multiple items from a collection.
+     */
     interface AnyMultiselect {
         /**
           * Inline style of the element
@@ -1122,6 +1131,9 @@ export namespace Components {
          */
         "value"?: any | null;
     }
+    /**
+     * RippleEffect adds an ink ripple to its parent element.
+     */
     interface AnyRippleEffect {
         /**
           * Inline style of the component.
@@ -1168,6 +1180,9 @@ export namespace Components {
          */
         "styleClass": string;
     }
+    /**
+     * Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.
+     */
     interface AnyVirtualScroller {
         /**
           * Inline style of the component
@@ -1627,6 +1642,9 @@ export interface CheckboxReadonlyCustomEvent<T> extends CustomEvent<T> {
     target: HTMLCheckboxReadonlyElement;
 }
 declare global {
+    /**
+     * Badge is a small status indicator for another element.
+     */
     interface HTMLAnyBadgeElement extends Components.AnyBadge, HTMLStencilElement {
     }
     var HTMLAnyBadgeElement: {
@@ -1644,6 +1662,9 @@ declare global {
         "aOnFocus": any;
         "aOnBlur": any;
     }
+    /**
+     * Button is an extension to the standard button element with icons and theming.
+     */
     interface HTMLAnyButtonElement extends Components.AnyButton, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyButtonElementEventMap>(type: K, listener: (this: HTMLAnyButtonElement, ev: AnyButtonCustomEvent<HTMLAnyButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1831,6 +1852,9 @@ declare global {
         "aOnBlur": any;
         "aOnClick": any;
     }
+    /**
+     * MultiSelect is used to select multiple items from a collection.
+     */
     interface HTMLAnyMultiselectElement extends Components.AnyMultiselect, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyMultiselectElementEventMap>(type: K, listener: (this: HTMLAnyMultiselectElement, ev: AnyMultiselectCustomEvent<HTMLAnyMultiselectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1901,6 +1925,9 @@ declare global {
         prototype: HTMLAnyRadioGroupElement;
         new (): HTMLAnyRadioGroupElement;
     };
+    /**
+     * RippleEffect adds an ink ripple to its parent element.
+     */
     interface HTMLAnyRippleEffectElement extends Components.AnyRippleEffect, HTMLStencilElement {
     }
     var HTMLAnyRippleEffectElement: {
@@ -1926,6 +1953,9 @@ declare global {
         "aOnLazyLoad": any;
         "aOnItemClick": any;
     }
+    /**
+     * Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.
+     */
     interface HTMLAnyVirtualScrollerElement extends Components.AnyVirtualScroller, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAnyVirtualScrollerElementEventMap>(type: K, listener: (this: HTMLAnyVirtualScrollerElement, ev: AnyVirtualScrollerCustomEvent<HTMLAnyVirtualScrollerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2499,6 +2529,9 @@ declare global {
 declare namespace LocalJSX {
     type OneOf<K extends string, PropT, AttrT = PropT> = { [P in K]: PropT } & { [P in `attr:${K}`]?: never } | { [P in `attr:${K}`]: AttrT } & { [P in K]?: never };
 
+    /**
+     * Badge is a small status indicator for another element.
+     */
     interface AnyBadge {
         /**
           * Inline style of the component.
@@ -2533,6 +2566,9 @@ declare namespace LocalJSX {
          */
         "styleClass"?: string;
     }
+    /**
+     * Button is an extension to the standard button element with icons and theming.
+     */
     interface AnyButton {
         /**
           * Inline style of the element.
@@ -3473,6 +3509,9 @@ declare namespace LocalJSX {
          */
         "virtualScroll"?: boolean;
     }
+    /**
+     * MultiSelect is used to select multiple items from a collection.
+     */
     interface AnyMultiselect {
         /**
           * Inline style of the element
@@ -3757,6 +3796,9 @@ declare namespace LocalJSX {
          */
         "value"?: any | null;
     }
+    /**
+     * RippleEffect adds an ink ripple to its parent element.
+     */
     interface AnyRippleEffect {
         /**
           * Inline style of the component.
@@ -3803,6 +3845,9 @@ declare namespace LocalJSX {
          */
         "styleClass"?: string;
     }
+    /**
+     * Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.
+     */
     interface AnyVirtualScroller {
         /**
           * Inline style of the component
@@ -4845,8 +4890,14 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * Badge is a small status indicator for another element.
+             */
             "any-badge": LocalJSX.IntrinsicElements["any-badge"] & JSXBase.HTMLAttributes<HTMLAnyBadgeElement>;
             "any-badge-overlay": LocalJSX.IntrinsicElements["any-badge-overlay"] & JSXBase.HTMLAttributes<HTMLAnyBadgeOverlayElement>;
+            /**
+             * Button is an extension to the standard button element with icons and theming.
+             */
             "any-button": LocalJSX.IntrinsicElements["any-button"] & JSXBase.HTMLAttributes<HTMLAnyButtonElement>;
             /**
              * Checkbox is an extension to the standard checkbox element with theming.
@@ -4880,13 +4931,22 @@ declare module "@stencil/core" {
              * ListBox is used to select one or more values from a list of items.
              */
             "any-listbox": LocalJSX.IntrinsicElements["any-listbox"] & JSXBase.HTMLAttributes<HTMLAnyListboxElement>;
+            /**
+             * MultiSelect is used to select multiple items from a collection.
+             */
             "any-multiselect": LocalJSX.IntrinsicElements["any-multiselect"] & JSXBase.HTMLAttributes<HTMLAnyMultiselectElement>;
             "any-overlay": LocalJSX.IntrinsicElements["any-overlay"] & JSXBase.HTMLAttributes<HTMLAnyOverlayElement>;
             "any-radio-button": LocalJSX.IntrinsicElements["any-radio-button"] & JSXBase.HTMLAttributes<HTMLAnyRadioButtonElement>;
             "any-radio-group": LocalJSX.IntrinsicElements["any-radio-group"] & JSXBase.HTMLAttributes<HTMLAnyRadioGroupElement>;
+            /**
+             * RippleEffect adds an ink ripple to its parent element.
+             */
             "any-ripple-effect": LocalJSX.IntrinsicElements["any-ripple-effect"] & JSXBase.HTMLAttributes<HTMLAnyRippleEffectElement>;
             "any-tab-panel": LocalJSX.IntrinsicElements["any-tab-panel"] & JSXBase.HTMLAttributes<HTMLAnyTabPanelElement>;
             "any-tab-view": LocalJSX.IntrinsicElements["any-tab-view"] & JSXBase.HTMLAttributes<HTMLAnyTabViewElement>;
+            /**
+             * Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.
+             */
             "any-virtual-scroller": LocalJSX.IntrinsicElements["any-virtual-scroller"] & JSXBase.HTMLAttributes<HTMLAnyVirtualScrollerElement>;
             "app-code": LocalJSX.IntrinsicElements["app-code"] & JSXBase.HTMLAttributes<HTMLAppCodeElement>;
             "app-config": LocalJSX.IntrinsicElements["app-config"] & JSXBase.HTMLAttributes<HTMLAppConfigElement>;

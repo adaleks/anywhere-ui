@@ -2,6 +2,11 @@ import { Component, Host, h, Element, Prop } from "@stencil/core";
 import { DomHandler } from "../../utils/dom";
 import { config } from "../../global/config";
 
+/**
+ * RippleEffect adds an ink ripple to its parent element.
+ *
+ * @part any-ink - The ripple ink element.
+ */
 @Component({
   tag: "any-ripple-effect",
   styleUrl: "ripple-effect.scss",

@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Badge is a small status indicator for another element.
+
 ## Properties
 
 | Property     | Attribute     | Description                                                | Type     | Default |
@@ -18,9 +22,9 @@
 
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"any-badge"` |             |
+| Part          | Description        |
+| ------------- | ------------------ |
+| `"any-badge"` | The badge element. |
 
 
 ## Dependencies

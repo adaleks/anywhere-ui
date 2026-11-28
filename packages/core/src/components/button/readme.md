@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Button is an extension to the standard button element with icons and theming.
+
 ## Properties
 
 | Property                | Attribute                  | Description                                                       | Type                                     | Default              |
@@ -49,17 +53,17 @@ Type: `Promise<HTMLButtonElement>`
 
 ## Slots
 
-| Slot        | Description |
-| ----------- | ----------- |
-| `"content"` |             |
+| Slot        | Description                                |
+| ----------- | ------------------------------------------ |
+| `"content"` | Custom content rendered inside the button. |
 
 
 ## Shadow Parts
 
-| Part                 | Description |
-| -------------------- | ----------- |
-| `"any-button"`       |             |
-| `"any-button-label"` |             |
+| Part                 | Description                |
+| -------------------- | -------------------------- |
+| `"any-button"`       | The native button element. |
+| `"any-button-label"` | The label element.         |
 
 
 ## Dependencies

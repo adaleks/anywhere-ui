@@ -36,6 +36,8 @@
     "loader/"
   ],
   "scripts": {
+    "prestart": "node scripts/sync-app-version.mjs",
+    "prebuild": "node scripts/sync-app-version.mjs",
     "build": "stencil build --docs",
     "build-doc-json": "stencil build --docs-json src/doc/docs.json",
     "build.watch": "stencil build --dev --watch --serve",

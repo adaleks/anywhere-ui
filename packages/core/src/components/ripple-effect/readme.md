@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+RippleEffect adds an ink ripple to its parent element.
+
 ## Properties
 
 | Property   | Attribute   | Description                     | Type                       | Default     |
@@ -15,9 +19,9 @@
 
 ## Shadow Parts
 
-| Part        | Description |
-| ----------- | ----------- |
-| `"any-ink"` |             |
+| Part        | Description             |
+| ----------- | ----------------------- |
+| `"any-ink"` | The ripple ink element. |
 
 
 ## Dependencies

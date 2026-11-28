@@ -72,11 +72,11 @@ Type: `Promise<void>`
 
 ## Shadow Parts
 
-| Part      | Description                                       |
-| --------- | ------------------------------------------------- |
-| `"group"` |                                                   |
-| `"items"` | Represents the list of options.                   |
-| `"lists"` | Represents the container for the list of options. |
+| Part      | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| `"group"` | The sticky header of an option group when "group" is enabled. |
+| `"items"` | Represents the list of options.                               |
+| `"lists"` | Represents the container for the list of options.             |
 
 
 ## CSS Custom Properties

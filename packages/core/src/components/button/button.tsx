@@ -14,6 +14,13 @@ import { loadIcons } from "../../utils/load-icons";
 import { hasShadowDom } from "../../utils/helpers";
 import { waitForElm } from "../../utils/utils";
 
+/**
+ * Button is an extension to the standard button element with icons and theming.
+ *
+ * @slot content - Custom content rendered inside the button.
+ * @part any-button - The native button element.
+ * @part any-button-label - The label element.
+ */
 @Component({
   tag: "any-button",
   styleUrl: "button.scss",

@@ -5,6 +5,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Virtual Scroller renders large collections efficiently by keeping only the visible rows in the DOM.
+
 ## Properties
 
 | Property           | Attribute            | Description                                                                                                                                                                                                                                                                                                          | Type      | Default     |
@@ -38,12 +42,12 @@
 
 ## Slots
 
-| Slot            | Description |
-| --------------- | ----------- |
-| `"footer"`      |             |
-| `"header"`      |             |
-| `"item"`        |             |
-| `"loadingItem"` |             |
+| Slot            | Description                                                                      |
+| --------------- | -------------------------------------------------------------------------------- |
+| `"footer"`      | Content rendered below the list.                                                 |
+| `"header"`      | Content rendered above the list.                                                 |
+| `"item"`        | Template for a single row; the #=item.field# placeholders are replaced per item. |
+| `"loadingItem"` | Row placeholder rendered while a lazy page is loading.                           |
 
 
 ## Dependencies
