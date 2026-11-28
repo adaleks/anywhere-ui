@@ -27,6 +27,14 @@
 
     pre {
       margin: 0 0 1.5rem 0;
+      padding: 0;
+
+      // the white code surface is the code element; pad it instead of the pre so
+      // the absolutely positioned action buttons keep sitting on its corner
+      code {
+        display: block;
+        padding: 3rem 1rem 1.25rem;
+      }
     }
   }
 }
