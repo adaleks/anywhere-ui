@@ -78,7 +78,17 @@
  - [listbox-multiple](../../pages/listbox/listbox-multiple)
  - [listbox-template](../../pages/listbox/listbox-template)
  - [listbox-virtual-scroll](../../pages/listbox/listbox-virtual-scroll)
+ - [ms-basic](../../pages/multiselect/ms-basic)
+ - [ms-template](../../pages/multiselect/ms-template)
+ - [ms-virtual](../../pages/multiselect/ms-virtual)
+ - [radio-button-basic](../../pages/radio-button/radio-button-basic)
+ - [radio-button-dynamic](../../pages/radio-button/radio-button-dynamic)
  - [ripple-effect-basic](../../pages/ripple-effect/ripple-effect-basic)
+ - [tab-view-basic](../../pages/tab-view/tab-view-basic)
+ - [tab-view-disabled](../../pages/tab-view/tab-view-disabled)
+ - [tab-view-programmatic](../../pages/tab-view/tab-view-programmatic)
+ - [vs-lazy](../../pages/virtual-scroller/vs-lazy)
+ - [vs-prepopulated](../../pages/virtual-scroller/vs-prepopulated)
 
 ### Graph
 ```mermaid
@@ -132,7 +142,17 @@ graph TD;
   listbox-multiple --> app-docsectiontext
   listbox-template --> app-docsectiontext
   listbox-virtual-scroll --> app-docsectiontext
+  ms-basic --> app-docsectiontext
+  ms-template --> app-docsectiontext
+  ms-virtual --> app-docsectiontext
+  radio-button-basic --> app-docsectiontext
+  radio-button-dynamic --> app-docsectiontext
   ripple-effect-basic --> app-docsectiontext
+  tab-view-basic --> app-docsectiontext
+  tab-view-disabled --> app-docsectiontext
+  tab-view-programmatic --> app-docsectiontext
+  vs-lazy --> app-docsectiontext
+  vs-prepopulated --> app-docsectiontext
   style app-docsectiontext fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

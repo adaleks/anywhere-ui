@@ -793,7 +793,67 @@ export const ListboxVirtualScroll: StencilVueComponent<JSX.ListboxVirtualScroll>
 ]);
 
 
+export const MsBasic: StencilVueComponent<JSX.MsBasic> = /*@__PURE__*/ defineContainer<JSX.MsBasic>('ms-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const MsTemplate: StencilVueComponent<JSX.MsTemplate> = /*@__PURE__*/ defineContainer<JSX.MsTemplate>('ms-template', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const MsVirtual: StencilVueComponent<JSX.MsVirtual> = /*@__PURE__*/ defineContainer<JSX.MsVirtual>('ms-virtual', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const RadioButtonBasic: StencilVueComponent<JSX.RadioButtonBasic> = /*@__PURE__*/ defineContainer<JSX.RadioButtonBasic>('radio-button-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const RadioButtonDynamic: StencilVueComponent<JSX.RadioButtonDynamic> = /*@__PURE__*/ defineContainer<JSX.RadioButtonDynamic>('radio-button-dynamic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
 export const RippleEffectBasic: StencilVueComponent<JSX.RippleEffectBasic> = /*@__PURE__*/ defineContainer<JSX.RippleEffectBasic>('ripple-effect-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const TabViewBasic: StencilVueComponent<JSX.TabViewBasic> = /*@__PURE__*/ defineContainer<JSX.TabViewBasic>('tab-view-basic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const TabViewDisabled: StencilVueComponent<JSX.TabViewDisabled> = /*@__PURE__*/ defineContainer<JSX.TabViewDisabled>('tab-view-disabled', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const TabViewProgrammatic: StencilVueComponent<JSX.TabViewProgrammatic> = /*@__PURE__*/ defineContainer<JSX.TabViewProgrammatic>('tab-view-programmatic', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const VsLazy: StencilVueComponent<JSX.VsLazy> = /*@__PURE__*/ defineContainer<JSX.VsLazy>('vs-lazy', undefined, [
+  'textId',
+  'textTitle'
+]);
+
+
+export const VsPrepopulated: StencilVueComponent<JSX.VsPrepopulated> = /*@__PURE__*/ defineContainer<JSX.VsPrepopulated>('vs-prepopulated', undefined, [
   'textId',
   'textTitle'
 ]);

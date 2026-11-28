@@ -95,6 +95,7 @@ Dropdown, also known as Select, is used to choose an item from a collection of o
  - [dropdown-filter](../app-showcase/pages/dropdown/dropdown-filter)
  - [dropdown-template](../app-showcase/pages/dropdown/dropdown-template)
  - [dropdown-virtual-scroll](../app-showcase/pages/dropdown/dropdown-virtual-scroll)
+ - [vs-prepopulated](../app-showcase/pages/virtual-scroller/vs-prepopulated)
 
 ### Depends on
 
@@ -115,6 +116,7 @@ graph TD;
   dropdown-filter --> any-dropdown
   dropdown-template --> any-dropdown
   dropdown-virtual-scroll --> any-dropdown
+  vs-prepopulated --> any-dropdown
   style any-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

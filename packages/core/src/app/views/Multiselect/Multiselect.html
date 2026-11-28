@@ -1,42 +1,7 @@
-<div class="content-section introduction">
-  <div class="feature-intro">
-    <h1>MultiSelect</h1>
-    <p>MultiSelect is used to select multiple items from a collection.</p>
-  </div>
-  <app-demoactions>
-    <div class="app-demoactions any-d-flex any-ai-end any-jc-end any-mt-3">
-      <any-button id="view_on_github" icon="fa-brands:github"
-        style-class="any-button-rounded any-button-text any-button-lg any-button-plain"></any-button>
-    </div>
-  </app-demoactions>
-</div>
-<div class="content-section">
-  <div class="full-card">
-    <h5>Basic</h5>
-    <any-multiselect class="ms1" placeholder="Select a Country"></any-multiselect>
-    <h5>Advanced with Templating, Filtering and Clear Icon</h5>
-    <any-multiselect class="ms2" placeholder="Select a City">
-      <div slot="selectedItem">
-        <div style="display: flex; align-items: center;">
-          <img part="flag-#=item.value.countryCode#" class="flag flag-#=item.value.countryCode#"
-            style="margin-right: 10px; width: 20px;" src="assets/images/flag/flag_placeholder.png"
-            alt="#=item.value.country# Flag">
-          <b>#=item.label#</b>
-        </div>
-      </div>
-      <div slot="item">
-        <div style="display: flex; align-items: center;">
-          <img part="flag-#=item.value.countryCode#" class="flag flag-#=item.value.countryCode#"
-            style="margin-right: 10px; width: 20px;" src="assets/images/flag/flag_placeholder.png"
-            alt="#=item.value.country# Flag">
-          <b>#=item.label# (#=item.value.code#)</b>
-        </div>
-      </div>
-    </any-multiselect>
-    <h5>Virtual Scroll (10000 Items)</h5>
-    <any-multiselect class="ms3" placeholder="Select a Item">
-      <div slot="item">#=item.label#</div>
-      <div slot="selectedItem">#=item.value#</div>
-    </any-multiselect>
-  </div>
-</div>
+<app-doc
+  id="app-doc"
+  docTitle="MultiSelect Component"
+  header="MultiSelect"
+  description="MultiSelect is used to select multiple items from a collection."
+  github-page="https://github.com/adaleks/anywhere-ui/tree/main/packages/core/src/components/multiselect"
+></app-doc>

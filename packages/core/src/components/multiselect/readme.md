@@ -72,6 +72,12 @@
 
 ## Dependencies
 
+### Used by
+
+ - [ms-basic](../app-showcase/pages/multiselect/ms-basic)
+ - [ms-template](../app-showcase/pages/multiselect/ms-template)
+ - [ms-virtual](../app-showcase/pages/multiselect/ms-virtual)
+
 ### Depends on
 
 - [any-overlay](../overlay)
@@ -86,6 +92,9 @@ graph TD;
   any-listbox --> any-ripple-effect
   any-listbox --> any-input-text
   any-listbox --> any-virtual-scroller
+  ms-basic --> any-multiselect
+  ms-template --> any-multiselect
+  ms-virtual --> any-multiselect
   style any-multiselect fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

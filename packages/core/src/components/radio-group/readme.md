@@ -21,6 +21,21 @@
 | `valueChange` | Emitted when the value has changed. | `CustomEvent<RadioGroupChangeEventDetail<any>>` |
 
 
+## Dependencies
+
+### Used by
+
+ - [radio-button-basic](../app-showcase/pages/radio-button/radio-button-basic)
+ - [radio-button-dynamic](../app-showcase/pages/radio-button/radio-button-dynamic)
+
+### Graph
+```mermaid
+graph TD;
+  radio-button-basic --> any-radio-group
+  radio-button-dynamic --> any-radio-group
+  style any-radio-group fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with love by **AdaleksTech!***

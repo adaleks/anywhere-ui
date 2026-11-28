@@ -77,6 +77,7 @@ Type: `Promise<HTMLButtonElement>`
  - [button-sizes](../app-showcase/pages/button/button-sizes)
  - [button-styles](../app-showcase/pages/button/button-styles)
  - [button-templating](../app-showcase/pages/button/button-templating)
+ - [tab-view-programmatic](../app-showcase/pages/tab-view/tab-view-programmatic)
 
 ### Depends on
 
@@ -99,6 +100,7 @@ graph TD;
   button-sizes --> any-button
   button-styles --> any-button
   button-templating --> any-button
+  tab-view-programmatic --> any-button
   style any-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -71,7 +71,17 @@
  - [listbox-multiple](../../pages/listbox/listbox-multiple)
  - [listbox-template](../../pages/listbox/listbox-template)
  - [listbox-virtual-scroll](../../pages/listbox/listbox-virtual-scroll)
+ - [ms-basic](../../pages/multiselect/ms-basic)
+ - [ms-template](../../pages/multiselect/ms-template)
+ - [ms-virtual](../../pages/multiselect/ms-virtual)
+ - [radio-button-basic](../../pages/radio-button/radio-button-basic)
+ - [radio-button-dynamic](../../pages/radio-button/radio-button-dynamic)
  - [ripple-effect-basic](../../pages/ripple-effect/ripple-effect-basic)
+ - [tab-view-basic](../../pages/tab-view/tab-view-basic)
+ - [tab-view-disabled](../../pages/tab-view/tab-view-disabled)
+ - [tab-view-programmatic](../../pages/tab-view/tab-view-programmatic)
+ - [vs-lazy](../../pages/virtual-scroller/vs-lazy)
+ - [vs-prepopulated](../../pages/virtual-scroller/vs-prepopulated)
 
 ### Depends on
 
@@ -131,7 +141,17 @@ graph TD;
   listbox-multiple --> app-code
   listbox-template --> app-code
   listbox-virtual-scroll --> app-code
+  ms-basic --> app-code
+  ms-template --> app-code
+  ms-virtual --> app-code
+  radio-button-basic --> app-code
+  radio-button-dynamic --> app-code
   ripple-effect-basic --> app-code
+  tab-view-basic --> app-code
+  tab-view-disabled --> app-code
+  tab-view-programmatic --> app-code
+  vs-lazy --> app-code
+  vs-prepopulated --> app-code
   style app-code fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

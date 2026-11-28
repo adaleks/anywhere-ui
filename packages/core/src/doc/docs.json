@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-27T23:56:42",
+  "timestamp": "2026-11-28T00:07:03",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.45.5",
@@ -796,7 +796,8 @@
         "button-severities",
         "button-sizes",
         "button-styles",
-        "button-templating"
+        "button-templating",
+        "tab-view-programmatic"
       ],
       "dependencies": [
         "any-badge",
@@ -838,6 +839,9 @@
           "any-button"
         ],
         "button-templating": [
+          "any-button"
+        ],
+        "tab-view-programmatic": [
           "any-button"
         ]
       }
@@ -2267,7 +2271,8 @@
         "dropdown-disabled",
         "dropdown-filter",
         "dropdown-template",
-        "dropdown-virtual-scroll"
+        "dropdown-virtual-scroll",
+        "vs-prepopulated"
       ],
       "dependencies": [
         "any-overlay",
@@ -2297,6 +2302,9 @@
           "any-dropdown"
         ],
         "dropdown-virtual-scroll": [
+          "any-dropdown"
+        ],
+        "vs-prepopulated": [
           "any-dropdown"
         ]
       }
@@ -7532,7 +7540,11 @@
       "slots": [],
       "parts": [],
       "states": [],
-      "dependents": [],
+      "dependents": [
+        "ms-basic",
+        "ms-template",
+        "ms-virtual"
+      ],
       "dependencies": [
         "any-overlay",
         "any-listbox"
@@ -7547,6 +7559,15 @@
           "any-ripple-effect",
           "any-input-text",
           "any-virtual-scroller"
+        ],
+        "ms-basic": [
+          "any-multiselect"
+        ],
+        "ms-template": [
+          "any-multiselect"
+        ],
+        "ms-virtual": [
+          "any-multiselect"
         ]
       }
     },
@@ -8174,9 +8195,19 @@
       "slots": [],
       "parts": [],
       "states": [],
-      "dependents": [],
+      "dependents": [
+        "radio-button-basic",
+        "radio-button-dynamic"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "radio-button-basic": [
+          "any-radio-button"
+        ],
+        "radio-button-dynamic": [
+          "any-radio-button"
+        ]
+      }
     },
     {
       "filePath": "src/components/radio-group/radio-group.tsx",
@@ -8298,9 +8329,19 @@
       "slots": [],
       "parts": [],
       "states": [],
-      "dependents": [],
+      "dependents": [
+        "radio-button-basic",
+        "radio-button-dynamic"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "radio-button-basic": [
+          "any-radio-group"
+        ],
+        "radio-button-dynamic": [
+          "any-radio-group"
+        ]
+      }
     },
     {
       "filePath": "src/components/ripple-effect/ripple-effect.tsx",
@@ -8518,9 +8559,23 @@
       ],
       "parts": [],
       "states": [],
-      "dependents": [],
+      "dependents": [
+        "tab-view-basic",
+        "tab-view-disabled",
+        "tab-view-programmatic"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "tab-view-basic": [
+          "any-tab-panel"
+        ],
+        "tab-view-disabled": [
+          "any-tab-panel"
+        ],
+        "tab-view-programmatic": [
+          "any-tab-panel"
+        ]
+      }
     },
     {
       "filePath": "src/components/tab-view/tab-view.tsx",
@@ -8631,13 +8686,26 @@
       ],
       "parts": [],
       "states": [],
-      "dependents": [],
+      "dependents": [
+        "tab-view-basic",
+        "tab-view-disabled",
+        "tab-view-programmatic"
+      ],
       "dependencies": [
         "any-ripple-effect"
       ],
       "dependencyGraph": {
         "any-tab-view": [
           "any-ripple-effect"
+        ],
+        "tab-view-basic": [
+          "any-tab-view"
+        ],
+        "tab-view-disabled": [
+          "any-tab-view"
+        ],
+        "tab-view-programmatic": [
+          "any-tab-view"
         ]
       }
     },
@@ -9159,11 +9227,19 @@
       "parts": [],
       "states": [],
       "dependents": [
-        "any-listbox"
+        "any-listbox",
+        "vs-lazy",
+        "vs-prepopulated"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "any-listbox": [
+          "any-virtual-scroller"
+        ],
+        "vs-lazy": [
+          "any-virtual-scroller"
+        ],
+        "vs-prepopulated": [
           "any-virtual-scroller"
         ]
       }
@@ -9446,7 +9522,17 @@
         "listbox-multiple",
         "listbox-template",
         "listbox-virtual-scroll",
-        "ripple-effect-basic"
+        "ms-basic",
+        "ms-template",
+        "ms-virtual",
+        "radio-button-basic",
+        "radio-button-dynamic",
+        "ripple-effect-basic",
+        "tab-view-basic",
+        "tab-view-disabled",
+        "tab-view-programmatic",
+        "vs-lazy",
+        "vs-prepopulated"
       ],
       "dependencies": [
         "any-button"
@@ -9603,7 +9689,37 @@
         "listbox-virtual-scroll": [
           "app-code"
         ],
+        "ms-basic": [
+          "app-code"
+        ],
+        "ms-template": [
+          "app-code"
+        ],
+        "ms-virtual": [
+          "app-code"
+        ],
+        "radio-button-basic": [
+          "app-code"
+        ],
+        "radio-button-dynamic": [
+          "app-code"
+        ],
         "ripple-effect-basic": [
+          "app-code"
+        ],
+        "tab-view-basic": [
+          "app-code"
+        ],
+        "tab-view-disabled": [
+          "app-code"
+        ],
+        "tab-view-programmatic": [
+          "app-code"
+        ],
+        "vs-lazy": [
+          "app-code"
+        ],
+        "vs-prepopulated": [
           "app-code"
         ]
       }
@@ -10530,7 +10646,17 @@
         "listbox-multiple",
         "listbox-template",
         "listbox-virtual-scroll",
-        "ripple-effect-basic"
+        "ms-basic",
+        "ms-template",
+        "ms-virtual",
+        "radio-button-basic",
+        "radio-button-dynamic",
+        "ripple-effect-basic",
+        "tab-view-basic",
+        "tab-view-disabled",
+        "tab-view-programmatic",
+        "vs-lazy",
+        "vs-prepopulated"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -10681,7 +10807,37 @@
         "listbox-virtual-scroll": [
           "app-docsectiontext"
         ],
+        "ms-basic": [
+          "app-docsectiontext"
+        ],
+        "ms-template": [
+          "app-docsectiontext"
+        ],
+        "ms-virtual": [
+          "app-docsectiontext"
+        ],
+        "radio-button-basic": [
+          "app-docsectiontext"
+        ],
+        "radio-button-dynamic": [
+          "app-docsectiontext"
+        ],
         "ripple-effect-basic": [
+          "app-docsectiontext"
+        ],
+        "tab-view-basic": [
+          "app-docsectiontext"
+        ],
+        "tab-view-disabled": [
+          "app-docsectiontext"
+        ],
+        "tab-view-programmatic": [
+          "app-docsectiontext"
+        ],
+        "vs-lazy": [
+          "app-docsectiontext"
+        ],
+        "vs-prepopulated": [
           "app-docsectiontext"
         ]
       }
@@ -11028,6 +11184,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-badges/button-badges.tsx",
       "encapsulation": "scoped",
       "tag": "button-badges",
+      "readme": "# button-badges\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11111,6 +11268,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-basic/button-basic.tsx",
       "encapsulation": "scoped",
       "tag": "button-basic",
+      "readme": "# button-basic\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11194,6 +11352,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-icon-styles/button-icon-styles.tsx",
       "encapsulation": "scoped",
       "tag": "button-icon-styles",
+      "readme": "# button-icon-styles\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11277,6 +11436,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-severities/button-severities.tsx",
       "encapsulation": "scoped",
       "tag": "button-severities",
+      "readme": "# button-severities\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11360,6 +11520,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-sizes/button-sizes.tsx",
       "encapsulation": "scoped",
       "tag": "button-sizes",
+      "readme": "# button-sizes\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11443,6 +11604,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-styles/button-styles.tsx",
       "encapsulation": "scoped",
       "tag": "button-styles",
+      "readme": "# button-styles\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -11526,6 +11688,7 @@
       "filePath": "src/components/app-showcase/pages/button/button-templating/button-templating.tsx",
       "encapsulation": "scoped",
       "tag": "button-templating",
+      "readme": "# button-templating\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -14938,9 +15101,464 @@
       }
     },
     {
+      "filePath": "src/components/app-showcase/pages/multiselect/ms-basic/ms-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "ms-basic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-multiselect",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "ms-basic": [
+          "app-docsectiontext",
+          "any-multiselect",
+          "app-code"
+        ],
+        "any-multiselect": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-ripple-effect",
+          "any-input-text",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/multiselect/ms-template/ms-template.tsx",
+      "encapsulation": "scoped",
+      "tag": "ms-template",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "flag-#=item.value.countryCode#",
+          "docs": ""
+        }
+      ],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-multiselect",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "ms-template": [
+          "app-docsectiontext",
+          "any-multiselect",
+          "app-code"
+        ],
+        "any-multiselect": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-ripple-effect",
+          "any-input-text",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/multiselect/ms-virtual/ms-virtual.tsx",
+      "encapsulation": "scoped",
+      "tag": "ms-virtual",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-multiselect",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "ms-virtual": [
+          "app-docsectiontext",
+          "any-multiselect",
+          "app-code"
+        ],
+        "any-multiselect": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-ripple-effect",
+          "any-input-text",
+          "any-virtual-scroller"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/radio-button/radio-button-basic/radio-button-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "radio-button-basic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-radio-group",
+        "any-radio-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "radio-button-basic": [
+          "app-docsectiontext",
+          "any-radio-group",
+          "any-radio-button",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/radio-button/radio-button-dynamic/radio-button-dynamic.tsx",
+      "encapsulation": "scoped",
+      "tag": "radio-button-dynamic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-radio-group",
+        "any-radio-button",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "radio-button-dynamic": [
+          "app-docsectiontext",
+          "any-radio-group",
+          "any-radio-button",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/app-showcase/pages/ripple-effect/ripple-effect-basic/ripple-effect-basic.tsx",
       "encapsulation": "scoped",
       "tag": "ripple-effect-basic",
+      "readme": "# ripple-effect-basic\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -15010,6 +15628,450 @@
           "app-docsectiontext",
           "any-ripple-effect",
           "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/tab-view/tab-view-basic/tab-view-basic.tsx",
+      "encapsulation": "scoped",
+      "tag": "tab-view-basic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-tab-view",
+        "any-tab-panel",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "tab-view-basic": [
+          "app-docsectiontext",
+          "any-tab-view",
+          "any-tab-panel",
+          "app-code"
+        ],
+        "any-tab-view": [
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/tab-view/tab-view-disabled/tab-view-disabled.tsx",
+      "encapsulation": "scoped",
+      "tag": "tab-view-disabled",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-tab-view",
+        "any-tab-panel",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "tab-view-disabled": [
+          "app-docsectiontext",
+          "any-tab-view",
+          "any-tab-panel",
+          "app-code"
+        ],
+        "any-tab-view": [
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/tab-view/tab-view-programmatic/tab-view-programmatic.tsx",
+      "encapsulation": "scoped",
+      "tag": "tab-view-programmatic",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-button",
+        "any-tab-view",
+        "any-tab-panel",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "tab-view-programmatic": [
+          "app-docsectiontext",
+          "any-button",
+          "any-tab-view",
+          "any-tab-panel",
+          "app-code"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ],
+        "any-tab-view": [
+          "any-ripple-effect"
+        ],
+        "app-code": [
+          "any-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/virtual-scroller/vs-lazy/vs-lazy.tsx",
+      "encapsulation": "scoped",
+      "tag": "vs-lazy",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-virtual-scroller",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "vs-lazy": [
+          "app-docsectiontext",
+          "any-virtual-scroller",
+          "app-code"
+        ],
+        "app-code": [
+          "any-button"
+        ],
+        "any-button": [
+          "any-badge",
+          "any-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/app-showcase/pages/virtual-scroller/vs-prepopulated/vs-prepopulated.tsx",
+      "encapsulation": "scoped",
+      "tag": "vs-prepopulated",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "textId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-id",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "textTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text-title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "states": [],
+      "dependents": [],
+      "dependencies": [
+        "app-docsectiontext",
+        "any-virtual-scroller",
+        "any-dropdown",
+        "app-code"
+      ],
+      "dependencyGraph": {
+        "vs-prepopulated": [
+          "app-docsectiontext",
+          "any-virtual-scroller",
+          "any-dropdown",
+          "app-code"
+        ],
+        "any-dropdown": [
+          "any-overlay",
+          "any-listbox"
+        ],
+        "any-listbox": [
+          "any-checkbox",
+          "any-ripple-effect",
+          "any-input-text",
+          "any-virtual-scroller"
         ],
         "app-code": [
           "any-button"

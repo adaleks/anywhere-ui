@@ -1505,7 +1505,47 @@ export namespace Components {
         "textId": string;
         "textTitle": string;
     }
+    interface MsBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface MsTemplate {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface MsVirtual {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface RadioButtonBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface RadioButtonDynamic {
+        "textId": string;
+        "textTitle": string;
+    }
     interface RippleEffectBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface TabViewBasic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface TabViewDisabled {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface TabViewProgrammatic {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface VsLazy {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface VsPrepopulated {
         "textId": string;
         "textTitle": string;
     }
@@ -2302,11 +2342,71 @@ declare global {
         prototype: HTMLListboxVirtualScrollElement;
         new (): HTMLListboxVirtualScrollElement;
     };
+    interface HTMLMsBasicElement extends Components.MsBasic, HTMLStencilElement {
+    }
+    var HTMLMsBasicElement: {
+        prototype: HTMLMsBasicElement;
+        new (): HTMLMsBasicElement;
+    };
+    interface HTMLMsTemplateElement extends Components.MsTemplate, HTMLStencilElement {
+    }
+    var HTMLMsTemplateElement: {
+        prototype: HTMLMsTemplateElement;
+        new (): HTMLMsTemplateElement;
+    };
+    interface HTMLMsVirtualElement extends Components.MsVirtual, HTMLStencilElement {
+    }
+    var HTMLMsVirtualElement: {
+        prototype: HTMLMsVirtualElement;
+        new (): HTMLMsVirtualElement;
+    };
+    interface HTMLRadioButtonBasicElement extends Components.RadioButtonBasic, HTMLStencilElement {
+    }
+    var HTMLRadioButtonBasicElement: {
+        prototype: HTMLRadioButtonBasicElement;
+        new (): HTMLRadioButtonBasicElement;
+    };
+    interface HTMLRadioButtonDynamicElement extends Components.RadioButtonDynamic, HTMLStencilElement {
+    }
+    var HTMLRadioButtonDynamicElement: {
+        prototype: HTMLRadioButtonDynamicElement;
+        new (): HTMLRadioButtonDynamicElement;
+    };
     interface HTMLRippleEffectBasicElement extends Components.RippleEffectBasic, HTMLStencilElement {
     }
     var HTMLRippleEffectBasicElement: {
         prototype: HTMLRippleEffectBasicElement;
         new (): HTMLRippleEffectBasicElement;
+    };
+    interface HTMLTabViewBasicElement extends Components.TabViewBasic, HTMLStencilElement {
+    }
+    var HTMLTabViewBasicElement: {
+        prototype: HTMLTabViewBasicElement;
+        new (): HTMLTabViewBasicElement;
+    };
+    interface HTMLTabViewDisabledElement extends Components.TabViewDisabled, HTMLStencilElement {
+    }
+    var HTMLTabViewDisabledElement: {
+        prototype: HTMLTabViewDisabledElement;
+        new (): HTMLTabViewDisabledElement;
+    };
+    interface HTMLTabViewProgrammaticElement extends Components.TabViewProgrammatic, HTMLStencilElement {
+    }
+    var HTMLTabViewProgrammaticElement: {
+        prototype: HTMLTabViewProgrammaticElement;
+        new (): HTMLTabViewProgrammaticElement;
+    };
+    interface HTMLVsLazyElement extends Components.VsLazy, HTMLStencilElement {
+    }
+    var HTMLVsLazyElement: {
+        prototype: HTMLVsLazyElement;
+        new (): HTMLVsLazyElement;
+    };
+    interface HTMLVsPrepopulatedElement extends Components.VsPrepopulated, HTMLStencilElement {
+    }
+    var HTMLVsPrepopulatedElement: {
+        prototype: HTMLVsPrepopulatedElement;
+        new (): HTMLVsPrepopulatedElement;
     };
     interface HTMLElementTagNameMap {
         "any-badge": HTMLAnyBadgeElement;
@@ -2383,7 +2483,17 @@ declare global {
         "listbox-multiple": HTMLListboxMultipleElement;
         "listbox-template": HTMLListboxTemplateElement;
         "listbox-virtual-scroll": HTMLListboxVirtualScrollElement;
+        "ms-basic": HTMLMsBasicElement;
+        "ms-template": HTMLMsTemplateElement;
+        "ms-virtual": HTMLMsVirtualElement;
+        "radio-button-basic": HTMLRadioButtonBasicElement;
+        "radio-button-dynamic": HTMLRadioButtonDynamicElement;
         "ripple-effect-basic": HTMLRippleEffectBasicElement;
+        "tab-view-basic": HTMLTabViewBasicElement;
+        "tab-view-disabled": HTMLTabViewDisabledElement;
+        "tab-view-programmatic": HTMLTabViewProgrammaticElement;
+        "vs-lazy": HTMLVsLazyElement;
+        "vs-prepopulated": HTMLVsPrepopulatedElement;
     }
 }
 declare namespace LocalJSX {
@@ -4056,7 +4166,47 @@ declare namespace LocalJSX {
         "textId"?: string;
         "textTitle"?: string;
     }
+    interface MsBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface MsTemplate {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface MsVirtual {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface RadioButtonBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface RadioButtonDynamic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
     interface RippleEffectBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface TabViewBasic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface TabViewDisabled {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface TabViewProgrammatic {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface VsLazy {
+        "textId"?: string;
+        "textTitle"?: string;
+    }
+    interface VsPrepopulated {
         "textId"?: string;
         "textTitle"?: string;
     }
@@ -4558,7 +4708,47 @@ declare namespace LocalJSX {
         "textId": string;
         "textTitle": string;
     }
+    interface MsBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface MsTemplateAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface MsVirtualAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface RadioButtonBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface RadioButtonDynamicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
     interface RippleEffectBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface TabViewBasicAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface TabViewDisabledAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface TabViewProgrammaticAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface VsLazyAttributes {
+        "textId": string;
+        "textTitle": string;
+    }
+    interface VsPrepopulatedAttributes {
         "textId": string;
         "textTitle": string;
     }
@@ -4638,7 +4828,17 @@ declare namespace LocalJSX {
         "listbox-multiple": Omit<ListboxMultiple, keyof ListboxMultipleAttributes> & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes]?: ListboxMultiple[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `attr:${K}`]?: ListboxMultipleAttributes[K] } & { [K in keyof ListboxMultiple & keyof ListboxMultipleAttributes as `prop:${K}`]?: ListboxMultiple[K] };
         "listbox-template": Omit<ListboxTemplate, keyof ListboxTemplateAttributes> & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes]?: ListboxTemplate[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `attr:${K}`]?: ListboxTemplateAttributes[K] } & { [K in keyof ListboxTemplate & keyof ListboxTemplateAttributes as `prop:${K}`]?: ListboxTemplate[K] };
         "listbox-virtual-scroll": Omit<ListboxVirtualScroll, keyof ListboxVirtualScrollAttributes> & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes]?: ListboxVirtualScroll[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `attr:${K}`]?: ListboxVirtualScrollAttributes[K] } & { [K in keyof ListboxVirtualScroll & keyof ListboxVirtualScrollAttributes as `prop:${K}`]?: ListboxVirtualScroll[K] };
+        "ms-basic": Omit<MsBasic, keyof MsBasicAttributes> & { [K in keyof MsBasic & keyof MsBasicAttributes]?: MsBasic[K] } & { [K in keyof MsBasic & keyof MsBasicAttributes as `attr:${K}`]?: MsBasicAttributes[K] } & { [K in keyof MsBasic & keyof MsBasicAttributes as `prop:${K}`]?: MsBasic[K] };
+        "ms-template": Omit<MsTemplate, keyof MsTemplateAttributes> & { [K in keyof MsTemplate & keyof MsTemplateAttributes]?: MsTemplate[K] } & { [K in keyof MsTemplate & keyof MsTemplateAttributes as `attr:${K}`]?: MsTemplateAttributes[K] } & { [K in keyof MsTemplate & keyof MsTemplateAttributes as `prop:${K}`]?: MsTemplate[K] };
+        "ms-virtual": Omit<MsVirtual, keyof MsVirtualAttributes> & { [K in keyof MsVirtual & keyof MsVirtualAttributes]?: MsVirtual[K] } & { [K in keyof MsVirtual & keyof MsVirtualAttributes as `attr:${K}`]?: MsVirtualAttributes[K] } & { [K in keyof MsVirtual & keyof MsVirtualAttributes as `prop:${K}`]?: MsVirtual[K] };
+        "radio-button-basic": Omit<RadioButtonBasic, keyof RadioButtonBasicAttributes> & { [K in keyof RadioButtonBasic & keyof RadioButtonBasicAttributes]?: RadioButtonBasic[K] } & { [K in keyof RadioButtonBasic & keyof RadioButtonBasicAttributes as `attr:${K}`]?: RadioButtonBasicAttributes[K] } & { [K in keyof RadioButtonBasic & keyof RadioButtonBasicAttributes as `prop:${K}`]?: RadioButtonBasic[K] };
+        "radio-button-dynamic": Omit<RadioButtonDynamic, keyof RadioButtonDynamicAttributes> & { [K in keyof RadioButtonDynamic & keyof RadioButtonDynamicAttributes]?: RadioButtonDynamic[K] } & { [K in keyof RadioButtonDynamic & keyof RadioButtonDynamicAttributes as `attr:${K}`]?: RadioButtonDynamicAttributes[K] } & { [K in keyof RadioButtonDynamic & keyof RadioButtonDynamicAttributes as `prop:${K}`]?: RadioButtonDynamic[K] };
         "ripple-effect-basic": Omit<RippleEffectBasic, keyof RippleEffectBasicAttributes> & { [K in keyof RippleEffectBasic & keyof RippleEffectBasicAttributes]?: RippleEffectBasic[K] } & { [K in keyof RippleEffectBasic & keyof RippleEffectBasicAttributes as `attr:${K}`]?: RippleEffectBasicAttributes[K] } & { [K in keyof RippleEffectBasic & keyof RippleEffectBasicAttributes as `prop:${K}`]?: RippleEffectBasic[K] };
+        "tab-view-basic": Omit<TabViewBasic, keyof TabViewBasicAttributes> & { [K in keyof TabViewBasic & keyof TabViewBasicAttributes]?: TabViewBasic[K] } & { [K in keyof TabViewBasic & keyof TabViewBasicAttributes as `attr:${K}`]?: TabViewBasicAttributes[K] } & { [K in keyof TabViewBasic & keyof TabViewBasicAttributes as `prop:${K}`]?: TabViewBasic[K] };
+        "tab-view-disabled": Omit<TabViewDisabled, keyof TabViewDisabledAttributes> & { [K in keyof TabViewDisabled & keyof TabViewDisabledAttributes]?: TabViewDisabled[K] } & { [K in keyof TabViewDisabled & keyof TabViewDisabledAttributes as `attr:${K}`]?: TabViewDisabledAttributes[K] } & { [K in keyof TabViewDisabled & keyof TabViewDisabledAttributes as `prop:${K}`]?: TabViewDisabled[K] };
+        "tab-view-programmatic": Omit<TabViewProgrammatic, keyof TabViewProgrammaticAttributes> & { [K in keyof TabViewProgrammatic & keyof TabViewProgrammaticAttributes]?: TabViewProgrammatic[K] } & { [K in keyof TabViewProgrammatic & keyof TabViewProgrammaticAttributes as `attr:${K}`]?: TabViewProgrammaticAttributes[K] } & { [K in keyof TabViewProgrammatic & keyof TabViewProgrammaticAttributes as `prop:${K}`]?: TabViewProgrammatic[K] };
+        "vs-lazy": Omit<VsLazy, keyof VsLazyAttributes> & { [K in keyof VsLazy & keyof VsLazyAttributes]?: VsLazy[K] } & { [K in keyof VsLazy & keyof VsLazyAttributes as `attr:${K}`]?: VsLazyAttributes[K] } & { [K in keyof VsLazy & keyof VsLazyAttributes as `prop:${K}`]?: VsLazy[K] };
+        "vs-prepopulated": Omit<VsPrepopulated, keyof VsPrepopulatedAttributes> & { [K in keyof VsPrepopulated & keyof VsPrepopulatedAttributes]?: VsPrepopulated[K] } & { [K in keyof VsPrepopulated & keyof VsPrepopulatedAttributes as `attr:${K}`]?: VsPrepopulatedAttributes[K] } & { [K in keyof VsPrepopulated & keyof VsPrepopulatedAttributes as `prop:${K}`]?: VsPrepopulated[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -4744,7 +4944,17 @@ declare module "@stencil/core" {
             "listbox-multiple": LocalJSX.IntrinsicElements["listbox-multiple"] & JSXBase.HTMLAttributes<HTMLListboxMultipleElement>;
             "listbox-template": LocalJSX.IntrinsicElements["listbox-template"] & JSXBase.HTMLAttributes<HTMLListboxTemplateElement>;
             "listbox-virtual-scroll": LocalJSX.IntrinsicElements["listbox-virtual-scroll"] & JSXBase.HTMLAttributes<HTMLListboxVirtualScrollElement>;
+            "ms-basic": LocalJSX.IntrinsicElements["ms-basic"] & JSXBase.HTMLAttributes<HTMLMsBasicElement>;
+            "ms-template": LocalJSX.IntrinsicElements["ms-template"] & JSXBase.HTMLAttributes<HTMLMsTemplateElement>;
+            "ms-virtual": LocalJSX.IntrinsicElements["ms-virtual"] & JSXBase.HTMLAttributes<HTMLMsVirtualElement>;
+            "radio-button-basic": LocalJSX.IntrinsicElements["radio-button-basic"] & JSXBase.HTMLAttributes<HTMLRadioButtonBasicElement>;
+            "radio-button-dynamic": LocalJSX.IntrinsicElements["radio-button-dynamic"] & JSXBase.HTMLAttributes<HTMLRadioButtonDynamicElement>;
             "ripple-effect-basic": LocalJSX.IntrinsicElements["ripple-effect-basic"] & JSXBase.HTMLAttributes<HTMLRippleEffectBasicElement>;
+            "tab-view-basic": LocalJSX.IntrinsicElements["tab-view-basic"] & JSXBase.HTMLAttributes<HTMLTabViewBasicElement>;
+            "tab-view-disabled": LocalJSX.IntrinsicElements["tab-view-disabled"] & JSXBase.HTMLAttributes<HTMLTabViewDisabledElement>;
+            "tab-view-programmatic": LocalJSX.IntrinsicElements["tab-view-programmatic"] & JSXBase.HTMLAttributes<HTMLTabViewProgrammaticElement>;
+            "vs-lazy": LocalJSX.IntrinsicElements["vs-lazy"] & JSXBase.HTMLAttributes<HTMLVsLazyElement>;
+            "vs-prepopulated": LocalJSX.IntrinsicElements["vs-prepopulated"] & JSXBase.HTMLAttributes<HTMLVsPrepopulatedElement>;
         }
     }
 }

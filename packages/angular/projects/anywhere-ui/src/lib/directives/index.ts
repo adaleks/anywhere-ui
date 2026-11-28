@@ -76,5 +76,15 @@ export const DIRECTIVES = [
   d.ListboxMultiple,
   d.ListboxTemplate,
   d.ListboxVirtualScroll,
-  d.RippleEffectBasic
+  d.MsBasic,
+  d.MsTemplate,
+  d.MsVirtual,
+  d.RadioButtonBasic,
+  d.RadioButtonDynamic,
+  d.RippleEffectBasic,
+  d.TabViewBasic,
+  d.TabViewDisabled,
+  d.TabViewProgrammatic,
+  d.VsLazy,
+  d.VsPrepopulated
 ];
