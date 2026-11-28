@@ -29,7 +29,7 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    return fetch("app/views/MultiSelect/MultiSelect.html").then((data) => {
+    return fetch("app/views/Multiselect/Multiselect.html").then((data) => {
       return data.text();
     });
   }
