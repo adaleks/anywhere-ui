@@ -27,8 +27,10 @@
 
  **Documentations:**
 
+- Improve showcase site components documentation and examples [#53](https://github.com/adaleks/anywhere-ui/issues/53)
 - Document repository workflow and remotes in AGENTS.md [#92](https://github.com/adaleks/anywhere-ui/issues/92)
 - Refresh the Get Started guide for the current stack [#103](https://github.com/adaleks/anywhere-ui/issues/103)
+- Documentation consistency pass across the showcase pages [#104](https://github.com/adaleks/anywhere-ui/issues/104)
 
 ## [v0.3.0](https://github.com/adaleks/anywhere-ui/tree/v0.3.0) (12/02/2023)
 
